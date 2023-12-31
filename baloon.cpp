@@ -5,12 +5,14 @@ using namespace std;
 int main() {
     int r,c;
     cin >> r; cin >> c;
-    string envir[r][c];
+    char*** envir = new char**[r];
 
     for(int row=0; row<r; row++)
     {
+        envir[row] = new char *[c];
         for(int column=0; column<c; column++)
         {
+            envir[r][c] = new char[100];
             cin >> envir[row][column];
         }
     }
@@ -20,12 +22,13 @@ int main() {
         int temperature = 0;
         for(int row=r-1; row>=0; row--)//iterating on rows from buttom to up;
         {
-            string element = envir[row][column];
+            char element[10] = {};
+            strcpy(element, envir[row][column]);
             if(element != "b")//adding up temperature of baloon at current place;
             {
                 int k =0;
                 int sum =0;
-                while(element[k])
+                while(element[k])//
                 {
                     int digit = element[k]-48;
                     sum = sum*10 + digit;
@@ -38,13 +41,14 @@ int main() {
             {
                 if(temperature >= 100)
                 {
-                    envir[row][column] = "x";
+                    strcpy(envir[row][column], "x");
                     break;
                 }
                 else
                 {
                     if(row-1 < 0) break;
-                    string next = envir[row-1][column];
+                    char next[10] = {};
+                    strcpy(next, envir[row-1][column]);
                     int k =0;
                     int sum =0;
                     while(next[k])
@@ -59,11 +63,11 @@ int main() {
                     envir[row][column] = next;
                     if(temperature >= 100)
                     {
-                        envir[row-1][column] = "x";
+                        strcpy(envir[row-1][column] , "x");
                         break;
                     }else
                     {
-                        envir[row-1][column] = "b";
+                        strcpy(envir[row-1][column] , "b");
                     }
 
                 }
@@ -79,6 +83,16 @@ int main() {
         }
         if(row != r-1) cout << endl;
     }
+
+    for(int row=0; row<r; row++)
+    {
+        for(int column=0; column<c; column++)
+        {
+            delete [] envir[r][c];
+        }
+        delete [] envir[r];
+    }
+    delete [] envir;
 
     return 0;
 }
