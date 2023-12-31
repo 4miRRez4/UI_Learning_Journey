@@ -12,7 +12,7 @@ int main() {
         envir[row] = new char *[c];
         for(int column=0; column<c; column++)
         {
-            envir[r][c] = new char[100];
+            envir[row][column] = new char[100];
             cin >> envir[row][column];
         }
     }
@@ -24,7 +24,7 @@ int main() {
         {
             char element[10] = {};
             strcpy(element, envir[row][column]);
-            if(element != "b")//adding up temperature of baloon at current place;
+            if(strcmp(element, "b") != 0)//adding up temperature of baloon at current place;
             {
                 int k =0;
                 int sum =0;
@@ -60,7 +60,7 @@ int main() {
 
                     temperature += sum;
 
-                    envir[row][column] = next;
+                    strcpy(envir[row][column], next);
                     if(temperature >= 100)
                     {
                         strcpy(envir[row-1][column] , "x");
@@ -88,9 +88,9 @@ int main() {
     {
         for(int column=0; column<c; column++)
         {
-            delete [] envir[r][c];
+            delete [] envir[row][column];
         }
-        delete [] envir[r];
+        delete [] envir[row];
     }
     delete [] envir;
 
