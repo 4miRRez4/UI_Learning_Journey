@@ -22,6 +22,7 @@ struct date{
 
 char* compare(date a, date b)
 {
+	//this part also can be done in other way: sticking all numbers together in a string and then using while and ascii number to compare.
     //comparing years;
     if(a.year > b.year) return "LATE";
     else if(a.year < b.year) return "SOON";
