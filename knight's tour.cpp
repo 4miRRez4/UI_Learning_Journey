@@ -5,8 +5,8 @@
 #include <vector>
 using namespace std;
 
-const int ROW_NUM = 8;
-const int COL_NUM = 8;
+const int ROW_NUM = 5;
+const int COL_NUM = 5;
 const int POSSIBLE_MOVES = 8;
 
 //possible moves of knight
@@ -38,15 +38,15 @@ void printList(vector<vector<int>> board)
                 cout << " ";
             cout << num << " ";
         }
-        cout << "  => " << sum(arr);
+        //cout << "  => " << sum(arr);
         cout << endl;
     }
  }
 
 bool tour(vector<vector<int>>& board, int moveNum, int currentRow, int currentCol)
 {
-    // cout << moveNum << "-----------" << endl;
-    // printList(board); 
+    cout << moveNum << "-----------" << endl;
+    printList(board); 
 
     if(moveNum == ROW_NUM * COL_NUM) //does knight have seen all places?
         return true;
@@ -87,7 +87,10 @@ int main()
     board[2][2] = 1;//first step
 
     if (tour(board, 1, 2, 2))
+    {
+        cout << "last ======" << endl;
         printList(board);
+    }
     else
         cout << "Failed to find a tour!\n";
     
