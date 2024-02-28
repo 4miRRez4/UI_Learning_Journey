@@ -38,6 +38,7 @@ void play(int currentRow, int& counter)
     if (currentRow == SIZE)//do all of rows been checked?
     {
         counter++;
+        cout << "----------" << endl;
         printBoard();
         return;
     }
