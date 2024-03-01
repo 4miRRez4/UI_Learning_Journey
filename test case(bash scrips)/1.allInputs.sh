@@ -6,6 +6,7 @@ read numberOfFiles
 
 for ((i=1; i<numberOfFiles; i++))
 do
-	cat "input$i.txt" >> combined.txt
+	cat "input$i.txt" >> combinedInputs.txt
+	echo >> combinedInputs.txt
 done
 echo "Done."
