@@ -1,6 +1,6 @@
 #! /bin/zsh
 
-if diff -u "$inputs.txt" "$outputs.txt"; then
+if diff -u "outputOfCode.txt" "combinedOutputs.txt"; then
 	echo "Congratulations! They're all true."
 else
 	:
