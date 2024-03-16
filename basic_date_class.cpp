@@ -11,7 +11,7 @@ class Date{
         Date(int d, int m, int y);
         void set_date(int d, int m, int y);
         void print_date();
-        void go_on_one_day();
+        void operator++();// void go_on_one_day(); //->operator overloading: giving special meaning to cpp operators.
         bool isEqual(Date d2);
         int compare(Date d2);
         string day_of_week();
@@ -73,7 +73,8 @@ void Date::print_date()
     cout << day << "/" << month << "/" << year << endl;
 }
 
-void Date::go_on_one_day()
+// void Date::go_on_one_day()
+void Date::operator++()
 {   
     day++;
     if(day>days_of_month(month, year))
@@ -109,7 +110,7 @@ int days_between(Date d1, Date d2)
     int counter=0;
     while(!d1.isEqual(d2))
     {
-        d1.go_on_one_day(); // d1 has been called here by value, so there is no problem.
+        ++d1; // d1 has been called here by value, so there is no problem.
         counter++;
     }
     return counter;
@@ -168,17 +169,19 @@ int main()
     //  bd.print_date();
     // fd.set_date(28,3,1383);
     // bd.print_date();
-    // bd.go_on_one_day();
+    bd.operator++();
+    ++bd;
+    bd.print_date();
     // cout << bd.get_day() << endl;
     // cout << bd.get_month() << endl;
 
-    cout << bd.isEqual(fd) << endl;
-    cout << days_between(bd, fd) << endl;
+    // cout << bd.isEqual(fd) << endl;
+    // cout << days_between(bd, fd) << endl;
 
-    str_to_date("12/11/1393").print_date();
+    // str_to_date("12/11/1393").print_date();
 
-    cout << bd.compare(fd) << endl;
-    cout << fd.day_of_week() << endl;
+    // cout << bd.compare(fd) << endl;
+    // cout << fd.day_of_week() << endl;
 
     return 0;
 }
