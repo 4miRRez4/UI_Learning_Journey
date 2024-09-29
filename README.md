@@ -9,8 +9,10 @@ A comprehensive collection of my personal projects, academic work, coding challe
 
 
 
-### Courses
+### Programming and Academic Courses
 
 ### Projects
 
 ### Coding Challenges
+
+### Other Contributions
