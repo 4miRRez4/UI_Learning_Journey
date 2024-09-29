@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BeforeGameDialog</class>
+ <widget class="QDialog" name="BeforeGameDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>473</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/resrcs/imgs/bgs/c.jfif);</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_play">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>160</y>
+     <width>201</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* style.css */
+QPushButton {
+    background-color: white;
+    border: 2px solid blue; /* حاشیه با رنگ سیاه */
+    border-radius: 10px; /* گوشه‌های گرد */
+    color: white; /* رنگ متن سیاه */
+    padding: 5px; /* فاصله متن از لبه‌ها */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Play Game</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_history">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>230</y>
+     <width>201</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #FFFFFF; /* رنگ پس‌زمینه سفید */
+    border: 2px solid yellow; /* حاشیه با رنگ سیاه */
+    border-radius: 10px; /* گوشه‌های گرد */
+    color: white; /* رنگ متن سیاه */
+    padding: 5px; /* فاصله متن از لبه‌ها */
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Highest Score</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>380</y>
+     <width>201</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #FFFFFF; /* رنگ پس‌زمینه سفید */
+    border: 2px solid red; /* حاشیه با رنگ سیاه */
+    border-radius: 10px; /* گوشه‌های گرد */
+    color: white; /* رنگ متن سیاه */
+    padding: 5px; /* فاصله متن از لبه‌ها */
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Gif">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>490</y>
+     <width>471</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_gallery">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>300</y>
+     <width>201</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #FFFFFF; /* رنگ پس‌زمینه سفید */
+    border: 2px solid green; /* حاشیه با رنگ سیاه */
+    border-radius: 10px; /* گوشه‌های گرد */
+    color: white; /* رنگ متن سیاه */
+    padding: 5px; /* فاصله متن از لبه‌ها */
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Gallery</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

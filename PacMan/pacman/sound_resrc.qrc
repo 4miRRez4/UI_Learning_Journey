@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resrcs/sounds/death.mp3</file>
+        <file>resrcs/sounds/eat.mp3</file>
+        <file>resrcs/sounds/eat_big_ball.mp3</file>
+        <file>resrcs/sounds/pause.mp3</file>
+        <file>resrcs/sounds/start.mp3</file>
+        <file>resrcs/sounds/eat_ghost.mp3</file>
+    </qresource>
+</RCC>

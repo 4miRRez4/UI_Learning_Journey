@@ -1,0 +1,84 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resrcs/imgs/ghostsPics/001.png</file>
+        <file>resrcs/imgs/ghostsPics/002.png</file>
+        <file>resrcs/imgs/ghostsPics/011.png</file>
+        <file>resrcs/imgs/ghostsPics/012.png</file>
+        <file>resrcs/imgs/ghostsPics/021.png</file>
+        <file>resrcs/imgs/ghostsPics/022.png</file>
+        <file>resrcs/imgs/ghostsPics/031.png</file>
+        <file>resrcs/imgs/ghostsPics/032.png</file>
+        <file>resrcs/imgs/ghostsPics/101.png</file>
+        <file>resrcs/imgs/ghostsPics/102.png</file>
+        <file>resrcs/imgs/ghostsPics/111.png</file>
+        <file>resrcs/imgs/ghostsPics/112.png</file>
+        <file>resrcs/imgs/ghostsPics/121.png</file>
+        <file>resrcs/imgs/ghostsPics/122.png</file>
+        <file>resrcs/imgs/ghostsPics/131.png</file>
+        <file>resrcs/imgs/ghostsPics/132.png</file>
+        <file>resrcs/imgs/ghostsPics/201.png</file>
+        <file>resrcs/imgs/ghostsPics/202.png</file>
+        <file>resrcs/imgs/ghostsPics/211.png</file>
+        <file>resrcs/imgs/ghostsPics/212.png</file>
+        <file>resrcs/imgs/ghostsPics/221.png</file>
+        <file>resrcs/imgs/ghostsPics/222.png</file>
+        <file>resrcs/imgs/ghostsPics/231.png</file>
+        <file>resrcs/imgs/ghostsPics/232.png</file>
+        <file>resrcs/imgs/ghostsPics/301.png</file>
+        <file>resrcs/imgs/ghostsPics/302.png</file>
+        <file>resrcs/imgs/ghostsPics/311.png</file>
+        <file>resrcs/imgs/ghostsPics/312.png</file>
+        <file>resrcs/imgs/ghostsPics/321.png</file>
+        <file>resrcs/imgs/ghostsPics/322.png</file>
+        <file>resrcs/imgs/ghostsPics/331.png</file>
+        <file>resrcs/imgs/ghostsPics/332.png</file>
+        <file>resrcs/imgs/ghostsPics/bl1.png</file>
+        <file>resrcs/imgs/ghostsPics/bl2.png</file>
+        <file>resrcs/imgs/ghostsPics/run.png</file>
+        <file>resrcs/imgs/map_objects/big_ball.png</file>
+        <file>resrcs/imgs/map_objects/dot.png</file>
+        <file>resrcs/imgs/map_objects/dotb.png</file>
+        <file>resrcs/imgs/map_objects/gate.png</file>
+        <file>resrcs/imgs/map_objects/map.txt</file>
+        <file>resrcs/imgs/map_objects/wall.png</file>
+        <file>resrcs/imgs/pacmanPics/00.png</file>
+        <file>resrcs/imgs/pacmanPics/01.png</file>
+        <file>resrcs/imgs/pacmanPics/02.png</file>
+        <file>resrcs/imgs/pacmanPics/03.png</file>
+        <file>resrcs/imgs/pacmanPics/04.png</file>
+        <file>resrcs/imgs/pacmanPics/05.png</file>
+        <file>resrcs/imgs/pacmanPics/10.png</file>
+        <file>resrcs/imgs/pacmanPics/11.png</file>
+        <file>resrcs/imgs/pacmanPics/12.png</file>
+        <file>resrcs/imgs/pacmanPics/13.png</file>
+        <file>resrcs/imgs/pacmanPics/14.png</file>
+        <file>resrcs/imgs/pacmanPics/15.png</file>
+        <file>resrcs/imgs/pacmanPics/20.png</file>
+        <file>resrcs/imgs/pacmanPics/21.png</file>
+        <file>resrcs/imgs/pacmanPics/22.png</file>
+        <file>resrcs/imgs/pacmanPics/23.png</file>
+        <file>resrcs/imgs/pacmanPics/24.png</file>
+        <file>resrcs/imgs/pacmanPics/25.png</file>
+        <file>resrcs/imgs/pacmanPics/30.png</file>
+        <file>resrcs/imgs/pacmanPics/31.png</file>
+        <file>resrcs/imgs/pacmanPics/32.png</file>
+        <file>resrcs/imgs/pacmanPics/33.png</file>
+        <file>resrcs/imgs/pacmanPics/34.png</file>
+        <file>resrcs/imgs/pacmanPics/35.png</file>
+        <file>resrcs/imgs/bgs/a.jpg</file>
+        <file>resrcs/imgs/bgs/b.jpg</file>
+        <file>resrcs/imgs/bgs/initial_gif.gif</file>
+        <file>resrcs/imgs/bgs/c.jfif</file>
+        <file>resrcs/imgs/bgs/d.jpg</file>
+        <file>resrcs/imgs/gallery/abstract-striped-dark-blue-square-pattern-grid-background-and-texture-with-lighting-vector.png</file>
+        <file>resrcs/imgs/gallery/blue-designed-grunge-concrete-texture-vintage-background-with-space-text-image.jpg</file>
+        <file>resrcs/imgs/gallery/Ghost_clip_art_hight.png</file>
+        <file>resrcs/imgs/gallery/Opera Snapshot_2024-07-07_155341_www.canva.com.png</file>
+        <file>resrcs/imgs/gallery/Opera Snapshot_2024-07-07_155650_www.canva.com.png</file>
+        <file>resrcs/imgs/gallery/Opera Snapshot_2024-07-07_155911_www.canva.com.png</file>
+        <file>resrcs/imgs/gallery/Opera Snapshot_2024-07-07_160231_www.canva.com.png</file>
+        <file>resrcs/imgs/gallery/Opera Snapshot_2024-07-07_160924_www.canva.com.png</file>
+        <file>resrcs/imgs/gallery/Opera Snapshot_2024-07-07_161223_www.canva.com.png</file>
+        <file>resrcs/imgs/gallery/pacman-25796.png</file>
+    </qresource>
+</RCC>
