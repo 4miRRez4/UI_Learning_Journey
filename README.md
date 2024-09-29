@@ -1,4 +1,4 @@
-A comprehensive collection of my personal projects, university coursework, coding challenges, courses, and more from my Computer Science journey.
+A comprehensive collection of my personal projects, academic work, coding challenges, courses, and more from my Computer Science journey.
 
 #### Why all in one place?
   - Centralized management
