@@ -17,7 +17,7 @@ class Node
          Node* tail;
          int size;
      public:
-         LinkedList() : head(nullptr), tail(nullptr) {}
+         LinkedList() : head(nullptr), tail(nullptr), size(0){}
          ~LinkedList();
          virtual void pushFront(int data);
          bool popFront();
@@ -31,6 +31,7 @@ class Node
     }else{
         head = tail = newNode;
     } 
+    size++;
 }
 
 bool LinkedList::popFront() {
@@ -44,6 +45,7 @@ bool LinkedList::popFront() {
         tail = nullptr;
     
     delete tmp;
+    size--;
     return 1;
 }
 
@@ -89,6 +91,7 @@ LinkedList::~LinkedList(){
             if(!newNode->next){
                 tail = newNode;
             }
+            size++;
          }
  };
 class SortedList2 : public LinkedList
