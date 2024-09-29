@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resrcs/arcadepi.ttf</file>
+    </qresource>
+</RCC>
