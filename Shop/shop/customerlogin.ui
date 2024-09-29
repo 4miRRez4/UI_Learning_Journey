@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>customerLogin</class>
+ <widget class="QDialog" name="customerLogin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/images/BG.png);</string>
+  </property>
+  <widget class="QLabel" name="Header">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>40</y>
+     <width>381</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 75 18pt &quot;Ubuntu Mono&quot;;</string>
+   </property>
+   <property name="text">
+    <string>You're logging in as a customer.</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>220</y>
+     <width>311</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="userName">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 75 16pt &quot;Ubuntu Mono&quot;;</string>
+      </property>
+      <property name="text">
+       <string>User Name:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="nameIn">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>270</y>
+     <width>311</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="passWord">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 75 16pt &quot;Ubuntu Mono&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Password:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="passIn">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="logInButt">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>350</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 75 16pt &quot;Ubuntu Mono&quot;;</string>
+   </property>
+   <property name="text">
+    <string>LOG IN</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="signUp">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>530</y>
+     <width>241</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 75 16pt &quot;Ubuntu Mono&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Don't have an account?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="signUpButt">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>530</y>
+     <width>111</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 75 16pt &quot;Ubuntu Mono&quot;;</string>
+   </property>
+   <property name="text">
+    <string>SIGN UP</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
