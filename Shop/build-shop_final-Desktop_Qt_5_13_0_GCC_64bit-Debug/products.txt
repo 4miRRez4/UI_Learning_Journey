@@ -1,0 +1,11 @@
+Apple,100
+Banana,200
+Orange,200
+T-Shirt,400
+Pants,600
+Car,1900
+Phone,500
+LapTop,700
+Pen,100
+Book,200
+BackPack,400
