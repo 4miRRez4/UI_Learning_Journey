@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="wwwam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-20 09:10:08 AM"/>
+        <attribute name="created" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMjA7MDg6NTc6MzAgQU07Mjg5Ng=="/>
+        <attribute name="edited" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMjA7MDk6MTA6MDggQU07MTsyOTk5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="l, n, i, x, max, min, chocolates" type="Integer" array="False" size=""/>
+            <output expression="&quot;please enter number of your friends(numbers): &quot;" newline="True"/>
+            <input variable="l"/>
+            <output expression="&quot;enter your number: 1=&gt;&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="max" expression="n"/>
+            <assign variable="min" expression="n"/>
+            <for variable="i" start="2" end="l" direction="inc" step="1">
+                <output expression="&quot;enter your number: &quot; &amp;i&amp; &quot;=&gt;&quot;" newline="True"/>
+                <input variable="x"/>
+                <if expression="x &gt; max">
+                    <then>
+                        <assign variable="max" expression="x"/>
+                    </then>
+                    <else>
+                        <if expression="x &lt; min">
+                            <then>
+                                <assign variable="min" expression="x"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </for>
+            <comment text="a&gt;b&gt;c&gt;d =&gt; (a-b)+(b-c)+(c-d)=(a-d)"/>
+            <assign variable="chocolates" expression="max-min"/>
+            <output expression="&quot;This is number of chocolates that mitra has to buy: &quot;&amp; chocolates" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

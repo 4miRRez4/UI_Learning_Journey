@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="wwwam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-19 01:04:53 AM"/>
+        <attribute name="created" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMTk7MTI6MjY6MTggQU07MjkwMQ=="/>
+        <attribute name="edited" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMTk7MDE6MDQ6NTMgQU07MTszMDAy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="m, n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter degree of R(x): &quot;" newline="True"/>
+            <input variable="m"/>
+            <output expression="&quot;Please enter degree of Q(x): &quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="Px" type="Integer" array="True" size="m+1"/>
+            <declare name="Qx" type="Integer" array="True" size="n+1"/>
+            <declare name="i, coefficient" type="Integer" array="False" size=""/>
+            <for variable="i" start="m" end="0" direction="dec" step="1">
+                <output expression="&quot;please enter coefficient for x power &quot;&amp;i&amp;&quot; in P(x)&quot;" newline="True"/>
+                <input variable="coefficient"/>
+                <assign variable="Px[i]" expression="coefficient"/>
+            </for>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <for variable="j" start="n" end="0" direction="dec" step="1">
+                <output expression="&quot;Please enter coefficient for x power &quot;&amp;j&amp;&quot; in Q(x): &quot;" newline="True"/>
+                <input variable="coefficient"/>
+                <assign variable="Qx[j]" expression="coefficient"/>
+            </for>
+            <declare name="Rx" type="Integer" array="True" size="m+n+1"/>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <for variable="k" start="m+n" end="0" direction="dec" step="1">
+                <assign variable="Rx[k]" expression="0"/>
+            </for>
+            <declare name="y, z" type="Integer" array="False" size=""/>
+            <for variable="y" start="m" end="0" direction="dec" step="1">
+                <for variable="z" start="n" end="0" direction="dec" step="1">
+                    <assign variable="Rx[y+z]" expression="Rx[y+z] + Px[y]*Qx[z]"/>
+                </for>
+            </for>
+            <declare name="f" type="Integer" array="False" size=""/>
+            <for variable="f" start="m+n" end="0" direction="dec" step="1">
+                <output expression="&quot;(&quot;&amp;Rx[f]&amp;&quot;x^&quot;&amp;f&amp;&quot;) + &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

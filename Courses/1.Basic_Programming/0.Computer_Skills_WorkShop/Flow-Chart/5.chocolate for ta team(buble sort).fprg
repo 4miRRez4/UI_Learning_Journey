@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="wwwam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-16 09:38:08 AM"/>
+        <attribute name="created" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMTY7MDg6NTk6NTYgQU07MjkxMQ=="/>
+        <attribute name="edited" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMTY7MDk6Mzg6MDggQU07MjszMDE1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="l, i, k, j, tmp, c, chocolate, z" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter number of your friends(numbers): &quot;" newline="True"/>
+            <input variable="l"/>
+            <declare name="nums" type="Integer" array="True" size="l"/>
+            <for variable="i" start="0" end="l-1" direction="inc" step="1">
+                <output expression="&quot;Please enter your number: &quot; &amp; (i+1) &amp; &quot;=&gt;&quot;" newline="True"/>
+                <input variable="k"/>
+                <assign variable="nums[i]" expression="k"/>
+            </for>
+            <assign variable="j" expression="0"/>
+            <assign variable="c" expression="0"/>
+            <while expression="c!=(l-1)">
+                <if expression="j==(l-1)">
+                    <then>
+                        <assign variable="j" expression="0"/>
+                        <assign variable="c" expression="0"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="nums[j] &lt; nums[j+1]">
+                    <then>
+                        <assign variable="c" expression="c+1"/>
+                    </then>
+                    <else>
+                        <assign variable="tmp" expression="nums[j]"/>
+                        <assign variable="nums[j]" expression="nums[j+1]"/>
+                        <assign variable="nums[j+1]" expression="tmp"/>
+                    </else>
+                </if>
+                <assign variable="j" expression="j+1"/>
+            </while>
+            <assign variable="chocolate" expression="0"/>
+            <for variable="z" start="0" end="l-2" direction="inc" step="1">
+                <assign variable="chocolate" expression="chocolate + (nums[z+1] - nums[z])"/>
+            </for>
+            <output expression="&quot;This is number of chocolates that mitra has to buy: &quot;&amp; chocolate" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
