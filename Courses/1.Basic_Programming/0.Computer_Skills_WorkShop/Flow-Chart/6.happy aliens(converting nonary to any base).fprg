@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="wwwam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-18 09:10:42 AM"/>
+        <attribute name="created" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMTc7MDI6NDk6NDQgQU07MjkwMg=="/>
+        <attribute name="edited" value="d3d3YW07REVTS1RPUC0wQVI1TE5VOzIwMjMtMTEtMTg7MDk6MTA6NDIgQU07MjszMDA1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nonary, newBase" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter the number in nonary: &quot;" newline="True"/>
+            <input variable="nonary"/>
+            <output expression="&quot;Now enter new base: &quot;" newline="True"/>
+            <input variable="newBase"/>
+            <declare name="dec, p, digit" type="Integer" array="False" size=""/>
+            <assign variable="dec" expression="0"/>
+            <assign variable="p" expression="1"/>
+            <while expression="nonary != 0">
+                <assign variable="digit" expression="nonary%10"/>
+                <assign variable="dec" expression="dec + digit*p"/>
+                <assign variable="p" expression="p*9"/>
+                <assign variable="nonary" expression="(nonary-digit)/10"/>
+            </while>
+            <declare name="lenght, tmp" type="Integer" array="False" size=""/>
+            <assign variable="lenght" expression="0"/>
+            <assign variable="tmp" expression="dec"/>
+            <while expression="tmp != 0">
+                <assign variable="tmp" expression="(tmp-(tmp%newBase))/newBase"/>
+                <assign variable="lenght" expression="lenght + 1"/>
+            </while>
+            <declare name="digits" type="Integer" array="True" size="lenght"/>
+            <declare name="z" type="Integer" array="False" size=""/>
+            <for variable="z" start="0" end="lenght-1" direction="inc" step="1">
+                <assign variable="digits[z]" expression="dec%newBase"/>
+                <assign variable="dec" expression="(dec-(dec%newBase))/newBase"/>
+            </for>
+            <declare name="status" type="String" array="False" size=""/>
+            <assign variable="status" expression="&quot;Happy&quot;"/>
+            <declare name="q, w" type="Integer" array="False" size=""/>
+            <for variable="q" start="0" end="lenght-1" direction="inc" step="1">
+                <for variable="w" start="2" end="digits[q]-1" direction="inc" step="1">
+                    <if expression="digits[q]%w == 0">
+                        <then>
+                            <assign variable="status" expression="&quot;sad&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+            <output expression="status" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

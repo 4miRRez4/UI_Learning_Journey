@@ -1,0 +1,39 @@
+@font-face {
+    font-family: vazir;
+    src: url(Vazir.woff2) format(woff2);
+}   
+
+body{
+    font-family: vazir;
+    background-color: rgb(46, 39, 39);
+}
+
+.myimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.header{
+    color: white;
+    text-align: center;
+}
+
+p {
+    color: yellow;
+    font-size: 35px;
+}
+
+a{
+    font-size: 35px;
+}
+
+#list{
+    color: white;
+    font-size : 35px;
+}
+
+table{
+    font-size: 30px;
+}

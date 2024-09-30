@@ -1,0 +1,3 @@
+/home/amirreza/Downloads/University/fundementals of computer and programming/xo game/cmake-build-debug/CMakeFiles/xo_game.dir
+/home/amirreza/Downloads/University/fundementals of computer and programming/xo game/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/amirreza/Downloads/University/fundementals of computer and programming/xo game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
