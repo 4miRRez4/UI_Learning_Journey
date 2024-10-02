@@ -32,7 +32,6 @@ A comprehensive collection of my personal projects, academic work, coding challe
 -[PsyCity](./Other_Codes/PsyCity/)  
 -[Advanced_Programming_Concepts_CPP](./Courses/2.Advanced_Programming/0.Assignments_and_Practices)  
 -[Ramtin_Khosravi_Assignments](./Courses/2.Advanced_Programming/0.Ramtin_Khosravi_Course)  
--[Ramtin_Khosravi_Assignments](./Courses/2.Advanced_Programming/0.Ramtin_Khosravi_Course)  
 -[Quera_Advanced_Algorithm_and_Data_Structure_Assignments](./Courses/3.Quera_advanced_algorithm_and_data_structure_course)  
   
   
