@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/amirreza/Downloads/University/AdvancedProgramming/Quera_advanced_algorithm_and_data_structure_course",
-      "program": "/home/amirreza/Downloads/University/AdvancedProgramming/Quera_advanced_algorithm_and_data_structure_course/build/Debug/outDebug",
+      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/3.Quera_advanced_algorithm_and_data_structure_course",
+      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/3.Quera_advanced_algorithm_and_data_structure_course/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
