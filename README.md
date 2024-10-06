@@ -15,7 +15,7 @@ A comprehensive collection of my personal projects, academic work, coding challe
 -[acm2](./Other_Codes/1.Contests/acm_icpc_2/)  
 -[PsyCity](./Other_Codes/1.Contests/PsyCity/)  
 -[Advanced Programming Concepts CPP](./Courses/2.Advanced_Programming/0.Assignments_and_Practices)  
--[Ramtin Khosravi Assignments](./Courses/2.Advanced_Programming/0.Ramtin_Khosravi_Course)  
+-[Ramtin Khosravi AP Assignments](./Courses/2.Advanced_Programming/0.Ramtin_Khosravi_Course)  
 -[Quera Advanced Algorithm and Data Structure Assignments](./Courses/3.Quera_advanced_algorithm_and_data_structure_course)
   
 ### Projects
@@ -31,7 +31,9 @@ A comprehensive collection of my personal projects, academic work, coding challe
 -[ML with Python](./Courses/0.Machine_Learning_With_Python/)  
 -[Basic Programming](./Courses/1.Basic_Programming/)  
 -[Advanced Programming](./Courses/2.Advanced_Programming/)  
--[Quera Advanced Algorithm and Data Structure](./Courses/3.Quera_advanced_algorithm_and_data_structure_course/)  
+-[Quera Advanced Algorithm and Data Structure](./Courses/3.Quera_advanced_algorithm_and_data_structure_course/) 
+-[DataStructure and  Algorithms](./Courses/4.Data_Structure_and_Algorithm/)
+-[Probability and Statistics](./Courses/5.Probability_Statistics/)
   
   
 
