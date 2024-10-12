@@ -17,6 +17,7 @@ A comprehensive collection of my personal projects, academic work, coding challe
 -[Advanced Programming Concepts CPP](./Courses/2.Advanced_Programming/0.Assignments_and_Practices)  
 -[Ramtin Khosravi AP Assignments](./Courses/2.Advanced_Programming/0.Ramtin_Khosravi_Course)  
 -[Quera Advanced Algorithm and Data Structure Assignments](./Courses/3.Quera_advanced_algorithm_and_data_structure_course)
+-[DataStructure and  Algorithms_Sharifi](./Courses/4.Data_Structure_and_Algorithm/)  
   
 ### Projects
 -[Simple Xo](./Courses/1.Basic_Programming/1.Simple_XO/)  
