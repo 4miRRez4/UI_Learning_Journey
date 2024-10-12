@@ -76,6 +76,28 @@ def LCA(curr_root, a, b):
         print(curr_root.label)
 
 
+def root_left_subtree_size(preorder_list, inorder_list):
+    root = preorder_list[0]
+    return inorder_list.index(root)
+
+def left_subtree_size(preorder_list, inorder_list, node_label):
+    return inorder_list.index(node_label)
+
+def change_order(preorder_list, inorder_list):
+    if not preorder_list or not inorder_list:
+        return []
+    
+    root  = preorder_list[0]
+    ind_of_root_in_inorder = inorder_list.index(root)
+
+    inorder_left = inorder_list[0: ind_of_root_in_inorder]
+    inorder_right = inorder_list[ind_of_root_in_inorder+1: ]
+
+    preorder_left = preorder_list[1:1+ind_of_root_in_inorder]
+    preorder_right = preorder_list[ind_of_root_in_inorder+1: ]
+
+    return change_order(preorder_left, inorder_left) + change_order(preorder_right, inorder_right) + [root]
+
 if __name__ == "__main__": 
     root = Node(5, None)
     insert(root, 9)
@@ -94,3 +116,4 @@ if __name__ == "__main__":
     delete(root, 8)
     inorder(root)
     print(LCA(root, 5, 10))
+    print(change_order([2,1,3], [1,2,3]))
