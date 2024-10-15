@@ -10,6 +10,7 @@ int main(){
         for(int c=0; c<n; c++)
             cin >> matrix[r][c];
 
+    //rotating by 90 degree clockwise=> transpose + reverse: [i][j] = [j][n-i-1]
     //transpose: [i][j] => [j][i]
     for(int r=0; r<n; r++)
         for(int c=r; c<n; c++){
@@ -25,9 +26,7 @@ int main(){
             matrix[r][c] = matrix[r][n-c-1];
             matrix[r][n-c-1] = tmp;
         }
-
-    //rotating by 90 degree clockwise=> transpose + reverse: [i][j] = [j][n-i-1]
-
+ 
     for(int r=0; r<n; r++){
         for(int c=0; c<n; c++)
             cout << matrix[r][c] << " ";
