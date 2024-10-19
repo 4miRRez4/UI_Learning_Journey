@@ -79,6 +79,8 @@ int check_subsets_for_longest_pal(Doubly_Linked_List& ddl){
     return max_len;
 }
 
+//TODO: expend around element
+
 int main(){
     string answer = "";
     int n; cin >> n;
