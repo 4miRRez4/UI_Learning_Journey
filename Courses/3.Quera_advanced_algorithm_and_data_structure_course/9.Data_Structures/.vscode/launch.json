@@ -8,13 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-<<<<<<< HEAD
-      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/1.Array",
-      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/1.Array/build/Debug/outDebug",
-=======
-      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/3.Quera_advanced_algorithm_and_data_structure_course/9.Data_Structures",
-      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/3.Quera_advanced_algorithm_and_data_structure_course/9.Data_Structures/build/Debug/outDebug",
->>>>>>> Sharifi_data
+      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/2.Linked_list",
+      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/2.Linked_list/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
