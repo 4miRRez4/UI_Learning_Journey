@@ -32,7 +32,7 @@ public:
 
     int DDL_get_data(int n, int idx){
         Node* curr;
-        if(idx < n/2){
+        if(idx <= n/2){
             int i = 1;
             curr = this->head;
             while(curr != nullptr && i < idx){
@@ -96,7 +96,6 @@ public:
             }
         }
 
-
         while(left != right && left->prev != right){
             if(left->next != nullptr) left->next->prev = right;
             if(left->prev != nullptr) left->prev->next = right;
@@ -116,6 +115,55 @@ public:
 
             left = left->next;
             right = right->prev;
+        }
+    }
+
+    void DDL_reverse2(int n, int i, int j){
+        Node* curr;
+        int c;
+        if(i <= n/2){
+            curr = this->head;
+            c = 1;
+            while(curr != nullptr && c<i){
+                curr = curr->next;
+                c++;
+            }  
+        }else{
+            curr = this->tail;
+            c = n;
+            while(curr != nullptr && c>i){
+                curr = curr->prev;
+                c--;
+            }
+        }
+
+        Node* last;
+        Node* first = curr;
+        Node* first_prev = curr->prev;
+        while(curr != nullptr && c<=j){
+            Node* curr_next = curr->next;
+            curr->next = curr->prev;
+            curr->prev = curr_next;
+
+            if(c == j)
+                last = curr;
+
+            curr = curr_next;
+            c++;
+        }
+
+        if(first == this->head){
+            this->head = last;
+        }else{
+            first->next = curr;
+            first_prev->next = last;
+        }
+
+        if(last == this->tail){
+            this->tail = first;
+        }else{
+            last->prev = first_prev;
+            curr->prev = first;
         }
     }
 };
@@ -139,7 +187,7 @@ int main(){
 
             case 'R':
                 int i, j; cin >> i >> j;
-                my_dll.DDL_reverse(n, i, j);
+                my_dll.DDL_reverse2(n, i, j);
                 break;
         }
     }
