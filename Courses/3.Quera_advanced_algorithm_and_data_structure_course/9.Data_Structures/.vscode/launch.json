@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/2.Linked_list",
-      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/2.Linked_list/build/Debug/outDebug",
+      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Other_Codes/2.Coding_sites",
+      "program": "/home/amirreza/Downloads/University/Learning_Journey/Other_Codes/2.Coding_sites/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
