@@ -80,27 +80,27 @@ Node* merge_sort(Node* list_head, int size){
     return merge(list_head, second_half_head);
 }
 
-void read_list(Linked_List& list){
+void read_list(Linked_List* list){
     string line = "";
     getline(cin, line);
 
     int tmp;
     istringstream iss(line);
     while(iss >> tmp)
-        list.ll_push(tmp);
+        list->ll_push(tmp);
 }
 
 int main(){
-    Linked_List list1;
-    Linked_List list2;
+    Linked_List* list1 = new Linked_List();
+    Linked_List* list2 = new Linked_List();
     read_list(list1);
     read_list(list2);
 
-    list2.head = merge_sort(list2.head, list2.size);
+    list2->head = merge_sort(list2->head, list2->size);
 
-    list1.head = merge(list1.head, list2.head);
+    list1->head = merge(list1->head, list2->head);
 
-    cout << list1.ll_print() << endl;
+    cout << list1->ll_print() << endl;
 
     return 0;
 }
