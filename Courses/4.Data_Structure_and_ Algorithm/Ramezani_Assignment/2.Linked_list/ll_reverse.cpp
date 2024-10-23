@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
 struct Node{
@@ -119,25 +120,28 @@ public:
     }
 
     void DDL_reverse2(int n, int i, int j){
+        if(i >= j) return;
+
         Node* curr;
         int c;
         if(i <= n/2){
             curr = this->head;
             c = 1;
-            while(curr != nullptr && c<i){
+            while(curr->next != nullptr && c<i){
                 curr = curr->next;
                 c++;
             }  
         }else{
             curr = this->tail;
             c = n;
-            while(curr != nullptr && c>i){
+            while(curr->prev != nullptr && c>i){
                 curr = curr->prev;
                 c--;
             }
         }
 
-        Node* last;
+        Node* last = nullptr;
+        Node* last_next = nullptr;
         Node* first = curr;
         Node* first_prev = curr->prev;
         while(curr != nullptr && c<=j){
@@ -145,8 +149,11 @@ public:
             curr->next = curr->prev;
             curr->prev = curr_next;
 
-            if(c == j)
+            if(c == j || curr_next == nullptr){
                 last = curr;
+                last_next = curr_next;
+                break;
+            }
 
             curr = curr_next;
             c++;
@@ -154,40 +161,47 @@ public:
 
         if(first == this->head){
             this->head = last;
+            last->prev = nullptr;
         }else{
-            first->next = curr;
             first_prev->next = last;
+            last->prev = first_prev;
         }
 
         if(last == this->tail){
             this->tail = first;
+            first->next = nullptr;
         }else{
-            last->prev = first_prev;
-            curr->prev = first;
+            last_next->prev = first;       
+            first->next = last_next;
         }
     }
 };
 
 
 int main(){
-    int n; cin >> n;
+    int n; 
+    scanf("%d", &n);
 
-    DLL my_dll;
+    DLL* my_dll = new DLL();
     for(int i=1; i<=n; i++)
-        my_dll.DDL_push(i);
+        my_dll->DDL_push(i);
 
-    int m; cin >> m;
+    int m; 
+    scanf("%d", &m);
     for(int p=0; p<m; p++){
-        string operation; cin >> operation;
+        char operation[8];
+        scanf("%s", operation);
         switch(operation[0]){
             case 'N':
-                int k; cin >> k;
-                cout << my_dll.DDL_get_data(n, k) << endl;
+                int k;
+                scanf("%d", &k);
+                printf("%d\n", my_dll->DDL_get_data(n, k));
                 break;
 
             case 'R':
-                int i, j; cin >> i >> j;
-                my_dll.DDL_reverse2(n, i, j);
+                int i, j;
+                scanf("%d %d", &i, &j);
+                my_dll->DDL_reverse2(n, i, j);
                 break;
         }
     }

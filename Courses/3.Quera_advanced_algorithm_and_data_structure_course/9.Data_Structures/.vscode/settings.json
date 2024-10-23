@@ -5,7 +5,8 @@
     "iosfwd": "cpp",
     "iostream": "cpp",
     "ostream": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "sstream": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
