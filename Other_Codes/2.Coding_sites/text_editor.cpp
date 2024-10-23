@@ -1,4 +1,4 @@
-//https://leetcode.ca/2022-03-14-2296-Design-a-Text-Editor/#google_vignette
+//https://leetcode.com/problems/design-a-text-editor/
 #include <iostream>
 #include <regex>
 using namespace std;
