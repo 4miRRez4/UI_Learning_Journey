@@ -7,7 +7,12 @@
     "ostream": "cpp",
     "regex": "cpp",
     "sstream": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "*.tcc": "cpp",
+    "tuple": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "random": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
