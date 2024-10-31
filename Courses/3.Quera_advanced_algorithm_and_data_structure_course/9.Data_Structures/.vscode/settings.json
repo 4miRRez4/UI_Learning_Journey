@@ -12,7 +12,10 @@
     "tuple": "cpp",
     "string": "cpp",
     "string_view": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "cstdio": "cpp",
+    "limits": "cpp",
+    "algorithm": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

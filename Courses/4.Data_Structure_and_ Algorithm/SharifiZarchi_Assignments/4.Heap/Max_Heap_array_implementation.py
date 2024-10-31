@@ -70,9 +70,10 @@ class Max_Heap:
 
 if __name__ == "__main__":
     heap = Max_Heap()
-    heap.build_heap_with_bd([1,10,9,4,7,11,2,3,6,5])
+    heap.build_heap_with_bd([1, 2, 3, 4, 5])
     print(heap.heap)
     print (heap.del_max())
+    print(heap.heap)
     heap.insert(8)
     print(heap.heap)
     print (heap.del_max())
