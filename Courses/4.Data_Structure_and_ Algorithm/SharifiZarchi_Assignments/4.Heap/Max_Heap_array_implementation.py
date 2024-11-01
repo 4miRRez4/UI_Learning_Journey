@@ -55,7 +55,7 @@ class Max_Heap:
     
     def build_heap_with_bu(self, list):
         self.heap = list
-        for i in range(self.get_size()-1, -1, -1):
+        for i in range(self.get_size()):
             self.bubble_up(i)
 
 
