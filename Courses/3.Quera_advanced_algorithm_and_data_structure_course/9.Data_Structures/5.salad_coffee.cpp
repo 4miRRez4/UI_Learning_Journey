@@ -156,9 +156,11 @@ int main(){
             }
 
             //fun delete
-            deleted_cust = heap_by_name->pop_min();
-            heap_by_expiry->delete_customer(deleted_cust);
-            deleteds->insert(deleted_cust.first, deleted_cust.second);
+            if(heap_by_name->get_size() != 0){
+                deleted_cust = heap_by_name->pop_min();
+                heap_by_expiry->delete_customer(deleted_cust);
+                deleteds->insert(deleted_cust.first, deleted_cust.second);
+            }
         }else{
             //delete all
             while(heap_by_name->get_size() != 0){
@@ -173,8 +175,5 @@ int main(){
         }
         cout << endl;
     }
-
-
-
     return 0;
 }
