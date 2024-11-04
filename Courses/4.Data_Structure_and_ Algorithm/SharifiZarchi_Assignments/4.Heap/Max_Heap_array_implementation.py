@@ -1,5 +1,5 @@
 def parent_idx(i):
-    return i//2
+    return (i-1)//2
 
 def leftChild_idx(i):
     return 2*i +1

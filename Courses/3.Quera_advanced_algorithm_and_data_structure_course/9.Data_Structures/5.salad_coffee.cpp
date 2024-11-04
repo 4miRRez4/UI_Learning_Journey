@@ -116,7 +116,7 @@ public:
         
     }  
 
-    void clear(){
+    ~Min_Heap(){
         while(last_ind != 0){
             delete customers[last_ind];
             customers[last_ind] = nullptr;
@@ -167,7 +167,6 @@ int main(){
                 deleted_cust = heap_by_name->pop_min();
                 deleteds->insert(deleted_cust.first, deleted_cust.second);
             }
-            heap_by_expiry->clear();
         }
 
         while(deleteds->get_size() != 0){
