@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 
+const int MAX_SIZE = 350000;
 class Stack{
 public:
-    char s[350000];
+    char s[MAX_SIZE];
     int top_ind;
     Stack():top_ind(-1){};
     void push(char c){
