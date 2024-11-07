@@ -2,6 +2,31 @@
 #include <stack>
 using namespace std;
 
+const int MAX_SIZE = 5000;
+class Stack{
+public:
+    char s[MAX_SIZE];
+    int top_ind;
+    Stack():top_ind(-1){};
+    void push(char c){
+        top_ind++;
+        s[top_ind] = c;
+    }
+
+    void pop(){
+        if(top_ind >= 0)
+            top_ind--;   
+    }
+
+    char top(){
+        return (top_ind >= 0) ? s[top_ind]:' ';
+    }
+
+    bool empty(){
+        return (top_ind == -1);
+    }
+};
+
 int precedence(char oper){ 
     if(oper == '+' || oper == '-') return 1;
     if(oper == '*' || oper == '/') return 2;
