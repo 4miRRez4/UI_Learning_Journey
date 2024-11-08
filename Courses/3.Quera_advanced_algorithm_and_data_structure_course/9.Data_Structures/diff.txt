@@ -1,0 +1,3700 @@
+7884d7883
+< zeyba 
+7887d7885
+< swyca 
+7888a7887,7888
+> swyca 
+> zkuea 
+8134c8134
+< zkuea 
+---
+> zmcca 
+8140c8140
+< zmcca 
+---
+> zmdda 
+8148,8149d8147
+< zmdda 
+< eakda 
+8150a8149
+> eakda 
+8151a8151
+> zmhfa 
+8154c8154
+< zmhfa 
+---
+> zmqda 
+8159c8159
+< zmqda 
+---
+> zmrba 
+8167c8167
+< zmrba 
+---
+> zmtea 
+8170,8171d8169
+< zmtea 
+< flxda 
+8173c8171
+< xioaa 
+---
+> flxda 
+8174a8173
+> xioaa 
+8175a8175
+> zeyba 
+15358c15358
+< xyoaa 
+---
+> xzjca 
+15363d15362
+< xzjca 
+15364a15364
+> ybjea 
+15367c15367
+< ybjea 
+---
+> ycaea 
+15373c15373
+< ycaea 
+---
+> ycbaa 
+15469,15470d15468
+< ycbaa 
+< wewea 
+15471a15470
+> wewea 
+15472a15472
+> ydfda 
+15480c15480
+< ydfda 
+---
+> yfqfa 
+15487d15486
+< yfqfa 
+15489a15489
+> yinea 
+15493c15493
+< yinea 
+---
+> yiqea 
+15498,15499d15497
+< yiqea 
+< hnfda 
+15501c15499
+< fztba 
+---
+> hnfda 
+15502a15501
+> fztba 
+15503a15503
+> ykwca 
+15506c15506
+< ykwca 
+---
+> ylcfa 
+15512c15512
+< ylcfa 
+---
+> yliea 
+15520c15520
+< yliea 
+---
+> ylpea 
+15523c15523
+< ylpea 
+---
+> ymyca 
+15527c15527
+< ymyca 
+---
+> yncea 
+15530d15529
+< yncea 
+15531a15531
+> ynqda 
+15560c15560
+< ynqda 
+---
+> ynwda 
+15579c15579
+< ynwda 
+---
+> ynyca 
+15593d15592
+< ynyca 
+15596a15596
+> ytsea 
+15637c15637
+< ytsea 
+---
+> yubfa 
+15661c15661
+< yubfa 
+---
+> yukca 
+15687c15687
+< yukca 
+---
+> yuqfa 
+15692,15693d15691
+< yuqfa 
+< tzzea 
+15694a15693
+> tzzea 
+15696a15696
+> yymaa 
+15699c15699
+< yymaa 
+---
+> yzbba 
+15725,15726d15724
+< yzbba 
+< ewyaa 
+15727a15726
+> ewyaa 
+15728a15728
+> zdqca 
+15799d15798
+< zdqca 
+15802d15800
+< atuca 
+15803a15802,15803
+> atuca 
+> xyoaa 
+24726d24725
+< zbrca 
+24729d24727
+< ljdea 
+24730a24729
+> ljdea 
+24731a24731
+> zcfea 
+24753d24752
+< zcfea 
+24755a24755
+> zczca 
+24759d24758
+< zczca 
+24761a24761
+> zdpea 
+24768d24767
+< zdpea 
+24770a24770
+> zdxaa 
+24927c24927
+< zdxaa 
+---
+> zbrca 
+29847c29847
+< wqwca 
+---
+> wrfba 
+29855c29855
+< wrfba 
+---
+> wsoea 
+29858d29857
+< wsoea 
+29859a29859
+> xbqda 
+29868c29868
+< xbqda 
+---
+> xgsba 
+29874d29873
+< xgsba 
+29877a29877
+> xpbaa 
+29882c29882
+< xpbaa 
+---
+> xrdfa 
+29895c29895
+< xrdfa 
+---
+> xtkaa 
+29899,29900d29898
+< xtkaa 
+< ummba 
+29901a29900,29901
+> ummba 
+> xxjaa 
+29907c29907
+< xxjaa 
+---
+> ydfca 
+30138a30139
+> wqwca 
+30140d30140
+< xazca 
+30145c30145
+< xkcfa 
+---
+> xazca 
+30147a30148
+> xkcfa 
+30149d30149
+< xxoaa 
+30151c30151
+< xymaa 
+---
+> xxoaa 
+30161c30161
+< ycfaa 
+---
+> xymaa 
+30168c30168
+< ydfca 
+---
+> ycfaa 
+31789d31788
+< zfdda 
+31793a31793
+> zfnfa 
+31797c31797
+< zfnfa 
+---
+> zfoda 
+31813c31813
+< zfoda 
+---
+> zfrda 
+31863d31862
+< zfrda 
+31864a31864
+> zfwaa 
+32458d32457
+< yvxaa 
+32459a32459
+> yxzba 
+32478c32478
+< yxzba 
+---
+> yytea 
+32486c32486
+< yytea 
+---
+> zacda 
+32604c32604
+< zacda 
+---
+> zbjfa 
+32608c32608
+< zbjfa 
+---
+> zbuea 
+32611c32611
+< zbuea 
+---
+> zchaa 
+32621,32622d32620
+< zchaa 
+< yfyea 
+32623a32622,32623
+> yfyea 
+> zehaa 
+32660c32660
+< zehaa 
+---
+> zepba 
+32664,32665d32663
+< zepba 
+< fyafa 
+32667c32665
+< rwbea 
+---
+> fyafa 
+32668a32667,32668
+> rwbea 
+> zfxca 
+32671c32671
+< zfwaa 
+---
+> zfxda 
+32683c32683
+< zfxca 
+---
+> zfyea 
+32687c32687
+< zfxda 
+---
+> zgada 
+32691c32691
+< zfyea 
+---
+> zgcda 
+32697c32697
+< zgada 
+---
+> zgdfa 
+32709c32709
+< zgcda 
+---
+> zgeda 
+32859c32859
+< zgdfa 
+---
+> zgica 
+32871c32871
+< zgeda 
+---
+> zhdea 
+32883c32883
+< zgica 
+---
+> zheda 
+32954,32955c32954,32955
+< zhdea 
+< zheda 
+---
+> zhjba 
+> zhoda 
+32961c32961
+< zhjba 
+---
+> zhpaa 
+32980,32981c32980,32981
+< zhoda 
+< zhpaa 
+---
+> zhvca 
+> zigca 
+33108c33108
+< zhvca 
+---
+> zjbfa 
+33118c33118
+< zigca 
+---
+> zjgaa 
+33128c33128
+< zjbfa 
+---
+> zjiba 
+34068c34068
+< zjgaa 
+---
+> zjlca 
+34070c34070
+< zjiba 
+---
+> zjnba 
+34073c34073
+< zjlca 
+---
+> yvxaa 
+34077c34077
+< zjnba 
+---
+> zjqfa 
+34080c34080
+< zjqfa 
+---
+> zjtca 
+34151c34151
+< zjtca 
+---
+> zjvaa 
+34158d34157
+< zjvaa 
+34160a34160
+> zjwea 
+34163,34164d34162
+< zjwea 
+< jlwaa 
+34165a34164,34165
+> jlwaa 
+> zkbda 
+34180c34180
+< zkbda 
+---
+> zkhea 
+34187,34188c34187,34188
+< zkhaa 
+< zkhea 
+---
+> zkjaa 
+> zkjfa 
+35073d35072
+< yyhda 
+35074a35074
+> yzlca 
+35152c35152
+< yzlca 
+---
+> yzzea 
+35161d35160
+< yzzea 
+35164a35164
+> zcoaa 
+35168c35168
+< zcoaa 
+---
+> zcofa 
+35371c35371
+< zcofa 
+---
+> zdwaa 
+35470c35470
+< zdwaa 
+---
+> zfhfa 
+35477d35476
+< zfhfa 
+35478a35478
+> zflea 
+35482c35482
+< zflea 
+---
+> zgwca 
+35699,35700d35698
+< zgwca 
+< wwjba 
+35701a35700
+> wwjba 
+35702a35702
+> ziiaa 
+35705c35705
+< ziiaa 
+---
+> zjdba 
+35708d35707
+< zjdba 
+35711c35710,35711
+< zkhfa 
+---
+> zkpaa 
+> zkpca 
+35713c35713
+< zkjaa 
+---
+> zkuba 
+35725,35727c35725,35727
+< zkjfa 
+< zkpaa 
+< zkpca 
+---
+> zkuca 
+> zkxea 
+> zkyca 
+35729c35729
+< zksca 
+---
+> zkyda 
+35885,35886d35884
+< xliea 
+< ftoea 
+35887a35886,35887
+> ftoea 
+> xrzaa 
+35916d35915
+< xrzaa 
+35918d35916
+< ovpba 
+35919a35918,35919
+> ovpba 
+> yhmda 
+35954d35953
+< yhmda 
+35955a35955
+> ypsda 
+35960c35960
+< ypsda 
+---
+> ysoda 
+35963d35962
+< ysoda 
+35966a35966
+> yzeba 
+36223c36223
+< yzeba 
+---
+> yznea 
+36226,36227c36226,36227
+< yznea 
+< zapca zxwda 
+---
+> zapca 
+> zatba zxwda 
+36229c36229
+< zatba 
+---
+> zcbaa 
+36252c36252
+< zcbaa 
+---
+> zcxea 
+36268c36268
+< zcxea 
+---
+> zfyba 
+36272a36273,36274
+> zlada 
+> xliea 
+36274,36276c36276
+< zfyba 
+< zkuba 
+< zkuca 
+---
+> zlcaa 
+36280,36283c36280,36283
+< zkxea 
+< zkyca 
+< zkyda 
+< zlada 
+---
+> zlcca 
+> zldea 
+> zlfda 
+> zlgba 
+36380c36380
+< zlcaa 
+---
+> zksca 
+36390,36394d36389
+< zlcca 
+< zldea 
+< zlfda 
+< zlgba 
+< rggca 
+36397,36400d36391
+< fekfa 
+< mwmba 
+< wcoda 
+< bzcfa 
+36402a36394
+> rggca 
+36404a36397,36404
+> fekfa 
+> mwmba 
+> wcoda 
+> bzcfa 
+> zltaa 
+> zltca 
+> zlzea 
+> zmafa 
+36533c36533
+< zltaa 
+---
+> zmdaa 
+36572,36575c36572,36575
+< zltca 
+< zlzea 
+< zmafa 
+< zmdaa 
+---
+> zmdca 
+> zmeaa 
+> zmfca 
+> zmfda 
+36630,36633d36629
+< zmdca 
+< zmeaa 
+< zmfca 
+< zmfda 
+36635d36630
+< veyca 
+36637d36631
+< rgcaa 
+36639a36634,36639
+> zmkca 
+> veyca 
+> zmkda 
+> rgcaa 
+> zmlaa 
+> zmlea 
+36660,36661c36660,36661
+< zmkca 
+< zmkda 
+---
+> zmmaa 
+> zmnda 
+36664c36664
+< zmlaa 
+---
+> zmnfa 
+36667,36670c36667,36670
+< zmlea 
+< zmmaa 
+< zmnda 
+< zmnfa 
+---
+> zmoda 
+> zmqea 
+> zmrda 
+> zmuda 
+36706c36706
+< zfjaa 
+---
+> zfdda 
+36711c36711
+< zmoda 
+---
+> zfjaa 
+36713c36713
+< zmqea 
+---
+> zmwea 
+36716,36718c36716,36718
+< zmrda 
+< zmuda 
+< zmwea 
+---
+> zmxda 
+> zmyda 
+> zncfa 
+36729c36729
+< zmxda 
+---
+> zndfa 
+36733c36733
+< zmyda 
+---
+> zneca 
+36738c36738
+< zncfa 
+---
+> zkhfa 
+36745,36746c36745,36746
+< zndfa 
+< zneca 
+---
+> znfaa 
+> zniba 
+36758,36759c36758,36759
+< znfaa 
+< zniba 
+---
+> zniea 
+> znmaa 
+36766c36766
+< zniea 
+---
+> znnea 
+36768c36768
+< znmaa 
+---
+> znoea 
+36772c36772
+< znnea 
+---
+> znqaa 
+36786c36786
+< znoea 
+---
+> znqba 
+36826c36826
+< znqaa 
+---
+> znsca 
+36846,36848d36845
+< znqba 
+< suofa 
+< znsca 
+36850c36847
+< ciqda 
+---
+> suofa 
+36852a36850
+> ciqda 
+36856a36855,36856
+> zodba 
+> zofba 
+36875c36875
+< zodba 
+---
+> zkhaa 
+36879d36878
+< zofba 
+36881d36879
+< ajsea 
+36882a36881,36882
+> ajsea 
+> zojda 
+36887,36888d36886
+< zojda 
+< jhoea 
+36889a36888
+> jhoea 
+36890a36890
+> yyhda 
+37795d37794
+< zqtda 
+37797d37795
+< odhca 
+37798a37797
+> odhca 
+37799a37799
+> zqzca 
+37804c37804
+< zqzca 
+---
+> zqzea 
+37840c37840
+< zqzea 
+---
+> zraea 
+37845c37845
+< zraea 
+---
+> zrafa 
+37848c37848
+< zrafa 
+---
+> zrbaa 
+37851c37851
+< zrbaa 
+---
+> zrbfa 
+37855c37855
+< zrbfa 
+---
+> zrcaa 
+37868d37867
+< zrcaa 
+37872a37872
+> zriaa 
+37953c37953
+< zriaa 
+---
+> zrjca 
+38636d38635
+< zrjca 
+38637a38637
+> zrjfa 
+38642d38641
+< zrjfa 
+38643a38643
+> zrmda 
+38652c38652
+< zrkda 
+---
+> zroca 
+38835c38835
+< zrmda 
+---
+> zrpaa 
+39269c39269
+< zroca 
+---
+> zrpca 
+39272,39273d39271
+< zrpaa 
+< zrpca 
+39275d39272
+< qcyaa 
+39277a39275,39277
+> qcyaa 
+> zruea 
+> zrvca 
+39286c39286
+< zruea 
+---
+> zrwaa 
+39297c39297
+< zrvca 
+---
+> zrwda 
+39998c39998
+< zolda 
+---
+> zouca 
+40026c40026
+< zouca 
+---
+> zpiea 
+40036c40036
+< zpiea 
+---
+> zquaa 
+40068d40067
+< zquaa 
+40070d40068
+< xuvda 
+40072c40070
+< glsca 
+---
+> xuvda 
+40074c40072
+< xfoca 
+---
+> glsca 
+40075a40074,40075
+> xfoca 
+> zrxba 
+40078c40078
+< zrwaa 
+---
+> zrxca 
+40082c40082
+< zrwda 
+---
+> zrxda 
+40084c40084
+< zrxba 
+---
+> zryea 
+40091,40092c40091,40092
+< zrxca 
+< zrxda 
+---
+> zsdca 
+> zsdea 
+40266c40266
+< zryea 
+---
+> zseda 
+40275c40275
+< zsdca 
+---
+> zseea 
+40341c40341
+< zsdea 
+---
+> zsfca 
+40343,40344c40343,40344
+< zseda 
+< zseea 
+---
+> zsgaa 
+> zsgea 
+40347c40347
+< zsfca 
+---
+> zshca 
+40350c40350
+< zsgaa 
+---
+> zshda 
+40377,40379c40377
+< zsgea 
+< zshca 
+< zshda 
+---
+> zqtda 
+40384a40383,40384
+> zsofa 
+> zspfa 
+40394c40394
+< zsofa 
+---
+> zsqfa 
+40408c40408
+< zspfa 
+---
+> zsraa 
+40469,40470c40469,40470
+< zsqfa 
+< zsraa 
+---
+> zsrda 
+> zsrea 
+40506c40506
+< zsrda 
+---
+> zssca 
+40517,40519d40516
+< zsrea 
+< nmada 
+< zssca 
+40521c40518
+< sgvba 
+---
+> nmada 
+40522a40520,40522
+> zswda 
+> sgvba 
+> zsxea 
+40555,40556d40554
+< zswda 
+< zsxea 
+40558d40555
+< mmtca 
+40559a40557,40559
+> ztafa 
+> mmtca 
+> ztcfa 
+40569c40569
+< ztafa 
+---
+> ztdda 
+40609,40610c40609,40610
+< ztcfa 
+< ztdda 
+---
+> ztdfa 
+> zteda 
+40657,40658c40657,40658
+< ztdfa 
+< zteda 
+---
+> ztfaa 
+> ztfda 
+40661c40661
+< ztfaa 
+---
+> zthba 
+40664c40664
+< ztfda 
+---
+> ztjaa 
+40669c40669
+< zthba 
+---
+> ztjca 
+40674c40674
+< ztjaa 
+---
+> ztkaa 
+40687,40689d40686
+< ztjca 
+< ztkaa 
+< fcaca 
+40691a40689,40691
+> fcaca 
+> ztnfa 
+> ztqaa 
+40711c40711
+< ztnfa 
+---
+> ztqba 
+41008d41007
+< zktda 
+41010a41010
+> zmrfa 
+41587d41586
+< xmuda 
+41588a41588
+> xonea 
+41605,41606d41604
+< xonea 
+< goyca 
+41608c41606
+< obmaa 
+---
+> goyca 
+41609a41608,41609
+> obmaa 
+> xtaaa 
+41676,41677d41675
+< xtaaa 
+< cnpfa 
+41678a41677,41678
+> cnpfa 
+> xwbaa 
+41738d41737
+< xwbaa 
+41740a41740
+> xyvda 
+41743d41742
+< xyvda 
+41746d41744
+< xedba 
+41747a41746
+> xedba 
+41749a41749
+> ybwca 
+41752c41752
+< ybwca 
+---
+> ycbda 
+41914d41913
+< ycbda 
+41916a41916
+> ydpfa 
+42000c42000
+< ydpfa 
+---
+> ydrda 
+42056c42056
+< ydrda 
+---
+> yewca 
+42059d42058
+< yewca 
+42063a42063
+> yhtda 
+42124c42124
+< yhtda 
+---
+> yieba 
+42174c42174
+< yieba 
+---
+> yjcea 
+42408c42408
+< yjcea 
+---
+> yjkda 
+42582d42581
+< yjkda 
+42583a42583
+> yjqea 
+42589d42588
+< yjqea 
+42590a42590
+> yjyba 
+42635d42634
+< yjyba 
+42636a42636
+> ykcea 
+42658c42658
+< ykcea 
+---
+> ykoca 
+42677,42678d42676
+< ykoca 
+< gvoda 
+42679a42678
+> gvoda 
+42680a42680
+> ykzda 
+42683,42684d42682
+< ykzda 
+< xzmba 
+42685a42684
+> xzmba 
+42687a42687
+> ylwea 
+42690,42691d42689
+< ylwea 
+< jxiea 
+42692a42691,42692
+> jxiea 
+> ymcaa 
+42714d42713
+< ymcaa 
+42720a42720
+> yopfa 
+42743c42743
+< yopfa 
+---
+> ypnfa 
+42746d42745
+< ypnfa 
+42747a42747
+> yqeaa 
+42752c42752
+< yqeaa 
+---
+> yqida 
+42757c42757
+< yqida 
+---
+> yrjda 
+42767c42767
+< yrjda 
+---
+> yrjfa 
+42770d42769
+< yrjfa 
+42772a42772
+> ysyba 
+43054,43055c43054,43055
+< ysuca 
+< ysyba 
+---
+> ytwea 
+> yuada 
+43337c43337
+< ytwca 
+---
+> yumfa 
+43513,43514c43513,43514
+< ytwea 
+< yuada 
+---
+> yvaea 
+> yvbaa 
+43517c43517
+< yumfa 
+---
+> yvmea 
+43536c43536
+< yvaea 
+---
+> yvnba 
+43539,43540c43539,43540
+< yvbaa 
+< yvmea 
+---
+> ywbda 
+> ywkea 
+43548c43548
+< yvnba 
+---
+> ywrda 
+43550c43550
+< ywbda 
+---
+> ywsaa 
+43563c43563
+< ywkea 
+---
+> ywxba 
+43604c43604
+< ywrda 
+---
+> ywxca 
+43606c43606
+< ywsaa 
+---
+> yxada 
+43609,43610c43609,43610
+< ywxba 
+< ywxca 
+---
+> yxafa 
+> yxgca 
+43615c43615
+< yxada 
+---
+> yygea 
+43619,43623d43618
+< yxafa 
+< cuvca 
+< yxgca zyrca 
+< yygea 
+< hskfa 
+43625,43626c43620,43621
+< ayuaa 
+< yzhba 
+---
+> cuvca 
+> yzhba zyrca 
+43627a43623
+> hskfa 
+43628a43625,43628
+> ayuaa 
+> zagba 
+> zajba 
+> zalca 
+43634,43637d43633
+< zagba 
+< jlhfa 
+< zajba 
+< zalca 
+43638a43635
+> jlhfa 
+43639a43637,43639
+> zazca 
+> zcefa 
+> zckca 
+43645,43648d43644
+< zazca 
+< zcefa 
+< zckca 
+< mjjca 
+43651a43648,43651
+> mjjca 
+> zdqba 
+> zegda 
+> zekda 
+43671c43671
+< zdqba 
+---
+> zeuea 
+43698,43699c43698,43699
+< zegda 
+< zekda 
+---
+> zexda 
+> zeyda 
+43842,43843c43842,43843
+< yweca 
+< zeuea 
+---
+> zfjda 
+> zgcfa 
+43883c43883
+< zexda 
+---
+> zgjea 
+43886c43886
+< zeyda 
+---
+> zgoaa 
+43898c43898
+< zfjda 
+---
+> zgpca 
+43906c43906
+< zflda 
+---
+> zhbfa 
+43910c43910
+< zgcfa 
+---
+> zhnca 
+43916c43916
+< zgjea 
+---
+> zhpba 
+43920c43920
+< zgoaa 
+---
+> zhsca 
+43924c43924
+< zgpca 
+---
+> zhwca 
+43926c43926
+< zhbfa 
+---
+> zhwda 
+43958c43958
+< zhnca 
+---
+> ziuba 
+43963,43964c43963,43964
+< zhpba 
+< zhsca 
+---
+> zjqea 
+> zjwda 
+43968c43968
+< zhwca 
+---
+> zjxba 
+44093c44093
+< zhwda 
+---
+> zkmea 
+44095c44095
+< ziuba 
+---
+> zkmfa 
+44097c44097
+< zjqea 
+---
+> zknca 
+44124c44124
+< zjwda 
+---
+> zkpba 
+44178c44178
+< zjxba 
+---
+> zktda 
+44273c44273
+< zkmea 
+---
+> zkxba 
+44515,44517c44515,44517
+< zkmfa 
+< zknca 
+< zkpba 
+---
+> zlkca 
+> zlmba 
+> zlsaa 
+44526,44529d44525
+< zkxba 
+< zlkca 
+< zlmba 
+< zlsaa 
+44533a44530,44533
+> zmqfa 
+> zmsba 
+> zmwaa 
+> zmwda 
+44658,44660c44658,44660
+< zmqca 
+< zmqfa 
+< zmrfa 
+---
+> znaba 
+> znbda 
+> zneba 
+44687c44687
+< zmsba 
+---
+> znkba 
+44690c44690
+< zmwaa 
+---
+> znlaa 
+44696c44696
+< zmwda 
+---
+> znlca 
+44701,44702c44701,44702
+< znaba 
+< znbda 
+---
+> znoda 
+> znwea 
+44743,44744c44743,44744
+< zneba 
+< znkba 
+---
+> yweca 
+> zoiaa 
+44746,44748c44746,44748
+< znlaa 
+< znlca 
+< znlea 
+---
+> zokfa 
+> zopba 
+> zorfa 
+44750,44751c44750,44751
+< znoda 
+< znwea 
+---
+> zovda 
+> zpaaa 
+44766c44766
+< zobda 
+---
+> zpbea 
+44817c44817
+< zoiaa 
+---
+> zpgaa 
+44820c44820
+< zokfa 
+---
+> zpraa 
+45328c45328
+< yyvca 
+---
+> zajea 
+45333c45333
+< zajea 
+---
+> zefaa 
+45339c45339
+< zefaa 
+---
+> zesda 
+45349d45348
+< zesda 
+45350a45350
+> zfaea 
+45353d45352
+< zfaea 
+45355a45355
+> zkkca 
+45398c45398
+< zkkca 
+---
+> zklfa 
+45419c45419
+< zklfa 
+---
+> zmpba 
+45478c45478
+< zmpba 
+---
+> zodca 
+45497c45497
+< zodca 
+---
+> zpoca 
+45500,45501c45500,45501
+< zopba 
+< zorfa 
+---
+> zpwba 
+> zpxda 
+45508,45509c45508,45509
+< zovda 
+< zpaaa 
+---
+> zqbea 
+> zqcba 
+45520c45520
+< zpbea 
+---
+> zqeea 
+45527c45527
+< zpgaa 
+---
+> zqffa 
+45530c45530
+< zpoca 
+---
+> zqgba 
+45541c45541
+< zpraa 
+---
+> zqkfa 
+45572,45573c45572,45573
+< zpuaa 
+< zpwba 
+---
+> zqpca 
+> zqpea 
+45584,45587c45584,45587
+< zpxda 
+< zqbba 
+< zqbea 
+< zqcba 
+---
+> zqqca 
+> zquda 
+> zqxaa 
+> zqyea 
+45590c45590
+< zqeea 
+---
+> zqzda 
+45654c45654
+< zqffa 
+---
+> znlea 
+45657,45658c45657,45658
+< zqgba 
+< zqgda 
+---
+> zqbba 
+> zrdba 
+45660,45663c45660,45663
+< zqkfa 
+< zqpca 
+< zqpea 
+< zqqca 
+---
+> zreba 
+> zrfea 
+> zrgea 
+> zriea 
+45676,45680c45676,45680
+< zquda 
+< zqxaa 
+< zqyea 
+< zqzda 
+< zrdba 
+---
+> zrkda 
+> zrmea 
+> zrqea 
+> ytwca 
+> zrtda 
+45682,45683c45682,45683
+< zreba 
+< zrfea 
+---
+> zrzda 
+> zsaca 
+46042a46043
+> zflda 
+46044d46044
+< zmgda 
+46046a46047
+> zmgda 
+46048d46048
+< zoqfa 
+46050a46051
+> zoqfa 
+46052,46054c46053,46054
+< zrgea 
+< zrgfa 
+< zriea 
+---
+> zscfa 
+> zsdfa 
+46062,46063c46062,46063
+< zrlba 
+< zrmea 
+---
+> zsnba 
+> zspba 
+46069c46069
+< zrqea 
+---
+> zsqda 
+46073c46073
+< zrtda 
+---
+> zsuca 
+46078c46078
+< zrzda 
+---
+> zsuda 
+46080,46081c46080,46081
+< zsaca 
+< zscfa 
+---
+> zrlba 
+> zsxba 
+46087c46087
+< zsdfa 
+---
+> ztbda 
+46095,46097c46095,46097
+< zsnba zuaba 
+< zspba 
+< zsqda 
+---
+> zthfa zuaba 
+> ztmda 
+> ztoaa 
+46109c46109
+< zsuca 
+---
+> ztoca 
+46113c46113
+< zsuda 
+---
+> zobda 
+46120c46120
+< zsxba 
+---
+> ztpaa 
+46122c46122
+< ztbda 
+---
+> ztpda 
+46124c46124
+< zthfa 
+---
+> ztrca 
+46199c46199
+< ztmda 
+---
+> ztrea 
+46264c46264
+< ztoaa 
+---
+> ztsca 
+46272c46272
+< ztoca 
+---
+> zpuaa 
+46274,46277c46274,46277
+< ztpaa 
+< ztpda 
+< ztqaa 
+< ztqba 
+---
+> ztsea 
+> ztuba 
+> xmuda 
+> ztvba 
+46281,46282c46281,46282
+< ztrca 
+< ztrea 
+---
+> ztwca 
+> ztxca 
+46285c46285
+< ztsca 
+---
+> ztxda 
+46289c46289
+< ztsea 
+---
+> ztyca 
+46291c46291
+< ztuaa 
+---
+> ztzba 
+46325c46325
+< ztuba 
+---
+> yyvca 
+46328,46329c46328,46329
+< ztvba 
+< ztwca 
+---
+> zqgda 
+> zubda 
+46340c46340
+< ztxca 
+---
+> zubea 
+46344,46345c46344,46345
+< zpuea 
+< ztxda 
+---
+> zubfa 
+> zucea 
+46349,46351c46349,46351
+< ztyca 
+< ztzba 
+< zubda 
+---
+> ysuca 
+> zpuea 
+> zudea 
+46359c46359
+< zubea 
+---
+> zufea 
+46363c46363
+< zubfa 
+---
+> zugba 
+46378c46378
+< zucea zzbea 
+---
+> zuhca 
+46380c46380
+< zudea 
+---
+> zuhea 
+46424c46424
+< zufea 
+---
+> zujca 
+46574c46574
+< zugba 
+---
+> zulba 
+46577c46577
+< zuhca 
+---
+> zulca 
+46580c46580
+< zuhea 
+---
+> zumca 
+46585c46585
+< zujca 
+---
+> zunfa 
+46714c46714
+< polfa zulba 
+---
+> polfa 
+46777c46777
+< zulca 
+---
+> zuoca 
+47834c47834
+< yzzda 
+---
+> zacfa 
+47840c47840
+< zacfa 
+---
+> zahda 
+47843c47843
+< zahda 
+---
+> zakfa 
+47848d47847
+< zakfa 
+47850a47850
+> zctca 
+47900d47899
+< zctca 
+47903d47901
+< fdnda 
+47904a47903,47904
+> fdnda 
+> zfofa 
+47909d47908
+< zfofa 
+47911d47909
+< hkcea 
+47912a47911
+> hkcea 
+47914a47914
+> zjoba 
+48075,48076d48074
+< zjoba 
+< acgea 
+48077a48076
+> acgea 
+48079d48077
+< jloaa 
+48080a48079,48080
+> jloaa 
+> zliaa 
+48083c48083
+< zliaa 
+---
+> zmsca 
+48103c48103
+< zmaaa 
+---
+> zngea 
+48105c48105
+< zmsca 
+---
+> znzba 
+48112,48113d48111
+< zngea 
+< znzba 
+48115a48114,48115
+> zopfa 
+> zpaba 
+48119c48119
+< zopfa 
+---
+> zppfa 
+48173,48174c48173,48174
+< zpaba 
+< zppfa 
+---
+> zpxba 
+> zqcda 
+48182c48182
+< zpxba 
+---
+> zqdea 
+48185,48186c48185,48186
+< zqcda 
+< zqdea 
+---
+> zsafa 
+> zsdda 
+48195,48197c48195,48197
+< zqgca 
+< zrica 
+< zsafa 
+---
+> zsfea 
+> ztgda 
+> ztica 
+48199c48199
+< zsdda 
+---
+> ztmea 
+48271c48271
+< zsfea 
+---
+> ztqfa 
+48285,48286c48285,48286
+< ztgda 
+< ztica 
+---
+> zujba 
+> zukaa 
+48291c48291
+< ztmea 
+---
+> zunba 
+48363c48363
+< ztqfa 
+---
+> zuqca 
+48395c48395
+< zujba 
+---
+> zuqea 
+48403c48403
+< zukaa 
+---
+> zuraa 
+48408c48408
+< zumca 
+---
+> zusaa 
+48412,48413c48412,48413
+< zunba 
+< zunfa 
+---
+> zusba 
+> zutba 
+48504c48504
+< zuoca 
+---
+> zuuca 
+48508,48510c48508,48510
+< zuqca 
+< zuqea 
+< zuraa 
+---
+> zuuea 
+> zuzda 
+> zvaca 
+48513c48513
+< zusaa 
+---
+> zvada 
+48520c48520
+< zusba 
+---
+> zvcea 
+48573c48573
+< ztsaa 
+---
+> zrgfa 
+48576c48576
+< zutba 
+---
+> ztsaa 
+48578c48578
+< zuuca 
+---
+> zuvba 
+48586,48587c48586,48587
+< zuuea 
+< zuvba 
+---
+> zvcfa 
+> zvdda 
+49064c49064
+< xvjca 
+---
+> xvkea 
+49078,49079d49077
+< xvkea 
+< mknaa 
+49080a49079,49080
+> mknaa 
+> xxvca 
+49111c49111
+< xxvca 
+---
+> xycaa 
+49114d49113
+< xycaa 
+49115a49115
+> ymqca 
+49133,49134d49132
+< ymqca 
+< aseda 
+49135a49134,49135
+> aseda 
+> ypefa 
+49162d49161
+< ypefa 
+49166d49164
+< oyxca 
+49167a49166
+> oyxca 
+49171a49171
+> xvjca 
+49260d49259
+< zudda 
+49262a49262
+> zveea 
+49265c49265
+< zuwba 
+---
+> zvffa 
+49268c49268
+< zuzda 
+---
+> zvgca 
+49341c49341
+< zudca 
+---
+> zmqca 
+49344,49347c49344,49347
+< zvaca 
+< zvada 
+< zvcea 
+< zvcfa 
+---
+> zolda 
+> zudca 
+> zviaa 
+> zvifa 
+49350,49352c49350,49352
+< zvdda 
+< zveea 
+< zvffa 
+---
+> zuwba 
+> zvjba 
+> zvkea 
+49382,49383c49382,49383
+< zvgca 
+< zviaa 
+---
+> zvlca 
+> zudda 
+49386c49386
+< zvifa 
+---
+> zvmca 
+49389c49389
+< zvjba 
+---
+> zvnba 
+49405,49406c49405,49406
+< zvkea 
+< zvlca 
+---
+> zvnea 
+> zvpba 
+49412,49413c49412,49413
+< zvmca 
+< zvnba 
+---
+> yzzda 
+> zmaaa 
+49434c49434
+< zvnea 
+---
+> ztuaa 
+49442d49441
+< zvpba 
+49443a49443
+> zvrda 
+49448c49448
+< zvrda 
+---
+> zvtaa 
+49460c49460
+< zvtaa 
+---
+> zvtea 
+49485c49485
+< zvtea 
+---
+> zvuca 
+49524d49523
+< zvuca 
+49527a49527
+> zvwea 
+49658c49658
+< zvwea 
+---
+> zvzda 
+49661d49660
+< zvzda 
+49663d49661
+< wwwca 
+49664a49663,49664
+> wwwca 
+> zwcca 
+49675d49674
+< zwcca 
+49676a49676
+> zwfba 
+49684,49685d49683
+< zwfba 
+< hfeea 
+49686a49685,49686
+> hfeea 
+> zwgfa 
+49705c49705
+< zwgfa 
+---
+> zwkba 
+49708c49708
+< zwkba 
+---
+> zwkda 
+49711d49710
+< zwkda 
+49712a49712
+> zwmca 
+49722d49721
+< zwmca 
+49723a49723
+> zwnaa 
+49728d49727
+< zwnaa 
+49730a49730
+> zwoba 
+49753,49754d49752
+< zwoba 
+< lbzaa 
+49755a49754,49755
+> lbzaa 
+> zwraa 
+49760c49760
+< zwraa 
+---
+> zqgca 
+50061c50061
+< fxeba zylca 
+---
+> fxeba 
+50800a50801
+> zrica 
+50802d50802
+< zwxea 
+50829a50830
+> zwxea 
+50831d50831
+< zwzca 
+50834c50834
+< zxaaa 
+---
+> zwzca 
+50838c50838
+< zxada 
+---
+> zxaaa 
+50840c50840
+< zxcea 
+---
+> zxada 
+50865a50866
+> zxcea 
+50867d50867
+< zxdca 
+50877a50878
+> zxdca 
+50880d50880
+< zxffa 
+50890c50890
+< zxgea 
+---
+> zxffa 
+50893c50893
+< zxhaa 
+---
+> zxgea 
+50894a50895
+> zxhaa 
+50899d50899
+< zxkfa 
+51613c51613
+< mesca zxwaa 
+---
+> mesca 
+51689c51689
+< abica zzyba 
+---
+> abica 
+51774c51774
+< kkgaa zzjda 
+---
+> kkgaa 
+51881c51881
+< vxzaa zzpba 
+---
+> vxzaa 
+52039c52039
+< wrkea zzaea 
+---
+> wrkea 
+52287c52287
+< ccdfa yoffa 
+---
+> ccdfa 
+52325c52325
+< rbwea zzbfa 
+---
+> rbwea 
+52485c52485
+< yotba 
+---
+> yoffa 
+52487c52487
+< yplba 
+---
+> yotba 
+52504a52505
+> yplba 
+52508d52508
+< yvvca 
+52512c52512
+< yvzaa 
+---
+> yvvca 
+52514c52514
+< zauaa 
+---
+> yvzaa 
+52525c52525
+< nskda zyada 
+---
+> nskda 
+52621c52621
+< zbeea 
+---
+> zauaa 
+52622a52623
+> zbeea 
+52625d52625
+< zfkca 
+52694c52694
+< zflfa 
+---
+> zfkca 
+52730c52730
+< zgsba 
+---
+> zflfa 
+52754a52755
+> zgsba 
+52756d52756
+< zjbaa 
+52762a52763
+> zjbaa 
+52764d52764
+< zkeba 
+52770c52770
+< zlhda 
+---
+> zkeba 
+52778c52778
+< zlkea 
+---
+> zlhda 
+52784a52785
+> zlkea 
+52786d52786
+< zlxca 
+52788a52789
+> zlxca 
+52790d52790
+< znjda 
+52792c52792
+< znjfa 
+---
+> znjda 
+52799c52799
+< zoiea 
+---
+> znjfa 
+52804c52804
+< zpyba 
+---
+> zoiea 
+52977c52977
+< zqiea 
+---
+> zpyba 
+52981a52982
+> zqiea 
+52983d52983
+< zshfa 
+53004a53005
+> zshfa 
+53007d53007
+< ztpfa 
+53010c53010
+< zvgda 
+---
+> ztpfa 
+53012c53012
+< zvica 
+---
+> zvgda 
+53014c53014
+< zvrea 
+---
+> zvica 
+53016c53016
+< zweea 
+---
+> zvrea 
+53018a53019
+> zweea 
+53020d53020
+< zxiba 
+53022c53022
+< zxlea 
+---
+> zxiba 
+53032c53032
+< zxmba 
+---
+> zxkfa 
+53045c53045
+< zxnaa 
+---
+> zxlea 
+53061c53061
+< zxnca 
+---
+> zxmba 
+53063,53065c53063,53065
+< zxnda zzrea 
+< zxoca 
+< zxoea 
+---
+> zxnaa 
+> zxnca 
+> zxnda 
+53306c53306
+< pfpda zztea 
+---
+> pfpda 
+53656c53656
+< ksoea zyeda 
+---
+> ksoea 
+53672c53672
+< txzda zzcfa 
+---
+> txzda 
+54275c54275
+< izmda zioda 
+---
+> izmda 
+54342c54342
+< zkfaa 
+---
+> zioda 
+54348a54349
+> zkfaa 
+54350d54350
+< zngca 
+54352c54352
+< znpba 
+---
+> zngca 
+54365c54365
+< zokaa 
+---
+> znpba 
+54372c54372
+< zsbca 
+---
+> zokaa 
+54377c54377
+< kvnaa zyhca 
+---
+> kvnaa 
+54397c54397
+< zsmaa 
+---
+> zsbca 
+54402c54402
+< ztrba 
+---
+> zsmaa 
+54403a54404
+> ztrba 
+54405d54405
+< zvzaa 
+54422a54423
+> zvzaa 
+54424d54424
+< zxlba 
+54458c54458
+< zxofa 
+---
+> zxlba 
+54462,54463c54462,54463
+< zxpba 
+< zxpda 
+---
+> zxoca 
+> zxoea 
+54531,54532c54531,54532
+< zxqaa 
+< zxqca 
+---
+> zxofa 
+> zxpba 
+54537c54537
+< zxsaa 
+---
+> zxpda 
+54543c54543
+< zxsba 
+---
+> zxqaa 
+54548c54548
+< zxsca 
+---
+> zxqca 
+54664a54665,54668
+> zxsaa 
+> zxsba 
+> wfmaa 
+> zxsca 
+54667,54670d54670
+< wfmaa 
+< zxtea 
+< zxuaa 
+< zxwca 
+54683,54685c54683,54685
+< zxxaa 
+< zxxea 
+< zxyba 
+---
+> zxtea 
+> zxuaa 
+> zxwaa 
+54697c54697
+< zxyda 
+---
+> zxwca 
+54699c54699
+< zxzea 
+---
+> zxxaa 
+54704,54707c54704,54707
+< zyaaa 
+< zyaea 
+< zyafa 
+< zybca 
+---
+> zxxea 
+> zxyba 
+> zxyda 
+> zxzea 
+54709c54709
+< zycaa 
+---
+> zyaaa 
+54712c54712
+< zycca 
+---
+> zyada 
+54719,54721c54719,54721
+< zydfa 
+< zyeba 
+< zyfba 
+---
+> zyaea 
+> zyafa 
+> zybca 
+54725c54725
+< zyfea 
+---
+> zycaa 
+54732c54732
+< jfzaa zznfa 
+---
+> jfzaa 
+54734c54734
+< zyhba 
+---
+> zycca 
+54764c54764
+< zyhda 
+---
+> zydfa 
+54767c54767
+< zyiaa 
+---
+> zyeba 
+54769c54769
+< zyica 
+---
+> zyeda 
+54828c54828
+< zyjaa 
+---
+> zyfba 
+54832,54833c54832,54833
+< zyjca 
+< zykca 
+---
+> zyfea 
+> zyhba 
+55100c55100
+< vqcea zzbba 
+---
+> vqcea 
+55197,55198c55197,55198
+< zykea 
+< zymba 
+---
+> zyhca 
+> zyhda 
+55205,55207c55205,55207
+< zymda 
+< zymfa 
+< zynba 
+---
+> zyiaa 
+> zyica 
+> zyjaa 
+55264c55264
+< zyoba 
+---
+> zyjca 
+55268c55268
+< zyoda 
+---
+> zykca 
+55280c55280
+< zyofa 
+---
+> zykea 
+55401,55402c55401,55402
+< zypaa 
+< zypba 
+---
+> zylca 
+> zymba 
+55412c55412
+< ffpaa zzkea 
+---
+> ffpaa 
+55417,55418c55417,55418
+< zypea 
+< zyqaa 
+---
+> zymda 
+> zymfa 
+55442c55442
+< zyrba 
+---
+> zynba 
+55454c55454
+< zysba 
+---
+> zyoba 
+55484,55485c55484,55485
+< zysca 
+< zysda 
+---
+> zyoda 
+> zyofa 
+55487,55488c55487,55488
+< zysea 
+< zyvaa 
+---
+> zypaa 
+> zypba 
+55901c55901
+< kzmea wnwca 
+---
+> kzmea 
+55922c55922
+< wogaa 
+---
+> wnwca 
+55935c55935
+< wrnba 
+---
+> wogaa 
+55937a55938
+> wrnba 
+55941d55941
+< xlcca 
+55944c55944
+< xoafa 
+---
+> xlcca 
+55945a55946
+> xoafa 
+55947d55947
+< xtlda 
+55953c55953
+< xulfa 
+---
+> xtlda 
+55957c55957
+< xwlca 
+---
+> xulfa 
+55987c55987
+< xwsca 
+---
+> xwlca 
+55990a55991
+> xwsca 
+55993d55993
+< yajda 
+55995a55996
+> yajda 
+55998d55998
+< yfkba 
+56006c56006
+< yfmaa 
+---
+> yfkba 
+56016a56017
+> yfmaa 
+56019d56019
+< yiofa 
+56188c56188
+< yiwba 
+---
+> yiofa 
+56201c56201
+< ynoaa 
+---
+> yiwba 
+56211c56211
+< yqbba 
+---
+> ynoaa 
+56222c56222
+< yrfca 
+---
+> yqbba 
+56231c56231
+< yrkaa 
+---
+> yrfca 
+56232a56233
+> yrkaa 
+56234d56234
+< yvdfa 
+56243c56243
+< yvnca 
+---
+> yvdfa 
+56244a56245
+> yvnca 
+56250d56250
+< zelfa 
+56277c56277
+< zgqca 
+---
+> zelfa 
+56280c56280
+< zinda 
+---
+> zgqca 
+56283c56283
+< zirfa 
+---
+> zinda 
+56286a56287
+> zirfa 
+56290d56290
+< zmeba 
+56304c56304
+< zoqba 
+---
+> zmeba 
+56340c56340
+< zozca 
+---
+> zoqba 
+56350a56351
+> zozca 
+56354d56354
+< zvnfa 
+56356c56356
+< zyvda 
+---
+> zvnfa 
+56358c56358
+< zywda 
+---
+> zypea 
+56360c56360
+< zywea 
+---
+> zyqaa 
+56387c56387
+< zyxca 
+---
+> zyrba 
+56390c56390
+< zyxda 
+---
+> zysba 
+56394c56394
+< zyyca 
+---
+> zysca 
+56396c56396
+< zyzea 
+---
+> zysda 
+56485c56485
+< zzaca 
+---
+> zysea 
+56487c56487
+< zzbda 
+---
+> zyvaa 
+56489c56489
+< zzdba 
+---
+> zyvda 
+56493c56493
+< zzeaa 
+---
+> zywda 
+56496c56496
+< zzeda 
+---
+> zywea 
+56509c56509
+< zzfba 
+---
+> zyxca 
+56519,56521c56519,56521
+< zzfda 
+< zzhaa 
+< zzhba 
+---
+> zyxda 
+> zyyca 
+> zyzea 
+56525c56525
+< zzhda 
+---
+> zzaca 
+56530c56530
+< zzhea 
+---
+> zzaea 
+56538,56541c56538,56541
+< zzhfa 
+< zziaa 
+< zziea 
+< zzjca 
+---
+> zzbba 
+> zzbda 
+> zzbea 
+> zzbfa 
+56688c56688
+< zzlaa 
+---
+> zzcfa 
+56691,56693c56691,56693
+< zzlfa 
+< zzmca 
+< zzmda 
+---
+> zzdba 
+> zzeaa 
+> zzeda 
+56698c56698
+< zzmea 
+---
+> zzfba 
+57781c57781
+< zzoca 
+---
+> zzfda 
+57783c57783
+< zzoda 
+---
+> zzhaa 
+58843,58844c58843,58844
+< zzoea 
+< zzpea 
+---
+> zzhba 
+> zzhda 
+58851c58851
+< zzqca 
+---
+> zzhea 
+58860,58862c58860,58862
+< zzrda 
+< zzsaa 
+< zzsba 
+---
+> zzhfa 
+> zziaa 
+> zziea 
+58864c58864
+< zzvba 
+---
+> zzjca 
+58870c58870
+< zzvca 
+---
+> zzjda 
+58883c58883
+< zzwaa 
+---
+> zzkea 
+58910,58911c58910,58911
+< zzwda 
+< zzwea 
+---
+> zzlaa 
+> zzlfa 
+58929c58929
+< zzxba 
+---
+> zzmca 
+58932,58933c58932,58933
+< zzxda 
+< zzxea 
+---
+> zzmda 
+> zzmea 
+58935,58939c58935,58939
+< zzzca 
+< 
+< 
+< 
+< 
+---
+> zznfa 
+> zzoca 
+> zzoda 
+> zzoea 
+> zzpba 
+58942c58942
+< 
+---
+> zzpea 
+58960c58960
+< 
+---
+> zzqca 
+58986c58986
+< 
+---
+> zzrda 
+58989c58989
+< 
+---
+> zzrea 
+58998,58999c58998,58999
+< 
+< 
+---
+> zzsaa 
+> zzsba 
+59001c59001
+< 
+---
+> zztea 
+59005c59005
+< 
+---
+> zzvba 
+59015c59015
+< 
+---
+> zzvca 
+59198c59198
+< 
+---
+> zzwaa 
+59201c59201
+< 
+---
+> zzwda 
+59215,59217c59215,59217
+< 
+< 
+< 
+---
+> zzwea 
+> zzxba 
+> zzxda 
+59219c59219
+< 
+---
+> zzxea 
+59228,59229c59228,59229
+< 
+< 
+---
+> zzyba 
+> zzzca 
+73165d73164
+< zpdaa 
+73167a73167
+> zpkfa 
+73173c73173
+< zpkfa 
+---
+> zpqea 
+73300d73299
+< zpqea 
+73304a73304
+> zpxca 
+73311d73310
+< zpxca 
+73313a73313
+> zqfda 
+73316d73315
+< zqfda 
+73322a73322
+> zqxca 
+73386c73386
+< zqxca 
+---
+> zraaa 
+73685c73685
+< zraaa 
+---
+> zreda 
+73703c73703
+< zreda 
+---
+> zrfba 
+73706d73705
+< zrfba 
+73707a73707
+> zrlfa 
+73721,73722d73720
+< zrlfa 
+< essda 
+73723a73722,73723
+> essda 
+> zrnaa 
+73737d73736
+< zrnaa 
+73738a73738
+> zruca 
+73755c73755
+< zruca 
+---
+> zrxaa 
+73827c73827
+< zrxaa 
+---
+> zsbba 
+73853c73853
+< zsbba 
+---
+> zsdaa 
+73865c73865
+< zsdaa 
+---
+> zsgba 
+73868c73868
+< zsgba 
+---
+> zsjca 
+73919d73918
+< zsjca 
+73921a73921
+> zssea 
+73938c73938
+< zssea 
+---
+> zsvaa 
+74010c74010
+< zsvaa 
+---
+> zsvea 
+74018d74017
+< zsvea 
+74021a74021
+> ztdea 
+74040d74039
+< ztdea 
+74041a74041
+> ztlca 
+74046d74045
+< ztlca 
+74050a74050
+> zucaa 
+74071c74071
+< zucaa 
+---
+> zpdaa 
+77378d77377
+< zblfa 
+77381a77381
+> zdvaa 
+77675c77675
+< zcaba 
+---
+> zblfa 
+77691c77691
+< zcsca 
+---
+> zcaba 
+77965a77966
+> zcsca 
+77967d77967
+< zdbda 
+77968a77969
+> zdbda 
+77970d77970
+< zdvaa 
+78343,78344d78342
+< zebca 
+< gghba 
+78345a78344
+> gghba 
+78346a78346
+> zhmaa 
+78362d78361
+< zhmaa 
+78363a78363
+> zebca 
+78409c78409
+< ziraa 
+---
+> zisca 
+78413c78413
+< zisca 
+---
+> zjida 
+78423c78423
+< zjida 
+---
+> ziraa 
+78437c78437
+< zkhca zocfa 
+---
+> zkhca 
+79207c79207
+< zolaa 
+---
+> zocfa 
+79210a79211
+> zolaa 
+79212d79212
+< zowaa 
+79219c79219
+< zoxba 
+---
+> zowaa 
+79226c79226
+< zpkaa 
+---
+> zoxba 
+79228a79229
+> zpkaa 
+79230d79230
+< zqiba 
+79232c79232
+< zqkca 
+---
+> zqiba 
+79238c79238
+< zqkea 
+---
+> zqkca 
+79240c79240
+< zraba 
+---
+> zqkea 
+79245c79245
+< zrlaa 
+---
+> zraba 
+79365a79366
+> zrlaa 
+79367d79367
+< zsgca 
+79371c79371
+< zsmea 
+---
+> zsgca 
+79388c79388
+< zsyda 
+---
+> zsmea 
+79451c79451
+< ztaca 
+---
+> zsyda 
+79526c79526
+< ztjea 
+---
+> ztaca 
+79539a79540
+> ztjea 
+79543d79543
+< zuefa 
+79552c79552
+< zusda 
+---
+> zuefa 
+79574c79574
+< zvbfa 
+---
+> zusda 
+79586a79587
+> zvbfa 
+79588d79588
+< zvpea 
+79590c79590
+< zvraa 
+---
+> zvpea 
+79592c79592
+< zwbca 
+---
+> zvraa 
+79594c79594
+< zwefa 
+---
+> zwbca 
+79598c79598
+< zwfca 
+---
+> zwefa 
+79744c79744
+< zwgba 
+---
+> zwfca 
+79758a79759
+> zwgba 
+79760d79760
+< zwofa 
+79763c79763
+< zwpda 
+---
+> zwofa 
+79776c79776
+< zwpea 
+---
+> zwpda 
+79778c79778
+< zxaea 
+---
+> zwpea 
+79789a79790
+> zxaea 
+79791d79791
+< zxeba 
+79801a79802
+> zxeba 
+79805d79805
+< zxtca 
+79807c79807
+< zxuba 
+---
+> zxtca 
+79860c79860
+< zxvca 
+---
+> zxuba 
+79885c79885
+< zxwba 
+---
+> zxvca 
+79887c79887
+< zxyca 
+---
+> zxwba 
+79894c79894
+< zyaba 
+---
+> zxyca 
+80042c80042
+< zycea 
+---
+> zyaba 
+80101c80101
+< zycfa 
+---
+> zycea 
+80105c80105
+< zydaa 
+---
+> zycfa 
+80110c80110
+< zyfda 
+---
+> zydaa 
+80114c80114
+< zyida 
+---
+> zyfda 
+80170c80170
+< zyjda 
+---
+> zyida 
+80172a80173
+> zyjda 
+80174d80174
+< zyjfa 
+80300c80300
+< zylaa 
+---
+> zyjfa 
+80351c80351
+< zynfa 
+---
+> zylaa 
+80352a80353
+> zynfa 
+80355d80355
+< zyqea 
+80356a80357
+> zyqea 
+80358d80358
+< zysaa 
+80377c80377
+< zytca 
+---
+> zysaa 
+80398a80399
+> zytca 
+80403d80403
+< zyzda 
+80413c80413
+< zzgda 
+---
+> zyzda 
+80415a80416
+> zzgda 
+80418d80418
+< zzkaa 
+80443a80444
+> zzkaa 
+80447d80447
+< zzpfa 
+80481a80482
+> zzpfa 
+80483d80483
+< zzqba 
+80487a80488
+> zzqba 
+80492d80492
+< 
+81806c81806
+< twica 
+---
+> txpba 
+81814d81813
+< txpba 
+81817d81815
+< pfdda 
+81818a81817
+> pfdda 
+81821d81819
+< qzbea 
+81822a81821
+> qzbea 
+81827a81827
+> yhvca 
+81836c81836
+< yhvca 
+---
+> yiaba 
+81842c81842
+< yiaba 
+---
+> yitca 
+81846c81846
+< yitca 
+---
+> yktca 
+81887c81887
+< yktca 
+---
+> ylnea 
+81936,81937d81935
+< ylnea 
+< kowaa 
+81938a81937,81938
+> kowaa 
+> ymaaa 
+81948c81948
+< ymaaa 
+---
+> ymcea 
+81951c81951
+< ymcea 
+---
+> ynjfa 
+82010,82011d82009
+< ynjaa 
+< ynjfa 
+82014d82011
+< oqefa 
+82016a82014,82016
+> oqefa 
+> yrqda 
+> ysdba 
+82018c82018
+< wbxea 
+---
+> ysdda 
+82020c82020
+< yrqda 
+---
+> twica 
+82023,82024c82023,82024
+< ysdba 
+< ysdda 
+---
+> wbxea 
+> yskca 
+82125c82125
+< ypgfa 
+---
+> ynjaa 
+82269c82269
+< yskca 
+---
+> ypgfa 
+83490,83491d83489
+< znkaa 
+< nqqca 
+83492a83491
+> nqqca 
+83493a83493
+> zoyca 
+83580c83580
+< zoyca 
+---
+> zpdca 
+83646d83645
+< zpdca 
+83647a83647
+> zpgda 
+83661d83660
+< zpgda 
+83662a83662
+> zqeaa 
+83770c83770
+< zqeaa 
+---
+> zqefa 
+83774c83774
+< zqefa 
+---
+> zqlfa 
+83777c83777
+< zqlfa 
+---
+> zrhba 
+83883c83883
+< zrhba 
+---
+> znkaa 
+86085d86084
+< xisea 
+86090a86090
+> ydtea 
+86102c86102
+< xnkba 
+---
+> yhyba 
+86153c86153
+< ydtea 
+---
+> xisea 
+86155c86155
+< yegba 
+---
+> xnkba 
+86157c86157
+< ygzea 
+---
+> yegba 
+86165c86165
+< yhyba 
+---
+> ygzea 
+87100,87101d87099
+< ypqda 
+< ksrda 
+87102a87101
+> ksrda 
+87107a87107
+> yufca 
+87580a87581
+> ypqda 
+87582d87582
+< yrlaa 
+87584c87584
+< yrraa 
+---
+> yrlaa 
+87586c87586
+< ystca 
+---
+> yrraa 
+87605c87605
+< ytcea 
+---
+> ystca 
+87770a87771
+> ytcea 
+87773d87773
+< yufca 
+87832d87831
+< yzfba 
+87834a87834
+> zbeda 
+87847c87847
+< zbeda 
+---
+> zbrfa 
+87887c87887
+< zbrfa 
+---
+> zbxaa 
+87914d87913
+< zbxaa 
+87916d87914
+< kmzba 
+87918c87916
+< caeca 
+---
+> kmzba 
+87919a87918
+> caeca 
+87921d87919
+< cyeea 
+87922a87921
+> cyeea 
+87924a87924
+> yzfba 
+88778c88778
+< zmhda 
+---
+> zmifa 
+88784d88783
+< zmifa 
+88785a88785
+> zmzda 
+88788,88789d88787
+< zmzda 
+< qukba 
+88791c88789
+< kjgca 
+---
+> qukba 
+88792a88791
+> kjgca 
+88796a88796
+> zomba 
+88946,88947d88945
+< zomba 
+< alzba 
+88948a88947,88948
+> alzba 
+> zooea 
+89032c89032
+< jznda zooea 
+---
+> jznda 
+89582,89583d89581
+< wpqda 
+< tbqda 
+89584a89583,89584
+> tbqda 
+> xcbfa 
+89613c89613
+< xcbfa 
+---
+> xfxca 
+89616,89617d89615
+< xfxca 
+< pqgca 
+89618a89617,89618
+> pqgca 
+> xmrfa 
+89688d89687
+< xmrfa 
+89689a89689
+> xpxca 
+89693c89693
+< xpxca 
+---
+> xrdea 
+89696c89696
+< xrdea 
+---
+> xtcea 
+89707d89706
+< xtcea 
+89711d89709
+< qhaca 
+89712a89711,89712
+> qhaca 
+> wpqda 
+89731c89731
+< yrcca 
+---
+> yuoca 
+89830d89829
+< yuoca 
+89835a89835
+> yzhca 
+89840c89840
+< yyjca 
+---
+> yzuca 
+89867c89867
+< yzhca 
+---
+> zarfa 
+89914d89913
+< qfpfa 
+89915a89915
+> rtmfa 
+89920,89921d89919
+< rtmfa 
+< kbida 
+89923c89921
+< rbkaa 
+---
+> kbida 
+89924a89923
+> rbkaa 
+89927d89925
+< knbda 
+89928a89927
+> knbda 
+89929a89929
+> ttjfa 
+89935d89934
+< ttjfa 
+89938d89936
+< ghica 
+89939a89938
+> ghica 
+89940a89940
+> xmica 
+89943d89942
+< xmica 
+89945d89943
+< xhyca 
+89946a89945,89946
+> xhyca 
+> xznda 
+89951c89951
+< xznda 
+---
+> yqtba 
+89955,89958d89954
+< yqtba 
+< yzuca 
+< zarfa 
+< ceyaa 
+89960a89957,89960
+> zfqaa 
+> ceyaa 
+> zfzea 
+> zgaca 
+89964c89964
+< yymea 
+---
+> qfpfa 
+90044c90044
+< zfqaa 
+---
+> yymea 
+90051c90051
+< zfzea 
+---
+> yyjca 
+90068c90068
+< yssca 
+---
+> zhdba 
+90108a90109,90110
+> yrcca 
+> yssca 
+90110,90111d90111
+< zgaca 
+< zhdba 
+90195a90196
+> zmhda 
+90197d90197
+< zmkea 
+90201a90202
+> zmkea 
+90203d90203
+< zmsaa 
+90229c90229
+< zoefa 
+---
+> zmsaa 
+90655d90654
+< yxkba 
+90658a90658
+> yxkba 
+90816c90816
+< nnlca 
+---
+> nnlca zoefa 
+91328d91327
+< zojfa 
+91329a91329
+> zosda 
+91334d91333
+< zosda 
+91335a91335
+> zpeaa 
+91344c91344
+< zpeaa 
+---
+> zpffa 
+91357c91357
+< zpffa 
+---
+> zphba 
+91365d91364
+< zphba 
+91367d91365
+< bedda 
+91368a91367,91368
+> bedda 
+> zptaa 
+91417d91416
+< zptaa 
+91418a91418
+> zqafa 
+91468c91468
+< zqafa 
+---
+> zqbaa 
+91473c91473
+< zqbaa 
+---
+> zqbda 
+91502c91502
+< zqbda 
+---
+> zqdda 
+91507d91506
+< zqdda 
+91508a91508
+> zqfba 
+91525,91526d91524
+< zqfba 
+< jeyea 
+91527a91526,91527
+> jeyea 
+> zqjba 
+91530d91529
+< zqjba 
+91533d91531
+< kquca 
+91534a91533
+> kquca 
+91536d91534
+< hhaba 
+91537a91536
+> hhaba 
+91540a91540
+> zsiba 
+91543c91543
+< zseaa 
+---
+> zojfa 
+91545,91546d91544
+< zsiba 
+< boaaa 
+91547a91546
+> boaaa 
+91548a91548
+> zspca 
+92000,92001d91999
+< zspca 
+< zsrba 
+92002a92001
+> zseaa 
+92004a92004
+> ztbfa 
+92008d92007
+< ztbfa 
+92009a92009
+> ztjda 
+92053c92053
+< ztjda 
+---
+> ztlba 
+92067c92067
+< ztlba 
+---
+> ztoba 
+92073c92073
+< ztoba 
+---
+> ztsba 
+92094d92093
+< ztsba 
+92095a92095
+> ztzea 
+92099d92098
+< ztzea 
+92102a92102
+> zukda 
+92124c92124
+< zukda 
+---
+> zsrba 
+96428,96429d96427
+< vlnfa 
+< nlnba 
+96431,96432c96429,96431
+< wtxda zulea 
+< xdxaa 
+---
+> nlnba 
+> wtxda 
+> xdxaa zulea 
+96434a96434
+> xvpca 
+96482d96481
+< xvpca 
+96484a96484
+> ypnca 
+96495c96495
+< ypnca 
+---
+> yqwda 
+96506c96506
+< yqrca 
+---
+> yrqba 
+96519,96521c96519
+< yqwda 
+< yrqba 
+< rciaa 
+---
+> yqrca 
+96523c96521
+< oroca 
+---
+> rciaa 
+96524a96523,96524
+> oroca 
+> yukea 
+96670c96670
+< yukea 
+---
+> yvuba 
+96842d96841
+< yvuba 
+96843a96843
+> yxfaa 
+96864d96863
+< yxfaa 
+96865a96865
+> yzifa 
+96870c96870
+< yzifa 
+---
+> yzsea 
+96879,96880d96878
+< yzsea 
+< yvxda 
+96881a96880,96881
+> zecda 
+> zfvea 
+96893c96893
+< wprca 
+---
+> vlnfa 
+96915c96915
+< zakca 
+---
+> wprca 
+96921c96921
+< zecda 
+---
+> yvxda 
+96923c96923
+< zfvea 
+---
+> zakca 
+97166c97166
+< zszea 
+---
+> ztbca 
+97169c97169
+< ztbca 
+---
+> zszea 
+98775d98774
+< wqbda 
+98777a98777
+> ykqca 
+98793,98794d98792
+< ykqca 
+< iudaa 
+98795a98794,98795
+> iudaa 
+> wqbda 
+99976c99976,99977
+< udjaa upeaa 
+---
+> udjaa 
+> upeaa 
+99978,99980c99979,99980
+< xhcba 
+< xmnca zfqba 
+< ydnba 
+---
+> xhcba zfqba 
+> xmnca 
+99981a99982
+> ydnba 
+99983d99983
+< ziaaa 
+99993c99993
+< xiaca yqyea 
+---
+> xiaca yqyea ziaaa 

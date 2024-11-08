@@ -1,32 +1,17 @@
 {
+<<<<<<< HEAD
+=======
   "C_Cpp_Runner.msvcBatchPath": "",
-  "files.associations": {
-    "new": "cpp",
-    "iosfwd": "cpp",
-    "iostream": "cpp",
-    "ostream": "cpp",
-    "regex": "cpp",
-    "sstream": "cpp",
-    "utility": "cpp",
-    "*.tcc": "cpp",
-    "tuple": "cpp",
-    "string": "cpp",
-    "string_view": "cpp",
-    "random": "cpp",
-    "cstdio": "cpp",
-    "limits": "cpp",
-    "algorithm": "cpp",
-    "queue": "cpp",
-    "stack": "cpp",
-    "array": "cpp",
-    "bitset": "cpp",
-    "initializer_list": "cpp"
-  },
+>>>>>>> Sharifi_data
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
   "C_Cpp_Runner.cStandard": "",
   "C_Cpp_Runner.cppStandard": "",
+<<<<<<< HEAD
+  "C_Cpp_Runner.msvcBatchPath": "",
+=======
+>>>>>>> Sharifi_data
   "C_Cpp_Runner.useMsvc": false,
   "C_Cpp_Runner.warnings": [
     "-Wall",
@@ -77,5 +62,13 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
+<<<<<<< HEAD
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "files.associations": {
+    "iostream": "cpp",
+    "string_view": "cpp"
+  }
+=======
   "C_Cpp_Runner.msvcSecureNoWarnings": false
+>>>>>>> Sharifi_data
 }
