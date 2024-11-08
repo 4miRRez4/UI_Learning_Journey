@@ -22,3 +22,27 @@
     }
   ]
 }
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/4.Stack_Queue",
+      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/4.Stack_Queue/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
