@@ -29,7 +29,7 @@ int min_distance(Node* a, Node* b){
     int d=0;
 
     int depth_diff = a->depth - b->depth;
-    d += depth_diff;
+    d += abs(depth_diff);
     if(depth_diff > 0)
         for(int i=0; i<abs(depth_diff); i++){
             a = a->father;
@@ -40,7 +40,7 @@ int min_distance(Node* a, Node* b){
         }
 
     while(a != b){
-        d++;
+        d+=2;
         a = a->father;
         b = b->father;
     }
