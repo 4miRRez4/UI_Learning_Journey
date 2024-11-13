@@ -1,41 +1,93 @@
 #include <iostream>
 using namespace std;
 
+const long long INT_MAX=1000000000000;
+const long long INT_MIN=-1000000000000;
 
-template<typename T>
 class BST{
 public:
     struct Node{
-        T data;
-        Node<T>* right;
-        Node<T>* left;
+        long long data;
+        Node* left;
+        Node* right;
 
-        Node(T d): data(d), right(nullptr), left(nullptr){}
+        Node(long long d): data(d), right(nullptr), left(nullptr){}
     };
 
-    Node<T>* root;
+    Node* root;
+    long long size;
 
-    BST(): root(nullptr){}
+    BST(): root(nullptr), size(0){}
 
-    void insert(Node* root, T val){
-        if(root == nullptr){
-            Node<T>* newNode = new Node(val);
+    Node* insert(Node* node, long long val){
+        size++;
+        if(node == nullptr){
+            Node* newNode = new Node(val);
+            if(this->root == nullptr)
+                this->root = newNode;
             return newNode;
         }
-        if(val < root->data)
-            root->left = insert(root->left, val);
-        else if(val > root->data)
-            root->right = insert(root->right, val);
+        if(val < node->data)
+            node->left = insert(node->left, val);
+        else if(val > node->data)
+            node->right = insert(node->right, val);
 
-        return root;
+        return node;
     }
 
-    
+    long long lower_bound(long long val) {
+        long long  res = INT_MIN;
+
+        Node* curr = root;
+        while(curr){
+            if(curr->data <= val){
+                res = curr->data;
+                curr = curr->right;
+            }else
+                curr = curr->left;
+        }
+
+        return res;
+    }
+
+
+    long long upper_bound(long long val) {
+        long long res = INT_MAX;
+
+        Node* curr = root;
+        while(curr){
+            if(curr->data >= val){
+                res = curr->data;
+                curr = curr->left;
+            }else{
+                curr = curr->right;
+            }
+        }
+
+        return res;
+    }
+
+    bool can_insert(long long x, long long k){
+        long long lb = lower_bound(x);
+        long long ub = upper_bound(x);
+
+        return (lb+k <= x && ub-k >= x);
+    }
 };
 
 
 int main(){
-
+    BST* bst = new BST();
+    long long q, k, x; cin >> q >> k;
+    for(long long i=0; i<q; i++){
+        cin >> x;
+        if(bst->can_insert(x, k)){
+            bst->insert(bst->root, x);
+            cout << "Permission Granted!" << endl;
+        }
+        else   
+            cout << "Permission Denied!" << endl;
+    }
 
     return 0;
 }
