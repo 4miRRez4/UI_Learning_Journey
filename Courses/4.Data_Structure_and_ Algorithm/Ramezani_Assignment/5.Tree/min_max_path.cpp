@@ -2,12 +2,12 @@
 #include <vector>
 using namespace std;
 
-const int MAX_SIZE = 10;
-vector<int> neighbors[MAX_SIZE];
+const int MAX_SIZE = 11;
+vector<long long> neighbors[MAX_SIZE];
 bool visited[MAX_SIZE] = {false};
-long long max_path=0, min_path=999999999;
+long long max_path=0, min_path=10000000000;
 
-void dfs(int node, string path=""){
+void dfs(long long node, string path=""){
     visited[node] = true;
 
     char r = node + '0';
@@ -15,7 +15,7 @@ void dfs(int node, string path=""){
 
     bool is_leaf = true;
     for(int i=0; i<neighbors[node].size(); i++){
-        int child = neighbors[node][i];
+        long long child = neighbors[node][i];
         if(!visited[child]){
             dfs(child, path);
             is_leaf=false;
@@ -23,7 +23,7 @@ void dfs(int node, string path=""){
     }
     
     if(is_leaf){
-        int inted_path = stoi(path);
+        long long inted_path = stoll(path);
         if(inted_path > max_path)
             max_path = inted_path;
         if(inted_path < min_path)
@@ -33,14 +33,15 @@ void dfs(int node, string path=""){
 }
 
 int main(){
-    int n, a, b; cin >> n;
+    int n; cin >> n;
+    long long a, b;
     for(int i=0; i<n ;i++){
         cin >> a >> b;
         neighbors[a].push_back(b);
         neighbors[b].push_back(a);
     }
 
-    int root; cin >> root;
+    long long root; cin >> root;
     dfs(root);
 
     cout << max_path-min_path << endl;
