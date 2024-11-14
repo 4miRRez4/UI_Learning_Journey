@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+const int INT_MAX=1000000000;
+const int INT_MIN=-1000000000;
 
 template<typename T>
 class BST{
@@ -87,6 +89,37 @@ public:
         return find(n->right, val);
     }
 
+    int upper_bound(int val) {
+        int  res = INT_MIN;
+
+        Node* curr = root;
+        while(curr){
+            if(curr->data <= val){
+                res = curr->data;
+                curr = curr->right;
+            }else
+                curr = curr->left;
+        }
+
+        return res;
+    }
+
+
+    int lower_bound(int val) {
+        int res = INT_MAX;
+
+        Node* curr = root;
+        while(curr){
+            if(curr->data >= val){
+                res = curr->data;
+                curr = curr->left;
+            }else{
+                curr = curr->right;
+            }
+        }
+
+        return res;
+    }
+
     ~BST(){ root = clear(root); }
 };
-//TODO: test and lowerBound, upperBound then 66666
