@@ -35,7 +35,7 @@ public:
         return node;
     }
 
-    long long lower_bound(long long val) {
+    long long upper_bound(long long val) {
         long long  res = INT_MIN;
 
         Node* curr = root;
@@ -51,7 +51,7 @@ public:
     }
 
 
-    long long upper_bound(long long val) {
+    long long lower_bound(long long val) {
         long long res = INT_MAX;
 
         Node* curr = root;
@@ -71,7 +71,7 @@ public:
         long long lb = lower_bound(x);
         long long ub = upper_bound(x);
 
-        return (lb+k <= x && ub-k >= x);
+        return (ub+k <= x && lb-k >= x);
     }
 };
 
