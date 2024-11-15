@@ -6,23 +6,23 @@ using namespace std;
 int main(){
     int w, h, q; cin >> w >> h >> q;
 
-    set<long long> vertical_cuts;
+    set<int> vertical_cuts;
     vertical_cuts.insert(0);
     vertical_cuts.insert(w);
-    set<long long> horizontal_cuts;
+    set<int> horizontal_cuts;
     horizontal_cuts.insert(0);
     horizontal_cuts.insert(h);
 
-    multiset<long long> vertical_lengths;
+    multiset<int> vertical_lengths;
     vertical_lengths.insert(w);
-    multiset<long long> horizontal_lengths;
+    multiset<int> horizontal_lengths;
     horizontal_lengths.insert(h);
 
     for(int i=0; i<q; i++){
         char side; cin >> side;
         int coordinate, newPiece, newPiece2; cin >> coordinate;
 
-        set<long long>::iterator lb, find;
+        set<int>::iterator lb, find;
         if(side == 'V'){
             lb = vertical_cuts.lower_bound(coordinate);
 
@@ -50,7 +50,7 @@ int main(){
             horizontal_cuts.insert(coordinate);
         }
 
-        long long maxS = (*(--vertical_lengths.end())) * (*(--horizontal_lengths.end()));
+        long long maxS = 1ll * (*(--vertical_lengths.end())) * (*(--horizontal_lengths.end()));
         cout << maxS << endl;
     }
 
