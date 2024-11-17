@@ -21,7 +21,8 @@
     "array": "cpp",
     "bitset": "cpp",
     "initializer_list": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "list": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/5.Tree",
-      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/4.Data_Structure_and_ Algorithm/Ramezani_Assignment/5.Tree/build/Debug/outDebug",
+      "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/3.Quera_advanced_algorithm_and_data_structure_course/5.Greedy_Algorithms",
+      "program": "/home/amirreza/Downloads/University/Learning_Journey/Courses/3.Quera_advanced_algorithm_and_data_structure_course/5.Greedy_Algorithms/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
