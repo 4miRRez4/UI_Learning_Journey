@@ -11,7 +11,7 @@ int main(){
     string stopped_stations = "";
     int station_cnt=0, location=0, ind=-1;
     while(ind < n-1 && location+k < l){
-        if(ind!=n-1 && (stations[ind+1] - location) > k){
+        if((stations[ind+1] - location) > k){
             station_cnt = -1;
             break;
         }
