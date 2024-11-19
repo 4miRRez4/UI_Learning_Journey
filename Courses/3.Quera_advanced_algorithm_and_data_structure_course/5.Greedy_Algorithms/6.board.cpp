@@ -7,10 +7,8 @@ int main() {
     int nums[n];
     for(int i=0; i<n; i++)
         cin >> nums[i];
-    
-    auto comp = [c](int a, int b) { return a-c > b-c;};
 
-    sort(nums, nums+n, comp);
+    sort(nums, nums+n, greater<int>());
 
     int d;
     for(int i=0; i<n; i++){
