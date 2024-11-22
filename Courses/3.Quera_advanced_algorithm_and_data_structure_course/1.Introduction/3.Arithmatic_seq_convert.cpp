@@ -1,4 +1,3 @@
-//converting given arithmatic sequence to another one with minimum steps
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -11,7 +10,6 @@ int main(){
     long long firstSeq[n];
     for(long long i=0; i<n; i++)
         cin >> firstSeq[i];
-    sort(firstSeq, firstSeq+n);
 
     long long cost, minCost=10000000;
     for(long long start = firstSeq[0] - (n-1)*k -1; start <= firstSeq[n-1] + 1; start++){
