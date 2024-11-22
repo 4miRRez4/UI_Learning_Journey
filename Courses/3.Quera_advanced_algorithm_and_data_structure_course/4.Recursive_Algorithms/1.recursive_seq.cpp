@@ -1,4 +1,3 @@
-//calculating a recursive function
 #include <iostream>
 using namespace std;
 
