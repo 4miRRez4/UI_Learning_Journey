@@ -1,4 +1,3 @@
-//finding the element of given array that we convert all elements to it with minimum cost
 #include <iostream>
 #include <vector>
 #include <algorithm>

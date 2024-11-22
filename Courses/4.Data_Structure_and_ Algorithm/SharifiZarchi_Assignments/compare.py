@@ -1,4 +1,3 @@
-%matplotlib inline
 from matplotlib.pyplot import *
 import timeit
 def get_time(f, input):
@@ -6,6 +5,7 @@ def get_time(f, input):
     f(input)
     stop = timeit.default_timer()
     return (stop - start) * 1000 * 1000 #microseconds
+
 def get_avg_time(f, input):
     res = 1 << 30 #inf
     s = 10
