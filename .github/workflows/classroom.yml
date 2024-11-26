@@ -1,0 +1,47 @@
+name: Autograding Tests
+on:
+  - push
+  - workflow_dispatch
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'  # Use appropriate Java version
+
+    - name: Compile the Java program
+      run: |
+        # Change to the src directory and compile the Java files
+        cd src
+        javac Main.java  # Compile Main.java (change this if your main file has a different name)
+
+    - name: Run the sum test
+      run: |
+        # Run the program with two inputs (1 and 2) from the src directory
+        cd src
+        result=$(java Main 1 2)  # Replace Main with the correct class name
+        echo "The sum is: $result"  # Log the result
+        
+        # Check if the result is correct
+        if [ "$result" == "3" ]; then
+          echo "Sum test passed!"
+        else
+          echo "Sum test failed!"
+          exit 1
+        fi
+
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      with:
+        runners: sum-test  # Use the result from the sum test
