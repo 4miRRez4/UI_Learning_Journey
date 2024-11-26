@@ -19,6 +19,8 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'  # Use appropriate Java version
+        distribution: 'oracle'
+        
 
     - name: Set up C++ environment (for C++ projects)
       run: sudo apt-get install g++  # Install C++ compiler
