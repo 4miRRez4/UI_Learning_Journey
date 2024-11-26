@@ -29,11 +29,13 @@ jobs:
         if [ -f src/Main.java ]; then
           cd src
           javac Main.java  # Compile Java code
-          result=$(java Main 1 2)  # Run Java program
-          echo "The sum is: $result"  # Log result
           
-          # Check if the result is correct
-          if [ "$result" == "3" ]; then
+          # Run Java program with the input: 1 and the expression "A=2+3"
+          result=$(echo "1 A=2+3" | java Main)
+          echo "Output: $result"  # Log the result
+          
+          # Check if the result matches the expected output "A=5"
+          if [ "$result" == "A=5" ]; then
             echo "Java sum test passed!"
           else
             echo "Java sum test failed!"
@@ -49,11 +51,13 @@ jobs:
         if [ -f src/main.cpp ]; then
           cd src
           g++ -o main main.cpp  # Compile C++ program
-          result=$(./main 1 2)  # Run C++ program
-          echo "The sum is: $result"  # Log result
           
-          # Check if the result is correct
-          if [ "$result" == "3" ]; then
+          # Run C++ program with the input: 1 and the expression "A=2+3"
+          result=$(echo "1 A=2+3" | ./main)
+          echo "Output: $result"  # Log the result
+          
+          # Check if the result matches the expected output "A=5"
+          if [ "$result" == "A=5" ]; then
             echo "C++ sum test passed!"
           else
             echo "C++ sum test failed!"
