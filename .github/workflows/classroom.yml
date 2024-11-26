@@ -14,34 +14,58 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
-    - name: Set up JDK
+
+    - name: Set up JDK (for Java projects)
       uses: actions/setup-java@v3
       with:
         java-version: '11'  # Use appropriate Java version
 
-    - name: Compile the Java program
-      run: |
-        # Change to the src directory and compile the Java files
-        cd src
-        javac Main.java  # Compile Main.java (change this if your main file has a different name)
+    - name: Set up C++ environment (for C++ projects)
+      run: sudo apt-get install g++  # Install C++ compiler
 
-    - name: Run the sum test
+    - name: Compile and run Java program if Main.java exists
+      id: java-test
       run: |
-        # Run the program with two inputs (1 and 2) from the src directory
-        cd src
-        result=$(java Main 1 2)  # Replace Main with the correct class name
-        echo "The sum is: $result"  # Log the result
-        
-        # Check if the result is correct
-        if [ "$result" == "3" ]; then
-          echo "Sum test passed!"
+        if [ -f src/Main.java ]; then
+          cd src
+          javac Main.java  # Compile Java code
+          result=$(java Main 1 2)  # Run Java program
+          echo "The sum is: $result"  # Log result
+          
+          # Check if the result is correct
+          if [ "$result" == "3" ]; then
+            echo "Java sum test passed!"
+          else
+            echo "Java sum test failed!"
+            exit 1
+          fi
         else
-          echo "Sum test failed!"
-          exit 1
+          echo "No Java program found, skipping Java test."
+        fi
+
+    - name: Compile and run C++ program if main.cpp exists
+      id: cpp-test
+      run: |
+        if [ -f src/main.cpp ]; then
+          cd src
+          g++ -o main main.cpp  # Compile C++ program
+          result=$(./main 1 2)  # Run C++ program
+          echo "The sum is: $result"  # Log result
+          
+          # Check if the result is correct
+          if [ "$result" == "3" ]; then
+            echo "C++ sum test passed!"
+          else
+            echo "C++ sum test failed!"
+            exit 1
+          fi
+        else
+          echo "No C++ program found, skipping C++ test."
         fi
 
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       with:
-        runners: sum-test  # Use the result from the sum test
+        runners: |
+          java-test  # Include the Java test results
+          cpp-test   # Include the C++ test results
