@@ -87,8 +87,3 @@ jobs:
         else
           echo "No C++ program found, skipping C++ tests."
         fi
-
-    - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
-      with:
-        runners: java-test,cpp-test
