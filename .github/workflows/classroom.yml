@@ -18,60 +18,79 @@ jobs:
     - name: Set up JDK (for Java projects)
       uses: actions/setup-java@v3
       with:
-        java-version: '11'  # Use appropriate Java version
+        java-version: '11'
         distribution: 'temurin'
-        
 
     - name: Set up C++ environment (for C++ projects)
-      run: sudo apt-get install g++  # Install C++ compiler
+      run: sudo apt-get install g++
 
-    - name: Compile and run Java program if Main.java exists
+    - name: Run Java tests
       id: java-test
       run: |
         if [ -f src/Main.java ]; then
           cd src
-          javac Main.java  # Compile Java code
-          
-          # Run Java program with the input: 1 and the expression "A=2+3"
-          result=$(echo "1\n1+1" | java Main)
-          echo "Output: $result"  # Log the result
-          
-          # Check if the result matches the expected output "A=5"
-          if [ "$result" == "2" ]; then
-            echo "Java sum test passed!"
+          javac Main.java
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(java Main < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "Java tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All Java tests passed!"
           else
-            echo "Java sum test failed!"
+            echo "Some Java tests failed!"
             exit 1
           fi
         else
-          echo "No Java program found, skipping Java test."
+          echo "No Java program found, skipping Java tests."
         fi
 
-    - name: Compile and run C++ program if main.cpp exists
+    - name: Run C++ tests
       id: cpp-test
       run: |
         if [ -f src/main.cpp ]; then
           cd src
-          g++ -o main main.cpp  # Compile C++ program
-          
-          # Run C++ program with the input: 1 and the expression "A=2+3"
-          result=$(echo "1\n1+1" | ./main)
-          echo "Output: $result"  # Log the result
-          
-          # Check if the result matches the expected output "A=5"
-          if [ "$result" == "2" ]; then
-            echo "C++ sum test passed!"
+          g++ -o main main.cpp
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(./main < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "C++ tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All C++ tests passed!"
           else
-            echo "C++ sum test failed!"
+            echo "Some C++ tests failed!"
             exit 1
           fi
         else
-          echo "No C++ program found, skipping C++ test."
+          echo "No C++ program found, skipping C++ tests."
         fi
 
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       with:
         runners: |
-          java-test  # Include the Java test results
-          cpp-test   # Include the C++ test results
+          java-test
+          cpp-test
