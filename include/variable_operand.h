@@ -10,10 +10,12 @@ private:
     bool initialized;
 
 public:
-    VariableOperand(const double val, const char n);
+    VariableOperand();
+    VariableOperand(const char n);
 
     double getValue() const override;
     char getName() const;
+    bool isInitialized() const;
 
     void setValue(double val);
 };

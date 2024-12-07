@@ -3,11 +3,11 @@
 
 #include "../include/operator.h"
 
-Operator::Operator(const char s, const OperatorType t, const int p) 
+Operator::Operator(const string s, const OperatorType t, const int p) 
                                     : symbol(s), type(t), priority(p) {};
                                 
 
-char Operator::getSymbol() const{
+string Operator::getSymbol() const{
     return this->symbol;
 }
 

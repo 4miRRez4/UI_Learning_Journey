@@ -8,7 +8,7 @@ private:
     double (*binFuncPtr)(double, double);
 
 public:
-    BinaryOperator(const char s, const int p, double (*func)(double, double));
+    BinaryOperator(const string s, const int p, double (*func)(double, double));
 
     double apply(double operand1, double operand2 = 0) const override;
 };

@@ -11,9 +11,11 @@ protected:
     OperandType type;
 
 public:
-    Operand(const double value, const OperandType type);
+    Operand(const OperandType type);
 
     OperandType getType();
+
+    virtual void setValue(double val) = 0;
 
     virtual double getValue() const = 0;
 };

@@ -4,10 +4,9 @@
 #include "../include/operand.h"
 #include "operand.h"
 
-Operand::Operand (double val, OperandType t) : value(val), type(t){}
+Operand::Operand (OperandType t) : type(t){}
 
 OperandType Operand::getType() { return this->type;}
-
 
 
 #endif
