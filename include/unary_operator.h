@@ -8,7 +8,7 @@ private:
     double (*unaryFuncPtr) (double);
 
 public:
-    UnaryOperator(const char s, const OperatorType t, const int p, double (*func)(double));
+    UnaryOperator(const string s, const int p, double (*func)(double));
 
     double apply(double operand1, double operand2=0) const override;
 };

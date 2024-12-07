@@ -1,18 +1,21 @@
 #ifndef OPERATOR_H
 #define OPERATOR_H
 
+#include <string>
+using namespace std;
+
 enum OperatorType { Binary, Unary, Paranthesis};
 
 class Operator{
 protected:
-    char symbol;
+    string symbol;
     OperatorType type;
     int priority;
 
 public:
-    Operator(const char s, const OperatorType t, const int p);
+    Operator(const string s, const OperatorType t, const int p);
 
-    char getSymbol() const;
+    string getSymbol() const;
     OperatorType getType() const;
     int getPriority() const;
 
