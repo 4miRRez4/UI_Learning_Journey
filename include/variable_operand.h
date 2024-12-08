@@ -2,7 +2,9 @@
 #define VARIABLE_OPERAND_H
 
 #include "operand.h"
-#include "calculator.h"
+#include <string>
+#include <vector>
+using namespace std;
 
 class VariableOperand : public Operand{
 private:
@@ -25,7 +27,9 @@ public:
     vector<char> getDependents();
     string getExpr() const;
 
+    void initialize();
     void setValue(double val);
+    void setExpr(string expr);
     void addDependent(char dependent);
     void incrementNumOfDependencies();
     void decrementNumOfDependencies();

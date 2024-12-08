@@ -3,6 +3,7 @@
 
 #include "operand.h"
 #include "variable_operand.h"
+#include "special_operand.h"
 #include "operator.h"
 #include "binary_operator.h"
 #include "unary_operator.h"
@@ -19,6 +20,7 @@ class Calculator{
 private:
     VariableOperand operands[MAX_OPERANDS];
     unordered_map<string, Operator*> operators;
+    unordered_map<string, SpecialOperand*> specialOperands;
 
     bool isNumber(const string part);
     bool isOperand(const string part);
@@ -30,16 +32,22 @@ private:
     vector<string> infixToPostfix(const vector<string> exprParts);
     double computePostfix(const vector<string> postfix);
 public:
+
     Calculator();
     ~Calculator();
 
-    void setVariableValue(string name, double value);
-    double getVariableValue(string name) const;
+    string getVariableExpr(char name) const;
+    double getVariableValue(char name) const;
 
+    void setVariableExpr(char name, string expr);
+    void computeAndSetVariableValue(char name, string expr);
     void addOperator(Operator* newOp);
-    double computeExpr(const string infixExpr);
+    void addSpecialOperand(SpecialOperand* newOp);
 
+    double computeExpr(const string infixExpr);
     void computeAllVariables();
+
+    void printAllVar() const;
 };
 
 

@@ -1,7 +1,8 @@
 #include "calculator.h"
 #include <math.h>
 #include <charconv>
-
+#include <iostream>
+#include <iomanip>
 
 
 Calculator::Calculator() {
@@ -25,6 +26,10 @@ Calculator::Calculator() {
 
         return fact;        
     }));
+
+    //add essential special operands
+    addSpecialOperand(new SpecialOperand("PI", 3.14159));
+    addSpecialOperand(new SpecialOperand("EN", 2.71828));
 }
 
 void Calculator::addOperator(Operator* newOp){
@@ -34,6 +39,13 @@ void Calculator::addOperator(Operator* newOp){
     operators[newOp->getSymbol()] = newOp;
 }
 
+void Calculator::addSpecialOperand(SpecialOperand* newOp){
+    if(specialOperands.count(newOp->getName())){
+        throw runtime_error("Special Operand already exists: " + newOp->getName());
+    }
+    specialOperands[newOp->getName()] = newOp;
+}
+    
 vector<string> Calculator::splitExpr(const string infixExpr){
     vector<string> parts;
     string part = "";
@@ -43,6 +55,15 @@ vector<string> Calculator::splitExpr(const string infixExpr){
 
         if((ch >= '0' && ch <= '9') || ch == '.'){
             part += ch;
+        }
+        else if (isalpha(ch)) {
+            part += toupper(ch);
+
+            // Check if the current part is a special operand
+            if (specialOperands.find(part) != specialOperands.end()) {
+                parts.push_back(part);
+                part = "";
+            }
         }
         else{
             if(part != ""){
@@ -71,10 +92,19 @@ bool Calculator::isNumber(const string part){
 }
 
 bool Calculator::isOperand(const string part){
-    if(part.size() == 1 && (part[0] >= 'A' && part[0] <= 'Z')){
+    if(part.empty()) 
+        return false;
+
+    //variable operand
+    if(part.size() == 1 && isalpha(part[0]))
         return true;
-    }
-    return !part.empty() && isNumber(part);
+
+    //special operand
+    if(specialOperands.find(part) != specialOperands.end())
+        return true;
+
+    //numeric operand
+    return isNumber(part);
 }
 
 bool Calculator::isOperator(const string part){
@@ -116,7 +146,7 @@ vector<string> Calculator::infixToPostfix(const vector<string> exprParts){
             operatorStack.pop(); //Pop the "("
         }
         else
-            throw runtime_error("Invalid part: " + part);
+            throw runtime_error("Invalid Input");
     }
 
     while(!operatorStack.isEmpty()){
@@ -135,16 +165,19 @@ double Calculator::computePostfix(const vector<string> postfix){
 
     for(string part: postfix){
         if(isOperand(part)){
-            if(isNumber(part))
+            if(isNumber(part)){
                 operandStack.push(stod(part));
-            else if(part[0] >= 'A' && part[0] <= 'Z'){
+            }else if(specialOperands.find(part) != specialOperands.end())
+                operandStack.push(specialOperands[part]->getValue());
+            else if(part.size() == 1 && isalpha(part[0])){
                 int ind = part[0] - 'A';
                 if(!operands[ind].isInitialized())
-                    throw runtime_error("Uninitialized variable: " + part[0]);
+                    throw runtime_error("Uninitialized variable(circular dependency): " + part[0]);
                 
                 operandStack.push(operands[ind].getValue());
             }
-
+            else
+                throw runtime_error("Invalid operand: " + part);
         }
         else if(isOperator(part)){
             Operator* operatorPtr = operators.at(part);
@@ -183,18 +216,37 @@ double Calculator::computePostfix(const vector<string> postfix){
     return operandStack.Top();
 }
 
-void Calculator::setVariableValue(string name, double value){
-    if(name.size() == 1 && name >= "A" && name <= "Z")
-        operands[name[0] - 'A'].setValue(value);
-    else
-        throw runtime_error("Invalid variable name: " + name);
+
+string Calculator::getVariableExpr(char name) const{
+    return operands[name - 'A'].getExpr();
 }
 
-double Calculator::getVariableValue(string name) const{
-    if(name.size() == 1 && name >= "A" && name <= "Z")
-        return operands[name[0] - 'A'].getValue();
-        
+double Calculator::getVariableValue(char name) const{
+    if(isalpha(name) && operands[name - 'A'].isInitialized())
+        return operands[name - 'A'].getValue();
+    
     throw runtime_error("Invalid variable name: " + name);
+}
+
+void Calculator::setVariableExpr(char name, string expr){
+    //set expression, initialize and update dependencies
+    int varInd = name - 'A';
+    operands[varInd].setExpr(expr);
+    operands[varInd].initialize();
+
+    //increment numOfDependencies of dependents of the variable
+    vector<string> parts = splitExpr(expr);
+    for (string part : parts) {
+        if (part.size() == 1 && isalpha(part[0]) && (specialOperands.find(part) == specialOperands.end())) { //variable operand
+            int dependencyInd = part[0] - 'A';
+            operands[dependencyInd].addDependent(name);
+            operands[varInd].incrementNumOfDependencies();
+        }
+    }
+}
+
+void Calculator::computeAndSetVariableValue(char name, string expr){
+    operands[toupper(name) - 'A'].setValue(computeExpr(expr));
 }
 
 double Calculator::computeExpr(const string infixExpr){
@@ -214,12 +266,13 @@ void Calculator::computeAllVariables(){
     }
 
     while(!toCompute.isEmpty()){
-        VariableOperand* frontVar = &operands[toCompute.Front() - 'A'];
+        int varInd = toCompute.Front() - 'A';
+        VariableOperand* var = &operands[varInd];
         toCompute.dequeue();
 
-        frontVar->setValue(computeExpr(frontVar->getExpr()));
+        var->setValue(computeExpr(var->getExpr()));
 
-        for(char dependent: frontVar->getDependents()){
+        for(char dependent: var->getDependents()){
             operands[dependent - 'A'].decrementNumOfDependencies();
             if(operands[dependent - 'A'].getNumOfDependencies() == 0)
                 toCompute.enqueue(dependent);
@@ -232,9 +285,26 @@ void Calculator::computeAllVariables(){
             throw runtime_error("Circular dependency");
 }
 
+void Calculator::printAllVar() const{
+    for(int i=0; i<MAX_OPERANDS; i++){
+        if(operands[i].isInitialized()){
+            char varName = 'A' + i;
+            double varVal = operands[i].getValue();
+
+            cout << varName << "=";
+
+            if(floor(varVal) == varVal)
+                cout << varVal;
+            else
+                cout << fixed << setprecision(4) << varVal;
+
+            cout << endl;
+        }
+    }
+}
+
 Calculator::~Calculator(){
     for(auto& pair: operators)
         delete pair.second;
 }
-
 
