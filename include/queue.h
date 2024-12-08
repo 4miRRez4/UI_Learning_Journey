@@ -16,7 +16,7 @@ public:
         arr = new T[capacity];
     }
 
-    ~Queue()~Queue(){
+    ~Queue(){
         delete[] arr;
     }
 
