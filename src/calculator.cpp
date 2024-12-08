@@ -203,6 +203,35 @@ double Calculator::computeExpr(const string infixExpr){
     return computePostfix(postfix);
 }
 
+
+void Calculator::computeAllVariables(){
+    Queue<char> toCompute;
+
+    //Add independent variables
+    for(int i=0; i<MAX_OPERANDS; i++){
+        if(operands[i].isInitialized() && operands[i].getNumOfDependencies() == 0)
+            toCompute.enqueue('A' + i);
+    }
+
+    while(!toCompute.isEmpty()){
+        VariableOperand* frontVar = &operands[toCompute.Front() - 'A'];
+        toCompute.dequeue();
+
+        frontVar->setValue(computeExpr(frontVar->getExpr()));
+
+        for(char dependent: frontVar->getDependents()){
+            operands[dependent - 'A'].decrementNumOfDependencies();
+            if(operands[dependent - 'A'].getNumOfDependencies() == 0)
+                toCompute.enqueue(dependent);
+        }
+    }
+
+    //check for circular dependency
+    for(int i=0; i<MAX_OPERANDS; i++)
+        if(operands[i].getNumOfDependencies() != 0)
+            throw runtime_error("Circular dependency");
+}
+
 Calculator::~Calculator(){
     for(auto& pair: operators)
         delete pair.second;

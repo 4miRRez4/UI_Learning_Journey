@@ -2,21 +2,34 @@
 #define VARIABLE_OPERAND_H
 
 #include "operand.h"
+#include "calculator.h"
 
 class VariableOperand : public Operand{
 private:
     char name;
+    string expression;
     bool initialized;
+
+
+    vector<char> dependents;
+    int numOfDependencies;
 
 public:
     VariableOperand();
-    VariableOperand(const char n);
+    VariableOperand(const char n, const std::string expr="", const int numOfDep=0);
 
     double getValue() const override;
     char getName() const;
     bool isInitialized() const;
+    int getNumOfDependencies() const;
+    vector<char> getDependents();
+    string getExpr() const;
 
     void setValue(double val);
+    void addDependent(char dependent);
+    void incrementNumOfDependencies();
+    void decrementNumOfDependencies();
+    
 };
 
 #endif 

@@ -7,6 +7,7 @@
 #include "binary_operator.h"
 #include "unary_operator.h"
 #include "stack.h"
+#include "queue.h"
 #include <unordered_map>
 #include <vector>
 #include <string>
@@ -37,6 +38,8 @@ public:
 
     void addOperator(Operator* newOp);
     double computeExpr(const string infixExpr);
+
+    void computeAllVariables();
 };
 
 
