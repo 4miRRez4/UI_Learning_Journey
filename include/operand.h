@@ -2,6 +2,7 @@
 #define OPERANDS_H
 
 #include <string>
+#include <stdexcept>
 
 enum OperandType{ Number, Variable, Special};
 

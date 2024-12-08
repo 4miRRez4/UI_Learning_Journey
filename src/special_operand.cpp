@@ -1,9 +1,6 @@
-#ifndef SPECIAL_OPERAND_CPP
-#define SPECIAL_OPERAND_CPP
+#include "special_operand.h"
 
-#include "../include/special_operand.h"
-
-SpecialOperand::SpecialOperand(const std::string n, const double val): Operand(val, OperandType::Special), name(n) {}
+SpecialOperand::SpecialOperand(const std::string n): Operand(OperandType::Special), name(n) {}
 
 double SpecialOperand::getValue() const {
     return this->Operand::value;
@@ -12,5 +9,3 @@ double SpecialOperand::getValue() const {
 std::string SpecialOperand::getName() const{
     return this->name;
 }
-
-#endif

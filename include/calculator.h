@@ -1,6 +1,7 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
+#include "operand.h"
 #include "variable_operand.h"
 #include "operator.h"
 #include "binary_operator.h"
@@ -8,6 +9,7 @@
 #include "stack.h"
 #include <unordered_map>
 #include <vector>
+#include <string>
 using namespace std;
 
 const int MAX_OPERANDS = 26;

@@ -1,7 +1,4 @@
-#ifndef CALCULATOR_CPP
-#define CALCULATOR_CPP
-
-#include "../include/calculator.h"
+#include "calculator.h"
 #include <math.h>
 #include <charconv>
 
@@ -43,15 +40,21 @@ vector<string> Calculator::splitExpr(const string infixExpr){
     for(char ch: infixExpr){
         if(ch == ' ')
             continue;
+
         if((ch >= '0' && ch <= '9') || ch == '.'){
             part += ch;
-        }else{
+        }
+        else{
             if(part != ""){
                 parts.push_back(part);
                 part = "";
             }
 
-            parts.push_back(string(1,toupper(ch)));
+            //negative number
+            if(ch == '-' && (parts.empty() || parts.back() == "(" || isOperator(parts.back())))
+                part += ch;
+            else
+                parts.push_back(string(1,toupper(ch)));
         }
     }
 
@@ -69,8 +72,7 @@ bool Calculator::isNumber(const string part){
 
 bool Calculator::isOperand(const string part){
     if(part.size() == 1 && (part[0] >= 'A' && part[0] <= 'Z')){
-        int ind = part[0] - 'A';
-        return operands[ind].isInitialized();
+        return true;
     }
     return !part.empty() && isNumber(part);
 }
@@ -98,7 +100,7 @@ vector<string> Calculator::infixToPostfix(const vector<string> exprParts){
             postfix[postfix_ind++] = part;
         }
         else if(isOperator(part)){
-            while(!operatorStack.isEmpty() && getSymbolPriority(operatorStack.Top()) > getSymbolPriority(part)){
+            while(!operatorStack.isEmpty() && operatorStack.Top() != "(" && getSymbolPriority(operatorStack.Top()) > getSymbolPriority(part)){
                 postfix[postfix_ind++] = operatorStack.Top();
                 operatorStack.pop();
             }
@@ -113,9 +115,14 @@ vector<string> Calculator::infixToPostfix(const vector<string> exprParts){
             }
             operatorStack.pop(); //Pop the "("
         }
+        else
+            throw runtime_error("Invalid part: " + part);
     }
 
     while(!operatorStack.isEmpty()){
+        if(operatorStack.Top() == "(")
+            throw runtime_error("Mismatch paranthesis");
+            
         postfix[postfix_ind++] = operatorStack.Top();
         operatorStack.pop();
     }
@@ -128,7 +135,16 @@ double Calculator::computePostfix(const vector<string> postfix){
 
     for(string part: postfix){
         if(isOperand(part)){
-            operandStack.push(stod(part));
+            if(isNumber(part))
+                operandStack.push(stod(part));
+            else if(part[0] >= 'A' && part[0] <= 'Z'){
+                int ind = part[0] - 'A';
+                if(!operands[ind].isInitialized())
+                    throw runtime_error("Uninitialized variable: " + part[0]);
+                
+                operandStack.push(operands[ind].getValue());
+            }
+
         }
         else if(isOperator(part)){
             Operator* operatorPtr = operators.at(part);
@@ -137,9 +153,9 @@ double Calculator::computePostfix(const vector<string> postfix){
                 if(operandStack.Size() < 2)
                     throw runtime_error("Not enough operands for binary operator: " + part);
 
-                double operand1 = operandStack.Top();
-                operandStack.pop();
                 double operand2 = operandStack.Top();
+                operandStack.pop();
+                double operand1 = operandStack.Top();
                 operandStack.pop();
 
                 result = operatorPtr->apply(operand1, operand2);
@@ -160,7 +176,7 @@ double Calculator::computePostfix(const vector<string> postfix){
         }
     }
 
-    if (operandStack.Size() != 1) {
+    if (operandStack.Size() > 1) {
         throw std::runtime_error("Error in computePostfix: stack size is incorrect");
     }
 
@@ -168,14 +184,14 @@ double Calculator::computePostfix(const vector<string> postfix){
 }
 
 void Calculator::setVariableValue(string name, double value){
-    if(name.size() == 1 && name > "A" && name < "A")
+    if(name.size() == 1 && name >= "A" && name <= "Z")
         operands[name[0] - 'A'].setValue(value);
     else
         throw runtime_error("Invalid variable name: " + name);
 }
 
 double Calculator::getVariableValue(string name) const{
-    if(name.size() == 1 && name > "A" && name < "A")
+    if(name.size() == 1 && name >= "A" && name <= "Z")
         return operands[name[0] - 'A'].getValue();
         
     throw runtime_error("Invalid variable name: " + name);
@@ -193,5 +209,3 @@ Calculator::~Calculator(){
 }
 
 
-
-#endif 

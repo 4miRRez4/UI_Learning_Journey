@@ -1,7 +1,4 @@
-#ifndef OPERATOR_CPP
-#define OPERATOR_CPP
-
-#include "../include/operator.h"
+#include "operator.h"
 
 Operator::Operator(const string s, const OperatorType t, const int p) 
                                     : symbol(s), type(t), priority(p) {};
@@ -19,5 +16,5 @@ int Operator::getPriority() const{
     return this->priority;
 }
 
-#endif 
 
+Operator::~Operator(){}

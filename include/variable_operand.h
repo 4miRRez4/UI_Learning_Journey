@@ -2,7 +2,6 @@
 #define VARIABLE_OPERAND_H
 
 #include "operand.h"
-#include <stdexcept>
 
 class VariableOperand : public Operand{
 private:
