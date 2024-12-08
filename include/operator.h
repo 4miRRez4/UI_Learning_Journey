@@ -2,9 +2,10 @@
 #define OPERATOR_H
 
 #include <string>
+#include <stdexcept>
 using namespace std;
 
-enum OperatorType { Binary, Unary, Paranthesis};
+enum OperatorType { Binary, Unary};
 
 class Operator{
 protected:
@@ -14,6 +15,7 @@ protected:
 
 public:
     Operator(const string s, const OperatorType t, const int p);
+    virtual ~Operator();
 
     string getSymbol() const;
     OperatorType getType() const;

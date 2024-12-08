@@ -8,7 +8,7 @@ private:
     std::string name;
 
 public:
-    SpecialOperand(const std::string n, const double val);
+    SpecialOperand(const std::string n);
 
     double getValue() const override;
     std::string getName() const;    

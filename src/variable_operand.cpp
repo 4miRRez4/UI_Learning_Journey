@@ -1,7 +1,8 @@
-#ifndef VARIABLE_OPERAND_CPP
-#define VARIABLE_OPERAND_CPP
+#include "variable_operand.h"
 
-#include "../include/variable_operand.h"
+
+VariableOperand::VariableOperand()
+                                : Operand(OperandType::Variable), name('a'), initialized(false) {}
 
 VariableOperand::VariableOperand(const char n) 
                                 : Operand(OperandType::Variable), name(n), initialized(false) {}
@@ -24,5 +25,3 @@ void VariableOperand::setValue(const double val){
     this->Operand::value = val;
     initialized = true;
 }
-
-#endif 

@@ -5,7 +5,7 @@
 
 class NumericOperand : public Operand{
 public:
-    NumericOperand(const double val);
+    NumericOperand();
 
     double getValue() const override;
 };
