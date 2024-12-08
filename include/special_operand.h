@@ -8,10 +8,12 @@ private:
     std::string name;
 
 public:
-    SpecialOperand(const std::string n);
+    SpecialOperand(const std::string n, const double val);
 
     double getValue() const override;
-    std::string getName() const;    
+    std::string getName() const;
+
+    void setValue(double val)    ;
 };
 
 #endif

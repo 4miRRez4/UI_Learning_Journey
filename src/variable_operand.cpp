@@ -36,7 +36,14 @@ bool VariableOperand::isInitialized() const{
 
 void VariableOperand::setValue(const double val){
     this->Operand::value = val;
-    initialized = true;
+}
+
+void VariableOperand::initialize(){
+    this->initialized = true;
+}
+
+void VariableOperand::setExpr(string expr){
+    this->expression = expr;
 }
 
 void VariableOperand::addDependent(char dependent){

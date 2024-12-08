@@ -35,7 +35,7 @@ public:
         T last = arr[top--];
         size--;
 
-        if(size > 0 && size <= capacity/4)
+        if(size > 1000 && size <= capacity/4)
             resize(capacity/2);
 
         return last;

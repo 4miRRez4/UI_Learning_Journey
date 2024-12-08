@@ -12,7 +12,7 @@ private:
     size_t capacity;
 
 public:
-    Queue() : front(-1), size(0), capacity(1000){
+    Queue() : front(0), size(0), capacity(1000){
         arr = new T[capacity];
     }
 
@@ -36,7 +36,7 @@ public:
         front = (front + 1)%capacity;
         --size;
 
-        if(size > 0 && size <= capacity/4)
+        if(size > 1000 && size <= capacity/4)
             resize(capacity/2);
 
         return first;
