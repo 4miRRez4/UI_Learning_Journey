@@ -1,7 +1,7 @@
 #include "unary_operator.h"
 
 UnaryOperator::UnaryOperator(const string s, const int p, double (*func)(double))
-                            : Operator(s, OperatorType::Unary, p), unaryFuncPtr(func) {};
+                            : Operator(s, OperatorType::Unary, p, 1), unaryFuncPtr(func) {};
 
 double UnaryOperator::apply(double operand1, double operand2) const {
     (void)operand2;

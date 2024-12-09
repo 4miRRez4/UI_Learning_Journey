@@ -7,6 +7,7 @@
 #include "operator.h"
 #include "binary_operator.h"
 #include "unary_operator.h"
+#include "custom_operator.h"
 #include "stack.h"
 #include "queue.h"
 #include <unordered_map>
@@ -28,8 +29,6 @@ private:
     bool isOperator(const string part);
     int getSymbolPriority(const string part);
 
-    vector<string> infixToPostfix(const vector<string> exprParts);
-    double computePostfix(const vector<string> postfix);
 public:
 
     Calculator();
@@ -37,19 +36,23 @@ public:
 
     string getVariableExpr(char name) const;
     double getVariableValue(char name) const;
+    bool isAdvanced() const;
 
     void goAdvanced();
     void initializeVar(char name, string expr);
     void computeAndSetVariableValue(char name);
     void addOperator(Operator* newOp);
+    void addCustomOperator(string equation, int priority);
     void addSpecialOperand(SpecialOperand* newOp);
     void addEssentialOperators();
     void addSpecialOperands();
 
     vector<string> splitExpr(const string infixExpr);
+    vector<string> infixToPostfix(const vector<string> exprParts);
+    double computePostfix(const vector<string> postfix);
+
     double computeExpr(const vector<string> parts);
     void computeAllVariables();
-
     void printAllVar() const;
 };
 
