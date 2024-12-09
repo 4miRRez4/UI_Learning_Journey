@@ -5,10 +5,10 @@ using namespace std;
 void extractExpression(Calculator& calc, const string equation){
     char varName = toupper(equation[0]);
     if(!isalpha(varName))
-        throw runtime_error("Invalid variable name");
+        throw runtime_error("Invalid Input");
 
     if(equation[1] != '=')
-        throw runtime_error("Invalid input format");
+        throw runtime_error("Invalid Format");
 
     string expr = equation.substr(2, equation.size());
     calc.setVariableExpr(varName, expr);
@@ -23,14 +23,15 @@ int main() {
         for(int i=0; i<n; i++){
             cin >> equation;
             extractExpression(myCalc, equation);
+        }
+        myCalc.computeAllVariables();
+        myCalc.printAllVar();
     }
-    }catch(const exception& e){
-            cout << e.what() << endl;
-            return -1;
+    catch(const runtime_error& e){
+            cerr << e.what() << endl;
     }
 
-    myCalc.computeAllVariables();
-    myCalc.printAllVar();
+
 
     return 0;
 }

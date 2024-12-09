@@ -14,7 +14,7 @@ double VariableOperand::getValue() const {
 
 char VariableOperand::getName() const{
     if(!initialized)
-        throw std::runtime_error("Variable" + std::to_string(name) + "isn't initialized");
+        throw std::runtime_error("Not Defined Variable");//variable isn't initialized
     return this->name;
 }
 

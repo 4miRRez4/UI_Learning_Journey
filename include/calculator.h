@@ -43,6 +43,8 @@ public:
     void computeAndSetVariableValue(char name, string expr);
     void addOperator(Operator* newOp);
     void addSpecialOperand(SpecialOperand* newOp);
+    void addEssentialOperators();
+    void addSpecialOperands();
 
     double computeExpr(const string infixExpr);
     void computeAllVariables();
