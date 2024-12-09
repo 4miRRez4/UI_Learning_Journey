@@ -29,6 +29,9 @@ int main() {
     try{
         for(int i=0; i<n; i++){
             cin >> equation;
+            if(i==0 && "AdvancedMode")
+                myCalc.goAdvanced();
+                
             extractExpression(myCalc, equation);
         }
         myCalc.computeAllVariables();

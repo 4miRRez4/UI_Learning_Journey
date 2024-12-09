@@ -18,6 +18,7 @@ const int MAX_OPERANDS = 26;
 
 class Calculator{
 private:
+    bool AdvancedMode;
     VariableOperand operands[MAX_OPERANDS];
     unordered_map<string, Operator*> operators;
     unordered_map<string, SpecialOperand*> specialOperands;
@@ -37,6 +38,7 @@ public:
     string getVariableExpr(char name) const;
     double getVariableValue(char name) const;
 
+    void goAdvanced();
     void initializeVar(char name, string expr);
     void computeAndSetVariableValue(char name);
     void addOperator(Operator* newOp);
