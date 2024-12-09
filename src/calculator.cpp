@@ -3,6 +3,8 @@
 #include <charconv>
 #include <iostream>
 #include <iomanip>
+#include <sstream>
+
 
 
 Calculator::Calculator() {
@@ -19,6 +21,17 @@ Calculator::Calculator() {
 
 void Calculator::goAdvanced(){
     AdvancedMode = true;
+}
+
+void Calculator::goBitwise(bool enable){
+    BitwiseMode = enable;
+    if (enable) {
+            addBitwiseOperators();
+            cout << "Bitwise mode enabled. Only integer inputs." << endl;
+        }
+        else {
+            cout << "Bitwise mode disabled." << endl;
+        }
 }
 
 void Calculator::addOperator(Operator* newOp){
@@ -74,6 +87,12 @@ void Calculator::addEssentialOperators(){
         return fact;        
     }));
 
+}
+
+void Calculator::addBitwiseOperators() {
+    addOperator(new BinaryOperator("|", 1, [](double a, double b) { return static_cast<double>(static_cast<int>(a) | static_cast<int>(b)); }));
+    addOperator(new BinaryOperator("&", 2, [](double a, double b) { return static_cast<double>(static_cast<int>(a) & static_cast<int>(b)); }));
+    addOperator(new UnaryOperator("~", 3, [](double a) { return static_cast<double>(~static_cast<int>(a)); }));
 }
 
 void Calculator::addCustomOperator(string equation, int priority){
@@ -312,9 +331,11 @@ double Calculator::computePostfix(char varName, vector<string> postfix){
             operandStack.push(result);
 
             if(isAdvanced()){
+                ostringstream ss; //for converting double to string
+                ss << result;
                 // update the postfix expression
                 postfix.erase(postfix.begin() + i - numOfArg, postfix.begin() + i + 1); // remove operands and operator
-                postfix.insert(postfix.begin() + i - numOfArg, to_string(result)); // insert the result
+                postfix.insert(postfix.begin() + i - numOfArg, ss.str()); // insert the result
                 i -= numOfArg; 
 
                 //add to history

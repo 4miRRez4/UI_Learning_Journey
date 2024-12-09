@@ -20,6 +20,7 @@ const int MAX_OPERANDS = 26;
 class Calculator{
 private:
     bool AdvancedMode;
+    bool BitwiseMode;
     VariableOperand operands[MAX_OPERANDS];
     unordered_map<string, Operator*> operators;
     unordered_map<string, SpecialOperand*> specialOperands;
@@ -41,12 +42,14 @@ public:
     bool isAdvanced() const;
 
     void goAdvanced();
+    void goBitwise(bool enable);
     void initializeVar(char name, string expr);
     void computeAndSetVariableValue(char name);
     void addOperator(Operator* newOp);
     void addCustomOperator(string equation, int priority);
     void addSpecialOperand(SpecialOperand* newOp);
     void addEssentialOperators();
+    void addBitwiseOperators();
     void addSpecialOperands();
 
     vector<string> splitExpr(const string infixExpr);

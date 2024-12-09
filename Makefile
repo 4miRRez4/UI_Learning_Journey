@@ -1,6 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Iinclude -Wall -Wextra -Werror -g
 
+
 SRC_DIR = src
 OBJ_DIR = obj
 INCLUDE_DIR = include
