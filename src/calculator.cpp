@@ -12,6 +12,12 @@ Calculator::Calculator() {
     addEssentialOperators();
 
     addSpecialOperands();
+
+    AdvancedMode = false;
+}
+
+void Calculator::goAdvanced(){
+    AdvancedMode = true;
 }
 
 void Calculator::addOperator(Operator* newOp){
