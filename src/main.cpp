@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "calculator.h"
 using namespace std;
 
@@ -16,7 +17,7 @@ void extractExpression(Calculator& calc, const string equation){
         calc.initializeVar(varName, expr);
     }
     else{
-        cout << calc.computeExpr(equation) << endl;
+        cout << calc.computeExpr(' ', calc.splitExpr(equation)) << endl;
     }
 
 }
@@ -29,13 +30,47 @@ int main() {
     try{
         for(int i=0; i<n; i++){
             cin >> equation;
+            if(i==0 && equation == "AdvancedMode"){
+                myCalc.goAdvanced();
+                cout << "Turned on Advanced Mode." << endl;
+                i--;
+                continue;
+            }
+
+            if(myCalc.isAdvanced()){
+                bool didAdvanced = false;
+                if(equation == "NewOperation"){
+                    cout << "Enter priority and definition: " << endl;
+                    int priority;
+                    cin >> priority >> equation;
+                    myCalc.addCustomOperator(equation, priority);
+                    didAdvanced=true;
+                } 
+                else if(equation == "BitwiseOn"){
+                    myCalc.goBitwise(true);
+                    didAdvanced=true;
+                }else if(equation == "BitwiseOff"){
+                    myCalc.goBitwise(false);
+                    didAdvanced=true;
+                }
+
+                if(didAdvanced){
+                    i--;
+                    continue;
+                }
+            }
             extractExpression(myCalc, equation);
         }
         myCalc.computeAllVariables();
-        myCalc.printAllVar();
+
+        if(!myCalc.isAdvanced())
+            myCalc.printAllVar();
+        else{
+            cout << myCalc.getHistory();  
+        }  
     }
     catch(const runtime_error& e){
-            cerr  << e.what() << endl;
+        cerr  << e.what() << endl;
     }
 
 
