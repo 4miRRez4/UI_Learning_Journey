@@ -34,13 +34,13 @@ void Calculator::addEssentialOperators(){
     addOperator(new BinaryOperator("*", 2, [](double a, double b) { return a*b; }));
 
     addOperator(new BinaryOperator("/", 2, [](double a, double b) {
-        if (b == 0) throw runtime_error("Arithmatic Error"); //division by zero
+        if (b == 0) throw runtime_error("Arithmetic Error"); //division by zero
         return a / b;
     }));
 
     addOperator(new BinaryOperator("^", 3, [](double a, double b) { 
         if(a==0 && b<=0)
-            throw runtime_error("Arithmatic Error");//0 raised to non-positive power
+            throw runtime_error("Arithmetic Error");//0 raised to non-positive power
 
 
         if (a < 0 && b != std::floor(b)) { //a is negative and b is fractional        
@@ -51,7 +51,7 @@ void Calculator::addEssentialOperators(){
                 // Fractional exponent with an odd divider
                 return -pow(-a, b);
             } else {
-                throw runtime_error("Arithmatic Error"); //negative base raise to fractional even power
+                throw runtime_error("Arithmetic Error"); //negative base raise to fractional even power
             }
         }
 
@@ -59,7 +59,7 @@ void Calculator::addEssentialOperators(){
     }));
 
     addOperator(new UnaryOperator("!", 4, [](double a) {
-        if(a < 0) throw runtime_error("Arithmatic Error"); //factoriel of negative number
+        if(a < 0) throw runtime_error("Arithmetic Error"); //factoriel of negative number
 
         double fact = 1;    
         for(int n=1; n<=static_cast<int>(a); n++) fact *= n;
@@ -82,7 +82,7 @@ vector<string> Calculator::splitExpr(const string infixExpr){
         if(ch == ' ')
             continue;
 
-        if((ch >= '0' && ch <= '9') || ch == '.'){
+        if((ch >= '0' && ch <= '9') || ch == '.'){ //integral and fractional numbers
             part += ch;
         }
         else if (isalpha(ch)) {
@@ -95,7 +95,7 @@ vector<string> Calculator::splitExpr(const string infixExpr){
             }
         }
         else{
-            if(part != ""){
+            if(part != ""){//multi character number and character
                 parts.push_back(part);
                 part = "";
             }
@@ -103,11 +103,13 @@ vector<string> Calculator::splitExpr(const string infixExpr){
             //negative number
             if(ch == '-' && (parts.empty() || parts.back() == "(" || isOperator(parts.back())))
                 part += ch;
-            else{
-                if(operators.find(string(1,ch)) != operators.end())
-                    parts.push_back(string(1,toupper(ch)));
+            else if(ch == '(' || ch == ')')
+                parts.push_back(string(1,ch));
+            else{//operator
+                if(isOperator(string(1,ch)))
+                    parts.push_back(string(1,ch));
                 else
-                    throw runtime_error("Invalid Input");
+                    throw runtime_error("Invalid Input");//unknown operator
             }
         }
     }
@@ -144,12 +146,8 @@ bool Calculator::isOperator(const string part){
     return operators.count(part);
 }
 
-bool Calculator::hasOperator(const string symbol){
-    return operators.find(symbol) != operators.end();
-}
-
 int Calculator::getSymbolPriority(const string part){
-    if(!hasOperator(part)) throw runtime_error("Unknown operator: " + part);
+    if(!isOperator(part)) throw runtime_error("Invalid Input"); //unknown operator
     return operators.at(part)->getPriority();
 }
 
@@ -287,15 +285,16 @@ void Calculator::initializeVar(char name, string expr){
     }
 }
 
-void Calculator::computeAndSetVariableValue(char name, string expr){
-    if(expr.size() == 0)
-        throw runtime_error("Invalid Input");
-        
+void Calculator::computeAndSetVariableValue(char name){
+    vector<string> expr = operands[toupper(name) - 'A'].getExprParts();
+
+    if(expr.size() != 0)
+        throw runtime_error("Invalid Input");//empty expression
+
     operands[toupper(name) - 'A'].setValue(computeExpr(expr));
 }
 
-double Calculator::computeExpr(const string infixExpr){
-    vector<string> parts = splitExpr(infixExpr);
+double Calculator::computeExpr(const vector<string> parts){
     vector<string> postfix = infixToPostfix(parts);
     return computePostfix(postfix);
 }
@@ -315,21 +314,21 @@ void Calculator::computeAllVariables(){
         VariableOperand* var = &operands[varInd];
         toCompute.dequeue();
 
-        var->setValue(computeExpr(var->getExpr()));
+        var->setValue(computeExpr(var->getExprParts()));
 
         for(char dependent: var->getDependents()){
             operands[dependent - 'A'].decrementNumOfDependencies();
-            if(operands[dependent - 'A'].getNumOfDependencies() == 0)
+            if(operands[dependent - 'A'].getNumOfDependencies() == 0) //if operand has no unsolved dependency
                 toCompute.enqueue(dependent);
         }
     }
 
-    //check for not defined variable
+    //check for not defined variable(there are some dependent of var but its not initialized)
     for(int i=0; i<MAX_OPERANDS; i++)
         if(operands[i].getDependents().size() != 0 && !operands[i].isInitialized())
             throw runtime_error("Not Defined Variable");
 
-    //check for circular dependency
+    //check for circular dependency(var was initialized but still has unsolved dependencies)
     for(int i=0; i<MAX_OPERANDS; i++)
         if(operands[i].isInitialized() && operands[i].getNumOfDependencies() != 0)
             throw runtime_error("Circular Dependency");

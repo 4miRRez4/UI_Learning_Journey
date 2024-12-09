@@ -25,10 +25,8 @@ private:
     bool isNumber(const string part);
     bool isOperand(const string part);
     bool isOperator(const string part);
-    bool hasOperator(const string symbol);
     int getSymbolPriority(const string part);
 
-    vector<string> splitExpr(const string infixExpr);
     vector<string> infixToPostfix(const vector<string> exprParts);
     double computePostfix(const vector<string> postfix);
 public:
@@ -40,13 +38,14 @@ public:
     double getVariableValue(char name) const;
 
     void initializeVar(char name, string expr);
-    void computeAndSetVariableValue(char name, string expr);
+    void computeAndSetVariableValue(char name);
     void addOperator(Operator* newOp);
     void addSpecialOperand(SpecialOperand* newOp);
     void addEssentialOperators();
     void addSpecialOperands();
 
-    double computeExpr(const string infixExpr);
+    vector<string> splitExpr(const string infixExpr);
+    double computeExpr(const vector<string> parts);
     void computeAllVariables();
 
     void printAllVar() const;

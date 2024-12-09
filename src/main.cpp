@@ -16,7 +16,7 @@ void extractExpression(Calculator& calc, const string equation){
         calc.initializeVar(varName, expr);
     }
     else{
-        cout << calc.computeExpr(equation) << endl;
+        cout << calc.computeExpr(calc.splitExpr(equation)) << endl;
     }
 
 }
