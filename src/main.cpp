@@ -38,21 +38,29 @@ int main() {
             }
 
             if(myCalc.isAdvanced()){
+                bool didAdvanced = false;
                 if(equation == "NewOperation"){
                     cout << "Enter priority and definition: " << endl;
                     int priority;
                     cin >> priority >> equation;
                     myCalc.addCustomOperator(equation, priority);
-                    i--;
-                    continue;  
-                }   
-            }
+                    didAdvanced=true;
+                } 
+                else if(equation == "BitwiseOn"){
+                    myCalc.goBitwise(true);
+                    didAdvanced=true;
+                }else if(equation == "BitwiseOff"){
+                    myCalc.goBitwise(false);
+                    didAdvanced=true;
+                }
 
-            remove(equation.begin(), equation.end(), ' ');
+                if(didAdvanced){
+                    i--;
+                    continue;
+                }
+            }
             extractExpression(myCalc, equation);
         }
-
-    
         myCalc.computeAllVariables();
 
         if(!myCalc.isAdvanced())
@@ -62,7 +70,7 @@ int main() {
         }  
     }
     catch(const runtime_error& e){
-            cerr  << e.what() << endl;
+        cerr  << e.what() << endl;
     }
 
 
