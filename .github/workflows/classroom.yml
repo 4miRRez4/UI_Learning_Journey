@@ -14,34 +14,154 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
-    - name: Set up JDK
+
+    - name: Set up JDK (for Java projects)
       uses: actions/setup-java@v3
       with:
-        java-version: '11'  # Use appropriate Java version
+        java-version: '11'
+        distribution: 'temurin'
 
-    - name: Compile the Java program
-      run: |
-        # Change to the src directory and compile the Java files
-        cd src
-        javac Main.java  # Compile Main.java (change this if your main file has a different name)
+    - name: Set up C++ environment (for C++ projects)
+      run: sudo apt-get install g++ 
 
-    - name: Run the sum test
+    - name: Set up Python environment (for Python projects)
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Set up .NET (for C# projects)
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0'
+
+    # Run Java tests
+    - name: Run Java tests
+      id: java-test
       run: |
-        # Run the program with two inputs (1 and 2) from the src directory
-        cd src
-        result=$(java Main 1 2)  # Replace Main with the correct class name
-        echo "The sum is: $result"  # Log the result
-        
-        # Check if the result is correct
-        if [ "$result" == "3" ]; then
-          echo "Sum test passed!"
+        if [ -f src/Main.java ]; then
+          cd src
+          javac Main.java
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(java Main < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "Java tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All Java tests passed!"
+          else
+            echo "Some Java tests failed!"
+            exit 1
+          fi
         else
-          echo "Sum test failed!"
-          exit 1
+          echo "No Java program found, skipping Java tests."
         fi
 
-    - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
-      with:
-        runners: sum-test  # Use the result from the sum test
+    # Run C++ tests
+    - name: Run C++ tests
+      id: cpp-test
+      run: |
+        if [ -f src/main.cpp ]; then
+          cd src
+          g++ -o main main.cpp
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(./main < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "C++ tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All C++ tests passed!"
+          else
+            echo "Some C++ tests failed!"
+            exit 1
+          fi
+        else
+          echo "No C++ program found, skipping C++ tests."
+        fi
+
+    # Run Python tests
+    - name: Run Python tests
+      id: python-test
+      run: |
+        if [ -f src/main.py ]; then
+          cd src
+          pip install -r requirements.txt
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(python3 main.py < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "Python tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All Python tests passed!"
+          else
+            echo "Some Python tests failed!"
+            exit 1
+          fi
+        else
+          echo "No Python program found, skipping Python tests."
+        fi
+
+    # Run C# tests
+    - name: Run C# tests
+      id: csharp-test
+      run: |
+        if [ -f src/Program.cs ]; then
+          cd src
+          dotnet build
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(dotnet run --project src/Program.cs < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "C# tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All C# tests passed!"
+          else
+            echo "Some C# tests failed!"
+            exit 1
+          fi
+        else
+          echo "No C# program found, skipping C# tests."
+        fi
