@@ -1,7 +1,7 @@
 #include "operator.h"
 
-Operator::Operator(const string s, const OperatorType t, const int p) 
-                                    : symbol(s), type(t), priority(p) {};
+Operator::Operator(const string s, const OperatorType t, const int p, const int numOfPara) 
+                                    : symbol(s), type(t), priority(p), numOfParameters(numOfPara) {};
                                 
 
 string Operator::getSymbol() const{
@@ -14,6 +14,10 @@ OperatorType Operator::getType() const{
 
 int Operator::getPriority() const{
     return this->priority;
+}
+
+int Operator::getNumOfPara() const{
+    return this->numOfParameters;
 }
 
 

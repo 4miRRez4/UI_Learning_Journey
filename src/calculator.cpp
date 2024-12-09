@@ -74,6 +74,23 @@ void Calculator::addEssentialOperators(){
     }));
 
 }
+
+void Calculator::addCustomOperator(string equation, int priority){
+    size_t assignInd = equation.find('=');
+    if(assignInd != string::npos && (assignInd == 2 || assignInd == 3)){ //valid positions of =
+        string symbol = string(1,equation[1]);
+        if(isalpha(symbol[0])) 
+                    throw runtime_error("Invalid Input");
+
+        vector<string> postfixExpr = infixToPostfix(splitExpr(equation.substr(assignInd+1)));//functionali_postfix
+
+        addOperator(new CustomOperator(symbol, priority, postfixExpr, assignInd-1));// 1 or 2 numOfParameters
+
+        cout << "Operation defined successfully." << endl;
+    }
+    else
+        throw runtime_error("Invalid Input");
+}
     
 void Calculator::addSpecialOperands(){
     addSpecialOperand(new SpecialOperand("PI", 3.14159));
@@ -152,6 +169,10 @@ bool Calculator::isOperator(const string part){
     return operators.count(part);
 }
 
+bool Calculator::isAdvanced() const{
+    return this->AdvancedMode;
+}
+
 int Calculator::getSymbolPriority(const string part){
     if(!isOperator(part)) throw runtime_error("Invalid Input"); //unknown operator
     return operators.at(part)->getPriority();
@@ -218,28 +239,25 @@ double Calculator::computePostfix(const vector<string> postfix){
         }
         else if(isOperator(part)){
             Operator* operatorPtr = operators.at(part);
-            double result;
-            if(operatorPtr->getType() == OperatorType::Binary){
-                if(operandStack.Size() < 2) //not enough operand for binary operator
-                    throw runtime_error("Invalid Format");
+            if(static_cast<int> (operandStack.Size()) < operatorPtr->getNumOfPara())//not enough operand for operator
+                throw runtime_error("Invalid Format");
 
+            double result;
+            if(operatorPtr->getNumOfPara() == 2){ //binary operators
                 double operand2 = operandStack.Top();
                 operandStack.pop();
                 double operand1 = operandStack.Top();
                 operandStack.pop();
 
                 result = operatorPtr->apply(operand1, operand2);
-                
-            }else if(operatorPtr->getType() == OperatorType::Unary){
-                if(operandStack.isEmpty()) //not enough operand for unary operator
-                    throw runtime_error("Invalid Format");
-                    
+            }
+            else if(operatorPtr->getNumOfPara() == 1){// unary opeators
                 double operand1 = operandStack.Top();
                 operandStack.pop();
 
                 result = operatorPtr->apply(operand1);
-
-            }else
+            }
+            else
                 throw runtime_error("Invalid Input");
 
             operandStack.push(result);

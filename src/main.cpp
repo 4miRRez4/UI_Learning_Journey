@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "calculator.h"
 using namespace std;
 
@@ -29,10 +30,21 @@ int main() {
     try{
         for(int i=0; i<n; i++){
             cin >> equation;
-            if(i==0 && "AdvancedMode")
+            if(i==0 && equation == "AdvancedMode"){
                 myCalc.goAdvanced();
-                
-            extractExpression(myCalc, equation);
+                cout << "Turned on Advanced Mode." << endl;
+            }
+            
+            else if(myCalc.isAdvanced() && equation == "NewOperation"){
+                cout << "Enter priority and definition: " << endl;
+                int priority;
+                cin >> priority >> equation;
+                myCalc.addCustomOperator(equation, priority);
+            }
+            else{
+                remove(equation.begin(), equation.end(), ' ');
+                extractExpression(myCalc, equation);
+            }
         }
         myCalc.computeAllVariables();
         myCalc.printAllVar();
