@@ -1,0 +1,47 @@
+N: number of equations
+L: length of an input equation upper bound
+D: dependencies
+
+-splitExpr:
+    time complexity:
+        we see and process each character in an equation once. so it takes O(L).
+        for N equation, we have O(N*L).
+    memory complexity:
+        we have a vector for storing each part of equation, so we have O(N*L) here.
+        I could have used a fixed size array but for flexibility and simplicity I used a vector that amortized analysis of its operations are O(1).
+
+-infixToPostfix:
+    time complexity:
+        I used stack for converting to postfix, which it's operations are O(1).(It is not fixed size but with using logic of resizing, like vector it's O(1)).
+        we see and process each part with O(1), considering worst case be that all L characters of equation be a part, it's O(L).
+        for N equation, we have O(N*L).
+    memory complexity:
+        the stack I used needs space proportional to number of parts of equation, that is O(L) for each equation and in total O(N*L).
+
+-computePostfix:
+    I used stack for this and analysis of time and memory complexity of this is like infixToPostfix function.
+
+-initializeVar:
+    time complexity:
+        O(N*L) for updating numOfDependencies and dependets of each var.
+    memory complexity:
+        O(N*D) for dependents of each var.
+
+-computeAllVariables:
+    time complexity:
+        I used queue with all operations being O(1). 
+        using a fixed sized array for operands, makes access O(1).
+        O(N) for adding independent vars.
+        O(N*D) for while loop of computation which for each var we have a for loop of O(D) on dependent for updating dependencies.
+        and O(N) for checking circular dependency and not defined varables.
+        in Total O(N*D).
+    memory complexity:
+        the queue needs O(N) for storing order of variable.(all variable will be added in it once.)
+
+-Total:
+    time complexity:
+        O(N*L).
+    memory complexity:
+        O(N*L). each variable having some attribute and some O(L) vectors. functions having O(N*L).
+
+-could be some improvements like the algorithm of solving dependencies using dynamic programming or priority queue.
