@@ -14,6 +14,7 @@ Calculator::Calculator() {
     addSpecialOperands();
 
     AdvancedMode = false;
+    history = "";
 }
 
 void Calculator::goAdvanced(){
@@ -218,15 +219,62 @@ vector<string> Calculator::infixToPostfix(const vector<string> exprParts){
     return postfix;
 }
 
-double Calculator::computePostfix(const vector<string> postfix){
+string Calculator::postfixToInfix(const vector<string> parts){
+    Stack<string> operandStack;
+
+    for(string part: parts){
+        if(part == "") continue;//trash at end of postfix that is place for paranthesis
+        
+        if(isOperand(part)){
+            operandStack.push(part);
+        }
+        else if(isOperator(part)){
+            Operator* operatorPtr = operators.at(part);
+            if(static_cast<int> (operandStack.Size()) < operatorPtr->getNumOfPara())//not enough operand for operator
+                throw runtime_error("Invalid Format");
+
+            string formated = "";
+            if(operatorPtr->getNumOfPara() == 2){ //binary operators
+                string operand2 = operandStack.Top();
+                operandStack.pop();
+                string operand1 = operandStack.Top();
+                operandStack.pop();
+
+                formated = "(" + operand1 + operatorPtr->getSymbol() + operand2 + ")";
+            }
+            else if(operatorPtr->getNumOfPara() == 1){// unary opeators
+                string operand1 = operandStack.Top();
+                operandStack.pop();
+
+                formated = "(" + operand1 + operatorPtr->getSymbol() + ")";
+            }
+            else
+                throw runtime_error("Invalid Input");
+
+            operandStack.push(formated);
+        }
+        else
+            throw runtime_error("Invalid Input");
+    }
+
+    return operandStack.Top();
+}
+
+double Calculator::computePostfix(char varName, vector<string> postfix){
     Stack<double> operandStack;
 
-    for(string part: postfix){
-        if(isOperand(part)){
+    for(int i=0; i < static_cast<int>(postfix.size()); i++){
+        string part = postfix[i];
+        if(part == "")  continue; //trash at end of postfix that is place for paranthesis
+
+        int numOfArg = 0;
+        if(isOperand(part)){// add its value to stack
             if(isNumber(part)){
                 operandStack.push(stod(part));
-            }else if(specialOperands.find(part) != specialOperands.end())
+            }
+            else if(specialOperands.find(part) != specialOperands.end()){
                 operandStack.push(specialOperands[part]->getValue());
+            }
             else if(part.size() == 1 && isalpha(part[0])){
                 int ind = part[0] - 'A';
                 if(!operands[ind].isInitialized())
@@ -237,13 +285,14 @@ double Calculator::computePostfix(const vector<string> postfix){
             else
                 throw runtime_error("Invalid Input");
         }
-        else if(isOperator(part)){
+        else if(isOperator(part)){ //handle operators
             Operator* operatorPtr = operators.at(part);
-            if(static_cast<int> (operandStack.Size()) < operatorPtr->getNumOfPara())//not enough operand for operator
+            numOfArg = operatorPtr->getNumOfPara();
+            if(static_cast<int> (operandStack.Size()) < numOfArg)//not enough operand for operator
                 throw runtime_error("Invalid Format");
 
             double result;
-            if(operatorPtr->getNumOfPara() == 2){ //binary operators
+            if(numOfArg == 2){ //binary operators
                 double operand2 = operandStack.Top();
                 operandStack.pop();
                 double operand1 = operandStack.Top();
@@ -251,7 +300,7 @@ double Calculator::computePostfix(const vector<string> postfix){
 
                 result = operatorPtr->apply(operand1, operand2);
             }
-            else if(operatorPtr->getNumOfPara() == 1){// unary opeators
+            else if(numOfArg == 1){// unary opeators
                 double operand1 = operandStack.Top();
                 operandStack.pop();
 
@@ -261,13 +310,23 @@ double Calculator::computePostfix(const vector<string> postfix){
                 throw runtime_error("Invalid Input");
 
             operandStack.push(result);
+
+            if(isAdvanced()){
+                // update the postfix expression
+                postfix.erase(postfix.begin() + i - numOfArg, postfix.begin() + i + 1); // remove operands and operator
+                postfix.insert(postfix.begin() + i - numOfArg, to_string(result)); // insert the result
+                i -= numOfArg; 
+
+                //add to history
+                history += string(1,varName) + "=" + postfixToInfix(postfix) + "\n";
+            }
         }
     }
 
     if (operandStack.Size() > 1) {
         throw std::runtime_error("Invalid Input"); //stack size is incorrect
     }
-
+    history += '\n';
     return operandStack.Top();
 }
 
@@ -284,6 +343,10 @@ double Calculator::getVariableValue(char name) const{
             throw runtime_error("Not Defined Variable");
     else
         throw runtime_error("Invalid Input");
+}
+
+string Calculator::getHistory() const{
+    return this->history;
 }
 
 void Calculator::initializeVar(char name, string expr){
@@ -315,12 +378,12 @@ void Calculator::computeAndSetVariableValue(char name){
     if(expr.size() != 0)
         throw runtime_error("Invalid Input");//empty expression
 
-    operands[toupper(name) - 'A'].setValue(computeExpr(expr));
+    operands[toupper(name) - 'A'].setValue(computeExpr(toupper(name), expr));
 }
 
-double Calculator::computeExpr(const vector<string> parts){
+double Calculator::computeExpr(char varName, const vector<string> parts){
     vector<string> postfix = infixToPostfix(parts);
-    return computePostfix(postfix);
+    return computePostfix(varName, postfix);
 }
 
 
@@ -338,7 +401,7 @@ void Calculator::computeAllVariables(){
         VariableOperand* var = &operands[varInd];
         toCompute.dequeue();
 
-        var->setValue(computeExpr(var->getExprParts()));
+        var->setValue(computeExpr(var->getName(), var->getExprParts()));
 
         for(char dependent: var->getDependents()){
             operands[dependent - 'A'].decrementNumOfDependencies();

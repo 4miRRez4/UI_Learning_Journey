@@ -13,5 +13,5 @@ double CustomOperator::apply(double operand1, double operand2) const{
     }
     
     Calculator defaultCalc;
-    return defaultCalc.computePostfix(subtituted);
+    return defaultCalc.computePostfix(' ', subtituted);
 }

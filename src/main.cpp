@@ -17,7 +17,7 @@ void extractExpression(Calculator& calc, const string equation){
         calc.initializeVar(varName, expr);
     }
     else{
-        cout << calc.computeExpr(calc.splitExpr(equation)) << endl;
+        cout << calc.computeExpr(' ', calc.splitExpr(equation)) << endl;
     }
 
 }
@@ -33,21 +33,33 @@ int main() {
             if(i==0 && equation == "AdvancedMode"){
                 myCalc.goAdvanced();
                 cout << "Turned on Advanced Mode." << endl;
+                i--;
+                continue;
             }
-            
-            else if(myCalc.isAdvanced() && equation == "NewOperation"){
-                cout << "Enter priority and definition: " << endl;
-                int priority;
-                cin >> priority >> equation;
-                myCalc.addCustomOperator(equation, priority);
+
+            if(myCalc.isAdvanced()){
+                if(equation == "NewOperation"){
+                    cout << "Enter priority and definition: " << endl;
+                    int priority;
+                    cin >> priority >> equation;
+                    myCalc.addCustomOperator(equation, priority);
+                    i--;
+                    continue;  
+                }   
             }
-            else{
-                remove(equation.begin(), equation.end(), ' ');
-                extractExpression(myCalc, equation);
-            }
+
+            remove(equation.begin(), equation.end(), ' ');
+            extractExpression(myCalc, equation);
         }
+
+    
         myCalc.computeAllVariables();
-        myCalc.printAllVar();
+
+        if(!myCalc.isAdvanced())
+            myCalc.printAllVar();
+        else{
+            cout << myCalc.getHistory();  
+        }  
     }
     catch(const runtime_error& e){
             cerr  << e.what() << endl;

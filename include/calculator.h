@@ -23,6 +23,7 @@ private:
     VariableOperand operands[MAX_OPERANDS];
     unordered_map<string, Operator*> operators;
     unordered_map<string, SpecialOperand*> specialOperands;
+    string history;    
 
     bool isNumber(const string part);
     bool isOperand(const string part);
@@ -36,6 +37,7 @@ public:
 
     string getVariableExpr(char name) const;
     double getVariableValue(char name) const;
+    string getHistory() const;
     bool isAdvanced() const;
 
     void goAdvanced();
@@ -49,9 +51,10 @@ public:
 
     vector<string> splitExpr(const string infixExpr);
     vector<string> infixToPostfix(const vector<string> exprParts);
-    double computePostfix(const vector<string> postfix);
+    string postfixToInfix(const vector<string> parts);
+    double computePostfix(char varName, vector<string> postfix);
 
-    double computeExpr(const vector<string> parts);
+    double computeExpr(char varName, const vector<string> parts);
     void computeAllVariables();
     void printAllVar() const;
 };
