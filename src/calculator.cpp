@@ -9,27 +9,9 @@ Calculator::Calculator() {
     for(int i=0; i<MAX_OPERANDS; i++)
         operands[i] = VariableOperand('A' + i);
 
-    //add essential operators
-    addOperator(new BinaryOperator("+", 1, [](double a, double b) { return a+b; }));
-    addOperator(new BinaryOperator("-", 1, [](double a, double b) { return a-b; }));
-    addOperator(new BinaryOperator("*", 2, [](double a, double b) { return a*b; }));
-    addOperator(new BinaryOperator("/", 2, [](double a, double b) {
-        if (b == 0) throw runtime_error("Division by zero!");
-        return a / b;
-    }));
-    addOperator(new BinaryOperator("^", 3, [](double a, double b) { return pow(a, b); }));
-    addOperator(new UnaryOperator("!", 4, [](double a) {
-        if(a < 0) throw runtime_error("Factoriel of negative number!");
+    addEssentialOperators();
 
-        double fact = 1;    
-        for(int n=1; n<=static_cast<int>(a); n++) fact *= n;
-
-        return fact;        
-    }));
-
-    //add essential special operands
-    addSpecialOperand(new SpecialOperand("PI", 3.14159));
-    addSpecialOperand(new SpecialOperand("EN", 2.71828));
+    addSpecialOperands();
 }
 
 void Calculator::addOperator(Operator* newOp){
@@ -41,11 +23,58 @@ void Calculator::addOperator(Operator* newOp){
 
 void Calculator::addSpecialOperand(SpecialOperand* newOp){
     if(specialOperands.count(newOp->getName())){
-        throw runtime_error("Special Operand already exists: " + newOp->getName());
+        throw runtime_error("Special operand already exists: " + newOp->getName());
     }
     specialOperands[newOp->getName()] = newOp;
 }
+
+void Calculator::addEssentialOperators(){
+    addOperator(new BinaryOperator("+", 1, [](double a, double b) { return a+b; }));
+    addOperator(new BinaryOperator("-", 1, [](double a, double b) { return a-b; }));
+    addOperator(new BinaryOperator("*", 2, [](double a, double b) { return a*b; }));
+
+    addOperator(new BinaryOperator("/", 2, [](double a, double b) {
+        if (b == 0) throw runtime_error("Arithmatic Error"); //division by zero
+        return a / b;
+    }));
+
+    addOperator(new BinaryOperator("^", 3, [](double a, double b) { 
+        if(a==0 && b<=0)
+            throw runtime_error("Arithmatic Error");//0 raised to non-positive power
+
+
+        if (a < 0 && b != std::floor(b)) { //a is negative and b is fractional        
+            double intPart, fracPart;
+            fracPart = modf(b, &intPart);
+            double divider = 1.0 / abs(fracPart);
+            if (floor(divider) == divider && static_cast<int>(divider) % 2 == 1) {
+                // Fractional exponent with an odd divider
+                return -pow(-a, b);
+            } else {
+                throw runtime_error("Arithmatic Error"); //negative base raise to fractional even power
+            }
+        }
+
+        return pow(a,b);
+    }));
+
+    addOperator(new UnaryOperator("!", 4, [](double a) {
+        if(a < 0) throw runtime_error("Arithmatic Error"); //factoriel of negative number
+
+        double fact = 1;    
+        for(int n=1; n<=static_cast<int>(a); n++) fact *= n;
+
+        return fact;        
+    }));
+
+}
     
+void Calculator::addSpecialOperands(){
+    addSpecialOperand(new SpecialOperand("PI", 3.14159));
+    addSpecialOperand(new SpecialOperand("EN", 2.71828));
+}
+
+
 vector<string> Calculator::splitExpr(const string infixExpr){
     vector<string> parts;
     string part = "";
@@ -151,7 +180,7 @@ vector<string> Calculator::infixToPostfix(const vector<string> exprParts){
 
     while(!operatorStack.isEmpty()){
         if(operatorStack.Top() == "(")
-            throw runtime_error("Mismatch paranthesis");
+            throw runtime_error("Invalid Format");
             
         postfix[postfix_ind++] = operatorStack.Top();
         operatorStack.pop();
@@ -172,19 +201,19 @@ double Calculator::computePostfix(const vector<string> postfix){
             else if(part.size() == 1 && isalpha(part[0])){
                 int ind = part[0] - 'A';
                 if(!operands[ind].isInitialized())
-                    throw runtime_error("Uninitialized variable(circular dependency): " + part[0]);
+                    throw runtime_error("Not Defined Variable");
                 
                 operandStack.push(operands[ind].getValue());
             }
             else
-                throw runtime_error("Invalid operand: " + part);
+                throw runtime_error("Invalid Input");
         }
         else if(isOperator(part)){
             Operator* operatorPtr = operators.at(part);
             double result;
             if(operatorPtr->getType() == OperatorType::Binary){
-                if(operandStack.Size() < 2)
-                    throw runtime_error("Not enough operands for binary operator: " + part);
+                if(operandStack.Size() < 2) //not enough operand for binary operator
+                    throw runtime_error("Invalid Format");
 
                 double operand2 = operandStack.Top();
                 operandStack.pop();
@@ -194,8 +223,8 @@ double Calculator::computePostfix(const vector<string> postfix){
                 result = operatorPtr->apply(operand1, operand2);
                 
             }else if(operatorPtr->getType() == OperatorType::Unary){
-                if(operandStack.isEmpty())
-                    throw runtime_error("Not enough operands for unary operator: " + part);
+                if(operandStack.isEmpty()) //not enough operand for unary operator
+                    throw runtime_error("Invalid Format");
                     
                 double operand1 = operandStack.Top();
                 operandStack.pop();
@@ -203,14 +232,14 @@ double Calculator::computePostfix(const vector<string> postfix){
                 result = operatorPtr->apply(operand1);
 
             }else
-                throw runtime_error("Unsupported operator: " + part);
+                throw runtime_error("Invalid Input");
 
             operandStack.push(result);
         }
     }
 
     if (operandStack.Size() > 1) {
-        throw std::runtime_error("Error in computePostfix: stack size is incorrect");
+        throw std::runtime_error("Invalid Input"); //stack size is incorrect
     }
 
     return operandStack.Top();
@@ -222,15 +251,22 @@ string Calculator::getVariableExpr(char name) const{
 }
 
 double Calculator::getVariableValue(char name) const{
-    if(isalpha(name) && operands[name - 'A'].isInitialized())
-        return operands[name - 'A'].getValue();
-    
-    throw runtime_error("Invalid variable name: " + name);
+    if(isalpha(name))
+        if(operands[name - 'A'].isInitialized())
+            return operands[name - 'A'].getValue();
+        else
+            throw runtime_error("Not Defined Variable");
+    else
+        throw runtime_error("Invalid Input");
 }
 
 void Calculator::setVariableExpr(char name, string expr){
-    //set expression, initialize and update dependencies
     int varInd = name - 'A';
+    //was the variable initialized before?
+    if(operands[varInd].isInitialized())
+        throw runtime_error("Inconsistency");
+    
+    //set expression, initialize and update dependencies
     operands[varInd].setExpr(expr);
     operands[varInd].initialize();
 
@@ -246,6 +282,9 @@ void Calculator::setVariableExpr(char name, string expr){
 }
 
 void Calculator::computeAndSetVariableValue(char name, string expr){
+    if(expr.size() == 0)
+        throw runtime_error("Invalid Input");
+        
     operands[toupper(name) - 'A'].setValue(computeExpr(expr));
 }
 
@@ -279,10 +318,15 @@ void Calculator::computeAllVariables(){
         }
     }
 
+    //check for not defined variable
+    for(int i=0; i<MAX_OPERANDS; i++)
+        if(operands[i].getDependents().size() != 0 && !operands[i].isInitialized())
+            throw runtime_error("Not Defined Variable");
+
     //check for circular dependency
     for(int i=0; i<MAX_OPERANDS; i++)
-        if(operands[i].getNumOfDependencies() != 0)
-            throw runtime_error("Circular dependency");
+        if(operands[i].isInitialized() && operands[i].getNumOfDependencies() != 0)
+            throw runtime_error("Circular Dependency");
 }
 
 void Calculator::printAllVar() const{
