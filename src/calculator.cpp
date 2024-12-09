@@ -103,8 +103,12 @@ vector<string> Calculator::splitExpr(const string infixExpr){
             //negative number
             if(ch == '-' && (parts.empty() || parts.back() == "(" || isOperator(parts.back())))
                 part += ch;
-            else
-                parts.push_back(string(1,toupper(ch)));
+            else{
+                if(operators.find(string(1,ch)) != operators.end())
+                    parts.push_back(string(1,toupper(ch)));
+                else
+                    throw runtime_error("Invalid Input");
+            }
         }
     }
 
@@ -260,19 +264,21 @@ double Calculator::getVariableValue(char name) const{
         throw runtime_error("Invalid Input");
 }
 
-void Calculator::setVariableExpr(char name, string expr){
+void Calculator::initializeVar(char name, string expr){
     int varInd = name - 'A';
     //was the variable initialized before?
     if(operands[varInd].isInitialized())
         throw runtime_error("Inconsistency");
     
-    //set expression, initialize and update dependencies
+    //set expression, parts, initialize and update dependencies
     operands[varInd].setExpr(expr);
     operands[varInd].initialize();
 
+    //set splited expression
+    operands[varInd].setExprParts(splitExpr(expr));
+
     //increment numOfDependencies of dependents of the variable
-    vector<string> parts = splitExpr(expr);
-    for (string part : parts) {
+    for (string part : operands[varInd].getExprParts()) {
         if (part.size() == 1 && isalpha(part[0]) && (specialOperands.find(part) == specialOperands.end())) { //variable operand
             int dependencyInd = part[0] - 'A';
             operands[dependencyInd].addDependent(name);
@@ -338,8 +344,8 @@ void Calculator::printAllVar() const{
             cout << varName << "=";
 
             if(floor(varVal) == varVal)
-                cout << varVal;
-            else
+                cout << fixed << setprecision(0) << varVal;
+            else //fractional
                 cout << fixed << setprecision(4) << varVal;
 
             cout << endl;

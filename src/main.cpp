@@ -3,15 +3,22 @@
 using namespace std;
 
 void extractExpression(Calculator& calc, const string equation){
-    char varName = toupper(equation[0]);
-    if(!isalpha(varName))
-        throw runtime_error("Invalid Input");
+    if(equation.find('=') != string::npos){
+        if(equation[1] != '=')
+            throw runtime_error("Invalid Format");
 
-    if(equation[1] != '=')
-        throw runtime_error("Invalid Format");
+        char varName = toupper(equation[0]);
+        if(!isalpha(varName))
+            throw runtime_error("Invalid Input");
 
-    string expr = equation.substr(2, equation.size());
-    calc.setVariableExpr(varName, expr);
+
+        string expr = equation.substr(2, equation.size());
+        calc.initializeVar(varName, expr);
+    }
+    else{
+        cout << calc.computeExpr(equation) << endl;
+    }
+
 }
 
 int main() {
@@ -28,7 +35,7 @@ int main() {
         myCalc.printAllVar();
     }
     catch(const runtime_error& e){
-            cerr << e.what() << endl;
+            cerr  << e.what() << endl;
     }
 
 

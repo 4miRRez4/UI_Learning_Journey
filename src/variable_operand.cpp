@@ -26,8 +26,12 @@ int VariableOperand::getNumOfDependencies() const{
     return numOfDependencies;
 }
 
-vector<char> VariableOperand::getDependents(){
+vector<char> VariableOperand::getDependents() const{
     return this->dependents;
+}
+
+vector<string> VariableOperand::getExprParts() const{
+    return this->exprParts;
 }
 
 bool VariableOperand::isInitialized() const{
@@ -44,6 +48,10 @@ void VariableOperand::initialize(){
 
 void VariableOperand::setExpr(string expr){
     this->expression = expr;
+}
+
+void VariableOperand::setExprParts(vector<string> parts){
+    this->exprParts = parts;
 }
 
 void VariableOperand::addDependent(char dependent){

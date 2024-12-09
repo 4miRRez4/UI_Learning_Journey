@@ -39,7 +39,7 @@ public:
     string getVariableExpr(char name) const;
     double getVariableValue(char name) const;
 
-    void setVariableExpr(char name, string expr);
+    void initializeVar(char name, string expr);
     void computeAndSetVariableValue(char name, string expr);
     void addOperator(Operator* newOp);
     void addSpecialOperand(SpecialOperand* newOp);
