@@ -26,6 +26,8 @@ A comprehensive collection of my personal projects, academic work, coding challe
 -[Kastel Card Game](./Courses/2.Advanced_Programming/1.Kastel/)  
 -[Shop with QT](./Courses/2.Advanced_Programming/2.Shop/)  
 -[PacMan Game with QT](./Courses/2.Advanced_Programming/3.PacMan/)  
+-[Calculator](./Courses/4.Data_Structure_and_%20Algorithm/Ramezani_Assignment/0.Projects/Calculator/)   
+
   
   
 ### Programming and Academic Courses
