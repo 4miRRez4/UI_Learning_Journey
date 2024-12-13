@@ -1,0 +1,167 @@
+name: Autograding Tests
+on:
+  - push
+  - workflow_dispatch
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK (for Java projects)
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+
+    - name: Set up C++ environment (for C++ projects)
+      run: sudo apt-get install g++ 
+
+    - name: Set up Python environment (for Python projects)
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Set up .NET (for C# projects)
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0'
+
+    # Run Java tests
+    - name: Run Java tests
+      id: java-test
+      run: |
+        if [ -f src/Main.java ]; then
+          cd src
+          javac Main.java
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(java Main < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "Java tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All Java tests passed!"
+          else
+            echo "Some Java tests failed!"
+            exit 1
+          fi
+        else
+          echo "No Java program found, skipping Java tests."
+        fi
+
+    # Run C++ tests
+    - name: Run C++ tests
+      id: cpp-test
+      run: |
+        if [ -f src/main.cpp ]; then
+          cd src
+          g++ -o main main.cpp
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(./main < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "C++ tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All C++ tests passed!"
+          else
+            echo "Some C++ tests failed!"
+            exit 1
+          fi
+        else
+          echo "No C++ program found, skipping C++ tests."
+        fi
+
+    # Run Python tests
+    - name: Run Python tests
+      id: python-test
+      run: |
+        if [ -f src/main.py ]; then
+          cd src
+          pip install -r requirements.txt
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(python3 main.py < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "Python tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All Python tests passed!"
+          else
+            echo "Some Python tests failed!"
+            exit 1
+          fi
+        else
+          echo "No Python program found, skipping Python tests."
+        fi
+
+    # Run C# tests
+    - name: Run C# tests
+      id: csharp-test
+      run: |
+        if [ -f src/Program.cs ]; then
+          cd src
+          dotnet build
+          passed_tests=0
+          total_tests=0
+          for input_file in ../.github/workflows/testCases/input/*.txt; do
+            total_tests=$((total_tests + 1))
+            base_name=$(basename "$input_file" .txt)
+            output_file="../.github/workflows/testCases/output/${base_name}.txt"
+            result=$(dotnet run --project src/Program.cs < "$input_file")
+            expected=$(cat "$output_file")
+            if [ "$result" == "$expected" ]; then
+              echo "Test $base_name passed"
+              passed_tests=$((passed_tests + 1))
+            else
+              echo "Test $base_name failed. Expected: $expected, Got: $result"
+            fi
+          done
+          echo "C# tests: $passed_tests/$total_tests passed"
+          if [ $passed_tests -eq $total_tests ]; then
+            echo "All C# tests passed!"
+          else
+            echo "Some C# tests failed!"
+            exit 1
+          fi
+        else
+          echo "No C# program found, skipping C# tests."
+        fi
