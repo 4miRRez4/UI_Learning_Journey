@@ -396,7 +396,7 @@ void Calculator::initializeVar(char name, string expr){
 void Calculator::computeAndSetVariableValue(char name){
     vector<string> expr = operands[toupper(name) - 'A'].getExprParts();
 
-    if(expr.size() != 0)
+    if(expr.size() == 0)
         throw runtime_error("Invalid Input");//empty expression
 
     operands[toupper(name) - 'A'].setValue(computeExpr(toupper(name), expr));
