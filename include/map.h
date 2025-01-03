@@ -26,7 +26,7 @@ public:
 
     void insert(const string& key, const vector<string>& value);
     bool remove(const string& key);
-    vector<string> search(const string& key) const;
+    vector<string>& search(const string& key) const;
 };
 
 #endif
