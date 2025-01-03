@@ -70,7 +70,7 @@ bool Map::remove(const string& key){
 
 
 
-vector<string> Map::search(const string& key) const{
+vector<string>& Map::search(const string& key) const{
     int hashInd = hashFunction(key);
     BucketChainNode* curr = table[hashInd];
 
@@ -81,5 +81,6 @@ vector<string> Map::search(const string& key) const{
         curr = curr->nextNode;
     }
 
-    return {};
+    static vector<string> empty;
+    return empty;
 }

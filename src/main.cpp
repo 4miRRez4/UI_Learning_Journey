@@ -1,55 +1,41 @@
 #include <iostream>
 #include "../include/preprocessor.h"
 #include "../include/map.h"
+#include "../include/invertedIndex.h"
 
 int main(){
-    // Preprocessor preprocessor;
+    Preprocessor* preprocessor = new Preprocessor();
 
-    // string directory = "EnglishData";
-    // cout << "Preprocessing documents in directory: " << directory << std::endl;
-    // preprocessor.readFiles(directory);
+    string directory = "EnglishData";
+    cout << "Preprocessing documents in directory: " << directory << std::endl;
+    preprocessor->readFiles(directory);
 
-    // const auto& processedDocs = preprocessor.getProcessedDocs();
+    const vector<pair<string, vector<string>>>& processedDocs = preprocessor->getProcessedDocs();
 
+    InvertedIndex* invertedMap = new InvertedIndex();
+    invertedMap->buildInvertedMap(processedDocs);
 
-    // for (const auto& [docID, tokens] : processedDocs) {
-    //     std::cout << "\nDocument ID: " << docID << std::endl;
-    //     std::cout << "Content:\n";
-    //     for (const auto& token : tokens) {
-    //         std::cout << token << " ";
-    //     }
-    //     std::cout << "\n-----------------------------" << std::endl;
-    // }
+    std::cout << "Testing Inverted Index..." << std::endl;
+    std::string query;
+    std::cout << "Enter a word to search (or 'exit' to quit): ";
+    while (std::cin >> query && query != "exit") {
+        std::vector<string> result = invertedMap->search(query);
 
-    // if (processedDocs.empty()) {
-    //     std::cout << "No documents were processed. Ensure the 'data' directory contains valid files." << std::endl;
-    // }
-
-    Map* map = new Map();
-
-    // Insert some key-value pairs
-    map->insert("hello", {"doc1", "doc2"});
-    map->insert("world", {"doc5", "doc6"});
-
-    // Search for a key
-    std::string key = "hello";
-    auto result = map->search(key);
-    if (!result.empty()) {
-        std::cout << "Key: " << key << " -> Values: ";
-        for (string val : result) {
-            std::cout << val << " ";
+        if (!result.empty()) {
+            std::cout << "Documents containing '" << query << "': ";
+            for (string docID : result) {
+                std::cout << docID << " ";
+            }
+            std::cout << std::endl;
+        } else {
+            std::cout << "No documents contain the word '" << query << "'." << std::endl;
         }
-        std::cout << std::endl;
-    } else {
-        std::cout << "Key '" << key << "' not found." << std::endl;
+
+        std::cout << "Enter a word to search (or 'exit' to quit): ";
     }
 
-    // Remove a key
-    if (map->remove("hello")) {
-        std::cout << "Key 'hello' removed successfully." << std::endl;
-    } else {
-        std::cout << "Key 'hello' not found." << std::endl;
-    }
-
+    delete preprocessor;
+    delete invertedMap;
+    
     return 0;
 }
