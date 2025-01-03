@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "tasks": [
+        {
+            "label": "build main.cpp",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",          // Include debugging symbols
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/main.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/map.cpp",
+                "-I/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/include", // Include header files
+                "-o", "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/main.out" // Output executable
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task for building main.cpp"
+        }
+    ]
+}
