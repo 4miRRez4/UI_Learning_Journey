@@ -38,6 +38,7 @@ int main(){
         std::set<string> results = qp->processQuery(query);
         displayResults(results);
         std::cout << "Enter a query (or 'exit' to quit): ";
+        
     }
 
     delete preprocessor;

@@ -13,6 +13,7 @@
                 "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/invertedIndex.cpp",
                 "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/queryProcessor.cpp",
                 "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/setOperations.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/errorManager.cpp",
                 "-I/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/include", 
                 "-o", "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/main.out" 
             ],
