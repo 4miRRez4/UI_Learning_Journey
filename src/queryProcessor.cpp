@@ -1,6 +1,8 @@
 #include <sstream>
+#include <iostream>
 #include "../include/queryProcessor.h"
 #include "../include/setOperations.h"
+#include "../include/errorManager.h"
 
 QueryProcessor::QueryProcessor(InvertedIndex* ii): inverted(ii){};
 
@@ -9,10 +11,6 @@ void QueryProcessor::parseQuery(string query,
                                 set<string>& mustNotBeWords,
                                 set<string>& atLeastOneOfWords)
 {
-    for(char &c : query){
-        c = tolower(c);
-    }
-
     stringstream ss(query);
     string token;
 
@@ -30,13 +28,43 @@ void QueryProcessor::parseQuery(string query,
 
 }
 
+bool QueryProcessor::checkErrors(string query, set<string>& mustBeWords,
+                                set<string>& mustNotBeWords, 
+                                set<string>& atLeastOneOfWords){
+
+    ErrorManager* EM = new ErrorManager();
+
+    if(EM->hasInputError(query)){
+        cout << "Invalid Input" << endl;
+        return true;
+    }
+
+    if(EM->hasLogicalError(mustBeWords, mustNotBeWords, atLeastOneOfWords)){
+        cout << "Logical Error" << endl;
+        return true;
+    }
+
+    return false;
+}
+
+void QueryProcessor::lowerQuery(string& query){
+    for(char &c : query)
+        c = tolower(c);
+}
+
 set<string> QueryProcessor::processQuery(string& query){
+    lowerQuery(query);
+
+
     set<string> mustBeWords;
     set<string> mustNotBeWords;
     set<string> atLeastOneOfWords;
 
     //split words in these 3 groups
     parseQuery(query, mustBeWords, mustNotBeWords, atLeastOneOfWords);
+
+    if(checkErrors(query, mustBeWords, mustNotBeWords, atLeastOneOfWords))
+        return {};
 
     set<string> answerDocs;
 
@@ -53,7 +81,7 @@ set<string> QueryProcessor::processQuery(string& query){
         set<string>& docIDs = inverted->search(word);
 
         //intersection
-        if(answerDocs.empty()){ //first word
+        if(answerDocs.empty()){ //intersection with empty set is always empty.(first word)
             answerDocs = docIDs;
         }else{
             answerDocs = setOperations::intersectionSets(answerDocs, docIDs);
