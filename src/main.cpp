@@ -2,6 +2,20 @@
 #include "../include/preprocessor.h"
 #include "../include/map.h"
 #include "../include/invertedIndex.h"
+#include "../include/queryProcessor.h"
+
+void displayResults(const std::set<string>& results) {
+    if (results.empty()) {
+        std::cout << "No matching documents found.\n";
+    } else {
+        std::cout << "Matching Documents: ";
+        cout << results.size() << endl;
+        for (string docID : results) {
+            std::cout << docID << endl;
+        }
+        std::cout << std::endl;
+    }
+}
 
 int main(){
     Preprocessor* preprocessor = new Preprocessor();
@@ -15,23 +29,15 @@ int main(){
     InvertedIndex* invertedMap = new InvertedIndex();
     invertedMap->buildInvertedMap(processedDocs);
 
-    std::cout << "Testing Inverted Index..." << std::endl;
+
+    QueryProcessor* qp = new QueryProcessor(invertedMap);
+
+    std::cout << "Enter a query (or 'exit' to quit): ";
     std::string query;
-    std::cout << "Enter a word to search (or 'exit' to quit): ";
-    while (std::cin >> query && query != "exit") {
-        std::set<string>& result = invertedMap->search(query);
-
-        if (!result.empty()) {
-            std::cout << "Documents containing '" << query << "': ";
-            for (string docID : result) {
-                std::cout << docID << " ";
-            }
-            std::cout << std::endl;
-        } else {
-            std::cout << "No documents contain the word '" << query << "'." << std::endl;
-        }
-
-        std::cout << "Enter a word to search (or 'exit' to quit): ";
+    while (std::getline(std::cin, query) && query != "exit") {
+        std::set<string> results = qp->processQuery(query);
+        displayResults(results);
+        std::cout << "Enter a query (or 'exit' to quit): ";
     }
 
     delete preprocessor;

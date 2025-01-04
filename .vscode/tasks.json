@@ -6,13 +6,15 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g",          // Include debugging symbols
+                "-g",        
                 "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/main.cpp",
                 "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/preprocessor.cpp",
                 "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/map.cpp",
                 "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/invertedIndex.cpp",
-                "-I/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/include", // Include header files
-                "-o", "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/main.out" // Output executable
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/queryProcessor.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/setOperations.cpp",
+                "-I/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/include", 
+                "-o", "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/main.out" 
             ],
             "group": {
                 "kind": "build",

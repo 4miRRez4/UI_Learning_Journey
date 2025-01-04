@@ -64,6 +64,9 @@
     "filesystem": "cpp",
     "new": "cpp",
     "vector": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "iosfwd": "cpp",
+    "string": "cpp",
+    "ostream": "cpp"
   }
 }
