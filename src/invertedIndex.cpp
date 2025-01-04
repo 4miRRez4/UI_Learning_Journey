@@ -9,17 +9,17 @@ InvertedIndex::InvertedIndex(){
 void InvertedIndex::buildInvertedMap(const vector<pair<string, vector<string>>>& processedDocs){
     for(const auto& [docID, tokens] : processedDocs){
         for(const auto& word : tokens){
-            vector<string>& docIDs = invertedMap->search(word);
+            set<string>& docIDs = invertedMap->search(word);
 
-            //adding doc if it's not already added
             if(docIDs.empty())
-                invertedMap->insert(word, {docID});
-            else if(find(docIDs.begin(), docIDs.end(), docID) == docIDs.end())
-                docIDs.push_back(docID);
+                invertedMap->insert(word, {docID}); //insert new entry for not founded word
+            else
+                docIDs.insert(docID); //add new doc to the word
+
         }
     }
 }
 
-vector<string>& InvertedIndex::search(const string& word) const{
+set<string>& InvertedIndex::search(const string& word) const{
     return invertedMap->search(word);
 }
