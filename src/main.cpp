@@ -19,7 +19,7 @@ int main(){
     std::string query;
     std::cout << "Enter a word to search (or 'exit' to quit): ";
     while (std::cin >> query && query != "exit") {
-        std::vector<string> result = invertedMap->search(query);
+        std::set<string>& result = invertedMap->search(query);
 
         if (!result.empty()) {
             std::cout << "Documents containing '" << query << "': ";

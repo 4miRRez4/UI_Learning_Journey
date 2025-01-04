@@ -2,6 +2,8 @@
 #define INVERTEDINDEX_H
 
 #include "map.h"
+#include <vector>
+using namespace std;
 
 class InvertedIndex{
 private:
@@ -11,7 +13,7 @@ public:
     InvertedIndex();
     
     void buildInvertedMap(const vector<pair<string, vector<string>>>& processedDocs);
-    vector<string>& search(const string& word) const;
+    set<string>& search(const string& word) const;
 };
 
 #endif 

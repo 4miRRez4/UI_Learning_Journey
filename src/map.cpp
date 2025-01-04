@@ -27,7 +27,7 @@ int Map::hashFunction(const string& key) const{
 }
 
 
-void Map::insert(const string& key, const vector<string>& value){
+void Map::insert(const string& key, const set<string>& value){
     int hashInd = hashFunction(key);
 
     BucketChainNode* curr_buck = table[hashInd];
@@ -70,7 +70,7 @@ bool Map::remove(const string& key){
 
 
 
-vector<string>& Map::search(const string& key) const{
+set<string>& Map::search(const string& key) const{
     int hashInd = hashFunction(key);
     BucketChainNode* curr = table[hashInd];
 
@@ -81,6 +81,6 @@ vector<string>& Map::search(const string& key) const{
         curr = curr->nextNode;
     }
 
-    static vector<string> empty;
+    static set<string> empty;
     return empty;
 }

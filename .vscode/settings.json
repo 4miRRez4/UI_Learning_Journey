@@ -62,6 +62,8 @@
     "algorithm": "cpp",
     "functional": "cpp",
     "filesystem": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "vector": "cpp",
+    "sstream": "cpp"
   }
 }
