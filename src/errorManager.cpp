@@ -3,6 +3,9 @@
 #include <sstream>
 
 bool ErrorManager::isTokenValid(const string& token){
+    if(token.size() == 1 && (token[0] == '+' || token[0] == '-'))
+        return false;
+        
     for(int i=0; i<token.length(); i++){
         char c = token[i];
 
@@ -38,11 +41,11 @@ bool ErrorManager::hasLogicalError(set<string>& mustBeWords,
         return true;
     }
 
-    // //check intersection of mustNotBeWords with atLeastOneOfWords
-    // set<string> interWithLO = setOperations::intersectionSets(mustNotBeWords, atLeastOneOfWords);
-    // if(!interWithLO.empty()){
-    //     return true;
-    // }
+    //check intersection of mustNotBeWords with atLeastOneOfWords
+    set<string> interWithLO = setOperations::intersectionSets(mustNotBeWords, atLeastOneOfWords);
+    if(!interWithLO.empty()){
+        return true;
+    }
 
     return false;
 }
