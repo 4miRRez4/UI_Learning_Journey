@@ -6,9 +6,16 @@
 using namespace std;
 
 namespace setOperations {
-    set<string> unionSets(const set<string>& set1, const set<string>& set2);
-    set<string> intersectionSets(const set<string>& set1, const set<string>& set2);
-    set<string> differenceSets(const set<string>& set1, const set<string>& set2);
+    template <typename T>
+    set<T> unionSets(const set<T>& set1, const set<T>& set2);
+
+    template <typename T>
+    set<T> intersectionSets(const set<T>& set1, const set<T>& set2);
+
+    template <typename T>
+    set<T> differenceSets(const set<T>& set1, const set<T>& set2);
 }
+
+#include "../src/setOperations.tpp"
 
 #endif 
