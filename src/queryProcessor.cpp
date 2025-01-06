@@ -4,11 +4,7 @@
 #include "../include/setOperations.h"
 #include "../include/errorManager.h"
 
-QueryProcessor::QueryProcessor(InvertedIndex* ii, Trie* t): AdvancedMode(false), inverted(ii), trie(t){};
-
-void QueryProcessor::goAdvanced(){
-    AdvancedMode = true;
-}
+QueryProcessor::QueryProcessor(bool fuzzy, InvertedIndex* ii, Trie* t): AdvancedModeFuzzy(fuzzy), inverted(ii), trie(t){};
 
 void QueryProcessor::parseQuery(string query,
                                 set<string>& mustBeWords,
@@ -51,11 +47,6 @@ bool QueryProcessor::checkErrors(string query, set<string>& mustBeWords,
     return false;
 }
 
-void QueryProcessor::lowerQuery(string& query){
-    for(char &c : query)
-        c = tolower(c);
-}
-
 set<string> QueryProcessor::findSimilarWords(const string& word){
     vector<string> fuzzyOnTrie = trie->fuzzySearch(word, MAX_EDIT_DIS);
     
@@ -72,8 +63,6 @@ void QueryProcessor::addSimilarWords(const string& orgWord, set<string>& wordSet
 }
 
 set<string> QueryProcessor::processQuery(string& query){
-    lowerQuery(query);
-
 
     set<string> mustBeWords;
     set<string> mustNotBeWords;
@@ -85,7 +74,7 @@ set<string> QueryProcessor::processQuery(string& query){
     if(checkErrors(query, mustBeWords, mustNotBeWords, atLeastOneOfWords))
         return {};
 
-    if(AdvancedMode){
+    if(AdvancedModeFuzzy){
         set<string> copy = mustBeWords;
         for(string word : copy){
             set<string>& docIDs = inverted->search(word);

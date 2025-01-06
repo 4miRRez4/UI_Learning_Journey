@@ -14,6 +14,9 @@ public:
     
     void buildInvertedMap(const vector<pair<string, vector<string>>>& processedDocs);
     set<string>& search(const string& word) const;
+
+    void buildPhraseIndex(const vector<pair<string, vector<string>>>& processedDocs);
+    set<string> searchPhrase(const string& phrase) const;
     
 };
 
