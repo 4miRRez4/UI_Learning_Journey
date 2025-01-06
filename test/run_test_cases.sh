@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-INPUT_DIR="P02-TC/in"
+INPUT_DIR="test/P02-TC/in"
 OUTPUT_FILE="output.txt"
 
 > "$OUTPUT_FILE"
