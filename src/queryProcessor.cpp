@@ -4,7 +4,11 @@
 #include "../include/setOperations.h"
 #include "../include/errorManager.h"
 
-QueryProcessor::QueryProcessor(InvertedIndex* ii): inverted(ii){};
+QueryProcessor::QueryProcessor(InvertedIndex* ii, Trie* t): AdvancedMode(false), inverted(ii), trie(t){};
+
+void QueryProcessor::goAdvanced(){
+    AdvancedMode = true;
+}
 
 void QueryProcessor::parseQuery(string query,
                                 set<string>& mustBeWords,
@@ -52,6 +56,21 @@ void QueryProcessor::lowerQuery(string& query){
         c = tolower(c);
 }
 
+set<string> QueryProcessor::findSimilarWords(const string& word){
+    vector<string> fuzzyOnTrie = trie->fuzzySearch(word, MAX_EDIT_DIS);
+    
+    set<string> similars;
+    similars.insert(fuzzyOnTrie.begin(), fuzzyOnTrie.end());
+    return similars;
+}
+
+void QueryProcessor::addSimilarWords(const string& orgWord, set<string>& wordSet){
+
+    vector<string> fuzzyOnTrie = trie->fuzzySearch(orgWord, MAX_EDIT_DIS);
+
+    wordSet.insert(fuzzyOnTrie.begin(), fuzzyOnTrie.end());
+}
+
 set<string> QueryProcessor::processQuery(string& query){
     lowerQuery(query);
 
@@ -65,6 +84,28 @@ set<string> QueryProcessor::processQuery(string& query){
 
     if(checkErrors(query, mustBeWords, mustNotBeWords, atLeastOneOfWords))
         return {};
+
+    if(AdvancedMode){
+        set<string> copy = mustBeWords;
+        for(string word : copy){
+            set<string>& docIDs = inverted->search(word);
+
+            //just do fuzzy if the mustBeWord doesn't exist
+            if(docIDs.empty()){
+                addSimilarWords(word, mustBeWords);
+
+                //erase the word cause it's not in any doc
+                mustBeWords.erase(word);
+            }
+        }
+
+        copy = atLeastOneOfWords;
+        for(string word : copy)
+            addSimilarWords(word, atLeastOneOfWords);
+
+        //no fuzzy logic for mustNotBeWords
+    }
+
 
     set<string> answerDocs;
 

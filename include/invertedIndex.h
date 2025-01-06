@@ -14,6 +14,7 @@ public:
     
     void buildInvertedMap(const vector<pair<string, vector<string>>>& processedDocs);
     set<string>& search(const string& word) const;
+    
 };
 
 #endif 
