@@ -39,4 +39,12 @@ QueryProcessor
 
     -processQuery:
         sum of SetOperation, checkError and parseQuery.
+
+
+
+
+Search engines rely on metadata to locate info like using inverted indexes to map terms to documents and their positions, enabling fast retrieval.
+Search engines has three main steps: crawling (fetching web pages), indexing (building metadata), and querying (retrieving results from metadata)
+They handle complex queries using optimized data structures like tries and sorted indexes and also they use optimization techniques like Stop Words Removal, Stemming and Lemmatization and Noise Removal.
+Advanced techniques like PageRank and frequency-based ranking ensure relevant results are prioritized efficiently.
     
