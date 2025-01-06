@@ -28,7 +28,7 @@ int main(){
     Preprocessor* preprocessor = new Preprocessor();
 
     // string directory; cin >> directory;
-    preprocessor->readFiles("EnglishData");
+    preprocessor->readFiles("Data/EnglishData");
 
     const vector<pair<string, vector<string>>>& processedDocs = preprocessor->getProcessedDocs();
 
