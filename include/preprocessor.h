@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+
 class Preprocessor{
 private:
     vector<pair<string, vector<string>>> processedDocs;

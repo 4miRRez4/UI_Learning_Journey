@@ -8,7 +8,7 @@ const int MAX_EDIT_DIS = 1;
 
 class QueryProcessor{
 private:
-    bool AdvancedMode;
+    bool AdvancedModeFuzzy;
 
     InvertedIndex* inverted;
     Trie* trie;
@@ -16,8 +16,6 @@ private:
     bool checkErrors(string query, set<string>& mustBeWords,
                     set<string>& mustNotBeWords,
                     set<string>& atLeastOneOfWords);
-
-    void lowerQuery(string& query);
 
     void parseQuery(string query,
                     set<string>& mustBeWords,
@@ -29,9 +27,7 @@ private:
     void addSimilarWords(const string& orgWord, set<string>& wordSet);
 
 public:
-    QueryProcessor(InvertedIndex* ii, Trie* t);
-
-    void goAdvanced();
+    QueryProcessor(bool fuzzy, InvertedIndex* ii, Trie* t);
 
     set<string> processQuery(string& query);
 
