@@ -5,24 +5,18 @@
 #include "../include/queryProcessor.h"
 
 void displayResults(const std::set<string>& results) {
-    if (results.empty()) {
-        std::cout << "No matching documents found.\n";
-    } else {
-        std::cout << "Matching Documents: ";
         cout << results.size() << endl;
         for (string docID : results) {
-            std::cout << docID << endl;
+            cout << docID << endl;
         }
-        std::cout << std::endl;
-    }
+        cout << endl;
 }
 
 int main(){
     Preprocessor* preprocessor = new Preprocessor();
 
-    string directory = "EnglishData";
-    cout << "Preprocessing documents in directory: " << directory << std::endl;
-    preprocessor->readFiles(directory);
+    // string directory; cin >> directory;
+    preprocessor->readFiles("EnglishData");
 
     const vector<pair<string, vector<string>>>& processedDocs = preprocessor->getProcessedDocs();
 
@@ -32,14 +26,15 @@ int main(){
 
     QueryProcessor* qp = new QueryProcessor(invertedMap);
 
-    std::cout << "Enter a query (or 'exit' to quit): ";
-    std::string query;
-    while (std::getline(std::cin, query) && query != "exit") {
-        std::set<string> results = qp->processQuery(query);
-        displayResults(results);
-        std::cout << "Enter a query (or 'exit' to quit): ";
-        
-    }
+    string query;
+    // int n; cin >> n;
+    // cin.ignore();
+    // for(int i=0; i<n; i++){
+        getline(cin, query);
+        set<string> results = qp->processQuery(query);
+        displayResults(results);        
+    // }
+    
 
     delete preprocessor;
     delete invertedMap;

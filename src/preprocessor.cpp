@@ -14,7 +14,7 @@ string Preprocessor::cleanText(const string& text){
             } else 
                 cleaned += c;
         }
-        else if(c == '\n')
+        else
             cleaned += " ";
     }
 

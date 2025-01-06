@@ -111,6 +111,7 @@
     "numbers": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "*.tpp": "cpp"
+    "*.tpp": "cpp",
+    "climits": "cpp"
   }
 }
