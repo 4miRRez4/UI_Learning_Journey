@@ -7,7 +7,9 @@ using namespace std;
 
 class InvertedIndex{
 private:
-    Map* invertedMap; // word -> doc1, doc2, ...
+    Map* invertedMap; 
+    // word -> doc1, doc2, ...
+    //AdvancedMode: word -> doc1 index1 index2, doc2 index, ...
 
 public:
     InvertedIndex();
