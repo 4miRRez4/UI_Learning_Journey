@@ -12,6 +12,10 @@ private:
     string cleanText(const string& text);
     vector<string> tokenize(const string& cleanedText);
 public:
+    string parseTxtFile(const string filePath);
+    string parseCsvFile(const string filePath);
+    string parseJsonFile(const string filePath);
+
     void readFiles(const string directory);
 
     vector<pair<string, vector<string>>>& getProcessedDocs();

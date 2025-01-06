@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+#include <nlohmann/json.hpp>
 
 string Preprocessor::cleanText(const string& text){
     string cleaned="";
@@ -32,20 +33,84 @@ vector<string> Preprocessor::tokenize(const string& cleanedText){
     return tokens;
 }
 
+string Preprocessor::parseTxtFile(const string filePath){
+    ifstream infile(filePath);
+    if(!infile.is_open()){
+        throw runtime_error("Error opening text file: " + filePath);
+    }
+
+    string text = "", line = "";
+    while(getline(infile, line)){
+        text += line + " ";
+    }
+
+    infile.close();
+    return text;
+}
+
+
+string Preprocessor::parseCsvFile(const string filePath){
+    ifstream infile(filePath);
+    if (!infile.is_open()) {
+        throw runtime_error("Error opening CSV file: " + filePath);
+    }
+
+    string text ="", line = "";
+    while(getline(infile, line)){
+        stringstream ss(line);
+        string part;
+        while(getline(ss, part, ',')){
+            text += part + " ";
+        }
+    }
+
+    infile.close();
+    return text;
+}
+
+string Preprocessor::parseJsonFile(const string filePath){
+    ifstream infile(filePath);
+    if (!infile.is_open()) {
+        throw runtime_error("Error opening JSON file: " + filePath);
+    }
+
+    nlohmann::json jsonText;
+    infile >> jsonText;
+    infile.close();
+
+    string text = "";
+    for(const auto& [key, value] : jsonText.items()){
+        text += key + " ";
+        if(value.is_string()){
+            text += value.get<string>() + " ";
+        }
+        else if (value.is_array() || value.is_object()) {
+            text += value.dump() + " ";
+        }
+    }
+
+    return text;
+}
+
+
 void Preprocessor::readFiles(const std::string dir){
     for(const auto& file : filesystem::directory_iterator(dir)){
         if(file.is_regular_file()){
-            ifstream inFile(file.path());
-            if(!inFile.is_open()){
-                cerr << "Error in opening file: " << file.path() << endl;
-                continue;
-            }
-
+            string fileType = file.path().extension().string(); 
             string docID = file.path().stem().string();
 
-            string text="", line="";
-            while(getline(inFile, line))
-                text += line + " ";
+
+            string text="";
+
+            if(fileType == ".txt"){
+                text = parseTxtFile(file.path().string());
+            }
+            else if(fileType == ".csv"){
+                text = parseCsvFile(file.path().string());
+            }
+            else if(fileType == ".json"){
+                text = parseJsonFile(file.path().string());
+            }
 
 
             string cleanedText = cleanText(text);
@@ -53,7 +118,6 @@ void Preprocessor::readFiles(const std::string dir){
 
             processedDocs.emplace_back(docID, tokens);
 
-            inFile.close();
         }
     }
 }
