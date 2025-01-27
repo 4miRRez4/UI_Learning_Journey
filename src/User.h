@@ -22,6 +22,12 @@ public:
 
     string getId() const;
     string getName() const;
+    string getDateOfBirth() const;
+    string getUniversityLocation() const;
+    string getField() const;
+    string getWorkplace() const;
+    const vector<string> &getSpecialties() const;
+    const vector<string> &getConnections() const;
 
 private:
     string id;
