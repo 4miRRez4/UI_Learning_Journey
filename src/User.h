@@ -21,6 +21,7 @@ public:
           connectionIds(connectionIds) {}
 
     string getId() const;
+    string getName() const;
 
 private:
     string id;
