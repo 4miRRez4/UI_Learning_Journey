@@ -126,3 +126,42 @@ vector<pair<string, string>> Graph::incomingEdges(string v)
     }
     return eList;
 }
+void Graph::insertVertex(User &user)
+{
+    string id = user.getId();
+    if (users.find(id) == users.end())
+    {
+        users[id] = user;
+        adjacencyList[id] = vector<string>();
+    }
+}
+void Graph::insertEdge(string v, string u)
+{
+    if (users.find(v) != users.end() && users.find(u) != users.end())
+    {
+        adjacencyList[v].push_back(u);
+        adjacencyList[u].push_back(v);
+    }
+}
+void Graph::removeVertex(string &v)
+{
+    if (users.find(v) != users.end())
+    {
+        users.erase(v);
+        adjacencyList.erase(v);
+        for (auto &pair : adjacencyList)
+        {
+            auto &neighbors = pair.second;
+            neighbors.erase(remove(neighbors.begin(), neighbors.end(), v), neighbors.end());
+        }
+    }
+}
+
+void Graph::removeEdge(string v, string u)
+{
+    if (users.find(v) != users.end() && users.find(u) != users.end())
+    {
+        adjacencyList[v].erase(remove(adjacencyList[v].begin(), adjacencyList[v].end(), u), adjacencyList[v].end());
+        adjacencyList[u].erase(remove(adjacencyList[u].begin(), adjacencyList[u].end(), v), adjacencyList[u].end());
+    }
+}
