@@ -73,3 +73,56 @@ string Graph::opposite(string v, pair<string, string> edge)
     }
     return "";
 }
+
+int Graph::outDegree(string v)
+{
+    if (adjacencyList.find(v) != adjacencyList.end())
+    {
+        return adjacencyList.at(v).size();
+    }
+    return 0;
+}
+int Graph::inDegree(string v)
+{
+    int count = 0;
+    for (auto &it : adjacencyList)
+    {
+        for (auto &neighbor : it.second)
+        {
+            if (neighbor == v)
+            {
+                count++;
+                break;
+            }
+        }
+    }
+    return count;
+}
+vector<pair<string, string>> Graph::outgoingEdges(string v)
+{
+    vector<pair<string, string>> eList;
+    if (adjacencyList.find(v) != adjacencyList.end())
+    {
+        for (auto &it : adjacencyList.at(v))
+        {
+            eList.push_back({v, it});
+        }
+    }
+    return eList;
+}
+vector<pair<string, string>> Graph::incomingEdges(string v)
+{
+    vector<pair<string, string>> eList;
+    for (auto &it : adjacencyList)
+    {
+        for (auto &neighbor : it.second)
+        {
+            if (neighbor == v)
+            {
+                eList.push_back({it.first, v});
+                break;
+            }
+        }
+    }
+    return eList;
+}
