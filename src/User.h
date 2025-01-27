@@ -20,6 +20,8 @@ public:
           specialties(specialties),
           connectionIds(connectionIds) {}
 
+    string getId() const;
+
 private:
     string id;
     string name;
