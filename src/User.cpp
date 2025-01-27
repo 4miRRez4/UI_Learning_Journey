@@ -1,11 +1,6 @@
 #include "User.h"
 
-User::User()
+string User::getId() const
 {
-
-}
-
-User::~User()
-{
-
+    return id;
 }
