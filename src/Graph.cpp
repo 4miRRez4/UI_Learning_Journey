@@ -42,3 +42,34 @@ vector<pair<string, string>> Graph::edges()
     }
     return eList;
 }
+pair<string, string> Graph::getEdge(string u, string v)
+{
+    if (adjacencyList.find(u) != adjacencyList.end())
+    {
+        for (string &neighbor : adjacencyList.at(u))
+        {
+            if (neighbor == v)
+            {
+                return {u, v};
+            }
+        }
+    }
+    return {"", ""};
+}
+
+pair<string, string> Graph::endVertices(pair<string, string> edge)
+{
+    return edge;
+}
+string Graph::opposite(string v, pair<string, string> edge)
+{
+    if (edge.first == v)
+    {
+        return edge.second;
+    }
+    else if (edge.second == v)
+    {
+        return edge.first;
+    }
+    return "";
+}
