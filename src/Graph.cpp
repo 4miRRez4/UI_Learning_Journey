@@ -165,3 +165,12 @@ void Graph::removeEdge(string v, string u)
         adjacencyList[u].erase(remove(adjacencyList[u].begin(), adjacencyList[u].end(), v), adjacencyList[u].end());
     }
 }
+
+User Graph::getUser(string id)
+{
+    if (users.find(id) != users.end())
+    {
+        return users.at(id);
+    }
+    throw std::runtime_error("User not found");
+}
