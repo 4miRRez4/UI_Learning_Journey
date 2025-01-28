@@ -1,5 +1,4 @@
 #include "../include/Graph.h"
-
 int Graph::numVertices()
 {
     return users.size();
@@ -173,4 +172,43 @@ User Graph::getUser(string id)
         return users.at(id);
     }
     throw std::runtime_error("User not found");
+}
+
+void Graph::viewAllUsers()
+{
+    cout << "List of users..." << endl;
+    for (auto &pair : users)
+    {
+        cout << "ID : " << pair.second.getId() << ", Name :" << pair.second.getName() << endl;
+    }
+}
+
+void Graph::viewUserDetails(string id)
+{
+    if (users.find(id) != users.end())
+    {
+        const User &user = users.at(id);
+        std::cout << "User Details:\n";
+        std::cout << "ID: " << user.getId() << "\n";
+        std::cout << "Name: " << user.getName() << "\n";
+        std::cout << "Date of Birth: " << user.getDateOfBirth() << "\n";
+        std::cout << "University Location: " << user.getUniversityLocation() << "\n";
+        std::cout << "Field: " << user.getField() << "\n";
+        std::cout << "Workplace: " << user.getWorkplace() << "\n";
+        std::cout << "Specialties: ";
+        for (const std::string &specialty : user.getSpecialties())
+        {
+            std::cout << specialty << ", ";
+        }
+        std::cout << "\nConnections: ";
+        for (const std::string &connectionId : user.getConnections())
+        {
+            std::cout << connectionId << ", ";
+        }
+        std::cout << "\n";
+    }
+    else
+    {
+        std::cerr << "Error: User with ID " << id << " not found.\n";
+    }
 }

@@ -32,9 +32,10 @@ public:
     void removeEdge(string v, string u);
 
     User getUser(string id);
-    void displpyUser() const;
-    Graph();
-    ~Graph();
+    void viewAllUsers();
+    void viewUserDetails(string id);
+    // Graph();
+    // ~Graph();
 
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران
