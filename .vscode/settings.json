@@ -18,6 +18,9 @@
         "vector": "cpp",
         "array": "cpp",
         "forward_list": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "optional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp"
 }
 }
