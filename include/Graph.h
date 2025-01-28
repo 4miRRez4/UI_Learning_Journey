@@ -32,7 +32,10 @@ public:
     void removeEdge(string v, string u);
 
     User getUser(string id);
-    void displpyUser() const;
+    
+    void viewAllUsers();
+    void viewUserDetails(string id);
+
     Graph() = default;
     ~Graph() = default;
 

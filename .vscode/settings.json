@@ -3,6 +3,21 @@
         "unordered_map": "cpp",
         "stdexcept": "cpp",
         "climits": "cpp",
-        "new": "cpp"
-    }
+        "new": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "algorithm": "cpp",
+        "cstddef": "cpp",
+        "functional": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "string": "cpp",
+        "utility": "cpp",
+        "vector": "cpp",
+        "array": "cpp",
+        "forward_list": "cpp",
+        "map": "cpp"
+}
 }
