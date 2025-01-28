@@ -10,15 +10,8 @@ using namespace std;
 class User
 {
 public:
-    User(string id, string name, string dateOfBirth, string univesity, string field, string wordPlac, vector<string> specialties, vector<string> connectionIds)
-        : id(id),
-          name(name),
-          dateOfBirth(dateOfBirth),
-          universityLocation(univesity),
-          field(field),
-          workplace(wordPlac),
-          specialties(specialties),
-          connectionIds(connectionIds) {}
+    User() = default;
+    User(string id, string name, string dateOfBirth, string univesity, string field, string wordPlac, vector<string> specialties, vector<string> connectionIds);
 
     string getId() const;
     string getName() const;

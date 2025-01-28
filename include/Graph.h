@@ -33,8 +33,8 @@ public:
 
     User getUser(string id);
     void displpyUser() const;
-    Graph();
-    ~Graph();
+    Graph() = default;
+    ~Graph() = default;
 
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران

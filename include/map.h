@@ -29,7 +29,7 @@ public:
     void insert(const K& key, const V& value);
     bool remove(const K& key);
     bool contains(const K& key) const;
-    const V& search(const K& key) const;
+    V& search(const K& key) const;
 };
 
 
@@ -114,7 +114,7 @@ bool Map<K, V>::contains(const K& key) const {
 }
 
 template <typename K, typename V>
-const V& Map<K, V>::search(const K& key) const {
+V& Map<K, V>::search(const K& key) const {
     int hashInd = hashFunction(key);
     BucketChainNode* curr = table[hashInd];
 
@@ -124,7 +124,7 @@ const V& Map<K, V>::search(const K& key) const {
         curr = curr->nextNode;
     }
 
-    throw runtime_error("Key not found in the map.");
+    throw std::runtime_error("Key not found in the map.");
 }
 
 #endif
