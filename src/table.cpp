@@ -43,6 +43,10 @@ Table::~Table() {
     });
 }
 
+int Table::countRecords() const {
+    return primaryIndex->countKeys();
+}
+
 void Table::addRecord(int id, const vector<string>& values) {
     if (values.size() != columns.size()) {
         cerr << "Invalid values sizes." << endl;
@@ -154,6 +158,36 @@ const vector<Table::Column>& Table::getColumns() const{
     return columns;
 }
 
+vector<string> Table::aggregate(string colName, const function<string(const vector<string>&)>& aggFunc) const {
+    vector<string> colValues;
+
+    recordsMap->iterate([&](int id, vector<string>& row) {
+        auto col_it = find_if(columns.begin(), columns.end(), [&](const Column& col) { return col.name == colName; });
+        int colInd = distance(columns.begin(), col_it);
+        colValues.push_back(row[colInd]);
+    });
+
+    return {aggFunc(colValues)};
+}
+
+vector<string> Table::groupBy(string colName, const function<string(const vector<string>&)>& aggFunc) const {
+    unordered_map<string, vector<string>> groupedValues;
+
+    recordsMap->iterate([&](int id, vector<string>& row) {
+        auto col_it = find_if(columns.begin(), columns.end(), [&](const Column& col) { return col.name == colName; });
+        int colIndex = distance(columns.begin(), col_it);
+        string key = row[colIndex];
+        groupedValues[key].push_back(row[colIndex]);
+    });
+
+    vector<string> results;
+    for (auto& [key, group] : groupedValues) {
+        results.push_back(key + ": " + aggFunc(group));
+    }
+
+    return results;
+}
+
 void Table::createIndex(string colName, IndexType it, int degree) {
     for (const auto& col : columns) {
         if (col.name == colName) {
@@ -168,4 +202,16 @@ void Table::createIndex(string colName, IndexType it, int degree) {
         }
     }
     throw runtime_error("Column not found.");
+}
+
+void Table::printAll() const {
+    cout << "All records in Table:" << endl;
+
+    recordsMap->iterate([&](int id, const vector<string>& values) {
+        cout << "ID: " << id << " | ";
+        for (int i = 0; i < values.size(); ++i) {
+            cout << columns[i].name << ": " << values[i] << " ";
+        }
+        cout << endl;
+    });
 }

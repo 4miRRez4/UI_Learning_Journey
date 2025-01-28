@@ -39,6 +39,9 @@ public:
     vector<string> searchRecord(int id);
     void updateRecord(int id, const vector<string>& newValues);
     bool containsRecord(int id) const;
+    int countRecords() const;
+    vector<string> aggregate(string colName, const function<string(const vector<string>&)>& aggFunc) const;
+    vector<string> groupBy(string colName, const function<string(const vector<string>&)>& aggFunc) const;
 
     const vector<Column>& getColumns() const;
 
