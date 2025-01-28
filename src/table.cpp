@@ -35,6 +35,12 @@ Table::Table(const vector<Column>& cols, int degree) {
 Table::~Table() {
     delete primaryIndex;
     delete recordsMap;
+    uniqueIndexes.iterate([](string col, BPlusTree<string>* ind) {
+        delete ind; 
+    });
+    nonUniqueIndexes.iterate([](string col, BPlusTree<string>* ind) {
+        delete ind; 
+    });
 }
 
 void Table::addRecord(int id, const vector<string>& values) {
