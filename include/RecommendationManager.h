@@ -13,6 +13,8 @@ class RecommendationManager
 {
 public:
     RecommendationManager(Graph &graph);
+    vector<string> getRecommandations(string &userId, int numRecommendations = 20);
+
 private:
     static const int DEGREE_WEIGHT = 40;
     static const int WORKPLACE_WEIGHT = 35;

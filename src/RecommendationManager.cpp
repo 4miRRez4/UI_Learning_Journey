@@ -1,3 +1,48 @@
+#include "../include/RecommendationManager.h"
+RecommendationManager::RecommendationManager(Graph &g) : graph(g)
+{
+}
+
+vector<string> RecommendationManager::getRecommandations(string &aimId, int numRecommendations)
+{
+    vector<string> recommendations;
+    unordered_map<string, double> recommendationScores;
+    User currentUser = graph.getUser(aimId);
+    vector<string> allUsers = graph.vertices();
+    for (string &otherUserId : allUsers)
+    {
+        if (otherUserId == aimId)
+        {
+            continue;
+        }
+        User otherUser = graph.getUser(otherUserId);
+
+        int degreeScore = calculateDegreeOfConnection(aimId, otherUserId);
+        int workplaceScore = calculateWorkplaceSimilarity(currentUser, otherUser);
+        int skillScore = calculateSkillSimilarity(currentUser, otherUser);
+
+        double normalizedDegreeScore = normalizeScore(degreeScore, MAX_DEGREE_SCORE);
+        double normalizedWorkplaceScore = normalizeScore(workplaceScore, WORKPLACE_MATCH_SCORE);
+        double normalizedSkillScore = normalizeScore(skillScore, SKILL_MATCH_SCORE * 10); // فرض حداکثر ۱۰ مهارت مشترک
+
+        double totalScore =
+            (normalizedDegreeScore * DEGREE_WEIGHT / 100.0) +
+            (normalizedWorkplaceScore * WORKPLACE_WEIGHT / 100.0) +
+            (normalizedSkillScore * SKILL_WEIGHT / 100.0);
+
+        recommendationScores[otherUserId] = totalScore;
+    }
+
+    vector<pair<string, double>> sortedRecommendations(recommendationScores.begin(), recommendationScores.end());
+    sort(sortedRecommendations.begin(), sortedRecommendations.end(), [](const pair<string, double> &a, const pair<string, double> &b)
+         { return a.second > b.second; });
+
+    for (int i = 0; i < min(numRecommendations, (int)sortedRecommendations.size()); i++)
+    {
+        recommendations.push_back(sortedRecommendations[i].first);
+    }
+    return recommendations;
+}
 
 int RecommendationManager::calculateDegreeOfConnection(string &user1, string &user2)
 {
