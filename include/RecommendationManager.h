@@ -21,3 +21,4 @@ private:
     static const int WORKPLACE_MATCH_SCORE = 10;
     static const int SKILL_MATCH_SCORE = 5;
     Graph &graph;
+    int calculateDegreeOfConnection(string &user1, string &user2);
