@@ -25,3 +25,7 @@ private:
     int calculateWorkplaceSimilarity(User &user1, User &user2);
     int calculateSkillSimilarity(User &user1, User &user2);
     vector<string> bfsShortestPath(string &start, string &target);
+    double normalizeScore(int score, int maxScore);
+};
+
+#endif
