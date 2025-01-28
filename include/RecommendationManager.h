@@ -22,3 +22,4 @@ private:
     static const int SKILL_MATCH_SCORE = 5;
     Graph &graph;
     int calculateDegreeOfConnection(string &user1, string &user2);
+    vector<string> bfsShortestPath(string &start, string &target);
