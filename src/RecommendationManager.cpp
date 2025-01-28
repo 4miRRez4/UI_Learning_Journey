@@ -8,6 +8,16 @@ int RecommendationManager::calculateDegreeOfConnection(string &user1, string &us
     return max(0, MAX_DEGREE_SCORE - degree); // امتیاز بیشتر برای درجه ارتباط کمتر
 }
 
+int RecommendationManager::calculateWorkplaceSimilarity(User &user1, User &user2)
+{
+    if (user1.getWorkplace() == user2.getWorkplace())
+    {
+        return WORKPLACE_MATCH_SCORE;
+    }
+    return 0;
+}
+
+
 vector<string> RecommendationManager::bfsShortestPath(string &start, string &target)
 {
     unordered_map<string, string> parent;
