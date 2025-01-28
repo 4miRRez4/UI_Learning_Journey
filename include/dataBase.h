@@ -12,13 +12,11 @@ private:
 
 public:
     Database() = default;
-    ~Database();
+    ~Database() = default;
 
-    void createTable(const std::string& tableName, int degree);
-    void dropTable(const std::string& tableName);
-    Table* getTable(const std::string& tableName);
-
-    void printAll() const;
+    void createTable(string tableName, int degree);
+    void removeTable(string tableName);
+    Table* getTable(string tableName);
 };
 
 #endif

@@ -1,70 +1,79 @@
-#include "../include/dataBase.h"
+#include "../include/table.h"
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+#include <climits>
 
 
-Database::Database(int degree) : index(degree) {}
+Table::Table(int degree) {
+    index = new BPlusTree<int>(degree);
+    usersMap = new Map<int, User*>();
+}
 
-void Database::addUser(const User& user) {
-    int id = stoi(user.getId());
+Table::~Table() {
+    delete index;
+    delete usersMap;
+}
 
-    if (usersMap.contains(id)) {
+void Table::addUser(User* user) {
+    int id = stoi(user->getId());
+
+    if (usersMap->contains(id)) {
         cerr << "user with Id " << id << " already exists in the map." << endl;
         return;
     }
 
-    index.insert(id); 
+    index->insert(id); 
 
-    usersMap.insert(id, user);
+    usersMap->insert(id, user);
     cout << "user with Id " << id << " added successfully." << endl;
 }
 
 
-void Database::removeUser(int id) {
-    if (!usersMap.contains(id)) {
+void Table::removeUser(int id) {
+    if (!usersMap->contains(id)) {
         cerr << "user with Id " << id << " does not exist." << endl;
         return;
     }
 
-    index.remove(id); 
+    index->remove(id); 
 
-    usersMap.remove(id); 
-    cout << "user with ID " << userId << " removed successfully." << endl;
+    usersMap->remove(id); 
+    cout << "user with ID " << id << " removed successfully." << endl;
 }
 
-User* Database::searchUser(int id) {
-    if (!usersMap.contains(id)) {
+User* Table::searchUser(int id) {
+    if (!usersMap->contains(id)) {
         cerr << "user with Id " << id << " not found." << endl;;
         return nullptr;
     }
-    return &usersMap.search(id);
+    return usersMap->search(id);
 }
 
-void Database::updateUser(int id, const User& updatedUser) {
-    if (!usersMap.contains(id)) {
+void Table::updateUser(int id, User* updatedUser) {
+    if (!usersMap->contains(id)) {
         cerr << "user with Id " << id << " does not exist." << endl;
         return;
     }
 
-    usersMap.insert(id, updatedUser); 
+    usersMap->insert(id, updatedUser); 
     cout << "user with Id " << id << " updated successfully." << endl;
 }
 
-void Database::printAll() const {
+void Table::printAll() const {
     cout << "All users in the database: " << endl;
 
-    vector<int> allIds = index.rangeQuery(0, INT_MAX);
+    vector<int> allIds = index->rangeQuery(0, INT_MAX);
     for (int id : allIds) {
         try {
-            const User& user = usersMap.search(id);
-            user.printUser();
+            User* user = usersMap->search(id);
+            cout << user->getName();
         } catch (const std::exception& e) {
             cerr << "Error for user with ID " << id << ": " << e.what() << endl;
         }
     }
 }
 
-bool Database::containsUser(int userId) const {
-    return usersMap.contains(userId);
+bool Table::containsUser(int userId) const {
+    return usersMap->contains(userId);
 }

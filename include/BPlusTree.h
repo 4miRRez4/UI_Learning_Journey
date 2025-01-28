@@ -44,7 +44,7 @@ public:
     void remove(T key);
     bool search(T key);
 
-    vector<T> rangeQuery(T lower, T upper);
+    vector<T> rangeQuery(T lower, T upper) const;
     void printTree();
 };
 
@@ -262,7 +262,7 @@ template <typename T> void BPlusTree<T>::printTree()
 }
 
 template <typename T>
-vector<T> BPlusTree<T>::rangeQuery(T lower, T upper)
+vector<T> BPlusTree<T>::rangeQuery(T lower, T upper) const
 {
     vector<T> result;
     BP_Node* current = root;

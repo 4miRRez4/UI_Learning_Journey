@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-
 void Database::createTable(string tableName, int degree) {
     if (tables.contains(tableName)) {
         cerr << tableName << " already exists." << endl;
@@ -10,7 +9,7 @@ void Database::createTable(string tableName, int degree) {
     }
 
     Table* newTable = new Table(degree);
-    tables.insert(tableName, newTable)
+    tables.insert(tableName, newTable);
 
     cout << "Table " << tableName << " created successfully." << endl;
 }
@@ -34,17 +33,4 @@ Table* Database::getTable(string tableName) {
     }
 
     return tables.search(tableName);
-}
-
-void Database::printAll() const {
-    cout << "All tables in the database:" << endl;
-    for (const auto& [name, _] : tables) {
-        cout << name << endl;
-    }
-}
-
-Database::~Database() {
-    for (auto& [name, table] : tables) {
-        delete table;
-    }
 }

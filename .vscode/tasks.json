@@ -8,6 +8,10 @@
             "args": [
                 "-g",        
                 "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/main.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/dataBase.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/Graph.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/table.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/User.cpp",
 
                 "-I/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/include", 
                 "-o", "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/main.out" 
