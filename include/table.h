@@ -9,19 +9,27 @@
 
 class Table {
 private:
-    BPlusTree<int>* index;
-    Map<int, User*>* usersMap; 
+    struct Column {
+        string name;
+        Database::DataType type;
+    };
 
-public:
-    Table(int degree=2);
+    vector<Column> columns; //col name and data type
+    BPlusTree<int>* index;
+    Map<int, vector<string>>* recordsMap; //primary key to row data
+
+
+public: 
+    Table(const vector<pair<string, Database::DataType>>& cols, int degree=2);
     ~Table();
 
-    void addUser(User* user);
-    void removeUser(int id);
-    User* searchUser(int id);
-    void updateUser(int id, User* updatedUser);
+    void addRecord(int id, const vector<string>& values);
+    void removeRecord(int id);
+    vector<string> searchRecord(int id);
+    void updateRecord(int id, const vector<string>& newValues);
+    bool containsRecord(int id) const;
 
-    bool containsUser(int id) const;
+    const vector<Column>& getColumns() const;
 
     void printAll() const;
 };

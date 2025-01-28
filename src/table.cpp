@@ -5,75 +5,93 @@
 #include <climits>
 
 
-Table::Table(int degree) {
+Table::Table(const vector<pair<string, DataType>>& cols, int degree) : columns(columns) {
     index = new BPlusTree<int>(degree);
-    usersMap = new Map<int, User*>();
+    recordsMap = new Map<int, vector<string>>();
+
+    for (const auto& col : cols) {
+        columns.push_back({col.first, col.second});
+    }
 }
 
 Table::~Table() {
     delete index;
-    delete usersMap;
+    delete recordsMap;
 }
 
-void Table::addUser(User* user) {
-    int id = stoi(user->getId());
-
-    if (usersMap->contains(id)) {
-        cerr << "user with Id " << id << " already exists in the map." << endl;
+void Table::addRecord(int id, const vector<string>& values) {
+    if (values.size() != columns.size()) {
+        cerr << "Invalid values sizes." << endl;
+        return;
+    }
+    if (recordsMap->contains(id)) {
+        cerr << "record with Id " << id << " already exists in the map." << endl;
         return;
     }
 
     index->insert(id); 
+    recordsMap->insert(id, values);
 
-    usersMap->insert(id, user);
-    cout << "user with Id " << id << " added successfully." << endl;
+    cout << "record with Id " << id << " added successfully." << endl;
 }
 
 
-void Table::removeUser(int id) {
-    if (!usersMap->contains(id)) {
-        cerr << "user with Id " << id << " does not exist." << endl;
+void Table::removeRecord(int id) {
+    if (!recordsMap->contains(id)) {
+        cerr << "record with Id " << id << " does not exist." << endl;
         return;
     }
 
     index->remove(id); 
+    recordsMap->remove(id); 
 
-    usersMap->remove(id); 
     cout << "user with ID " << id << " removed successfully." << endl;
 }
 
-User* Table::searchUser(int id) {
-    if (!usersMap->contains(id)) {
+vector<string> Table::searchRecord(int id) {
+    if (!recordsMap->contains(id)) {
         cerr << "user with Id " << id << " not found." << endl;;
-        return nullptr;
+        return {};
     }
-    return usersMap->search(id);
+    return recordsMap->search(id);
 }
 
-void Table::updateUser(int id, User* updatedUser) {
-    if (!usersMap->contains(id)) {
+void Table::updateRecord(int id, const vector<string>& newValues) {
+    if (newValues.size() != columns.size()) {
+        cerr << "Error: Number of values does not match the number of columns.\n";
+        return;
+    }
+    if (!recordsMap->contains(id)) {
         cerr << "user with Id " << id << " does not exist." << endl;
         return;
     }
 
-    usersMap->insert(id, updatedUser); 
+    recordsMap->insert(id, newValues); 
+
     cout << "user with Id " << id << " updated successfully." << endl;
 }
 
 void Table::printAll() const {
-    cout << "All users in the database: " << endl;
+    cout << "All records in the database: " << endl;
 
     vector<int> allIds = index->rangeQuery(0, INT_MAX);
     for (int id : allIds) {
         try {
-            User* user = usersMap->search(id);
-            cout << user->getName();
+            vector<string> rec = recordsMap->search(id);
+            for(int i=0; i<rec.size(); i++){
+                cout << rec[i] << endl;
+            }
+
         } catch (const std::exception& e) {
-            cerr << "Error for user with ID " << id << ": " << e.what() << endl;
+            cerr << "Error for record with ID " << id << ": " << e.what() << endl;
         }
     }
 }
 
-bool Table::containsUser(int userId) const {
-    return usersMap->contains(userId);
+bool Table::containsRecord(int id) const {
+    return recordsMap->contains(id);
+}
+
+const vector<Table::Column>& Table::getColumns() const{
+    return columns;
 }
