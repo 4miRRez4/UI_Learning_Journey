@@ -24,7 +24,7 @@ public:
     string opposite(string v, pair<string, string> edge);
     int outDegree(string v);
     int inDegree(string v);
-    vector<pair<string, string>> outgoingEdges(string v);
+    vector<string> outgoingEdges(string v);
     vector<pair<string, string>> incomingEdges(string v);
     void insertVertex(User &user);
     void insertEdge(string v, string u);
