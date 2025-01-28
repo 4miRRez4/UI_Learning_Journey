@@ -11,10 +11,12 @@ private:
     Map<string, Table*> tables; // table names to table objects
 
 public:
+    enum class DataType { INT, STRING, DATE };
+
     Database() = default;
     ~Database() = default;
 
-    void createTable(string tableName, int degree);
+    void createTable(string tableName,const vector<pair<string, Database::DataType>>& columns, int degree); //table with specific columns and data types
     void removeTable(string tableName);
     Table* getTable(string tableName);
 };

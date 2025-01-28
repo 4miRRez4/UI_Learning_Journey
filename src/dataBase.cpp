@@ -2,13 +2,13 @@
 #include <iostream>
 using namespace std;
 
-void Database::createTable(string tableName, int degree) {
+void Database::createTable(string tableName,const vector<pair<string, Database::DataType>>& columns, int degree) {
     if (tables.contains(tableName)) {
         cerr << tableName << " already exists." << endl;
         return;
     }
 
-    Table* newTable = new Table(degree);
+    Table* newTable = new Table(columns, degree);
     tables.insert(tableName, newTable);
 
     cout << "Table " << tableName << " created successfully." << endl;
