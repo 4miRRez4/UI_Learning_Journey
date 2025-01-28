@@ -20,6 +20,8 @@ int main()
 
     cout << "Number of vertices: " << graph.numVertices() << endl;
     cout << "Number of edges: " << graph.numEdges() << endl;
+    cout << "Details of 2 id: ";
+    graph.viewUserDetails("2");
 
     return 0;
 }
