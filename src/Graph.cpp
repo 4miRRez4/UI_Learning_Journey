@@ -99,15 +99,7 @@ int Graph::inDegree(string v)
 }
 vector<string> Graph::outgoingEdges(string v)
 {
-    vector<string> eList;
-    if (adjacencyList.find(v) != adjacencyList.end())
-    {
-        for (auto &it : adjacencyList.at(v))
-        {
-            eList.push_back(it);
-        }
-    }
-    return eList;
+    return adjacencyList[v];
 }
 vector<pair<string, string>> Graph::incomingEdges(string v)
 {
