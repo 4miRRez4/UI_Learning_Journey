@@ -74,3 +74,8 @@ vector<string> RecommendationManager::bfsShortestPath(string &start, string &tar
     }
     return {};
 }
+
+double RecommendationManager::normalizeScore(int score, int maxScore)
+{
+    return static_cast<double>(score) / maxScore;
+}
