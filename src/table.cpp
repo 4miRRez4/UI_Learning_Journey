@@ -5,17 +5,35 @@
 #include <climits>
 
 
-Table::Table(const vector<pair<string, DataType>>& cols, int degree) : columns(columns) {
-    index = new BPlusTree<int>(degree);
+Table::Table(const vector<Column>& cols, int degree) {
     recordsMap = new Map<int, vector<string>>();
 
     for (const auto& col : cols) {
-        columns.push_back({col.first, col.second});
+        columns.push_back(col);
+
+        if (col.indexType == IndexType::PRIMARY) {
+            if (primaryIndex) {
+                throw runtime_error("Primary index already exists.");
+            }
+            primaryIndex = new BPlusTree<int>(degree);
+        } 
+        else if (col.indexType == IndexType::UNIQUE) {
+            if (uniqueIndexes.contains(col.name)) {
+                throw runtime_error("Unique index already exists for column: " + col.name);
+            }
+            uniqueIndexes.insert(col.name, new BPlusTree<string>(degree));
+        } 
+        else if (col.indexType == IndexType::NON_UNIQUE) {
+            if (nonUniqueIndexes.contains(col.name)) {
+                throw runtime_error("Non-unique index already exists for column: " + col.name);
+            }
+            nonUniqueIndexes.insert(col.name, new BPlusTree<string>(degree));
+        }
     }
 }
 
 Table::~Table() {
-    delete index;
+    delete primaryIndex;
     delete recordsMap;
 }
 
@@ -29,7 +47,36 @@ void Table::addRecord(int id, const vector<string>& values) {
         return;
     }
 
-    index->insert(id); 
+    if (primaryIndex->search(id)) {
+        throw std::runtime_error("Duplicated key for primary index.");
+    }
+    primaryIndex->insert(id);
+
+    for (int i = 0; i < values.size(); ++i) {
+        string colName = columns[i].name;
+        string value = values[i];
+
+        if (columns[i].indexType == UNIQUE) {
+            if (!uniqueIndexes.contains(colName)) {
+                cerr << "Unique index not found for column: " << colName << endl;
+                return;
+            }
+            if (uniqueIndexes.search(colName)->search(value)) {
+                throw std::runtime_error("Duplicated value for unique index on column: " + colName);
+            }
+
+            uniqueIndexes.search(colName)->insert(value);
+        } 
+        else if (columns[i].indexType == NON_UNIQUE) {
+            if (!nonUniqueIndexes.contains(colName)) {
+                cerr << "Non-unique index not found for column: " << colName << endl;
+                return;
+            }
+
+            nonUniqueIndexes.search(colName)->insert(value);
+        }
+    }
+
     recordsMap->insert(id, values);
 
     cout << "record with Id " << id << " added successfully." << endl;
@@ -42,7 +89,21 @@ void Table::removeRecord(int id) {
         return;
     }
 
-    index->remove(id); 
+    primaryIndex->remove(id); 
+
+    vector<string>& values = recordsMap->search(id);
+    for (int i = 0; i < values.size(); ++i) {
+        string colName = columns[i].name;
+        string value = values[i];
+
+        if (uniqueIndexes.contains(colName)) {
+            uniqueIndexes.search(colName)->remove(value);
+        } else if (nonUniqueIndexes.contains(colName)) {
+            nonUniqueIndexes.search(colName)->remove(value);
+        }
+    }
+
+
     recordsMap->remove(id); 
 
     cout << "user with ID " << id << " removed successfully." << endl;
@@ -57,24 +118,15 @@ vector<string> Table::searchRecord(int id) {
 }
 
 void Table::updateRecord(int id, const vector<string>& newValues) {
-    if (newValues.size() != columns.size()) {
-        cerr << "Error: Number of values does not match the number of columns.\n";
-        return;
-    }
-    if (!recordsMap->contains(id)) {
-        cerr << "user with Id " << id << " does not exist." << endl;
-        return;
-    }
-
-    recordsMap->insert(id, newValues); 
-
+    removeRecord(id);  
+    addRecord(id, newValues);
     cout << "user with Id " << id << " updated successfully." << endl;
 }
 
 void Table::printAll() const {
     cout << "All records in the database: " << endl;
 
-    vector<int> allIds = index->rangeQuery(0, INT_MAX);
+    vector<int> allIds = primaryIndex->rangeQuery(0, INT_MAX);
     for (int id : allIds) {
         try {
             vector<string> rec = recordsMap->search(id);
@@ -94,4 +146,20 @@ bool Table::containsRecord(int id) const {
 
 const vector<Table::Column>& Table::getColumns() const{
     return columns;
+}
+
+void Table::createIndex(string colName, IndexType it, int degree) {
+    for (const auto& col : columns) {
+        if (col.name == colName) {
+            if (it == IndexType::UNIQUE) {
+                uniqueIndexes.insert(colName, new BPlusTree<string>(degree));
+            } 
+            else if (it == IndexType::NON_UNIQUE) {
+                nonUniqueIndexes.insert(colName, new BPlusTree<string>(degree));
+            }
+            cout << "Index of column: " << colName << " created." << endl;
+            return;
+        }
+    }
+    throw runtime_error("Column not found.");
 }
