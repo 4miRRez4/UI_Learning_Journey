@@ -48,6 +48,10 @@ void RecommendationManager::setWeightsConfig(WeightsConfig &weights)
 {
     customWeights = weights;
 }
+void RecommendationManager::resetWeightsConfig()
+{
+    customWeights = WeightsConfig();
+}
 int RecommendationManager::calculateDegreeOfConnection(string &user1, string &user2)
 {
     vector<string> path = bfsShortestPath(user1, user2);
