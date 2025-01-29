@@ -26,9 +26,9 @@ vector<string> RecommendationManager::getRecommandations(string &aimId, int numR
         double normalizedSkillScore = normalizeScore(skillScore, SKILL_MATCH_SCORE * 10); // فرض حداکثر ۱۰ مهارت مشترک
 
         double totalScore =
-            (normalizedDegreeScore * DEGREE_WEIGHT / 100.0) +
-            (normalizedWorkplaceScore * WORKPLACE_WEIGHT / 100.0) +
-            (normalizedSkillScore * SKILL_WEIGHT / 100.0);
+            (normalizedDegreeScore * customWeights.degreeWeight / 100.0) +
+            (normalizedWorkplaceScore * customWeights.workplaceWeight / 100.0) +
+            (normalizedSkillScore * customWeights.skillWeight / 100.0);
 
         recommendationScores[otherUserId] = totalScore;
     }
