@@ -30,6 +30,7 @@ public:
     bool remove(const K& key);
     bool contains(const K& key) const;
     V& search(const K& key) const;
+    void iterate(const std::function<void(const K&, V&)>& callback) const;
 };
 
 
@@ -125,6 +126,17 @@ V& Map<K, V>::search(const K& key) const {
     }
 
     throw std::runtime_error("Key not found in the map.");
+}
+
+template <typename K, typename V>
+void Map<K, V>::iterate(const std::function<void(const K&, V&)>& callback) const {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        BucketChainNode* curr = table[i];
+        while (curr) {
+            callback(curr->key, curr->value);
+            curr = curr->nextNode;
+        }
+    }
 }
 
 #endif
