@@ -1,25 +1,25 @@
 #include <iostream>
-#include "cli.h"
-#include "aggregation_methods.h"
+#include "../include/cli.h"
+#include "../include/aggregation_methods.h"
 
 using namespace std;
 
 void displayMenu() {
     cout << "========== Social Media Menu ==========" << endl;
-    cout << "1. Create Table";
-    cout << "2. Insert Record";
-    cout << "3. Update Record";
-    cout << "4. Delete Record";
-    cout << "5. Search Record";
-    cout << "6. Print All Records";
-    cout << "7. Create Index";
-    cout << "8. Perform Aggregation";
-    cout << "9. Exit";
-    cout << "===========================================\n";
-    cout << "Enter number: ";
+    cout << "1. Create Table" << endl;
+    cout << "2. Insert Record" << endl;
+    cout << "3. Update Record" << endl;
+    cout << "4. Delete Record" << endl;
+    cout << "5. Search Record" << endl;
+    cout << "6. Print All Records" << endl;
+    cout << "7. Create Index" << endl;
+    cout << "8. Perform Aggregation" << endl;
+    cout << "9. Exit" << endl;
+    cout << "========================================" << endl;
+    cout << "Enter your choice: ";
 }
 
-void createTable(Database& db) {
+void createTable(Database* db) {
     string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
@@ -55,7 +55,7 @@ void createTable(Database& db) {
             it = Table::IndexType::PRIMARY;
         else if(indexType == "unique")
             it = Table::IndexType::UNIQUE;
-        else if(indexType == "primary")
+        else if(indexType == "non-unique")
             it = Table::IndexType::NON_UNIQUE;
         else{
             cout << "Invalid index type. Skipping column..." << endl;
@@ -66,16 +66,16 @@ void createTable(Database& db) {
         columns.push_back(newCol);
     }
 
-    db.createTable(tableName, columns, 3);
+    db->createTable(tableName, columns, 3);
     cout << "Table '" << tableName << "' created successfully.\n";
 }
 
-void insertRecord(Database& db) {
+void insertRecord(Database* db) {
     string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
 
-    Table* table = db.getTable(tableName);
+    Table* table = db->getTable(tableName);
     if (!table) {
         cout << "No table named: " << tableName << endl;
         return;
@@ -92,14 +92,14 @@ void insertRecord(Database& db) {
 
     int id = stoi(values[0]);
     table->addRecord(id, values);
-    cout << "Record inserted successfully.\n";
+    cout << "Record inserted successfully." << endl;
 }
-void updateRecord(Database& db) {
+void updateRecord(Database* db) {
     string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
 
-    Table* table = db.getTable(tableName);
+    Table* table = db->getTable(tableName);
     if (!table) {
         cout << "No table named: " << tableName << endl;
         return;
@@ -118,15 +118,15 @@ void updateRecord(Database& db) {
     }
 
     table->updateRecord(id, values);
-    cout << "Record updated successfully.\n";
+    cout << "Record updated successfully." << endl;
 }
 
-void deleteRecord(Database& db) {
+void deleteRecord(Database* db) {
     string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
 
-    Table* table = db.getTable(tableName);
+    Table* table = db->getTable(tableName);
     if (!table) {
         cout << "No table named: " << tableName << endl;
         return;
@@ -137,15 +137,15 @@ void deleteRecord(Database& db) {
     cin >> id;
 
     table->removeRecord(id);
-    cout << "Record deleted successfully.\n";
+    cout << "Record deleted successfully." << endl;
 }
 
-void searchRecord(Database& db) {
+void searchRecord(Database* db) {
     string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
 
-    Table* table = db.getTable(tableName);
+    Table* table = db->getTable(tableName);
     if (!table) {
         cout << "No table named: " << tableName << endl;
         return;
@@ -162,18 +162,18 @@ void searchRecord(Database& db) {
             cout << value << " ";
         cout << endl;
     } else {
-        cout << "Record not found.\n";
+        cout << "Record not found." << endl;
     }
 }
 
-void createIndex(Database& db) {
+void createIndex(Database* db) {
     string tableName, colName;
     int indexType;
 
     cout << "Enter table name: ";
     cin >> tableName;
 
-    Table* table = db.getTable(tableName);
+    Table* table = db->getTable(tableName);
     if (!table) {
         cout << "No table named: " << tableName << endl;
         return;
@@ -195,12 +195,12 @@ void createIndex(Database& db) {
 }
 
 
-void performAggregation(Database& db) {
+void performAggregation(Database* db) {
     string tableName, columnName, aggType;
     cout << "Enter table name: ";
     cin >> tableName;
 
-    Table* table = db.getTable(tableName);
+    Table* table = db->getTable(tableName);
     if (!table) {
         cout << "No table named: " << tableName << endl;
         return;
@@ -229,7 +229,21 @@ void performAggregation(Database& db) {
     cout << "Aggregation result: " << result[0] << endl;
 }
 
-void handleUserInput(Database& db) {
+void printAllRecords(Database* db) {
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table* table = db->getTable(tableName);
+    if (!table) {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    table->printAll();
+}
+
+void handleUserInput(Database* db) {
     int choice;
     while (true) {
         displayMenu();
@@ -244,7 +258,7 @@ void handleUserInput(Database& db) {
             case 6: printAllRecords(db); break;
             case 7: createIndex(db); break;
             case 8: performAggregation(db); break;
-            case 0: return;
+            case 9: return;
             default: cout << "Invalid choice. Try again.\n";
         }
     }

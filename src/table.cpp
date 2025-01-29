@@ -133,23 +133,6 @@ void Table::updateRecord(int id, const vector<string>& newValues) {
     cout << "user with Id " << id << " updated successfully." << endl;
 }
 
-void Table::printAll() const {
-    cout << "All records in the database: " << endl;
-
-    vector<int> allIds = primaryIndex->rangeQuery(0, INT_MAX);
-    for (int id : allIds) {
-        try {
-            vector<string> rec = recordsMap->search(id);
-            for(int i=0; i<rec.size(); i++){
-                cout << rec[i] << endl;
-            }
-
-        } catch (const std::exception& e) {
-            cerr << "Error for record with ID " << id << ": " << e.what() << endl;
-        }
-    }
-}
-
 bool Table::containsRecord(int id) const {
     return recordsMap->contains(id);
 }
