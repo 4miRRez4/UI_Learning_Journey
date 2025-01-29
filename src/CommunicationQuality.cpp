@@ -18,6 +18,29 @@ double CommunicationQuality::assessQuality(string &userId1, string &userId2)
     {
         return 0.0; // if user not found, return 0
     }
+}
+vector<pair<string, double>> CommunicationQuality::getTopConnections(string &userId, int limit)
+{
+    vector<pair<string, double>> score;
+    vector<string> allUsers = graph.vertices();
+    for (string &otherId : allUsers)
+    {
+        if (userId != otherId)
+        {
+            double quality = assessQuality(userId, otherId);
+            score.push_back({otherId, quality});
+        }
+    }
+    sort(score.begin(), score.end(), [](const pair<string, double> &a, const pair<string, double> &b)
+         { return a.second > b.second; });
+
+        // Return top N results
+    if (score.size() > limit)
+    {
+        score.resize(limit);
+    }
+    return score;
+}
 double CommunicationQuality::calculateSameConnections(string &userId1, string &userId2)
 {
     vector<string> connections1 = graph.outgoingEdges(userId1);

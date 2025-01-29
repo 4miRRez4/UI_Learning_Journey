@@ -9,6 +9,7 @@ class CommunicationQuality
 public:
     CommunicationQuality(Graph &g) : graph(g) {}
     double assessQuality(string &userId1, string &userId2);
+    vector<pair<string, double>> getTopConnections(string &userId, int limit = 10);
 private:
     Graph &graph;
 
