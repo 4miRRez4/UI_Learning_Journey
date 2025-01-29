@@ -2,7 +2,6 @@
 int Graph::numVertices()
 {
     return users.size();
-    ;
 }
 
 vector<string> Graph::vertices()
