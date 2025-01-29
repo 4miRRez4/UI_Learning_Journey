@@ -40,6 +40,7 @@ private:
     static const int WORKPLACE_MATCH_SCORE = 10;
     static const int SKILL_MATCH_SCORE = 5;
     Graph &graph;
+    WeightsConfig customWeights;
     int calculateDegreeOfConnection(string &user1, string &user2);
     int calculateWorkplaceSimilarity(User &user1, User &user2);
     int calculateSkillSimilarity(User &user1, User &user2);
