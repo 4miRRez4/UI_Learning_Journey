@@ -7,6 +7,7 @@
 class CommunicationQuality
 {
 public:
+    CommunicationQuality(Graph &g) : graph(g) {}
 private:
     Graph &graph;
 
