@@ -214,6 +214,10 @@ vector<string> Graph::getKeyUsers(int n, const string &metric)
         {
             score = degreeCentrality(userId);
         }
+        else if (metric == "betweenness")
+        {
+            score = betweennessCentrality(userId);
+        }
 
         centralityScores.push_back({userId, score});
     }
@@ -238,3 +242,73 @@ int Graph::degreeCentrality(string userId)
     return 0;
 }
 
+double Graph::betweennessCentrality(string userId)
+{
+    unordered_map<string, double> centrality;
+    for (string &it : vertices())
+    {
+        centrality[it] = 0.0;
+    }
+    for (string &s : vertices())
+    {
+        if (s == userId)
+        {
+            continue;
+        }
+        unordered_map<string, vector<string>> predecessors; // گره‌های قبلی در مسیرهای کوتاه
+        unordered_map<string, int> shortestPaths;           // تعداد کوتاه‌ترین مسیرها
+        unordered_map<string, double> distance;             // فاصله‌ها از s
+        unordered_map<string, double> dependency;           // تأثیر مسیرهای دیگر روی این گره
+
+        queue<string> qu;
+        stack<string> st;
+
+        for (string &it : vertices())
+        {
+            shortestPaths[it] = 0;
+            distance[it] = numeric_limits<double>::infinity();
+            dependency[it] = 0.0;
+        }
+        shortestPaths[s] = 1;
+        distance[s] = 0.0;
+        qu.push(s);
+
+        // اجرای BFS برای یافتن کوتاه‌ترین مسیرها
+        while (!qu.empty())
+        {
+            string v = qu.front();
+            qu.pop();
+            st.push(v);
+
+            for (string &neighbor : adjacencyList[v])
+            {
+                if (distance[neighbor] == numeric_limits<double>::infinity())
+                {
+                    distance[neighbor] = distance[v] + 1;
+                    qu.push(neighbor);
+                }
+                if (distance[neighbor] == distance[v] + 1)
+                {
+                    shortestPaths[neighbor] += shortestPaths[v];
+                    predecessors[neighbor].push_back(v);
+                }
+            }
+        }
+
+        // محاسبه‌ی dependency برای پیدا کردن Betweenness
+        while (!st.empty())
+        {
+            string w = st.top();
+            st.pop();
+            for (const string &v : predecessors[w])
+            {
+                dependency[v] += (shortestPaths[v] / (double)shortestPaths[w]) * (1 + dependency[w]);
+            }
+            if (w != s && w == userId)
+            { // تنها گره موردنظر را اضافه می‌کنیم
+                centrality[w] += dependency[w];
+            }
+        }
+    }
+    return centrality[userId];
+}
