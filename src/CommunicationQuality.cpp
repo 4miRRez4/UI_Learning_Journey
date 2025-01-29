@@ -1,3 +1,23 @@
+#include "../include/CommunicationQuality.h"
+double CommunicationQuality::assessQuality(string &userId1, string &userId2)
+{
+    try
+    {
+        User user1 = graph.getUser(userId1);
+        User user2 = graph.getUser(userId2);
+
+        double sameConnectionsScore = calculateSameConnections(userId1, userId2);
+        double sameSpecialityScore = calculateSameSpeciality(user1, user2);
+        double sameWorkplaceScore = calculateSameWorkplace(user1, user2);
+
+        return (sameConnectionsScore * SAME_CONNECTIONS +
+                sameSpecialityScore * SAME_SPECIALITY +
+                sameWorkplaceScore * SAME_WORKPLACE);
+    }
+    catch (const std::runtime_error &e)
+    {
+        return 0.0; // if user not found, return 0
+    }
 double CommunicationQuality::calculateSameConnections(string &userId1, string &userId2)
 {
     vector<string> connections1 = graph.outgoingEdges(userId1);
