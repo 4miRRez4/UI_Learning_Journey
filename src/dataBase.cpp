@@ -2,13 +2,19 @@
 #include <iostream>
 using namespace std;
 
-void Database::createTable(string tableName, int degree) {
+Database::~Database(){
+    tables.iterate([](string name, Table* tab) {
+        delete tab; 
+    });
+}
+
+void Database::createTable(string tableName,const vector<Table::Column>& cols, int degree) {
     if (tables.contains(tableName)) {
         cerr << tableName << " already exists." << endl;
         return;
     }
 
-    Table* newTable = new Table(degree);
+    Table* newTable = new Table(cols, degree);
     tables.insert(tableName, newTable);
 
     cout << "Table " << tableName << " created successfully." << endl;
