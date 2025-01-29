@@ -1,0 +1,16 @@
+B+ tree:
+    -Insert: O(logN)
+    -Delete: O(logN)
+    -Search: O(logN)
+    -RangeQuery: O(logN + R)
+    
+
+DataBase:
+    -CreateTable: O(1)
+    -InsertRecord: O(logN)
+    -DeleteRecord: O(logN)
+    -UpdateRecord: O(logN)
+    -SearchRecord: O(logN)
+    -PrintAll: O(N)
+    -CreateIndex: O(NlogN)
+    -Aggregation: O(N)*O(aggFunc)
