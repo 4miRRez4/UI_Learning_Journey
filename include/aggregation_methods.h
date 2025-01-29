@@ -1,5 +1,5 @@
-#ifndef AGGREGATION_FUNCTIONS_H
-#define AGGREGATION_FUNCTIONS_H
+#ifndef AGGREGATION_METHODS_H
+#define AGGREGATION_METHODS_H
 
 #include <string>
 #include <vector>
