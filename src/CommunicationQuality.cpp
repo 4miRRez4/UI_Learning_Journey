@@ -26,3 +26,18 @@ double CommunicationQuality::calculateSameSpeciality(User &user1, User &user2)
     int maxPossible = min(speciality1.size(), speciality2.size());
     return maxPossible > 0 ? static_cast<double>(common) / maxPossible : 0.0;
 }
+
+double CommunicationQuality::calculateSameWorkplace(User &user1, User &user2)
+{
+    double score = 0.0;
+
+    if (user1.getWorkplace() == user2.getWorkplace())
+    {
+        score += 0.6;
+    }
+    if (user1.getField() == user2.getField())
+    {
+        score += 0.4;
+    }
+    return score;
+}
