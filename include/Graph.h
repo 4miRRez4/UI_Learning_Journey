@@ -7,6 +7,7 @@
 #include <vector>
 #include <queue>
 #include <stack>
+#include <unordered_set>
 #include <string>
 #include <unordered_map>
 #include <algorithm>
@@ -44,6 +45,7 @@ public:
 vector<string> getKeyUsers(int n, const string &metric = "degree");
     int degreeCentrality(string userId);
     double betweennessCentrality(string userId);
+    double closenessCentrality(string userId);
 
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران

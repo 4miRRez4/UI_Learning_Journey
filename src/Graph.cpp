@@ -218,6 +218,10 @@ vector<string> Graph::getKeyUsers(int n, const string &metric)
         {
             score = betweennessCentrality(userId);
         }
+        else if (metric == "closeness")
+        {
+            score = closenessCentrality(userId);
+        }
 
         centralityScores.push_back({userId, score});
     }
@@ -312,3 +316,41 @@ double Graph::betweennessCentrality(string userId)
     }
     return centrality[userId];
 }
+
+double Graph::closenessCentrality(string userId)
+{
+    queue<string> q;
+    unordered_map<string, int> distance;
+    unordered_set<string> visited;
+    q.push(userId);
+    distance[userId] = 0;
+    visited.insert(userId);
+
+    double totalDistance = 0.0;
+    int reachableUsers = 0;
+
+    while (!q.empty())
+    {
+        string current = q.front();
+        q.pop();
+
+        for (string &neighbor : adjacencyList.at(current))
+        { // همسایه‌های گره فعلی
+            if (!visited.count(neighbor))
+            {
+                visited.insert(neighbor);
+                distance[neighbor] = distance[current] + 1;
+                totalDistance += distance[neighbor];
+                reachableUsers++;
+                q.push(neighbor);
+            }
+        }
+    }
+
+    if (reachableUsers == 0)
+    {
+        return 0.0;
+    }
+    return reachableUsers / totalDistance;
+}
+
