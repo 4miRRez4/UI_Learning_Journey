@@ -9,7 +9,7 @@ namespace Aggregation {
 
 string sum(const vector<string>& values) {
     int sum = 0;
-    for (int i = 0; i < values.size(); ++i) {
+    for (int i = 0; i < values.size(); i++) {
         sum += stoi(values[i]);
     }
     return to_string(sum);
@@ -17,7 +17,7 @@ string sum(const vector<string>& values) {
 
 string average(const vector<string>& values) {
     int sum = 0;
-    for (int i = 0; i < values.size(); ++i) {
+    for (int i = 0; i < values.size(); i++) {
         sum += stoi(values[i]);
     }
     return to_string(static_cast<double>(sum) / values.size());
@@ -27,7 +27,7 @@ string min(const vector<string>& values) {
     if (values.empty()) return "empty values in min()."; // Handle empty case
 
     int minVal = stoi(values[0]);
-    for (int i = 1; i < values.size(); ++i) {
+    for (int i = 1; i < values.size(); i++) {
         int val =stoi(values[i]);
         if (val < minVal) {
             minVal = val;
@@ -40,7 +40,7 @@ string max(const vector<string>& values) {
     if (values.empty()) return "empty values in max().";
 
     int maxVal = stoi(values[0]); 
-    for (size_t i = 1; i < values.size(); ++i) {
+    for (int i = 1; i < values.size(); i++) {
         int val = stoi(values[i]);
         if (val > maxVal) {
             maxVal = val;
