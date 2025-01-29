@@ -5,6 +5,11 @@
 #include "User.h"
 #include <unordered_map>
 #include <vector>
+#include <queue>
+#include <stack>
+#include <unordered_set>
+#include <limits>
+#include <omp.h> // For parallelization
 #include <string>
 #include <unordered_map>
 #include <algorithm>
@@ -32,12 +37,18 @@ public:
     void removeEdge(string v, string u);
 
     User getUser(string id);
-    
+
     void viewAllUsers();
     void viewUserDetails(string id);
 
     Graph() = default;
     ~Graph() = default;
+
+    vector<string> getKeyUsers(int n, const string &metric = "degree");
+    int degreeCentrality(string userId);
+    double betweennessCentrality(string userId);
+    double closenessCentrality(string &userId);
+    unordered_map<string, double> computeAllClosenessCentralities();
 
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران
