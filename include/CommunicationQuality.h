@@ -15,6 +15,8 @@ private:
     const double SAME_CONNECTIONS = 0.4;
     const double SAME_SPECIALITY = 0.3;
     const double SAME_WORKPLACE = 0.3;
+
+    double calculateSameConnections(string &userId1, string &userId2);
 };
 
 #endif
