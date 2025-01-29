@@ -12,3 +12,17 @@ double CommunicationQuality::calculateSameConnections(string &userId1, string &u
     int maxPossible = min(connections1.size(), connections2.size());
     return maxPossible > 0 ? static_cast<double>(common) / maxPossible : 0.0;
 }
+double CommunicationQuality::calculateSameSpeciality(User &user1, User &user2)
+{
+    vector<string> speciality1 = user1.getSpecialties();
+    vector<string> speciality2 = user2.getSpecialties();
+
+    int common = 0;
+    for (string &s : speciality1)
+    {
+        if (find(speciality2.begin(), speciality2.end(), s) != speciality2.end())
+            common++;
+    }
+    int maxPossible = min(speciality1.size(), speciality2.size());
+    return maxPossible > 0 ? static_cast<double>(common) / maxPossible : 0.0;
+}

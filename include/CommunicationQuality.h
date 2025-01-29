@@ -17,6 +17,7 @@ private:
     const double SAME_WORKPLACE = 0.3;
 
     double calculateSameConnections(string &userId1, string &userId2);
+    double calculateSameSpeciality(User &user1, User &user2);
 };
 
 #endif
