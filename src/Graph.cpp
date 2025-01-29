@@ -214,7 +214,19 @@ vector<string> Graph::getKeyUsers(int n, const string &metric)
         {
             score = degreeCentrality(userId);
         }
+
+        centralityScores.push_back({userId, score});
     }
+
+    sort(centralityScores.begin(), centralityScores.end(), [](pair<string, double> &a, pair<string, double> &b)
+         { return a.second > b.second; });
+
+    vector<string> keyUsers;
+    for (int i = 0; i < min(n, (int)centralityScores.size()); i++)
+    {
+        keyUsers.push_back(centralityScores[i].first);
+    }
+    return keyUsers;
 }
 
 int Graph::degreeCentrality(string userId)
