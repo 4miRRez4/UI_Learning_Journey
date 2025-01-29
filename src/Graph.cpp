@@ -203,3 +203,184 @@ void Graph::viewUserDetails(string id)
         std::cerr << "Error: User with ID " << id << " not found.\n";
     }
 }
+vector<string> Graph::getKeyUsers(int n, const string &metric)
+{ // Get top N key users based on a centrality metric;
+    vector<pair<string, double>> centralityScores;
+    for (auto &it : users)
+    {
+        string userId = it.first;
+        double score = 0.0;
+        if (metric == "degree")
+        {
+            score = degreeCentrality(userId);
+        }
+        else if (metric == "betweenness")
+        {
+            score = betweennessCentrality(userId);
+        }
+        else if (metric == "closeness")
+        {
+            score = closenessCentrality(userId);
+        }
+
+        centralityScores.push_back({userId, score});
+    }
+
+    sort(centralityScores.begin(), centralityScores.end(), [](pair<string, double> &a, pair<string, double> &b)
+         { return a.second > b.second; });
+
+    vector<string> keyUsers;
+    for (int i = 0; i < min(n, (int)centralityScores.size()); i++)
+    {
+        keyUsers.push_back(centralityScores[i].first);
+    }
+    return keyUsers;
+}
+
+int Graph::degreeCentrality(string userId)
+{
+    if (adjacencyList.find(userId) != adjacencyList.end())
+    {
+        return adjacencyList.at(userId).size();
+    }
+    return 0;
+}
+
+double Graph::betweennessCentrality(string userId)
+{
+    unordered_map<string, double> centrality;
+    for (string &it : vertices())
+    {
+        centrality[it] = 0.0;
+    }
+    for (string &s : vertices())
+    {
+        if (s == userId)
+        {
+            continue;
+        }
+        unordered_map<string, vector<string>> predecessors; // گره‌های قبلی در مسیرهای کوتاه
+        unordered_map<string, int> shortestPaths;           // تعداد کوتاه‌ترین مسیرها
+        unordered_map<string, double> distance;             // فاصله‌ها از s
+        unordered_map<string, double> dependency;           // تأثیر مسیرهای دیگر روی این گره
+
+        queue<string> qu;
+        stack<string> st;
+
+        for (string &it : vertices())
+        {
+            shortestPaths[it] = 0;
+            distance[it] = numeric_limits<double>::infinity();
+            dependency[it] = 0.0;
+        }
+        shortestPaths[s] = 1;
+        distance[s] = 0.0;
+        qu.push(s);
+
+        // اجرای BFS برای یافتن کوتاه‌ترین مسیرها
+        while (!qu.empty())
+        {
+            string v = qu.front();
+            qu.pop();
+            st.push(v);
+
+            for (string &neighbor : adjacencyList[v])
+            {
+                if (distance[neighbor] == numeric_limits<double>::infinity())
+                {
+                    distance[neighbor] = distance[v] + 1;
+                    qu.push(neighbor);
+                }
+                if (distance[neighbor] == distance[v] + 1)
+                {
+                    shortestPaths[neighbor] += shortestPaths[v];
+                    predecessors[neighbor].push_back(v);
+                }
+            }
+        }
+
+        // محاسبه‌ی dependency برای پیدا کردن Betweenness
+        while (!st.empty())
+        {
+            string w = st.top();
+            st.pop();
+            for (const string &v : predecessors[w])
+            {
+                dependency[v] += (shortestPaths[v] / (double)shortestPaths[w]) * (1 + dependency[w]);
+            }
+            if (w != s && w == userId)
+            { // تنها گره موردنظر را اضافه می‌کنیم
+                centrality[w] += dependency[w];
+            }
+        }
+    }
+    return centrality[userId];
+}
+
+double Graph::closenessCentrality(string &userId)
+{
+    if (adjacencyList.find(userId) == adjacencyList.end())
+    {
+        return 0.0; // User not found
+    }
+
+    unordered_map<string, int> distance;
+    for (const string &u : vertices())
+    {
+        distance[u] = numeric_limits<int>::max();
+    }
+    distance[userId] = 0;
+
+    queue<string> q;
+    q.push(userId);
+
+    while (!q.empty())
+    {
+        string current = q.front();
+        q.pop();
+
+        for (const string &neighbor : adjacencyList[current])
+        {
+            if (distance[neighbor] == numeric_limits<int>::max())
+            {
+                distance[neighbor] = distance[current] + 1;
+                q.push(neighbor);
+            }
+        }
+    }
+
+    double totalDistance = 0.0;
+    int reachableUsers = 0;
+
+    for (const string &u : vertices())
+    {
+        if (u != userId && distance[u] != numeric_limits<int>::max())
+        {
+            totalDistance += distance[u];
+            reachableUsers++;
+        }
+    }
+
+    if (reachableUsers == 0)
+        return 0.0;
+    return reachableUsers / totalDistance;
+}
+
+unordered_map<string, double> Graph::computeAllClosenessCentralities()
+{
+    vector<string> allUsers = vertices();
+    unordered_map<string, double> centralities;
+
+#pragma omp parallel for
+    for (size_t i = 0; i < allUsers.size(); ++i)
+    {
+        string &userId = allUsers[i];
+        double centrality = closenessCentrality(userId);
+#pragma omp critical
+        {
+            centralities[userId] = centrality;
+        }
+    }
+
+    return centralities;
+}
