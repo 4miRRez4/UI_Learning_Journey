@@ -40,6 +40,7 @@ public:
     ~Graph() = default;
 
 vector<string> getKeyUsers(int n, const string &metric = "degree");
+    int degreeCentrality(string userId);
 
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران

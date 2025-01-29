@@ -216,3 +216,13 @@ vector<string> Graph::getKeyUsers(int n, const string &metric)
         }
     }
 }
+
+int Graph::degreeCentrality(string userId)
+{
+    if (adjacencyList.find(userId) != adjacencyList.end())
+    {
+        return adjacencyList.at(userId).size();
+    }
+    return 0;
+}
+
