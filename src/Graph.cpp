@@ -317,40 +317,70 @@ double Graph::betweennessCentrality(string userId)
     return centrality[userId];
 }
 
-double Graph::closenessCentrality(string userId)
+double Graph::closenessCentrality(string &userId)
 {
-    queue<string> q;
-    unordered_map<string, int> distance;
-    unordered_set<string> visited;
-    q.push(userId);
-    distance[userId] = 0;
-    visited.insert(userId);
+    if (adjacencyList.find(userId) == adjacencyList.end())
+    {
+        return 0.0; // User not found
+    }
 
-    double totalDistance = 0.0;
-    int reachableUsers = 0;
+    unordered_map<string, int> distance;
+    for (const string &u : vertices())
+    {
+        distance[u] = numeric_limits<int>::max();
+    }
+    distance[userId] = 0;
+
+    queue<string> q;
+    q.push(userId);
 
     while (!q.empty())
     {
         string current = q.front();
         q.pop();
 
-        for (string &neighbor : adjacencyList.at(current))
-        { // همسایه‌های گره فعلی
-            if (!visited.count(neighbor))
+        for (const string &neighbor : adjacencyList[current])
+        {
+            if (distance[neighbor] == numeric_limits<int>::max())
             {
-                visited.insert(neighbor);
                 distance[neighbor] = distance[current] + 1;
-                totalDistance += distance[neighbor];
-                reachableUsers++;
                 q.push(neighbor);
             }
         }
     }
 
-    if (reachableUsers == 0)
+    double totalDistance = 0.0;
+    int reachableUsers = 0;
+
+    for (const string &u : vertices())
     {
-        return 0.0;
+        if (u != userId && distance[u] != numeric_limits<int>::max())
+        {
+            totalDistance += distance[u];
+            reachableUsers++;
+        }
     }
+
+    if (reachableUsers == 0)
+        return 0.0;
     return reachableUsers / totalDistance;
 }
 
+unordered_map<string, double> Graph::computeAllClosenessCentralities()
+{
+    vector<string> allUsers = vertices();
+    unordered_map<string, double> centralities;
+
+#pragma omp parallel for
+    for (size_t i = 0; i < allUsers.size(); ++i)
+    {
+        string &userId = allUsers[i];
+        double centrality = closenessCentrality(userId);
+#pragma omp critical
+        {
+            centralities[userId] = centrality;
+        }
+    }
+
+    return centralities;
+}
