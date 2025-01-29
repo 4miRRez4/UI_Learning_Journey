@@ -35,6 +35,7 @@ public:
     RecommendationManager(Graph &graph);
     vector<string> getRecommandations(string &userId, int numRecommendations = 20);
 
+    void setWeightsConfig(WeightsConfig &weights);
 private:
     static const int MAX_DEGREE_SCORE = 5;
     static const int WORKPLACE_MATCH_SCORE = 10;
