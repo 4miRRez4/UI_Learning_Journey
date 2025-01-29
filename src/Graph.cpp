@@ -203,3 +203,16 @@ void Graph::viewUserDetails(string id)
         std::cerr << "Error: User with ID " << id << " not found.\n";
     }
 }
+vector<string> Graph::getKeyUsers(int n, const string &metric)
+{ // Get top N key users based on a centrality metric;
+    vector<pair<string, double>> centralityScores;
+    for (auto &it : users)
+    {
+        string userId = it.first;
+        double score = 0.0;
+        if (metric == "degree")
+        {
+            score = degreeCentrality(userId);
+        }
+    }
+}

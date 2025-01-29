@@ -39,6 +39,8 @@ public:
     Graph() = default;
     ~Graph() = default;
 
+vector<string> getKeyUsers(int n, const string &metric = "degree");
+
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران
     unordered_map<string, vector<string>> adjacencyList; // نگهداری همسایگان
