@@ -8,6 +8,7 @@ class CommunicationQuality
 {
 public:
     CommunicationQuality(Graph &g) : graph(g) {}
+    double assessQuality(string &userId1, string &userId2);
 private:
     Graph &graph;
 
