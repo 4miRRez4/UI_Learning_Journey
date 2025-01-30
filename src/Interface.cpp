@@ -153,3 +153,19 @@ void Interface::showMainMenu()
         }
     }
 }
+
+void Interface::handleViewUserDetails()
+{
+    cout << "Enter you ID: ";
+    string userId;
+    getline(cin, userId);
+
+    try
+    {
+        graph.viewUserDetails(userId);
+    }
+    catch (const std::runtime_error &e)
+    {
+        cerr << "Error: " << e.what() << endl;
+    }
+}
