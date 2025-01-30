@@ -147,7 +147,9 @@ void Interface::showMainMenu()
         case 3:
             handleViewUserDetails();
             break;
-
+        case 4:
+            handleViewRecommendations(currentUser);
+            break;
         default:
             break;
         }
@@ -167,5 +169,21 @@ void Interface::handleViewUserDetails()
     catch (const std::runtime_error &e)
     {
         cerr << "Error: " << e.what() << endl;
+    }
+}
+
+void Interface::handleViewRecommendations(string &userId)
+{
+    vector<string> recommendations = recManager.getRecommandations(userId);
+    cout << "\nTop 20 Recommendations for " << graph.getUser(userId).getName() << ":\n";
+
+    int count = 0;
+    for (string &recId : recommendations)
+    {
+        if (count >= 20)
+            break;
+        User recUser = graph.getUser(recId);
+        cout << count + 1 << ". " << recUser.getName() << " (ID: " << recId << ")\n";
+        count++;
     }
 }
