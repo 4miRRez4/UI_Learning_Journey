@@ -19,6 +19,8 @@ private:
     Graph &graph;
     RecommendationManager &recManager;
     string currentUser;
+
+    void clearScreen();
     void showLoginMenu();
     void handleLogin();
 };
