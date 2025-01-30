@@ -1,3 +1,13 @@
+#include "../include/Interface.h"
+void Interface::clearScreen()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
 void Interface::showLoginMenu()
 {
     clearScreen();
