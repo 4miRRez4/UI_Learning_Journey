@@ -215,6 +215,11 @@ vector<string> Graph::getKeyUsers(int n, const string &metric)
         {
             score = degreeCentrality(userId);
         }
+        else if (metric == "page rank")
+        {
+            unordered_map<string, double> pageRankScores = PageRankCentrality();
+            score = pageRankScores[userId];
+        }
 
         centralityScores.push_back({userId, score});
     }
