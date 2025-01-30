@@ -115,3 +115,41 @@ void Interface::handleRegistration()
     cout << "Registration successful! Your ID is: " << id << "\n";
     waitForEnter();
 }
+
+void Interface::showMainMenu()
+{
+    while (true)
+    {
+        clearScreen();
+        cout << "=== Main Menu === (Logged in as: " << graph.getUser(currentUser).getName() << ")\n";
+        cout << "1. View Profile\n";
+        cout << "2. View All Users\n";
+        cout << "3. View User Details\n";
+        cout << "4. View Recommendations\n";
+        cout << "5. View Recommendations for Another User\n";
+        cout << "6. Connect with User\n";
+        cout << "7. Remove Connection\n";
+        cout << "8. Logout\n";
+        cout << "Choose an option: ";
+
+        int choice;
+        cin >> choice;
+        cin.ignore();
+
+        switch (choice)
+        {
+        case 1:
+            graph.viewUserDetails(currentUser);
+            break;
+        case 2:
+            graph.viewAllUsers();
+            break;
+        case 3:
+            handleViewUserDetails();
+            break;
+
+        default:
+            break;
+        }
+    }
+}
