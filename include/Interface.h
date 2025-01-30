@@ -9,12 +9,14 @@
 #include <string>
 #include <unordered_map>
 #include <limits>
+#include "dataBase.h"
+#include "aggregation_methods.h"
 
 class Interface
 {
 public:
-    Interface(Graph &g, RecommendationManager &rM)
-        : graph(g), recManager(rM), currentUser("") {}
+    Interface(Graph &g, RecommendationManager &rM, Database *db)
+        : graph(g), recManager(rM), db(db), currentUser("") {}
 
     void start()
     {
@@ -35,6 +37,7 @@ private:
     Graph &graph;
     RecommendationManager &recManager;
     string currentUser;
+    Database *db;
 
     void clearScreen();
     void waitForEnter();
@@ -49,6 +52,16 @@ private:
     void handleRemoveConnection();
     void handleViewKeyUsers();
     void handleCommunicationQuality();
+    void showSocialNetworkMenu();
+    void showDatabaseMenu();
+    void createTable();
+    void insertRecord();
+    void updateRecord();
+    void deleteRecord();
+    void searchRecord();
+    void printAllRecords();
+    void performAggregation();
+    void createIndex();
 };
 
 #endif
