@@ -27,6 +27,7 @@ private:
     void handleLogin();
     void handleRegistration();
     void showMainMenu();
+    void handleViewUserDetails();
 };
 
 #endif
