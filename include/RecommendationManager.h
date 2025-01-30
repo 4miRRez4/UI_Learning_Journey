@@ -37,6 +37,12 @@ public:
 
     void setWeightsConfig(WeightsConfig &weights);
     void resetWeightsConfig();
+
+    WeightsConfig getCurrentWeights()
+    {
+        return customWeights;
+    }
+
 private:
     static const int MAX_DEGREE_SCORE = 5;
     static const int WORKPLACE_MATCH_SCORE = 10;
