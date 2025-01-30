@@ -20,7 +20,7 @@ public:
     {
         while (true)
         {
-            if (!currentUser.empty())
+            if (currentUser.empty())
             {
                 showLoginMenu();
             }
@@ -30,6 +30,7 @@ public:
             }
         }
     }
+
 private:
     Graph &graph;
     RecommendationManager &recManager;
@@ -46,6 +47,8 @@ private:
     void handleViewRecommendationsForOther();
     void handleConnect();
     void handleRemoveConnection();
+    void handleViewKeyUsers();
+    void handleCommunicationQuality();
 };
 
 #endif

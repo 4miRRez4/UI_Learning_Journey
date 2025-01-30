@@ -12,6 +12,7 @@ void Interface::waitForEnter()
 {
     cout << "\nPress Enter to continue...";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    clearScreen();
 }
 
 void Interface::showLoginMenu()
@@ -120,7 +121,6 @@ void Interface::showMainMenu()
 {
     while (true)
     {
-        clearScreen();
         cout << "=== Main Menu === (Logged in as: " << graph.getUser(currentUser).getName() << ")\n";
         cout << "1. View Profile\n";
         cout << "2. View All Users\n";
@@ -129,12 +129,15 @@ void Interface::showMainMenu()
         cout << "5. View Recommendations for Another User\n";
         cout << "6. Connect with User\n";
         cout << "7. Remove Connection\n";
-        cout << "8. Logout\n";
+        cout << "8. view key users\n";
+        cout << "9. View Communication Quality\n";
+        cout << "10. Logout\n";
         cout << "Choose an option: ";
 
         int choice;
         cin >> choice;
         cin.ignore();
+        clearScreen();
 
         switch (choice)
         {
@@ -160,11 +163,20 @@ void Interface::showMainMenu()
             handleRemoveConnection();
             break;
         case 8:
-            currentUser = "";
+            handleViewKeyUsers();
             break;
+        case 9:
+            handleCommunicationQuality();
+            break;
+        case 10:
+            currentUser = "";
+            cout << "Logged out successfully!\n";
+            waitForEnter();
+            return;
         default:
             cerr << "Invalid option\n";
         }
+        waitForEnter();
     }
 }
 
@@ -186,17 +198,92 @@ void Interface::handleViewUserDetails()
 
 void Interface::handleViewRecommendations(string &userId)
 {
-    vector<string> recommendations = recManager.getRecommandations(userId);
-    cout << "\nTop 20 Recommendations for " << graph.getUser(userId).getName() << ":\n";
-
-    int count = 0;
-    for (string &recId : recommendations)
+    while (true)
     {
-        if (count >= 20)
+        // clearScreen();
+        cout << "\n=== Recommendations for " << graph.getUser(userId).getName() << " ===\n";
+
+        // Show current weights
+        cout << "\nCurrent Weights Configuration:\n";
+        cout << "1. Degree of Connection: " << recManager.getCurrentWeights().degreeWeight << "%\n";
+        cout << "2. Workplace Match: " << recManager.getCurrentWeights().workplaceWeight << "%\n";
+        cout << "3. Skill Match: " << recManager.getCurrentWeights().skillWeight << "%\n";
+
+        // Show recommendations
+        vector<string> recommendations = recManager.getRecommandations(const_cast<string &>(userId));
+        cout << "\nTop 20 Recommendations:\n";
+        int count = 0;
+        for (const string &recId : recommendations)
+        {
+            if (count >= 20)
+                break;
+            User recUser = graph.getUser(recId);
+            cout << count + 1 << ". " << recUser.getName() << " (ID: " << recId << ")\n";
+            count++;
+        }
+
+        // Options menu
+        cout << "\nOptions:\n";
+        cout << "1. Customize weights\n";
+        cout << "2. Reset weights to default\n";
+        cout << "3. Return to main menu\n";
+        cout << "Choose an option: ";
+
+        int choice;
+        cin >> choice;
+        cin.ignore();
+
+        if (choice == 1)
+        {
+            cout << "\nEnter new weights (must sum to 100):\n";
+            int degreeWeight, workplaceWeight, skillWeight;
+
+            while (true)
+            {
+                cout << "Degree of Connection weight (0-100): ";
+                cin >> degreeWeight;
+
+                cout << "Workplace Match weight (0-100): ";
+                cin >> workplaceWeight;
+
+                cout << "Skill Match weight (0-100): ";
+                cin >> skillWeight;
+
+                if (degreeWeight + workplaceWeight + skillWeight != 100)
+                {
+                    cout << "Error: Weights must sum to 100. Please try again.\n";
+                    continue;
+                }
+
+                try
+                {
+                    RecommendationManager::WeightsConfig newWeights(degreeWeight, workplaceWeight, skillWeight);
+                    recManager.setWeightsConfig(newWeights);
+                    cout << "Weights updated successfully!\n";
+                    break;
+                }
+                catch (const invalid_argument &e)
+                {
+                    cout << "Error: " << e.what() << "\nPlease try again.\n";
+                }
+            }
+            cin.ignore();
+        }
+        else if (choice == 2)
+        {
+            recManager.resetWeightsConfig();
+            cout << "Weights reset to default values.\n";
+            waitForEnter();
+        }
+        else if (choice == 3)
+        {
             break;
-        User recUser = graph.getUser(recId);
-        cout << count + 1 << ". " << recUser.getName() << " (ID: " << recId << ")\n";
-        count++;
+        }
+        else
+        {
+            cout << "Invalid option!\n";
+            waitForEnter();
+        }
     }
 }
 
@@ -247,5 +334,98 @@ void Interface::handleRemoveConnection()
     catch (const std::runtime_error &e)
     {
         std::cerr << e.what() << '\n';
+    }
+}
+
+void Interface::handleViewKeyUsers()
+{
+    cout << "=== View Key Users ===\n";
+    cout << "Select metric:\n";
+    cout << "1. Degree Centrality\n";
+    cout << "2. Page Rank\n";
+    cout << "Enter choice (1-2): ";
+
+    int choice;
+    cin >> choice;
+    cin.ignore();
+
+    string metric = (choice == 1) ? "degree" : "page rank";
+
+    cout << "Enter number of key users to view: ";
+    int n;
+    cin >> n;
+    cin.ignore();
+
+    vector<string> keyUsers = graph.getKeyUsers(n, metric);
+
+    cout << "\nTop " << n << " Key Users (by " << metric << "):\n";
+    for (int i = 0; i < keyUsers.size(); i++)
+    {
+        User user = graph.getUser(keyUsers[i]);
+        cout << i + 1 << ". " << user.getName() << " (ID: " << user.getId() << ")\n";
+
+        if (metric == "degree")
+        {
+            cout << "   Degree Centrality: " << graph.degreeCentrality(user.getId()) << "\n";
+        }
+        else
+        {
+            // For PageRank, you might want to store the scores when calculating them
+            // and display them here
+            auto scores = graph.PageRankCentrality();
+            cout << "   PageRank Score: " << scores[user.getId()] << "\n";
+        }
+    }
+}
+
+void Interface::handleCommunicationQuality()
+{
+    cout << "=== Communication Quality Analysis ===\n";
+    cout << "Choose an option:\n";
+    cout << "1. View quality with specific user\n";
+    cout << "2. View top quality connections\n";
+    cout << "Enter choice (1-2): ";
+
+    int choice;
+    cin >> choice;
+    cin.ignore();
+
+    CommunicationQuality commQuality(graph);
+
+    if (choice == 1)
+    {
+        cout << "Enter user ID to analyze communication quality: ";
+        string targetId;
+        getline(cin, targetId);
+
+        try
+        {
+            double quality = commQuality.assessQuality(currentUser, targetId);
+            cout << "\nCommunication Quality Analysis with " << graph.getUser(targetId).getName() << ":\n";
+            cout << "Quality Score: " << quality * 100 << "%\n";
+        }
+        catch (const runtime_error &e)
+        {
+            cout << "Error: " << e.what() << endl;
+        }
+    }
+    else if (choice == 2)
+    {
+        cout << "Enter number of top connections to view: ";
+        int limit;
+        cin >> limit;
+        cin.ignore();
+
+        vector<pair<string, double>> topConnections = commQuality.getTopConnections(currentUser, limit);
+
+        cout << "\nTop " << limit << " Quality Connections:\n";
+        for (int i = 0; i < topConnections.size(); i++)
+        {
+            User user = graph.getUser(topConnections[i].first);
+            cout << i + 1 << ". " << user.getName()
+                 << " (ID: " << user.getId() << ")"
+                 << " - Quality Score: "
+                 << topConnections[i].second * 100 << "%\n";
+        }
     }
 }
