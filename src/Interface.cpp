@@ -121,6 +121,41 @@ void Interface::showMainMenu()
 {
     while (true)
     {
+        clearScreen();
+        cout << "=== Main Menu === (Logged in as: " << graph.getUser(currentUser).getName() << ")\n";
+        cout << "1. Social Network Menu\n";
+        cout << "2. Database Management Menu\n";
+        cout << "3. Logout\n";
+        cout << "Choose an option: ";
+
+        int choice;
+        cin >> choice;
+        cin.ignore();
+
+        switch (choice)
+        {
+        case 1:
+            showSocialNetworkMenu();
+            break;
+        case 2:
+            showDatabaseMenu();
+            break;
+        case 3:
+            currentUser = "";
+            cout << "Logged out successfully!\n";
+            waitForEnter();
+            return;
+        default:
+            cout << "Invalid option!\n";
+            waitForEnter();
+        }
+    }
+}
+
+void Interface::showSocialNetworkMenu()
+{
+    while (true)
+    {
         cout << "=== Main Menu === (Logged in as: " << graph.getUser(currentUser).getName() << ")\n";
         cout << "1. View Profile\n";
         cout << "2. View All Users\n";
@@ -131,14 +166,17 @@ void Interface::showMainMenu()
         cout << "7. Remove Connection\n";
         cout << "8. view key users\n";
         cout << "9. View Communication Quality\n";
-        cout << "10. Logout\n";
+        cout << "10. Return to Main Menu\n";
         cout << "Choose an option: ";
 
         int choice;
         cin >> choice;
         cin.ignore();
         clearScreen();
-
+        if (choice == 10)
+        {
+            break;
+        }
         switch (choice)
         {
         case 1:
@@ -168,18 +206,12 @@ void Interface::showMainMenu()
         case 9:
             handleCommunicationQuality();
             break;
-        case 10:
-            currentUser = "";
-            cout << "Logged out successfully!\n";
-            waitForEnter();
-            return;
         default:
             cerr << "Invalid option\n";
         }
         waitForEnter();
     }
 }
-
 void Interface::handleViewUserDetails()
 {
     cout << "Enter you ID: ";
@@ -427,5 +459,311 @@ void Interface::handleCommunicationQuality()
                  << " - Quality Score: "
                  << topConnections[i].second * 100 << "%\n";
         }
+    }
+}
+
+void Interface::showDatabaseMenu()
+{
+    while (true)
+    {
+        clearScreen();
+        cout << "=== Database Management Menu ===\n";
+        cout << "1. Create Table\n";
+        cout << "2. Insert Record\n";
+        cout << "3. Update Record\n";
+        cout << "4. Delete Record\n";
+        cout << "5. Search Record\n";
+        cout << "6. Print All Records\n";
+        cout << "7. Create Index\n";
+        cout << "8. Perform Aggregation\n";
+        cout << "9. Return to Main Menu\n";
+        cout << "Choose an option: ";
+
+        int choice;
+        cin >> choice;
+        cin.ignore();
+        clearScreen();
+
+        if (choice == 9)
+            break;
+
+        switch (choice)
+        {
+        case 1:
+            createTable();
+            break;
+        case 2:
+            insertRecord();
+            break;
+        case 3:
+            updateRecord();
+            break;
+        case 4:
+            deleteRecord();
+            break;
+        case 5:
+            searchRecord();
+            break;
+        case 6:
+            printAllRecords();
+            break;
+        case 7:
+            createIndex();
+            break;
+        case 8:
+            performAggregation();
+            break;
+        default:
+            cout << "Invalid option!\n";
+        }
+        waitForEnter();
+    }
+}
+
+void Interface::createTable()
+{
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    int numOfCol;
+    cout << "Enter number of columns: ";
+    cin >> numOfCol;
+
+    vector<Table::Column> columns;
+    for (int i = 0; i < numOfCol; i++)
+    {
+        string colName, colType, indexType;
+        cout << "Column " << (i + 1) << " name: ";
+        cin >> colName;
+        cout << "Data type (int/string/date): ";
+        cin >> colType;
+        cout << "Index type(primary/unique/non-unique): ";
+        cin >> indexType;
+
+        Table::DataType dataType;
+        if (colType == "int")
+            dataType = Table::DataType::INT;
+        else if (colType == "string")
+            dataType = Table::DataType::STRING;
+        else if (colType == "date")
+            dataType = Table::DataType::DATE;
+        else
+        {
+            cout << "Invalid column data type. Skipping column..." << endl;
+            continue;
+        }
+
+        Table::IndexType it;
+        if (indexType == "primary")
+            it = Table::IndexType::PRIMARY;
+        else if (indexType == "unique")
+            it = Table::IndexType::UNIQUE;
+        else if (indexType == "non-unique")
+            it = Table::IndexType::NON_UNIQUE;
+        else
+        {
+            cout << "Invalid index type. Skipping column..." << endl;
+            continue;
+        }
+
+        Table::Column newCol(colName, dataType, it);
+        columns.push_back(newCol);
+    }
+
+    db->createTable(tableName, columns, 3);
+    cout << "Table '" << tableName << "' created successfully.\n";
+}
+
+void Interface::insertRecord()
+{
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    vector<string> values;
+    cout << "We assume that first column is primary." << endl;
+    for (const auto &col : table->getColumns())
+    {
+        string value;
+        cout << "Enter value for " << col.name << ": ";
+        cin >> value;
+        values.push_back(value);
+    }
+
+    int id = stoi(values[0]);
+    table->addRecord(id, values);
+    cout << "Record inserted successfully." << endl;
+}
+
+void Interface::updateRecord()
+{
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    int id;
+    cout << "Enter ID of record to update: ";
+    cin >> id;
+
+    vector<string> values;
+    for (const auto &col : table->getColumns())
+    {
+        string value;
+        cout << "Enter new value for " << col.name << ": ";
+        cin >> value;
+        values.push_back(value);
+    }
+
+    table->updateRecord(id, values);
+    cout << "Record updated successfully." << endl;
+}
+
+void Interface::deleteRecord()
+{
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    int id;
+    cout << "Enter ID of record to delete: ";
+    cin >> id;
+
+    table->removeRecord(id);
+    cout << "Record deleted successfully." << endl;
+}
+
+void Interface::printAllRecords()
+{
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    table->printAll();
+}
+
+void Interface::performAggregation()
+{
+    string tableName, columnName, aggType;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    cout << "Enter column name: ";
+    cin >> columnName;
+    cout << "Aggregation function (sum/avg/min/max): ";
+    cin >> aggType;
+
+    function<string(const vector<string> &)> func;
+    if (aggType == "sum")
+        func = Aggregation::sum;
+    else if (aggType == "avg")
+        func = Aggregation::average;
+    else if (aggType == "min")
+        func = Aggregation::min;
+    else if (aggType == "max")
+        func = Aggregation::max;
+    else
+    {
+        cout << "Invalid aggregation function." << endl;
+        return;
+    }
+
+    vector<string> result = table->aggregate(columnName, func);
+    cout << "Aggregation result: " << result[0] << endl;
+}
+
+void Interface::createIndex()
+{
+    string tableName, colName;
+    int indexType;
+
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    cout << "Enter column name to index: ";
+    cin >> colName;
+
+    cout << "Enter index type (0: PRIMARY, 1: UNIQUE, 2: NON_UNIQUE): ";
+    cin >> indexType;
+
+    if (indexType < 0 || indexType > 2)
+    {
+        cout << "Invalid index type." << endl;
+        return;
+    }
+
+    table->createIndex(colName, static_cast<Table::IndexType>(indexType), 3);
+    cout << "Index created successfully." << endl;
+}
+
+void Interface::searchRecord()
+{
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    int id;
+    cout << "Enter ID to search: ";
+    cin >> id;
+
+    vector<string> record = table->searchRecord(id);
+    if (!record.empty())
+    {
+        cout << "Record found: ";
+        for (const auto &value : record)
+            cout << value << " ";
+        cout << endl;
+    }
+    else
+    {
+        cout << "Record not found." << endl;
     }
 }
