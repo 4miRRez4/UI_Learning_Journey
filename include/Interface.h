@@ -16,6 +16,20 @@ public:
     Interface(Graph &g, RecommendationManager &rM)
         : graph(g), recManager(rM), currentUser("") {}
 
+    void start()
+    {
+        while (true)
+        {
+            if (!currentUser.empty())
+            {
+                showLoginMenu();
+            }
+            else
+            {
+                showMainMenu();
+            }
+        }
+    }
 private:
     Graph &graph;
     RecommendationManager &recManager;
