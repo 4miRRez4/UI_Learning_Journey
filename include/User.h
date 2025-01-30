@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 class User
 {
@@ -21,6 +22,8 @@ public:
     string getWorkplace() const;
     const vector<string> &getSpecialties() const;
     const vector<string> &getConnections() const;
+    void addConnection(const string &connectionId);
+    void removeConnection(const string &connectionId);
 
 private:
     string id;

@@ -49,3 +49,18 @@ const vector<string> &User::getConnections() const
 {
     return connectionIds;
 }
+
+void User::addConnection(const string &connectionId)
+{
+    if (find(connectionIds.begin(), connectionIds.end(), connectionId) == connectionIds.end())
+    {
+        connectionIds.push_back(connectionId);
+    }
+}
+
+void User::removeConnection(const string &connectionId)
+{
+    connectionIds.erase(
+        remove(connectionIds.begin(), connectionIds.end(), connectionId),
+        connectionIds.end());
+}
