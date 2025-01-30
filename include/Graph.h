@@ -9,7 +9,7 @@
 #include <stack>
 #include <unordered_set>
 #include <limits>
-#include <omp.h> // For parallelization
+#include <cmath>
 #include <string>
 #include <unordered_map>
 #include <algorithm>
@@ -30,7 +30,7 @@ public:
     int outDegree(string v);
     int inDegree(string v);
     vector<string> outgoingEdges(string v);
-    vector<pair<string, string>> incomingEdges(string v);
+    vector<string> incomingEdges(string v);
     void insertVertex(User &user);
     void insertEdge(string v, string u);
     void removeVertex(string &v);
@@ -46,9 +46,7 @@ public:
 
     vector<string> getKeyUsers(int n, const string &metric = "degree");
     int degreeCentrality(string userId);
-    double betweennessCentrality(string userId);
-    double closenessCentrality(string &userId);
-    unordered_map<string, double> computeAllClosenessCentralities();
+    unordered_map<string, double> Graph::PageRankCentrality(double dampingFactor = 0.85, int maxIterations = 100, double tolerance = 1e-6);
 
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران
