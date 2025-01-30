@@ -26,6 +26,7 @@ private:
     void showLoginMenu();
     void handleLogin();
     void handleRegistration();
+    void showMainMenu();
 };
 
 #endif
