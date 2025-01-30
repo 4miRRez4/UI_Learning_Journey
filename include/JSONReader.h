@@ -1,8 +1,6 @@
 #ifndef JSONREADER_H
 #define JSONREADER_H
 
-#pragma once
-
 #include <iostream>
 #include <fstream>
 #include <vector>
