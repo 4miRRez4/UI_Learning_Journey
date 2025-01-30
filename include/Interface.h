@@ -30,6 +30,7 @@ private:
     void handleViewUserDetails();
     void handleViewRecommendations(string &userId);
     void handleViewRecommendationsForOther();
+    void handleConnect();
 };
 
 #endif

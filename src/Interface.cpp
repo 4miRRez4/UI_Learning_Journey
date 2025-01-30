@@ -153,6 +153,9 @@ void Interface::showMainMenu()
         case 5:
             handleViewRecommendationsForOther();
             break;
+        case 6:
+            handleConnect();
+            break;
         default:
             break;
         }
@@ -204,5 +207,22 @@ void Interface::handleViewRecommendationsForOther()
     catch (const std::runtime_error &e)
     {
         cerr << "Error: " << e.what() << '\n';
+    }
+}
+
+void Interface::handleConnect()
+{
+    cout << "Enter user ID to connect with: ";
+    string userId;
+    getline(cin, userId);
+
+    try
+    {
+        graph.insertEdge(currentUser, userId);
+        cout << "Connected successfully with " << graph.getUser(userId).getName() << endl;
+    }
+    catch (const runtime_error &e)
+    {
+        cout << "Error: " << e.what() << endl;
     }
 }
