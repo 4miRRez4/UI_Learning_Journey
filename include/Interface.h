@@ -21,8 +21,10 @@ private:
     string currentUser;
 
     void clearScreen();
+    void waitForEnter();
     void showLoginMenu();
     void handleLogin();
+    void handleRegistration();
 };
 
 #endif
