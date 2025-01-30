@@ -28,6 +28,7 @@ private:
     void handleRegistration();
     void showMainMenu();
     void handleViewUserDetails();
+    void handleViewRecommendations(string &userId);
 };
 
 #endif
