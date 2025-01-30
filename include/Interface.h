@@ -20,6 +20,7 @@ private:
     RecommendationManager &recManager;
     string currentUser;
     void showLoginMenu();
+    void handleLogin();
 };
 
 #endif
