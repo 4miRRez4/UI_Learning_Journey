@@ -31,6 +31,7 @@ private:
     void handleViewRecommendations(string &userId);
     void handleViewRecommendationsForOther();
     void handleConnect();
+    void handleRemoveConnection();
 };
 
 #endif

@@ -156,6 +156,9 @@ void Interface::showMainMenu()
         case 6:
             handleConnect();
             break;
+        case 7:
+            handleRemoveConnection();
+            break;
         default:
             break;
         }
@@ -221,8 +224,25 @@ void Interface::handleConnect()
         graph.insertEdge(currentUser, userId);
         cout << "Connected successfully with " << graph.getUser(userId).getName() << endl;
     }
-    catch (const runtime_error &e)
+    catch (const std::runtime_error &e)
     {
         cout << "Error: " << e.what() << endl;
+    }
+}
+
+void Interface::handleRemoveConnection()
+{
+    cout << "Enter user ID to remove connection: ";
+    string userId;
+    getline(cin, userId);
+
+    try
+    {
+        graph.removeEdge(currentUser, userId);
+        cout << "Connection removed successfully with " << graph.getUser(userId).getName() << endl;
+    }
+    catch (const std::runtime_error &e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
