@@ -19,6 +19,7 @@ private:
     Graph &graph;
     RecommendationManager &recManager;
     string currentUser;
+    void showLoginMenu();
 };
 
 #endif
