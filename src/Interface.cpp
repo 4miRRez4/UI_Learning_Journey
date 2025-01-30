@@ -159,8 +159,11 @@ void Interface::showMainMenu()
         case 7:
             handleRemoveConnection();
             break;
-        default:
+        case 8:
+            currentUser = "";
             break;
+        default:
+            cerr << "Invalid option\n";
         }
     }
 }
