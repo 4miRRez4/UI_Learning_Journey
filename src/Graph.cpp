@@ -1,5 +1,4 @@
 #include "../include/Graph.h"
-#include "Graph.h"
 int Graph::numVertices()
 {
     return users.size();
@@ -132,6 +131,9 @@ void Graph::insertEdge(string v, string u)
     {
         adjacencyList[v].push_back(u);
         adjacencyList[u].push_back(v);
+
+        users[v].addConnection(u);
+        users[u].addConnection(v);
     }
 }
 void Graph::removeVertex(string &v)
@@ -154,6 +156,9 @@ void Graph::removeEdge(string v, string u)
     {
         adjacencyList[v].erase(remove(adjacencyList[v].begin(), adjacencyList[v].end(), u), adjacencyList[v].end());
         adjacencyList[u].erase(remove(adjacencyList[u].begin(), adjacencyList[u].end(), v), adjacencyList[u].end());
+
+        users[v].removeConnection(u);
+        users[u].removeConnection(v);
     }
 }
 
@@ -180,6 +185,7 @@ void Graph::viewUserDetails(string id)
     if (users.find(id) != users.end())
     {
         const User &user = users.at(id);
+
         std::cout << "User Details:\n";
         std::cout << "ID: " << user.getId() << "\n";
         std::cout << "Name: " << user.getName() << "\n";
@@ -246,58 +252,87 @@ int Graph::degreeCentrality(string userId)
 
 unordered_map<string, double> Graph::PageRankCentrality(double dampingFactor, int maxIterations, double tolerance)
 {
-    unordered_map<string, double> pageRank;
-    vector<string> allUsers = vertices();
-    size_t numUsers = allUsers.size();
+    const size_t numUsers = users.size();
+    vector<string> userIds(numUsers);
+    unordered_map<string, int> userToIndex;
 
-    // Initialize PageRank scores
-    double initialScore = 1.0 / numUsers;
-    for (const string &user : allUsers)
+    // Create mappings between user IDs and indices
+    int idx = 0;
+    for (const auto &user : users)
     {
-        pageRank[user] = initialScore;
+        userIds[idx] = user.first;
+        userToIndex[user.first] = idx++;
     }
 
-    // Iterate until convergence
-    for (int iter = 0; iter < maxIterations; ++iter)
+    // Initialize score vectors
+    vector<double> currentScores(numUsers, 1.0 / numUsers);
+    vector<double> newScores(numUsers);
+
+    // Pre-calculate outgoing edges count
+    vector<int> outDegrees(numUsers, 0);
+    for (int i = 0; i < numUsers; i++)
     {
-        unordered_map<string, double> newPageRank;
-        double danglingMass = 0.0;
+        outDegrees[i] = adjacencyList[userIds[i]].size();
+    }
 
-        // Calculate new PageRank scores
-        for (const string &user : allUsers)
+    // PageRank iteration
+    for (int iter = 0; iter < maxIterations; iter++)
+    {
+        fill(newScores.begin(), newScores.end(), (1.0 - dampingFactor) / numUsers);
+
+        // Calculate dangling node contribution once per iteration
+        double danglingSum = 0.0;
+        for (int i = 0; i < numUsers; i++)
         {
-            if (adjacencyList[user].empty())
+            if (outDegrees[i] == 0)
             {
-                danglingMass += pageRank[user];
+                danglingSum += currentScores[i];
             }
-            double sum = 0.0;
-            for (const string &incomingUser : incomingEdges(user))
-            {
-                sum += pageRank[incomingUser] / adjacencyList[incomingUser].size();
-            }
-            newPageRank[user] = (1.0 - dampingFactor) / numUsers + dampingFactor * sum;
+        }
+        double danglingContribution = dampingFactor * danglingSum / numUsers;
+
+        // Add dangling contribution to all nodes
+        for (int i = 0; i < numUsers; i++)
+        {
+            newScores[i] += danglingContribution;
         }
 
-        // Distribute dangling mass
-        double danglingContribution = dampingFactor * danglingMass / numUsers;
-        for (const string &user : allUsers)
+// Calculate new scores
+#pragma omp parallel for schedule(dynamic, 50)
+        for (int i = 0; i < numUsers; i++)
         {
-            newPageRank[user] += danglingContribution;
+            const string &userId = userIds[i];
+            for (const string &inNeighbor : adjacencyList[userId])
+            {
+                int inIdx = userToIndex[inNeighbor];
+                if (outDegrees[inIdx] > 0)
+                {
+                    newScores[i] += dampingFactor * currentScores[inIdx] / outDegrees[inIdx];
+                }
+            }
         }
 
-        // Check for convergence
+        // Check convergence
         double diff = 0.0;
-        for (const string &user : allUsers)
+        for (int i = 0; i < numUsers; i++)
         {
-            diff += abs(newPageRank[user] - pageRank[user]);
+            diff += abs(newScores[i] - currentScores[i]);
         }
+
         if (diff < tolerance)
         {
             break;
         }
 
-        pageRank = newPageRank;
+        currentScores.swap(newScores);
     }
 
-    return pageRank;
+    // Convert back to unordered_map with user IDs
+    unordered_map<string, double> result;
+    for (int i = 0; i < numUsers; i++)
+    {
+        result[userIds[i]] = currentScores[i];
+    }
+
+    return result;
 }
