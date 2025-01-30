@@ -29,6 +29,7 @@ private:
     void showMainMenu();
     void handleViewUserDetails();
     void handleViewRecommendations(string &userId);
+    void handleViewRecommendationsForOther();
 };
 
 #endif
