@@ -469,7 +469,7 @@ void Interface::showDatabaseMenu()
 {
     while (true)
     {
-        clearScreen();
+        // clearScreen();
         cout << "=== Database Management Menu ===\n";
         cout << "1. Create Table\n";
         cout << "2. Insert Record\n";
@@ -485,7 +485,7 @@ void Interface::showDatabaseMenu()
         int choice;
         cin >> choice;
         cin.ignore();
-        clearScreen();
+        // clearScreen();
 
         if (choice == 9)
             break;
