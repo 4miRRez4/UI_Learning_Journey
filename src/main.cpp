@@ -63,7 +63,9 @@ void insertUsersToTable(Database* db, const vector<User>& users) {
 
 int main() {
     Graph graph;
-    JSONReader JReader("../data/users.json");
+    
+    string jsonFilePath = "../data/users.json";
+    JSONReader JReader(jsonFilePath);
     vector<User> users = JReader.readUsers();
     for (User &user : users)
     {
@@ -81,7 +83,7 @@ int main() {
     createUsersTable(db);
     insertUsersToTable(db, users);
 
-    Interface interface(graph, recManager, db);
+    Interface interface(graph, recManager, db, jsonFilePath);
     interface.waitForEnter();
     interface.start();
 
