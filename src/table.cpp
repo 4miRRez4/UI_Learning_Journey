@@ -44,6 +44,24 @@ Table::~Table() {
 int Table::countRecords() const {
     return primaryIndex->countKeys();
 }
+bool Table::isColumnIndexed(string colName) const{
+    return indexedColumns.find(colName) != indexedColumns.end();
+}
+
+string Table::ValueToStr(const Value& val){
+    string stred_val;
+    if (holds_alternative<string>(val)) {
+        stred_val = get<string>(val);
+    } else if (holds_alternative<int>(val)) {
+        stred_val = to_string(get<int>(val));
+    } else if (holds_alternative<double>(val)) {
+        stred_val = to_string(get<double>(val));
+    } else if (holds_alternative<Date>(val)) {
+        stred_val = get<Date>(val).toString();
+    }
+    return stred_val;
+
+}
 
 void Table::addRecord(const vector<Value>& values, int id) {
     if (values.size() != columns.size()) {
@@ -67,20 +85,11 @@ void Table::addRecord(const vector<Value>& values, int id) {
 
     for (int i = 0; i < values.size(); ++i) {
         string colName = columns[i].name;
-        string stred_val;
-        if (holds_alternative<string>(values[i])) {
-            stred_val = get<string>(values[i]);
-        } else if (holds_alternative<int>(values[i])) {
-            stred_val = to_string(get<int>(values[i]));
-        } else if (holds_alternative<double>(values[i])) {
-            stred_val = to_string(get<double>(values[i]));
-        } else if (holds_alternative<Date>(values[i])) {
-            stred_val = get<Date>(values[i]).toString();
-        }
+        string stred_val = ValueToStr(values[i]);
 
         if (columns[i].indexType == UNIQUE) {
             if (!uniqueIndexes.contains(colName)) {
-                cerr << "Unique index not found for column: " << colName << endl;
+                cout << "Unique index not found for column: " << colName << endl;
                 return;
             }
             if (uniqueIndexes.search(colName)->search(stred_val)) {
@@ -189,37 +198,64 @@ vector<string> Table::aggregate(string colName, const function<string(const vect
     return {aggFunc(colValues)};
 }
 
-void Table::createIndex(string colName, IndexType it, int degree) {
+void Table::createIndex(string colName, IndexType indexType, int degree) {
     for (const auto& col : columns) {
         if (col.name == colName) {
-            if (it == IndexType::UNIQUE) {
+            if (indexType == IndexType::UNIQUE) {
+                if (uniqueIndexes.contains(colName)) {
+                    cout << "Unique index already exists for column: " + colName << endl;
+                    return;
+                }
                 uniqueIndexes.insert(colName, new BPlusTree<string>(degree));
             } 
-            else if (it == IndexType::NON_UNIQUE) {
+            else if (indexType == IndexType::NON_UNIQUE) {
+                if (nonUniqueIndexes.contains(colName)) {
+                    cout << "Non-unique index already exists for column: " + colName << endl;
+                    return;
+                }
                 nonUniqueIndexes.insert(colName, new BPlusTree<string>(degree));
             }
-            cout << "Index of column: " << colName << " created." << endl;
+
+            indexedColumns.insert(colName);  
+
+            int colIndex = -1;
+            for (int i = 0; i < columns.size(); i++) {
+                if (columns[i].name == colName) {
+                    colIndex = i;
+                    break;
+                }   
+            }
+
+            if (colIndex == -1) 
+                return;
+            //filling new index
+            recordsMap->iterate([&](int id, const Record& record) {
+                string stred_val = ValueToStr(record.rowData[colIndex]);
+
+                if (indexType == IndexType::UNIQUE) {
+                    if(!uniqueIndexes.search(colName)->search(stred_val))
+                        uniqueIndexes.search(colName)->insert(stred_val);
+                }
+                else if (indexType == IndexType::NON_UNIQUE) {
+                    nonUniqueIndexes.search(colName)->insert(stred_val);
+                }
+            });
+            cout << "Index created for column: " << colName << endl;
             return;
         }
     }
-    throw runtime_error("Column not found.");
+    cout << "Column not found: " + colName << endl;
 }
 
-void Table::printAll() const {
+
+void Table::printAll() {
     cout << "All records in Table:" << endl;
 
     recordsMap->iterate([&](int id, const Record& record) {
         cout << "ID: " << id << " => ";
         for (int i = 0; i < record.rowData.size(); ++i) {
-            if (holds_alternative<int>(record.rowData[i])) {
-                cout << columns[i].name << ": " << get<int>(record.rowData[i]) << " ";
-            } else if (holds_alternative<string>(record.rowData[i])) {
-                cout << columns[i].name << ": " << get<string>(record.rowData[i]) << " ";
-            } else if (holds_alternative<double>(record.rowData[i])) {
-                cout << columns[i].name << ": " << get<double>(record.rowData[i]) << " ";
-            } else if (holds_alternative<Date>(record.rowData[i])) {
-                cout << columns[i].name << ": " << get<Date>(record.rowData[i]).toString() << " ";
-            }
+            string stred_val = ValueToStr(record.rowData[i]);
+            cout << columns[i].name << ": " << stred_val << " ";
         }
         cout << endl;
     });
