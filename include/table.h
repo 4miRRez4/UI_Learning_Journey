@@ -7,6 +7,7 @@
 #include "date.h"
 #include <string>
 #include <vector>
+#include <set>
 #include <variant>
 
 using Value = variant<int, string, Date, double>;
@@ -34,6 +35,8 @@ public:
 
 private:
     int nextRecordId;
+
+    set<string> indexedColumns;
     BPlusTree<int>* primaryIndex;
     Map<string, BPlusTree<string>*> uniqueIndexes;
     Map<string, BPlusTree<string>*> nonUniqueIndexes;
@@ -52,11 +55,13 @@ public:
     void updateRecord(int id, const vector<Value>& newValues);
     bool containsRecord(int id) const;
     int countRecords() const;
+    string ValueToStr(const Value& val);
     vector<string> aggregate(string colName, const function<string(const vector<Value>&)>& aggFunc) const;
     const vector<Column>& getColumns() const;
     void createIndex(string colName, IndexType it, int degree);
+    bool isColumnIndexed(string colName) const;
 
-    void printAll() const;
+    void printAll() ;
 };
 
 #endif

@@ -98,6 +98,7 @@ vector<Value> getColumnsValues(const vector<Table::Column>& cols){
             values.push_back(doubleValue);
         }
         else if(col.type == Table::DataType::DATE){
+            cout << "YYYY/MM/DD";
             Date date = Date::fromString(value);   
             values.push_back(date);  
         }
@@ -187,16 +188,7 @@ void searchRecord(Database* db) {
 
     Table::Record record = table->searchRecord(id);
     for (const auto& value : record.rowData){
-        string stred_val;
-        if (holds_alternative<string>(value)) {
-            stred_val = get<string>(value);
-        } else if (holds_alternative<int>(value)) {
-            stred_val = to_string(get<int>(value));
-        } else if (holds_alternative<double>(value)) {
-            stred_val = to_string(get<double>(value));
-        } else if (holds_alternative<Date>(value)){
-            stred_val = get<Date>(value).toString();
-        }
+        string stred_val = table->ValueToStr(value);
         cout << stred_val << " ";
     }
     cout << endl;
