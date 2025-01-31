@@ -6,10 +6,11 @@
 #include <vector>
 using namespace std;
 
-int main()
-{
-    Database *db = new Database();
+int main() {
+    Database* db = new Database();
+    //TODO: default table users...
     // handleUserInput(db);
+
 
     Graph graph;
     JSONReader JReader("../data/users.json");

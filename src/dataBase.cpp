@@ -14,7 +14,7 @@ void Database::createTable(string tableName,const vector<Table::Column>& cols, i
         return;
     }
 
-    Table* newTable = new Table(cols, degree);
+    Table* newTable = new Table(tableName, cols, 1, degree);
     tables.insert(tableName, newTable);
 
     cout << "Table " << tableName << " created successfully." << endl;
