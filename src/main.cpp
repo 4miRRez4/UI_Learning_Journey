@@ -25,5 +25,6 @@ int main()
     RecommendationManager recManager(graph);
     Interface interface(graph, recManager, db);
     interface.start();
+    graph.saveToJSON("../data/users.json");
     return 0;
 }
