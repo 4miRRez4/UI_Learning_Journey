@@ -40,8 +40,11 @@ void insertUsersToTable(Database* db, const vector<User>& users) {
         cout << "Table " << usersTable->name << " does not exist." << endl;
         return;
     }
-
+    int maxId = -1;
     for (const auto& user : users) {
+        int userId = stoi(user.getId());
+        maxId = (maxId > userId) ? maxId : userId;
+
         vector<Value> values = {
             user.getName(),
             user.getDateOfBirth(),
@@ -52,8 +55,10 @@ void insertUsersToTable(Database* db, const vector<User>& users) {
             join(user.getConnections(), ", ")
         };
 
-        usersTable->addRecord(values, stoi(user.getId()));
+        usersTable->addRecord(values, userId);
     }
+
+    usersTable->setNextRecordId(maxId + 1);
 
     cout << users.size() << " users added successfully." << endl;
 }
@@ -64,7 +69,7 @@ void insertUsersToTable(Database* db, const vector<User>& users) {
 int main() {
     Graph graph;
     
-    string jsonFilePath = "../data/users.json";
+    string jsonFilePath = "./data/users.json";
     JSONReader JReader(jsonFilePath);
     vector<User> users = JReader.readUsers();
     for (User &user : users)
