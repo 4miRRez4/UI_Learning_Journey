@@ -12,6 +12,7 @@ void Interface::waitForEnter()
 {
     cout << "\nPress Enter to continue...";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     clearScreen();
 }
 
@@ -472,10 +473,11 @@ void Interface::showDatabaseMenu()
         cout << "2. Insert Record" << endl;
         cout << "3. Update Record" << endl;
         cout << "4. Delete Record" << endl;
-        cout << "5. Search Record" << endl;
-        cout << "6. Print All Records" << endl;
-        cout << "7. Create Index" << endl;
-        cout << "8. Aggregation" << endl;
+        cout << "5. Search By Id" << endl;
+        cout << "6. Search By Column" << endl;
+        cout << "7. Print All Records" << endl;
+        cout << "8. Create Index" << endl;
+        cout << "9. Aggregation" << endl;
         cout << "10. Range Query" << endl;
         cout << "11. Exit" << endl;
         cout << "====================================" << endl;
@@ -491,12 +493,13 @@ void Interface::showDatabaseMenu()
             case 2: insertRecord(); break;
             case 3: updateRecord(); break;
             case 4: deleteRecord(); break;
-            case 5: searchRecord(); break;
-            case 6: printAllRecords(); break;
-            case 7: createIndex(); break;
-            case 8: performAggregation(); break;
-            // case 9: rangeQuery(); break;
-            case 10: return;
+            case 5: searchById(); break;
+            case 6: searchByColumn(); break;
+            case 7: printAllRecords(); break;
+            case 8: createIndex(); break;
+            case 9: performAggregation(); break;
+            // case 10: rangeQuery(); break;
+            case 11: return;
             default: cout << "Invalid choice. Try again." << endl;
         }
         
@@ -657,7 +660,7 @@ void Interface::deleteRecord() {
     table->removeRecord(id);
 }
 
-void Interface::searchRecord() { 
+void Interface::searchById() { 
     string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
@@ -672,10 +675,52 @@ void Interface::searchRecord() {
     cout << "Enter ID to search: ";
     cin >> id;
 
-    Table::Record record = table->searchRecord(id);
+    Table::Record record = table->searchRecordById(id);
     for (const auto& value : record.rowData){
         string stred_val = table->ValueToStr(value);
         cout << stred_val << " ";
+    }
+    cout << endl;
+}
+
+void Interface::searchByColumn() { 
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table* table = db->getTable(tableName);
+    if (!table) {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+    
+    cout << "Columns: ";
+    for(auto col : table->getColumns()){
+        cout << col.name << " ";
+    }
+    cout << endl;
+
+    string colName;
+    cout << "Enter column name to search: ";
+    cin >> colName;
+
+    Table::DataType colType;
+    for(auto col : table->getColumns()){
+        if(col.name == colName){
+            colType = col.type;
+            break;
+        }
+    }
+
+    string inVal;
+    cout << "Enter column value to search: ";
+    cin >> inVal;
+
+    Value val = table->strToValue(inVal, colType);
+
+    vector<Value> results = table->searchByColumn(colName, val);
+    for (const auto& res : results){
+        cout << table->ValueToStr(res) << " ";
     }
     cout << endl;
 }
@@ -696,13 +741,10 @@ void Interface::createIndex() {
     cout << "Enter column name to index: ";
     cin >> colName;
 
-    cout << "Enter index type (0: PRIMARY, 1: UNIQUE, 2: NON_UNIQUE): ";
-    cin >> indexType;
-
-    if (indexType < 0 || indexType > 2) {
-        cout << "Invalid index type." << endl;
-        return;
-    }
+    for(auto col : table->getColumns()){
+        if(colName == col.name)
+            indexType = col.indexType;
+    } 
 
     table->createIndex(colName, static_cast<Table::IndexType>(indexType), 3);
     cout << "Index created successfully." << endl;

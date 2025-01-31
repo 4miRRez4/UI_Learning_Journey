@@ -11,33 +11,17 @@ Table::Table(string name, const vector<Column>& cols, int nr_id, int degree) {
 
     recordsMap = new Map<int, Record>();
     primaryIndex = new BPlusTree<int>(degree);
-
-    for (const auto& col : cols) {
-        columns.push_back(col);
-
-        if (col.indexType == IndexType::UNIQUE) {
-            if (uniqueIndexes.contains(col.name)) {
-                throw runtime_error("Unique index already exists for column: " + col.name);
-            }
-            uniqueIndexes.insert(col.name, new BPlusTree<string>(degree));
-        } 
-        else if (col.indexType == IndexType::NON_UNIQUE) {
-            if (nonUniqueIndexes.contains(col.name)) {
-                throw runtime_error("Non-unique index already exists for column: " + col.name);
-            }
-            nonUniqueIndexes.insert(col.name, new BPlusTree<string>(degree));
-        }
-    }
+    columns = cols;
 }
 
 Table::~Table() {
     delete primaryIndex;
     delete recordsMap;
-    uniqueIndexes.iterate([](string col, BPlusTree<string>* ind) {
-        delete ind; 
+    uniqueIndexes.iterate([](string col, IndexVariant& index) {
+        visit([](auto&& ind) { delete ind; }, index);
     });
-    nonUniqueIndexes.iterate([](string col, BPlusTree<string>* ind) {
-        delete ind; 
+    nonUniqueIndexes.iterate([](string col, IndexVariant& index) {
+        visit([](auto&& ind) { delete ind; }, index);
     });
 }
 
@@ -63,6 +47,76 @@ string Table::ValueToStr(const Value& val){
 
 }
 
+Value Table::strToValue(string input, DataType colType) {
+    Value val;
+
+    if (colType == DataType::INT) {
+        try {
+            int intValue = stoi(input); 
+            val = intValue;
+        } catch (const invalid_argument& e) {
+            cout << "Invalid integer input." << endl;
+            val = 0;
+        }
+    } else if (colType == DataType::DOUBLE) {
+        try {
+            double doubleValue = stod(input);
+            val = doubleValue;
+        } catch (const invalid_argument& e) {
+            cerr << "Invalid double input." << endl;
+            val = 0.0;
+        }
+    } else if (colType == DataType::STRING) {
+        val = input; 
+    } else if (colType == DataType::DATE) {
+        try {
+            int day, month, year;
+            char slash1, slash2;
+            istringstream iss(input);
+            iss >> day >> slash1 >> month >> slash2 >> year;
+
+            if (slash1 == '/' && slash1 == '/' && day >= 1 && day <= 31 && month >= 1 && month <= 12) {
+                val = Date{year, month, day}; 
+            } else {
+                throw invalid_argument("Invalid date format.");
+            }
+        } catch (const exception& e) {
+            cerr << "Invalid date input." << endl;
+            val = Date{1111, 11, 11}; 
+        }
+    } else {
+        cerr << "Invalid input data type." << endl;
+        val = string{};
+    }
+
+    return val;
+}
+
+
+void Table::updateIndex(Map<string, IndexVariant>& indexMap, string colName, Value value, bool isInsert) {
+    if (!indexMap.contains(colName)) return;  
+
+    auto& indexVar = indexMap.search(colName);
+
+    if (auto index = get_if<BPlusTree<int>*>(&indexVar)) {
+        if (isInsert) (*index)->insert(get<int>(value));
+        else (*index)->remove(get<int>(value));
+    } 
+    else if (auto index = get_if<BPlusTree<double>*>(&indexVar)) {
+        if (isInsert) (*index)->insert(get<double>(value));
+        else (*index)->remove(get<double>(value));
+    } 
+    else if (auto index = get_if<BPlusTree<Date>*>(&indexVar)) {
+        if (isInsert) (*index)->insert(get<Date>(value));
+        else (*index)->remove(get<Date>(value));
+    } 
+    else if (auto index = get_if<BPlusTree<string>*>(&indexVar)) {
+        if (isInsert) (*index)->insert(get<string>(value));
+        else (*index)->remove(get<string>(value));
+    }
+}
+
+
 void Table::addRecord(const vector<Value>& values, int id) {
     if (values.size() != columns.size()) {
         cerr << "Invalid values sizes." << endl;
@@ -85,27 +139,8 @@ void Table::addRecord(const vector<Value>& values, int id) {
 
     for (int i = 0; i < values.size(); ++i) {
         string colName = columns[i].name;
-        string stred_val = ValueToStr(values[i]);
-
-        if (columns[i].indexType == UNIQUE) {
-            if (!uniqueIndexes.contains(colName)) {
-                cout << "Unique index not found for column: " << colName << endl;
-                return;
-            }
-            if (uniqueIndexes.search(colName)->search(stred_val)) {
-                throw runtime_error("Duplicated value for unique index on column: " + colName);
-            }
-
-            uniqueIndexes.search(colName)->insert(stred_val);
-        } 
-        else if (columns[i].indexType == NON_UNIQUE) {
-            if (!nonUniqueIndexes.contains(colName)) {
-                cerr << "Non-unique index not found for column: " << colName << endl;
-                return;
-            }
-
-            nonUniqueIndexes.search(colName)->insert(stred_val);
-        }
+        updateIndex(uniqueIndexes, colName, values[i], true);
+        updateIndex(nonUniqueIndexes, colName, values[i], true);    
     }
 
     recordsMap->insert(id, {id, values});
@@ -125,37 +160,78 @@ void Table::removeRecord(int id) {
     Record record = recordsMap->search(id);
     for (int i = 0; i < record.rowData.size(); ++i) {
         string colName = columns[i].name;
-        string value;
-        if (holds_alternative<string>(record.rowData[i])) {
-            value = get<string>(record.rowData[i]);
-        } else if (holds_alternative<int>(record.rowData[i])) {
-            value = to_string(get<int>(record.rowData[i]));
-        } else if (holds_alternative<double>(record.rowData[i])) {
-            value = to_string(get<double>(record.rowData[i]));
-        } else if (holds_alternative<Date>(record.rowData[i])) {
-            value = get<Date>(record.rowData[i]).toString();  
-        }
-
-        if (uniqueIndexes.contains(colName)) {
-            uniqueIndexes.search(colName)->remove(value);
-        } else if (nonUniqueIndexes.contains(colName)) {
-            nonUniqueIndexes.search(colName)->remove(value);
-        }
+        updateIndex(uniqueIndexes, colName, record.rowData[i], false);
+        updateIndex(nonUniqueIndexes, colName, record.rowData[i], false);
     }
-
 
     recordsMap->remove(id); 
 
     cout << "Record with ID " << id << " removed successfully." << endl;
 }
 
-Table::Record Table::searchRecord(int id) {
+Table::Record Table::searchRecordById(int id) {
     if (!recordsMap->contains(id)) {
         cerr << "Record with Id " << id << " not found." << endl;;
         return {id, {}};
     }
     return recordsMap->search(id);
 }
+
+vector<Value> Table::searchByColumn(string colName, Value value) {
+    vector<Value> results;
+
+    if (uniqueIndexes.contains(colName)) {
+        auto& indexVar = uniqueIndexes.search(colName);
+
+        if (auto index = get_if<BPlusTree<int>*>(&indexVar)) {
+            if ((*index)->search(get<int>(value))) {
+                results.push_back(value);
+            }
+        } 
+        else if (auto index = get_if<BPlusTree<double>*>(&indexVar)) {
+            if ((*index)->search(get<double>(value))) {
+                results.push_back(value);
+            }
+        } 
+        else if (auto index = get_if<BPlusTree<Date>*>(&indexVar)) {
+            if ((*index)->search(get<Date>(value))) {
+                results.push_back(value);
+            }
+        } 
+        else if (auto index = get_if<BPlusTree<string>*>(&indexVar)) {
+            if ((*index)->search(get<string>(value))) {
+                results.push_back(value);
+            }
+        }
+    } 
+    else if (nonUniqueIndexes.contains(colName)) {
+        auto& indexVar = nonUniqueIndexes.search(colName);
+
+        if (auto index = get_if<BPlusTree<int>*>(&indexVar)) {
+            vector<int> values = (*index)->rangeQuery(get<int>(value), get<int>(value));
+            for (int v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<double>*>(&indexVar)) {
+            vector<double> values = (*index)->rangeQuery(get<double>(value), get<double>(value));
+            for (double v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<Date>*>(&indexVar)) {
+            vector<Date> values = (*index)->rangeQuery(get<Date>(value), get<Date>(value));
+            for (const Date& v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<string>*>(&indexVar)) {
+            vector<string> values = (*index)->rangeQuery(get<string>(value), get<string>(value));
+            for (const string& v : values) results.push_back(v);
+        }
+    } 
+    else {  
+        cout << "No index found for column: " << colName << endl;
+    }
+
+    return results;
+}
+
+
 
 void Table::updateRecord(int id, const vector<Value>& newValues) {
     if (!recordsMap->contains(id)) {
@@ -171,7 +247,7 @@ void Table::updateRecord(int id, const vector<Value>& newValues) {
     removeRecord(id);
 
     addRecord(newValues, id);
-    cout << "Record with ID " << id << " updated successfully.\n";
+    cout << "Record with ID " << id << " updated successfully." << endl;
 }
 
 
@@ -199,48 +275,93 @@ vector<string> Table::aggregate(string colName, const function<string(const vect
 }
 
 void Table::createIndex(string colName, IndexType indexType, int degree) {
-    for (const auto& col : columns) {
+    for (int i=0; i<columns.size(); i++) {
+        const auto& col = columns[i];
         if (col.name == colName) {
             if (indexType == IndexType::UNIQUE) {
                 if (uniqueIndexes.contains(colName)) {
                     cout << "Unique index already exists for column: " + colName << endl;
                     return;
                 }
-                uniqueIndexes.insert(colName, new BPlusTree<string>(degree));
+                
+                if (col.type == DataType::INT) {
+                    uniqueIndexes.insert(colName, new BPlusTree<int>(degree));
+                } 
+                else if (col.type == DataType::DOUBLE) {
+                    uniqueIndexes.insert(colName, new BPlusTree<double>(degree));
+                } 
+                else if (col.type == DataType::DATE) {
+                    uniqueIndexes.insert(colName, new BPlusTree<Date>(degree));
+                } 
+                else {
+                    uniqueIndexes.insert(colName, new BPlusTree<string>(degree));
+                }
             } 
             else if (indexType == IndexType::NON_UNIQUE) {
                 if (nonUniqueIndexes.contains(colName)) {
                     cout << "Non-unique index already exists for column: " + colName << endl;
                     return;
                 }
-                nonUniqueIndexes.insert(colName, new BPlusTree<string>(degree));
+                
+                if (col.type == DataType::INT) {
+                    nonUniqueIndexes.insert(colName, new BPlusTree<int>(degree));
+                } 
+                else if (col.type == DataType::DOUBLE) {
+                    nonUniqueIndexes.insert(colName, new BPlusTree<double>(degree));
+                } 
+                else if (col.type == DataType::DATE) {
+                    nonUniqueIndexes.insert(colName, new BPlusTree<Date>(degree));
+                } 
+                else {
+                    nonUniqueIndexes.insert(colName, new BPlusTree<string>(degree));
+                }
             }
 
             indexedColumns.insert(colName);  
 
-            int colIndex = -1;
-            for (int i = 0; i < columns.size(); i++) {
-                if (columns[i].name == colName) {
-                    colIndex = i;
-                    break;
-                }   
-            }
-
-            if (colIndex == -1) 
-                return;
             //filling new index
             recordsMap->iterate([&](int id, const Record& record) {
-                string stred_val = ValueToStr(record.rowData[colIndex]);
+                Value value = record.rowData[i];
 
                 if (indexType == IndexType::UNIQUE) {
-                    if(!uniqueIndexes.search(colName)->search(stred_val))
-                        uniqueIndexes.search(colName)->insert(stred_val);
-                }
+                    auto& indexVar = uniqueIndexes.search(colName);
+
+                    if (auto index = get_if<BPlusTree<int>*>(&indexVar)) {
+                        if (!(*index)->search(get<int>(value))) 
+                            (*index)->insert(get<int>(value));
+                    } 
+                    else if (auto index = get_if<BPlusTree<double>*>(&indexVar)) {
+                        if (!(*index)->search(get<double>(value))) 
+                            (*index)->insert(get<double>(value));
+                    } 
+                    else if (auto index = get_if<BPlusTree<Date>*>(&indexVar)) {
+                        if (!(*index)->search(get<Date>(value))) 
+                            (*index)->insert(get<Date>(value));
+                    } 
+                    else if (auto index = get_if<BPlusTree<string>*>(&indexVar)) {
+                        if (!(*index)->search(get<string>(value))) 
+                            (*index)->insert(get<string>(value));
+                    }
+                } 
                 else if (indexType == IndexType::NON_UNIQUE) {
-                    nonUniqueIndexes.search(colName)->insert(stred_val);
+                    auto& indexVar = nonUniqueIndexes.search(colName);
+
+                    if (auto index = get_if<BPlusTree<int>*>(&indexVar)) {
+                        (*index)->insert(get<int>(value));
+                    } 
+                    else if (auto index = get_if<BPlusTree<double>*>(&indexVar)) {
+                        (*index)->insert(get<double>(value));
+                    } 
+                    else if (auto index = get_if<BPlusTree<Date>*>(&indexVar)) {
+                        (*index)->insert(get<Date>(value));
+                    } 
+                    else if (auto index = get_if<BPlusTree<string>*>(&indexVar)) {
+                        (*index)->insert(get<string>(value));
+                    }
                 }
             });
-            cout << "Index created for column: " << colName << endl;
+
+            cout << "Index created for column: " << colName << " successfuly." << endl;
             return;
         }
     }

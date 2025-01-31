@@ -36,6 +36,20 @@ bool Date::operator<(const Date& other) const {
     return tie(year, month, day) < tie(other.year, other.month, other.day);
 }
 
+bool Date::operator<=(const Date& other) const {
+    return tie(year, month, day) <= tie(other.year, other.month, other.day);
+}
+
+bool Date::operator>(const Date& other) const {
+    return tie(year, month, day) > tie(other.year, other.month, other.day);
+}
+
+bool Date::operator>=(const Date& other) const {
+    return tie(year, month, day) >= tie(other.year, other.month, other.day);
+}
+
+
+
 bool Date::operator==(const Date& other) const {
     return year == other.year && month == other.month && day == other.day;
 }
