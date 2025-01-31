@@ -65,7 +65,7 @@ public:
     void createIndex(string colName, IndexType it, int degree);
     bool isColumnIndexed(string colName) const;
     void updateIndex(Map<string, IndexVariant>& indexMap, string colName, Value value, bool isInsert);
-
+    vector<Value> rangeQuery(string colName, const Value& lower, const Value& upper);
 
     void printAll() ;
 };
