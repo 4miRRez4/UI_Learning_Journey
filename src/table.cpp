@@ -25,9 +25,14 @@ Table::~Table() {
     });
 }
 
+void Table::setNextRecordId(int nextId) {
+    nextRecordId = nextId;
+}
+
 int Table::countRecords() const {
     return primaryIndex->countKeys();
 }
+
 bool Table::isColumnIndexed(string colName) const{
     return indexedColumns.find(colName) != indexedColumns.end();
 }
