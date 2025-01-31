@@ -9,6 +9,7 @@ vector<User> JSONReader::readUsers()
     if (!file.is_open())
     {
         cerr << "Error opening file: " << fileName << endl;
+        perror("Error opening file");
         return users;
     }
     json jsonData;
