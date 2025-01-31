@@ -18426,29 +18426,5 @@
             "538",
             "72"
         ]
-    },
-    {
-        "id": "1000",
-        "name": "amir",
-        "dateOfBirth": "aa",
-        "universityLocation": "bb",
-        "field": "cc",
-        "workplace": "dd",
-        "specialties": [
-            "ee"
-        ],
-        "connectionId": []
-    },
-    {
-        "id": "1001",
-        "name": "amir",
-        "dateOfBirth": "11",
-        "universityLocation": "aa",
-        "field": "bb",
-        "workplace": "c",
-        "specialties": [
-            "dd"
-        ],
-        "connectionId": []
     }
 ]

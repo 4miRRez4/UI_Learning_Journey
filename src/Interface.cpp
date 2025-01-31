@@ -774,6 +774,9 @@ void Interface::searchByColumn()
     Value val = table->strToValue(inVal, colType);
 
     vector<Value> results = table->searchByColumn(colName, val);
+    if(results.empty())
+        return;
+        
     vector<Table::Column> cols = table->getColumns();
     for (int i=0; i<cols.size(); i++)
     {
