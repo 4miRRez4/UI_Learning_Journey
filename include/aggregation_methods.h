@@ -8,7 +8,7 @@
 
 using namespace std;
 
-using Value = variant<int, string, double>;
+using Value = variant<int, string, Date, double>;
 
 namespace Aggregation {
 
@@ -64,6 +64,10 @@ string min(const vector<Value>& values) {
             if (get<string>(val) < get<string>(minVal)) 
                 minVal = val;
         } 
+        else if (holds_alternative<Date>(val) && holds_alternative<Date>(minVal)) {
+            if (get<Date>(val) < get<Date>(minVal)) 
+                minVal = val;
+        }
         else{
             cout << "Invalid data type for aggregation function, min." << endl;
         }
@@ -73,6 +77,8 @@ string min(const vector<Value>& values) {
         return to_string(get<int>(minVal));
     if (holds_alternative<double>(minVal)) 
         return to_string(get<double>(minVal));
+    if (holds_alternative<Date>(minVal))
+        return get<Date>(minVal).toString(); 
     return get<string>(minVal);
 }
 
@@ -95,6 +101,10 @@ string max(const vector<Value>& values) {
             if (get<string>(val) > get<string>(maxVal)) 
                 maxVal = val;
         }
+        else if (holds_alternative<Date>(val) && holds_alternative<Date>(maxVal)) {
+            if (get<Date>(val) < get<Date>(maxVal)) 
+                maxVal = val;
+        }
         else{
             cout << "Invalid data type for aggregation function, max." << endl;
         }
@@ -104,6 +114,8 @@ string max(const vector<Value>& values) {
         return to_string(get<int>(maxVal));
     if (holds_alternative<double>(maxVal)) 
         return to_string(get<double>(maxVal));
+    if (holds_alternative<Date>(maxVal))
+        return get<Date>(maxVal).toString(); 
     return get<string>(maxVal);
 }
 
