@@ -45,10 +45,8 @@ void JSONReader::writeUsers(const vector<User> &users)
         userData["workplace"] = user.getWorkplace();
         userData["specialties"] = user.getSpecialties();
         userData["connectionId"] = user.getConnections();
-
         jsonData.push_back(userData); // حفظ ترتیب کاربران
     }
-
     ofstream file(fileName);
     if (!file.is_open())
     {

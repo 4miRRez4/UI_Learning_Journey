@@ -3,6 +3,7 @@
 
 #pragma once
 #include "User.h"
+#include "JSONReader.h"
 #include <unordered_map>
 #include <vector>
 #include <queue>

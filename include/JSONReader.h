@@ -17,7 +17,6 @@ public:
     JSONReader(string f);
     vector<User> readUsers();
     void writeUsers(const vector<User> &users);
-
     ~JSONReader();
 
 private:

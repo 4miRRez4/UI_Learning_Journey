@@ -8,7 +8,8 @@ using namespace std;
 
 int main()
 {
-    // Database *db = new Database();
+
+    Database *db = new Database();
     // handleUserInput(db);
 
     Graph graph;
@@ -23,8 +24,7 @@ int main()
         }
     }
     RecommendationManager recManager(graph);
-    Interface interface(graph, recManager, "../data/users.json");
+    Interface interface(graph, recManager,db, "../data/users.json");
     interface.start();
-
     return 0;
 }
