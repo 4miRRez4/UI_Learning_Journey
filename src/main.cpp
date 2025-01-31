@@ -7,11 +7,6 @@
 using namespace std;
 
 int main() {
-    Database* db = new Database();
-    //TODO: default table users...
-    // handleUserInput(db);
-
-
     Graph graph;
     JSONReader JReader("../data/users.json");
     vector<User> users = JReader.readUsers();
@@ -23,8 +18,14 @@ int main() {
             graph.insertEdge(user.getId(), connectionId);
         }
     }
+
     RecommendationManager recManager(graph);
+
+    Database* db = new Database();
+    //TODO: default table users...
+
     Interface interface(graph, recManager, db);
     interface.start();
+    
     return 0;
 }

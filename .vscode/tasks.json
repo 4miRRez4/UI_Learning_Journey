@@ -16,6 +16,8 @@
                 "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/JSONReader.cpp",
                 "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/RecommendationManager.cpp",
                 "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/date.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/CommunicationQuality.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/Interface.cpp",
                 
 
                 "-I/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/include", 
