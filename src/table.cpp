@@ -138,7 +138,8 @@ void Table::addRecord(const vector<Value>& values, int id) {
     }
 
     if (primaryIndex->search(id)) {
-        throw runtime_error("Duplicated key for primary index.");
+        cout << "Duplicated key for primary index." << endl;
+        return;
     }
     primaryIndex->insert(id);
 
@@ -250,6 +251,10 @@ void Table::updateRecord(int id, const vector<Value>& newValues) {
     }
 
     removeRecord(id);
+
+    if (primaryIndex->search(id)) { 
+        primaryIndex->remove(id);
+    }
 
     addRecord(newValues, id);
     cout << "Record with ID " << id << " updated successfully." << endl;
