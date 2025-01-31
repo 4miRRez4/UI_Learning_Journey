@@ -9,9 +9,11 @@ vector<string> RecommendationManager::getRecommandations(string &aimId, int numR
     unordered_map<string, double> recommendationScores;
     User currentUser = graph.getUser(aimId);
     vector<string> allUsers = graph.vertices();
+    vector<string> currentConnections = currentUser.getConnections();
     for (string &otherUserId : allUsers)
     {
-        if (otherUserId == aimId)
+        if (otherUserId == aimId ||
+            find(currentConnections.begin(), currentConnections.end(), otherUserId) != currentConnections.end())
         {
             continue;
         }
