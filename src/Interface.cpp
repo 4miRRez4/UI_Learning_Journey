@@ -521,7 +521,8 @@ void Interface::showDatabaseMenu()
         case 9:
             performAggregation();
             break;
-        // case 10: rangeQuery(); break;
+        case 10: 
+            performRangeQuery(); break;
         case 11:
             return;
         default:
@@ -622,7 +623,6 @@ vector<Value> getColumnsValues(const vector<Table::Column> &cols)
         }
         else if (col.type == Table::DataType::DATE)
         {
-            cout << "YYYY/MM/DD";
             Date date = Date::fromString(value);
             values.push_back(date);
         }
@@ -723,10 +723,12 @@ void Interface::searchById()
     cin >> id;
 
     Table::Record record = table->searchRecordById(id);
-    for (const auto &value : record.rowData)
+    vector<Table::Column> cols = table->getColumns();
+    for (int i=0; i<cols.size(); i++)
     {
-        string stred_val = table->ValueToStr(value);
-        cout << stred_val << " ";
+        cout << cols[i].name << ": ";
+        string stred_val = table->ValueToStr(record.rowData[i]);
+        cout << stred_val << " | ";
     }
     cout << endl;
 }
@@ -772,9 +774,12 @@ void Interface::searchByColumn()
     Value val = table->strToValue(inVal, colType);
 
     vector<Value> results = table->searchByColumn(colName, val);
-    for (const auto &res : results)
+    vector<Table::Column> cols = table->getColumns();
+    for (int i=0; i<cols.size(); i++)
     {
-        cout << table->ValueToStr(res) << " ";
+        cout << cols[i].name << ": ";
+        string stred_val = table->ValueToStr(results[i]);
+        cout << stred_val << " | ";
     }
     cout << endl;
 }
@@ -807,7 +812,7 @@ void Interface::createIndex()
     cout << "Index created successfully." << endl;
 }
 
-bool validateColumn(Database *db, string columnName, Table *&table)
+bool validateColumn(string columnName, Table *&table)
 {
     vector<Table::Column> tableCols = table->getColumns();
     auto col_it = find_if(tableCols.begin(), tableCols.end(), [&](const Table::Column &col)
@@ -857,7 +862,7 @@ void Interface::performAggregation()
     cout << "Enter column name: ";
     cin >> columnName;
 
-    if (!validateColumn(db, columnName, table))
+    if (!validateColumn(columnName, table))
     {
         return;
     }
@@ -867,6 +872,64 @@ void Interface::performAggregation()
     vector<string> result = table->aggregate(columnName, func);
     cout << "Aggregation result: " << result[0] << endl;
 }
+
+void Interface::performRangeQuery() {
+    string tableName, colName, lowerStr, upperStr;
+    
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table* table = db->getTable(tableName);
+    if (!table) {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    cout << "Enter column name: ";
+    cin >> colName;
+
+    cout << "Enter lower bound: ";
+    cin >> lowerStr;
+
+    cout << "Enter upper bound: ";
+    cin >> upperStr;
+
+    auto columns = table->getColumns();
+    auto it = find_if(columns.begin(), columns.end(), [&](const Table::Column& col) { return col.name == colName; });
+
+    if (it == columns.end()) {
+        cout << "Column not found." << endl;
+        return;
+    }
+
+    Value lower, upper;
+
+    if (it->type == Table::DataType::INT) {
+        lower = stoi(lowerStr);
+        upper = stoi(upperStr);
+    } 
+    else if (it->type == Table::DataType::DOUBLE) {
+        lower = stod(lowerStr);
+        upper = stod(upperStr);
+    } 
+    else if (it->type == Table::DataType::DATE) {
+        lower = Date::fromString(lowerStr);
+        upper = Date::fromString(upperStr);
+    } 
+    else {
+        lower = lowerStr;
+        upper = upperStr;
+    }
+
+    vector<Value> results = table->rangeQuery(colName, lower, upper);
+
+    cout << "Range query results: " << endl;
+    for (const auto& value : results) {
+        cout << table->ValueToStr(value) << " ";
+    }
+    cout << endl;
+}
+
 
 void Interface::printAllRecords()
 {
@@ -883,57 +946,3 @@ void Interface::printAllRecords()
 
     table->printAll();
 }
-
-// void Interface::rangeQuery() {
-//     string tableName, columnName;
-//     cout << "Enter table name: ";
-//     cin >> tableName;
-
-//     Table* table = db->getTable(tableName);
-//     if (!table) {
-//         cout << "No table named: " << tableName << endl;
-//         return;
-//     }
-
-//     cout << "Enter column name for range query: ";
-//     cin >> columnName;
-
-//     vector<Table::Column> tableCols = table->getColumns();
-//     auto col_it = find_if(tableCols.begin(), tableCols.end(), [&](const Table::Column& col) {
-//         return col.name == columnName;
-//     });
-
-//     if (col_it == tableCols.end()) {
-//         cout << "No column named " << columnName << " in the table " << tableName << endl;
-//         return;
-//     }
-
-//     if (col_it->indexType != Table::PRIMARY && !table->hasIndex(columnName)) {
-//         cout << "Column is not indexed. Range queries require an index.\n";
-//         return;
-//     }
-
-//     cout << "Enter lower bound: ";
-//     string lowerStr;
-//     cin >> lowerStr;
-//     cout << "Enter upper bound: ";
-//     string upperStr;
-//     cin >> upperStr;
-
-//     vector<string> result;
-//     if (col_it->type == Table::DataType::INT) {
-//         int lower = stoi(lowerStr);
-//         int upper = stoi(upperStr);
-//         result = table->rangeQuery<int>(columnName, lower, upper);
-//     } else if (col_it->type == Table::DataType::STRING) {
-//         result = table->rangeQuery<string>(columnName, lowerStr, upperStr);
-//     } else {
-//         cout << "Unsupported data type for range query.\n";
-//         return;
-//     }
-
-//     cout << "Range Query Results:\n";
-//     for (const auto& entry : result) {
-//         cout << entry << endl;
-//     }
-// }

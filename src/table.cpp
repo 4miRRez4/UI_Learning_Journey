@@ -373,6 +373,56 @@ void Table::createIndex(string colName, IndexType indexType, int degree) {
     cout << "Column not found: " + colName << endl;
 }
 
+vector<Value> Table::rangeQuery(string colName, const Value& lower, const Value& upper) {
+    vector<Value> results;
+
+    if (uniqueIndexes.contains(colName)) {
+        auto& indexVar = uniqueIndexes.search(colName);
+
+        if (auto index = get_if<BPlusTree<int>*>(&indexVar)) {
+            vector<int> values = (*index)->rangeQuery(get<int>(lower), get<int>(upper));
+            for (int v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<double>*>(&indexVar)) {
+            vector<double> values = (*index)->rangeQuery(get<double>(lower), get<double>(upper));
+            for (double v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<Date>*>(&indexVar)) {
+            vector<Date> values = (*index)->rangeQuery(get<Date>(lower), get<Date>(upper));
+            for (const Date& v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<string>*>(&indexVar)) {
+            vector<string> values = (*index)->rangeQuery(get<string>(lower), get<string>(upper));
+            for (const string& v : values) results.push_back(v);
+        }
+    } 
+    else if (nonUniqueIndexes.contains(colName)) {
+        auto& indexVar = nonUniqueIndexes.search(colName);
+
+        if (auto index = get_if<BPlusTree<int>*>(&indexVar)) {
+            vector<int> values = (*index)->rangeQuery(get<int>(lower), get<int>(upper));
+            for (int v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<double>*>(&indexVar)) {
+            vector<double> values = (*index)->rangeQuery(get<double>(lower), get<double>(upper));
+            for (double v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<Date>*>(&indexVar)) {
+            vector<Date> values = (*index)->rangeQuery(get<Date>(lower), get<Date>(upper));
+            for (const Date& v : values) results.push_back(v);
+        } 
+        else if (auto index = get_if<BPlusTree<string>*>(&indexVar)) {
+            vector<string> values = (*index)->rangeQuery(get<string>(lower), get<string>(upper));
+            for (const string& v : values) results.push_back(v);
+        }
+    } 
+    else {  
+        cout << "No index found for column: " << colName << endl;
+    }
+
+    return results;
+}
+
 
 void Table::printAll() {
     cout << "All records in Table:" << endl;
@@ -381,7 +431,7 @@ void Table::printAll() {
         cout << "ID: " << id << " => ";
         for (int i = 0; i < record.rowData.size(); ++i) {
             string stred_val = ValueToStr(record.rowData[i]);
-            cout << columns[i].name << ": " << stred_val << " ";
+            cout << columns[i].name << ": " << stred_val << " | ";
         }
         cout << endl;
     });

@@ -70,6 +70,7 @@ private:
     void printAllRecords();
     void performAggregation();
     void createIndex();
+    void performRangeQuery();
 };
 
 #endif
