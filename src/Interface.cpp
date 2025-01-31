@@ -12,6 +12,7 @@ void Interface::waitForEnter()
 {
     cout << "\nPress Enter to continue...";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     clearScreen();
 }
 
@@ -469,26 +470,27 @@ void Interface::showDatabaseMenu()
 {
     while (true)
     {
-        // clearScreen();
-        cout << "=== Database Management Menu ===\n";
-        cout << "1. Create Table\n";
-        cout << "2. Insert Record\n";
-        cout << "3. Update Record\n";
-        cout << "4. Delete Record\n";
-        cout << "5. Search Record\n";
-        cout << "6. Print All Records\n";
-        cout << "7. Create Index\n";
-        cout << "8. Perform Aggregation\n";
-        cout << "9. Return to Main Menu\n";
-        cout << "Choose an option: ";
+
+        clearScreen();
+        cout << "========== DataBase Menu ==========" << endl;
+        cout << "1. Create Table" << endl;
+        cout << "2. Insert Record" << endl;
+        cout << "3. Update Record" << endl;
+        cout << "4. Delete Record" << endl;
+        cout << "5. Search By Id" << endl;
+        cout << "6. Search By Column" << endl;
+        cout << "7. Print All Records" << endl;
+        cout << "8. Create Index" << endl;
+        cout << "9. Aggregation" << endl;
+        cout << "10. Range Query" << endl;
+        cout << "11. Exit" << endl;
+        cout << "====================================" << endl;
+        cout << "Enter your choice: ";
 
         int choice;
         cin >> choice;
         cin.ignore();
         // clearScreen();
-
-        if (choice == 9)
-            break;
 
         switch (choice)
         {
@@ -505,20 +507,27 @@ void Interface::showDatabaseMenu()
             deleteRecord();
             break;
         case 5:
-            searchRecord();
+            searchById();
             break;
         case 6:
-            printAllRecords();
+            searchByColumn();
             break;
         case 7:
-            createIndex();
+            printAllRecords();
             break;
         case 8:
+            createIndex();
+            break;
+        case 9:
             performAggregation();
             break;
+        // case 10: rangeQuery(); break;
+        case 11:
+            return;
         default:
-            cout << "Invalid option!\n";
+            cout << "Invalid choice. Try again." << endl;
         }
+
         waitForEnter();
     }
 }
@@ -539,9 +548,9 @@ void Interface::createTable()
         string colName, colType, indexType;
         cout << "Column " << (i + 1) << " name: ";
         cin >> colName;
-        cout << "Data type (int/string/date): ";
+        cout << "Data type (int/string/date/double): ";
         cin >> colType;
-        cout << "Index type(primary/unique/non-unique): ";
+        cout << "Index type(unique/non-unique): ";
         cin >> indexType;
 
         Table::DataType dataType;
@@ -551,6 +560,8 @@ void Interface::createTable()
             dataType = Table::DataType::STRING;
         else if (colType == "date")
             dataType = Table::DataType::DATE;
+        else if (colType == "double")
+            dataType = Table::DataType::DOUBLE;
         else
         {
             cout << "Invalid column data type. Skipping column..." << endl;
@@ -558,9 +569,7 @@ void Interface::createTable()
         }
 
         Table::IndexType it;
-        if (indexType == "primary")
-            it = Table::IndexType::PRIMARY;
-        else if (indexType == "unique")
+        if (indexType == "unique")
             it = Table::IndexType::UNIQUE;
         else if (indexType == "non-unique")
             it = Table::IndexType::NON_UNIQUE;
@@ -575,7 +584,54 @@ void Interface::createTable()
     }
 
     db->createTable(tableName, columns, 3);
-    cout << "Table '" << tableName << "' created successfully.\n";
+}
+
+vector<Value> getColumnsValues(const vector<Table::Column> &cols)
+{
+    vector<Value> values;
+    for (int i = 0; i < cols.size(); i++)
+    {
+        const auto &col = cols[i];
+        string value;
+        cout << "Enter value for " << col.name << ": ";
+        cin >> value;
+
+        if (col.type == Table::DataType::INT)
+        {
+            size_t pos;
+            int intValue = stoi(value, &pos);
+
+            if (pos != value.length())
+            {
+                throw invalid_argument("Invalid integer.");
+            }
+
+            values.push_back(intValue);
+        }
+        else if (col.type == Table::DataType::DOUBLE)
+        {
+            size_t pos;
+            int doubleValue = stod(value, &pos);
+
+            if (pos != value.length())
+            {
+                throw invalid_argument("Invalid double.");
+            }
+
+            values.push_back(doubleValue);
+        }
+        else if (col.type == Table::DataType::DATE)
+        {
+            cout << "YYYY/MM/DD";
+            Date date = Date::fromString(value);
+            values.push_back(date);
+        }
+        else
+        {
+            values.push_back(value); // store as string
+        }
+    }
+    return values;
 }
 
 void Interface::insertRecord()
@@ -591,19 +647,19 @@ void Interface::insertRecord()
         return;
     }
 
-    vector<string> values;
-    cout << "We assume that first column is primary." << endl;
-    for (const auto &col : table->getColumns())
+    const vector<Table::Column> &cols = table->getColumns();
+    vector<Value> values;
+    try
     {
-        string value;
-        cout << "Enter value for " << col.name << ": ";
-        cin >> value;
-        values.push_back(value);
+        values = getColumnsValues(cols);
+    }
+    catch (const invalid_argument &e)
+    {
+        cout << "Invalid input." << endl;
+        return;
     }
 
-    int id = stoi(values[0]);
-    table->addRecord(id, values);
-    cout << "Record inserted successfully." << endl;
+    table->addRecord(values);
 }
 
 void Interface::updateRecord()
@@ -623,17 +679,10 @@ void Interface::updateRecord()
     cout << "Enter ID of record to update: ";
     cin >> id;
 
-    vector<string> values;
-    for (const auto &col : table->getColumns())
-    {
-        string value;
-        cout << "Enter new value for " << col.name << ": ";
-        cin >> value;
-        values.push_back(value);
-    }
+    const auto &cols = table->getColumns();
+    vector<Value> values = getColumnsValues(cols);
 
     table->updateRecord(id, values);
-    cout << "Record updated successfully." << endl;
 }
 
 void Interface::deleteRecord()
@@ -654,10 +703,9 @@ void Interface::deleteRecord()
     cin >> id;
 
     table->removeRecord(id);
-    cout << "Record deleted successfully." << endl;
 }
 
-void Interface::printAllRecords()
+void Interface::searchById()
 {
     string tableName;
     cout << "Enter table name: ";
@@ -670,12 +718,22 @@ void Interface::printAllRecords()
         return;
     }
 
-    table->printAll();
+    int id;
+    cout << "Enter ID to search: ";
+    cin >> id;
+
+    Table::Record record = table->searchRecordById(id);
+    for (const auto &value : record.rowData)
+    {
+        string stred_val = table->ValueToStr(value);
+        cout << stred_val << " ";
+    }
+    cout << endl;
 }
 
-void Interface::performAggregation()
+void Interface::searchByColumn()
 {
-    string tableName, columnName, aggType;
+    string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
 
@@ -686,28 +744,39 @@ void Interface::performAggregation()
         return;
     }
 
-    cout << "Enter column name: ";
-    cin >> columnName;
-    cout << "Aggregation function (sum/avg/min/max): ";
-    cin >> aggType;
-
-    function<string(const vector<string> &)> func;
-    if (aggType == "sum")
-        func = Aggregation::sum;
-    else if (aggType == "avg")
-        func = Aggregation::average;
-    else if (aggType == "min")
-        func = Aggregation::min;
-    else if (aggType == "max")
-        func = Aggregation::max;
-    else
+    cout << "Columns: ";
+    for (auto col : table->getColumns())
     {
-        cout << "Invalid aggregation function." << endl;
-        return;
+        cout << col.name << " ";
+    }
+    cout << endl;
+
+    string colName;
+    cout << "Enter column name to search: ";
+    cin >> colName;
+
+    Table::DataType colType;
+    for (auto col : table->getColumns())
+    {
+        if (col.name == colName)
+        {
+            colType = col.type;
+            break;
+        }
     }
 
-    vector<string> result = table->aggregate(columnName, func);
-    cout << "Aggregation result: " << result[0] << endl;
+    string inVal;
+    cout << "Enter column value to search: ";
+    cin >> inVal;
+
+    Value val = table->strToValue(inVal, colType);
+
+    vector<Value> results = table->searchByColumn(colName, val);
+    for (const auto &res : results)
+    {
+        cout << table->ValueToStr(res) << " ";
+    }
+    cout << endl;
 }
 
 void Interface::createIndex()
@@ -728,24 +797,56 @@ void Interface::createIndex()
     cout << "Enter column name to index: ";
     cin >> colName;
 
-    cout << "Enter index type (0: PRIMARY, 1: UNIQUE, 2: NON_UNIQUE): ";
-    cin >> indexType;
-
-    if (indexType < 0 || indexType > 2)
+    for (auto col : table->getColumns())
     {
-        cout << "Invalid index type." << endl;
-        return;
+        if (colName == col.name)
+            indexType = col.indexType;
     }
 
     table->createIndex(colName, static_cast<Table::IndexType>(indexType), 3);
     cout << "Index created successfully." << endl;
 }
 
-void Interface::searchRecord()
+bool validateColumn(Database *db, string columnName, Table *&table)
 {
-    string tableName;
+    vector<Table::Column> tableCols = table->getColumns();
+    auto col_it = find_if(tableCols.begin(), tableCols.end(), [&](const Table::Column &col)
+                          { return col.name == columnName; });
+
+    if (col_it == tableCols.end())
+    {
+        cout << "No column named " << columnName << " in the table " << table->name << endl;
+        return false;
+    }
+
+    return true;
+}
+
+function<string(const vector<Value> &)> getAggregationFunc()
+{
+    string aggFunc;
+    cout << "Aggregation function (sum/avg/min/max): ";
+    cin >> aggFunc;
+
+    if (aggFunc == "sum")
+        return Aggregation::sum;
+    else if (aggFunc == "avg")
+        return Aggregation::average;
+    else if (aggFunc == "min")
+        return Aggregation::min;
+    else if (aggFunc == "max")
+        return Aggregation::max;
+
+    cout << "Invalid aggregation function." << endl;
+    return nullptr;
+}
+
+void Interface::performAggregation()
+{
+    string tableName, columnName, aggType;
     cout << "Enter table name: ";
     cin >> tableName;
+
     Table *table = db->getTable(tableName);
     if (!table)
     {
@@ -753,20 +854,86 @@ void Interface::searchRecord()
         return;
     }
 
-    int id;
-    cout << "Enter ID to search: ";
-    cin >> id;
+    cout << "Enter column name: ";
+    cin >> columnName;
 
-    vector<string> record = table->searchRecord(id);
-    if (!record.empty())
+    if (!validateColumn(db, columnName, table))
     {
-        cout << "Record found: ";
-        for (const auto &value : record)
-            cout << value << " ";
-        cout << endl;
+        return;
     }
-    else
-    {
-        cout << "Record not found." << endl;
-    }
+
+    function<string(const vector<Value> &)> func = getAggregationFunc();
+
+    vector<string> result = table->aggregate(columnName, func);
+    cout << "Aggregation result: " << result[0] << endl;
 }
+
+void Interface::printAllRecords()
+{
+    string tableName;
+    cout << "Enter table name: ";
+    cin >> tableName;
+
+    Table *table = db->getTable(tableName);
+    if (!table)
+    {
+        cout << "No table named: " << tableName << endl;
+        return;
+    }
+
+    table->printAll();
+}
+
+// void Interface::rangeQuery() {
+//     string tableName, columnName;
+//     cout << "Enter table name: ";
+//     cin >> tableName;
+
+//     Table* table = db->getTable(tableName);
+//     if (!table) {
+//         cout << "No table named: " << tableName << endl;
+//         return;
+//     }
+
+//     cout << "Enter column name for range query: ";
+//     cin >> columnName;
+
+//     vector<Table::Column> tableCols = table->getColumns();
+//     auto col_it = find_if(tableCols.begin(), tableCols.end(), [&](const Table::Column& col) {
+//         return col.name == columnName;
+//     });
+
+//     if (col_it == tableCols.end()) {
+//         cout << "No column named " << columnName << " in the table " << tableName << endl;
+//         return;
+//     }
+
+//     if (col_it->indexType != Table::PRIMARY && !table->hasIndex(columnName)) {
+//         cout << "Column is not indexed. Range queries require an index.\n";
+//         return;
+//     }
+
+//     cout << "Enter lower bound: ";
+//     string lowerStr;
+//     cin >> lowerStr;
+//     cout << "Enter upper bound: ";
+//     string upperStr;
+//     cin >> upperStr;
+
+//     vector<string> result;
+//     if (col_it->type == Table::DataType::INT) {
+//         int lower = stoi(lowerStr);
+//         int upper = stoi(upperStr);
+//         result = table->rangeQuery<int>(columnName, lower, upper);
+//     } else if (col_it->type == Table::DataType::STRING) {
+//         result = table->rangeQuery<string>(columnName, lowerStr, upperStr);
+//     } else {
+//         cout << "Unsupported data type for range query.\n";
+//         return;
+//     }
+
+//     cout << "Range Query Results:\n";
+//     for (const auto& entry : result) {
+//         cout << entry << endl;
+//     }
+// }
