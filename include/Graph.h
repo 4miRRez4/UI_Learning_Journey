@@ -3,6 +3,7 @@
 
 #pragma once
 #include "User.h"
+#include "JSONReader.h"
 #include <unordered_map>
 #include <vector>
 #include <queue>
@@ -48,6 +49,7 @@ public:
     vector<string> getKeyUsers(int n, const string &metric = "degree");
     int degreeCentrality(string userId);
     unordered_map<string, double> PageRankCentrality(double dampingFactor = 0.85, int maxIterations = 100, double tolerance = 1e-6);
+    void saveToJSON(const string &filename);
 
 private:
     unordered_map<string, User> users;                   // نگهداری اطلاعات کاربران

@@ -336,3 +336,13 @@ unordered_map<string, double> Graph::PageRankCentrality(double dampingFactor, in
 
     return result;
 }
+void Graph::saveToJSON(const string &filename)
+{
+    vector<User> userList;
+    for (auto &pair : users)
+    {
+        userList.push_back(pair.second);
+    }
+    JSONReader reader(filename);
+    reader.writeUsers(userList);
+}
