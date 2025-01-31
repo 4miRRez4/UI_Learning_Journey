@@ -13,8 +13,8 @@
 class Interface
 {
 public:
-    Interface(Graph &g, RecommendationManager &rM)
-        : graph(g), recManager(rM), currentUser("") {}
+    Interface(Graph &g, RecommendationManager &rM, const string &jsonFilePath)
+        : graph(g), recManager(rM), currentUser(""), jsonFilePath(jsonFilePath) {}
 
     void start()
     {
@@ -35,6 +35,7 @@ private:
     Graph &graph;
     RecommendationManager &recManager;
     string currentUser;
+    string jsonFilePath;
 
     void clearScreen();
     void waitForEnter();
@@ -49,6 +50,11 @@ private:
     void handleRemoveConnection();
     void handleViewKeyUsers();
     void handleCommunicationQuality();
+    void saveGraphToJSON()
+    {
+        graph.saveToJSON(jsonFilePath);
+        // cout << "Graph saved to " << jsonFilePath << endl; // برای اطمینان از ذخیره
+    }
 };
 
 #endif

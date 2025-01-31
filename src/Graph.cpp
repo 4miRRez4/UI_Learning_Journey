@@ -336,3 +336,80 @@ unordered_map<string, double> Graph::PageRankCentrality(double dampingFactor, in
 
     return result;
 }
+void Graph::saveToJSON(const string &filename)
+{
+    ifstream file(filename);
+    if (!file.is_open())
+    {
+        cerr << "Error opening file: " << filename << endl;
+        return;
+    }
+
+    nlohmann::ordered_json jsonData; // استفاده از ordered_json برای حفظ ترتیب
+    file >> jsonData;
+    file.close();
+
+    // تبدیل JSON به map برای دسترسی سریع بر اساس ID
+    unordered_map<string, nlohmann::ordered_json> userMap;
+    for (const auto &userData : jsonData)
+    {
+        string id = userData["id"];
+        userMap[id] = userData;
+    }
+
+    // به‌روزرسانی اطلاعات و کانکشن‌های کاربران
+    for (const auto &pair : users)
+    {
+        const User &user = pair.second;
+        string userId = user.getId();
+
+        if (userMap.find(userId) != userMap.end())
+        {
+            userMap[userId]["connectionId"] = user.getConnections();
+        }
+        else
+        {
+            nlohmann::ordered_json newUser;
+            newUser["id"] = user.getId();
+            newUser["name"] = user.getName();
+            newUser["dateOfBirth"] = user.getDateOfBirth();
+            newUser["universityLocation"] = user.getUniversityLocation();
+            newUser["field"] = user.getField();
+            newUser["workplace"] = user.getWorkplace();
+            newUser["specialties"] = user.getSpecialties();
+            newUser["connectionId"] = user.getConnections();
+            userMap[userId] = newUser;
+        }
+    }
+
+    // ساخت یک آرایه مرتب برای حفظ ترتیب اولیه کاربران
+    nlohmann::ordered_json updatedJsonData = nlohmann::ordered_json::array();
+    for (const auto &userData : jsonData)
+    {
+        string id = userData["id"];
+        if (userMap.find(id) != userMap.end())
+        {
+            updatedJsonData.push_back(userMap[id]);
+        }
+    }
+
+    // اضافه کردن کاربران جدید (اگر باشند)
+    for (const auto &pair : userMap)
+    {
+        if (find_if(jsonData.begin(), jsonData.end(), [&](const nlohmann::ordered_json &u)
+                    { return u["id"] == pair.first; }) == jsonData.end())
+        {
+            updatedJsonData.push_back(pair.second);
+        }
+    }
+
+    // ذخیره تغییرات در فایل
+    ofstream outFile(filename);
+    if (!outFile.is_open())
+    {
+        cerr << "Error opening file for writing: " << filename << endl;
+        return;
+    }
+    outFile << updatedJsonData.dump(4); // فرمت مرتب و خوانا
+    outFile.close();
+}

@@ -113,6 +113,7 @@ void Interface::handleRegistration()
     User newUser(id, name, dob, university, field, workplace, specialties, connections);
     graph.insertVertex(newUser);
 
+    saveGraphToJSON();
     cout << "Registration successful! Your ID is: " << id << "\n";
     waitForEnter();
 }
@@ -312,6 +313,7 @@ void Interface::handleConnect()
     try
     {
         graph.insertEdge(currentUser, userId);
+        saveGraphToJSON();
         cout << "Connected successfully with " << graph.getUser(userId).getName() << endl;
     }
     catch (const std::runtime_error &e)
@@ -329,6 +331,7 @@ void Interface::handleRemoveConnection()
     try
     {
         graph.removeEdge(currentUser, userId);
+        saveGraphToJSON();
         cout << "Connection removed successfully with " << graph.getUser(userId).getName() << endl;
     }
     catch (const std::runtime_error &e)

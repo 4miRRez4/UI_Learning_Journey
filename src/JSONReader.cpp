@@ -30,6 +30,34 @@ vector<User> JSONReader::readUsers()
     return users;
 }
 
+void JSONReader::writeUsers(const vector<User> &users)
+{
+    nlohmann::ordered_json jsonData; // استفاده از ordered_json برای حفظ ترتیب فیلدها
+
+    for (const User &user : users)
+    {
+        nlohmann::ordered_json userData;
+        userData["id"] = user.getId();
+        userData["name"] = user.getName();
+        userData["dateOfBirth"] = user.getDateOfBirth();
+        userData["universityLocation"] = user.getUniversityLocation();
+        userData["field"] = user.getField();
+        userData["workplace"] = user.getWorkplace();
+        userData["specialties"] = user.getSpecialties();
+        userData["connectionId"] = user.getConnections();
+
+        jsonData.push_back(userData); // حفظ ترتیب کاربران
+    }
+
+    ofstream file(fileName);
+    if (!file.is_open())
+    {
+        cerr << "Error opening file: " << fileName << endl;
+        return;
+    }
+    file << jsonData.dump(4); // ذخیره با فرمت مرتب‌شده
+    file.close();
+}
 JSONReader::~JSONReader()
 {
 }

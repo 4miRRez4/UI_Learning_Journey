@@ -8,8 +8,8 @@ using namespace std;
 
 int main()
 {
-    Database *db = new Database();
-    handleUserInput(db);
+    // Database *db = new Database();
+    // handleUserInput(db);
 
     Graph graph;
     JSONReader JReader("../data/users.json");
@@ -23,7 +23,8 @@ int main()
         }
     }
     RecommendationManager recManager(graph);
-    Interface interface(graph, recManager);
+    Interface interface(graph, recManager, "../data/users.json");
     interface.start();
+
     return 0;
 }
