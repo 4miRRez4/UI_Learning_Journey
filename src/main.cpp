@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
     Database* db = new Database();
+    //TODO: default table users...
     handleUserInput(db);
 
     return 0;
