@@ -50,6 +50,7 @@ public:
     Table(string name, const vector<Column>& cols, int nr_id=1, int degree=2);
     ~Table();
 
+    void setNextRecordId(int nextId);
     void addRecord(const vector<Value>& values, int id=-1);
     void removeRecord(int id);
     Record searchRecordById(int id);
@@ -64,6 +65,7 @@ public:
     void createIndex(string colName, IndexType it, int degree);
     bool isColumnIndexed(string colName) const;
     void updateIndex(Map<string, IndexVariant>& indexMap, string colName, Value value, bool isInsert);
+
 
     void printAll() ;
 };
