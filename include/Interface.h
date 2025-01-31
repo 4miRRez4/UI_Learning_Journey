@@ -9,12 +9,15 @@
 #include <string>
 #include <unordered_map>
 #include <limits>
+#include "dataBase.h"
+#include "aggregation_methods.h"
 
 class Interface
 {
 public:
-    Interface(Graph &g, RecommendationManager &rM, const string &jsonFilePath)
-        : graph(g), recManager(rM), currentUser(""), jsonFilePath(jsonFilePath) {}
+    Interface(Graph &g, RecommendationManager &rM, Database *db, const string &jsonFilePath)
+        : graph(g), recManager(rM), db(db), currentUser(""), jsonFilePath(jsonFilePath) {}
+
 
     void start()
     {
@@ -36,6 +39,7 @@ private:
     RecommendationManager &recManager;
     string currentUser;
     string jsonFilePath;
+    Database *db;
 
     void clearScreen();
     void waitForEnter();
@@ -55,6 +59,16 @@ private:
         graph.saveToJSON(jsonFilePath);
         // cout << "Graph saved to " << jsonFilePath << endl; // برای اطمینان از ذخیره
     }
+    void showSocialNetworkMenu();
+    void showDatabaseMenu();
+    void createTable();
+    void insertRecord();
+    void updateRecord();
+    void deleteRecord();
+    void searchRecord();
+    void printAllRecords();
+    void performAggregation();
+    void createIndex();
 };
 
 #endif
