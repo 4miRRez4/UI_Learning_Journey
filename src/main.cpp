@@ -5,6 +5,62 @@
 #include <vector>
 using namespace std;
 
+void createUsersTable(Database* db) {
+    cout << "Creating table users..." << endl;
+    string tableName = "users";
+
+    vector<Table::Column> columns = {
+        //id as primary key.
+        {"name", Table::DataType::STRING, Table::IndexType::NON_UNIQUE},
+        {"dateOfBirth", Table::DataType::DATE, Table::IndexType::NON_UNIQUE},
+        {"universityLocation", Table::DataType::STRING, Table::IndexType::NON_UNIQUE},
+        {"field", Table::DataType::STRING, Table::IndexType::NON_UNIQUE},
+        {"workplace", Table::DataType::STRING, Table::IndexType::NON_UNIQUE},
+        {"specialties", Table::DataType::STRING, Table::IndexType::NON_UNIQUE},  //comma-separated string
+        {"connectionIds", Table::DataType::STRING, Table::IndexType::NON_UNIQUE}  //comma-separated string
+    };
+
+    db->createTable(tableName, columns, 3);
+    cout << "Table users created successfully." << endl;
+}
+
+string join(const vector<string>& vec, const string& delimiter) {
+    string result="";
+    for (int i=0; i<vec.size(); i++) {
+        result += vec[i];
+        if (i < vec.size() - 1) 
+            result += delimiter;
+    }
+    return result;
+}
+
+void insertUsersToTable(Database* db, const vector<User>& users) {
+    Table* usersTable = db->getTable("users");
+    if (!usersTable) {
+        cout << "Table " << usersTable->name << " does not exist." << endl;
+        return;
+    }
+
+    for (const auto& user : users) {
+        vector<Value> values = {
+            user.getName(),
+            user.getDateOfBirth(),
+            user.getUniversityLocation(),
+            user.getField(),
+            user.getWorkplace(),
+            join(user.getSpecialties(), ", "),   
+            join(user.getConnections(), ", ")
+        };
+
+        usersTable->addRecord(values, stoi(user.getId()));
+    }
+
+    cout << users.size() << " users added successfully." << endl;
+}
+
+
+
+
 int main() {
     Graph graph;
     JSONReader JReader("../data/users.json");
@@ -21,9 +77,12 @@ int main() {
     RecommendationManager recManager(graph);
 
     Database* db = new Database();
-    //TODO: default table users...
+
+    createUsersTable(db);
+    insertUsersToTable(db, users);
 
     Interface interface(graph, recManager, db);
+    interface.waitForEnter();
     interface.start();
 
     return 0;

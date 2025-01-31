@@ -5,7 +5,7 @@ vector<User> JSONReader::readUsers()
 {
     vector<User> users;
     ifstream file(fileName);
-
+    cout << fileName;
     if (!file.is_open())
     {
         cerr << "Error opening file: " << fileName << endl;
