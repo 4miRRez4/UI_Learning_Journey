@@ -5,19 +5,17 @@
 #include <climits>
 
 
-Table::Table(const vector<Column>& cols, int degree) {
-    recordsMap = new Map<int, vector<string>>();
+Table::Table(string name, const vector<Column>& cols, int nr_id, int degree) {
+    this->name = name;
+    this->nextRecordId = nr_id;
+
+    recordsMap = new Map<int, Record>();
+    primaryIndex = new BPlusTree<int>(degree);
 
     for (const auto& col : cols) {
         columns.push_back(col);
 
-        if (col.indexType == IndexType::PRIMARY) {
-            if (primaryIndex) {
-                throw runtime_error("Primary index already exists.");
-            }
-            primaryIndex = new BPlusTree<int>(degree);
-        } 
-        else if (col.indexType == IndexType::UNIQUE) {
+        if (col.indexType == IndexType::UNIQUE) {
             if (uniqueIndexes.contains(col.name)) {
                 throw runtime_error("Unique index already exists for column: " + col.name);
             }
@@ -47,35 +45,46 @@ int Table::countRecords() const {
     return primaryIndex->countKeys();
 }
 
-void Table::addRecord(int id, const vector<string>& values) {
+void Table::addRecord(const vector<Value>& values, int id) {
     if (values.size() != columns.size()) {
         cerr << "Invalid values sizes." << endl;
         return;
     }
-    if (recordsMap->contains(id)) {
+
+    if (id == -1){
+        id = nextRecordId++;
+    }
+
+    if (this->containsRecord(id)) {
         cerr << "record with Id " << id << " already exists in the map." << endl;
         return;
     }
 
     if (primaryIndex->search(id)) {
-        throw std::runtime_error("Duplicated key for primary index.");
+        throw runtime_error("Duplicated key for primary index.");
     }
     primaryIndex->insert(id);
 
     for (int i = 0; i < values.size(); ++i) {
         string colName = columns[i].name;
-        string value = values[i];
-
+        string stred_val;
+        if (holds_alternative<string>(values[i])) {
+            stred_val = get<string>(values[i]);
+        } else if (holds_alternative<int>(values[i])) {
+            stred_val = to_string(get<int>(values[i]));
+        } else if (holds_alternative<double>(values[i])) {
+            stred_val = to_string(get<double>(values[i]));
+}
         if (columns[i].indexType == UNIQUE) {
             if (!uniqueIndexes.contains(colName)) {
                 cerr << "Unique index not found for column: " << colName << endl;
                 return;
             }
-            if (uniqueIndexes.search(colName)->search(value)) {
-                throw std::runtime_error("Duplicated value for unique index on column: " + colName);
+            if (uniqueIndexes.search(colName)->search(stred_val)) {
+                throw runtime_error("Duplicated value for unique index on column: " + colName);
             }
 
-            uniqueIndexes.search(colName)->insert(value);
+            uniqueIndexes.search(colName)->insert(stred_val);
         } 
         else if (columns[i].indexType == NON_UNIQUE) {
             if (!nonUniqueIndexes.contains(colName)) {
@@ -83,11 +92,11 @@ void Table::addRecord(int id, const vector<string>& values) {
                 return;
             }
 
-            nonUniqueIndexes.search(colName)->insert(value);
+            nonUniqueIndexes.search(colName)->insert(stred_val);
         }
     }
 
-    recordsMap->insert(id, values);
+    recordsMap->insert(id, {id, values});
 
     cout << "record with Id " << id << " added successfully." << endl;
 }
@@ -101,10 +110,17 @@ void Table::removeRecord(int id) {
 
     primaryIndex->remove(id); 
 
-    vector<string>& values = recordsMap->search(id);
-    for (int i = 0; i < values.size(); ++i) {
+    Record record = recordsMap->search(id);
+    for (int i = 0; i < record.rowData.size(); ++i) {
         string colName = columns[i].name;
-        string value = values[i];
+        string value;
+        if (holds_alternative<string>(record.rowData[i])) {
+            value = get<string>(record.rowData[i]);
+        } else if (holds_alternative<int>(record.rowData[i])) {
+            value = to_string(get<int>(record.rowData[i]));
+        } else if (holds_alternative<double>(record.rowData[i])) {
+            value = to_string(get<double>(record.rowData[i]));
+}
 
         if (uniqueIndexes.contains(colName)) {
             uniqueIndexes.search(colName)->remove(value);
@@ -116,22 +132,34 @@ void Table::removeRecord(int id) {
 
     recordsMap->remove(id); 
 
-    cout << "user with ID " << id << " removed successfully." << endl;
+    cout << "Record with ID " << id << " removed successfully." << endl;
 }
 
-vector<string> Table::searchRecord(int id) {
+Table::Record Table::searchRecord(int id) {
     if (!recordsMap->contains(id)) {
-        cerr << "user with Id " << id << " not found." << endl;;
-        return {};
+        cerr << "Record with Id " << id << " not found." << endl;;
+        return {id, {}};
     }
     return recordsMap->search(id);
 }
 
-void Table::updateRecord(int id, const vector<string>& newValues) {
-    removeRecord(id);  
-    addRecord(id, newValues);
-    cout << "user with Id " << id << " updated successfully." << endl;
+void Table::updateRecord(int id, const vector<Value>& newValues) {
+    if (!recordsMap->contains(id)) {
+        cerr << "Record with ID " << id << " does not exist." << endl;
+        return;
+    }
+
+    if (newValues.size() != columns.size()) {
+        cerr << "Invalid values size.";
+        return;
+    }
+
+    removeRecord(id);
+
+    addRecord(newValues, id);
+    cout << "Record with ID " << id << " updated successfully.\n";
 }
+
 
 bool Table::containsRecord(int id) const {
     return recordsMap->contains(id);
@@ -141,26 +169,40 @@ const vector<Table::Column>& Table::getColumns() const{
     return columns;
 }
 
-vector<string> Table::aggregate(string colName, const function<string(const vector<string>&)>& aggFunc) const {
-    vector<string> colValues;
+vector<string> Table::aggregate(string colName, const function<string(const vector<Value>&)>& aggFunc) const {
+    vector<Value> colValues;
 
-    recordsMap->iterate([&](int id, vector<string>& row) {
+    recordsMap->iterate([&](int id, const Record& record) {
         auto col_it = find_if(columns.begin(), columns.end(), [&](const Column& col) { return col.name == colName; });
         int colInd = distance(columns.begin(), col_it);
-        colValues.push_back(row[colInd]);
+
+        if (colInd < record.rowData.size()) {
+            colValues.push_back(record.rowData[colInd]);
+        }
     });
 
     return {aggFunc(colValues)};
 }
 
-vector<string> Table::groupBy(string colName, const function<string(const vector<string>&)>& aggFunc) const {
-    unordered_map<string, vector<string>> groupedValues;
+vector<string> Table::groupBy(string colName, const function<string(const vector<Value>&)>& aggFunc) const {
+    unordered_map<string, vector<Value>> groupedValues;
 
-    recordsMap->iterate([&](int id, vector<string>& row) {
+    recordsMap->iterate([&](int id, const Record& record) {
         auto col_it = find_if(columns.begin(), columns.end(), [&](const Column& col) { return col.name == colName; });
         int colIndex = distance(columns.begin(), col_it);
-        string key = row[colIndex];
-        groupedValues[key].push_back(row[colIndex]);
+
+        if (colIndex < record.rowData.size()) {
+            string key;
+            if (holds_alternative<int>(record.rowData[colIndex])) {
+                key = to_string(get<int>(record.rowData[colIndex]));
+            } else if (holds_alternative<double>(record.rowData[colIndex])) {
+                key = to_string(get<double>(record.rowData[colIndex]));
+            } else {
+                key = get<string>(record.rowData[colIndex]);
+            }
+
+            groupedValues[key].push_back(record.rowData[colIndex]);
+        }
     });
 
     vector<string> results;
@@ -190,10 +232,16 @@ void Table::createIndex(string colName, IndexType it, int degree) {
 void Table::printAll() const {
     cout << "All records in Table:" << endl;
 
-    recordsMap->iterate([&](int id, const vector<string>& values) {
-        cout << "ID: " << id << " | ";
-        for (int i = 0; i < values.size(); ++i) {
-            cout << columns[i].name << ": " << values[i] << " ";
+    recordsMap->iterate([&](int id, const Record& record) {
+        cout << "ID: " << id << " => ";
+        for (int i = 0; i < record.rowData.size(); ++i) {
+            if (holds_alternative<int>(record.rowData[i])) {
+                cout << columns[i].name << ": " << get<int>(record.rowData[i]) << " ";
+            } else if (holds_alternative<string>(record.rowData[i])) {
+                cout << columns[i].name << ": " << get<string>(record.rowData[i]) << " ";
+            } else if (holds_alternative<double>(record.rowData[i])) {
+                cout << columns[i].name << ": " << get<double>(record.rowData[i]) << " ";
+            }
         }
         cout << endl;
     });

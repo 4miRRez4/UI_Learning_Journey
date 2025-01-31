@@ -16,7 +16,7 @@ public:
     Database() = default;
     ~Database();
 
-    void createTable(string tableName,const vector<Table::Column>& cols, int degree); //table with specific columns and data types
+    void createTable(string tableName,const vector<Table::Column>& cols, int degree);
     void removeTable(string tableName);
     Table* getTable(string tableName);
 };
