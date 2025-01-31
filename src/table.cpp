@@ -74,7 +74,10 @@ void Table::addRecord(const vector<Value>& values, int id) {
             stred_val = to_string(get<int>(values[i]));
         } else if (holds_alternative<double>(values[i])) {
             stred_val = to_string(get<double>(values[i]));
-}
+        } else if (holds_alternative<Date>(values[i])) {
+            stred_val = get<Date>(values[i]).toString();
+        }
+
         if (columns[i].indexType == UNIQUE) {
             if (!uniqueIndexes.contains(colName)) {
                 cerr << "Unique index not found for column: " << colName << endl;
@@ -120,7 +123,9 @@ void Table::removeRecord(int id) {
             value = to_string(get<int>(record.rowData[i]));
         } else if (holds_alternative<double>(record.rowData[i])) {
             value = to_string(get<double>(record.rowData[i]));
-}
+        } else if (holds_alternative<Date>(record.rowData[i])) {
+            value = get<Date>(record.rowData[i]).toString();  
+        }
 
         if (uniqueIndexes.contains(colName)) {
             uniqueIndexes.search(colName)->remove(value);
@@ -184,35 +189,6 @@ vector<string> Table::aggregate(string colName, const function<string(const vect
     return {aggFunc(colValues)};
 }
 
-vector<string> Table::groupBy(string colName, const function<string(const vector<Value>&)>& aggFunc) const {
-    unordered_map<string, vector<Value>> groupedValues;
-
-    recordsMap->iterate([&](int id, const Record& record) {
-        auto col_it = find_if(columns.begin(), columns.end(), [&](const Column& col) { return col.name == colName; });
-        int colIndex = distance(columns.begin(), col_it);
-
-        if (colIndex < record.rowData.size()) {
-            string key;
-            if (holds_alternative<int>(record.rowData[colIndex])) {
-                key = to_string(get<int>(record.rowData[colIndex]));
-            } else if (holds_alternative<double>(record.rowData[colIndex])) {
-                key = to_string(get<double>(record.rowData[colIndex]));
-            } else {
-                key = get<string>(record.rowData[colIndex]);
-            }
-
-            groupedValues[key].push_back(record.rowData[colIndex]);
-        }
-    });
-
-    vector<string> results;
-    for (auto& [key, group] : groupedValues) {
-        results.push_back(key + ": " + aggFunc(group));
-    }
-
-    return results;
-}
-
 void Table::createIndex(string colName, IndexType it, int degree) {
     for (const auto& col : columns) {
         if (col.name == colName) {
@@ -241,6 +217,8 @@ void Table::printAll() const {
                 cout << columns[i].name << ": " << get<string>(record.rowData[i]) << " ";
             } else if (holds_alternative<double>(record.rowData[i])) {
                 cout << columns[i].name << ": " << get<double>(record.rowData[i]) << " ";
+            } else if (holds_alternative<Date>(record.rowData[i])) {
+                cout << columns[i].name << ": " << get<Date>(record.rowData[i]).toString() << " ";
             }
         }
         cout << endl;
