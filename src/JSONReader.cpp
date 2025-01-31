@@ -32,10 +32,11 @@ vector<User> JSONReader::readUsers()
 
 void JSONReader::writeUsers(const vector<User> &users)
 {
-    json jsonData;
+    nlohmann::ordered_json jsonData; // استفاده از ordered_json برای حفظ ترتیب فیلدها
+
     for (const User &user : users)
     {
-        json userData;
+        nlohmann::ordered_json userData;
         userData["id"] = user.getId();
         userData["name"] = user.getName();
         userData["dateOfBirth"] = user.getDateOfBirth();
@@ -44,16 +45,15 @@ void JSONReader::writeUsers(const vector<User> &users)
         userData["workplace"] = user.getWorkplace();
         userData["specialties"] = user.getSpecialties();
         userData["connectionId"] = user.getConnections();
-        jsonData.push_back(userData);
+        jsonData.push_back(userData); // حفظ ترتیب کاربران
     }
-
     ofstream file(fileName);
     if (!file.is_open())
     {
         cerr << "Error opening file: " << fileName << endl;
         return;
     }
-    file << jsonData.dump(4); // Pretty print with indentation of 4 spaces
+    file << jsonData.dump(4); // ذخیره با فرمت مرتب‌شده
     file.close();
 }
 JSONReader::~JSONReader()

@@ -8,6 +8,7 @@ using namespace std;
 
 int main()
 {
+
     Database *db = new Database();
     // handleUserInput(db);
 
@@ -23,8 +24,7 @@ int main()
         }
     }
     RecommendationManager recManager(graph);
-    Interface interface(graph, recManager, db);
+    Interface interface(graph, recManager,db, "../data/users.json");
     interface.start();
-    graph.saveToJSON("../data/users.json");
     return 0;
 }
