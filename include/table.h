@@ -1,17 +1,23 @@
 #ifndef TABLE_H
 #define TABLE_H
 
-#include <string>
-#include <vector>
 #include "map.h"
 #include "BPlusTree.h"
 #include "User.h"
+#include "date.h"
+#include <string>
+#include <vector>
+#include <set>
+#include <variant>
+
+using Value = variant<int, double, string, Date>;
+using IndexVariant = variant<BPlusTree<int>*, BPlusTree<double>*, BPlusTree<string>*, BPlusTree<Date>*>;
 
 
 class Table {
 public:
-    enum class DataType { INT, STRING, DATE };
-    enum IndexType {PRIMARY, UNIQUE, NON_UNIQUE};
+    enum DataType { INT, STRING, DATE, DOUBLE };
+    enum IndexType { PRIMARY, UNIQUE, NON_UNIQUE };
 
     struct Column {
         string name;
@@ -21,33 +27,45 @@ public:
         Column(string n, DataType t, IndexType it) : name(n), type(t), indexType(it) {}
     };
 
-private:
-    BPlusTree<int>* primaryIndex;
-    Map<string, BPlusTree<string>*> uniqueIndexes;
-    Map<string, BPlusTree<string>*> nonUniqueIndexes;
+    struct Record {
+        int id;          
+        vector<Value> rowData;
+    };
 
-    vector<Column> columns; //col name and data type
-    Map<int, vector<string>>* recordsMap; //primary key to row data
+    string name;
+
+private:
+    int nextRecordId;
+
+    set<string> indexedColumns;
+    BPlusTree<int>* primaryIndex;
+    Map<string, IndexVariant> uniqueIndexes;
+    Map<string, IndexVariant> nonUniqueIndexes;
+
+    vector<Column> columns;
+    Map<int, Record>* recordsMap; //primary key to row data
 
 
 public: 
-    Table(const vector<Column>& cols, int degree=2);
+    Table(string name, const vector<Column>& cols, int nr_id=1, int degree=2);
     ~Table();
 
-    void addRecord(int id, const vector<string>& values);
+    void addRecord(const vector<Value>& values, int id=-1);
     void removeRecord(int id);
-    vector<string> searchRecord(int id);
-    void updateRecord(int id, const vector<string>& newValues);
+    Record searchRecordById(int id);
+    vector<Value> searchByColumn(string colName, Value value);
+    void updateRecord(int id, const vector<Value>& newValues);
     bool containsRecord(int id) const;
     int countRecords() const;
-    vector<string> aggregate(string colName, const function<string(const vector<string>&)>& aggFunc) const;
-    vector<string> groupBy(string colName, const function<string(const vector<string>&)>& aggFunc) const;
-
+    string ValueToStr(const Value& val);
+    Value strToValue(string input, DataType colType);
+    vector<string> aggregate(string colName, const function<string(const vector<Value>&)>& aggFunc) const;
     const vector<Column>& getColumns() const;
-
     void createIndex(string colName, IndexType it, int degree);
+    bool isColumnIndexed(string colName) const;
+    void updateIndex(Map<string, IndexVariant>& indexMap, string colName, Value value, bool isInsert);
 
-    void printAll() const;
+    void printAll() ;
 };
 
 #endif

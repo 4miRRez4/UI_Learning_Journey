@@ -1,7 +1,7 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
-#include "graph.h"
+#include "Graph.h"
 #include "JSONReader.h"
 #include "RecommendationManager.h"
 #include "CommunicationQuality.h"
@@ -33,6 +33,7 @@ public:
             }
         }
     }
+    void waitForEnter();
 
 private:
     Graph &graph;
@@ -42,7 +43,6 @@ private:
     Database *db;
 
     void clearScreen();
-    void waitForEnter();
     void showLoginMenu();
     void handleLogin();
     void handleRegistration();
@@ -65,7 +65,8 @@ private:
     void insertRecord();
     void updateRecord();
     void deleteRecord();
-    void searchRecord();
+    void searchById();
+    void searchByColumn();
     void printAllRecords();
     void performAggregation();
     void createIndex();
