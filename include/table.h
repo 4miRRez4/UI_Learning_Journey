@@ -1,14 +1,15 @@
 #ifndef TABLE_H
 #define TABLE_H
 
-#include <string>
-#include <vector>
 #include "map.h"
 #include "BPlusTree.h"
 #include "User.h"
+#include "date.h"
+#include <string>
+#include <vector>
 #include <variant>
 
-using Value = variant<int, string, double>;
+using Value = variant<int, string, Date, double>;
 
 
 class Table {
@@ -52,10 +53,7 @@ public:
     bool containsRecord(int id) const;
     int countRecords() const;
     vector<string> aggregate(string colName, const function<string(const vector<Value>&)>& aggFunc) const;
-    vector<string> groupBy(string colName, const function<string(const vector<Value>&)>& aggFunc) const;
-
     const vector<Column>& getColumns() const;
-
     void createIndex(string colName, IndexType it, int degree);
 
     void printAll() const;
