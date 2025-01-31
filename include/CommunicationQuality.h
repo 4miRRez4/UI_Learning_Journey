@@ -2,7 +2,7 @@
 #define COMMUNICATIONQUALITY_H
 
 #pragma once
-#include "graph.h"
+#include "Graph.h"
 #include <unordered_map>
 class CommunicationQuality
 {

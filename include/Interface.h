@@ -1,7 +1,7 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
-#include "graph.h"
+#include "Graph.h"
 #include "JSONReader.h"
 #include "RecommendationManager.h"
 #include "CommunicationQuality.h"
