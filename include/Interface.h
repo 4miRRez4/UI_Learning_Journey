@@ -32,6 +32,7 @@ public:
             }
         }
     }
+    void waitForEnter();
 
 private:
     Graph &graph;
@@ -40,7 +41,6 @@ private:
     Database *db;
 
     void clearScreen();
-    void waitForEnter();
     void showLoginMenu();
     void handleLogin();
     void handleRegistration();
