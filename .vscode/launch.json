@@ -41,7 +41,7 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src",
+      "cwd": "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/",
       "program": "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
