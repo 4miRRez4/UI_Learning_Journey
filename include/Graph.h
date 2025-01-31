@@ -15,6 +15,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <omp.h>
+#include "JSONReader.h"
 
 using namespace std;
 class Graph
