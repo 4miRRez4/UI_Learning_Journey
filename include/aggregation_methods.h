@@ -8,11 +8,11 @@
 
 using namespace std;
 
-using Value = variant<int, string, Date, double>;
+using Value = variant<int, double, string, Date>;
 
 namespace Aggregation {
 
-string sum(const vector<Value>& values) {
+inline string sum(const vector<Value>& values) {
     double sum = 0;
     for (const auto& val : values) {
         if (holds_alternative<int>(val)) {
@@ -26,7 +26,7 @@ string sum(const vector<Value>& values) {
     return to_string(sum);
 }
 
-string average(const vector<Value>& values) {
+inline string average(const vector<Value>& values) {
     double sum = 0;
     int n = 0;
     for (const auto& val : values) {
@@ -45,7 +45,7 @@ string average(const vector<Value>& values) {
     return to_string(sum / n);
 }
 
-string min(const vector<Value>& values) {
+inline string min(const vector<Value>& values) {
     if (values.empty()) 
         return "empty values in aggregation function, min.";
 
@@ -82,7 +82,7 @@ string min(const vector<Value>& values) {
     return get<string>(minVal);
 }
 
-string max(const vector<Value>& values) {
+inline string max(const vector<Value>& values) {
     if (values.empty()) 
         return "empty values in aggregation function, max.";
 

@@ -58,7 +58,8 @@ private:
     void insertRecord();
     void updateRecord();
     void deleteRecord();
-    void searchRecord();
+    void searchById();
+    void searchByColumn();
     void printAllRecords();
     void performAggregation();
     void createIndex();

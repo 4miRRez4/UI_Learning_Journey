@@ -1,5 +1,4 @@
 #include "../include/dataBase.h"
-#include "../include/cli.h"
 #include "../include/Interface.h"
 #include "../include/JSONReader.h"
 #include <iostream>
@@ -26,6 +25,6 @@ int main() {
 
     Interface interface(graph, recManager, db);
     interface.start();
-    
+
     return 0;
 }
