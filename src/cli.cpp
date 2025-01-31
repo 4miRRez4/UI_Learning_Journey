@@ -13,8 +13,9 @@ void displayMenu() {
     cout << "5. Search Record" << endl;
     cout << "6. Print All Records" << endl;
     cout << "7. Create Index" << endl;
-    cout << "8. Perform Aggregation" << endl;
-    cout << "9. Exit" << endl;
+    cout << "8. Aggregation" << endl;
+    cout << "10. Range Query" << endl;
+    cout << "11. Exit" << endl;
     cout << "========================================" << endl;
     cout << "Enter your choice: ";
 }
@@ -33,9 +34,9 @@ void createTable(Database* db) {
         string colName, colType, indexType;
         cout << "Column " << (i + 1) << " name: ";
         cin >> colName;
-        cout << "Data type (int/string/date): ";
+        cout << "Data type (int/string/date/double): ";
         cin >> colType;
-        cout << "Index type(primary/unique/non-unique): ";
+        cout << "Index type(unique/non-unique): ";
         cin >> indexType;
 
         Table::DataType dataType;
@@ -45,15 +46,15 @@ void createTable(Database* db) {
             dataType = Table::DataType::STRING;
         else if (colType == "date")
             dataType = Table::DataType::DATE;
+        else if (colType == "double") 
+            dataType = Table::DataType::DOUBLE;
         else {
             cout << "Invalid column data type. Skipping column..." << endl;
             continue;
         }
 
         Table::IndexType it;
-        if(indexType == "primary")
-            it = Table::IndexType::PRIMARY;
-        else if(indexType == "unique")
+        if(indexType == "unique")
             it = Table::IndexType::UNIQUE;
         else if(indexType == "non-unique")
             it = Table::IndexType::NON_UNIQUE;
@@ -67,7 +68,45 @@ void createTable(Database* db) {
     }
 
     db->createTable(tableName, columns, 3);
-    cout << "Table '" << tableName << "' created successfully.\n";
+}
+vector<Value> getColumnsValues(const vector<Table::Column>& cols){
+    vector<Value> values;
+    for(int i=0; i<cols.size(); i++) {
+        const auto& col = cols[i];
+        string value;
+        cout << "Enter value for " << col.name << ": ";
+        cin >> value;
+
+        if (col.type == Table::DataType::INT) {
+            size_t pos;
+            int intValue = stoi(value, &pos);
+                
+            if (pos != value.length()) {
+                throw invalid_argument("Invalid integer.");
+            }
+            
+            values.push_back(intValue);
+        }  
+        else if (col.type == Table::DataType::DOUBLE) {
+            size_t pos;
+            int doubleValue = stod(value, &pos);
+                
+            if (pos != value.length()) {
+                throw invalid_argument("Invalid double.");
+            }
+            
+            values.push_back(doubleValue);
+        }
+        else if(col.type == Table::DataType::DATE){
+            cout << "YYYY/MM/DD";
+            Date date = Date::fromString(value);   
+            values.push_back(date);  
+        }
+        else {
+            values.push_back(value); //store as string
+        } 
+    }
+    return values;
 }
 
 void insertRecord(Database* db) {
@@ -81,19 +120,18 @@ void insertRecord(Database* db) {
         return;
     }
 
-    vector<string> values;
-    cout << "We assume that first column is primary." << endl;
-    for (const auto& col : table->getColumns()) {
-        string value;
-        cout << "Enter value for " << col.name << ": ";
-        cin >> value;
-        values.push_back(value);
+    const vector<Table::Column>& cols = table->getColumns();
+    vector<Value> values;
+    try{
+        values = getColumnsValues(cols);
+    }catch (const invalid_argument& e) {
+        cout << "Invalid input." << endl;
+        return ;
     }
-
-    int id = stoi(values[0]);
-    table->addRecord(id, values);
-    cout << "Record inserted successfully." << endl;
+    
+    table->addRecord(values);
 }
+
 void updateRecord(Database* db) {
     string tableName;
     cout << "Enter table name: ";
@@ -109,16 +147,10 @@ void updateRecord(Database* db) {
     cout << "Enter ID of record to update: ";
     cin >> id;
 
-    vector<string> values;
-    for (const auto& col : table->getColumns()) {
-        string value;
-        cout << "Enter new value for " << col.name << ": ";
-        cin >> value;
-        values.push_back(value);
-    }
+    const auto& cols = table->getColumns();
+    vector<Value> values = getColumnsValues(cols);
 
     table->updateRecord(id, values);
-    cout << "Record updated successfully." << endl;
 }
 
 void deleteRecord(Database* db) {
@@ -137,10 +169,9 @@ void deleteRecord(Database* db) {
     cin >> id;
 
     table->removeRecord(id);
-    cout << "Record deleted successfully." << endl;
 }
 
-void searchRecord(Database* db) {
+void searchRecord(Database* db) { 
     string tableName;
     cout << "Enter table name: ";
     cin >> tableName;
@@ -155,15 +186,12 @@ void searchRecord(Database* db) {
     cout << "Enter ID to search: ";
     cin >> id;
 
-    vector<string> record = table->searchRecord(id);
-    if (!record.empty()) {
-        cout << "Record found: ";
-        for (const auto& value : record) 
-            cout << value << " ";
-        cout << endl;
-    } else {
-        cout << "Record not found." << endl;
+    Table::Record record = table->searchRecord(id);
+    for (const auto& value : record.rowData){
+        string stred_val = table->ValueToStr(value);
+        cout << stred_val << " ";
     }
+    cout << endl;
 }
 
 void createIndex(Database* db) {
@@ -194,6 +222,38 @@ void createIndex(Database* db) {
     cout << "Index created successfully." << endl;
 }
 
+bool validateColumn(Database* db, string columnName, Table*& table) {
+    vector<Table::Column> tableCols = table->getColumns();
+    auto col_it = find_if(tableCols.begin(), tableCols.end(), [&](const Table::Column& col) {
+        return col.name == columnName;
+    });
+
+    if (col_it == tableCols.end()) {
+        cout << "No column named " << columnName << " in the table " << table->name << endl;
+        return false;
+    }
+
+    return true;
+}
+
+function<string(const vector<Value>&)> getAggregationFunc() {
+    string aggFunc;
+    cout << "Aggregation function (sum/avg/min/max): ";
+    cin >> aggFunc;
+
+    if (aggFunc == "sum") 
+        return Aggregation::sum;
+    else if (aggFunc == "avg") 
+        return Aggregation::average;
+    else if (aggFunc == "min") 
+        return Aggregation::min;
+    else if (aggFunc == "max") 
+        return Aggregation::max;
+    
+    cout << "Invalid aggregation function." << endl;
+    return nullptr;
+}
+
 
 void performAggregation(Database* db) {
     string tableName, columnName, aggType;
@@ -208,26 +268,17 @@ void performAggregation(Database* db) {
 
     cout << "Enter column name: ";
     cin >> columnName;
-    cout << "Aggregation function (sum/avg/min/max): ";
-    cin >> aggType;
 
-    function<string(const vector<string>&)> func;
-    if (aggType == "sum") 
-        func = Aggregation::sum;
-    else if (aggType == "avg") 
-        func = Aggregation::average;
-    else if (aggType == "min") 
-        func = Aggregation::min;
-    else if (aggType == "max") 
-        func = Aggregation::max;
-    else {
-        cout << "Invalid aggregation function." << endl;
+    if (!validateColumn(db, columnName, table)) {
         return;
     }
+
+    function<string(const vector<Value>&)> func = getAggregationFunc();
 
     vector<string> result = table->aggregate(columnName, func);
     cout << "Aggregation result: " << result[0] << endl;
 }
+
 
 void printAllRecords(Database* db) {
     string tableName;
@@ -242,6 +293,61 @@ void printAllRecords(Database* db) {
 
     table->printAll();
 }
+
+// void rangeQuery(Database* db) {
+//     string tableName, columnName;
+//     cout << "Enter table name: ";
+//     cin >> tableName;
+
+//     Table* table = db->getTable(tableName);
+//     if (!table) {
+//         cout << "No table named: " << tableName << endl;
+//         return;
+//     }
+
+//     cout << "Enter column name for range query: ";
+//     cin >> columnName;
+
+//     vector<Table::Column> tableCols = table->getColumns();
+//     auto col_it = find_if(tableCols.begin(), tableCols.end(), [&](const Table::Column& col) {
+//         return col.name == columnName;
+//     });
+
+//     if (col_it == tableCols.end()) {
+//         cout << "No column named " << columnName << " in the table " << tableName << endl;
+//         return;
+//     }
+
+//     if (col_it->indexType != Table::PRIMARY && !table->hasIndex(columnName)) {
+//         cout << "Column is not indexed. Range queries require an index.\n";
+//         return;
+//     }
+
+//     cout << "Enter lower bound: ";
+//     string lowerStr;
+//     cin >> lowerStr;
+//     cout << "Enter upper bound: ";
+//     string upperStr;
+//     cin >> upperStr;
+
+//     vector<string> result;
+//     if (col_it->type == Table::DataType::INT) {
+//         int lower = stoi(lowerStr);
+//         int upper = stoi(upperStr);
+//         result = table->rangeQuery<int>(columnName, lower, upper);
+//     } else if (col_it->type == Table::DataType::STRING) {
+//         result = table->rangeQuery<string>(columnName, lowerStr, upperStr);
+//     } else {
+//         cout << "Unsupported data type for range query.\n";
+//         return;
+//     }
+
+//     cout << "Range Query Results:\n";
+//     for (const auto& entry : result) {
+//         cout << entry << endl;
+//     }
+// }
+
 
 void handleUserInput(Database* db) {
     int choice;
@@ -258,8 +364,9 @@ void handleUserInput(Database* db) {
             case 6: printAllRecords(db); break;
             case 7: createIndex(db); break;
             case 8: performAggregation(db); break;
-            case 9: return;
-            default: cout << "Invalid choice. Try again.\n";
+            // case 9: rangeQuery(db); break;
+            case 10: return;
+            default: cout << "Invalid choice. Try again." << endl;
         }
     }
 }
