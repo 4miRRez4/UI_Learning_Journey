@@ -27,7 +27,7 @@ A comprehensive collection of my personal projects, academic work, coding challe
   
 ### Programming and Academic Courses
 -[Probability and Statistics](./Courses/5.Probability_Statistics/)  
--[DataStructure and  Algorithms](./Courses/4.Data_Structure_and_Algorithm/)  
+-[DataStructure and  Algorithms](./Courses/4.Data_Structure_and_%20Algorithm/)  
 -[Quera Advanced Algorithm and Data Structure](./Courses/3.Quera_advanced_algorithm_and_data_structure_course/)  
 -[Advanced Programming](./Courses/2.Advanced_Programming/)  
 -[ML with Python](./Courses/0.Machine_Learning_With_Python/)  
