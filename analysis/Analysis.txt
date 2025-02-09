@@ -1,0 +1,33 @@
+B+ tree:
+    -Insert: O(logN)
+    -Delete: O(logN)
+    -Search: O(logN)
+    -RangeQuery: O(logN + R)
+    
+
+DataBase:
+    -CreateTable: O(1)
+    -InsertRecord: O(logN)
+    -DeleteRecord: O(logN)
+    -UpdateRecord: O(logN)
+    -SearchRecord: O(logN)
+    -PrintAll: O(N)
+    -CreateIndex: O(NlogN)
+    -Aggregation: O(N)*O(aggFunc)
+
+Graph:
+    - PageRank algorithm: O(maxIteration * (N + E))
+        (Sparse): O(maxIterations × 𝑁)
+        (Dense):  O(maxIterations × N^2) 
+
+RecommendationManager:
+    - bfsShortestPath: O(V + E)
+    - calculateDegreeOfConnection: O(V + E) because bfs
+    - calculateSkillSimilarity: O(S1 + S2)
+    - getRecommandations: O(V(V+E + S)) + O(VlogV) = O(V^2 + VE + VS + VlogV)
+
+communicationQuality:
+    - calculateSameConnections: O(E1.E2)
+    - calculateSameSpeciality: O(S1.S2)
+    - assessQuality: O(E + S)
+    - getTopConnections: O(V(E+S)+ VlogV)

@@ -37,14 +37,17 @@ private:
 
     void printTree(BP_Node* node, int lvl);
 
+    int countKeys(BP_Node* node) const;
+
 public:
     BPlusTree(int m=2) : root(nullptr), min_degree(m) {}
 
     void insert(T key);
     void remove(T key);
     bool search(T key);
+    int countKeys() const;
 
-    vector<T> rangeQuery(T lower, T upper);
+    vector<T> rangeQuery(T lower, T upper) const;
     void printTree();
 };
 
@@ -69,6 +72,24 @@ bool BPlusTree<T>::search(T key){
     }
 
     return false;   
+}
+
+template<typename T>
+int BPlusTree<T>::countKeys(BP_Node* node) const {
+    if (!node) return 0;
+
+    int count = node->keys.size();
+    if (!node->isLeaf) {
+        for (BP_Node* child : node->children) {
+                count += countKeys(child);
+        }
+    }
+    return count;
+}
+
+template<typename T>
+int BPlusTree<T>::countKeys() const {
+    return countKeys(root);
 }
 
 template <typename T>
@@ -262,7 +283,7 @@ template <typename T> void BPlusTree<T>::printTree()
 }
 
 template <typename T>
-vector<T> BPlusTree<T>::rangeQuery(T lower, T upper)
+vector<T> BPlusTree<T>::rangeQuery(T lower, T upper) const
 {
     vector<T> result;
     BP_Node* current = root;
