@@ -1,0 +1,50 @@
+Preprocessing
+    -readFiles, cleanText, tokenize:
+        Time => O(n) per file. n is number of characters in the file.
+        Space => O(n) for each text.
+
+Map
+    -insert:
+        Time => O(k), k is length of key string. for hashFunction we iterate over key to generate polynomial hash.
+        Space => O(k + v), v is size of value.
+    -search:
+        Time => O(k), like insert.
+        Space => O(1).
+
+InvertedIndex
+    -buildInvertedMap:
+        Time => O(d*t), d is number document and t is number of tokens in document.
+        Space => O(d*t), d is numbe document that token appears on and t is number of unique tokens.
+    -search:
+        like search in Map.
+
+SetOperation
+    -unionSets, intersectionSets, differenceSets:
+        Time => O(n + m), n is size of set1 and m is size of set2
+        Space => O(n + m).
+
+Trie
+
+QueryProcessor
+    -parseQuery:
+        Time => O(t), t is number of tokens in the query.
+        Space => O(t).
+
+    -checkError:
+        -hasInputError:
+            Time => O(t*n), t is number of token in query and n is length of token.
+            Space => O(1)
+        -hasLogicalError:
+            like intersectionSets.
+
+    -processQuery:
+        sum of SetOperation, checkError and parseQuery.
+
+
+
+
+Search engines rely on metadata to locate info like using inverted indexes to map terms to documents and their positions, enabling fast retrieval.
+Search engines has three main steps: crawling (fetching web pages), indexing (building metadata), and querying (retrieving results from metadata)
+They handle complex queries using optimized data structures like tries and sorted indexes and also they use optimization techniques like Stop Words Removal, Stemming and Lemmatization and Noise Removal.
+Advanced techniques like PageRank and frequency-based ranking ensure relevant results are prioritized efficiently.
+    

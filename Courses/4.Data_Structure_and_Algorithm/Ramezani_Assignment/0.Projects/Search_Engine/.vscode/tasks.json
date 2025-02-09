@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "tasks": [
+        {
+            "label": "build main.cpp",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",        
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/main.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/preprocessor.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/map.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/invertedIndex.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/queryProcessor.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/trie.cpp",
+                "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/src/errorManager.cpp",
+                "-I/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/include", 
+                "-o", "/home/amirreza/Documents/ui-ds-02-project01-searchengine-4miRRez4/main.out" 
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task for building main.cpp"
+        }
+    ]
+}
