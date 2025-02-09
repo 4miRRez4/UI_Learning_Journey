@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "tasks": [
+        {
+            "label": "build main.cpp",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",        
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/main.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/dataBase.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/Graph.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/table.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/User.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/JSONReader.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/RecommendationManager.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/date.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/CommunicationQuality.cpp",
+                "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/src/Interface.cpp",
+                
+
+                "-I/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/include", 
+                "-o", "/home/amirreza/Documents/Social_Media_Proj/ds-finalproject-socialmedia-graphgeeks/main.out" 
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task for building main.cpp"
+        }
+    ]
+}
