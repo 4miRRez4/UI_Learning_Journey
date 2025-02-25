@@ -17,7 +17,7 @@ void merge_2_arr(int* a, int a_size, int* b,int b_size, int* c){
 }
 
 void merge_k_arr(int** arrs, int* res, int l, int r, int n){
-    if(r <= l){
+    if(r == l){
         for(int i=0; i<n; i++)
             res[i] = arrs[l][i];
         return;
@@ -33,7 +33,7 @@ void merge_k_arr(int** arrs, int* res, int l, int r, int n){
     merge_k_arr(arrs, left_res, l, mid, n);
     merge_k_arr(arrs, right_res, mid+1, r, n);
 
-    merge_2_arr(left_res, left_size, right_res, left_size, res);
+    merge_2_arr(left_res, left_size, right_res, right_size, res);
 
     delete[] left_res;
     delete[] right_res;
