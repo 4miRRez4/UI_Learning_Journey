@@ -4,7 +4,7 @@ A comprehensive collection of my personal projects, academic work, coding challe
   
 ### Coding Challenges
 -[DataStructure and  Algorithms_Sharifi](./Courses/4.Data_Structure_and_Algorithm/)  
--[Quera Advanced Algorithm and Data Structure Assignments](./Courses/3.Quera_advanced_algorithm_and_data_structure_course)
+-[Quera Advanced Algorithm and Data Structure Assignments](./Courses/3.Quera_advanced_algorithm_and_data_structure_course)  
 -[Ramtin Khosravi AP Assignments](./Courses/2.Advanced_Programming/0.Ramtin_Khosravi_Course)  
 -[Advanced Programming Concepts CPP](./Courses/2.Advanced_Programming/0.Assignments_and_Practices)  
 -[PsyCity](./Other_Codes/1.Contests/PsyCity/)  
@@ -26,6 +26,7 @@ A comprehensive collection of my personal projects, academic work, coding challe
   
   
 ### Programming and Academic Courses
+-[Algorithm Design](./Courses/6.Algorithm_Design/)  
 -[Probability and Statistics](./Courses/5.Probability_Statistics/)  
 -[DataStructure and  Algorithms](./Courses/4.Data_Structure_and_%20Algorithm/)  
 -[Quera Advanced Algorithm and Data Structure](./Courses/3.Quera_advanced_algorithm_and_data_structure_course/)  
