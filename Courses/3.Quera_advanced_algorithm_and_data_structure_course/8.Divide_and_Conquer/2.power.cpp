@@ -4,10 +4,7 @@ using namespace std;
 
 double power(double base, long long exp){
     if(exp == 0)
-        return 0;
-        
-    if(exp == 1)
-        return base;
+        return 1;
         
     double half_res = power(base, exp/2);
     if(exp % 2 == 0)
