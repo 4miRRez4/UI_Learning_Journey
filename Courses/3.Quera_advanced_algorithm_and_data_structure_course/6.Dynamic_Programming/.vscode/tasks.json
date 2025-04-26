@@ -7,12 +7,12 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "8.everything_nothing_one.cpp",
+                "anton.cpp",
                 "-o",
                 "build/Debug/outDebug"
             ],
             "options": {
-                "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/3.Quera_advanced_algorithm_and_data_structure_course/6.Dynamic_Programming/"
+                "cwd": "/home/amirreza/Downloads/University/Learning_Journey/Courses/6.Algorithm_Design/Other/2.Dynamic_Programming"
             },
             "problemMatcher": [
                 "$gcc"
