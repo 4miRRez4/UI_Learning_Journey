@@ -1,5 +1,6 @@
-A comprehensive collection of my personal projects, academic work, coding challenges, courses, and more from my Computer Science learning journey in Iran.
-   
+I'm just trying to learn.  
+A collection of my personal projects, academic work, coding challenges, courses, and more from my Computer Science learning journey.
+ 
   
   
 ### Coding Challenges
