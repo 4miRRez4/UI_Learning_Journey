@@ -16,7 +16,7 @@ void prizes(int powers[], float& avg, int& ifChosed, int& ifNotChosed, int l, in
 
     //choose
     if(avg1 > avg2){
-        ifChosed = ifCh1 + ifNCh2;
+        ifChosed = ifCh1 + x;
     }else{
         ifChosed = ifCh2 + ifNCh1;
     }
