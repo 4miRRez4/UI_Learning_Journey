@@ -1,5 +1,6 @@
-A comprehensive collection of my personal projects, academic work, coding challenges, courses, and more from my Computer Science learning journey.
-  
+Welcome to my repository — a reflection of my learning journey as a Computer Science student. Here, you’ll find my personal projects, academic work, coding challenges, and course explorations. I'm continuously building, learning, and sharing as I grow in areas like software engineering, algorithms, and AI.
+
+
   
 ### Programming and Academic Courses
 -[Algorithm Design](./Courses/6.Algorithm_Design/)  
