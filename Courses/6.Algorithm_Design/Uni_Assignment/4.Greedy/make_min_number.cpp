@@ -9,7 +9,7 @@ int main(){
         int k; cin >> k;
 
         int idx = 0;
-        while(k && !x.empty()){
+        while(k && idx < x.length()-1){
             if(idx == 0 && x[1] == '0'){
                 idx++;
                 continue;
@@ -26,6 +26,9 @@ int main(){
             }
         }
 
+        
+        x.erase(x.length() - k, k);
+        
         cout << x << endl;
     }
     return 0;
