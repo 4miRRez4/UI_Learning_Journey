@@ -16,7 +16,7 @@ namespace BookStore.Models
         [MaxLength(500)]
         public string? Description;
 
-        public DateTime? publishDate { get; set; }
+        public DateTime? PublishDate { get; set; }
 
         [MaxLength(50)]
         public string? Genre { get; set; }
