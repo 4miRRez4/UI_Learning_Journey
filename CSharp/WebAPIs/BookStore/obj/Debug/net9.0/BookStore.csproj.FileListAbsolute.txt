@@ -1,0 +1,8 @@
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.csproj.AssemblyReference.cache
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.AssemblyInfoInputs.cache
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.AssemblyInfo.cs
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.csproj.CoreCompileInputs.cache
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.sourcelink.json
