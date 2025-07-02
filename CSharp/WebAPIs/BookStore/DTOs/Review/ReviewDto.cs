@@ -1,3 +1,6 @@
+using BookStore.Dtos.User;
+using BookStore.Dtos.Book;
+
 namespace BookStore.Dtos.Review
 {
     public class ReviewDto

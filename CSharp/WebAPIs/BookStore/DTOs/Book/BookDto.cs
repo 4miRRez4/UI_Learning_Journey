@@ -1,3 +1,5 @@
+using BookStore.Dtos.Author;
+
 namespace BookStore.Dtos.Book
 {
     public class BookDto
