@@ -34,6 +34,7 @@ namespace BookStore.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", maxLength: 500, nullable: true),
                     PublishDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Genre = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
                 },
@@ -121,12 +122,12 @@ namespace BookStore.Migrations
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "Genre", "PublishDate", "Title" },
+                columns: new[] { "Id", "Description", "Genre", "PublishDate", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Fantasy", new DateTime(1997, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "Harry Potter and the Philosopher's Stone" },
-                    { 2, "Fantasy", new DateTime(1996, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "A Game of Thrones" },
-                    { 3, "Horror", new DateTime(1977, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "The Shining" }
+                    { 1, "The first book in the Harry Potter series", "Fantasy", new DateTime(1997, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "Harry Potter and the Philosopher's Stone" },
+                    { 2, "The first book in A Song of Ice and Fire", "Fantasy", new DateTime(1996, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "A Game of Thrones" },
+                    { 3, "A horror novel about a haunted hotel", "Horror", new DateTime(1977, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "The Shining" }
                 });
 
             migrationBuilder.InsertData(

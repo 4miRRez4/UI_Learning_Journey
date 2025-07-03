@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250703092809_InitialCreate")]
+    [Migration("20250703120448_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -106,6 +106,10 @@ namespace BookStore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Genre")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -126,6 +130,7 @@ namespace BookStore.Migrations
                         new
                         {
                             Id = 1,
+                            Description = "The first book in the Harry Potter series",
                             Genre = "Fantasy",
                             PublishDate = new DateTime(1997, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Harry Potter and the Philosopher's Stone"
@@ -133,6 +138,7 @@ namespace BookStore.Migrations
                         new
                         {
                             Id = 2,
+                            Description = "The first book in A Song of Ice and Fire",
                             Genre = "Fantasy",
                             PublishDate = new DateTime(1996, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "A Game of Thrones"
@@ -140,6 +146,7 @@ namespace BookStore.Migrations
                         new
                         {
                             Id = 3,
+                            Description = "A horror novel about a haunted hotel",
                             Genre = "Horror",
                             PublishDate = new DateTime(1977, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "The Shining"
