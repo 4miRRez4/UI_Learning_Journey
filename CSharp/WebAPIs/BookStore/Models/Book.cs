@@ -13,8 +13,9 @@ namespace BookStore.Models
         [MaxLength(200)]
         public string Title { get; set; }
 
+        [Column(TypeName = "nvarchar(max)")]
         [MaxLength(500)]
-        public string? Description;
+        public string? Description { get; set; }
 
         public DateTime? PublishDate { get; set; }
 
