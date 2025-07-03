@@ -16,6 +16,25 @@ namespace BookStore.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Book>()
+                .HasMany(b => b.Authors)
+                .WithMany(a => a.Books)
+                .UsingEntity<Dictionary<string, object>>(
+                    "BookAuthors",
+                    j => j.HasOne<Author>().WithMany().HasForeignKey("AuthorId"),
+                    j => j.HasOne<Book>().WithMany().HasForeignKey("BookId"),
+                    j =>
+                    {
+                        j.HasKey("BookId", "AuthorId");
+                        j.HasData(
+                            new { BookId = 1, AuthorId = 1 },
+                            new { BookId = 2, AuthorId = 2 },
+                            new { BookId = 3, AuthorId = 3 }
+                        );
+                    }
+                );
+
+
             // Seed Authors
             modelBuilder.Entity<Author>().HasData(
                 new Author { Id = 1, Name = "Abbas Maroufi", BirthDate = new DateTime(1940, 1, 1) },
@@ -50,13 +69,6 @@ namespace BookStore.Data
                 PublishDate = new DateTime(1977, 1, 28),
                 Genre = "Horror"
             }
-            );
-
-            // many-to-many relationships
-            modelBuilder.Entity("BookAuthor").HasData(
-            new { BooksId = 1, AuthorsId = 1 },
-            new { BooksId = 2, AuthorsId = 2 },
-            new { BooksId = 3, AuthorsId = 3 }
             );
 
             // Seed Users
