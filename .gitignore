@@ -1,1 +1,28 @@
 .vs/
+
+# Qt build directories
+build-*/
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.qmlc
+*.jom
+*.pbxuser
+
+# Debug files
+*.debug
+*.pdb
+*.ilk
+*.idb
+*.exp
+
+# Qt Creator files
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+*.autosave
+
+# Compiled UI files
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
