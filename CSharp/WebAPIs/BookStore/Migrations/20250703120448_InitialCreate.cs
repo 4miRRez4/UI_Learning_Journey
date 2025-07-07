@@ -135,9 +135,9 @@ namespace BookStore.Migrations
                 columns: new[] { "Id", "PasswordHash", "Username" },
                 values: new object[,]
                 {
-                    { 1, "hashed_password_here", "admin" },
-                    { 2, "hashed_password_here", "john_doe" },
-                    { 3, "hashed_password_here", "jane_smith" }
+                    { 1, "hashed_password_1", "admin" },
+                    { 2, "hashed_password_2", "john_doe" },
+                    { 3, "hashed_password_3", "jane_smith" }
                 });
 
             migrationBuilder.InsertData(
