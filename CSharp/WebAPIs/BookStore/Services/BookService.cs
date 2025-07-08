@@ -57,6 +57,13 @@ namespace BookStore.Services
                 Genre = bookDto.Genre
             };
 
+            if(bookDto.AuthorIds?.Count > 0)
+            {
+                bookEntity.Authors = _repository.GetAllAuthorsAsync()
+                    .Where(a => bookDto.AuthorIds.Contains(a.Id))
+                    .ToListAsync();
+            }
+
             var createdBook = await _repository.CreateBookAsync(bookEntity);
 
 
@@ -66,7 +73,12 @@ namespace BookStore.Services
                 Title = createdBook.Title,
                 Description = createdBook.Description,
                 PublishDate = createdBook.PublishDate,
-                Genre = createdBook.Genre
+                Genre = createdBook.Genre,
+                Authors = createdBook.Authors?.Select(a => new AuthorDto
+                {
+                    Id = a.Id,
+                    Name = a.Name
+                }).ToList() ?? new List<AuthorDto>()
             };
         }
 
