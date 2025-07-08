@@ -156,7 +156,6 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\o
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.csproj.CoreCompileInputs.cache
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.sourcelink.json
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\scopedcss\bundle\BookStore.styles.css
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\staticwebassets.development.json
