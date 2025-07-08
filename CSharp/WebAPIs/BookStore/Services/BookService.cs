@@ -3,26 +3,27 @@ using BookStore.Data;
 using BookStore.Services.Interfaces;
 using BookStore.Models;
 using BookStore.Dtos.Book;
+using BookStore.Dtos.Author;
+using BookStore.Repositories.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 
 
 namespace BookStore.Services
 {
     public class BookService : IBookService
     {
-        private readonly AppDbContext _context;
+        private readonly IBookRepository _repository;
 
-        public BookService(AppDbContext context)
+        public BookService(IBookRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public async Task<IEnumerable<BookDto>> GetAllBooksAsync()
         {
-            var books = await _context.Books
-                .AsNoTracking()
-                .ToListAsync();
+            var books = await _repository.GetAllBooksAsync();
 
             var bookDtos = new List<BookDto>();
             foreach(var book in books)
@@ -33,7 +34,13 @@ namespace BookStore.Services
                     Title = book.Title,
                     Description = book.Description,
                     PublishDate = book.PublishDate,
-                    Genre = book.Genre
+                    Genre = book.Genre,
+                    Authors = book.Authors.Select(a => new AuthorDto
+                    {
+                        Id = a.Id,
+                        Name = a.Name,
+                        BirthDate = a.BirthDate
+                    }).ToList()
                 });
             }
 
@@ -50,17 +57,16 @@ namespace BookStore.Services
                 Genre = bookDto.Genre
             };
 
-            await _context.Books.AddAsync(bookEntity);
-            await _context.SaveChangesAsync();
+            var createdBook = await _repository.CreateBookAsync(bookEntity);
 
 
             return new BookDto
             {
-                Id = bookEntity.Id,
-                Title = bookEntity.Title,
-                Description = bookEntity.Description,
-                PublishDate = bookEntity.PublishDate,
-                Genre = bookEntity.Genre
+                Id = createdBook.Id,
+                Title = createdBook.Title,
+                Description = createdBook.Description,
+                PublishDate = createdBook.PublishDate,
+                Genre = createdBook.Genre
             };
         }
 

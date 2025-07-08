@@ -1,6 +1,8 @@
 using BookStore.Data;
-using BookStore.Services;
+using BookStore.Repositories.Interfaces;
+using BookStore.Repositories;
 using BookStore.Services.Interfaces;
+using BookStore.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +17,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
 
 builder.Services.AddScoped<IBookService, BookService>();
 

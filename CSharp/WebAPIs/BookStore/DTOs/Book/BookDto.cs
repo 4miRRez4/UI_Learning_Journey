@@ -9,6 +9,6 @@ namespace BookStore.Dtos.Book
         public string? Description { get; set; }
         public DateTime? PublishDate { get; set; }
         public string? Genre { get; set; }
-        public List<AuthorDto> Authors { get; set; } = new();
+        public List<AuthorDto> Authors { get; set; }
     }
 }
