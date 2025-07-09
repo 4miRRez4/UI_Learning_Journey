@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainWindow.ui'
+** Form generated from reading UI file 'mainwindow.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.13.0
 **
@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,22 +22,28 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QLabel *label;
+    QLabel *header;
+    QPushButton *custButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(478, 574);
+        MainWindow->resize(500, 600);
         MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(:/images/BG.png);"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(180, 50, 111, 41));
-        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+        header = new QLabel(centralWidget);
+        header->setObjectName(QString::fromUtf8("header"));
+        header->setGeometry(QRect(200, 50, 111, 41));
+        header->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "font: 75 24pt \"Ubuntu Mono\";\n"
 ""));
+        custButton = new QPushButton(centralWidget);
+        custButton->setObjectName(QString::fromUtf8("custButton"));
+        custButton->setGeometry(QRect(130, 440, 261, 41));
+        custButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"font: 75 16pt \"Ubuntu Mono\";"));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
@@ -47,7 +54,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "WELCOME", nullptr));
+        header->setText(QCoreApplication::translate("MainWindow", "WELCOME", nullptr));
+        custButton->setText(QCoreApplication::translate("MainWindow", "Enter as a customer", nullptr));
     } // retranslateUi
 
 };
