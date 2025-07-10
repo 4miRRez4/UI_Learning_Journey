@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BookStore.Models
-{
+namespace BookStore.Models;
+
     public class Author
     {
         [Key]
@@ -16,4 +16,3 @@ namespace BookStore.Models
         // Navigation property
         public ICollection<Book> Books { get; set; } = new List<Book>();
     }
-}
