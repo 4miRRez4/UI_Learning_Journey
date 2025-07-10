@@ -14,16 +14,18 @@ namespace BookStore.Services
 {
     public class BookService : IBookService
     {
-        private readonly IBookRepository _repository;
+        private readonly IBookRepository _bookRepository;
+        private readonly IAuthorRepository _authorRepository;
 
-        public BookService(IBookRepository repository)
+        public BookService(IBookRepository bookRepository, IAuthorRepository authorRepository)
         {
-            _repository = repository;
+            _bookRepository = bookRepository;
+            _authorRepository = authorRepository;
         }
 
         public async Task<IEnumerable<BookDto>> GetAllBooksAsync()
         {
-            var books = await _repository.GetAllBooksAsync();
+            var books = await _bookRepository.GetAllBooksAsync();
 
             var bookDtos = new List<BookDto>();
             foreach(var book in books)
@@ -59,12 +61,11 @@ namespace BookStore.Services
 
             if(bookDto.AuthorIds?.Count > 0)
             {
-                bookEntity.Authors = _repository.GetAllAuthorsAsync()
-                    .Where(a => bookDto.AuthorIds.Contains(a.Id))
-                    .ToListAsync();
+                var authors = await _authorRepository.GetAuthorsByIdsAsync(bookDto.AuthorIds);
+                bookEntity.Authors = authors ?? new List<Author>();
             }
 
-            var createdBook = await _repository.CreateBookAsync(bookEntity);
+            var createdBook = await _bookRepository.CreateBookAsync(bookEntity);
 
 
             return new BookDto
