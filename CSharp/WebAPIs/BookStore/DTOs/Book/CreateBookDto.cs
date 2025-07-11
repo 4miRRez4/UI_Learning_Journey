@@ -16,6 +16,6 @@ namespace BookStore.Dtos.Book
         [MaxLength(50)]
         public string? Genre { get; set; }
 
-        public List<int> AuthorIds { get; set; } = new(); 
+        public List<int> AuthorIds { get; set; } = new List<int>(); 
     }
 }

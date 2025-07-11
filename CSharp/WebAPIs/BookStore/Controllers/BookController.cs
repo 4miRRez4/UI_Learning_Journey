@@ -69,6 +69,7 @@ namespace BookStore.Controllers
 
                 if(createdBook == null)
                 {
+                    _logger.LogError(ex, "Failed to create book.");
                     return BadRequest("Book creation failed!");
                 }
 
@@ -76,6 +77,7 @@ namespace BookStore.Controllers
             }
             catch(Exception ex)
             {
+                _logger.LogError(ex, "Error creating book.");
                 return StatusCode(500, $"Internal error: {ex.Message}");
             }
         }
@@ -92,6 +94,7 @@ namespace BookStore.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error updating book with ID {BookId}", id);
                 return StatusCode(500, $"An error occurred while updating the book: {ex.Message}");
             }
         }
@@ -107,7 +110,6 @@ namespace BookStore.Controllers
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex, "Error deleting book with ID {BookId}", id);
                 return StatusCode(500, "An error occurred while deleting the book");
             }
         }
