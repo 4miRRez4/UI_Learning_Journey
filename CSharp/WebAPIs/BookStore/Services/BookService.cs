@@ -18,13 +18,16 @@ namespace BookStore.Services
         private readonly IBookRepository _bookRepository;
         private readonly IAuthorRepository _authorRepository;
 
-        private readonly IMapper  _mapper;
+        private readonly IMapper _mapper;
 
-        public BookService(IBookRepository bookRepository, IAuthorRepository authorRepository, IMapper mapper)
+        private readonly ILogger<BookService> _logger;
+
+        public BookService(IBookRepository bookRepository, IAuthorRepository authorRepository, IMapper mapper, ILogger<BookService> logger)
         {
             _bookRepository = bookRepository;
             _authorRepository = authorRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<IEnumerable<BookDto>> GetAllBooksAsync()

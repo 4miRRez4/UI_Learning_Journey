@@ -11,9 +11,12 @@ namespace BookStore.Controllers
     {
         private readonly IBookService _bookService;
 
-        public BookController(IBookService bookService)
+        private readonly ILogger<BookController> _logger;
+
+        public BookController(IBookService bookService, ILogger<BookController> logger)
         {
             _bookService = bookService;
+            _logger = logger;
         }
 
 
@@ -37,10 +40,17 @@ namespace BookStore.Controllers
             {
                 var bookDto = await _bookService.GetBookByIdAsync(id);
 
+                if (bookDto == null)
+                {
+                    _logger.LogWarning("Book with ID {BookId} not found", id);
+                    return NotFound();
+                }
+
                 return Ok(bookDto);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error fetching book with ID {BookId}", id);
                 return StatusCode(500, "Internal server error!");
             }
         }

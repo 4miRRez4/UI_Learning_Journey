@@ -1,0 +1,62 @@
+2025-07-11T16:35:50.7384053+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T16:35:50.7396625+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T16:35:50.7420147+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T16:35:50.7424233+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T16:35:50.7424466+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T16:36:03.4360441+03:30 0HNE0FEOARDMF:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/5""" - "application/json" 177 (d509f86a)
+2025-07-11T16:36:03.4566580+03:30 0HNE0FEOARDMF:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 22.0031ms (74253ad3)
+2025-07-11T16:36:03.4749677+03:30 0HNE0FEOARDMH:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/5""" - "application/json" 177 (d509f86a)
+2025-07-11T16:36:03.4783189+03:30 0HNE0FEOARDMH:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.GetBookById (BookStore)"' (500cc934)
+2025-07-11T16:36:03.4894552+03:30 0HNE0FEOARDMH:00000001 [INF] Route matched with "{action = \"GetBookById\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookById(Int32)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T16:36:03.5833761+03:30 0HNE0FEOARDMH:00000001 [INF] Executed action "BookStore.Controllers.BookController.GetBookById (BookStore)" in 91.8501ms (afa2e885)
+2025-07-11T16:36:03.5837980+03:30 0HNE0FEOARDMH:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.GetBookById (BookStore)"' (99874f2b)
+2025-07-11T16:36:03.5992385+03:30 0HNE0FEOARDMH:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'BookStore.Controllers.BookController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method11(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 72
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-11T16:36:03.6049299+03:30 0HNE0FEOARDMH:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/5""" - 500 null "text/plain; charset=utf-8" 129.8892ms (74253ad3)
+2025-07-11T16:39:47.1708612+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T16:40:43.0650306+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T16:40:43.0662862+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T16:40:43.0684597+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T16:40:43.0690089+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T16:40:43.0690492+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T16:40:48.9849008+03:30 0HNE0FHDE2MDS:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/5""" - "application/json" 177 (d509f86a)
+2025-07-11T16:40:49.0059836+03:30 0HNE0FHDE2MDS:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 22.0927ms (74253ad3)
+2025-07-11T16:40:49.0237850+03:30 0HNE0FHDE2MDU:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/5""" - "application/json" 177 (d509f86a)
+2025-07-11T16:40:49.0272249+03:30 0HNE0FHDE2MDU:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.GetBookById (BookStore)"' (500cc934)
+2025-07-11T16:40:49.0377460+03:30 0HNE0FHDE2MDU:00000001 [INF] Route matched with "{action = \"GetBookById\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookById(Int32)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T16:40:49.9021764+03:30 0HNE0FHDE2MDU:00000001 [INF] Executed DbCommand ("23"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Description], [b1].[Genre], [b1].[PublishDate], [b1].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T16:40:49.9169161+03:30 0HNE0FHDE2MDU:00000001 [WRN] Book with ID 5 not found (8c460c63)
+2025-07-11T16:40:49.9218767+03:30 0HNE0FHDE2MDU:00000001 [INF] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (605b4265)
+2025-07-11T16:40:49.9443892+03:30 0HNE0FHDE2MDU:00000001 [INF] Executed action "BookStore.Controllers.BookController.GetBookById (BookStore)" in 904.8907ms (afa2e885)
+2025-07-11T16:40:49.9445994+03:30 0HNE0FHDE2MDU:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.GetBookById (BookStore)"' (99874f2b)
+2025-07-11T16:40:49.9482696+03:30 0HNE0FHDE2MDU:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/5""" - 404 null "application/problem+json; charset=utf-8" 924.4927ms (74253ad3)
+2025-07-11T16:41:04.9614675+03:30  [INF] Application is shutting down... (90f52c38)
