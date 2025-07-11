@@ -44,5 +44,25 @@ namespace BookStore.Repositories
             return book;
         }
 
+        public async Task<bool> BookExistAsync(int id)
+        {
+            return await _context.Books.AnyAsync(b => b.Id == id);
+        }
+
+        public async Task DeleteBookAsync(int id)
+        {
+            var bookEntity = await _context.Books
+                .Include(b => b.Authors)
+                .FirstOrDefaultAsync(b => b.Id == id);
+            
+            if (bookEntity != null)
+            {
+                _context.Books.Remove(bookEntity);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+
+
     }
 }

@@ -83,5 +83,18 @@ namespace BookStore.Services
             return _mapper.Map<BookDto>(updatedBook);
         }
 
+        public async Task<bool> DeleteBookAsync(int id)
+        {
+            var bookExist = await _bookRepository.BookExistAsync(id);
+            if (!bookExist)
+            {
+                _logger.LogWarning($"There is no book with ID {id} to delete.");
+                return false;
+            }
+
+            await _bookRepository.DeleteBookAsync(id);
+            return true;
+        }
+
     }
 }

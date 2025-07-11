@@ -564,3 +564,126 @@ ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
 2025-07-11T17:57:36.4589678+03:30 0HNE0GSAA4KLB:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
 2025-07-11T17:57:36.4624869+03:30 0HNE0GSAA4KLB:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - 200 null "application/json; charset=utf-8" 833.4135ms (74253ad3)
 2025-07-11T17:58:22.0772249+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T18:27:11.9693153+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T18:27:11.9705890+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T18:27:11.9725071+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T18:27:11.9729383+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T18:27:11.9729652+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T18:28:41.1841866+03:30 0HNE0HDM9OUPU:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5081""""/api/book""" - "application/json" 187 (d509f86a)
+2025-07-11T18:28:41.2025823+03:30 0HNE0HDM9OUPU:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5081""""/api/book""" - 307 0 null 19.4665ms (74253ad3)
+2025-07-11T18:28:41.2197413+03:30 0HNE0HDM9OUQ0:00000001 [INF] Request starting "HTTP/1.1" "POST" "https"://"localhost:7140""""/api/book""" - "application/json" 187 (d509f86a)
+2025-07-11T18:28:41.2228194+03:30 0HNE0HDM9OUQ0:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.CreateBook (BookStore)"' (500cc934)
+2025-07-11T18:28:41.2331086+03:30 0HNE0HDM9OUQ0:00000001 [INF] Route matched with "{action = \"CreateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookStore.Dtos.Book.BookDto]] CreateBook(BookStore.Dtos.Book.CreateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T18:28:41.9434387+03:30 0HNE0HDM9OUQ0:00000001 [INF] Executed DbCommand ("23"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 50), @p2='?' (DbType = DateTime2), @p3='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([Description], [Genre], [PublishDate], [Title])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);" (0723d8ff)
+2025-07-11T18:28:41.9722897+03:30 0HNE0HDM9OUQ0:00000001 [INF] Executing "CreatedAtActionResult", writing value of type '"BookStore.Dtos.Book.BookDto"'. (605b4265)
+2025-07-11T18:28:41.9907052+03:30 0HNE0HDM9OUQ0:00000001 [INF] Executed action "BookStore.Controllers.BookController.CreateBook (BookStore)" in 755.9231ms (afa2e885)
+2025-07-11T18:28:41.9909129+03:30 0HNE0HDM9OUQ0:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.CreateBook (BookStore)"' (99874f2b)
+2025-07-11T18:28:41.9950605+03:30 0HNE0HDM9OUQ0:00000001 [INF] Request finished "HTTP/1.1" "POST" "https"://"localhost:7140""""/api/book""" - 201 null "application/json; charset=utf-8" 775.3195ms (74253ad3)
+2025-07-11T18:30:22.9855154+03:30 0HNE0HDM9OUQ2:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book""" - "application/json" 187 (d509f86a)
+2025-07-11T18:30:22.9884907+03:30 0HNE0HDM9OUQ2:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book""" - 307 0 null 2.9897ms (74253ad3)
+2025-07-11T18:30:22.9898844+03:30 0HNE0HDM9OUQ0:00000002 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book""" - "application/json" 187 (d509f86a)
+2025-07-11T18:30:22.9901810+03:30 0HNE0HDM9OUQ0:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.GetAllBooks (BookStore)"' (500cc934)
+2025-07-11T18:30:22.9924399+03:30 0HNE0HDM9OUQ0:00000002 [INF] Route matched with "{action = \"GetAllBooks\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Book.BookDto]]] GetAllBooks()" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T18:30:23.2092737+03:30 0HNE0HDM9OUQ0:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T18:30:23.2202724+03:30 0HNE0HDM9OUQ0:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-11T18:30:23.2210472+03:30 0HNE0HDM9OUQ0:00000002 [INF] Executed action "BookStore.Controllers.BookController.GetAllBooks (BookStore)" in 228.5614ms (afa2e885)
+2025-07-11T18:30:23.2210836+03:30 0HNE0HDM9OUQ0:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.GetAllBooks (BookStore)"' (99874f2b)
+2025-07-11T18:30:23.2212447+03:30 0HNE0HDM9OUQ0:00000002 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book""" - 200 null "application/json; charset=utf-8" 231.3551ms (74253ad3)
+2025-07-11T18:32:08.0657446+03:30 0HNE0HDM9OUQ4:00000001 [INF] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:32:08.0660461+03:30 0HNE0HDM9OUQ4:00000001 [INF] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 0.3234ms (74253ad3)
+2025-07-11T18:32:08.0668375+03:30 0HNE0HDM9OUQ0:00000003 [INF] Request starting "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:32:08.0669037+03:30 0HNE0HDM9OUQ0:00000003 [INF] Executing endpoint '"405 HTTP Method Not Supported"' (500cc934)
+2025-07-11T18:32:08.0670038+03:30 0HNE0HDM9OUQ0:00000003 [INF] Executed endpoint '"405 HTTP Method Not Supported"' (99874f2b)
+2025-07-11T18:32:08.0670478+03:30 0HNE0HDM9OUQ0:00000003 [INF] Request finished "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - 405 0 null 0.2086ms (74253ad3)
+2025-07-11T18:32:26.0166851+03:30 0HNE0HDM9OUQ4:00000002 [INF] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:32:26.0168453+03:30 0HNE0HDM9OUQ4:00000002 [INF] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 0.1847ms (74253ad3)
+2025-07-11T18:32:26.0177027+03:30 0HNE0HDM9OUQ0:00000004 [INF] Request starting "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:32:26.0178046+03:30 0HNE0HDM9OUQ0:00000004 [INF] Executing endpoint '"405 HTTP Method Not Supported"' (500cc934)
+2025-07-11T18:32:26.0178425+03:30 0HNE0HDM9OUQ0:00000004 [INF] Executed endpoint '"405 HTTP Method Not Supported"' (99874f2b)
+2025-07-11T18:32:26.0178926+03:30 0HNE0HDM9OUQ0:00000004 [INF] Request finished "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - 405 0 null 0.1904ms (74253ad3)
+2025-07-11T18:35:04.4751009+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T18:35:17.8860701+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T18:35:17.8873257+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T18:35:17.8891661+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T18:35:17.8895667+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T18:35:17.8895906+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T18:35:22.4475303+03:30 0HNE0HHDSHEFL:00000001 [INF] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:35:22.4653453+03:30 0HNE0HHDSHEFL:00000001 [INF] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 18.8538ms (74253ad3)
+2025-07-11T18:35:22.4830961+03:30 0HNE0HHDSHEFN:00000001 [INF] Request starting "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:35:22.4859673+03:30 0HNE0HHDSHEFN:00000001 [INF] Executing endpoint '"405 HTTP Method Not Supported"' (500cc934)
+2025-07-11T18:35:22.4860953+03:30 0HNE0HHDSHEFN:00000001 [INF] Executed endpoint '"405 HTTP Method Not Supported"' (99874f2b)
+2025-07-11T18:35:22.4868967+03:30 0HNE0HHDSHEFN:00000001 [INF] Request finished "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - 405 0 null 3.8069ms (74253ad3)
+2025-07-11T18:35:30.6103920+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T18:35:37.3056172+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T18:35:37.3068626+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T18:35:37.3088574+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T18:35:37.3092985+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T18:35:37.3093516+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T18:35:40.0122590+03:30 0HNE0HHJ41KUB:00000001 [INF] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:35:40.0301191+03:30 0HNE0HHJ41KUB:00000001 [INF] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 18.8993ms (74253ad3)
+2025-07-11T18:35:40.0476051+03:30 0HNE0HHJ41KUD:00000001 [INF] Request starting "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - "application/json" 187 (d509f86a)
+2025-07-11T18:35:40.0507578+03:30 0HNE0HHJ41KUD:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.DeleteBook (BookStore)"' (500cc934)
+2025-07-11T18:35:40.0620100+03:30 0HNE0HHJ41KUD:00000001 [INF] Route matched with "{action = \"DeleteBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBook(Int32)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T18:35:40.7465398+03:30 0HNE0HHJ41KUD:00000001 [INF] Executed DbCommand ("20"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-11T18:35:40.8324446+03:30 0HNE0HHJ41KUD:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Description], [b1].[Genre], [b1].[PublishDate], [b1].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T18:35:40.9063954+03:30 0HNE0HHJ41KUD:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Books]
+OUTPUT 1
+WHERE [Id] = @p0;" (0723d8ff)
+2025-07-11T18:35:40.9145714+03:30 0HNE0HHJ41KUD:00000001 [INF] Executing StatusCodeResult, setting HTTP status code 204 (3fe03d2f)
+2025-07-11T18:35:40.9164922+03:30 0HNE0HHJ41KUD:00000001 [INF] Executed action "BookStore.Controllers.BookController.DeleteBook (BookStore)" in 852.7223ms (afa2e885)
+2025-07-11T18:35:40.9166965+03:30 0HNE0HHJ41KUD:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.DeleteBook (BookStore)"' (99874f2b)
+2025-07-11T18:35:40.9206601+03:30 0HNE0HHJ41KUD:00000001 [INF] Request finished "HTTP/1.1" "DELETE" "https"://"localhost:7140""""/api/book/5""" - 204 null null 873.0608ms (74253ad3)
+2025-07-11T18:35:49.1441099+03:30 0HNE0HHJ41KUB:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book""" - "application/json" 187 (d509f86a)
+2025-07-11T18:35:49.1483185+03:30 0HNE0HHJ41KUB:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book""" - 307 0 null 4.213ms (74253ad3)
+2025-07-11T18:35:49.1503250+03:30 0HNE0HHJ41KUD:00000002 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book""" - "application/json" 187 (d509f86a)
+2025-07-11T18:35:49.1508252+03:30 0HNE0HHJ41KUD:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.GetAllBooks (BookStore)"' (500cc934)
+2025-07-11T18:35:49.1545621+03:30 0HNE0HHJ41KUD:00000002 [INF] Route matched with "{action = \"GetAllBooks\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Book.BookDto]]] GetAllBooks()" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T18:35:49.1861501+03:30 0HNE0HHJ41KUD:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T18:35:49.1981503+03:30 0HNE0HHJ41KUD:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-11T18:35:49.2108709+03:30 0HNE0HHJ41KUD:00000002 [INF] Executed action "BookStore.Controllers.BookController.GetAllBooks (BookStore)" in 56.2219ms (afa2e885)
+2025-07-11T18:35:49.2109184+03:30 0HNE0HHJ41KUD:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.GetAllBooks (BookStore)"' (99874f2b)
+2025-07-11T18:35:49.2111001+03:30 0HNE0HHJ41KUD:00000002 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book""" - 200 null "application/json; charset=utf-8" 60.7739ms (74253ad3)
+2025-07-11T18:36:03.7143744+03:30  [INF] Application is shutting down... (90f52c38)

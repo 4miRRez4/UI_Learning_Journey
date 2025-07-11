@@ -92,15 +92,23 @@ namespace BookStore.Controllers
             }
             catch (Exception ex)
             {
-                //return StatusCode(500, $"An error occurred while updating the book with ID {id} : {ex.Message}");
-                string errorDetails = ex.Message;
-                while (ex.InnerException != null)
-                {
-                    ex = ex.InnerException;
-                    errorDetails += $"\nInner Exception: {ex.Message}";
-                }
-                return StatusCode(500, $"Error updating book {id}: {errorDetails}");
+                return StatusCode(500, $"An error occurred while updating the book: {ex.Message}");
+            }
+        }
 
+        [HttpDelete("{id}")] // PUT: api/book/id
+        public async Task<IActionResult> DeleteBook(int id)
+        {
+            try
+            {
+                var result = await _bookService.DeleteBookAsync(id);
+
+                return result ? NoContent() : NotFound();
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting book with ID {BookId}", id);
+                return StatusCode(500, "An error occurred while deleting the book");
             }
         }
 

@@ -14,5 +14,8 @@ namespace BookStore.Services.Interfaces
 		Task<BookDto> CreateBookAsync(CreateBookDto dto);
 
 		Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto bookDto);
-	}
+
+		Task<bool> DeleteBookAsync(int id);
+
+    }
 }
