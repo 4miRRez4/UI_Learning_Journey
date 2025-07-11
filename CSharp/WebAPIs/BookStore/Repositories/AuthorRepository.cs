@@ -10,7 +10,7 @@ namespace BookStore.Repositories
     {
         private readonly AppDbContext _context;
 
-        public AuthorRepository(AppDbContext context)
+        public AuthorRepository (AppDbContext context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace BookStore.Repositories
             return await _context.Authors.FindAsync(id);
         }
 
-        public async Task<List<Author>>(List<int> authorIds)
+        public async Task<List<Author>> GetAuthorsByIdsAsync(List<int> authorIds)
         {
             return await _context.Authors
                                  .Where(a => authorIds.Contains(a.Id))
