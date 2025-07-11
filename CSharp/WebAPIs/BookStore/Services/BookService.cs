@@ -37,7 +37,7 @@ namespace BookStore.Services
             return _mapper.Map<IEnumerable<BookDto>>(books);
         }
 
-        public async Task<BookDto> GetBookByIdAsync(int id)
+        public async Task<BookDto?> GetBookByIdAsync(int id)
         {
             var bookEntity = await _bookRepository.GetBookByIdAsync(id);
 
@@ -57,6 +57,30 @@ namespace BookStore.Services
             var createdBook = await _bookRepository.CreateBookAsync(bookEntity);
 
             return _mapper.Map<BookDto>(createdBook);
+        }
+            
+        public async Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto updateDto)
+        {
+            var existingBook = await _bookRepository.GetBookByIdAsync(id);
+            if (existingBook == null)
+            {
+                _logger.LogWarning("There is no book with ID {BookId} to update.", id);
+                return null;
+            }
+
+            _mapper.Map(updateDto, existingBook);
+
+            if (updateDto.AuthorIds?.Count > 0)
+            {
+                existingBook.Authors.Clear();
+
+                var authors = await _authorRepository.GetAuthorsByIdsAsync(updateDto.AuthorIds);
+                existingBook.Authors = authors;
+            }
+
+            var updatedBook = await _bookRepository.UpdateBookAsync(existingBook);
+
+            return _mapper.Map<BookDto>(updatedBook);
         }
 
     }

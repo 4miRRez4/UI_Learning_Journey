@@ -13,6 +13,10 @@ namespace BookStore.Mapping
             CreateMap<Author, AuthorDto>();
 
             CreateMap<CreateBookDto, Book>();
+
+            CreateMap<UpdateBookDto, Book>()
+                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) =>
+                    srcMember != null));
         }
     }
 }

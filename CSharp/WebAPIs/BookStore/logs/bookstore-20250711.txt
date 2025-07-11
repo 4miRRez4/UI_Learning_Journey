@@ -60,3 +60,507 @@ ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
 2025-07-11T16:40:49.9445994+03:30 0HNE0FHDE2MDU:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.GetBookById (BookStore)"' (99874f2b)
 2025-07-11T16:40:49.9482696+03:30 0HNE0FHDE2MDU:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/5""" - 404 null "application/problem+json; charset=utf-8" 924.4927ms (74253ad3)
 2025-07-11T16:41:04.9614675+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:24:31.7234727+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:24:31.7247532+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:24:31.7270840+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:24:31.7276167+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:24:31.7276417+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:29:11.3785646+03:30 0HNE0GCEDCMLR:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - "application/json" 72 (d509f86a)
+2025-07-11T17:29:11.3998496+03:30 0HNE0GCEDCMLR:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 22.4755ms (74253ad3)
+2025-07-11T17:29:11.4183015+03:30 0HNE0GCEDCMLT:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - "application/json" 72 (d509f86a)
+2025-07-11T17:29:11.4214322+03:30 0HNE0GCEDCMLT:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:29:11.4325399+03:30 0HNE0GCEDCMLT:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:29:11.5756560+03:30 0HNE0GCEDCMLT:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-07-11T17:29:11.5975867+03:30 0HNE0GCEDCMLT:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 163.1869ms (afa2e885)
+2025-07-11T17:29:11.5976438+03:30 0HNE0GCEDCMLT:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:29:11.5985100+03:30 0HNE0GCEDCMLT:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - 400 null "application/problem+json; charset=utf-8" 180.1911ms (74253ad3)
+2025-07-11T17:29:37.8114618+03:30 0HNE0GCEDCMLR:00000002 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:29:37.8126032+03:30 0HNE0GCEDCMLR:00000002 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 1.1401ms (74253ad3)
+2025-07-11T17:29:37.8139701+03:30 0HNE0GCEDCMLT:00000002 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:29:37.8140989+03:30 0HNE0GCEDCMLT:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:29:37.8142015+03:30 0HNE0GCEDCMLT:00000002 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:29:38.4394051+03:30 0HNE0GCEDCMLT:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookStore.Services.BookService+<UpdateBookAsync>d__8, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-11T17:29:38.4411931+03:30 0HNE0GCEDCMLT:00000002 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 626.9394ms (afa2e885)
+2025-07-11T17:29:38.4413665+03:30 0HNE0GCEDCMLT:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:29:38.4638395+03:30 0HNE0GCEDCMLT:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[BookStore.Dtos.Book.BookDto,BookStore.Services.BookService+<UpdateBookAsync>d__8]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_CannotSerializeInvalidType(Type typeToConvert, Type declaringType, MemberInfo memberInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMember(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, NullabilityInfoContext nullabilityCtx, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo, NullabilityInfoContext nullabilityCtx)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateJsonTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CacheEntry.GetResult()
+   at System.Text.Json.JsonSerializerOptions.CachingContext.GetOrAddTypeInfo(Type type, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 72
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-11T17:29:38.4712415+03:30 0HNE0GCEDCMLT:00000002 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - 500 null "text/plain; charset=utf-8" 657.239ms (74253ad3)
+2025-07-11T17:29:38.4714291+03:30 0HNE0GCEDCMLT:00000002 [ERR] An error occurred using the connection to database '"BookStore"' on server '"."'. (5fc3407c)
+2025-07-11T17:32:41.6391603+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:39:45.2943188+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:39:45.2955878+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:39:45.2974864+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:39:45.2978663+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:39:45.2978876+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:39:52.4157769+03:30 0HNE0GIDESCNQ:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:39:52.4339706+03:30 0HNE0GIDESCNQ:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 19.1481ms (74253ad3)
+2025-07-11T17:39:52.4525822+03:30 0HNE0GIDESCNS:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:39:52.4558186+03:30 0HNE0GIDESCNS:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:39:52.4662078+03:30 0HNE0GIDESCNS:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:39:53.1418431+03:30 0HNE0GIDESCNS:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookStore.Services.BookService+<UpdateBookAsync>d__8, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-11T17:39:53.1453885+03:30 0HNE0GIDESCNS:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 677.5266ms (afa2e885)
+2025-07-11T17:39:53.1455888+03:30 0HNE0GIDESCNS:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:39:53.1598591+03:30 0HNE0GIDESCNS:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[BookStore.Dtos.Book.BookDto,BookStore.Services.BookService+<UpdateBookAsync>d__8]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_CannotSerializeInvalidType(Type typeToConvert, Type declaringType, MemberInfo memberInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMember(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, NullabilityInfoContext nullabilityCtx, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo, NullabilityInfoContext nullabilityCtx)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateJsonTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CacheEntry.GetResult()
+   at System.Text.Json.JsonSerializerOptions.CachingContext.GetOrAddTypeInfo(Type type, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 72
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-11T17:39:53.1677877+03:30 0HNE0GIDESCNS:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - 500 null "text/plain; charset=utf-8" 715.1849ms (74253ad3)
+2025-07-11T17:39:53.1679578+03:30 0HNE0GIDESCNS:00000001 [ERR] An error occurred using the connection to database '"BookStore"' on server '"."'. (5fc3407c)
+2025-07-11T17:40:09.0065778+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:40:16.9545985+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:40:16.9558660+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:40:16.9578394+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:40:16.9582321+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:40:16.9582558+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:40:19.2237544+03:30 0HNE0GILEHA2G:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:40:19.2416771+03:30 0HNE0GILEHA2G:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 18.9651ms (74253ad3)
+2025-07-11T17:40:19.2589690+03:30 0HNE0GILEHA2I:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:40:19.2621235+03:30 0HNE0GILEHA2I:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:40:19.2733131+03:30 0HNE0GILEHA2I:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:40:19.9567337+03:30 0HNE0GILEHA2I:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookStore.Services.BookService+<UpdateBookAsync>d__8, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-11T17:40:19.9603160+03:30 0HNE0GILEHA2I:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 685.3102ms (afa2e885)
+2025-07-11T17:40:19.9605168+03:30 0HNE0GILEHA2I:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:40:19.9754552+03:30 0HNE0GILEHA2I:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[BookStore.Dtos.Book.BookDto,BookStore.Services.BookService+<UpdateBookAsync>d__8]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_CannotSerializeInvalidType(Type typeToConvert, Type declaringType, MemberInfo memberInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMember(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, NullabilityInfoContext nullabilityCtx, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo, NullabilityInfoContext nullabilityCtx)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateJsonTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CacheEntry.GetResult()
+   at System.Text.Json.JsonSerializerOptions.CachingContext.GetOrAddTypeInfo(Type type, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 72
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-11T17:40:19.9833083+03:30 0HNE0GILEHA2I:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - 500 null "text/plain; charset=utf-8" 724.3111ms (74253ad3)
+2025-07-11T17:40:19.9834782+03:30 0HNE0GILEHA2I:00000001 [ERR] An error occurred using the connection to database '"BookStore"' on server '"."'. (5fc3407c)
+2025-07-11T17:40:54.8554729+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:41:03.1938031+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:41:03.1950500+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:41:03.1969113+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:41:03.1972833+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:41:03.1973065+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:41:06.8511350+03:30 0HNE0GJ3KN92J:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:41:06.8687975+03:30 0HNE0GJ3KN92J:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 18.7393ms (74253ad3)
+2025-07-11T17:41:06.8865067+03:30 0HNE0GJ3KN92L:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:41:06.8894444+03:30 0HNE0GJ3KN92L:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:41:06.9001119+03:30 0HNE0GJ3KN92L:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:41:07.5782603+03:30 0HNE0GJ3KN92L:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookStore.Services.BookService+<UpdateBookAsync>d__8, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-11T17:41:07.5826998+03:30 0HNE0GJ3KN92L:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 680.8171ms (afa2e885)
+2025-07-11T17:41:07.5829415+03:30 0HNE0GJ3KN92L:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:41:07.5913734+03:30 0HNE0GJ3KN92L:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[BookStore.Dtos.Book.BookDto,BookStore.Services.BookService+<UpdateBookAsync>d__8]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_CannotSerializeInvalidType(Type typeToConvert, Type declaringType, MemberInfo memberInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMember(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, NullabilityInfoContext nullabilityCtx, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo, NullabilityInfoContext nullabilityCtx)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateJsonTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CacheEntry.GetResult()
+   at System.Text.Json.JsonSerializerOptions.CachingContext.GetOrAddTypeInfo(Type type, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 72
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-11T17:41:07.6008283+03:30 0HNE0GJ3KN92L:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - 500 null "text/plain; charset=utf-8" 714.2623ms (74253ad3)
+2025-07-11T17:41:07.6011798+03:30 0HNE0GJ3KN92L:00000001 [ERR] An error occurred using the connection to database '"BookStore"' on server '"."'. (5fc3407c)
+2025-07-11T17:43:20.8674990+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:45:33.5812723+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:45:33.5825379+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:45:33.5843803+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:45:33.5847472+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:45:33.5847669+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:45:36.4172589+03:30 0HNE0GLJVGAFT:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:45:36.4356814+03:30 0HNE0GLJVGAFT:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/5""" - 307 0 null 19.7372ms (74253ad3)
+2025-07-11T17:45:36.4543130+03:30 0HNE0GLJVGAFV:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - "application/json" 71 (d509f86a)
+2025-07-11T17:45:36.4580257+03:30 0HNE0GLJVGAFV:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:45:36.4690426+03:30 0HNE0GLJVGAFV:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:45:37.2457404+03:30 0HNE0GLJVGAFV:00000001 [INF] Executed DbCommand ("24"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Description], [b1].[Genre], [b1].[PublishDate], [b1].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T17:45:37.2576381+03:30 0HNE0GLJVGAFV:00000001 [WRN] There is no book with ID 5 to update. (64272d9a)
+2025-07-11T17:45:37.2622506+03:30 0HNE0GLJVGAFV:00000001 [INF] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (605b4265)
+2025-07-11T17:45:37.2807630+03:30 0HNE0GLJVGAFV:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 810.0445ms (afa2e885)
+2025-07-11T17:45:37.2809769+03:30 0HNE0GLJVGAFV:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:45:37.2845402+03:30 0HNE0GLJVGAFV:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/5""" - 404 null "application/problem+json; charset=utf-8" 830.2288ms (74253ad3)
+2025-07-11T17:45:51.9348100+03:30 0HNE0GLJVGAFT:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book""" - "application/json" 71 (d509f86a)
+2025-07-11T17:45:51.9378377+03:30 0HNE0GLJVGAFT:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book""" - 307 0 null 3.0352ms (74253ad3)
+2025-07-11T17:45:51.9392748+03:30 0HNE0GLJVGAFV:00000002 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book""" - "application/json" 71 (d509f86a)
+2025-07-11T17:45:51.9396183+03:30 0HNE0GLJVGAFV:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.GetAllBooks (BookStore)"' (500cc934)
+2025-07-11T17:45:51.9419597+03:30 0HNE0GLJVGAFV:00000002 [INF] Route matched with "{action = \"GetAllBooks\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Book.BookDto]]] GetAllBooks()" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:45:51.9740550+03:30 0HNE0GLJVGAFV:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T17:45:51.9887746+03:30 0HNE0GLJVGAFV:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-11T17:45:51.9921139+03:30 0HNE0GLJVGAFV:00000002 [INF] Executed action "BookStore.Controllers.BookController.GetAllBooks (BookStore)" in 50.0936ms (afa2e885)
+2025-07-11T17:45:51.9921619+03:30 0HNE0GLJVGAFV:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.GetAllBooks (BookStore)"' (99874f2b)
+2025-07-11T17:45:51.9923225+03:30 0HNE0GLJVGAFV:00000002 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book""" - 200 null "application/json; charset=utf-8" 53.0348ms (74253ad3)
+2025-07-11T17:46:01.7823009+03:30 0HNE0GLJVGAFT:00000003 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:46:01.7824745+03:30 0HNE0GLJVGAFT:00000003 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 0.1927ms (74253ad3)
+2025-07-11T17:46:01.7832386+03:30 0HNE0GLJVGAFV:00000003 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:46:01.7833581+03:30 0HNE0GLJVGAFV:00000003 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:46:01.7835121+03:30 0HNE0GLJVGAFV:00000003 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:46:01.8299843+03:30 0HNE0GLJVGAFV:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Description], [b1].[Genre], [b1].[PublishDate], [b1].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T17:46:01.9298431+03:30 0HNE0GLJVGAFV:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 50), @p7='?' (DbType = DateTime2), @p8='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Authors] SET [BirthDate] = @p0, [Name] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p3, @p4);
+UPDATE [Books] SET [Description] = @p5, [Genre] = @p6, [PublishDate] = @p7, [Title] = @p8
+OUTPUT 1
+WHERE [Id] = @p9;" (0723d8ff)
+2025-07-11T17:46:01.9502554+03:30 0HNE0GLJVGAFV:00000003 [ERR] An exception occurred in the database while saving changes for context type '"BookStore.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (4, 1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:9e379830-8286-4432-8b82-e2ad66a9cb3b
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (4, 1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:9e379830-8286-4432-8b82-e2ad66a9cb3b
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookStore.Repositories.BookRepository.UpdateBookAsync(Book book) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Repositories\BookRepository.cs:line 43
+   at BookStore.Services.BookService.UpdateBookAsync(Int32 id, UpdateBookDto updateDto) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Services\BookService.cs:line 79
+   at BookStore.Controllers.BookController.UpdateBook(Int32 id, UpdateBookDto updateDto) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Controllers\BookController.cs:line 89
+2025-07-11T17:46:01.9505439+03:30 0HNE0GLJVGAFV:00000003 [INF] Executing "ObjectResult", writing value of type '"System.String"'. (605b4265)
+2025-07-11T17:46:01.9508217+03:30 0HNE0GLJVGAFV:00000003 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 167.2819ms (afa2e885)
+2025-07-11T17:46:01.9508490+03:30 0HNE0GLJVGAFV:00000003 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:46:01.9509541+03:30 0HNE0GLJVGAFV:00000003 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - 500 null "text/plain; charset=utf-8" 167.7151ms (74253ad3)
+2025-07-11T17:49:31.6395644+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:49:46.2442636+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:49:46.2455178+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:49:46.2477432+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:49:46.2482912+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:49:46.2483200+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:49:50.3072389+03:30 0HNE0GNVKQ5IM:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:49:50.3250770+03:30 0HNE0GNVKQ5IM:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 18.7879ms (74253ad3)
+2025-07-11T17:49:50.3430093+03:30 0HNE0GNVKQ5IO:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:49:50.3463872+03:30 0HNE0GNVKQ5IO:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:49:50.3574089+03:30 0HNE0GNVKQ5IO:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:49:51.1198856+03:30 0HNE0GNVKQ5IO:00000001 [INF] Executed DbCommand ("20"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Description], [b1].[Genre], [b1].[PublishDate], [b1].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T17:49:51.2322829+03:30 0HNE0GNVKQ5IO:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 50), @p7='?' (DbType = DateTime2), @p8='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Authors] SET [BirthDate] = @p0, [Name] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p3, @p4);
+UPDATE [Books] SET [Description] = @p5, [Genre] = @p6, [PublishDate] = @p7, [Title] = @p8
+OUTPUT 1
+WHERE [Id] = @p9;" (0723d8ff)
+2025-07-11T17:49:51.2569241+03:30 0HNE0GNVKQ5IO:00000001 [ERR] An exception occurred in the database while saving changes for context type '"BookStore.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (4, 1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:3b9f9900-58bf-4a25-b124-e96860329a45
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (4, 1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:3b9f9900-58bf-4a25-b124-e96860329a45
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookStore.Repositories.BookRepository.UpdateBookAsync(Book book) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Repositories\BookRepository.cs:line 43
+   at BookStore.Services.BookService.UpdateBookAsync(Int32 id, UpdateBookDto updateDto) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Services\BookService.cs:line 79
+   at BookStore.Controllers.BookController.UpdateBook(Int32 id, UpdateBookDto updateDto) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Controllers\BookController.cs:line 89
+2025-07-11T17:49:51.2617826+03:30 0HNE0GNVKQ5IO:00000001 [INF] Executing "ObjectResult", writing value of type '"System.String"'. (605b4265)
+2025-07-11T17:49:51.2655634+03:30 0HNE0GNVKQ5IO:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 906.4338ms (afa2e885)
+2025-07-11T17:49:51.2657728+03:30 0HNE0GNVKQ5IO:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:49:51.2702115+03:30 0HNE0GNVKQ5IO:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - 500 null "text/plain; charset=utf-8" 927.1896ms (74253ad3)
+2025-07-11T17:50:42.1613498+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:56:25.9622983+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:56:25.9635970+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:56:25.9654652+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:56:25.9658455+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:56:25.9658698+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:56:28.6509172+03:30 0HNE0GRMBNDMU:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:56:28.6688174+03:30 0HNE0GRMBNDMU:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 18.911ms (74253ad3)
+2025-07-11T17:56:28.6868803+03:30 0HNE0GRMBNDN0:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:56:28.6900261+03:30 0HNE0GRMBNDN0:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:56:28.7004987+03:30 0HNE0GRMBNDN0:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:56:29.4734108+03:30 0HNE0GRMBNDN0:00000001 [INF] Executed DbCommand ("20"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Description], [b1].[Genre], [b1].[PublishDate], [b1].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T17:56:29.5080600+03:30 0HNE0GRMBNDN0:00000001 [INF] Executing "OkObjectResult", writing value of type '"BookStore.Dtos.Book.BookDto"'. (605b4265)
+2025-07-11T17:56:29.5191573+03:30 0HNE0GRMBNDN0:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 816.9738ms (afa2e885)
+2025-07-11T17:56:29.5194330+03:30 0HNE0GRMBNDN0:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:56:29.5229787+03:30 0HNE0GRMBNDN0:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - 200 null "application/json; charset=utf-8" 836.1127ms (74253ad3)
+2025-07-11T17:57:24.2864409+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-11T17:57:30.9236183+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-11T17:57:30.9249027+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-11T17:57:30.9267765+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-11T17:57:30.9272690+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-11T17:57:30.9272939+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-11T17:57:35.5939241+03:30 0HNE0GSAA4KL9:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:57:35.6116723+03:30 0HNE0GSAA4KL9:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 18.7956ms (74253ad3)
+2025-07-11T17:57:35.6290621+03:30 0HNE0GSAA4KLB:00000001 [INF] Request starting "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - "application/json" 71 (d509f86a)
+2025-07-11T17:57:35.6319607+03:30 0HNE0GSAA4KLB:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (500cc934)
+2025-07-11T17:57:35.6429325+03:30 0HNE0GSAA4KLB:00000001 [INF] Route matched with "{action = \"UpdateBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookStore.Dtos.Book.UpdateBookDto)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-11T17:57:36.4093060+03:30 0HNE0GSAA4KLB:00000001 [INF] Executed DbCommand ("20"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Description], [b1].[Genre], [b1].[PublishDate], [b1].[Title], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-11T17:57:36.4472501+03:30 0HNE0GSAA4KLB:00000001 [INF] Executing "OkObjectResult", writing value of type '"BookStore.Dtos.Book.BookDto"'. (605b4265)
+2025-07-11T17:57:36.4587521+03:30 0HNE0GSAA4KLB:00000001 [INF] Executed action "BookStore.Controllers.BookController.UpdateBook (BookStore)" in 814.0768ms (afa2e885)
+2025-07-11T17:57:36.4589678+03:30 0HNE0GSAA4KLB:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.UpdateBook (BookStore)"' (99874f2b)
+2025-07-11T17:57:36.4624869+03:30 0HNE0GSAA4KLB:00000001 [INF] Request finished "HTTP/1.1" "PUT" "https"://"localhost:7140""""/api/book/4""" - 200 null "application/json; charset=utf-8" 833.4135ms (74253ad3)
+2025-07-11T17:58:22.0772249+03:30  [INF] Application is shutting down... (90f52c38)

@@ -4,9 +4,8 @@ namespace BookStore.Dtos.Book
 {
 	public class UpdateBookDto
 	{
-		[Required]
 		[MaxLength(100)]
-		public string Title { get; set; }
+		public string? Title { get; set; }
 
 		[MaxLength(500)]
 		public string? Description { get; set; }
@@ -15,5 +14,7 @@ namespace BookStore.Dtos.Book
 
 		[MaxLength(50)]
 		public string? Genre { get; set; }
-	}
+
+        public List<int>? AuthorIds { get; set; }
+    }
 }

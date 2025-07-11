@@ -80,5 +80,29 @@ namespace BookStore.Controllers
             }
         }
 
+
+        [HttpPut("{id}")] // PUT: api/book/id
+        public async Task<IActionResult> UpdateBook(int id, [FromBody] UpdateBookDto updateDto)
+        {
+            try 
+            {
+                var updatedBook = await _bookService.UpdateBookAsync(id, updateDto);
+
+                return updatedBook == null ? NotFound() : Ok(updatedBook);
+            }
+            catch (Exception ex)
+            {
+                //return StatusCode(500, $"An error occurred while updating the book with ID {id} : {ex.Message}");
+                string errorDetails = ex.Message;
+                while (ex.InnerException != null)
+                {
+                    ex = ex.InnerException;
+                    errorDetails += $"\nInner Exception: {ex.Message}";
+                }
+                return StatusCode(500, $"Error updating book {id}: {errorDetails}");
+
+            }
+        }
+
     }
 }
