@@ -17,8 +17,6 @@ namespace BookStore.Controllers
         }
 
 
-
-
         [HttpGet] // GET: api/book
         public async Task<ActionResult<IEnumerable<BookDto>>> GetAllBooks()
         {
@@ -30,6 +28,21 @@ namespace BookStore.Controllers
             }
 
             return Ok(books);
+        }
+
+        [HttpGet("{id}")] // Get: api/book/{id}
+        public async Task<IActionResult> GetBookById(int id)
+        {
+            try
+            {
+                var bookDto = await _bookService.GetBookByIdAsync(id);
+
+                return Ok(bookDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error!");
+            }
         }
 
         [HttpPost] // POST: api/book

@@ -34,6 +34,13 @@ namespace BookStore.Services
             return _mapper.Map<IEnumerable<BookDto>>(books);
         }
 
+        public async Task<BookDto> GetBookByIdAsync(int id)
+        {
+            var bookEntity = await _bookRepository.GetBookByIdAsync(id);
+
+            return bookEntity == null ? null : _mapper.Map<BookDto>(bookEntity);
+        }
+
         public async Task<BookDto> CreateBookAsync(CreateBookDto bookDto)
         {
             var bookEntity = _mapper.Map<Book>(bookDto);
