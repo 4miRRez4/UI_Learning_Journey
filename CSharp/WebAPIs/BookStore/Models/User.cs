@@ -18,5 +18,6 @@ namespace BookStore.Models
         // Navigation properties
         public Customer? Customer { get; set; }
         public ICollection<Review> Review { get; set; } = new List<Review>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

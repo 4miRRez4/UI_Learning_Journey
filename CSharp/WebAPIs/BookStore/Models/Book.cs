@@ -23,6 +23,7 @@ namespace BookStore.Models
         public string? Genre { get; set; }
 
         [Required]
+        [Column(TypeName = "decimal(18,2)")]
         [Range(0, double.MaxValue, ErrorMessage = "Price must be a positive number")]
         public decimal Price { get; set; }
 
@@ -31,16 +32,19 @@ namespace BookStore.Models
         public int StockQuantity { get; set; }
 
         [MaxLength(100)]
-        public string Publisher { get; set; }
+        public string? Publisher { get; set; }
 
         [MaxLength(50)]
-        public string Language { get; set; }
+        public string? Language { get; set; }
 
 
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
         // navigation properties
         public ICollection<Author> Authors { get; set; } = new List<Author>();
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 
 }

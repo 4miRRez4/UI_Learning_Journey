@@ -23,20 +23,22 @@ namespace BookStore.Models
         [MaxLength(50)]
         public string LastName { get; set; }
 
-        [Required]
-        [MaxLength(10)]
-        public string? Phone { get; set; }
+        [MaxLength(20)]
+        public string? PhoneNumber { get; set; }
 
-        [Required]
         [MaxLength(200)]
         public string? Address { get; set; }
 
         public DateTime? DateOfBirth { get; set; }
 
 
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
+        // Navigation properties
         [ForeignKey("UserId")]
         public User? User { get; set; }
 
-
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }
