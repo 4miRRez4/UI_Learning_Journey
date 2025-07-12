@@ -15,7 +15,8 @@ namespace BookStore.Models
         [Required]
         public string PasswordHash { get; set; }
 
+        // Navigation properties
+        public Customer? Customer { get; set; }
         public ICollection<Review> Review { get; set; } = new List<Review>();
-
     }
 }

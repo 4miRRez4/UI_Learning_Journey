@@ -10,12 +10,19 @@ namespace BookStore.Data
 
         public DbSet<Book> Books { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Review> Reviews { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Customer)
+                .WithOne(c => c.User)
+                .HasForeignKey<Customer>(c => c.UserId)
+                .IsRequired(false);
+
             modelBuilder.Entity<Book>()
                 .HasMany(b => b.Authors)
                 .WithMany(a => a.Books)
@@ -83,7 +90,7 @@ namespace BookStore.Data
             }
             );
 
-            // Seed Users
+            // Seed Users (for authentication)
             modelBuilder.Entity<User>().HasData(
             new User
             {
@@ -105,7 +112,55 @@ namespace BookStore.Data
             }
             );
 
-            // Seed Reviews
+            // Seed Customers (business domain)
+            modelBuilder.Entity<Customer>().HasData(
+            new Customer
+            {
+                Id = 1,
+                UserId = 1, 
+                Email = "admin@bookstore.com",
+                FirstName = "Admin",
+                LastName = "User",
+                Phone = "+1234567890",
+                Address = "123 Admin St, Admin City, AC 12345",
+                DateOfBirth = new DateTime(1990, 1, 1),
+            },
+            new Customer
+            {
+                Id = 2,
+                UserId = 2, 
+                Email = "john.doe@email.com",
+                FirstName = "John",
+                LastName = "Doe",
+                Phone = "+1234567891",
+                Address = "456 Main St, Anytown, AT 54321",
+                DateOfBirth = new DateTime(1985, 5, 15),
+            },
+            new Customer
+            {
+                Id = 3,
+                UserId = 3, 
+                Email = "jane.smith@email.com",
+                FirstName = "Jane",
+                LastName = "Smith",
+                Phone = "+1234567892",
+                Address = "789 Oak Ave, Somewhere, SW 67890",
+                DateOfBirth = new DateTime(1992, 8, 22),
+            },
+            new Customer
+            {
+                Id = 4,
+                UserId = null, // Guest customer
+                Email = "guest@email.com",
+                FirstName = "Guest",
+                LastName = "Customer",
+                Phone = "+1234567893",
+                Address = "999 Guest St, Guest City, GC 99999",
+                DateOfBirth = null,
+            }
+            );
+
+            // Seed Reviews 
             modelBuilder.Entity<Review>().HasData(
             new Review
             {
