@@ -51,7 +51,11 @@ namespace BookStore.Data
                 Title = "Harry Potter and the Philosopher's Stone",
                 Description = "The first book in the Harry Potter series",
                 PublishDate = new DateTime(1997, 6, 26),
-                Genre = "Fantasy"
+                Genre = "Fantasy",
+                Price = 24.99m,
+                StockQuantity = 50,
+                Publisher = "Cheshmeh",
+                Language = "Persian"
             },
             new Book
             {
@@ -59,7 +63,11 @@ namespace BookStore.Data
                 Title = "A Game of Thrones",
                 Description = "The first book in A Song of Ice and Fire",
                 PublishDate = new DateTime(1996, 8, 1),
-                Genre = "Fantasy"
+                Genre = "Fantasy",
+                Price = 29.99m,
+                StockQuantity = 35,
+                Publisher = "Ava",
+                Language = "Persian"
             },
             new Book
             {
@@ -67,7 +75,11 @@ namespace BookStore.Data
                 Title = "The Shining",
                 Description = "A horror novel about a haunted hotel",
                 PublishDate = new DateTime(1977, 1, 28),
-                Genre = "Horror"
+                Genre = "Horror",
+                Price = 19.99m,
+                StockQuantity = 25,
+                Publisher = "Doubleday",
+                Language = "English",
             }
             );
 
