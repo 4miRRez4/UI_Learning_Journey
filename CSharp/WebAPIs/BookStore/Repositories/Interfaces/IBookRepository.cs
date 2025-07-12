@@ -6,6 +6,7 @@ namespace BookStore.Repositories.Interfaces
     {
         Task<List<Book>> GetAllBooksAsync();
         Task<Book?> GetBookByIdAsync(int id);
+        Task<List<Book>> SearchBooksByTitleAsync(string title);
         Task<Book> CreateBookAsync(Book book);
         Task<Book?> UpdateBookAsync(Book book);
         Task<bool> BookExistAsync(int id);

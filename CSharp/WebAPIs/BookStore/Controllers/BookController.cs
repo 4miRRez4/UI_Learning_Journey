@@ -2,6 +2,7 @@ using BookStore.Dtos.Book;
 using BookStore.Services;
 using BookStore.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BookStore.Controllers
 {
@@ -55,6 +56,27 @@ namespace BookStore.Controllers
             }
         }
 
+        [HttpGet("search")] // GET: api/book/search
+        public async Task<IActionResult> SearchBooksByTitle([FromQuery] string title)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(title))
+                {
+                    _logger.LogWarning("search title can not be empty.");
+                    return BadRequest("Search title cant be empty.");
+                }
+
+                var books = await _bookService.SearchBooksByTitleAsync(title);
+                return Ok(books);
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, $"Error searching books by title {title}");
+                return StatusCode(500, "An error occurred while searching books");
+            }
+        }
+
         [HttpPost] // POST: api/book
         public async Task<ActionResult<BookDto>> CreateBook([FromBody] CreateBookDto createBookDto)
         {
@@ -69,7 +91,7 @@ namespace BookStore.Controllers
 
                 if(createdBook == null)
                 {
-                    _logger.LogError(ex, "Failed to create book.");
+                    _logger.LogError("Failed to create book.");
                     return BadRequest("Book creation failed!");
                 }
 

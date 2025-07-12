@@ -1,0 +1,164 @@
+2025-07-12T10:14:03.8684382+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-12T10:14:03.8697104+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-12T10:14:03.8716264+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-12T10:14:03.8720454+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-12T10:14:03.8720685+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-12T10:16:28.9627121+03:30 0HNE11VA73208:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:16:28.9859173+03:30 0HNE11VA73208:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - 307 0 null 24.4832ms (74253ad3)
+2025-07-12T10:16:29.0085887+03:30 0HNE11VA7320A:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:16:29.0117184+03:30 0HNE11VA7320A:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:16:29.0224445+03:30 0HNE11VA7320A:00000001 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:16:29.8492235+03:30 0HNE11VA7320A:00000001 [INF] Executed DbCommand ("27"ms) [Parameters=["@__title_0_contains='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__title_0_contains ESCAPE N'\'
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:16:29.9088940+03:30 0HNE11VA7320A:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:16:29.9240871+03:30 0HNE11VA7320A:00000001 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 899.7283ms (afa2e885)
+2025-07-12T10:16:29.9243450+03:30 0HNE11VA7320A:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:16:29.9280686+03:30 0HNE11VA7320A:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - 200 null "application/json; charset=utf-8" 919.4767ms (74253ad3)
+2025-07-12T10:17:22.4236244+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-12T10:17:28.6475640+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-12T10:17:28.6489542+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-12T10:17:28.6522779+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-12T10:17:28.6530158+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-12T10:17:28.6530606+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-12T10:17:33.3587325+03:30 0HNE11VTDABNQ:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:33.3786570+03:30 0HNE11VTDABNQ:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - 307 0 null 20.9245ms (74253ad3)
+2025-07-12T10:17:33.3985539+03:30 0HNE11VTDABNS:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:33.4017030+03:30 0HNE11VTDABNS:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:17:33.4117372+03:30 0HNE11VTDABNS:00000001 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:17:34.2177113+03:30 0HNE11VTDABNS:00000001 [INF] Executed DbCommand ("25"ms) [Parameters=["@__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__Format_1
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:17:34.2756354+03:30 0HNE11VTDABNS:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:17:34.2906896+03:30 0HNE11VTDABNS:00000001 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 877.1758ms (afa2e885)
+2025-07-12T10:17:34.2909039+03:30 0HNE11VTDABNS:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:17:34.2944479+03:30 0HNE11VTDABNS:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - 200 null "application/json; charset=utf-8" 895.9063ms (74253ad3)
+2025-07-12T10:17:40.6120316+03:30 0HNE11VTDABNQ:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shinin" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:40.6131928+03:30 0HNE11VTDABNQ:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shinin" - 307 0 null 1.1678ms (74253ad3)
+2025-07-12T10:17:40.6146470+03:30 0HNE11VTDABNS:00000002 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shinin" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:40.6147919+03:30 0HNE11VTDABNS:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:17:40.6149433+03:30 0HNE11VTDABNS:00000002 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:17:40.6252835+03:30 0HNE11VTDABNS:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__Format_1
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:17:40.6264420+03:30 0HNE11VTDABNS:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:17:40.6266910+03:30 0HNE11VTDABNS:00000002 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 11.7144ms (afa2e885)
+2025-07-12T10:17:40.6267231+03:30 0HNE11VTDABNS:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:17:40.6268552+03:30 0HNE11VTDABNS:00000002 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shinin" - 200 null "application/json; charset=utf-8" 12.2071ms (74253ad3)
+2025-07-12T10:17:44.3902234+03:30 0HNE11VTDABNQ:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shinint" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:44.3904474+03:30 0HNE11VTDABNQ:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shinint" - 307 0 null 0.2457ms (74253ad3)
+2025-07-12T10:17:44.3914551+03:30 0HNE11VTDABNS:00000003 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shinint" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:44.3915232+03:30 0HNE11VTDABNS:00000003 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:17:44.3915980+03:30 0HNE11VTDABNS:00000003 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:17:44.4306923+03:30 0HNE11VTDABNS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__Format_1
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:17:44.4308656+03:30 0HNE11VTDABNS:00000003 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:17:44.4310062+03:30 0HNE11VTDABNS:00000003 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 39.3843ms (afa2e885)
+2025-07-12T10:17:44.4310346+03:30 0HNE11VTDABNS:00000003 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:17:44.4311071+03:30 0HNE11VTDABNS:00000003 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shinint" - 200 null "application/json; charset=utf-8" 39.6383ms (74253ad3)
+2025-07-12T10:17:49.5404185+03:30 0HNE11VTDABNQ:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shin" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:49.5406481+03:30 0HNE11VTDABNQ:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shin" - 307 0 null 0.2224ms (74253ad3)
+2025-07-12T10:17:49.5417398+03:30 0HNE11VTDABNS:00000004 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shin" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:49.5418282+03:30 0HNE11VTDABNS:00000004 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:17:49.5418810+03:30 0HNE11VTDABNS:00000004 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:17:49.5436156+03:30 0HNE11VTDABNS:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__Format_1
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:17:49.5440194+03:30 0HNE11VTDABNS:00000004 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:17:49.5441433+03:30 0HNE11VTDABNS:00000004 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 2.2375ms (afa2e885)
+2025-07-12T10:17:49.5441670+03:30 0HNE11VTDABNS:00000004 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:17:49.5442246+03:30 0HNE11VTDABNS:00000004 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shin" - 200 null "application/json; charset=utf-8" 2.4902ms (74253ad3)
+2025-07-12T10:17:56.9143592+03:30 0HNE11VTDABNQ:00000005 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shinilg" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:56.9146060+03:30 0HNE11VTDABNQ:00000005 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shinilg" - 307 0 null 0.2632ms (74253ad3)
+2025-07-12T10:17:56.9156104+03:30 0HNE11VTDABNS:00000005 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shinilg" - "application/json" 189 (d509f86a)
+2025-07-12T10:17:56.9156917+03:30 0HNE11VTDABNS:00000005 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:17:56.9157478+03:30 0HNE11VTDABNS:00000005 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:17:56.9174664+03:30 0HNE11VTDABNS:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=["@__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__Format_1
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:17:56.9176195+03:30 0HNE11VTDABNS:00000005 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:17:56.9177347+03:30 0HNE11VTDABNS:00000005 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 1.966ms (afa2e885)
+2025-07-12T10:17:56.9177502+03:30 0HNE11VTDABNS:00000005 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:17:56.9178141+03:30 0HNE11VTDABNS:00000005 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shinilg" - 200 null "application/json; charset=utf-8" 2.1965ms (74253ad3)
+2025-07-12T10:18:02.5177425+03:30 0HNE11VTDABNQ:00000006 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:18:02.5179406+03:30 0HNE11VTDABNQ:00000006 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - 307 0 null 0.2088ms (74253ad3)
+2025-07-12T10:18:02.5187892+03:30 0HNE11VTDABNS:00000006 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:18:02.5188939+03:30 0HNE11VTDABNS:00000006 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:18:02.5189514+03:30 0HNE11VTDABNS:00000006 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:18:02.5206486+03:30 0HNE11VTDABNS:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__Format_1
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:18:02.5210782+03:30 0HNE11VTDABNS:00000006 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:18:02.5211927+03:30 0HNE11VTDABNS:00000006 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 2.2198ms (afa2e885)
+2025-07-12T10:18:02.5212097+03:30 0HNE11VTDABNS:00000006 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:18:02.5212700+03:30 0HNE11VTDABNS:00000006 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - 200 null "application/json; charset=utf-8" 2.4896ms (74253ad3)
+2025-07-12T10:18:11.2207212+03:30 0HNE11VTDABNQ:00000007 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:18:11.2209322+03:30 0HNE11VTDABNQ:00000007 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/book/search""?title=The%20Shining" - 307 0 null 0.2374ms (74253ad3)
+2025-07-12T10:18:11.2218755+03:30 0HNE11VTDABNS:00000007 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - "application/json" 189 (d509f86a)
+2025-07-12T10:18:11.2220400+03:30 0HNE11VTDABNS:00000007 [INF] Executing endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (500cc934)
+2025-07-12T10:18:11.2221013+03:30 0HNE11VTDABNS:00000007 [INF] Route matched with "{action = \"SearchBooksByTitle\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBooksByTitle(System.String)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-12T10:18:11.2237900+03:30 0HNE11VTDABNS:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Description], [b].[Genre], [b].[PublishDate], [b].[Title], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Title] LIKE @__Format_1
+ORDER BY [b].[Title], [b].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-12T10:18:11.2241650+03:30 0HNE11VTDABNS:00000007 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Book.BookDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-12T10:18:11.2242824+03:30 0HNE11VTDABNS:00000007 [INF] Executed action "BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)" in 2.1559ms (afa2e885)
+2025-07-12T10:18:11.2243036+03:30 0HNE11VTDABNS:00000007 [INF] Executed endpoint '"BookStore.Controllers.BookController.SearchBooksByTitle (BookStore)"' (99874f2b)
+2025-07-12T10:18:11.2243613+03:30 0HNE11VTDABNS:00000007 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/book/search""?title=The%20Shining" - 200 null "application/json; charset=utf-8" 2.4915ms (74253ad3)
+2025-07-12T10:18:17.6864489+03:30  [INF] Application is shutting down... (90f52c38)

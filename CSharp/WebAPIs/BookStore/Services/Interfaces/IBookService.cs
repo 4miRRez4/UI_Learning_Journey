@@ -11,6 +11,8 @@ namespace BookStore.Services.Interfaces
 
 		Task<BookDto?> GetBookByIdAsync(int id);
 
+        Task<List<BookDto>> SearchBooksByTitleAsync(string title);
+
 		Task<BookDto> CreateBookAsync(CreateBookDto dto);
 
 		Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto bookDto);

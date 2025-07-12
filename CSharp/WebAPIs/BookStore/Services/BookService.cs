@@ -44,6 +44,13 @@ namespace BookStore.Services
             return bookEntity == null ? null : _mapper.Map<BookDto>(bookEntity);
         }
 
+        public async Task<List<BookDto>> SearchBooksByTitleAsync(string title)
+        {
+            var books = await _bookRepository.SearchBooksByTitleAsync(title);
+
+            return _mapper.Map<List<BookDto>>(books);
+        }
+
         public async Task<BookDto> CreateBookAsync(CreateBookDto bookDto)
         {
             var bookEntity = _mapper.Map<Book>(bookDto);

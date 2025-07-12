@@ -30,6 +30,15 @@ namespace BookStore.Repositories
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
 
+        public async Task<List<Book>> SearchBooksByTitleAsync(string title)
+        {
+            return await _context.Books
+                .Include(b => b.Authors)
+                .Where(b => EF.Functions.Like(b.Title, $"%{title}%"))
+                .OrderBy(b => b.Title)
+                .ToListAsync();
+        }
+
         public async Task<Book> CreateBookAsync(Book book)
         {
             await _context.Books.AddAsync(book);
