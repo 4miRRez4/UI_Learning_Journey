@@ -1,0 +1,329 @@
+2025-07-13T10:09:37.5994543+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-13T10:09:37.6007813+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-13T10:09:37.6029941+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-13T10:09:37.6034454+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-13T10:09:37.6034680+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-13T10:10:16.6106699+03:30 0HNE1R0GEM2A4:00000001 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:10:16.6354555+03:30 0HNE1R0GEM2A4:00000001 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - 307 0 null 25.8568ms (74253ad3)
+2025-07-13T10:10:16.6586848+03:30 0HNE1R0GEM2A6:00000001 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:10:16.6623820+03:30 0HNE1R0GEM2A6:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (500cc934)
+2025-07-13T10:10:16.6787348+03:30 0HNE1R0GEM2A6:00000001 [INF] Route matched with "{action = \"TestPatch\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TestPatch(Int32, System.Object)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:10:16.8163284+03:30 0HNE1R0GEM2A6:00000001 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-07-13T10:10:16.8388573+03:30 0HNE1R0GEM2A6:00000001 [INF] Executed action "BookStore.Controllers.BookController.TestPatch (BookStore)" in 158.0211ms (afa2e885)
+2025-07-13T10:10:16.8389073+03:30 0HNE1R0GEM2A6:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (99874f2b)
+2025-07-13T10:10:16.8397487+03:30 0HNE1R0GEM2A6:00000001 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - 200 null "application/json; charset=utf-8" 181.0631ms (74253ad3)
+2025-07-13T10:11:44.1299971+03:30 0HNE1R0GEM2A8:00000001 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:11:44.1313768+03:30 0HNE1R0GEM2A8:00000001 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 1.4032ms (74253ad3)
+2025-07-13T10:11:44.1333975+03:30 0HNE1R0GEM2A6:00000002 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:11:44.1335676+03:30 0HNE1R0GEM2A6:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (500cc934)
+2025-07-13T10:11:44.1369950+03:30 0HNE1R0GEM2A6:00000002 [INF] Route matched with "{action = \"PatchBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BookStore.Dtos.Book.UpdateBookDto])" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:11:44.1592865+03:30 0HNE1R0GEM2A6:00000002 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-07-13T10:11:44.1724408+03:30 0HNE1R0GEM2A6:00000002 [INF] Executed action "BookStore.Controllers.BookController.PatchBook (BookStore)" in 35.3734ms (afa2e885)
+2025-07-13T10:11:44.1724826+03:30 0HNE1R0GEM2A6:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (99874f2b)
+2025-07-13T10:11:44.1725644+03:30 0HNE1R0GEM2A6:00000002 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - 400 null "application/problem+json; charset=utf-8" 39.163ms (74253ad3)
+2025-07-13T10:12:37.4438744+03:30 0HNE1R0GEM2A8:00000002 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:12:37.4441765+03:30 0HNE1R0GEM2A8:00000002 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - 307 0 null 0.3179ms (74253ad3)
+2025-07-13T10:12:37.4455066+03:30 0HNE1R0GEM2A6:00000003 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:12:37.4455966+03:30 0HNE1R0GEM2A6:00000003 [INF] Executing endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (500cc934)
+2025-07-13T10:12:37.4457775+03:30 0HNE1R0GEM2A6:00000003 [INF] Route matched with "{action = \"TestPatch\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TestPatch(Int32, System.Object)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:12:37.4502354+03:30 0HNE1R0GEM2A6:00000003 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-07-13T10:12:37.4504088+03:30 0HNE1R0GEM2A6:00000003 [INF] Executed action "BookStore.Controllers.BookController.TestPatch (BookStore)" in 4.6016ms (afa2e885)
+2025-07-13T10:12:37.4504353+03:30 0HNE1R0GEM2A6:00000003 [INF] Executed endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (99874f2b)
+2025-07-13T10:12:37.4504887+03:30 0HNE1R0GEM2A6:00000003 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - 200 null "application/json; charset=utf-8" 4.9765ms (74253ad3)
+2025-07-13T10:13:24.6817412+03:30 0HNE1R0GEM2A8:00000003 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:24.6819417+03:30 0HNE1R0GEM2A8:00000003 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 0.2383ms (74253ad3)
+2025-07-13T10:13:24.6828852+03:30 0HNE1R0GEM2A6:00000004 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:24.6829714+03:30 0HNE1R0GEM2A6:00000004 [INF] Executing endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (500cc934)
+2025-07-13T10:13:24.6830369+03:30 0HNE1R0GEM2A6:00000004 [INF] Route matched with "{action = \"PatchBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BookStore.Dtos.Book.UpdateBookDto])" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:13:24.6836391+03:30 0HNE1R0GEM2A6:00000004 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-07-13T10:13:24.6837568+03:30 0HNE1R0GEM2A6:00000004 [INF] Executed action "BookStore.Controllers.BookController.PatchBook (BookStore)" in 0.6965ms (afa2e885)
+2025-07-13T10:13:24.6837732+03:30 0HNE1R0GEM2A6:00000004 [INF] Executed endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (99874f2b)
+2025-07-13T10:13:24.6838048+03:30 0HNE1R0GEM2A6:00000004 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - 400 null "application/problem+json; charset=utf-8" 0.9238ms (74253ad3)
+2025-07-13T10:13:39.4311808+03:30 0HNE1R0GEM2A8:00000004 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:39.4314547+03:30 0HNE1R0GEM2A8:00000004 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 0.2802ms (74253ad3)
+2025-07-13T10:13:39.4327549+03:30 0HNE1R0GEM2A6:00000005 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:39.4328514+03:30 0HNE1R0GEM2A6:00000005 [INF] Executing endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (500cc934)
+2025-07-13T10:13:39.4329125+03:30 0HNE1R0GEM2A6:00000005 [INF] Route matched with "{action = \"PatchBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BookStore.Dtos.Book.UpdateBookDto])" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:13:39.4334239+03:30 0HNE1R0GEM2A6:00000005 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-07-13T10:13:39.4335459+03:30 0HNE1R0GEM2A6:00000005 [INF] Executed action "BookStore.Controllers.BookController.PatchBook (BookStore)" in 0.6139ms (afa2e885)
+2025-07-13T10:13:39.4335620+03:30 0HNE1R0GEM2A6:00000005 [INF] Executed endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (99874f2b)
+2025-07-13T10:13:39.4335949+03:30 0HNE1R0GEM2A6:00000005 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - 400 null "application/problem+json; charset=utf-8" 0.8497ms (74253ad3)
+2025-07-13T10:13:44.2193287+03:30 0HNE1R0GEM2A8:00000005 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:44.2194861+03:30 0HNE1R0GEM2A8:00000005 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 0.1763ms (74253ad3)
+2025-07-13T10:13:44.2203047+03:30 0HNE1R0GEM2A6:00000006 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:44.2203900+03:30 0HNE1R0GEM2A6:00000006 [INF] Executing endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (500cc934)
+2025-07-13T10:13:44.2204495+03:30 0HNE1R0GEM2A6:00000006 [INF] Route matched with "{action = \"PatchBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BookStore.Dtos.Book.UpdateBookDto])" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:13:44.2209911+03:30 0HNE1R0GEM2A6:00000006 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-07-13T10:13:44.2211077+03:30 0HNE1R0GEM2A6:00000006 [INF] Executed action "BookStore.Controllers.BookController.PatchBook (BookStore)" in 0.6386ms (afa2e885)
+2025-07-13T10:13:44.2211227+03:30 0HNE1R0GEM2A6:00000006 [INF] Executed endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (99874f2b)
+2025-07-13T10:13:44.2211539+03:30 0HNE1R0GEM2A6:00000006 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - 400 null "application/problem+json; charset=utf-8" 0.855ms (74253ad3)
+2025-07-13T10:13:45.2215655+03:30 0HNE1R0GEM2A8:00000006 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:45.2217277+03:30 0HNE1R0GEM2A8:00000006 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 0.1854ms (74253ad3)
+2025-07-13T10:13:45.2226123+03:30 0HNE1R0GEM2A6:00000007 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:13:45.2226717+03:30 0HNE1R0GEM2A6:00000007 [INF] Executing endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (500cc934)
+2025-07-13T10:13:45.2227340+03:30 0HNE1R0GEM2A6:00000007 [INF] Route matched with "{action = \"PatchBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BookStore.Dtos.Book.UpdateBookDto])" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:13:45.2232799+03:30 0HNE1R0GEM2A6:00000007 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-07-13T10:13:45.2234197+03:30 0HNE1R0GEM2A6:00000007 [INF] Executed action "BookStore.Controllers.BookController.PatchBook (BookStore)" in 0.6623ms (afa2e885)
+2025-07-13T10:13:45.2234384+03:30 0HNE1R0GEM2A6:00000007 [INF] Executed endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (99874f2b)
+2025-07-13T10:13:45.2234789+03:30 0HNE1R0GEM2A6:00000007 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - 400 null "application/problem+json; charset=utf-8" 0.8588ms (74253ad3)
+2025-07-13T10:13:48.9080065+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-13T10:20:47.7649309+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-13T10:20:47.7663057+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-13T10:20:47.7683274+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-13T10:20:47.7687482+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-13T10:20:47.7687728+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-13T10:20:59.7083921+03:30 0HNE1R6G3NI3O:00000001 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:20:59.7303701+03:30 0HNE1R6G3NI3O:00000001 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - 307 0 null 23.225ms (74253ad3)
+2025-07-13T10:20:59.7514649+03:30 0HNE1R6G3NI3Q:00000001 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:20:59.7547096+03:30 0HNE1R6G3NI3Q:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (500cc934)
+2025-07-13T10:20:59.7689713+03:30 0HNE1R6G3NI3Q:00000001 [INF] Route matched with "{action = \"TestPatch\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TestPatch(Int32, System.Object)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:20:59.9286528+03:30 0HNE1R6G3NI3Q:00000001 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-07-13T10:20:59.9517365+03:30 0HNE1R6G3NI3Q:00000001 [INF] Executed action "BookStore.Controllers.BookController.TestPatch (BookStore)" in 180.8193ms (afa2e885)
+2025-07-13T10:20:59.9518074+03:30 0HNE1R6G3NI3Q:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (99874f2b)
+2025-07-13T10:20:59.9526440+03:30 0HNE1R6G3NI3Q:00000001 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - 200 133 "application/json; charset=utf-8" 201.1827ms (74253ad3)
+2025-07-13T10:21:24.3531872+03:30 0HNE1R6G3NI3O:00000002 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:21:24.3544394+03:30 0HNE1R6G3NI3O:00000002 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 1.2566ms (74253ad3)
+2025-07-13T10:21:24.3562498+03:30 0HNE1R6G3NI3Q:00000002 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:21:24.3563910+03:30 0HNE1R6G3NI3Q:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (500cc934)
+2025-07-13T10:21:24.3594209+03:30 0HNE1R6G3NI3Q:00000002 [INF] Route matched with "{action = \"PatchBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BookStore.Dtos.Book.UpdateBookDto])" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:21:25.2220426+03:30 0HNE1R6G3NI3Q:00000002 [ERR] Failed executing DbCommand ("32"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (627a98df)
+2025-07-13T10:21:25.2402148+03:30 0HNE1R6G3NI3Q:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"BookStore.Data.AppDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:0af63ba8-c410-4730-96e3-e35a39dd75bc
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:0af63ba8-c410-4730-96e3-e35a39dd75bc
+Error Number:207,State:1,Class:16
+2025-07-13T10:21:25.2565121+03:30 0HNE1R6G3NI3Q:00000002 [ERR] Error patching book with ID 4 (07535da0)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BookStore.Repositories.BookRepository.GetBookByIdAsync(Int32 id) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Repositories\BookRepository.cs:line 27
+   at BookStore.Services.BookService.PatchBookAsync(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Services\BookService.cs:line 110
+   at BookStore.Controllers.BookController.PatchBook(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Controllers\BookController.cs:line 139
+ClientConnectionId:0af63ba8-c410-4730-96e3-e35a39dd75bc
+Error Number:207,State:1,Class:16
+2025-07-13T10:21:25.2576160+03:30 0HNE1R6G3NI3Q:00000002 [WRN] Error patching book with ID 4 (07535da0)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BookStore.Repositories.BookRepository.GetBookByIdAsync(Int32 id) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Repositories\BookRepository.cs:line 27
+   at BookStore.Services.BookService.PatchBookAsync(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Services\BookService.cs:line 110
+   at BookStore.Controllers.BookController.PatchBook(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Controllers\BookController.cs:line 139
+ClientConnectionId:0af63ba8-c410-4730-96e3-e35a39dd75bc
+Error Number:207,State:1,Class:16
+2025-07-13T10:21:25.2592562+03:30 0HNE1R6G3NI3Q:00000002 [INF] Executing "ObjectResult", writing value of type '"System.String"'. (605b4265)
+2025-07-13T10:21:25.2601828+03:30 0HNE1R6G3NI3Q:00000002 [INF] Executed action "BookStore.Controllers.BookController.PatchBook (BookStore)" in 900.7329ms (afa2e885)
+2025-07-13T10:21:25.2603616+03:30 0HNE1R6G3NI3Q:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (99874f2b)
+2025-07-13T10:21:25.2634871+03:30 0HNE1R6G3NI3Q:00000002 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - 500 null "text/plain; charset=utf-8" 907.2525ms (74253ad3)
+2025-07-13T10:21:55.3749904+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-13T10:23:16.2740897+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-13T10:23:16.2754089+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-13T10:23:16.2773789+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-13T10:23:16.2778811+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-13T10:23:16.2779145+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-13T10:23:23.4124459+03:30 0HNE1R7QU5V4S:00000001 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:23:23.4405762+03:30 0HNE1R7QU5V4S:00000001 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4/test""" - 307 0 null 29.3858ms (74253ad3)
+2025-07-13T10:23:23.4609170+03:30 0HNE1R7QU5V4U:00000001 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - "application/json" 49 (d509f86a)
+2025-07-13T10:23:23.4645086+03:30 0HNE1R7QU5V4U:00000001 [INF] Executing endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (500cc934)
+2025-07-13T10:23:23.4814917+03:30 0HNE1R7QU5V4U:00000001 [INF] Route matched with "{action = \"TestPatch\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TestPatch(Int32, System.Object)" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:23:23.6544395+03:30 0HNE1R7QU5V4U:00000001 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-07-13T10:23:23.6783163+03:30 0HNE1R7QU5V4U:00000001 [INF] Executed action "BookStore.Controllers.BookController.TestPatch (BookStore)" in 194.4626ms (afa2e885)
+2025-07-13T10:23:23.6784173+03:30 0HNE1R7QU5V4U:00000001 [INF] Executed endpoint '"BookStore.Controllers.BookController.TestPatch (BookStore)"' (99874f2b)
+2025-07-13T10:23:23.6796319+03:30 0HNE1R7QU5V4U:00000001 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4/test""" - 200 133 "application/json; charset=utf-8" 218.6635ms (74253ad3)
+2025-07-13T10:23:31.8012682+03:30 0HNE1R7QU5V4S:00000002 [INF] Request starting "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:23:31.8028291+03:30 0HNE1R7QU5V4S:00000002 [INF] Request finished "HTTP/1.1" "PATCH" "http"://"localhost:5081""""/api/book/4""" - 307 0 null 1.5652ms (74253ad3)
+2025-07-13T10:23:31.8047799+03:30 0HNE1R7QU5V4U:00000002 [INF] Request starting "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - "application/json" 49 (d509f86a)
+2025-07-13T10:23:31.8049508+03:30 0HNE1R7QU5V4U:00000002 [INF] Executing endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (500cc934)
+2025-07-13T10:23:31.8101627+03:30 0HNE1R7QU5V4U:00000002 [INF] Route matched with "{action = \"PatchBook\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BookStore.Dtos.Book.UpdateBookDto])" on controller "BookStore.Controllers.BookController" ("BookStore"). (122b2fdf)
+2025-07-13T10:23:32.6460498+03:30 0HNE1R7QU5V4U:00000002 [ERR] Failed executing DbCommand ("27"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (627a98df)
+2025-07-13T10:23:32.6686622+03:30 0HNE1R7QU5V4U:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"BookStore.Data.AppDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d678072c-c2fd-482e-88c3-3c79cd5c8261
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d678072c-c2fd-482e-88c3-3c79cd5c8261
+Error Number:207,State:1,Class:16
+2025-07-13T10:23:32.6860170+03:30 0HNE1R7QU5V4U:00000002 [ERR] Error patching book with ID 4 (07535da0)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BookStore.Repositories.BookRepository.GetBookByIdAsync(Int32 id) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Repositories\BookRepository.cs:line 27
+   at BookStore.Services.BookService.PatchBookAsync(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Services\BookService.cs:line 110
+   at BookStore.Controllers.BookController.PatchBook(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Controllers\BookController.cs:line 139
+ClientConnectionId:d678072c-c2fd-482e-88c3-3c79cd5c8261
+Error Number:207,State:1,Class:16
+2025-07-13T10:23:32.6874601+03:30 0HNE1R7QU5V4U:00000002 [WRN] Error patching book with ID 4 (07535da0)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedAt'.
+Invalid column name 'Language'.
+Invalid column name 'Price'.
+Invalid column name 'Publisher'.
+Invalid column name 'StockQuantity'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BookStore.Repositories.BookRepository.GetBookByIdAsync(Int32 id) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Repositories\BookRepository.cs:line 27
+   at BookStore.Services.BookService.PatchBookAsync(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Services\BookService.cs:line 110
+   at BookStore.Controllers.BookController.PatchBook(Int32 id, JsonPatchDocument`1 patchDocument) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Controllers\BookController.cs:line 139
+ClientConnectionId:d678072c-c2fd-482e-88c3-3c79cd5c8261
+Error Number:207,State:1,Class:16
+2025-07-13T10:23:32.6896508+03:30 0HNE1R7QU5V4U:00000002 [INF] Executing "ObjectResult", writing value of type '"System.String"'. (605b4265)
+2025-07-13T10:23:32.6907819+03:30 0HNE1R7QU5V4U:00000002 [INF] Executed action "BookStore.Controllers.BookController.PatchBook (BookStore)" in 880.5624ms (afa2e885)
+2025-07-13T10:23:32.6912121+03:30 0HNE1R7QU5V4U:00000002 [INF] Executed endpoint '"BookStore.Controllers.BookController.PatchBook (BookStore)"' (99874f2b)
+2025-07-13T10:23:32.6962743+03:30 0HNE1R7QU5V4U:00000002 [INF] Request finished "HTTP/1.1" "PATCH" "https"://"localhost:7140""""/api/book/4""" - 500 null "text/plain; charset=utf-8" 891.4948ms (74253ad3)
+2025-07-13T10:23:58.4239511+03:30  [INF] Application is shutting down... (90f52c38)

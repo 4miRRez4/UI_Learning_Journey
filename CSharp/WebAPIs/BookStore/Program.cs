@@ -4,6 +4,8 @@ using BookStore.Repositories;
 using BookStore.Services.Interfaces;
 using BookStore.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +19,8 @@ builder.Logging.AddFile("logs/bookstore-{Date}.txt");
 
 builder.Services.AddOpenApi();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddNewtonsoftJson();
 
 builder.Services.AddSwaggerGen();
 
@@ -27,9 +30,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
-
 builder.Services.AddScoped<IBookRepository, BookRepository>();
-
 builder.Services.AddScoped<IBookService, BookService>();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -53,20 +54,6 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
 app.Use(async (context, next) =>
 {
     await next();
@@ -84,11 +71,5 @@ app.Use(async (context, next) =>
     }
 });
 
-
-
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

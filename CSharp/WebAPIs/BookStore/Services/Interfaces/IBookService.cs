@@ -1,6 +1,7 @@
 using BookStore.Dtos.Book;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace BookStore.Services.Interfaces
 {
@@ -18,6 +19,8 @@ namespace BookStore.Services.Interfaces
 		Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto bookDto);
 
 		Task<bool> DeleteBookAsync(int id);
+
+		Task<BookDto?> PatchBookAsync(int id, JsonPatchDocument<UpdateBookDto> patchDocument);
 
     }
 }

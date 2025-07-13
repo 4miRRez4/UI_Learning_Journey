@@ -2,6 +2,7 @@ using BookStore.Dtos.Book;
 using BookStore.Services;
 using BookStore.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BookStore.Controllers
@@ -11,7 +12,6 @@ namespace BookStore.Controllers
     public class BookController : ControllerBase
     {
         private readonly IBookService _bookService;
-
         private readonly ILogger<BookController> _logger;
 
         public BookController(IBookService bookService, ILogger<BookController> logger)
@@ -120,6 +120,43 @@ namespace BookStore.Controllers
                 return StatusCode(500, $"An error occurred while updating the book: {ex.Message}");
             }
         }
+
+        [HttpPatch("{id}")] // PATCH: api/book/id
+        public async Task<IActionResult> PatchBook(int id, [FromBody] JsonPatchDocument<UpdateBookDto> patchDocument)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if(patchDocument == null)
+            {
+                return BadRequest("Patch document can not be empty.");
+            }
+
+            try
+            {
+                var patchedBook = await _bookService.PatchBookAsync(id, patchDocument);
+
+                if(patchedBook == null)
+                {
+                    return NotFound($"Book with Id {id} didn't found.");
+                }
+
+                return Ok(patchedBook);
+            }
+            catch (ArgumentException ex)
+            {
+                _logger.LogWarning(ex, "Validation error patching book with ID {BookId}", id);
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Error patching book with ID {BookId}", id);
+                return StatusCode(500, $"An error occurred while patching the book: {ex.Message}");
+            }
+        }
+
 
         [HttpDelete("{id}")] // PUT: api/book/id
         public async Task<IActionResult> DeleteBook(int id)

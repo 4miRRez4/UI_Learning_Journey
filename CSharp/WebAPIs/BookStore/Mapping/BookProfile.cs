@@ -17,6 +17,8 @@ namespace BookStore.Mapping
             CreateMap<UpdateBookDto, Book>()
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) =>
                     srcMember != null));
+
+            CreateMap<Book, UpdateBookDto>();
         }
     }
 }
