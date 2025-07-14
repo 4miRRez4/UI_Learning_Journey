@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using BookStore.Models.Enums;
 
 namespace BookStore.Models
@@ -65,5 +66,57 @@ namespace BookStore.Models
         public Customer Customer { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
+        public void CalculateOrderItemsSubtotal()
+        {
+            if(OrderItems == null || !OrderItems.Any())
+            {
+                return 0;
+            }
+
+            return OrderItems.Sum(item => item.Subtotal);
+        }
+
+        public void UpdateOrderSubtotal()
+        {
+            this.Subtotal = CalculateOrderItemsSubtotal();
+            this.UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void CalculateTax()
+        {
+            if (this.Subtotal <= 0)
+            {
+                return 0;
+            }
+            decimal taxRate = 0.1m;
+            return this.Subtotal * taxRate;
+        }
+
+        public void UpdateOrderTax()
+        {
+            this.TaxAmount = CalculateTax(this.Subtotal);
+            this.UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void UpdateOrderDiscount()
+        {
+            this.DiscountAmount = OrderItems.Sum(item => item.DiscountAmount);
+            this.UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void UpdateOrderTotalAmount()
+        {
+            this.TotalAmount = this.Subtotal + this.TaxAmount + this.ShippingAmount - this.DiscountAmount;
+            this.UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void UpdateOrderTotals()
+        {
+            UpdateOrderSubtotal();
+            UpdateOrderTax();
+            UpdateOrderDiscount();
+            UpdateOrderTotalAmount();
+        }
     }
 } 
