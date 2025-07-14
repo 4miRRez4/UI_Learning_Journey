@@ -89,7 +89,7 @@ namespace BookStore.Models
             {
                 return 0;
             }
-            decimal taxRate = 0.1m;
+            decimal taxRate = 0.1m; // TODO: implement a dynamic tax rate based on location or other factors
             return this.Subtotal * taxRate;
         }
 
@@ -117,6 +117,31 @@ namespace BookStore.Models
             UpdateOrderTax();
             UpdateOrderDiscount();
             UpdateOrderTotalAmount();
+        }
+
+        public void AddOrderItem(Book book, int quantity)
+        {
+            var orderItem = new OrderItem
+            {
+                BookId = book.Id,
+                Quantity = quantity,
+                UnitPrice = book.Price,
+                DiscountAmount = 0
+            };
+            orderItem.UpdateOrderItemSubtotal();
+
+            var existingItem = OrderItems.FirstOrDefault(item => item.BookId == book.Id);
+            if(existingItem != null)
+            {
+                existingItem.Quantity += quantity;
+                existingItem.UpdateOrderItemSubtotal();
+            }
+            else
+            {
+                this.OrderItems.Add(orderItem);
+            }
+
+            UpdateOrderTotals();
         }
     }
 } 

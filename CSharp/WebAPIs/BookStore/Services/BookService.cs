@@ -5,11 +5,11 @@ using AutoMapper;
 using BookStore.Data;
 using BookStore.Services.Interfaces;
 using BookStore.Models;
-using BookStore.Dtos.Book;
-using BookStore.Dtos.Author;
 using BookStore.Repositories.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookStore.Dtos.Book;
+using BookStore.Dtos.Author;
 
 namespace BookStore.Services
 {
