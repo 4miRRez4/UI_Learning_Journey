@@ -1,0 +1,82 @@
+2025-07-14T17:02:20.1400155+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-14T17:02:20.1413069+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-14T17:02:20.1433023+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-14T17:02:20.1439443+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-14T17:02:20.1439959+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-14T17:09:46.2097789+03:30 0HNE2RFIPAPM4:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-14T17:09:46.2316299+03:30 0HNE2RFIPAPM4:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 23.0734ms (74253ad3)
+2025-07-14T17:09:46.2550498+03:30 0HNE2RFIPAPM6:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-14T17:09:46.2589820+03:30 0HNE2RFIPAPM6:00000001 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-14T17:09:46.2687277+03:30 0HNE2RFIPAPM6:00000001 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-14T17:09:46.2717866+03:30 0HNE2RFIPAPM6:00000001 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 1.2696ms (afa2e885)
+2025-07-14T17:09:46.2719860+03:30 0HNE2RFIPAPM6:00000001 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-14T17:09:46.2883857+03:30 0HNE2RFIPAPM6:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'BookStore.Services.Interfaces.IOrderService' while attempting to activate 'BookStore.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_1>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 59
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14T17:09:46.2920269+03:30 0HNE2RFIPAPM6:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 500 null "text/plain; charset=utf-8" 36.918ms (74253ad3)
+2025-07-14T17:14:34.7491110+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-14T17:28:58.2774693+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-14T17:28:58.2787286+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-14T17:28:58.2806456+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-14T17:28:58.2811008+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-14T17:28:58.2811303+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-14T17:29:04.2076972+03:30 0HNE2RQBSRRQ0:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-14T17:29:04.2304695+03:30 0HNE2RQBSRRQ0:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 23.8269ms (74253ad3)
+2025-07-14T17:29:04.2505155+03:30 0HNE2RQBSRRQ2:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-14T17:29:04.2539985+03:30 0HNE2RQBSRRQ2:00000001 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-14T17:29:04.2660292+03:30 0HNE2RQBSRRQ2:00000001 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-14T17:29:05.1706346+03:30 0HNE2RQBSRRQ2:00000001 [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [o].[UserId], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt]
+FROM [Orders] AS [o]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [s].[Id]" (0723d8ff)
+2025-07-14T17:29:05.2016178+03:30 0HNE2RQBSRRQ2:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-14T17:29:05.2444246+03:30 0HNE2RQBSRRQ2:00000001 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 976.4851ms (afa2e885)
+2025-07-14T17:29:05.2446991+03:30 0HNE2RQBSRRQ2:00000001 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-14T17:29:05.2483394+03:30 0HNE2RQBSRRQ2:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 2147 "application/json; charset=utf-8" 997.7952ms (74253ad3)
+2025-07-14T18:04:09.4747377+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-14T18:08:12.3324529+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-14T18:08:12.3337236+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-14T18:08:12.3356031+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-14T18:08:12.3360140+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-14T18:08:12.3360412+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-14T18:08:18.7180057+03:30 0HNE2SG9J6L50:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-14T18:08:18.7439966+03:30 0HNE2SG9J6L50:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 26.9575ms (74253ad3)
+2025-07-14T18:08:18.7640251+03:30 0HNE2SG9J6L52:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-14T18:08:18.7688483+03:30 0HNE2SG9J6L52:00000001 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-14T18:08:18.7829809+03:30 0HNE2SG9J6L52:00000001 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-14T18:08:19.6775904+03:30 0HNE2SG9J6L52:00000001 [INF] Executed DbCommand ("37"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [o].[UserId], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FirstName], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-14T18:08:19.7111484+03:30 0HNE2SG9J6L52:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-14T18:08:19.7549116+03:30 0HNE2SG9J6L52:00000001 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 969.7022ms (afa2e885)
+2025-07-14T18:08:19.7552293+03:30 0HNE2SG9J6L52:00000001 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-14T18:08:19.7596057+03:30 0HNE2SG9J6L52:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 2207 "application/json; charset=utf-8" 995.5429ms (74253ad3)
+2025-07-14T18:10:36.3705361+03:30  [INF] Application is shutting down... (90f52c38)

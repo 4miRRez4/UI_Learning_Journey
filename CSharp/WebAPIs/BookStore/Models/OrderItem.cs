@@ -36,11 +36,13 @@ namespace BookStore.Models
         [ForeignKey("BookId")]
         public Book Book { get; set; }
 
-        public void UpdateOrderItemSubtotal()
+        public decimal UpdateOrderItemSubtotal()
         {
             this.Subtotal = (this.Quantity * this.UnitPrice) - this.DiscountAmount;
 
             if(Subtotal < 0) Subtotal = 0;
+
+            return this.Subtotal;
         }
     }
 } 

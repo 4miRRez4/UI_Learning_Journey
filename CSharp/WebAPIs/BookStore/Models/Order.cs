@@ -67,7 +67,7 @@ namespace BookStore.Models
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
-        public void CalculateOrderItemsSubtotal()
+        public decimal CalculateOrderItemsSubtotal()
         {
             if(OrderItems == null || !OrderItems.Any())
             {
@@ -77,38 +77,46 @@ namespace BookStore.Models
             return OrderItems.Sum(item => item.Subtotal);
         }
 
-        public void UpdateOrderSubtotal()
+        public decimal UpdateOrderSubtotal()
         {
             this.Subtotal = CalculateOrderItemsSubtotal();
             this.UpdatedAt = DateTime.UtcNow;
+
+            return this.Subtotal;
         }
 
-        public void CalculateTax()
+        public decimal CalculateTax(decimal amount)
         {
-            if (this.Subtotal <= 0)
+            if (amount <= 0)
             {
                 return 0;
             }
             decimal taxRate = 0.1m; // TODO: implement a dynamic tax rate based on location or other factors
-            return this.Subtotal * taxRate;
+            return amount * taxRate;
         }
 
-        public void UpdateOrderTax()
+        public decimal UpdateOrderTax()
         {
             this.TaxAmount = CalculateTax(this.Subtotal);
             this.UpdatedAt = DateTime.UtcNow;
+
+            return this.TaxAmount;
         }
 
-        public void UpdateOrderDiscount()
+        public decimal UpdateOrderDiscount()
         {
             this.DiscountAmount = OrderItems.Sum(item => item.DiscountAmount);
             this.UpdatedAt = DateTime.UtcNow;
+
+            return this.DiscountAmount;
         }
 
-        public void UpdateOrderTotalAmount()
+        public decimal UpdateOrderTotalAmount()
         {
             this.TotalAmount = this.Subtotal + this.TaxAmount + this.ShippingAmount - this.DiscountAmount;
             this.UpdatedAt = DateTime.UtcNow;
+
+            return this.TotalAmount;
         }
 
         public void UpdateOrderTotals()

@@ -42,6 +42,7 @@ namespace BookStore.Repositories
                 .Where(o => o.CustomerId == customerId)
                 .Include(o => o.OrderItems)
                 .ThenInclude(oi => oi.Book)
+                .Include(o => o.Customer)
                 .AsNoTracking()
                 .ToListAsync();
         }
@@ -51,6 +52,7 @@ namespace BookStore.Repositories
             return await _context.Orders
                 .Include(o => o.OrderItems)
                 .ThenInclude(oi => oi.Book)
+                .Include(o => o.Customer)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(o => o.Id == id);
         }
@@ -60,6 +62,7 @@ namespace BookStore.Repositories
             return await _context.Orders
                 .Include(o => o.OrderItems)
                 .ThenInclude(oi => oi.Book)
+                .Include(o => o.Customer)
                 .AsNoTracking()
                 .ToListAsync();
         }

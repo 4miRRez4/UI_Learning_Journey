@@ -17,11 +17,12 @@ namespace BookStore.Services
         public readonly IOrderRepository _orderRepository;
         public readonly IBookRepository _bookRepository;
         public readonly IMapper _mapper;
-        public readonly ILogger _logger;
+        public readonly ILogger<OrderService> _logger;
 
-        public OrderService(IOrderRepository orderRepository, IBookRepository bookRepository, IMapper mapper, ILogger logger)
+        public OrderService(IOrderRepository orderRepository, IBookRepository bookRepository, IMapper mapper, ILogger<OrderService> logger)
         {
             _orderRepository = orderRepository;
+            _bookRepository = bookRepository;
             _mapper = mapper;
             _logger = logger;
         }
@@ -29,7 +30,19 @@ namespace BookStore.Services
         public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
         {
             var orders = await _orderRepository.GetAllOrdersAsync();
-            return _mapper.Map<IEnumerable<OrderDto>>(orders);
+
+            if (orders == null || !orders.Any())
+            {
+                _logger.LogWarning("No orders found.");
+                return Enumerable.Empty<OrderDto>();
+            }
+
+            foreach (var order in orders)
+            {
+                order.UpdateOrderTotals();
+            }
+
+            return _mapper.Map<IEnumerable<Order>, IEnumerable<OrderDto>>(orders);
         }
 
         public async Task<OrderDto?> GetOrderByIdAsync(int id)
@@ -73,4 +86,5 @@ namespace BookStore.Services
 
             return _mapper.Map<OrderDto>(order);
         }
-}                   
+    } 
+}                  

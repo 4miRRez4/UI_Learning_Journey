@@ -12,7 +12,7 @@ namespace BookStore.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
-        private readonly ILogger _logger;
+        private readonly ILogger<OrderController> _logger;
 
         public OrderController(IOrderService orderService, ILogger<OrderController> logger)
         {
