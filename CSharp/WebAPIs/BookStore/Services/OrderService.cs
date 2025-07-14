@@ -26,6 +26,31 @@ namespace BookStore.Services
             _logger = logger;
         }
 
+        public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
+        {
+            var orders = await _orderRepository.GetAllOrdersAsync();
+            return _mapper.Map<IEnumerable<OrderDto>>(orders);
+        }
+
+        public async Task<OrderDto?> GetOrderByIdAsync(int id)
+        {
+            var order = await _orderRepository.GetOrderByIdAsync(id);
+            if (order == null)
+            {
+                _logger.LogWarning($"Order with ID {id} not found.");
+                return null;
+            }
+            return _mapper.Map<OrderDto>(order);
+        }
+
+        public async Task<OrderDto> CreateOrderAsync(CreateOrderDto createOrderDto)
+        {
+            var order = _mapper.Map<Order>(createOrderDto);
+            var createdOrder = await _orderRepository.CreateOrderAsync(order);
+            return _mapper.Map<OrderDto>(createdOrder);
+        }
+
+
         public async Task<OrderDto> AddItemToOrderUsingIdsAsync(int orderId, int bookId, int quantity)
         {
             var order = await _orderRepository.GetOrderByIdAsync(orderId);
