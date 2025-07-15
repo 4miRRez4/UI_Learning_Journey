@@ -84,6 +84,42 @@ namespace BookStore.Controllers
             }
         }
 
+        [HttpPost("{orderId}/items")] // POST: api/order/{orderId}/items
+        public async Task<ActionResult<OrderDto>> AddItemToOrder(int orderId, [FromBody] CreateOrderItemDto createOrderItemDto)
+        {
+            if (createOrderItemDto == null)
+            {
+                return BadRequest("Order item data is null");
+            }
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning("Invalid model state for adding item to order");
+                    return BadRequest(ModelState);
+                }
+
+                var updatedOrder = await _orderService.AddItemToOrderUsingIdsAsync(orderId, createOrderItemDto.BookId, createOrderItemDto.Quantity);
+
+                if (updatedOrder == null)
+                {
+                    _logger.LogWarning("Order with ID {OrderId} not found", orderId);
+                    return NotFound($"Order with ID {orderId} not found");
+                }
+                return Ok(updatedOrder);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                _logger.LogWarning(ex.Message);
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error adding item to order with ID {OrderId}", orderId);
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
     }
 }
