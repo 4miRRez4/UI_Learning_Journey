@@ -18,6 +18,12 @@ namespace BookStore.Mapping
                 .ForMember(dest => dest.BookTitle, opt => opt.MapFrom(src => src.Book.Title));
 
             CreateMap<CreateOrderDto, Order>();
+
+            CreateMap<CreateOrderItemDto, OrderItem>();
+
+            CreateMap<OrderItem, OrderItemDto>()
+                .ForMember(dest => dest.BookTitle, opt => opt.MapFrom(src => src.Book.Title));
+
             CreateMap<UpdateOrderDto, Order>()
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) =>
                     srcMember != null));

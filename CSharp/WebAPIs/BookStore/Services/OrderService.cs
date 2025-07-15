@@ -9,20 +9,23 @@ using BookStore.Repositories.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookStore.Dtos.Order;
+using BookStore.Models.Enums;
 
 namespace BookStore.Services
 {
     public class OrderService : IOrderService 
     {
         public readonly IOrderRepository _orderRepository;
+        public readonly ICustomerRepository _customerRepository;
         public readonly IBookRepository _bookRepository;
         public readonly IMapper _mapper;
         public readonly ILogger<OrderService> _logger;
 
-        public OrderService(IOrderRepository orderRepository, IBookRepository bookRepository, IMapper mapper, ILogger<OrderService> logger)
+        public OrderService(IOrderRepository orderRepository, ICustomerRepository customerRepository, IBookRepository bookRepository, IMapper mapper, ILogger<OrderService> logger)
         {
             _orderRepository = orderRepository;
             _bookRepository = bookRepository;
+            _customerRepository = customerRepository;
             _mapper = mapper;
             _logger = logger;
         }
@@ -59,6 +62,36 @@ namespace BookStore.Services
         public async Task<OrderDto> CreateOrderAsync(CreateOrderDto createOrderDto)
         {
             var order = _mapper.Map<Order>(createOrderDto);
+
+            var orderCustomer = await _customerRepository.GetCustomerByIdAsync(createOrderDto.CustomerId);
+            if (orderCustomer == null)
+            {
+                _logger.LogWarning($"Customer with ID {createOrderDto.CustomerId} not found");
+                throw new KeyNotFoundException($"Customer with ID {createOrderDto.CustomerId} not found");
+            }
+
+            order.Customer = orderCustomer;
+
+            foreach(var item in order.OrderItems)
+            {
+                var book = await _bookRepository.GetBookByIdAsync(item.BookId);
+
+                if(book == null || book.StockQuantity < item.Quantity)
+                {
+                    _logger.LogError($"Book with ID {item.BookId} not found or insufficient stock.");
+                    throw new KeyNotFoundException($"Book with ID {item.BookId} not found or insufficient stock.");
+                }
+
+                item.Book = book;
+                item.UnitPrice = book.Price;
+                item.DiscountAmount = 0;
+                item.UpdateOrderItemSubtotal();
+            }
+            order.UpdateOrderTotals();
+
+            order.Status = OrderStatus.Pending;
+            order.PaymentStatus = PaymentStatus.Pending;
+
             var createdOrder = await _orderRepository.CreateOrderAsync(order);
             return _mapper.Map<OrderDto>(createdOrder);
         }
