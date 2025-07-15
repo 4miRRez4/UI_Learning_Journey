@@ -8,7 +8,8 @@ namespace BookStore.Models
         [Key]
         public int Id { get; set; }
 
-        public int? UserId { get; set; }
+        [Required]
+        public string UserId { get; set; }
 
         [Required]
         [EmailAddress]
@@ -37,7 +38,7 @@ namespace BookStore.Models
 
         // Navigation properties
         [ForeignKey("UserId")]
-        public User? User { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
