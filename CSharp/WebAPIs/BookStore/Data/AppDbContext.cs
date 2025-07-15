@@ -21,11 +21,12 @@ namespace BookStore.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Configure User-Customer relationship (one-to-one)
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<ApplicationUser>()
                 .HasOne(u => u.Customer)
-                .WithOne(c => c.User)
+                .WithOne(c => c.ApplicationUser)
                 .HasForeignKey<Customer>(c => c.UserId)
                 .IsRequired(false);
+                .OnDelete(DeleteBehavior.Cascade)
 
             // Configure Order relationships
             modelBuilder.Entity<Order>()
