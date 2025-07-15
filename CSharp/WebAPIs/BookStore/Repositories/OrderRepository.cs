@@ -36,6 +36,8 @@ namespace BookStore.Repositories
             }
         }
 
+
+
         public async Task<List<Order>> GetOrdersByCustomerIdAsync(int customerId)
         {
             return await _context.Orders
@@ -51,7 +53,7 @@ namespace BookStore.Repositories
         {
             return await _context.Orders
                 .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.Book)
+                    .ThenInclude(oi => oi.Book)
                 .Include(o => o.Customer)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(o => o.Id == id);

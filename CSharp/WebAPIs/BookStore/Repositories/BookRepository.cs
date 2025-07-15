@@ -26,7 +26,6 @@ namespace BookStore.Repositories
         {
             return await _context.Books
                 .Include(b => b.Authors)
-                .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
 
