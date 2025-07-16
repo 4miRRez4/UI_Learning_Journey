@@ -2,17 +2,18 @@ using System;
 using BookStore.Models;
 using BookStore.Models.Enums; 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore; 
 
 namespace BookStore.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options) { }
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<ApplicationUser> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
@@ -20,13 +21,15 @@ namespace BookStore.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             // Configure User-Customer relationship (one-to-one)
             modelBuilder.Entity<ApplicationUser>()
                 .HasOne(u => u.Customer)
-                .WithOne(c => c.ApplicationUser)
+                .WithOne(c => c.User)
                 .HasForeignKey<Customer>(c => c.UserId)
-                .IsRequired(false);
-                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Configure Order relationships
             modelBuilder.Entity<Order>()
@@ -170,43 +173,14 @@ namespace BookStore.Data
             }
             );
 
-            // Seed Users (for authentication)
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    Id = 1,
-                    Username = "admin",
-                    PasswordHash = "hashed_admin_password_123"
-                },
-                new User
-                {
-                    Id = 2,
-                    Username = "john_doe",
-                    PasswordHash = "hashed_john_password_123"
-                },
-                new User
-                {
-                    Id = 3,
-                    Username = "jane_smith",
-                    PasswordHash = "hashed_jane_password_123"
-                },
-                new User
-                {
-                    Id = 4,
-                    Username = "bob_wilson",
-                    PasswordHash = "hashed_bob_password_123"
-                }
-            );
-
             // Seed Customers (business domain)
             modelBuilder.Entity<Customer>().HasData(
             new Customer
             {
                 Id = 1,
-                UserId = 1,
+                UserId = "1",
                 Email = "admin@bookstore.com",
-                FirstName = "Admin",
-                LastName = "User",
+                Name = "User",
                 PhoneNumber = "+1234567890",
                 Address = "123 Admin St, Admin City, AC 12345",
                 DateOfBirth = new DateTime(1990, 1, 1),
@@ -216,10 +190,9 @@ namespace BookStore.Data
             new Customer
             {
                 Id = 2,
-                UserId = 2,
+                UserId = "2",
                 Email = "john.doe@email.com",
-                FirstName = "John",
-                LastName = "Doe",
+                Name = "Doe",
                 PhoneNumber = "+1234567891",
                 Address = "456 Main St, Anytown, AT 54321",
                 DateOfBirth = new DateTime(1985, 5, 15),
@@ -229,10 +202,9 @@ namespace BookStore.Data
             new Customer
             {
                 Id = 3,
-                UserId = 3,
+                UserId = "3",
                 Email = "jane.smith@email.com",
-                FirstName = "Jane",
-                LastName = "Smith",
+                Name = "Smith",
                 PhoneNumber = "+1234567892",
                 Address = "789 Oak Ave, Somewhere, SW 67890",
                 DateOfBirth = new DateTime(1992, 8, 22),
@@ -244,8 +216,7 @@ namespace BookStore.Data
                 Id = 4,
                 UserId = null, // Guest customer 
                 Email = "guest@email.com",
-                FirstName = "Guest",
-                LastName = "Customer",
+                Name = "Customer",
                 PhoneNumber = "+1234567893",
                 Address = "999 Guest St, Guest City, GC 99999",
                 DateOfBirth = null,
@@ -256,10 +227,9 @@ namespace BookStore.Data
             new Customer
             {
                 Id = 5,
-                UserId = 4, // Link to bob_wilson user
+                UserId = "4", 
                 Email = "bob.wilson@email.com",
-                FirstName = "Bob",
-                LastName = "Wilson",
+                Name = "Wilson",
                 PhoneNumber = "+1234567894",
                 Address = "101 Pine Ln, Forest Town, FT 11111",
                 DateOfBirth = new DateTime(1988, 3, 10),
