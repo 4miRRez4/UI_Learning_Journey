@@ -18,6 +18,10 @@ namespace BookStore.Dtos.Auth
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
+        [Required(ErrorMessage = "Full name is required")]
+        [MaxLength(100)]
+        public string UserName { get; set; }
+
 
     }
 }
