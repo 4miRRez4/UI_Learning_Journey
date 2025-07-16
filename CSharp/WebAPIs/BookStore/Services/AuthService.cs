@@ -74,9 +74,58 @@ namespace BookStore.Services
             };
         }
 
+        private async Task<string> GenerateJwtToken(ApplicationUser user)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim("id", user.Id)
+            };
 
+            var userRoles = await _userManager.GetRolesAsync(user);
+            foreach(var userRole in userRoles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, userRole))
+            }
 
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["JWT:ExpireDays"]));
 
+            var token = new JwtSecurityToken(
+                _configuration["JWT:Issuer"],
+                _configuration["JWT:Audience"],
+                claims,
+                expires: expires,
+                signingCredentials: creds
+            );
 
-    }
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public async Task<AuthResult> LoginAsync(LoginRequest request)
+        {
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if(user == null)
+            {
+                return new AuthResult { Success = false, Errors = new[] {"invalid credentials."} }
+            };
+
+            var isPassValid = await _userManager.CheckPasswordAsync(user, request.Password);
+            if (!isPassValid)
+            {
+                return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } }
+            };
+
+            var token = await GenerateJwtToken(user);
+
+            return new AuthResult
+            {
+                Success = true,
+                Token = token,
+                UserId = user.Id
+            };
+        }
 }
