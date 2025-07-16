@@ -4,10 +4,14 @@ using BookStore.Repositories;
 using BookStore.Services.Interfaces;
 using BookStore.Services;
 using BookStore.Authorization;
+using BookStore.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -67,24 +71,27 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireAdmin", policy =>
     {
-        policy.RequireRole(UserRole.Admin);
+        policy.RequireRole(UserRoles.Admin);
     });
 
     options.AddPolicy("RequireSeller", policy =>
     {
-        policy.RequireRole(UserRole.Seller);
+        policy.RequireRole(UserRoles.Seller);
     });
 
     options.AddPolicy("RequireCustomer", policy =>
     {
-        policy.RequireRole(UserRole.Customer);
+        policy.RequireRole(UserRoles.Customer);
     });
 
     options.AddPolicy("ManageBooks", policy =>
+    {
         policy.RequireAssertion(context =>
-            context.User.IsInRole(UserRole.Admin) ||
-            context.User.IsInRole(UserRole.Seller)));
-}
+            context.User.IsInRole(UserRoles.Admin) ||
+            context.User.IsInRole(UserRoles.Seller)
+            );
+    });
+});
 
 builder.Services.AddSwaggerGen();
 
@@ -112,12 +119,12 @@ using (var scope = app.Services.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
     //seed roles
-    string[] roleNames = { UserRole.Admin, UserRole.Seller, UserRole.Customer };
+    string[] roleNames = { UserRoles.Admin, UserRoles.Seller, UserRoles.Customer };
     foreach (var roleName in roleNames)
     {
         if (!await roleManager.RoleExistsAsync(roleName))
         {
-            await roleManager.CreateAsync(new ApplicationRole(roleName))
+            await roleManager.CreateAsync(new ApplicationRole(roleName));
         }
     }
 
@@ -135,7 +142,7 @@ using (var scope = app.Services.CreateScope())
 
         if (result.Succeeded)
         {
-            await userManager.AddToRoleAsync(adminUser, UserRole.Admin);
+            await userManager.AddToRoleAsync(adminUser, UserRoles.Admin);
         }
     }
 }

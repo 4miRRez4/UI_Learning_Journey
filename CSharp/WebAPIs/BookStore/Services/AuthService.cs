@@ -1,12 +1,14 @@
-using System.IdenticalModel.Tokens.Jwt;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using BookStore.Services.Interfaces;
+using BookStore.Repositories.Interfaces;
 using BookStore.Models;
 using BookStore.Dtos.Auth;
 using BookStore.Authorization;
+using BookStore.Data;
 
 
 namespace BookStore.Services
@@ -15,16 +17,20 @@ namespace BookStore.Services
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
+        private readonly ICustomerRepository _customerRepository;
         private readonly IConfiguration _configuration;
+        
 
         public AuthService(
             UserManager<ApplicationUser> userManager,
             RoleManager<ApplicationRole> roleManager,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            ICustomerRepository customerRepository)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
+            _customerRepository = customerRepository;
         }
 
         public async Task<AuthResult> RegisterAsync(RegisterDto request)
@@ -32,7 +38,7 @@ namespace BookStore.Services
             var existingUser = await _userManager.FindByEmailAsync(request.Email);
             if (existingUser != null)
             {
-                return new AuthResult { success = false, Errors = new[] {"Email already in use." } };
+                return new AuthResult { Success = false, Errors = new[] { "Email already in use." } };
             }
 
             var newUser = new ApplicationUser
@@ -58,19 +64,19 @@ namespace BookStore.Services
             var customer = new Customer
             {
                 UserId = newUser.Id,
-                LastName = request.FullName,
+                Name = request.UserName,
                 Email = request.Email
             };
-            // TODO: make a CustomerService and Repository and use in here
-            _context.Customer.Add(customer);
-            await _context.SaveChangedAsync();
+
+            await _customerRepository.CreateCustomerAsync(customer);
+
 
             return new AuthResult
             {
-                Success = true, 
-                UserId = newUser.Id ,
+                Success = true,
+                UserId = newUser.Id,
                 CustomerId = customer.Id,
-                Roles = new List<UserRole> { UserRole.Customer }
+                Roles = new List<string> { UserRoles.Customer }
             };
         }
 
@@ -85,9 +91,9 @@ namespace BookStore.Services
             };
 
             var userRoles = await _userManager.GetRolesAsync(user);
-            foreach(var userRole in userRoles)
+            foreach (var userRole in userRoles)
             {
-                claims.Add(new Claim(ClaimTypes.Role, userRole))
+                claims.Add(new Claim(ClaimTypes.Role, userRole));
             }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -111,14 +117,14 @@ namespace BookStore.Services
             var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
-                return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } }
+                return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } };
             }
             ;
 
             var isPassValid = await _userManager.CheckPasswordAsync(user, request.Password);
             if (!isPassValid)
             {
-                return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } }
+                return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } };
             }
             ;
 
@@ -132,3 +138,4 @@ namespace BookStore.Services
             };
         }
     }
+}
