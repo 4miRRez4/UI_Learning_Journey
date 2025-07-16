@@ -105,19 +105,22 @@ namespace BookStore.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<AuthResult> LoginAsync(LoginRequest request)
+
+        public async Task<AuthResult> LoginAsync(LoginDto request)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
-            if(user == null)
+            if (user == null)
             {
-                return new AuthResult { Success = false, Errors = new[] {"invalid credentials."} }
-            };
+                return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } }
+            }
+            ;
 
             var isPassValid = await _userManager.CheckPasswordAsync(user, request.Password);
             if (!isPassValid)
             {
                 return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } }
-            };
+            }
+            ;
 
             var token = await GenerateJwtToken(user);
 
@@ -128,4 +131,4 @@ namespace BookStore.Services
                 UserId = user.Id
             };
         }
-}
+    }
