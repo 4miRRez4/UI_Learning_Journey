@@ -11,7 +11,7 @@ namespace BookStore.Repositories.Interfaces
         Task<bool> CustomerExistsAsync(int id);
         Task DeleteCustomerAsync(int id);
         Task<Customer?> GetCustomerByEmailAsync(string email);
-        Task<Customer?> GetCustomerByUserIdAsync(int userId);
+        Task<Customer?> GetCustomerByUserIdAsync(string userId);
            
     }
 }

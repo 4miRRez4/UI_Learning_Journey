@@ -57,7 +57,7 @@ namespace BookStore.Repositories
                 .FirstOrDefaultAsync(c => c.Email == email);
         }
 
-        public async Task<Customer?> GetCustomerByUserIdAsync(int userId)
+        public async Task<Customer?> GetCustomerByUserIdAsync(string userId)
         {
             return await _context.Customers
                 .Include(c => c.User)
@@ -68,7 +68,7 @@ namespace BookStore.Repositories
         {
             return await _context.Customers
                 .Include(c => c.User)
-                .FirstOrDefaultAsync(c => c.User.Username == username);
+                .FirstOrDefaultAsync(c => c.User.UserName == username);
         }
     }
 }

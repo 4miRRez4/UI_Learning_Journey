@@ -27,6 +27,6 @@ namespace BookStore.Models
         public Book Book { get; set; }
 
         [ForeignKey("UserId")]
-        public User User { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

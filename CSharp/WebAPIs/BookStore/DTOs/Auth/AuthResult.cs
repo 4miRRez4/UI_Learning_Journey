@@ -1,4 +1,4 @@
-
+using BookStore.Authorization;
 
 namespace BookStore.Dtos.Auth
 {
@@ -10,7 +10,7 @@ namespace BookStore.Dtos.Auth
         public string? UserId { get; set; }
         public int? CustomerId { get; set; }
         public IEnumerable<string>? Errors { get; set; }
-        public List<RoleDto>? Roles { get; set; }
+        public List<string>? Roles { get; set; }
     }
 
 }

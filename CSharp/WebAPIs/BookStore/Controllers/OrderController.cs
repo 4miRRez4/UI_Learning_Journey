@@ -1,14 +1,20 @@
 using BookStore.Dtos.Order;
 using BookStore.Services.Interfaces;
 using BookStore.Services;
+using BookStore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookStore.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
@@ -21,6 +27,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet] // GET: api/order
+        [Authorize(Roles = UserRoles.Admin + "," + UserRoles.Seller)]
         public async Task<ActionResult<IEnumerable<OrderDto>>> GetAllOrders()
         {
             try
@@ -40,6 +47,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(UserRoles.Admin + "," + UserRoles.Customer)]
         public async Task<IActionResult> GetOrderById(int id)
         {
             try
@@ -60,6 +68,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = UserRoles.Customer)]
         public async Task<ActionResult<OrderDto>> CreateOrder([FromBody] CreateOrderDto createOrderDto)
         {
             if (createOrderDto == null)
@@ -85,6 +94,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost("{orderId}/items")] // POST: api/order/{orderId}/items
+        [Authorize(UserRoles.Customer)]
         public async Task<ActionResult<OrderDto>> AddItemToOrder(int orderId, [FromBody] CreateOrderItemDto createOrderItemDto)
         {
             if (createOrderItemDto == null)

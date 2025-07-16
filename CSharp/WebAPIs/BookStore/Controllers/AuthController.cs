@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using BookStore.Dtos.Auth;
+using BookStore.Services.Interfaces;
 
 namespace BookStore.Controllers
 {
@@ -31,7 +33,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginDto request)
         {
             var result = await _authService.LoginAsync(request);
 
