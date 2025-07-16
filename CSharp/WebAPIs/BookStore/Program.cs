@@ -3,10 +3,12 @@ using BookStore.Repositories.Interfaces;
 using BookStore.Repositories;
 using BookStore.Services.Interfaces;
 using BookStore.Services;
+using BookStore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Microsoft.AspNetCore.Identity;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,23 +67,23 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireAdmin", policy =>
     {
-        policy.RequireRole("Admin");
+        policy.RequireRole(UserRole.Admin);
     });
 
     options.AddPolicy("RequireSeller", policy =>
     {
-        policy.RequireRole("Seller");
+        policy.RequireRole(UserRole.Seller);
     });
 
     options.AddPolicy("RequireCustomer", policy =>
     {
-        policy.RequireRole("Customer");
+        policy.RequireRole(UserRole.Customer);
     });
 
     options.AddPolicy("ManageBooks", policy =>
         policy.RequireAssertion(context =>
-            context.User.IsInRole("Admin") ||
-            context.User.IsInRole("Seller")));
+            context.User.IsInRole(UserRole.Admin) ||
+            context.User.IsInRole(UserRole.Seller)));
 }
 
 builder.Services.AddSwaggerGen();
@@ -110,7 +112,7 @@ using (var scope = app.Services.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
     //seed roles
-    string[] roleNames = { "Admin", "Seller", "Customer" };
+    string[] roleNames = { UserRole.Admin, UserRole.Seller, UserRole.Customer };
     foreach (var roleName in roleNames)
     {
         if (!await roleManager.RoleExistsAsync(roleName))
@@ -133,7 +135,7 @@ using (var scope = app.Services.CreateScope())
 
         if (result.Succeeded)
         {
-            await userManager.AddToRoleAsync(adminUser, "Admin");
+            await userManager.AddToRoleAsync(adminUser, UserRole.Admin);
         }
     }
 }
