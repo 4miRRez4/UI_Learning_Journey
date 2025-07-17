@@ -107,6 +107,7 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IAuthService,  AuthService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -180,15 +181,6 @@ app.Use(async (context, next) =>
         });
     }
 });
-
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    var conn = db.Database.GetDbConnection();
-    Console.WriteLine($"ACTUAL DATABASE BEING USED:");
-    Console.WriteLine($"Server: {conn.DataSource}");
-    Console.WriteLine($"Database: {conn.Database}");
-}
 
 app.Run();
 
