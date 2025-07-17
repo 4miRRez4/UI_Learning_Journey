@@ -12,6 +12,9 @@ using Microsoft.AspNetCore.Identity;
 
 namespace BookStore.Controllers
 {
+    /// <summary>
+    /// Controller for managing orders and order items
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
@@ -26,6 +29,14 @@ namespace BookStore.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all orders (Admin/Seller only)
+        /// </summary>
+        /// <returns>List of all orders</returns>
+        /// <response code="200">Returns the list of orders</response>
+        /// <response code="404">If no orders are found</response>
+        /// <response code="401">If user is not authenticated</response>
+        /// <response code="403">If user lacks required role</response>
         [HttpGet] // GET: api/order
         [Authorize(Roles = UserRoles.Admin + "," + UserRoles.Seller)]
         public async Task<ActionResult<IEnumerable<OrderDto>>> GetAllOrders()
@@ -46,6 +57,15 @@ namespace BookStore.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a specific order by ID (Admin/Customer only)
+        /// </summary>
+        /// <param name="id">The ID of the order to retrieve</param>
+        /// <returns>The requested order</returns>
+        /// <response code="200">Returns the requested order</response>
+        /// <response code="404">If order is not found</response>
+        /// <response code="401">If user is not authenticated</response>
+        /// <response code="403">If user lacks required role</response>
         [HttpGet("{id}")]
         [Authorize(UserRoles.Admin + "," + UserRoles.Customer)]
         public async Task<IActionResult> GetOrderById(int id)
@@ -67,6 +87,31 @@ namespace BookStore.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new order (Customer only)
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /api/order
+        ///     {
+        ///        "customerId": 1,
+        ///        "shippingAddress": "123 Main St",
+        ///        "orderItems": [
+        ///          {
+        ///            "bookId": 1,
+        ///            "quantity": 2
+        ///          }
+        ///        ]
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="createOrderDto">The order data</param>
+        /// <returns>The newly created order</returns>
+        /// <response code="201">Returns the newly created order</response>
+        /// <response code="400">If the order data is invalid</response>
+        /// <response code="401">If user is not authenticated</response>
+        /// <response code="403">If user lacks required role</response>
         [HttpPost]
         [Authorize(Roles = UserRoles.Customer)]
         public async Task<ActionResult<OrderDto>> CreateOrder([FromBody] CreateOrderDto createOrderDto)
@@ -93,6 +138,27 @@ namespace BookStore.Controllers
             }
         }
 
+        /// <summary>
+        /// Adds an item to an existing order (Customer only)
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /api/order/1/items
+        ///     {
+        ///        "bookId": 2,
+        ///        "quantity": 1
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="orderId">The ID of the order to modify</param>
+        /// <param name="createOrderItemDto">The order item data</param>
+        /// <returns>The updated order</returns>
+        /// <response code="200">Returns the updated order</response>
+        /// <response code="400">If the order item data is invalid</response>
+        /// <response code="404">If order is not found</response>
+        /// <response code="401">If user is not authenticated</response>
+        /// <response code="403">If user lacks required role</response>
         [HttpPost("{orderId}/items")] // POST: api/order/{orderId}/items
         [Authorize(UserRoles.Customer)]
         public async Task<ActionResult<OrderDto>> AddItemToOrder(int orderId, [FromBody] CreateOrderItemDto createOrderItemDto)
@@ -130,6 +196,5 @@ namespace BookStore.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-
     }
 }
