@@ -873,3 +873,30 @@ ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
 2025-07-17T16:43:50.9419284+03:30 0HNE56CE7EHF1:00000003 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
 2025-07-17T16:43:50.9419793+03:30 0HNE56CE7EHF1:00000003 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 2.3967ms (74253ad3)
 2025-07-17T16:44:02.4423060+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T16:59:39.3385268+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T16:59:40.0159033+03:30  [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:59:40.0494534+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:59:40.0501814+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:59:40.0583143+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T16:59:40.1673641+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T16:59:40.1673991+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T16:59:40.1692689+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T16:59:40.1696165+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T16:59:40.1696443+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T16:59:48.8326782+03:30 0HNE56O0C4R9I:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - null null (d509f86a)
+2025-07-17T16:59:48.9082285+03:30 0HNE56O0C4R9I:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 76.4696ms (74253ad3)
+2025-07-17T16:59:49.3978890+03:30 0HNE56O0C4R9I:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-17T16:59:49.4858788+03:30 0HNE56O0C4R9I:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 87.9744ms (74253ad3)
+2025-07-17T17:00:01.8019529+03:30  [INF] Application is shutting down... (90f52c38)
