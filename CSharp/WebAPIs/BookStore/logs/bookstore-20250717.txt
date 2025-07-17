@@ -664,3 +664,212 @@ ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
 2025-07-17T14:24:37.2282963+03:30 0HNE53KEPFSQO:00000004 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
 2025-07-17T14:24:37.2283992+03:30 0HNE53KEPFSQO:00000004 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 41.2443ms (74253ad3)
 2025-07-17T14:25:09.1448908+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T15:29:02.1549812+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T15:29:02.8106116+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T15:29:02.8446750+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T15:29:02.8454140+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T15:29:02.8524156+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T15:29:02.9830114+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T15:29:02.9830455+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T15:29:02.9848928+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T15:29:02.9852183+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T15:29:02.9852450+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T15:29:06.7206511+03:30 0HNE555AG4E9B:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - null null (d509f86a)
+2025-07-17T15:29:06.7914140+03:30 0HNE555AG4E9B:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 71.6715ms (74253ad3)
+2025-07-17T15:29:06.8784480+03:30 0HNE555AG4E9B:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-17T15:29:06.9617852+03:30 0HNE555AG4E9B:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 83.3356ms (74253ad3)
+2025-07-17T15:45:01.3862264+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T16:28:52.6276727+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T16:28:53.2834672+03:30  [INF] Executed DbCommand ("20"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:28:53.3170443+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:28:53.3177672+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:28:53.3245930+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T16:28:53.4278984+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T16:28:53.4279263+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T16:28:53.4298291+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T16:28:53.4301880+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T16:28:53.4302170+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T16:28:55.1222627+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T16:34:53.3492010+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T16:34:53.9990841+03:30  [INF] Executed DbCommand ("20"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:34:54.0329817+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:34:54.0337278+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:34:54.0406830+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T16:34:54.1426925+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T16:34:54.1427202+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T16:34:54.1447328+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T16:34:54.1451371+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T16:34:54.1451621+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T16:35:09.9370156+03:30 0HNE56A7KB2J1:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order/8""" - null null (d509f86a)
+2025-07-17T16:35:09.9583574+03:30 0HNE56A7KB2J1:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order/8""" - 307 0 null 22.3213ms (74253ad3)
+2025-07-17T16:35:09.9742410+03:30 0HNE56A7KB2J3:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order/8""" - null null (d509f86a)
+2025-07-17T16:35:09.9942123+03:30 0HNE56A7KB2J3:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The AuthorizationPolicy named: 'Admin,Customer' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-17T16:35:10.0071218+03:30 0HNE56A7KB2J3:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order/8""" - 500 null "text/plain; charset=utf-8" 32.8483ms (74253ad3)
+2025-07-17T16:35:18.7395136+03:30 0HNE56A7KB2J1:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T16:35:18.7402333+03:30 0HNE56A7KB2J1:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 0.7234ms (74253ad3)
+2025-07-17T16:35:18.7415818+03:30 0HNE56A7KB2J3:00000002 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T16:35:18.7733999+03:30 0HNE56A7KB2J3:00000002 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T16:35:18.7803720+03:30 0HNE56A7KB2J3:00000002 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T16:35:18.9122120+03:30 0HNE56A7KB2J3:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T16:35:18.9307442+03:30 0HNE56A7KB2J3:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T16:35:18.9712786+03:30 0HNE56A7KB2J3:00000002 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 189.1562ms (afa2e885)
+2025-07-17T16:35:18.9714899+03:30 0HNE56A7KB2J3:00000002 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T16:35:18.9736108+03:30 0HNE56A7KB2J3:00000002 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 232.011ms (74253ad3)
+2025-07-17T16:35:46.1584550+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T16:39:01.0904148+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T16:39:01.7276742+03:30  [INF] Executed DbCommand ("18"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:39:01.7615544+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:39:01.7623641+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T16:39:01.7690893+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T16:39:01.8727174+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T16:39:01.8727469+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T16:39:01.8746370+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T16:39:01.8749806+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T16:39:01.8750103+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T16:39:06.8258199+03:30 0HNE56CE7EHEN:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T16:39:06.8486331+03:30 0HNE56CE7EHEN:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 24.1973ms (74253ad3)
+2025-07-17T16:39:06.8644036+03:30 0HNE56CE7EHEP:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T16:39:06.9135572+03:30 0HNE56CE7EHEP:00000001 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T16:39:06.9207780+03:30 0HNE56CE7EHEP:00000001 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T16:39:07.0497330+03:30 0HNE56CE7EHEP:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T16:39:07.0682932+03:30 0HNE56CE7EHEP:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T16:39:07.1079237+03:30 0HNE56CE7EHEP:00000001 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 185.4189ms (afa2e885)
+2025-07-17T16:39:07.1081504+03:30 0HNE56CE7EHEP:00000001 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T16:39:07.1103484+03:30 0HNE56CE7EHEP:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 245.9441ms (74253ad3)
+2025-07-17T16:43:39.7026040+03:30 0HNE56CE7EHEV:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T16:43:39.7033005+03:30 0HNE56CE7EHEV:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 0.7001ms (74253ad3)
+2025-07-17T16:43:39.7073406+03:30 0HNE56CE7EHF1:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T16:43:39.7091172+03:30 0HNE56CE7EHF1:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-17T16:43:39.7092159+03:30 0HNE56CE7EHF1:00000001 [INF] Request origin "https://bookstoreTest.com" does not have permission to access the resource. (a03d560b)
+2025-07-17T16:43:39.7110102+03:30 0HNE56CE7EHF1:00000001 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T16:43:39.7111356+03:30 0HNE56CE7EHF1:00000001 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T16:43:39.7209753+03:30 0HNE56CE7EHF1:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T16:43:39.7216787+03:30 0HNE56CE7EHF1:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T16:43:39.7222483+03:30 0HNE56CE7EHF1:00000001 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 11.0645ms (afa2e885)
+2025-07-17T16:43:39.7222781+03:30 0HNE56CE7EHF1:00000001 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T16:43:39.7223720+03:30 0HNE56CE7EHF1:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 15.0279ms (74253ad3)
+2025-07-17T16:43:49.5747069+03:30 0HNE56CE7EHEV:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T16:43:49.5749377+03:30 0HNE56CE7EHEV:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 0.2578ms (74253ad3)
+2025-07-17T16:43:49.5759114+03:30 0HNE56CE7EHF1:00000002 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T16:43:49.5763755+03:30 0HNE56CE7EHF1:00000002 [INF] CORS policy execution failed. (09b6f179)
+2025-07-17T16:43:49.5763997+03:30 0HNE56CE7EHF1:00000002 [INF] Request origin "https://bookstoreeeTest.com" does not have permission to access the resource. (a03d560b)
+2025-07-17T16:43:49.5786382+03:30 0HNE56CE7EHF1:00000002 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T16:43:49.5787276+03:30 0HNE56CE7EHF1:00000002 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T16:43:49.5822924+03:30 0HNE56CE7EHF1:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T16:43:49.5826863+03:30 0HNE56CE7EHF1:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T16:43:49.5829912+03:30 0HNE56CE7EHF1:00000002 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 4.2106ms (afa2e885)
+2025-07-17T16:43:49.5830278+03:30 0HNE56CE7EHF1:00000002 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T16:43:49.5831378+03:30 0HNE56CE7EHF1:00000002 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 7.2114ms (74253ad3)
+2025-07-17T16:43:50.9385993+03:30 0HNE56CE7EHEV:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T16:43:50.9387756+03:30 0HNE56CE7EHEV:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 0.1939ms (74253ad3)
+2025-07-17T16:43:50.9395870+03:30 0HNE56CE7EHF1:00000003 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T16:43:50.9396760+03:30 0HNE56CE7EHF1:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-17T16:43:50.9396881+03:30 0HNE56CE7EHF1:00000003 [INF] Request origin "https://bookstoreeeTest.com" does not have permission to access the resource. (a03d560b)
+2025-07-17T16:43:50.9399326+03:30 0HNE56CE7EHF1:00000003 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T16:43:50.9399898+03:30 0HNE56CE7EHF1:00000003 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T16:43:50.9414128+03:30 0HNE56CE7EHF1:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T16:43:50.9417073+03:30 0HNE56CE7EHF1:00000003 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T16:43:50.9419098+03:30 0HNE56CE7EHF1:00000003 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 1.8958ms (afa2e885)
+2025-07-17T16:43:50.9419284+03:30 0HNE56CE7EHF1:00000003 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T16:43:50.9419793+03:30 0HNE56CE7EHF1:00000003 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 2.3967ms (74253ad3)
+2025-07-17T16:44:02.4423060+03:30  [INF] Application is shutting down... (90f52c38)

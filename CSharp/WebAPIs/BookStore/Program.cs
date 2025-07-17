@@ -22,6 +22,20 @@ builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 builder.Logging.AddDebug();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("BookStorePolicy", policy =>
+    {
+        policy.WithOrigins(
+                "http://localhost:5081",
+                "https://bookstoreTest.com" // Production domain
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
 builder.Logging.AddFile("logs/bookstore-{Date}.txt");
 
 builder.Services.AddOpenApi();
@@ -151,11 +165,13 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+app.UseCors("BookStorePolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
