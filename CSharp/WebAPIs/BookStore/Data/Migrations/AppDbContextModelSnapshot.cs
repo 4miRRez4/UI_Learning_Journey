@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BookStore.Data
+namespace BookStore.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -17,7 +17,7 @@ namespace BookStore.Data
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.6")
+                .HasAnnotation("ProductVersion", "9.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -62,6 +62,101 @@ namespace BookStore.Data
                             BookId = 5,
                             AuthorId = 5
                         });
+                });
+
+            modelBuilder.Entity("BookStore.Models.ApplicationRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("BookStore.Models.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("BookStore.Models.Author", b =>
@@ -261,12 +356,7 @@ namespace BookStore.Data
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -278,81 +368,16 @@ namespace BookStore.Data
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "123 Admin St, Admin City, AC 12345",
-                            CreatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            DateOfBirth = new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin@bookstore.com",
-                            FirstName = "Admin",
-                            LastName = "User",
-                            PhoneNumber = "+1234567890",
-                            UpdatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Address = "456 Main St, Anytown, AT 54321",
-                            CreatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            DateOfBirth = new DateTime(1985, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "john.doe@email.com",
-                            FirstName = "John",
-                            LastName = "Doe",
-                            PhoneNumber = "+1234567891",
-                            UpdatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Address = "789 Oak Ave, Somewhere, SW 67890",
-                            CreatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            DateOfBirth = new DateTime(1992, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "jane.smith@email.com",
-                            FirstName = "Jane",
-                            LastName = "Smith",
-                            PhoneNumber = "+1234567892",
-                            UpdatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Address = "999 Guest St, Guest City, GC 99999",
-                            CreatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "guest@email.com",
-                            FirstName = "Guest",
-                            LastName = "Customer",
-                            PhoneNumber = "+1234567893",
-                            UpdatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Address = "101 Pine Ln, Forest Town, FT 11111",
-                            CreatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            DateOfBirth = new DateTime(1988, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "bob.wilson@email.com",
-                            FirstName = "Bob",
-                            LastName = "Wilson",
-                            PhoneNumber = "+1234567894",
-                            UpdatedAt = new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc),
-                            UserId = 4
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Models.Order", b =>
@@ -417,77 +442,11 @@ namespace BookStore.Data
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("Orders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 7, 8, 10, 0, 0, 0, DateTimeKind.Utc),
-                            CustomerId = 2,
-                            DiscountAmount = 0m,
-                            Notes = "First order from John Doe",
-                            OrderDate = new DateTime(2024, 7, 8, 10, 0, 0, 0, DateTimeKind.Utc),
-                            PaymentMethod = "Credit Card",
-                            PaymentStatus = 1,
-                            ShippingAddress = "456 Main St, Anytown, AT 54321",
-                            ShippingAmount = 5.99m,
-                            ShippingMethod = "Standard",
-                            Status = 3,
-                            Subtotal = 44.98m,
-                            TaxAmount = 4.50m,
-                            TotalAmount = 55.47m,
-                            TransactionId = "TXN_001_2024",
-                            UpdatedAt = new DateTime(2024, 7, 12, 10, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 7, 10, 14, 30, 0, 0, DateTimeKind.Utc),
-                            CustomerId = 3,
-                            DiscountAmount = 0m,
-                            Notes = "Express shipping requested",
-                            OrderDate = new DateTime(2024, 7, 10, 14, 30, 0, 0, DateTimeKind.Utc),
-                            PaymentMethod = "PayPal",
-                            PaymentStatus = 1,
-                            ShippingAddress = "789 Oak Ave, Somewhere, SW 67890",
-                            ShippingAmount = 5.99m,
-                            ShippingMethod = "Express",
-                            Status = 2,
-                            Subtotal = 32.98m,
-                            TaxAmount = 3.30m,
-                            TotalAmount = 42.27m,
-                            TransactionId = "TXN_002_2024",
-                            UpdatedAt = new DateTime(2024, 7, 12, 14, 30, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 7, 12, 9, 0, 0, 0, DateTimeKind.Utc),
-                            CustomerId = 4,
-                            DiscountAmount = 0m,
-                            Notes = "Guest order",
-                            OrderDate = new DateTime(2024, 7, 12, 9, 0, 0, 0, DateTimeKind.Utc),
-                            PaymentMethod = "Credit Card",
-                            PaymentStatus = 0,
-                            ShippingAddress = "999 Guest St, Guest City, GC 99999",
-                            ShippingAmount = 5.99m,
-                            ShippingMethod = "Standard",
-                            Status = 0,
-                            Subtotal = 19.99m,
-                            TaxAmount = 2.00m,
-                            TotalAmount = 27.98m,
-                            UpdatedAt = new DateTime(2024, 7, 12, 9, 0, 0, 0, DateTimeKind.Utc)
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Models.OrderItem", b =>
@@ -523,58 +482,6 @@ namespace BookStore.Data
                     b.HasIndex("OrderId");
 
                     b.ToTable("OrderItems");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BookId = 1,
-                            DiscountAmount = 0m,
-                            OrderId = 1,
-                            Quantity = 1,
-                            Subtotal = 24.99m,
-                            UnitPrice = 24.99m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BookId = 3,
-                            DiscountAmount = 0m,
-                            OrderId = 1,
-                            Quantity = 1,
-                            Subtotal = 19.99m,
-                            UnitPrice = 19.99m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BookId = 2,
-                            DiscountAmount = 0m,
-                            OrderId = 2,
-                            Quantity = 1,
-                            Subtotal = 29.99m,
-                            UnitPrice = 29.99m
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BookId = 5,
-                            DiscountAmount = 0m,
-                            OrderId = 2,
-                            Quantity = 1,
-                            Subtotal = 12.99m,
-                            UnitPrice = 12.99m
-                        },
-                        new
-                        {
-                            Id = 5,
-                            BookId = 3,
-                            DiscountAmount = 0m,
-                            OrderId = 3,
-                            Quantity = 1,
-                            Subtotal = 19.99m,
-                            UnitPrice = 19.99m
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Models.Review", b =>
@@ -598,8 +505,9 @@ namespace BookStore.Data
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -608,56 +516,9 @@ namespace BookStore.Data
                     b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BookId = 1,
-                            Comment = "Fantastic book! A perfect introduction to the magical world.",
-                            CreatedAt = new DateTime(2024, 6, 10, 15, 30, 0, 0, DateTimeKind.Utc),
-                            Rating = 5,
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BookId = 2,
-                            Comment = "Great but too violent for my taste. Excellent world-building though.",
-                            CreatedAt = new DateTime(2024, 6, 15, 11, 0, 0, 0, DateTimeKind.Utc),
-                            Rating = 4,
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BookId = 3,
-                            Comment = "Scared me to death! Masterpiece of horror literature.",
-                            CreatedAt = new DateTime(2024, 6, 20, 9, 45, 0, 0, DateTimeKind.Utc),
-                            Rating = 5,
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BookId = 4,
-                            Comment = "Classic mystery novel. Poirot is brilliant as always.",
-                            CreatedAt = new DateTime(2024, 6, 25, 14, 0, 0, 0, DateTimeKind.Utc),
-                            Rating = 4,
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 5,
-                            BookId = 5,
-                            Comment = "Good story but a bit slow-paced for my liking.",
-                            CreatedAt = new DateTime(2024, 7, 1, 10, 20, 0, 0, DateTimeKind.Utc),
-                            Rating = 3,
-                            UserId = 3
-                        });
                 });
 
-            modelBuilder.Entity("BookStore.Models.User", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -665,44 +526,102 @@ namespace BookStore.Data
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("PasswordHash")
-                        .IsRequired()
+                    b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("RoleId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            PasswordHash = "hashed_admin_password_123",
-                            Username = "admin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            PasswordHash = "hashed_john_password_123",
-                            Username = "john_doe"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            PasswordHash = "hashed_jane_password_123",
-                            Username = "jane_smith"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            PasswordHash = "hashed_bob_password_123",
-                            Username = "bob_wilson"
-                        });
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("BookAuthors", b =>
@@ -722,9 +641,10 @@ namespace BookStore.Data
 
             modelBuilder.Entity("BookStore.Models.Customer", b =>
                 {
-                    b.HasOne("BookStore.Models.User", "User")
+                    b.HasOne("BookStore.Models.ApplicationUser", "User")
                         .WithOne("Customer")
-                        .HasForeignKey("BookStore.Models.Customer", "UserId");
+                        .HasForeignKey("BookStore.Models.Customer", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("User");
                 });
@@ -736,10 +656,6 @@ namespace BookStore.Data
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("BookStore.Models.User", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("UserId");
 
                     b.Navigation("Customer");
                 });
@@ -771,8 +687,8 @@ namespace BookStore.Data
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookStore.Models.User", "User")
-                        .WithMany("Review")
+                    b.HasOne("BookStore.Models.ApplicationUser", "User")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -780,6 +696,63 @@ namespace BookStore.Data
                     b.Navigation("Book");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("BookStore.Models.ApplicationRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("BookStore.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("BookStore.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("BookStore.Models.ApplicationRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookStore.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("BookStore.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BookStore.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("Customer")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BookStore.Models.Book", b =>
@@ -797,15 +770,6 @@ namespace BookStore.Data
             modelBuilder.Entity("BookStore.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
-                });
-
-            modelBuilder.Entity("BookStore.Models.User", b =>
-                {
-                    b.Navigation("Customer");
-
-                    b.Navigation("Orders");
-
-                    b.Navigation("Review");
                 });
 #pragma warning restore 612, 618
         }

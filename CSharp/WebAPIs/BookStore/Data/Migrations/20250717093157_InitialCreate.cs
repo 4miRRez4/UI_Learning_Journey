@@ -5,14 +5,54 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace BookStore.Data
+namespace BookStore.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreateWithEcommerceEntities : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AspNetRoles",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Authors",
                 columns: table => new
@@ -50,17 +90,135 @@ namespace BookStore.Data
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserClaims_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserLogins",
+                columns: table => new
+                {
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserLogins", x => new { x.LoginProvider, x.ProviderKey });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserLogins_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserRoles",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserRoles", x => new { x.UserId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserTokens",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserTokens_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Customers_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -88,32 +246,6 @@ namespace BookStore.Data
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Customers_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
@@ -123,21 +255,21 @@ namespace BookStore.Data
                     Comment = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BookId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reviews", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Reviews_Books_BookId",
-                        column: x => x.BookId,
-                        principalTable: "Books",
+                        name: "FK_Reviews_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Reviews_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
+                        name: "FK_Reviews_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -163,8 +295,7 @@ namespace BookStore.Data
                     ShippingMethod = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Notes = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -175,11 +306,6 @@ namespace BookStore.Data
                         principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Orders_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -237,22 +363,6 @@ namespace BookStore.Data
                 });
 
             migrationBuilder.InsertData(
-                table: "Customers",
-                columns: new[] { "Id", "Address", "CreatedAt", "DateOfBirth", "Email", "FirstName", "LastName", "PhoneNumber", "UpdatedAt", "UserId" },
-                values: new object[] { 4, "999 Guest St, Guest City, GC 99999", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), null, "guest@email.com", "Guest", "Customer", "+1234567893", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), null });
-
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "PasswordHash", "Username" },
-                values: new object[,]
-                {
-                    { 1, "hashed_admin_password_123", "admin" },
-                    { 2, "hashed_john_password_123", "john_doe" },
-                    { 3, "hashed_jane_password_123", "jane_smith" },
-                    { 4, "hashed_bob_password_123", "bob_wilson" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "BookAuthors",
                 columns: new[] { "AuthorId", "BookId" },
                 values: new object[,]
@@ -264,58 +374,44 @@ namespace BookStore.Data
                     { 5, 5 }
                 });
 
-            migrationBuilder.InsertData(
-                table: "Customers",
-                columns: new[] { "Id", "Address", "CreatedAt", "DateOfBirth", "Email", "FirstName", "LastName", "PhoneNumber", "UpdatedAt", "UserId" },
-                values: new object[,]
-                {
-                    { 1, "123 Admin St, Admin City, AC 12345", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@bookstore.com", "Admin", "User", "+1234567890", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), 1 },
-                    { 2, "456 Main St, Anytown, AT 54321", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), new DateTime(1985, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "john.doe@email.com", "John", "Doe", "+1234567891", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), 2 },
-                    { 3, "789 Oak Ave, Somewhere, SW 67890", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), new DateTime(1992, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "jane.smith@email.com", "Jane", "Smith", "+1234567892", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), 3 },
-                    { 5, "101 Pine Ln, Forest Town, FT 11111", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), new DateTime(1988, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "bob.wilson@email.com", "Bob", "Wilson", "+1234567894", new DateTime(2023, 1, 1, 10, 0, 0, 0, DateTimeKind.Utc), 4 }
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetRoleClaims_RoleId",
+                table: "AspNetRoleClaims",
+                column: "RoleId");
 
-            migrationBuilder.InsertData(
-                table: "Orders",
-                columns: new[] { "Id", "CreatedAt", "CustomerId", "DiscountAmount", "Notes", "OrderDate", "PaymentMethod", "PaymentStatus", "ShippingAddress", "ShippingAmount", "ShippingMethod", "Status", "Subtotal", "TaxAmount", "TotalAmount", "TransactionId", "UpdatedAt", "UserId" },
-                values: new object[] { 3, new DateTime(2024, 7, 12, 9, 0, 0, 0, DateTimeKind.Utc), 4, 0m, "Guest order", new DateTime(2024, 7, 12, 9, 0, 0, 0, DateTimeKind.Utc), "Credit Card", 0, "999 Guest St, Guest City, GC 99999", 5.99m, "Standard", 0, 19.99m, 2.00m, 27.98m, null, new DateTime(2024, 7, 12, 9, 0, 0, 0, DateTimeKind.Utc), null });
+            migrationBuilder.CreateIndex(
+                name: "RoleNameIndex",
+                table: "AspNetRoles",
+                column: "NormalizedName",
+                unique: true,
+                filter: "[NormalizedName] IS NOT NULL");
 
-            migrationBuilder.InsertData(
-                table: "Reviews",
-                columns: new[] { "Id", "BookId", "Comment", "CreatedAt", "Rating", "UserId" },
-                values: new object[,]
-                {
-                    { 1, 1, "Fantastic book! A perfect introduction to the magical world.", new DateTime(2024, 6, 10, 15, 30, 0, 0, DateTimeKind.Utc), 5, 2 },
-                    { 2, 2, "Great but too violent for my taste. Excellent world-building though.", new DateTime(2024, 6, 15, 11, 0, 0, 0, DateTimeKind.Utc), 4, 3 },
-                    { 3, 3, "Scared me to death! Masterpiece of horror literature.", new DateTime(2024, 6, 20, 9, 45, 0, 0, DateTimeKind.Utc), 5, 2 },
-                    { 4, 4, "Classic mystery novel. Poirot is brilliant as always.", new DateTime(2024, 6, 25, 14, 0, 0, 0, DateTimeKind.Utc), 4, 4 },
-                    { 5, 5, "Good story but a bit slow-paced for my liking.", new DateTime(2024, 7, 1, 10, 20, 0, 0, DateTimeKind.Utc), 3, 3 }
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserClaims_UserId",
+                table: "AspNetUserClaims",
+                column: "UserId");
 
-            migrationBuilder.InsertData(
-                table: "OrderItems",
-                columns: new[] { "Id", "BookId", "DiscountAmount", "OrderId", "Quantity", "Subtotal", "UnitPrice" },
-                values: new object[] { 5, 3, 0m, 3, 1, 19.99m, 19.99m });
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserLogins_UserId",
+                table: "AspNetUserLogins",
+                column: "UserId");
 
-            migrationBuilder.InsertData(
-                table: "Orders",
-                columns: new[] { "Id", "CreatedAt", "CustomerId", "DiscountAmount", "Notes", "OrderDate", "PaymentMethod", "PaymentStatus", "ShippingAddress", "ShippingAmount", "ShippingMethod", "Status", "Subtotal", "TaxAmount", "TotalAmount", "TransactionId", "UpdatedAt", "UserId" },
-                values: new object[,]
-                {
-                    { 1, new DateTime(2024, 7, 8, 10, 0, 0, 0, DateTimeKind.Utc), 2, 0m, "First order from John Doe", new DateTime(2024, 7, 8, 10, 0, 0, 0, DateTimeKind.Utc), "Credit Card", 1, "456 Main St, Anytown, AT 54321", 5.99m, "Standard", 3, 44.98m, 4.50m, 55.47m, "TXN_001_2024", new DateTime(2024, 7, 12, 10, 0, 0, 0, DateTimeKind.Utc), null },
-                    { 2, new DateTime(2024, 7, 10, 14, 30, 0, 0, DateTimeKind.Utc), 3, 0m, "Express shipping requested", new DateTime(2024, 7, 10, 14, 30, 0, 0, DateTimeKind.Utc), "PayPal", 1, "789 Oak Ave, Somewhere, SW 67890", 5.99m, "Express", 2, 32.98m, 3.30m, 42.27m, "TXN_002_2024", new DateTime(2024, 7, 12, 14, 30, 0, 0, DateTimeKind.Utc), null }
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserRoles_RoleId",
+                table: "AspNetUserRoles",
+                column: "RoleId");
 
-            migrationBuilder.InsertData(
-                table: "OrderItems",
-                columns: new[] { "Id", "BookId", "DiscountAmount", "OrderId", "Quantity", "Subtotal", "UnitPrice" },
-                values: new object[,]
-                {
-                    { 1, 1, 0m, 1, 1, 24.99m, 24.99m },
-                    { 2, 3, 0m, 1, 1, 19.99m, 19.99m },
-                    { 3, 2, 0m, 2, 1, 29.99m, 29.99m },
-                    { 4, 5, 0m, 2, 1, 12.99m, 12.99m }
-                });
+            migrationBuilder.CreateIndex(
+                name: "EmailIndex",
+                table: "AspNetUsers",
+                column: "NormalizedEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "UserNameIndex",
+                table: "AspNetUsers",
+                column: "NormalizedUserName",
+                unique: true,
+                filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookAuthors_AuthorId",
@@ -326,8 +422,7 @@ namespace BookStore.Data
                 name: "IX_Customers_UserId",
                 table: "Customers",
                 column: "UserId",
-                unique: true,
-                filter: "[UserId] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItems_BookId",
@@ -345,11 +440,6 @@ namespace BookStore.Data
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_UserId",
-                table: "Orders",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Reviews_BookId",
                 table: "Reviews",
                 column: "BookId");
@@ -364,6 +454,21 @@ namespace BookStore.Data
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AspNetRoleClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserLogins");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserRoles");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
                 name: "BookAuthors");
 
             migrationBuilder.DropTable(
@@ -371,6 +476,9 @@ namespace BookStore.Data
 
             migrationBuilder.DropTable(
                 name: "Reviews");
+
+            migrationBuilder.DropTable(
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "Authors");
@@ -385,7 +493,7 @@ namespace BookStore.Data
                 name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "AspNetUsers");
         }
     }
 }
