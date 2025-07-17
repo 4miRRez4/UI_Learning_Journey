@@ -927,3 +927,373 @@ WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
 2025-07-17T17:04:43.9823852+03:30 0HNE56QO5ITI1:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - null null (d509f86a)
 2025-07-17T17:04:44.0742778+03:30 0HNE56QO5ITI1:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 91.8678ms (74253ad3)
 2025-07-17T17:05:06.8223959+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T17:24:31.1773158+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T17:24:31.8195910+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:24:31.8533739+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:24:31.8541592+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:24:31.8622800+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T17:24:31.9697550+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T17:24:31.9697859+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T17:24:31.9716866+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T17:24:31.9720269+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T17:24:31.9720504+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T17:24:38.2373513+03:30 0HNE575S86RKN:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - null null (d509f86a)
+2025-07-17T17:24:38.3169913+03:30 0HNE575S86RKN:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 80.5865ms (74253ad3)
+2025-07-17T17:24:38.8002587+03:30 0HNE575S86RKN:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-17T17:24:38.8877804+03:30 0HNE575S86RKN:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 87.495ms (74253ad3)
+2025-07-17T17:24:50.2930948+03:30 0HNE575S86RKN:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:24:50.2985112+03:30 0HNE575S86RKN:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 5.3682ms (74253ad3)
+2025-07-17T17:24:50.3298142+03:30 0HNE575S86RKO:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:24:50.3318216+03:30 0HNE575S86RKO:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:24:50.3596516+03:30 0HNE575S86RKO:00000001 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:24:50.3612417+03:30 0HNE575S86RKO:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:24:50.3619469+03:30 0HNE575S86RKO:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 32.1205ms (74253ad3)
+2025-07-17T17:25:47.5410035+03:30 0HNE575S86RKN:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:47.5412804+03:30 0HNE575S86RKN:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2936ms (74253ad3)
+2025-07-17T17:25:47.5454650+03:30 0HNE575S86RKO:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:47.5458829+03:30 0HNE575S86RKO:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:25:47.5477366+03:30 0HNE575S86RKO:00000003 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:25:47.5478752+03:30 0HNE575S86RKO:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:25:47.5480140+03:30 0HNE575S86RKO:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 2.5318ms (74253ad3)
+2025-07-17T17:25:58.9741849+03:30 0HNE575S86RKN:00000005 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:58.9743913+03:30 0HNE575S86RKN:00000005 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2331ms (74253ad3)
+2025-07-17T17:25:58.9774725+03:30 0HNE575S86RKO:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:58.9782230+03:30 0HNE575S86RKO:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:25:58.9808964+03:30 0HNE575S86RKO:00000005 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:25:58.9811553+03:30 0HNE575S86RKO:00000005 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:25:58.9812922+03:30 0HNE575S86RKO:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 3.8012ms (74253ad3)
+2025-07-17T17:25:59.5770103+03:30 0HNE575S86RKN:00000006 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:59.5772421+03:30 0HNE575S86RKN:00000006 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2474ms (74253ad3)
+2025-07-17T17:25:59.5798338+03:30 0HNE575S86RKO:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:59.5799606+03:30 0HNE575S86RKO:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:25:59.5800690+03:30 0HNE575S86RKO:00000007 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:25:59.5800929+03:30 0HNE575S86RKO:00000007 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:25:59.5801344+03:30 0HNE575S86RKO:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.3171ms (74253ad3)
+2025-07-17T17:25:59.7556848+03:30 0HNE575S86RKN:00000007 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:59.7558845+03:30 0HNE575S86RKN:00000007 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2176ms (74253ad3)
+2025-07-17T17:25:59.7590326+03:30 0HNE575S86RKO:00000009 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:59.7591954+03:30 0HNE575S86RKO:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:25:59.7593480+03:30 0HNE575S86RKO:00000009 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:25:59.7593815+03:30 0HNE575S86RKO:00000009 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:25:59.7594842+03:30 0HNE575S86RKO:00000009 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.4763ms (74253ad3)
+2025-07-17T17:25:59.9214390+03:30 0HNE575S86RKN:00000008 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:59.9216726+03:30 0HNE575S86RKN:00000008 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2523ms (74253ad3)
+2025-07-17T17:25:59.9247616+03:30 0HNE575S86RKO:0000000B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:25:59.9248892+03:30 0HNE575S86RKO:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:25:59.9249951+03:30 0HNE575S86RKO:0000000B [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:25:59.9250291+03:30 0HNE575S86RKO:0000000B [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:25:59.9250703+03:30 0HNE575S86RKO:0000000B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.3199ms (74253ad3)
+2025-07-17T17:26:12.7625263+03:30 0HNE575S86RKN:00000009 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:12.7627228+03:30 0HNE575S86RKN:00000009 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2137ms (74253ad3)
+2025-07-17T17:26:12.7660606+03:30 0HNE575S86RKO:0000000D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:12.7662200+03:30 0HNE575S86RKO:0000000D [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:26:12.7663357+03:30 0HNE575S86RKO:0000000D [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:26:12.7663595+03:30 0HNE575S86RKO:0000000D [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:26:12.7664088+03:30 0HNE575S86RKO:0000000D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.3746ms (74253ad3)
+2025-07-17T17:26:42.5571018+03:30 0HNE575S86RKN:0000000A [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:42.5573443+03:30 0HNE575S86RKN:0000000A [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2395ms (74253ad3)
+2025-07-17T17:26:42.5601754+03:30 0HNE575S86RKO:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:42.5603425+03:30 0HNE575S86RKO:0000000F [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:26:42.5604934+03:30 0HNE575S86RKO:0000000F [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:26:42.5605279+03:30 0HNE575S86RKO:0000000F [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:26:42.5605834+03:30 0HNE575S86RKO:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.4254ms (74253ad3)
+2025-07-17T17:26:44.0132336+03:30 0HNE575S86RKN:0000000B [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:44.0134350+03:30 0HNE575S86RKN:0000000B [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.2195ms (74253ad3)
+2025-07-17T17:26:44.0162406+03:30 0HNE575S86RKO:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:44.0163633+03:30 0HNE575S86RKO:00000011 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:26:44.0164717+03:30 0HNE575S86RKO:00000011 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:26:44.0164938+03:30 0HNE575S86RKO:00000011 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:26:44.0165347+03:30 0HNE575S86RKO:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.3117ms (74253ad3)
+2025-07-17T17:26:44.2203251+03:30 0HNE575S86RKN:0000000C [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:44.2206050+03:30 0HNE575S86RKN:0000000C [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.3126ms (74253ad3)
+2025-07-17T17:26:44.2253042+03:30 0HNE575S86RKO:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:26:44.2261986+03:30 0HNE575S86RKO:00000013 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:26:44.2264301+03:30 0HNE575S86RKO:00000013 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:26:44.2265293+03:30 0HNE575S86RKO:00000013 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:26:44.2267265+03:30 0HNE575S86RKO:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 1.3493ms (74253ad3)
+2025-07-17T17:28:39.3017173+03:30 0HNE575S86RKQ:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T17:28:39.3019085+03:30 0HNE575S86RKQ:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 0.2043ms (74253ad3)
+2025-07-17T17:28:39.3057661+03:30 0HNE575S86RKS:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T17:28:39.3058757+03:30 0HNE575S86RKS:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-17T17:28:39.3060007+03:30 0HNE575S86RKS:00000001 [INF] Request origin "https://bookstoreeeTest.com" does not have permission to access the resource. (a03d560b)
+2025-07-17T17:28:39.3354851+03:30 0HNE575S86RKS:00000001 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T17:28:39.3425420+03:30 0HNE575S86RKS:00000001 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T17:28:39.4785248+03:30 0HNE575S86RKS:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T17:28:39.4969001+03:30 0HNE575S86RKS:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T17:28:39.5370830+03:30 0HNE575S86RKS:00000001 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 192.8316ms (afa2e885)
+2025-07-17T17:28:39.5372930+03:30 0HNE575S86RKS:00000001 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T17:28:39.5393696+03:30 0HNE575S86RKS:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 809 "application/json; charset=utf-8" 233.5964ms (74253ad3)
+2025-07-17T17:31:49.2648524+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T17:34:13.6789049+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T17:34:14.3266196+03:30  [INF] Executed DbCommand ("22"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:34:14.3613040+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:34:14.3620179+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:34:14.3701624+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T17:34:14.4804974+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T17:34:14.4805289+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T17:34:14.4824076+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T17:34:14.4827741+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T17:34:14.4828070+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T17:34:18.8243530+03:30 0HNE57B994ALO:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - null null (d509f86a)
+2025-07-17T17:34:18.8953165+03:30 0HNE57B994ALO:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 71.7689ms (74253ad3)
+2025-07-17T17:34:19.2176584+03:30 0HNE57B994ALO:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-17T17:34:19.3050021+03:30 0HNE57B994ALO:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 87.3493ms (74253ad3)
+2025-07-17T17:34:50.2109667+03:30 0HNE57B994ALO:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:34:50.2157903+03:30 0HNE57B994ALO:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 4.8152ms (74253ad3)
+2025-07-17T17:34:50.2417353+03:30 0HNE57B994ALP:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:34:50.2437596+03:30 0HNE57B994ALP:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:34:50.2567309+03:30 0HNE57B994ALP:00000001 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:34:50.2583342+03:30 0HNE57B994ALP:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:34:50.2588943+03:30 0HNE57B994ALP:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 17.1553ms (74253ad3)
+2025-07-17T17:35:09.7864662+03:30 0HNE57B994ALO:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:35:09.7867935+03:30 0HNE57B994ALO:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.3427ms (74253ad3)
+2025-07-17T17:35:09.7897840+03:30 0HNE57B994ALP:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:35:09.7901792+03:30 0HNE57B994ALP:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:35:09.7920217+03:30 0HNE57B994ALP:00000003 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:35:09.7921467+03:30 0HNE57B994ALP:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:35:09.7922494+03:30 0HNE57B994ALP:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 2.4714ms (74253ad3)
+2025-07-17T17:35:26.3215240+03:30 0HNE57B994ALR:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T17:35:26.3216957+03:30 0HNE57B994ALR:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 0.1906ms (74253ad3)
+2025-07-17T17:35:26.3257012+03:30 0HNE57B994ALT:00000001 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T17:35:26.3260016+03:30 0HNE57B994ALT:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-17T17:35:26.3261041+03:30 0HNE57B994ALT:00000001 [INF] Request origin "https://bookstoreeeTest.com" does not have permission to access the resource. (a03d560b)
+2025-07-17T17:35:26.3560390+03:30 0HNE57B994ALT:00000001 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T17:35:26.3635599+03:30 0HNE57B994ALT:00000001 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T17:35:26.4982321+03:30 0HNE57B994ALT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T17:35:26.5172972+03:30 0HNE57B994ALT:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T17:35:26.5570157+03:30 0HNE57B994ALT:00000001 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 191.701ms (afa2e885)
+2025-07-17T17:35:26.5572543+03:30 0HNE57B994ALT:00000001 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T17:35:26.5593569+03:30 0HNE57B994ALT:00000001 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 810 "application/json; charset=utf-8" 233.6235ms (74253ad3)
+2025-07-17T17:36:13.9403561+03:30 0HNE57B994ALO:00000005 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - null null (d509f86a)
+2025-07-17T17:36:13.9410063+03:30 0HNE57B994ALO:00000005 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 0.643ms (74253ad3)
+2025-07-17T17:36:14.2024559+03:30 0HNE57B994ALO:00000006 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-17T17:36:14.2107127+03:30 0HNE57B994ALO:00000006 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 8.3863ms (74253ad3)
+2025-07-17T17:36:24.7457673+03:30 0HNE57B994ALO:00000007 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:36:24.7461693+03:30 0HNE57B994ALO:00000007 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.4174ms (74253ad3)
+2025-07-17T17:36:24.7490441+03:30 0HNE57B994ALP:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:36:24.7491803+03:30 0HNE57B994ALP:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:36:24.7493204+03:30 0HNE57B994ALP:00000005 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:36:24.7493513+03:30 0HNE57B994ALP:00000005 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:36:24.7493956+03:30 0HNE57B994ALP:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.3601ms (74253ad3)
+2025-07-17T17:36:49.0566732+03:30 0HNE57B994ALO:00000008 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:36:49.0569683+03:30 0HNE57B994ALO:00000008 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order""" - 307 0 null 0.3223ms (74253ad3)
+2025-07-17T17:36:49.0617086+03:30 0HNE57B994ALP:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:36:49.0620313+03:30 0HNE57B994ALP:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:36:49.0625004+03:30 0HNE57B994ALP:00000007 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Seller)" (92d7f7d3)
+2025-07-17T17:36:49.0625728+03:30 0HNE57B994ALP:00000007 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2025-07-17T17:36:49.0626648+03:30 0HNE57B994ALP:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 401 0 null 0.9813ms (74253ad3)
+2025-07-17T17:36:53.5315301+03:30 0HNE57B994ALV:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - null null (d509f86a)
+2025-07-17T17:36:53.5316975+03:30 0HNE57B994ALV:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/order""" - 307 0 null 0.1769ms (74253ad3)
+2025-07-17T17:36:53.5325071+03:30 0HNE57B994ALT:00000002 [INF] Request starting "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - null null (d509f86a)
+2025-07-17T17:36:53.5325926+03:30 0HNE57B994ALT:00000002 [INF] CORS policy execution failed. (09b6f179)
+2025-07-17T17:36:53.5326159+03:30 0HNE57B994ALT:00000002 [INF] Request origin "https://bookstoreeeTest.com" does not have permission to access the resource. (a03d560b)
+2025-07-17T17:36:53.5331921+03:30 0HNE57B994ALT:00000002 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T17:36:53.5333254+03:30 0HNE57B994ALT:00000002 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T17:36:53.5465954+03:30 0HNE57B994ALT:00000002 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T17:36:53.5474961+03:30 0HNE57B994ALT:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T17:36:53.5478601+03:30 0HNE57B994ALT:00000002 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 14.4875ms (afa2e885)
+2025-07-17T17:36:53.5478898+03:30 0HNE57B994ALT:00000002 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T17:36:53.5479892+03:30 0HNE57B994ALT:00000002 [INF] Request finished "HTTP/1.1" "GET" "https"://"localhost:7140""""/api/order""" - 200 811 "application/json; charset=utf-8" 15.4754ms (74253ad3)
+2025-07-17T17:40:02.0283520+03:30 0HNE57B994AM0:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:02.0287086+03:30 0HNE57B994AM0:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - 307 0 null 0.358ms (74253ad3)
+2025-07-17T17:40:02.0335741+03:30 0HNE57B994AM1:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:02.0337514+03:30 0HNE57B994AM1:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:40:02.0391950+03:30 0HNE57B994AM1:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The AuthorizationPolicy named: 'Admin,Customer' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-17T17:40:02.0409462+03:30 0HNE57B994AM1:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - 500 null "text/plain; charset=utf-8" 7.385ms (74253ad3)
+2025-07-17T17:40:03.0443377+03:30 0HNE57B994AM0:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.0445657+03:30 0HNE57B994AM0:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - 307 0 null 0.2495ms (74253ad3)
+2025-07-17T17:40:03.0492267+03:30 0HNE57B994AM1:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.0494119+03:30 0HNE57B994AM1:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:40:03.0498634+03:30 0HNE57B994AM1:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The AuthorizationPolicy named: 'Admin,Customer' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-17T17:40:03.0503357+03:30 0HNE57B994AM1:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - 500 null "text/plain; charset=utf-8" 1.0978ms (74253ad3)
+2025-07-17T17:40:03.3404262+03:30 0HNE57B994AM0:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.3406467+03:30 0HNE57B994AM0:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - 307 0 null 0.2471ms (74253ad3)
+2025-07-17T17:40:03.3443414+03:30 0HNE57B994AM1:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.3445139+03:30 0HNE57B994AM1:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:40:03.3449568+03:30 0HNE57B994AM1:00000005 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The AuthorizationPolicy named: 'Admin,Customer' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-17T17:40:03.3451539+03:30 0HNE57B994AM1:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - 500 null "text/plain; charset=utf-8" 0.8352ms (74253ad3)
+2025-07-17T17:40:03.5467992+03:30 0HNE57B994AM0:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.5470043+03:30 0HNE57B994AM0:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - 307 0 null 0.2165ms (74253ad3)
+2025-07-17T17:40:03.5518785+03:30 0HNE57B994AM1:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.5521540+03:30 0HNE57B994AM1:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:40:03.5526745+03:30 0HNE57B994AM1:00000007 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The AuthorizationPolicy named: 'Admin,Customer' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-17T17:40:03.5530936+03:30 0HNE57B994AM1:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - 500 null "text/plain; charset=utf-8" 1.2396ms (74253ad3)
+2025-07-17T17:40:03.6947399+03:30 0HNE57B994AM0:00000005 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.6949478+03:30 0HNE57B994AM0:00000005 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/api/Order/1""" - 307 0 null 0.2238ms (74253ad3)
+2025-07-17T17:40:03.6985073+03:30 0HNE57B994AM1:00000009 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - null null (d509f86a)
+2025-07-17T17:40:03.6986886+03:30 0HNE57B994AM1:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2025-07-17T17:40:03.6990746+03:30 0HNE57B994AM1:00000009 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The AuthorizationPolicy named: 'Admin,Customer' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-17T17:40:03.6992861+03:30 0HNE57B994AM1:00000009 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order/1""" - 500 null "text/plain; charset=utf-8" 0.7943ms (74253ad3)
+2025-07-17T17:41:12.0975536+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-17T17:41:23.0630266+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-17T17:41:23.7037390+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:41:23.7373393+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:41:23.7380690+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-17T17:41:23.7461240+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-17T17:41:23.8503138+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-17T17:41:23.8503447+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-17T17:41:23.8522020+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-17T17:41:23.8525540+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-17T17:41:23.8525831+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-17T17:41:44.8832140+03:30 0HNE57FE72IS5:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - null null (d509f86a)
+2025-07-17T17:41:44.8935243+03:30 0HNE57FE72IS5:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5081""""/swagger/index.html""" - 307 0 null 11.273ms (74253ad3)
+2025-07-17T17:41:44.9178941+03:30 0HNE57FE72IS6:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - null null (d509f86a)
+2025-07-17T17:41:44.9894887+03:30 0HNE57FE72IS6:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 71.5718ms (74253ad3)
+2025-07-17T17:41:45.0109373+03:30 0HNE57FE72IS6:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2025-07-17T17:41:45.0119667+03:30 0HNE57FE72IS6:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-bundle.js""" - null null (d509f86a)
+2025-07-17T17:41:45.0119666+03:30 0HNE57FE72IS6:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.css""" - null null (d509f86a)
+2025-07-17T17:41:45.0122647+03:30 0HNE57FE72IS6:0000000B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.js""" - null null (d509f86a)
+2025-07-17T17:41:45.0123871+03:30 0HNE57FE72IS6:00000009 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-standalone-preset.js""" - null null (d509f86a)
+2025-07-17T17:41:45.0154231+03:30 0HNE57FE72IS6:0000000B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.js""" - 200 null "application/javascript;charset=utf-8" 3.1054ms (74253ad3)
+2025-07-17T17:41:45.0194215+03:30 0HNE57FE72IS6:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.css""" - 200 202 "text/css" 7.3947ms (74253ad3)
+2025-07-17T17:41:45.0299984+03:30 0HNE57FE72IS6:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui.css""" - 200 155175 "text/css" 19.0198ms (74253ad3)
+2025-07-17T17:41:45.0299984+03:30 0HNE57FE72IS6:00000009 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-standalone-preset.js""" - 200 229223 "text/javascript" 17.5195ms (74253ad3)
+2025-07-17T17:41:45.0351274+03:30 0HNE57FE72IS6:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-bundle.js""" - 200 1485750 "text/javascript" 22.9962ms (74253ad3)
+2025-07-17T17:41:45.5375259+03:30 0HNE57FE72IS6:0000000D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-17T17:41:45.5532031+03:30 0HNE57FE72IS6:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2025-07-17T17:41:45.5534969+03:30 0HNE57FE72IS6:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 0.2996ms (74253ad3)
+2025-07-17T17:41:45.6216934+03:30 0HNE57FE72IS6:0000000D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 84.1649ms (74253ad3)
+2025-07-17T17:41:51.9415746+03:30 0HNE57FE72IS6:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - null null (d509f86a)
+2025-07-17T17:41:51.9723493+03:30 0HNE57FE72IS6:00000011 [INF] Executing endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (500cc934)
+2025-07-17T17:41:51.9793214+03:30 0HNE57FE72IS6:00000011 [INF] Route matched with "{action = \"GetAllOrders\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookStore.Dtos.Order.OrderDto]]] GetAllOrders()" on controller "BookStore.Controllers.OrderController" ("BookStore"). (122b2fdf)
+2025-07-17T17:41:52.1116043+03:30 0HNE57FE72IS6:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CreatedAt], [o].[CustomerId], [o].[DiscountAmount], [o].[Notes], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddress], [o].[ShippingAmount], [o].[ShippingMethod], [o].[Status], [o].[Subtotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TransactionId], [o].[UpdatedAt], [c].[Id], [s].[Id], [s].[BookId], [s].[DiscountAmount], [s].[OrderId], [s].[Quantity], [s].[Subtotal], [s].[UnitPrice], [s].[Id0], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt], [c].[Address], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [Orders] AS [o]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[BookId], [o0].[DiscountAmount], [o0].[OrderId], [o0].[Quantity], [o0].[Subtotal], [o0].[UnitPrice], [b].[Id] AS [Id0], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Books] AS [b] ON [o0].[BookId] = [b].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[Id], [c].[Id], [s].[Id]" (0723d8ff)
+2025-07-17T17:41:52.1299618+03:30 0HNE57FE72IS6:00000011 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[BookStore.Dtos.Order.OrderDto, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2025-07-17T17:41:52.1696740+03:30 0HNE57FE72IS6:00000011 [INF] Executed action "BookStore.Controllers.OrderController.GetAllOrders (BookStore)" in 188.6591ms (afa2e885)
+2025-07-17T17:41:52.1698826+03:30 0HNE57FE72IS6:00000011 [INF] Executed endpoint '"BookStore.Controllers.OrderController.GetAllOrders (BookStore)"' (99874f2b)
+2025-07-17T17:41:52.1714657+03:30 0HNE57FE72IS6:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/api/Order""" - 200 811 "application/json; charset=utf-8" 229.895ms (74253ad3)
+2025-07-17T17:42:55.6243548+03:30  [INF] Application is shutting down... (90f52c38)
