@@ -56,11 +56,15 @@
             },
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[15.1.7, )"
+              "version": "[13.11.1, )"
+            },
+            "HotChocolate.Data": {
+              "target": "Package",
+              "version": "[13.11.1, )"
             },
             "HotChocolate.Data.EntityFramework": {
               "target": "Package",
-              "version": "[15.1.7, )"
+              "version": "[13.11.1, )"
             },
             "HotChocolate.Types.Filters": {
               "target": "Package",

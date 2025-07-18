@@ -13,6 +13,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using HotChocolate.AspNetCore;
+using HotChocolate.Execution.Configuration;
+using HotChocolate.Data;
 using System.Text;
 using System.Reflection;
 
@@ -174,7 +177,11 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .AddProjections()
+    .AddFiltering()
+    .AddSorting()
+    .RegisterDbContextFactory<AppDbContext>();
 
 var app = builder.Build();
 
