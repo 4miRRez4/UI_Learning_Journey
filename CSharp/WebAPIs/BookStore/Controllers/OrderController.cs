@@ -186,7 +186,7 @@ namespace BookStore.Controllers
                 }
                 return Ok(updatedOrder);
             }
-            catch (KeyNotFoundException ex)
+            catch (System.Collections.Generic.KeyNotFoundException ex)
             {
                 _logger.LogWarning(ex.Message);
                 return NotFound(ex.Message);

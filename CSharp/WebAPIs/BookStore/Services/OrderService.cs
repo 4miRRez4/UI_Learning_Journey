@@ -67,7 +67,7 @@ namespace BookStore.Services
             if (orderCustomer == null)
             {
                 _logger.LogWarning($"Customer with ID {createOrderDto.CustomerId} not found");
-                throw new KeyNotFoundException($"Customer with ID {createOrderDto.CustomerId} not found");
+                throw new System.Collections.Generic.KeyNotFoundException($"Customer with ID {createOrderDto.CustomerId} not found");
             }
 
             order.Customer = orderCustomer;
@@ -79,7 +79,7 @@ namespace BookStore.Services
                 if(book == null || book.StockQuantity < item.Quantity)
                 {
                     _logger.LogError($"Book with ID {item.BookId} not found or insufficient stock.");
-                    throw new KeyNotFoundException($"Book with ID {item.BookId} not found or insufficient stock.");
+                    throw new System.Collections.Generic.KeyNotFoundException($"Book with ID {item.BookId} not found or insufficient stock.");
                 }
 
                 item.Book = book;
@@ -103,14 +103,14 @@ namespace BookStore.Services
             if (order == null)
             {
                 _logger.LogError($"Order with ID {orderId} not found.");
-                throw new KeyNotFoundException($"Order with ID {orderId} not found.");
+                throw new System.Collections.Generic.KeyNotFoundException($"Order with ID {orderId} not found.");
             }
 
             var book = await _bookRepository.GetBookByIdAsync(bookId);
             if (book == null) 
             {
                 _logger.LogError($"Book with ID {bookId} not found.");
-                throw new KeyNotFoundException($"Book with ID {bookId} not found.");
+                throw new System.Collections.Generic.KeyNotFoundException($"Book with ID {bookId} not found.");
             }
 
             order.AddOrderItem(book, quantity);

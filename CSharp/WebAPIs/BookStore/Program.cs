@@ -5,6 +5,7 @@ using BookStore.Services.Interfaces;
 using BookStore.Services;
 using BookStore.Authorization;
 using BookStore.Models;
+using BookStore.GraphQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
@@ -140,7 +141,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    var xmlPath = System.IO.Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
 
     c.EnableAnnotations();
@@ -170,6 +171,10 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<Query>();
 
 var app = builder.Build();
 
@@ -216,6 +221,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseHttpsRedirection();
+app.MapGraphQL();
 app.MapControllers();
 
 // Configure the HTTP request pipeline.
