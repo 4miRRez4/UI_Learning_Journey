@@ -26,11 +26,23 @@ builder.Logging.AddDebug();
 
 builder.Services.AddCors(options =>
 {
+    options.AddPolicy("ApolloStudioPolicy", policy =>
+    {
+        policy.WithOrigins(
+                "https://studio.apollographql.com",
+                "https://*.apollographql.com"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+
     options.AddPolicy("BookStorePolicy", policy =>
     {
         policy.WithOrigins(
                 "http://localhost:5081",
-                "https://bookstoreTest.com" // Production domain
+                "https://localhost:7140",
+                "https://bookstoreTest.com"
             )
             .AllowAnyHeader()
             .AllowAnyMethod()
@@ -196,11 +208,14 @@ using (var scope = app.Services.CreateScope())
 }
 
 
+app.UseRouting();
 
-app.UseHttpsRedirection();
-app.UseCors("BookStorePolicy");
+app.UseCors("ApolloStudioPolicy");
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseHttpsRedirection();
 app.MapControllers();
 
 // Configure the HTTP request pipeline.
