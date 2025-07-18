@@ -6,6 +6,8 @@ using BookStore.Services;
 using BookStore.Authorization;
 using BookStore.Models;
 using BookStore.GraphQL;
+using BookStore.GraphQL.Types;
+using BookStore.GraphQL.Queries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
@@ -177,10 +179,16 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<Query>()
+    .AddType<BookType>()
+    .AddType<AuthorType>()
+    .AddType<ReviewType>()
+    .AddQueryType(q => q.Name("Query"))
+    .AddTypeExtension<BookQuery>()
+    .AddTypeExtension<AuthorQuery>()
     .AddProjections()
     .AddFiltering()
     .AddSorting()
+    .AddGlobalObjectIdentification()
     .RegisterDbContextFactory<AppDbContext>();
 
 var app = builder.Build();
