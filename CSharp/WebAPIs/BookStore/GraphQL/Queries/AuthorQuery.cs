@@ -10,19 +10,19 @@ namespace BookStore.GraphQL.Queries
     [ExtendObjectType(OperationTypeNames.Query)]
     public class AuthorQuery
     {
-        [UseDbContext(typeof(AppDbContext))]
+        //[UseDbContext(typeof(AppDbContext))]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public IQueryable<Author> GetAuthors([ScopedService] AppDbContext context) =>
-            context.Authors
+        public IQueryable<Author> GetAuthors([Service] AppDbContext context)
+            => context.Authors
                 .Include(a => a.Books)
                 .AsNoTracking();
 
-        [UseDbContext(typeof(AppDbContext))]
+        //[UseDbContext(typeof(AppDbContext))]
         public async Task<Author?> GetAuthorById(
-            [ScopedService] AppDbContext context,
+            [Service] AppDbContext context,
             int id) =>
             await context.Authors
                 .Include(a => a.Books)

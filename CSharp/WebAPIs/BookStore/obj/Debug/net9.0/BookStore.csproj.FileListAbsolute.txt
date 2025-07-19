@@ -49,13 +49,11 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\b
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.CursorPagination.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Errors.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Filters.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Mutations.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.OffsetPagination.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Queries.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Scalars.Upload.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Shared.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Sorting.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Utilities.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Utilities.DependencyInjection.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Validation.dll
@@ -234,3 +232,4 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\o
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.pdb
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.genruntimeconfig.cache
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\ref\BookStore.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

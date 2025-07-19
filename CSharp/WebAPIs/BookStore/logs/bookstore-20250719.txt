@@ -1,0 +1,1448 @@
+2025-07-19T12:13:01.6836549+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-19T12:13:02.4254712+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T12:13:02.4617416+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T12:13:02.4632460+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T12:13:02.4764442+03:30  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-19T12:13:02.7349660+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-19T12:13:02.7349969+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-19T12:13:02.7368787+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-19T12:13:02.7372197+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-19T12:13:02.7372458+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-19T12:13:10.0412596+03:30 0HNE6K154HL9M:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - null null (d509f86a)
+2025-07-19T12:13:10.1417654+03:30 0HNE6K154HL9M:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 101.6508ms (74253ad3)
+2025-07-19T12:13:10.6529264+03:30 0HNE6K154HL9M:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-19T12:13:10.7681672+03:30 0HNE6K154HL9M:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 115.1849ms (74253ad3)
+2025-07-19T12:13:12.3586925+03:30 0HNE6K154HL9M:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:13:12.3655442+03:30 0HNE6K154HL9M:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:12.3671804+03:30 0HNE6K154HL9M:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/nitro-config.json""" - null null (d509f86a)
+2025-07-19T12:13:12.3674422+03:30 0HNE6K154HL9M:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:12.3743897+03:30 0HNE6K154HL9M:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:12.3745113+03:30 0HNE6K154HL9M:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/nitro-config.json""" - 200 47 "application/json; charset=utf-8" 7.3013ms (74253ad3)
+2025-07-19T12:13:12.5194511+03:30 0HNE6K154HL9M:00000009 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-19T12:13:12.5196961+03:30 0HNE6K154HL9M:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:12.8842257+03:30 0HNE6K154HL9M:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:12.8999342+03:30 0HNE6K154HL9M:00000009 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. There is no object type implementing interface `Node`. (HotChocolate.Types.Relay.NodeType)
+
+   at HotChocolate.SchemaBuilder.Setup.CompleteSchema(SchemaBuilder builder, IDescriptorContext context, LazySchema lazySchema, TypeRegistry typeRegistry)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpGetSchemaMiddleware.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpGetSchemaMiddleware.InvokeAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpGetMiddleware.InvokeAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpMultipartMiddleware.InvokeAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass23_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 257
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-19T12:13:12.9026255+03:30 0HNE6K154HL9M:00000009 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - 500 null "text/plain; charset=utf-8" 383.1744ms (74253ad3)
+2025-07-19T12:13:12.9068437+03:30 0HNE6K154HL9M:0000000B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 158 (d509f86a)
+2025-07-19T12:13:12.9068487+03:30 0HNE6K154HL9M:0000000D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 161 (d509f86a)
+2025-07-19T12:13:12.9069138+03:30 0HNE6K154HL9M:0000000F [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 152 (d509f86a)
+2025-07-19T12:13:12.9071655+03:30 0HNE6K154HL9M:00000011 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 156 (d509f86a)
+2025-07-19T12:13:12.9076148+03:30 0HNE6K154HL9M:0000000D [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:13:12.9076197+03:30 0HNE6K154HL9M:0000000F [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:13:12.9076188+03:30 0HNE6K154HL9M:00000011 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:13:12.9076176+03:30 0HNE6K154HL9M:0000000B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:13:12.9077934+03:30 0HNE6K154HL9M:0000000B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:13:12.9077926+03:30 0HNE6K154HL9M:00000011 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:13:12.9077892+03:30 0HNE6K154HL9M:0000000D [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:13:12.9077998+03:30 0HNE6K154HL9M:0000000F [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:13:12.9080827+03:30 0HNE6K154HL9M:0000000B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:12.9080832+03:30 0HNE6K154HL9M:0000000D [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:12.9080835+03:30 0HNE6K154HL9M:00000011 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:12.9080954+03:30 0HNE6K154HL9M:0000000F [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:12.9693906+03:30 0HNE6K154HL9M:00000011 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:12.9698208+03:30 0HNE6K154HL9M:00000011 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. There is no object type implementing interface `Node`. (HotChocolate.Types.Relay.NodeType)
+
+   at HotChocolate.SchemaBuilder.Setup.CompleteSchema(SchemaBuilder builder, IDescriptorContext context, LazySchema lazySchema, TypeRegistry typeRegistry)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass23_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 257
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-19T12:13:12.9706905+03:30 0HNE6K154HL9M:00000011 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 500 null "text/plain; charset=utf-8" 63.5019ms (74253ad3)
+2025-07-19T12:13:13.0218288+03:30 0HNE6K154HL9M:0000000B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:13.0224809+03:30 0HNE6K154HL9M:0000000B [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. There is no object type implementing interface `Node`. (HotChocolate.Types.Relay.NodeType)
+
+   at HotChocolate.SchemaBuilder.Setup.CompleteSchema(SchemaBuilder builder, IDescriptorContext context, LazySchema lazySchema, TypeRegistry typeRegistry)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass23_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 257
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-19T12:13:13.0230040+03:30 0HNE6K154HL9M:0000000B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 500 null "text/plain; charset=utf-8" 116.1708ms (74253ad3)
+2025-07-19T12:13:13.0713568+03:30 0HNE6K154HL9M:0000000F [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:13.0717837+03:30 0HNE6K154HL9M:0000000F [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. There is no object type implementing interface `Node`. (HotChocolate.Types.Relay.NodeType)
+
+   at HotChocolate.SchemaBuilder.Setup.CompleteSchema(SchemaBuilder builder, IDescriptorContext context, LazySchema lazySchema, TypeRegistry typeRegistry)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass23_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 257
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-19T12:13:13.0723110+03:30 0HNE6K154HL9M:0000000F [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 500 null "text/plain; charset=utf-8" 165.3762ms (74253ad3)
+2025-07-19T12:13:13.1147359+03:30 0HNE6K154HL9M:0000000D [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:13.1151150+03:30 0HNE6K154HL9M:0000000D [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. There is no object type implementing interface `Node`. (HotChocolate.Types.Relay.NodeType)
+
+   at HotChocolate.SchemaBuilder.Setup.CompleteSchema(SchemaBuilder builder, IDescriptorContext context, LazySchema lazySchema, TypeRegistry typeRegistry)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass23_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 257
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-19T12:13:13.1155629+03:30 0HNE6K154HL9M:0000000D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 500 null "text/plain; charset=utf-8" 208.712ms (74253ad3)
+2025-07-19T12:13:13.8276672+03:30 0HNE6K154HL9M:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:13.8277790+03:30 0HNE6K154HL9M:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1469.1295ms (74253ad3)
+2025-07-19T12:13:14.0530934+03:30 0HNE6K154HL9M:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:13:14.0533240+03:30 0HNE6K154HL9M:00000013 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:14.1542020+03:30 0HNE6K154HL9M:00000013 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:14.1543559+03:30 0HNE6K154HL9M:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 101.2519ms (74253ad3)
+2025-07-19T12:13:43.7624968+03:30 0HNE6K154HL9M:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:13:43.7627448+03:30 0HNE6K154HL9M:00000015 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:13:43.8642289+03:30 0HNE6K154HL9M:00000015 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:13:43.8643709+03:30 0HNE6K154HL9M:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 101.8769ms (74253ad3)
+2025-07-19T12:14:38.0492128+03:30 0HNE6K154HL9M:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:14:38.0494623+03:30 0HNE6K154HL9M:00000017 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:14:38.1503148+03:30 0HNE6K154HL9M:00000017 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:14:38.1504463+03:30 0HNE6K154HL9M:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 101.2639ms (74253ad3)
+2025-07-19T12:15:25.0196520+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-19T12:17:43.7636309+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-19T12:17:44.4549716+03:30  [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T12:17:44.4904731+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T12:17:44.4915375+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T12:17:44.4994276+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-19T12:17:44.7276793+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-19T12:17:44.7277108+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-19T12:17:44.7296440+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-19T12:17:44.7300027+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-19T12:17:44.7300304+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-19T12:17:56.3130022+03:30 0HNE6K3QBIL5G:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/nitro-config.json""" - null null (d509f86a)
+2025-07-19T12:17:56.3718135+03:30 0HNE6K3QBIL5G:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:17:56.3798122+03:30 0HNE6K3QBIL5G:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:17:56.3806771+03:30 0HNE6K3QBIL5G:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/nitro-config.json""" - 200 47 "application/json; charset=utf-8" 68.8384ms (74253ad3)
+2025-07-19T12:17:56.5208547+03:30 0HNE6K3QBIL5G:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-19T12:17:56.5224454+03:30 0HNE6K3QBIL5G:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:17:56.9645703+03:30 0HNE6K3QBIL5G:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:17:56.9660361+03:30 0HNE6K3QBIL5G:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - 200 20399 "application/graphql; charset=utf-8" 445.1556ms (74253ad3)
+2025-07-19T12:17:57.9584272+03:30 0HNE6K3QBIL5G:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:17:57.9611293+03:30 0HNE6K3QBIL5G:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:17:58.8150168+03:30 0HNE6K3QBIL5G:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:17:58.8152559+03:30 0HNE6K3QBIL5G:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 856.8624ms (74253ad3)
+2025-07-19T12:18:28.1703318+03:30 0HNE6K3QBIL5G:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:18:28.1705793+03:30 0HNE6K3QBIL5G:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:18:28.2703948+03:30 0HNE6K3QBIL5G:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:18:28.2705436+03:30 0HNE6K3QBIL5G:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 100.2231ms (74253ad3)
+2025-07-19T12:19:14.0395906+03:30 0HNE6K3QBIL5G:00000009 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:19:14.0398284+03:30 0HNE6K3QBIL5G:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:19:14.1400250+03:30 0HNE6K3QBIL5G:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:19:14.1401465+03:30 0HNE6K3QBIL5G:00000009 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 100.5638ms (74253ad3)
+2025-07-19T12:21:35.5784235+03:30 0HNE6K3QBIL5H:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:21:35.5786452+03:30 0HNE6K3QBIL5H:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:21:36.6450231+03:30 0HNE6K3QBIL5H:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:21:36.6451727+03:30 0HNE6K3QBIL5H:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1066.7609ms (74253ad3)
+2025-07-19T12:22:27.9759472+03:30 0HNE6K3QBIL5H:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:22:27.9762273+03:30 0HNE6K3QBIL5H:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:22:28.0794894+03:30 0HNE6K3QBIL5H:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:22:28.0795884+03:30 0HNE6K3QBIL5H:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 103.6585ms (74253ad3)
+2025-07-19T12:25:40.4921800+03:30 0HNE6K3QBIL5I:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:25:40.4924458+03:30 0HNE6K3QBIL5I:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:25:41.2926544+03:30 0HNE6K3QBIL5I:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:25:41.2928159+03:30 0HNE6K3QBIL5I:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 800.6211ms (74253ad3)
+2025-07-19T12:28:09.1179919+03:30 0HNE6K3QBIL5J:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 304 (d509f86a)
+2025-07-19T12:28:09.1207288+03:30 0HNE6K3QBIL5J:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:28:09.1209272+03:30 0HNE6K3QBIL5J:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:28:09.1213088+03:30 0HNE6K3QBIL5J:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:28:09.1764573+03:30 0HNE6K3QBIL5J:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:28:09.1765552+03:30 0HNE6K3QBIL5J:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 58.5715ms (74253ad3)
+2025-07-19T12:28:48.7432403+03:30 0HNE6K3QBIL5J:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 330 (d509f86a)
+2025-07-19T12:28:48.7436847+03:30 0HNE6K3QBIL5J:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:28:48.7437084+03:30 0HNE6K3QBIL5J:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:28:48.7438556+03:30 0HNE6K3QBIL5J:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:28:48.9308160+03:30 0HNE6K3QBIL5J:00000003 [INF] Executed DbCommand ("8"ms) [Parameters=["@__p_1='?' (DbType = Int32), @__p_0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Title], [b1].[Price], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_1) [b].[Id], [b].[Title], [b].[Price]
+    FROM [Books] AS [b]
+    WHERE [b].[Genre] = @__p_0
+    ORDER BY [b].[Title]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Title], [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:28:48.9488278+03:30 0HNE6K3QBIL5J:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:28:48.9489301+03:30 0HNE6K3QBIL5J:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 205.7426ms (74253ad3)
+2025-07-19T12:28:52.9665228+03:30 0HNE6K3QBIL5J:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:28:52.9667711+03:30 0HNE6K3QBIL5J:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:28:54.0313762+03:30 0HNE6K3QBIL5J:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:28:54.0314997+03:30 0HNE6K3QBIL5J:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1064.9867ms (74253ad3)
+2025-07-19T12:29:26.4968994+03:30 0HNE6K3QBIL5J:00000007 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 382 (d509f86a)
+2025-07-19T12:29:26.4970323+03:30 0HNE6K3QBIL5J:00000007 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:29:26.4970531+03:30 0HNE6K3QBIL5J:00000007 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:29:26.4971652+03:30 0HNE6K3QBIL5J:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:29:26.5351563+03:30 0HNE6K3QBIL5J:00000007 [INF] Executed DbCommand ("7"ms) [Parameters=["@__p_2='?' (DbType = Int32), @__p_0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @__p_1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Title], [b1].[Price], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_2) [b].[Id], [b].[Title], [b].[Price]
+    FROM [Books] AS [b]
+    WHERE [b].[Price] > @__p_0 AND [b].[Genre] = @__p_1
+    ORDER BY [b].[Title]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Title], [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:29:26.5368358+03:30 0HNE6K3QBIL5J:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:29:26.5369548+03:30 0HNE6K3QBIL5J:00000007 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 40.0665ms (74253ad3)
+2025-07-19T12:30:01.5679502+03:30 0HNE6K3QBIL5J:00000009 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 295 (d509f86a)
+2025-07-19T12:30:01.5680870+03:30 0HNE6K3QBIL5J:00000009 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:30:01.5681041+03:30 0HNE6K3QBIL5J:00000009 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:30:01.5682135+03:30 0HNE6K3QBIL5J:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:30:01.5919727+03:30 0HNE6K3QBIL5J:00000009 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. (4c53259e)
+2025-07-19T12:30:01.6081843+03:30 0HNE6K3QBIL5J:00000009 [INF] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:30:01.6148524+03:30 0HNE6K3QBIL5J:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:30:01.6149290+03:30 0HNE6K3QBIL5J:00000009 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 46.9969ms (74253ad3)
+2025-07-19T12:30:13.3521644+03:30 0HNE6K3QBIL5J:0000000B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 276 (d509f86a)
+2025-07-19T12:30:13.3522909+03:30 0HNE6K3QBIL5J:0000000B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:30:13.3523168+03:30 0HNE6K3QBIL5J:0000000B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:30:13.3524289+03:30 0HNE6K3QBIL5J:0000000B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:30:13.3554014+03:30 0HNE6K3QBIL5J:0000000B [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:30:13.3563526+03:30 0HNE6K3QBIL5J:0000000B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:30:13.3564542+03:30 0HNE6K3QBIL5J:0000000B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 4.3832ms (74253ad3)
+2025-07-19T12:30:18.8583124+03:30 0HNE6K3QBIL5J:0000000D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 257 (d509f86a)
+2025-07-19T12:30:18.8584300+03:30 0HNE6K3QBIL5J:0000000D [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:30:18.8584496+03:30 0HNE6K3QBIL5J:0000000D [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:30:18.8585629+03:30 0HNE6K3QBIL5J:0000000D [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:30:18.8611643+03:30 0HNE6K3QBIL5J:0000000D [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:30:18.8618484+03:30 0HNE6K3QBIL5J:0000000D [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:30:18.8619423+03:30 0HNE6K3QBIL5J:0000000D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.6397ms (74253ad3)
+2025-07-19T12:30:22.0900516+03:30 0HNE6K3QBIL5J:0000000F [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 257 (d509f86a)
+2025-07-19T12:30:22.0901826+03:30 0HNE6K3QBIL5J:0000000F [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:30:22.0902027+03:30 0HNE6K3QBIL5J:0000000F [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:30:22.0903222+03:30 0HNE6K3QBIL5J:0000000F [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:30:22.0926115+03:30 0HNE6K3QBIL5J:0000000F [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:30:22.0934203+03:30 0HNE6K3QBIL5J:0000000F [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:30:22.0935389+03:30 0HNE6K3QBIL5J:0000000F [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.4894ms (74253ad3)
+2025-07-19T12:30:22.2794044+03:30 0HNE6K3QBIL5J:00000011 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 257 (d509f86a)
+2025-07-19T12:30:22.2795256+03:30 0HNE6K3QBIL5J:00000011 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:30:22.2795501+03:30 0HNE6K3QBIL5J:00000011 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:30:22.2796717+03:30 0HNE6K3QBIL5J:00000011 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:30:22.2821180+03:30 0HNE6K3QBIL5J:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:30:22.2829599+03:30 0HNE6K3QBIL5J:00000011 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:30:22.2830893+03:30 0HNE6K3QBIL5J:00000011 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.683ms (74253ad3)
+2025-07-19T12:30:22.4483164+03:30 0HNE6K3QBIL5J:00000013 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 257 (d509f86a)
+2025-07-19T12:30:22.4484460+03:30 0HNE6K3QBIL5J:00000013 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:30:22.4484629+03:30 0HNE6K3QBIL5J:00000013 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:30:22.4485734+03:30 0HNE6K3QBIL5J:00000013 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:30:22.4507534+03:30 0HNE6K3QBIL5J:00000013 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:30:22.4515881+03:30 0HNE6K3QBIL5J:00000013 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:30:22.4517014+03:30 0HNE6K3QBIL5J:00000013 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.3884ms (74253ad3)
+2025-07-19T12:30:22.5996963+03:30 0HNE6K3QBIL5J:00000015 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 257 (d509f86a)
+2025-07-19T12:30:22.5998250+03:30 0HNE6K3QBIL5J:00000015 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:30:22.5998465+03:30 0HNE6K3QBIL5J:00000015 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:30:22.5999669+03:30 0HNE6K3QBIL5J:00000015 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:30:22.6022130+03:30 0HNE6K3QBIL5J:00000015 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:30:22.6030120+03:30 0HNE6K3QBIL5J:00000015 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:30:22.6031142+03:30 0HNE6K3QBIL5J:00000015 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.429ms (74253ad3)
+2025-07-19T12:31:49.0467253+03:30 0HNE6K3QBIL5J:00000017 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 257 (d509f86a)
+2025-07-19T12:31:49.0468562+03:30 0HNE6K3QBIL5J:00000017 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:31:49.0468786+03:30 0HNE6K3QBIL5J:00000017 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:31:49.0469849+03:30 0HNE6K3QBIL5J:00000017 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:31:49.0492336+03:30 0HNE6K3QBIL5J:00000017 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId], [r].[Id], [r].[BookId], [r].[Comment], [r].[CreatedAt], [r].[Rating], [r].[UserId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+LEFT JOIN [Reviews] AS [r] ON [b1].[Id] = [r].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId], [s].[Id]" (0723d8ff)
+2025-07-19T12:31:49.0499691+03:30 0HNE6K3QBIL5J:00000017 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:31:49.0506241+03:30 0HNE6K3QBIL5J:00000017 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.7318ms (74253ad3)
+2025-07-19T12:33:13.9986332+03:30 0HNE6K3QBIL5J:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:33:13.9988731+03:30 0HNE6K3QBIL5J:00000019 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:33:14.8020294+03:30 0HNE6K3QBIL5J:00000019 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:33:14.8021723+03:30 0HNE6K3QBIL5J:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 803.5524ms (74253ad3)
+2025-07-19T12:33:25.7058654+03:30 0HNE6K3QBIL5J:0000001B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 197 (d509f86a)
+2025-07-19T12:33:25.7059931+03:30 0HNE6K3QBIL5J:0000001B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:33:25.7060186+03:30 0HNE6K3QBIL5J:0000001B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:33:25.7061310+03:30 0HNE6K3QBIL5J:0000001B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:33:25.7186155+03:30 0HNE6K3QBIL5J:0000001B [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T12:33:25.7353116+03:30 0HNE6K3QBIL5J:0000001B [INF] Executed DbCommand ("8"ms) [Parameters=["@__p_2='?' (DbType = Int32), @__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Genre], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_2) [b].[Title], [b].[Genre], [b].[Id]
+    FROM [Books] AS [b]
+    WHERE [b].[Title] LIKE @__Format_1
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:33:25.7369050+03:30 0HNE6K3QBIL5J:0000001B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:33:25.7371182+03:30 0HNE6K3QBIL5J:0000001B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 31.2388ms (74253ad3)
+2025-07-19T12:33:30.6366054+03:30 0HNE6K3QBIL5J:0000001D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 195 (d509f86a)
+2025-07-19T12:33:30.6367390+03:30 0HNE6K3QBIL5J:0000001D [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:33:30.6367616+03:30 0HNE6K3QBIL5J:0000001D [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:33:30.6368787+03:30 0HNE6K3QBIL5J:0000001D [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:33:30.6414010+03:30 0HNE6K3QBIL5J:0000001D [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_2='?' (DbType = Int32), @__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Genre], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_2) [b].[Title], [b].[Genre], [b].[Id]
+    FROM [Books] AS [b]
+    WHERE [b].[Title] LIKE @__Format_1
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:33:30.6420321+03:30 0HNE6K3QBIL5J:0000001D [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:33:30.6421308+03:30 0HNE6K3QBIL5J:0000001D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 5.5294ms (74253ad3)
+2025-07-19T12:33:31.9485655+03:30 0HNE6K3QBIL5J:0000001F [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 195 (d509f86a)
+2025-07-19T12:33:31.9486851+03:30 0HNE6K3QBIL5J:0000001F [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:33:31.9487066+03:30 0HNE6K3QBIL5J:0000001F [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:33:31.9488241+03:30 0HNE6K3QBIL5J:0000001F [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:33:31.9516959+03:30 0HNE6K3QBIL5J:0000001F [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_2='?' (DbType = Int32), @__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Genre], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_2) [b].[Title], [b].[Genre], [b].[Id]
+    FROM [Books] AS [b]
+    WHERE [b].[Title] LIKE @__Format_1
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:33:31.9523367+03:30 0HNE6K3QBIL5J:0000001F [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:33:31.9524218+03:30 0HNE6K3QBIL5J:0000001F [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.8687ms (74253ad3)
+2025-07-19T12:33:32.3001570+03:30 0HNE6K3QBIL5J:00000021 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 195 (d509f86a)
+2025-07-19T12:33:32.3002744+03:30 0HNE6K3QBIL5J:00000021 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:33:32.3002969+03:30 0HNE6K3QBIL5J:00000021 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:33:32.3004130+03:30 0HNE6K3QBIL5J:00000021 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:33:32.3029443+03:30 0HNE6K3QBIL5J:00000021 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_2='?' (DbType = Int32), @__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Genre], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_2) [b].[Title], [b].[Genre], [b].[Id]
+    FROM [Books] AS [b]
+    WHERE [b].[Title] LIKE @__Format_1
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:33:32.3034928+03:30 0HNE6K3QBIL5J:00000021 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:33:32.3035701+03:30 0HNE6K3QBIL5J:00000021 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.4388ms (74253ad3)
+2025-07-19T12:33:38.3004785+03:30 0HNE6K3QBIL5J:00000023 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 195 (d509f86a)
+2025-07-19T12:33:38.3005977+03:30 0HNE6K3QBIL5J:00000023 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:33:38.3006212+03:30 0HNE6K3QBIL5J:00000023 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:33:38.3007393+03:30 0HNE6K3QBIL5J:00000023 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:33:38.3161205+03:30 0HNE6K3QBIL5J:00000023 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_2='?' (DbType = Int32), @__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Genre], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_2) [b].[Title], [b].[Genre], [b].[Id]
+    FROM [Books] AS [b]
+    WHERE [b].[Title] LIKE @__Format_1
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:33:38.3167965+03:30 0HNE6K3QBIL5J:00000023 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:33:38.3168762+03:30 0HNE6K3QBIL5J:00000023 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 16.4101ms (74253ad3)
+2025-07-19T12:33:45.3964225+03:30 0HNE6K3QBIL5J:00000025 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 195 (d509f86a)
+2025-07-19T12:33:45.3965395+03:30 0HNE6K3QBIL5J:00000025 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:33:45.3965608+03:30 0HNE6K3QBIL5J:00000025 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:33:45.3966763+03:30 0HNE6K3QBIL5J:00000025 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:33:45.3995566+03:30 0HNE6K3QBIL5J:00000025 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_2='?' (DbType = Int32), @__Format_1='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Genre], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_2) [b].[Title], [b].[Genre], [b].[Id]
+    FROM [Books] AS [b]
+    WHERE [b].[Title] LIKE @__Format_1
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:33:45.3999818+03:30 0HNE6K3QBIL5J:00000025 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:33:45.4001253+03:30 0HNE6K3QBIL5J:00000025 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.7118ms (74253ad3)
+2025-07-19T12:34:16.3611052+03:30 0HNE6K3QBIL5J:00000027 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 229 (d509f86a)
+2025-07-19T12:34:16.3612317+03:30 0HNE6K3QBIL5J:00000027 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:34:16.3612554+03:30 0HNE6K3QBIL5J:00000027 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:34:16.3613749+03:30 0HNE6K3QBIL5J:00000027 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:34:16.3642420+03:30 0HNE6K3QBIL5J:00000027 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T12:34:16.3707714+03:30 0HNE6K3QBIL5J:00000027 [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_1='?' (DbType = Int32), @__genre_0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_1) [b].[Title], [b].[Publisher], [b].[StockQuantity]
+FROM [Books] AS [b]
+WHERE [b].[Genre] = @__genre_0" (0723d8ff)
+2025-07-19T12:34:16.3721058+03:30 0HNE6K3QBIL5J:00000027 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:34:16.3722034+03:30 0HNE6K3QBIL5J:00000027 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 11.1759ms (74253ad3)
+2025-07-19T12:34:28.6516697+03:30 0HNE6K3QBIL5J:00000029 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 183 (d509f86a)
+2025-07-19T12:34:28.6517898+03:30 0HNE6K3QBIL5J:00000029 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:34:28.6518117+03:30 0HNE6K3QBIL5J:00000029 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:34:28.6519445+03:30 0HNE6K3QBIL5J:00000029 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:34:28.6546277+03:30 0HNE6K3QBIL5J:00000029 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_1='?' (DbType = Int32), @__genre_0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_1) [b].[Title], [b].[Publisher], [b].[StockQuantity]
+FROM [Books] AS [b]
+WHERE [b].[Genre] = @__genre_0" (0723d8ff)
+2025-07-19T12:34:28.6549980+03:30 0HNE6K3QBIL5J:00000029 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:34:28.6550915+03:30 0HNE6K3QBIL5J:00000029 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.4343ms (74253ad3)
+2025-07-19T12:34:34.6675776+03:30 0HNE6K3QBIL5J:0000002B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 176 (d509f86a)
+2025-07-19T12:34:34.6676927+03:30 0HNE6K3QBIL5J:0000002B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:34:34.6677273+03:30 0HNE6K3QBIL5J:0000002B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:34:34.6678399+03:30 0HNE6K3QBIL5J:0000002B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:34:34.6705397+03:30 0HNE6K3QBIL5J:0000002B [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_1='?' (DbType = Int32), @__genre_0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_1) [b].[Title], [b].[Publisher], [b].[StockQuantity]
+FROM [Books] AS [b]
+WHERE [b].[Genre] = @__genre_0" (0723d8ff)
+2025-07-19T12:34:34.6709738+03:30 0HNE6K3QBIL5J:0000002B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:34:34.6710747+03:30 0HNE6K3QBIL5J:0000002B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.5031ms (74253ad3)
+2025-07-19T12:34:41.9952646+03:30 0HNE6K3QBIL5J:0000002D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 175 (d509f86a)
+2025-07-19T12:34:41.9953879+03:30 0HNE6K3QBIL5J:0000002D [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:34:41.9954083+03:30 0HNE6K3QBIL5J:0000002D [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:34:41.9955203+03:30 0HNE6K3QBIL5J:0000002D [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:34:41.9981190+03:30 0HNE6K3QBIL5J:0000002D [INF] Executed DbCommand ("0"ms) [Parameters=["@__p_1='?' (DbType = Int32), @__genre_0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_1) [b].[Title], [b].[Publisher], [b].[StockQuantity]
+FROM [Books] AS [b]
+WHERE [b].[Genre] = @__genre_0" (0723d8ff)
+2025-07-19T12:34:41.9986691+03:30 0HNE6K3QBIL5J:0000002D [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:34:41.9987498+03:30 0HNE6K3QBIL5J:0000002D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.5ms (74253ad3)
+2025-07-19T12:35:04.9556462+03:30 0HNE6K3QBIL5J:0000002F [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 208 (d509f86a)
+2025-07-19T12:35:04.9557621+03:30 0HNE6K3QBIL5J:0000002F [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:35:04.9557873+03:30 0HNE6K3QBIL5J:0000002F [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:35:04.9559365+03:30 0HNE6K3QBIL5J:0000002F [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:35:04.9571615+03:30 0HNE6K3QBIL5J:0000002F [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:35:04.9572214+03:30 0HNE6K3QBIL5J:0000002F [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 1.5949ms (74253ad3)
+2025-07-19T12:35:20.4071882+03:30 0HNE6K3QBIL5J:00000031 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 195 (d509f86a)
+2025-07-19T12:35:20.4074178+03:30 0HNE6K3QBIL5J:00000031 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:35:20.4074447+03:30 0HNE6K3QBIL5J:00000031 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:35:20.4075547+03:30 0HNE6K3QBIL5J:00000031 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:35:20.4080228+03:30 0HNE6K3QBIL5J:00000031 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:35:20.4080687+03:30 0HNE6K3QBIL5J:00000031 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 0.9076ms (74253ad3)
+2025-07-19T12:35:26.2750020+03:30 0HNE6K3QBIL5J:00000033 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 178 (d509f86a)
+2025-07-19T12:35:26.2751179+03:30 0HNE6K3QBIL5J:00000033 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:35:26.2751343+03:30 0HNE6K3QBIL5J:00000033 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:35:26.2752387+03:30 0HNE6K3QBIL5J:00000033 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:35:26.2758518+03:30 0HNE6K3QBIL5J:00000033 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:35:26.2759256+03:30 0HNE6K3QBIL5J:00000033 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 0.9353ms (74253ad3)
+2025-07-19T12:35:31.7069985+03:30 0HNE6K3QBIL5J:00000035 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 146 (d509f86a)
+2025-07-19T12:35:31.7071139+03:30 0HNE6K3QBIL5J:00000035 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:35:31.7071300+03:30 0HNE6K3QBIL5J:00000035 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:35:31.7072436+03:30 0HNE6K3QBIL5J:00000035 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:35:31.7175760+03:30 0HNE6K3QBIL5J:00000035 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name], [a].[BirthDate]
+FROM [Authors] AS [a]
+ORDER BY [a].[Name]" (0723d8ff)
+2025-07-19T12:35:31.7184352+03:30 0HNE6K3QBIL5J:00000035 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:35:31.7185168+03:30 0HNE6K3QBIL5J:00000035 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 11.5322ms (74253ad3)
+2025-07-19T12:35:40.4025778+03:30 0HNE6K3QBIL5J:00000037 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 146 (d509f86a)
+2025-07-19T12:35:40.4026953+03:30 0HNE6K3QBIL5J:00000037 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:35:40.4027121+03:30 0HNE6K3QBIL5J:00000037 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:35:40.4028172+03:30 0HNE6K3QBIL5J:00000037 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:35:40.4076123+03:30 0HNE6K3QBIL5J:00000037 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name], [a].[BirthDate]
+FROM [Authors] AS [a]
+ORDER BY [a].[Name]" (0723d8ff)
+2025-07-19T12:35:40.4081356+03:30 0HNE6K3QBIL5J:00000037 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:35:40.4082581+03:30 0HNE6K3QBIL5J:00000037 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 5.6806ms (74253ad3)
+2025-07-19T12:36:59.5824756+03:30 0HNE6K3QBIL5J:00000039 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 191 (d509f86a)
+2025-07-19T12:36:59.5825955+03:30 0HNE6K3QBIL5J:00000039 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:36:59.5826531+03:30 0HNE6K3QBIL5J:00000039 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:36:59.5827639+03:30 0HNE6K3QBIL5J:00000039 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:36:59.5834039+03:30 0HNE6K3QBIL5J:00000039 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:36:59.5834630+03:30 0HNE6K3QBIL5J:00000039 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 1.0065ms (74253ad3)
+2025-07-19T12:37:17.4112771+03:30 0HNE6K3QBIL5J:0000003B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 201 (d509f86a)
+2025-07-19T12:37:17.4114158+03:30 0HNE6K3QBIL5J:0000003B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:37:17.4114350+03:30 0HNE6K3QBIL5J:0000003B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:37:17.4115507+03:30 0HNE6K3QBIL5J:0000003B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:37:17.4121506+03:30 0HNE6K3QBIL5J:0000003B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:37:17.4122191+03:30 0HNE6K3QBIL5J:0000003B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 0.9684ms (74253ad3)
+2025-07-19T12:37:17.8414616+03:30 0HNE6K3QBIL5J:0000003D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 201 (d509f86a)
+2025-07-19T12:37:17.8415768+03:30 0HNE6K3QBIL5J:0000003D [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:37:17.8415948+03:30 0HNE6K3QBIL5J:0000003D [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:37:17.8417048+03:30 0HNE6K3QBIL5J:0000003D [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:37:17.8422813+03:30 0HNE6K3QBIL5J:0000003D [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:37:17.8423372+03:30 0HNE6K3QBIL5J:0000003D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 0.8976ms (74253ad3)
+2025-07-19T12:37:17.9847504+03:30 0HNE6K3QBIL5J:0000003F [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 201 (d509f86a)
+2025-07-19T12:37:17.9848659+03:30 0HNE6K3QBIL5J:0000003F [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:37:17.9848848+03:30 0HNE6K3QBIL5J:0000003F [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:37:17.9849944+03:30 0HNE6K3QBIL5J:0000003F [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:37:17.9855169+03:30 0HNE6K3QBIL5J:0000003F [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:37:17.9855716+03:30 0HNE6K3QBIL5J:0000003F [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 0.8438ms (74253ad3)
+2025-07-19T12:39:45.3034867+03:30 0HNE6K3QBIL5K:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 225 (d509f86a)
+2025-07-19T12:39:45.3035980+03:30 0HNE6K3QBIL5K:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:39:45.3036145+03:30 0HNE6K3QBIL5K:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:39:45.3037170+03:30 0HNE6K3QBIL5K:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:39:45.3058485+03:30 0HNE6K3QBIL5K:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:39:45.3059187+03:30 0HNE6K3QBIL5K:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 2.4479ms (74253ad3)
+2025-07-19T12:40:16.2594645+03:30 0HNE6K3QBIL5K:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 244 (d509f86a)
+2025-07-19T12:40:16.2596092+03:30 0HNE6K3QBIL5K:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:40:16.2596291+03:30 0HNE6K3QBIL5K:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:40:16.2597486+03:30 0HNE6K3QBIL5K:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:40:16.2605518+03:30 0HNE6K3QBIL5K:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:40:16.2606310+03:30 0HNE6K3QBIL5K:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 1.1904ms (74253ad3)
+2025-07-19T12:40:24.6831137+03:30 0HNE6K3QBIL5K:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:40:24.6833630+03:30 0HNE6K3QBIL5K:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:40:25.7432072+03:30 0HNE6K3QBIL5K:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:40:25.7434103+03:30 0HNE6K3QBIL5K:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1060.3138ms (74253ad3)
+2025-07-19T12:41:19.3366871+03:30 0HNE6K3QBIL5K:00000007 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 244 (d509f86a)
+2025-07-19T12:41:19.3368391+03:30 0HNE6K3QBIL5K:00000007 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:41:19.3368647+03:30 0HNE6K3QBIL5K:00000007 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:41:19.3370148+03:30 0HNE6K3QBIL5K:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:41:19.3381750+03:30 0HNE6K3QBIL5K:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:41:19.3382875+03:30 0HNE6K3QBIL5K:00000007 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 1.6156ms (74253ad3)
+2025-07-19T12:45:40.5423900+03:30 0HNE6K3QBIL5L:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 254 (d509f86a)
+2025-07-19T12:45:40.5425440+03:30 0HNE6K3QBIL5L:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:45:40.5426430+03:30 0HNE6K3QBIL5L:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:45:40.5428048+03:30 0HNE6K3QBIL5L:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:45:40.5488232+03:30 0HNE6K3QBIL5L:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name], [a].[BirthDate]
+FROM [Authors] AS [a]
+ORDER BY [a].[Name]" (0723d8ff)
+2025-07-19T12:45:40.5552616+03:30 0HNE6K3QBIL5L:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:45:40.5553834+03:30 0HNE6K3QBIL5L:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 12.9991ms (74253ad3)
+2025-07-19T12:45:49.0963535+03:30 0HNE6K3QBIL5L:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 254 (d509f86a)
+2025-07-19T12:45:49.0964778+03:30 0HNE6K3QBIL5L:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:45:49.0964972+03:30 0HNE6K3QBIL5L:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:45:49.0966111+03:30 0HNE6K3QBIL5L:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:45:49.0996729+03:30 0HNE6K3QBIL5L:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name], [a].[BirthDate]
+FROM [Authors] AS [a]
+ORDER BY [a].[Name]" (0723d8ff)
+2025-07-19T12:45:49.1028528+03:30 0HNE6K3QBIL5L:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:45:49.1029450+03:30 0HNE6K3QBIL5L:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 6.6825ms (74253ad3)
+2025-07-19T12:45:56.4482029+03:30 0HNE6K3QBIL5L:00000005 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 254 (d509f86a)
+2025-07-19T12:45:56.4483232+03:30 0HNE6K3QBIL5L:00000005 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:45:56.4483410+03:30 0HNE6K3QBIL5L:00000005 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:45:56.4484567+03:30 0HNE6K3QBIL5L:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:45:56.4517828+03:30 0HNE6K3QBIL5L:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name], [a].[BirthDate]
+FROM [Authors] AS [a]
+ORDER BY [a].[Name]" (0723d8ff)
+2025-07-19T12:45:56.4550223+03:30 0HNE6K3QBIL5L:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:45:56.4551131+03:30 0HNE6K3QBIL5L:00000005 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 6.9228ms (74253ad3)
+2025-07-19T12:45:59.5455897+03:30 0HNE6K3QBIL5L:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:45:59.5458113+03:30 0HNE6K3QBIL5L:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:46:00.5967136+03:30 0HNE6K3QBIL5L:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:46:00.5969013+03:30 0HNE6K3QBIL5L:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1051.3294ms (74253ad3)
+2025-07-19T12:46:44.5904409+03:30 0HNE6K3QBIL5L:00000009 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:46:44.5906858+03:30 0HNE6K3QBIL5L:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:46:44.6905332+03:30 0HNE6K3QBIL5L:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:46:44.6906298+03:30 0HNE6K3QBIL5L:00000009 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 100.2054ms (74253ad3)
+2025-07-19T12:48:31.0262325+03:30 0HNE6K3QBIL5L:0000000B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - null null (d509f86a)
+2025-07-19T12:48:31.0725251+03:30 0HNE6K3QBIL5L:0000000B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 46.2844ms (74253ad3)
+2025-07-19T12:48:31.5455422+03:30 0HNE6K3QBIL5L:0000000D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-19T12:48:31.6324277+03:30 0HNE6K3QBIL5L:0000000D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 86.8705ms (74253ad3)
+2025-07-19T12:51:58.7797704+03:30 0HNE6K3QBIL5M:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:51:58.7799537+03:30 0HNE6K3QBIL5M:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:51:59.7385585+03:30 0HNE6K3QBIL5M:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:51:59.7386522+03:30 0HNE6K3QBIL5M:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 958.9368ms (74253ad3)
+2025-07-19T12:53:19.2298793+03:30 0HNE6K3QBIL5N:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:53:19.2300956+03:30 0HNE6K3QBIL5N:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:53:20.1302247+03:30 0HNE6K3QBIL5N:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:53:20.1303470+03:30 0HNE6K3QBIL5N:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 900.4766ms (74253ad3)
+2025-07-19T12:54:02.1553485+03:30 0HNE6K3QBIL5O:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 151 (d509f86a)
+2025-07-19T12:54:02.1554368+03:30 0HNE6K3QBIL5O:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T12:54:02.1554489+03:30 0HNE6K3QBIL5O:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T12:54:02.1555264+03:30 0HNE6K3QBIL5O:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:54:02.1579916+03:30 0HNE6K3QBIL5O:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T12:54:02.1731201+03:30 0HNE6K3QBIL5O:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T12:54:02.1742346+03:30 0HNE6K3QBIL5O:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:54:02.1743085+03:30 0HNE6K3QBIL5O:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 18.9557ms (74253ad3)
+2025-07-19T12:54:54.7055144+03:30 0HNE6K3QBIL5O:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:54:54.7057707+03:30 0HNE6K3QBIL5O:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:54:55.5171813+03:30 0HNE6K3QBIL5O:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:54:55.5172996+03:30 0HNE6K3QBIL5O:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 811.802ms (74253ad3)
+2025-07-19T12:59:07.8349556+03:30 0HNE6K3QBIL5P:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T12:59:07.8351433+03:30 0HNE6K3QBIL5P:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T12:59:08.9081816+03:30 0HNE6K3QBIL5P:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T12:59:08.9082916+03:30 0HNE6K3QBIL5P:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1073.3479ms (74253ad3)
+2025-07-19T13:06:17.8086304+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-19T13:06:44.9777918+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-19T13:06:45.6908210+03:30  [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T13:06:45.7254029+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T13:06:45.7261332+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T13:06:45.7350134+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-19T13:06:45.9850271+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-19T13:06:45.9850677+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-19T13:06:45.9876039+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-19T13:06:45.9880055+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-19T13:06:45.9880345+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-19T13:06:52.8557839+03:30 0HNE6KV5JL14S:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 151 (d509f86a)
+2025-07-19T13:06:52.8697982+03:30 0HNE6KV5JL14S:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T13:06:52.8699197+03:30 0HNE6KV5JL14S:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T13:06:52.9382942+03:30 0HNE6KV5JL14S:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:06:53.3247861+03:30 0HNE6KV5JL14S:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:06:53.3406662+03:30 0HNE6KV5JL14S:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. The middleware pipeline order for the field `Book.authors` is invalid. Middleware order is important especially with data pipelines. The correct order of a data pipeline is as follows: UseDbContext -> UsePaging -> UseProjection -> UseFiltering -> UseSorting. You may omit any of these middleware or have other middleware in between but you need to abide by the overall order. Your order is: UseFiltering -> UseSorting -> UsePaging. (BookStore.GraphQL.Types.BookType)
+
+   at HotChocolate.Types.Interceptors.MiddlewareValidationTypeInterceptor.ValidatePipeline(ITypeSystemObject type, SchemaCoordinate fieldCoordinate, IList`1 middlewareDefinitions)
+   at HotChocolate.Types.Interceptors.MiddlewareValidationTypeInterceptor.OnValidateType(ITypeSystemObjectContext validationContext, DefinitionBase definition)
+   at HotChocolate.Configuration.AggregateTypeInterceptor.OnValidateType(ITypeSystemObjectContext validationContext, DefinitionBase definition)
+   at HotChocolate.Types.TypeSystemObjectBase`1.OnValidateType(ITypeSystemObjectContext context, DefinitionBase definition)
+   at HotChocolate.Types.TypeSystemObjectBase`1.CompleteType(ITypeCompletionContext context)
+   at HotChocolate.Configuration.TypeInitializer.CompleteType(RegisteredType registeredType)
+   at HotChocolate.Configuration.TypeInitializer.<CompleteTypes>b__33_0(RegisteredType type)
+   at HotChocolate.Configuration.TypeInitializer.ProcessTypes(TypeDependencyFulfilled fulfilled, Func`2 action)
+   at HotChocolate.Configuration.TypeInitializer.CompleteTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass23_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Program.cs:line 257
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-19T13:06:53.3489578+03:30 0HNE6KV5JL14S:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 500 null "text/plain; charset=utf-8" 494.2732ms (74253ad3)
+2025-07-19T13:07:21.0010200+03:30 0HNE6KV5JL14S:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T13:07:21.0038477+03:30 0HNE6KV5JL14S:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:07:22.1646204+03:30 0HNE6KV5JL14S:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:07:22.1650378+03:30 0HNE6KV5JL14S:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1164.0464ms (74253ad3)
+2025-07-19T13:07:22.3287202+03:30 0HNE6KV5JL14S:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T13:07:22.3310447+03:30 0HNE6KV5JL14S:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:07:22.4301560+03:30 0HNE6KV5JL14S:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:07:22.4302585+03:30 0HNE6KV5JL14S:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 101.5534ms (74253ad3)
+2025-07-19T13:07:33.9947226+03:30 0HNE6KV5JL14S:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T13:07:33.9949285+03:30 0HNE6KV5JL14S:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:07:34.0926462+03:30 0HNE6KV5JL14S:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:07:34.0927692+03:30 0HNE6KV5JL14S:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 98.0442ms (74253ad3)
+2025-07-19T13:10:13.0762125+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-19T13:11:28.7084445+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-19T13:11:29.4426389+03:30  [INF] Executed DbCommand ("22"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T13:11:29.4775589+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T13:11:29.4782594+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T13:11:29.4869289+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-19T13:11:29.7129216+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-19T13:11:29.7129512+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-19T13:11:29.7151450+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-19T13:11:29.7154982+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-19T13:11:29.7155240+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-19T13:11:32.6262354+03:30 0HNE6L1P00D41:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 151 (d509f86a)
+2025-07-19T13:11:32.6401068+03:30 0HNE6L1P00D41:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T13:11:32.6402225+03:30 0HNE6L1P00D41:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T13:11:32.6875091+03:30 0HNE6L1P00D41:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:11:33.1055784+03:30 0HNE6L1P00D41:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:11:33.1063522+03:30 0HNE6L1P00D41:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 481.1519ms (74253ad3)
+2025-07-19T13:12:03.6909785+03:30 0HNE6L1P00D41:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T13:12:03.6937067+03:30 0HNE6L1P00D41:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:12:04.5779991+03:30 0HNE6L1P00D41:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:12:04.5788950+03:30 0HNE6L1P00D41:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 887.9219ms (74253ad3)
+2025-07-19T13:12:22.4259399+03:30 0HNE6L1P00D41:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T13:12:22.4315424+03:30 0HNE6L1P00D41:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:12:22.5389270+03:30 0HNE6L1P00D41:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:12:22.5390823+03:30 0HNE6L1P00D41:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 113.1516ms (74253ad3)
+2025-07-19T13:12:26.5117117+03:30 0HNE6L1P00D41:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T13:12:26.5119841+03:30 0HNE6L1P00D41:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:12:26.6209786+03:30 0HNE6L1P00D41:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:12:26.6210665+03:30 0HNE6L1P00D41:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 109.3812ms (74253ad3)
+2025-07-19T13:12:42.0664993+03:30 0HNE6L1P00D41:00000009 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 195 (d509f86a)
+2025-07-19T13:12:42.0667362+03:30 0HNE6L1P00D41:00000009 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T13:12:42.0667652+03:30 0HNE6L1P00D41:00000009 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T13:12:42.0669125+03:30 0HNE6L1P00D41:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:12:42.1912757+03:30 0HNE6L1P00D41:00000009 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T13:12:42.1988626+03:30 0HNE6L1P00D41:00000009 [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [b].[Title]
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-19T13:12:42.2189286+03:30 0HNE6L1P00D41:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:12:42.2190464+03:30 0HNE6L1P00D41:00000009 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 152.566ms (74253ad3)
+2025-07-19T13:14:12.7849522+03:30 0HNE6L1P00D41:0000000B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 151 (d509f86a)
+2025-07-19T13:14:12.7851488+03:30 0HNE6L1P00D41:0000000B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T13:14:12.7851788+03:30 0HNE6L1P00D41:0000000B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T13:14:12.7853029+03:30 0HNE6L1P00D41:0000000B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:14:12.7875195+03:30 0HNE6L1P00D41:0000000B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:14:12.7876101+03:30 0HNE6L1P00D41:0000000B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 2.6705ms (74253ad3)
+2025-07-19T13:16:31.1013459+03:30 0HNE6L1P00D42:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 194 (d509f86a)
+2025-07-19T13:16:31.1014422+03:30 0HNE6L1P00D42:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T13:16:31.1014612+03:30 0HNE6L1P00D42:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T13:16:31.1015482+03:30 0HNE6L1P00D42:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:16:31.1029223+03:30 0HNE6L1P00D42:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:16:31.1029793+03:30 0HNE6L1P00D42:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 1.641ms (74253ad3)
+2025-07-19T13:17:31.8959297+03:30 0HNE6L1P00D42:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 204 (d509f86a)
+2025-07-19T13:17:31.8960587+03:30 0HNE6L1P00D42:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T13:17:31.8960814+03:30 0HNE6L1P00D42:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T13:17:31.8961923+03:30 0HNE6L1P00D42:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:17:31.9125352+03:30 0HNE6L1P00D42:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [b].[Title]
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-19T13:17:31.9148030+03:30 0HNE6L1P00D42:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:17:31.9148793+03:30 0HNE6L1P00D42:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 18.9673ms (74253ad3)
+2025-07-19T13:17:46.5039943+03:30 0HNE6L1P00D42:00000005 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 226 (d509f86a)
+2025-07-19T13:17:46.5041180+03:30 0HNE6L1P00D42:00000005 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T13:17:46.5041376+03:30 0HNE6L1P00D42:00000005 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T13:17:46.5042553+03:30 0HNE6L1P00D42:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:17:46.5108907+03:30 0HNE6L1P00D42:00000005 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T13:17:46.5180308+03:30 0HNE6L1P00D42:00000005 [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name]
+FROM [Authors] AS [a]" (0723d8ff)
+2025-07-19T13:17:46.5227391+03:30 0HNE6L1P00D42:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:17:46.5228394+03:30 0HNE6L1P00D42:00000005 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 18.8567ms (74253ad3)
+2025-07-19T13:19:45.8269047+03:30 0HNE6L1P00D42:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T13:19:45.8271624+03:30 0HNE6L1P00D42:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T13:19:46.8891143+03:30 0HNE6L1P00D42:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T13:19:46.8892382+03:30 0HNE6L1P00D42:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1062.3533ms (74253ad3)
+2025-07-19T14:14:23.4495770+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-19T14:24:44.1484098+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-19T14:24:44.8682648+03:30  [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T14:24:44.9049907+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T14:24:44.9058030+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T14:24:44.9152013+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-19T14:24:45.1565635+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-19T14:24:45.1566002+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-19T14:24:45.1586003+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-19T14:24:45.1589613+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-19T14:24:45.1589911+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-19T14:26:17.3096439+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-19T14:26:33.0717819+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-19T14:26:33.7367211+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T14:26:33.7711631+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T14:26:33.7719046+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T14:26:33.7803556+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-19T14:26:33.8951523+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-19T14:26:33.8951842+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-19T14:26:33.8971634+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-19T14:26:33.8974954+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-19T14:26:33.8975230+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-19T14:26:47.1831109+03:30 0HNE6MBQE4CRS:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 226 (d509f86a)
+2025-07-19T14:26:47.1966236+03:30 0HNE6MBQE4CRS:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T14:26:47.1967613+03:30 0HNE6MBQE4CRS:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T14:26:47.2422655+03:30 0HNE6MBQE4CRS:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:26:47.6690781+03:30 0HNE6MBQE4CRS:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:26:47.6698449+03:30 0HNE6MBQE4CRS:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 400 null "application/graphql-response+json; charset=utf-8" 487.8548ms (74253ad3)
+2025-07-19T14:27:15.3518108+03:30 0HNE6MBQE4CRS:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T14:27:15.3546534+03:30 0HNE6MBQE4CRS:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:27:16.6056450+03:30 0HNE6MBQE4CRS:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:27:16.6065386+03:30 0HNE6MBQE4CRS:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1254.7449ms (74253ad3)
+2025-07-19T14:27:17.5102250+03:30 0HNE6MBQE4CRS:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T14:27:17.5132760+03:30 0HNE6MBQE4CRS:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:27:17.6163441+03:30 0HNE6MBQE4CRS:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:27:17.6165026+03:30 0HNE6MBQE4CRS:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 106.3061ms (74253ad3)
+2025-07-19T14:28:07.5185481+03:30 0HNE6MBQE4CRS:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T14:28:07.5187990+03:30 0HNE6MBQE4CRS:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:28:07.6214901+03:30 0HNE6MBQE4CRS:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:28:07.6216105+03:30 0HNE6MBQE4CRS:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 103.0677ms (74253ad3)
+2025-07-19T14:28:10.1162629+03:30 0HNE6MBQE4CRS:00000009 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 288 (d509f86a)
+2025-07-19T14:28:10.1164859+03:30 0HNE6MBQE4CRS:00000009 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T14:28:10.1165073+03:30 0HNE6MBQE4CRS:00000009 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T14:28:10.1166461+03:30 0HNE6MBQE4CRS:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:28:10.2239975+03:30 0HNE6MBQE4CRS:00000009 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T14:28:10.2295354+03:30 0HNE6MBQE4CRS:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [b].[Title]
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-19T14:28:10.2837224+03:30 0HNE6MBQE4CRS:00000009 [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T14:28:10.2904337+03:30 0HNE6MBQE4CRS:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:28:10.2905773+03:30 0HNE6MBQE4CRS:00000009 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 174.3187ms (74253ad3)
+2025-07-19T14:28:21.4711928+03:30 0HNE6MBQE4CRS:0000000B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 272 (d509f86a)
+2025-07-19T14:28:21.4713169+03:30 0HNE6MBQE4CRS:0000000B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T14:28:21.4713377+03:30 0HNE6MBQE4CRS:0000000B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T14:28:21.4714565+03:30 0HNE6MBQE4CRS:0000000B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:28:21.4813819+03:30 0HNE6MBQE4CRS:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [b].[Title]
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-19T14:28:21.4827191+03:30 0HNE6MBQE4CRS:0000000B [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T14:28:21.4864167+03:30 0HNE6MBQE4CRS:0000000B [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name]
+FROM [Authors] AS [a]" (0723d8ff)
+2025-07-19T14:28:21.4889035+03:30 0HNE6MBQE4CRS:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T14:28:21.4968559+03:30 0HNE6MBQE4CRS:0000000B [INF] Executed DbCommand ("4"ms) [Parameters=["@__author_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Title]
+FROM [Authors] AS [a]
+INNER JOIN (
+    SELECT [b0].[Title], [b].[AuthorId]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a].[Id] = [s].[AuthorId]
+WHERE [a].[Id] = @__author_Id_0" (0723d8ff)
+2025-07-19T14:28:21.4977284+03:30 0HNE6MBQE4CRS:0000000B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:28:21.4978593+03:30 0HNE6MBQE4CRS:0000000B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 26.6705ms (74253ad3)
+2025-07-19T14:30:07.2855729+03:30 0HNE6MBQE4CRS:0000000D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 272 (d509f86a)
+2025-07-19T14:30:07.2857486+03:30 0HNE6MBQE4CRS:0000000D [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T14:30:07.2857881+03:30 0HNE6MBQE4CRS:0000000D [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T14:30:07.2859392+03:30 0HNE6MBQE4CRS:0000000D [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:30:07.2944939+03:30 0HNE6MBQE4CRS:0000000D [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [b].[Title]
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-19T14:30:07.2973744+03:30 0HNE6MBQE4CRS:0000000D [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name]
+FROM [Authors] AS [a]" (0723d8ff)
+2025-07-19T14:30:07.2996220+03:30 0HNE6MBQE4CRS:0000000D [INF] Executed DbCommand ("3"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T14:30:07.3027285+03:30 0HNE6MBQE4CRS:0000000D [INF] Executed DbCommand ("3"ms) [Parameters=["@__author_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Title]
+FROM [Authors] AS [a]
+INNER JOIN (
+    SELECT [b0].[Title], [b].[AuthorId]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a].[Id] = [s].[AuthorId]
+WHERE [a].[Id] = @__author_Id_0" (0723d8ff)
+2025-07-19T14:30:07.3033861+03:30 0HNE6MBQE4CRS:0000000D [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:30:07.3035099+03:30 0HNE6MBQE4CRS:0000000D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 17.9614ms (74253ad3)
+2025-07-19T14:32:23.7063761+03:30 0HNE6MBQE4CRT:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 272 (d509f86a)
+2025-07-19T14:32:23.7064718+03:30 0HNE6MBQE4CRT:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T14:32:23.7064860+03:30 0HNE6MBQE4CRT:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T14:32:23.7065754+03:30 0HNE6MBQE4CRT:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:32:23.7095598+03:30 0HNE6MBQE4CRT:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [b].[Title]
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-19T14:32:23.7098013+03:30 0HNE6MBQE4CRT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [a].[Name]
+FROM [Authors] AS [a]" (0723d8ff)
+2025-07-19T14:32:23.7128647+03:30 0HNE6MBQE4CRT:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T14:32:23.7132882+03:30 0HNE6MBQE4CRT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__author_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Title]
+FROM [Authors] AS [a]
+INNER JOIN (
+    SELECT [b0].[Title], [b].[AuthorId]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a].[Id] = [s].[AuthorId]
+WHERE [a].[Id] = @__author_Id_0" (0723d8ff)
+2025-07-19T14:32:23.7137193+03:30 0HNE6MBQE4CRT:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:32:23.7138117+03:30 0HNE6MBQE4CRT:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 7.4427ms (74253ad3)
+2025-07-19T14:32:54.8104333+03:30 0HNE6MBQE4CRT:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T14:32:54.8106972+03:30 0HNE6MBQE4CRT:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T14:32:55.8635254+03:30 0HNE6MBQE4CRT:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T14:32:55.8636555+03:30 0HNE6MBQE4CRT:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1053.2164ms (74253ad3)
+2025-07-19T14:50:13.4454989+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-19T15:01:53.2606559+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-19T15:01:53.9243756+03:30  [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T15:01:53.9589362+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T15:01:53.9595926+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-19T15:01:53.9678842+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-19T15:01:54.0841176+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-19T15:01:54.0841449+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-19T15:01:54.0861923+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-19T15:01:54.0865254+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-19T15:01:54.0865473+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-19T15:02:01.2101347+03:30 0HNE6MVGF09H0:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 272 (d509f86a)
+2025-07-19T15:02:01.2238875+03:30 0HNE6MVGF09H0:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:02:01.2239998+03:30 0HNE6MVGF09H0:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:02:01.2556018+03:30 0HNE6MVGF09H0:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:01.6891523+03:30 0HNE6MVGF09H0:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T15:02:01.7339116+03:30 0HNE6MVGF09H0:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:01.7470939+03:30 0HNE6MVGF09H0:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-19T15:02:01.7565110+03:30 0HNE6MVGF09H0:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name], [a0].[Id], [s].[Title], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [a].[Name], [a].[Id]
+    FROM [Authors] AS [a]
+) AS [a0]
+LEFT JOIN (
+    SELECT [b0].[Title], [b].[BookId], [b].[AuthorId], [b0].[Id]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a0].[Id] = [s].[AuthorId]
+ORDER BY [a0].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:01.7672768+03:30 0HNE6MVGF09H0:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:02:01.7753777+03:30 0HNE6MVGF09H0:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__author_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CreatedAt], [s].[Description], [s].[Genre], [s].[Language], [s].[Price], [s].[PublishDate], [s].[Publisher], [s].[StockQuantity], [s].[Title], [s].[UpdatedAt]
+FROM [Authors] AS [a]
+INNER JOIN (
+    SELECT [b0].[Id], [b0].[CreatedAt], [b0].[Description], [b0].[Genre], [b0].[Language], [b0].[Price], [b0].[PublishDate], [b0].[Publisher], [b0].[StockQuantity], [b0].[Title], [b0].[UpdatedAt], [b].[AuthorId]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a].[Id] = [s].[AuthorId]
+WHERE [a].[Id] = @__author_Id_0" (0723d8ff)
+2025-07-19T15:02:01.7888348+03:30 0HNE6MVGF09H0:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:01.7903602+03:30 0HNE6MVGF09H0:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 581.2855ms (74253ad3)
+2025-07-19T15:02:30.3928768+03:30 0HNE6MVGF09H1:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T15:02:30.3949950+03:30 0HNE6MVGF09H1:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:31.5214505+03:30 0HNE6MVGF09H1:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:31.5216794+03:30 0HNE6MVGF09H1:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1128.7937ms (74253ad3)
+2025-07-19T15:02:39.7846121+03:30 0HNE6MVGF09H2:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-19T15:02:39.7867204+03:30 0HNE6MVGF09H2:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:39.8933795+03:30 0HNE6MVGF09H2:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:39.8934687+03:30 0HNE6MVGF09H2:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 108.8633ms (74253ad3)
+2025-07-19T15:02:47.2826813+03:30 0HNE6MVGF09H3:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:02:47.2828902+03:30 0HNE6MVGF09H3:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:02:47.2829118+03:30 0HNE6MVGF09H3:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:02:47.2830571+03:30 0HNE6MVGF09H3:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:47.2936606+03:30 0HNE6MVGF09H3:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:47.2984316+03:30 0HNE6MVGF09H3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:02:47.2993996+03:30 0HNE6MVGF09H3:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:47.2995063+03:30 0HNE6MVGF09H3:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 16.8308ms (74253ad3)
+2025-07-19T15:02:47.8837678+03:30 0HNE6MVGF09H3:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:02:47.8839047+03:30 0HNE6MVGF09H3:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:02:47.8839223+03:30 0HNE6MVGF09H3:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:02:47.8840301+03:30 0HNE6MVGF09H3:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:47.8935736+03:30 0HNE6MVGF09H3:00000003 [INF] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:47.8983214+03:30 0HNE6MVGF09H3:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:02:47.8987641+03:30 0HNE6MVGF09H3:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:47.8988734+03:30 0HNE6MVGF09H3:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 15.1098ms (74253ad3)
+2025-07-19T15:02:48.0513243+03:30 0HNE6MVGF09H3:00000005 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:02:48.0514487+03:30 0HNE6MVGF09H3:00000005 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:02:48.0514693+03:30 0HNE6MVGF09H3:00000005 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:02:48.0515861+03:30 0HNE6MVGF09H3:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:48.0541595+03:30 0HNE6MVGF09H3:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:48.0564484+03:30 0HNE6MVGF09H3:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:02:48.0570022+03:30 0HNE6MVGF09H3:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:48.0571037+03:30 0HNE6MVGF09H3:00000005 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 5.7962ms (74253ad3)
+2025-07-19T15:02:48.2099617+03:30 0HNE6MVGF09H3:00000007 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:02:48.2100603+03:30 0HNE6MVGF09H3:00000007 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:02:48.2101102+03:30 0HNE6MVGF09H3:00000007 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:02:48.2101935+03:30 0HNE6MVGF09H3:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:48.2146733+03:30 0HNE6MVGF09H3:00000007 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:48.2178806+03:30 0HNE6MVGF09H3:00000007 [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:02:48.2182163+03:30 0HNE6MVGF09H3:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:48.2182929+03:30 0HNE6MVGF09H3:00000007 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 8.331ms (74253ad3)
+2025-07-19T15:02:48.3715914+03:30 0HNE6MVGF09H3:00000009 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:02:48.3717140+03:30 0HNE6MVGF09H3:00000009 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:02:48.3717343+03:30 0HNE6MVGF09H3:00000009 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:02:48.3718659+03:30 0HNE6MVGF09H3:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:48.3786622+03:30 0HNE6MVGF09H3:00000009 [INF] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:48.3829264+03:30 0HNE6MVGF09H3:00000009 [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:02:48.3834315+03:30 0HNE6MVGF09H3:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:48.3835369+03:30 0HNE6MVGF09H3:00000009 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 11.958ms (74253ad3)
+2025-07-19T15:02:48.5397366+03:30 0HNE6MVGF09H3:0000000B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:02:48.5398664+03:30 0HNE6MVGF09H3:0000000B [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:02:48.5398951+03:30 0HNE6MVGF09H3:0000000B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:02:48.5400142+03:30 0HNE6MVGF09H3:0000000B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:02:48.5429175+03:30 0HNE6MVGF09H3:0000000B [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:02:48.5451739+03:30 0HNE6MVGF09H3:0000000B [INF] Executed DbCommand ("1"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:02:48.5458415+03:30 0HNE6MVGF09H3:0000000B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:02:48.5459693+03:30 0HNE6MVGF09H3:0000000B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 6.226ms (74253ad3)
+2025-07-19T15:03:08.3735993+03:30 0HNE6MVGF09H4:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:03:08.3737180+03:30 0HNE6MVGF09H4:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:03:08.3737393+03:30 0HNE6MVGF09H4:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:03:08.3738511+03:30 0HNE6MVGF09H4:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:03:08.3809676+03:30 0HNE6MVGF09H4:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:03:08.3857887+03:30 0HNE6MVGF09H4:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:03:08.3862484+03:30 0HNE6MVGF09H4:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:03:08.3863851+03:30 0HNE6MVGF09H4:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 12.7586ms (74253ad3)
+2025-07-19T15:03:08.9387237+03:30 0HNE6MVGF09H4:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:03:08.9388590+03:30 0HNE6MVGF09H4:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:03:08.9388813+03:30 0HNE6MVGF09H4:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:03:08.9389960+03:30 0HNE6MVGF09H4:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:03:08.9413718+03:30 0HNE6MVGF09H4:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:03:08.9434686+03:30 0HNE6MVGF09H4:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:03:08.9440412+03:30 0HNE6MVGF09H4:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:03:08.9441396+03:30 0HNE6MVGF09H4:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 5.4419ms (74253ad3)
+2025-07-19T15:03:09.1548348+03:30 0HNE6MVGF09H4:00000005 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 157 (d509f86a)
+2025-07-19T15:03:09.1549572+03:30 0HNE6MVGF09H4:00000005 [INF] CORS policy execution failed. (09b6f179)
+2025-07-19T15:03:09.1549782+03:30 0HNE6MVGF09H4:00000005 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-19T15:03:09.1550958+03:30 0HNE6MVGF09H4:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-19T15:03:09.1574380+03:30 0HNE6MVGF09H4:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Title], [b1].[Id], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-19T15:03:09.1592085+03:30 0HNE6MVGF09H4:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[BirthDate], [s].[Name]
+FROM [Books] AS [b]
+INNER JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-19T15:03:09.1596051+03:30 0HNE6MVGF09H4:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-19T15:03:09.1597068+03:30 0HNE6MVGF09H4:00000005 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 4.887ms (74253ad3)
+2025-07-19T15:06:17.5968586+03:30  [INF] Application is shutting down... (90f52c38)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gSPoW/2V8aU=",
+  "dgSpecHash": "ogv00zgJk14=",
   "success": true,
   "projectFilePath": "C:\\Users\\a.mohammadi\\source\\repos\\UI_Learning_Journey\\CSharp\\WebAPIs\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
@@ -38,13 +38,11 @@
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types\\14.0.0\\hotchocolate.types.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.cursorpagination\\14.0.0\\hotchocolate.types.cursorpagination.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.errors\\14.0.0\\hotchocolate.types.errors.14.0.0.nupkg.sha512",
-    "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.filters\\13.9.14\\hotchocolate.types.filters.13.9.14.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.mutations\\14.0.0\\hotchocolate.types.mutations.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.offsetpagination\\14.0.0\\hotchocolate.types.offsetpagination.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.queries\\14.0.0\\hotchocolate.types.queries.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.scalars.upload\\14.0.0\\hotchocolate.types.scalars.upload.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.shared\\14.0.0\\hotchocolate.types.shared.14.0.0.nupkg.sha512",
-    "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.types.sorting\\13.9.14\\hotchocolate.types.sorting.13.9.14.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.utilities\\14.0.0\\hotchocolate.utilities.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.utilities.dependencyinjection\\14.0.0\\hotchocolate.utilities.dependencyinjection.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.validation\\14.0.0\\hotchocolate.validation.14.0.0.nupkg.sha512",

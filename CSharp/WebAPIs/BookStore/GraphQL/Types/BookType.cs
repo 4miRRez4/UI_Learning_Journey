@@ -1,6 +1,9 @@
 using BookStore.Models;
+using BookStore.Data;
 using HotChocolate;
 using HotChocolate.Types;
+using HotChocolate.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.GraphQL.Types
 {
@@ -20,6 +23,7 @@ namespace BookStore.GraphQL.Types
             descriptor
                 .Field(b => b.Authors)
                 .Description("The authors of this book")
+                .ResolveWith<BookResolvers>(r => r.GetAuthors(default!, default!))
                 .UseFiltering()
                 .UseSorting();
 
@@ -45,6 +49,17 @@ namespace BookStore.GraphQL.Types
             return context.Reviews
                 .Where(r => r.BookId == book.Id)
                 .Average(r => (double?)r.Rating);
+        }
+
+        public async Task<IEnumerable<Author>> GetAuthors(
+            [Parent] Book book,
+            [Service] AppDbContext context)
+        {
+            return await context.Books
+                .Where(b => b.Id == book.Id)
+                .SelectMany(b => b.Authors)
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }

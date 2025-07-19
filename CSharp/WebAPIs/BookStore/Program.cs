@@ -188,7 +188,7 @@ builder.Services
     .AddProjections()
     .AddFiltering()
     .AddSorting()
-    .AddGlobalObjectIdentification()
+    //.AddGlobalObjectIdentification() //TODO: Configure this, data loader and bookType
     .RegisterDbContextFactory<AppDbContext>();
 
 var app = builder.Build();

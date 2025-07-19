@@ -12,8 +12,6 @@
           "HotChocolate.AspNetCore": "14.0.0",
           "HotChocolate.Data": "14.0.0",
           "HotChocolate.Data.EntityFramework": "14.0.0",
-          "HotChocolate.Types.Filters": "13.9.14",
-          "HotChocolate.Types.Sorting": "13.9.14",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.7",
           "Microsoft.AspNetCore.JsonPatch": "9.0.7",
@@ -467,18 +465,6 @@
           }
         }
       },
-      "HotChocolate.Types.Filters/13.9.14": {
-        "dependencies": {
-          "HotChocolate.Language.Visitors": "14.0.0",
-          "HotChocolate.Types": "14.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/HotChocolate.Types.Filters.dll": {
-            "assemblyVersion": "13.9.14.0",
-            "fileVersion": "13.9.14.0"
-          }
-        }
-      },
       "HotChocolate.Types.Mutations/14.0.0": {
         "dependencies": {
           "HotChocolate.Execution": "14.0.0",
@@ -534,17 +520,6 @@
           "lib/net8.0/HotChocolate.Types.Shared.dll": {
             "assemblyVersion": "14.0.0.0",
             "fileVersion": "14.0.0.0"
-          }
-        }
-      },
-      "HotChocolate.Types.Sorting/13.9.14": {
-        "dependencies": {
-          "HotChocolate.Types": "14.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/HotChocolate.Types.Sorting.dll": {
-            "assemblyVersion": "13.9.14.0",
-            "fileVersion": "13.9.14.0"
           }
         }
       },
@@ -2513,13 +2488,6 @@
       "path": "hotchocolate.types.errors/14.0.0",
       "hashPath": "hotchocolate.types.errors.14.0.0.nupkg.sha512"
     },
-    "HotChocolate.Types.Filters/13.9.14": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4zRIJ0BSamQI452G2OqeUcpakMz3kl5ejplsdIV6qVaw/8E1E7NUC2pJ7OHLWC+EuUuuE/Ob9PvaF8aVZOOuNw==",
-      "path": "hotchocolate.types.filters/13.9.14",
-      "hashPath": "hotchocolate.types.filters.13.9.14.nupkg.sha512"
-    },
     "HotChocolate.Types.Mutations/14.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2554,13 +2522,6 @@
       "sha512": "sha512-2NihqGoGzeykbSuy96C9Qpk8c7B2YzGY2mf7K+HugmU7DrPTsqB38RqspaQDLnuHyz1Utci+BdSTqPt7OYrSwQ==",
       "path": "hotchocolate.types.shared/14.0.0",
       "hashPath": "hotchocolate.types.shared.14.0.0.nupkg.sha512"
-    },
-    "HotChocolate.Types.Sorting/13.9.14": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-aDQxybQOUMr+MHTHRBBLWjT+L5zArtTXAI+yaNRdI0Y+cYpez3U1yjG/S5AgoLDcyg2eKR55i7bv2ru2YnJpBw==",
-      "path": "hotchocolate.types.sorting/13.9.14",
-      "hashPath": "hotchocolate.types.sorting.13.9.14.nupkg.sha512"
     },
     "HotChocolate.Utilities/14.0.0": {
       "type": "package",

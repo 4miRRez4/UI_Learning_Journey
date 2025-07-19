@@ -616,23 +616,6 @@
           }
         }
       },
-      "HotChocolate.Types.Filters/13.9.14": {
-        "type": "package",
-        "dependencies": {
-          "HotChocolate.Language.Visitors": "13.9.14",
-          "HotChocolate.Types": "13.9.14"
-        },
-        "compile": {
-          "lib/net8.0/HotChocolate.Types.Filters.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/HotChocolate.Types.Filters.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "HotChocolate.Types.Mutations/14.0.0": {
         "type": "package",
         "dependencies": {
@@ -712,22 +695,6 @@
         },
         "runtime": {
           "lib/net8.0/HotChocolate.Types.Shared.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "HotChocolate.Types.Sorting/13.9.14": {
-        "type": "package",
-        "dependencies": {
-          "HotChocolate.Types": "13.9.14"
-        },
-        "compile": {
-          "lib/net8.0/HotChocolate.Types.Sorting.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/HotChocolate.Types.Sorting.dll": {
             "related": ".xml"
           }
         }
@@ -4638,29 +4605,6 @@
         "strawberryshake-signet.png"
       ]
     },
-    "HotChocolate.Types.Filters/13.9.14": {
-      "sha512": "4zRIJ0BSamQI452G2OqeUcpakMz3kl5ejplsdIV6qVaw/8E1E7NUC2pJ7OHLWC+EuUuuE/Ob9PvaF8aVZOOuNw==",
-      "type": "package",
-      "path": "hotchocolate.types.filters/13.9.14",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "greendonut-signet.png",
-        "hotchocolate-signet.png",
-        "hotchocolate.types.filters.13.9.14.nupkg.sha512",
-        "hotchocolate.types.filters.nuspec",
-        "lib/net6.0/HotChocolate.Types.Filters.dll",
-        "lib/net6.0/HotChocolate.Types.Filters.xml",
-        "lib/net7.0/HotChocolate.Types.Filters.dll",
-        "lib/net7.0/HotChocolate.Types.Filters.xml",
-        "lib/net8.0/HotChocolate.Types.Filters.dll",
-        "lib/net8.0/HotChocolate.Types.Filters.xml",
-        "lib/netstandard2.0/HotChocolate.Types.Filters.dll",
-        "lib/netstandard2.0/HotChocolate.Types.Filters.xml",
-        "strawberryshake-signet.png"
-      ]
-    },
     "HotChocolate.Types.Mutations/14.0.0": {
       "sha512": "OBBRwwIJrvb+Z5pDuzP5aOFE8nScugoo2lTkf5S4Uvib6Fa7ELSK0IZFaojy1BtyzV1ExUjRhlxEfVPmu3Smaw==",
       "type": "package",
@@ -4773,29 +4717,6 @@
         "lib/net8.0/HotChocolate.Types.Shared.xml",
         "lib/netstandard2.0/HotChocolate.Types.Shared.dll",
         "lib/netstandard2.0/HotChocolate.Types.Shared.xml",
-        "strawberryshake-signet.png"
-      ]
-    },
-    "HotChocolate.Types.Sorting/13.9.14": {
-      "sha512": "aDQxybQOUMr+MHTHRBBLWjT+L5zArtTXAI+yaNRdI0Y+cYpez3U1yjG/S5AgoLDcyg2eKR55i7bv2ru2YnJpBw==",
-      "type": "package",
-      "path": "hotchocolate.types.sorting/13.9.14",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "greendonut-signet.png",
-        "hotchocolate-signet.png",
-        "hotchocolate.types.sorting.13.9.14.nupkg.sha512",
-        "hotchocolate.types.sorting.nuspec",
-        "lib/net6.0/HotChocolate.Types.Sorting.dll",
-        "lib/net6.0/HotChocolate.Types.Sorting.xml",
-        "lib/net7.0/HotChocolate.Types.Sorting.dll",
-        "lib/net7.0/HotChocolate.Types.Sorting.xml",
-        "lib/net8.0/HotChocolate.Types.Sorting.dll",
-        "lib/net8.0/HotChocolate.Types.Sorting.xml",
-        "lib/netstandard2.0/HotChocolate.Types.Sorting.dll",
-        "lib/netstandard2.0/HotChocolate.Types.Sorting.xml",
         "strawberryshake-signet.png"
       ]
     },
@@ -10361,8 +10282,6 @@
       "HotChocolate.AspNetCore >= 13.11.1",
       "HotChocolate.Data >= 13.11.1",
       "HotChocolate.Data.EntityFramework >= 13.11.1",
-      "HotChocolate.Types.Filters >= 13.9.14",
-      "HotChocolate.Types.Sorting >= 13.9.14",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.7",
       "Microsoft.AspNetCore.JsonPatch >= 9.0.7",
@@ -10444,14 +10363,6 @@
           "HotChocolate.Data.EntityFramework": {
             "target": "Package",
             "version": "[13.11.1, )"
-          },
-          "HotChocolate.Types.Filters": {
-            "target": "Package",
-            "version": "[13.9.14, )"
-          },
-          "HotChocolate.Types.Sorting": {
-            "target": "Package",
-            "version": "[13.9.14, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
