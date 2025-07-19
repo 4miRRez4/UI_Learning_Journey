@@ -20,6 +20,7 @@ namespace BookStore.GraphQL.Types
             descriptor.Field(b => b.Genre).Description("The genre of the book.");
             descriptor.Field(b => b.Price).Description("The price of the book.");
 
+            //TODO: delete or only use this manual configuration instead of [UseProjection]
             //descriptor
             //    .Field(b => b.Authors)
             //    .Description("The authors of this book")
@@ -51,6 +52,7 @@ namespace BookStore.GraphQL.Types
                 .Average(r => (double?)r.Rating);
         }
 
+        // TODO: change this to return IQueryable. add more customre resolvers
         public async Task<IEnumerable<Author>> GetAuthors(
             [Parent] Book book,
             [Service] AppDbContext context)

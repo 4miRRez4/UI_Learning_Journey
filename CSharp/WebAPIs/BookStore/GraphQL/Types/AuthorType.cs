@@ -13,6 +13,7 @@ namespace BookStore.GraphQL.Types
         {
             descriptor.Description("Represents an author of books");
 
+            //TODO: delete or only use this manual configuration instead of [UseProjection]
             //descriptor
             //    .Field(a => a.Books)
             //    .Description("Books written by this author")
@@ -26,6 +27,7 @@ namespace BookStore.GraphQL.Types
 
     public class AuthorResolvers
     {
+        // TODO: change this to return IQueryable. add more customre resolvers
         public async Task<IEnumerable<Book>> GetBooks([Parent] Author author, [Service] AppDbContext context, [Service] ILogger<AuthorResolvers> logger)
         {
             logger.LogInformation("Fetching books for author {AuthorId}", author.Id);
