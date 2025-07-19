@@ -13,12 +13,13 @@ namespace BookStore.GraphQL.Types
         {
             descriptor.Description("Represents an author of books");
 
-            descriptor
-                .Field(a => a.Books)
-                .Description("Books written by this author")
-                .ResolveWith<AuthorResolvers>(r => r.GetBooks(default!, default!, default!))
-                .UseFiltering()
-                .UseSorting();
+            //descriptor
+            //    .Field(a => a.Books)
+            //    .Description("Books written by this author")
+            //    .UsePaging()
+            //    .UseProjection()
+            //    .UseFiltering()
+            //    .UseSorting();
 
         }
     }

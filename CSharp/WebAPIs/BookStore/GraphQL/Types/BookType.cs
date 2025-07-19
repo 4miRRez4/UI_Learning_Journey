@@ -20,12 +20,12 @@ namespace BookStore.GraphQL.Types
             descriptor.Field(b => b.Genre).Description("The genre of the book.");
             descriptor.Field(b => b.Price).Description("The price of the book.");
 
-            descriptor
-                .Field(b => b.Authors)
-                .Description("The authors of this book")
-                .ResolveWith<BookResolvers>(r => r.GetAuthors(default!, default!))
-                .UseFiltering()
-                .UseSorting();
+            //descriptor
+            //    .Field(b => b.Authors)
+            //    .Description("The authors of this book")
+            //    .UseProjection()
+            //    .UseFiltering()
+            //    .UseSorting();
 
             descriptor
                 .Field(b => b.Reviews)

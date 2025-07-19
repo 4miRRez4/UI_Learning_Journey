@@ -33,8 +33,8 @@ namespace BookStore.GraphQL.Queries
         }
 
 
-            //[UseDbContext(typeof(AppDbContext))]
-            [UsePaging]
+        //[UseDbContext(typeof(AppDbContext))]
+        [UsePaging]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
