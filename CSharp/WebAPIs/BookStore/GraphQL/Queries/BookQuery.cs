@@ -3,6 +3,7 @@ using BookStore.Dtos.Book;
 using BookStore.Data;
 using BookStore.Services.Interfaces;
 using BookStore.Services;
+using BookStore.GraphQL.Types.Inputs;
 using Microsoft.EntityFrameworkCore;
 using HotChocolate;
 using HotChocolate.Data;
@@ -42,6 +43,12 @@ namespace BookStore.GraphQL.Queries
         public IQueryable<Book> GetBooksByGenre(string genre, [Service] IBookQueryService bookQueryService)
             => bookQueryService.GetBooksByGenreAsQueryable(genre);
 
-
+        [UsePaging]
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<Book> GetFilteredBooks(BookSearchFilter filter, [Service] IBookQueryService bookQueryService)
+        {
+            return bookQueryService.GetFilteredBooks(filter);
+        }
     }
 }

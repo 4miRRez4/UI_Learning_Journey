@@ -7,6 +7,7 @@ using BookStore.Authorization;
 using BookStore.Models;
 using BookStore.GraphQL;
 using BookStore.GraphQL.Types;
+using BookStore.GraphQL.Types.Inputs;   
 using BookStore.GraphQL.Queries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
@@ -139,6 +140,7 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IBookQueryService, BookQueryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService,  AuthService>();
 
@@ -181,7 +183,7 @@ builder.Services
     .AddGraphQLServer()
     .AddType<BookType>()
     .AddType<AuthorType>()
-    .AddType<ReviewType>()
+    .AddType<ReviewType>() //TODO: Implement ReviewType
     .AddQueryType(q => q.Name("Query"))
         .AddTypeExtension<BookQuery>()
         .AddTypeExtension<AuthorQuery>()
