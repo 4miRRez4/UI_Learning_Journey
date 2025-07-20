@@ -178,5 +178,13 @@ namespace BookStore.Services
 
             return true;
         }
+
+        public IQueryable<Book> GetAllBooksAsQueryable()
+        {
+            return _bookRepository.GetAllBooksAsQueryable()
+                .Include(b => b.Authors)
+                .Include(b => b.Reviews)
+                .AsNoTracking();
+        }
     }
 }

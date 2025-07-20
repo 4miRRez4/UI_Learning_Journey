@@ -8,6 +8,7 @@ namespace BookStore.Services.Interfaces
 
 	public interface IBookService
 	{
+		// REST
 		Task<IEnumerable<BookDto>> GetAllBooksAsync();
 
 		Task<BookDto?> GetBookByIdAsync(int id);
@@ -21,6 +22,5 @@ namespace BookStore.Services.Interfaces
 		Task<bool> DeleteBookAsync(int id);
 
 		Task<BookDto?> PatchBookAsync(int id, JsonPatchDocument<UpdateBookDto> patchDocument);
-
     }
 }
