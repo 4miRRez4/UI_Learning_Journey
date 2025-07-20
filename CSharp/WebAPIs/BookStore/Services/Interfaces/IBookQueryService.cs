@@ -1,4 +1,4 @@
-
+using BookStore.Models;
 
 namespace BookStore.Services.Interfaces
 {
@@ -7,8 +7,8 @@ namespace BookStore.Services.Interfaces
         // GraphQL
         IQueryable<Book> GetAllBooksAsQueryable();
 
-        IQueryable<Book> SearchBooksByTitle(string title);
+        IQueryable<Book> SearchBooksByTitleAsQueryable(string title);
 
-        IQueryable<Book> GetBooksByGenre(string genre);
+        IQueryable<Book> GetBooksByGenreAsQueryable(string genre);
     }
 }

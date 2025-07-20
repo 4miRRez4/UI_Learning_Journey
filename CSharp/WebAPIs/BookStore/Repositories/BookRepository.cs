@@ -21,16 +21,13 @@ namespace BookStore.Repositories
 
         public async Task<List<Book>> GetAllBooksAsync()
         {
-            return await _context.Books
-                .Include(b => b.Authors)
-                .AsNoTracking()
+            return await GetAllBooksAsQueryable()
                 .ToListAsync();
         }
 
         public async Task<Book?> GetBookByIdAsync(int id)
         {
-            return await _context.Books
-                .Include(b => b.Authors)
+            return await GetAllBooksAsQueryable()
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
 

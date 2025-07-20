@@ -1,4 +1,5 @@
 using BookStore.Models;
+using BookStore.Dtos.Book;
 using BookStore.Data;
 using BookStore.Services.Interfaces;
 using BookStore.Services;
@@ -12,7 +13,6 @@ namespace BookStore.GraphQL.Queries
     [ExtendObjectType(OperationTypeNames.Query)]
     public class BookQuery
     {
-        //[UseDbContext(typeof(AppDbContext))]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
@@ -22,14 +22,11 @@ namespace BookStore.GraphQL.Queries
 
 
 
-        //[UseDbContext(typeof(AppDbContext))]
-        public async Task<Book?> GetBookById(int id, [Service] IBookService bookService)
+        public async Task<BookDto?> GetBookById(int id, [Service] IBookService bookService)
         {
             return await bookService.GetBookByIdAsync(id);
         }
 
-
-        //[UseDbContext(typeof(AppDbContext))]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
@@ -38,7 +35,6 @@ namespace BookStore.GraphQL.Queries
             => bookQueryService.SearchBooksByTitleAsQueryable(title);
 
 
-        //[UseDbContext(typeof(AppDbContext))]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
