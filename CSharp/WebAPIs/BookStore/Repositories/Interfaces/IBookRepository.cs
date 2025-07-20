@@ -4,6 +4,7 @@ namespace BookStore.Repositories.Interfaces
 {
     public interface IBookRepository
     {
+        IQueryable<Book> GetAllBooksAsQueryable();
         Task<List<Book>> GetAllBooksAsync();
         Task<Book?> GetBookByIdAsync(int id);
         Task<List<Book>> SearchBooksByTitleAsync(string title);
