@@ -1,4 +1,5 @@
 using BookStore.Models;
+using BookStore.GraphQL.Types.Inputs;
 
 namespace BookStore.Services.Interfaces
 {
@@ -10,5 +11,7 @@ namespace BookStore.Services.Interfaces
         IQueryable<Book> SearchBooksByTitleAsQueryable(string title);
 
         IQueryable<Book> GetBooksByGenreAsQueryable(string genre);
+
+        IQueryable<Book> GetFilteredBooks(BookSearchFilter filter);
     }
 }
