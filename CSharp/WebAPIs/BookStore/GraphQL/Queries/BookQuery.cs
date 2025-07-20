@@ -1,5 +1,7 @@
 using BookStore.Models;
 using BookStore.Data;
+using BookStore.Services.Interfaces;
+using BookStore.Services;
 using Microsoft.EntityFrameworkCore;
 using HotChocolate;
 using HotChocolate.Data;
@@ -15,21 +17,15 @@ namespace BookStore.GraphQL.Queries
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public IQueryable<Book> GetBooks([Service] AppDbContext context)
-            => context.Books
-                .Include(b => b.Authors)
-                .Include(b => b.Reviews)
-                .AsNoTracking();
+        public IQueryable<Book> GetBooks([Service] IBookQueryService bookQueryService)
+            => bookQueryService.GetAllBooksAsQueryable();
+
 
 
         //[UseDbContext(typeof(AppDbContext))]
-        public async Task<Book?> GetBookById(int id, [Service] AppDbContext context)
+        public async Task<Book?> GetBookById(int id, [Service] IBookService bookService)
         {
-            return await context.Books
-                   .Include(b => b.Authors)
-                   .Include(b => b.Reviews)
-                   .AsNoTracking()
-                   .FirstOrDefaultAsync(b => b.Id == id);
+            return await bookService.GetBookByIdAsync(id);
         }
 
 
@@ -38,12 +34,8 @@ namespace BookStore.GraphQL.Queries
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public IQueryable<Book> SearchBooksByTitle(string title, [Service] AppDbContext context)
-            => context.Books
-                    .Include(b => b.Authors)
-                    .Where(b => EF.Functions.Like(b.Title, $"%{title}%"))
-                    .AsNoTracking();
-
+        public IQueryable<Book> SearchBooksByTitle(string title, [Service] IBookQueryService bookQueryService)
+            => bookQueryService.SearchBooksByTitleAsQueryable(title);
 
 
         //[UseDbContext(typeof(AppDbContext))]
@@ -51,11 +43,8 @@ namespace BookStore.GraphQL.Queries
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public IQueryable<Book> GetBooksByGenre(string genre, [Service] AppDbContext context) 
-            => context.Books
-                .Include(b => b.Authors)
-                .Where(b => b.Genre == genre)
-                .AsNoTracking();
+        public IQueryable<Book> GetBooksByGenre(string genre, [Service] IBookQueryService bookQueryService)
+            => bookQueryService.GetBooksByGenreAsQueryable(genre);
 
 
     }
