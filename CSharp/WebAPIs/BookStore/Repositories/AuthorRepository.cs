@@ -31,7 +31,7 @@ namespace BookStore.Repositories
         public async Task<List<Author>> GetAuthorsByIdsAsync(List<int> authorIds)
         {
             return await _context.Authors
-                                 .Where(a => authorIds.Contains(a.Id))
+                                 .Where(a => authorIds.Distinct().Contains(a.Id))
                                  .ToListAsync();
         }
 

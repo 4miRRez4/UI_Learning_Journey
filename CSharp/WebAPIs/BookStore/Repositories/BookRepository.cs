@@ -48,7 +48,7 @@ namespace BookStore.Repositories
 
         public async Task<Book?> UpdateBookAsync(Book book)
         {
-            _context.Books.Update(book);
+
             await _context.SaveChangesAsync();
             return book;
         }
