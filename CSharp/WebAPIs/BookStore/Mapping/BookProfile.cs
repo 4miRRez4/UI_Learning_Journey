@@ -2,6 +2,7 @@ using AutoMapper;
 using BookStore.Models;
 using BookStore.Dtos.Book;
 using BookStore.Dtos.Author;
+using BookStore.Application.Books.Commands;
 
 namespace BookStore.Mapping
 {
@@ -19,6 +20,12 @@ namespace BookStore.Mapping
                     srcMember != null));
 
             CreateMap<Book, UpdateBookDto>();
+
+            CreateMap<AddBookCommand, CreateBookDto>();
+            CreateMap<UpdateBookCommand,  UpdateBookDto>();
+
+            CreateMap<BookDto, Book>().ReverseMap();
+            CreateMap<AuthorDto, Author>().ReverseMap();
         }
     }
 }
