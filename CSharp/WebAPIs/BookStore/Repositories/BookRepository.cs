@@ -16,8 +16,7 @@ namespace BookStore.Repositories
 
         public IQueryable<Book> GetAllBooksAsQueryable()
             => _context.Books
-                .Include(b => b.Authors)
-                .AsNoTracking();
+                .Include(b => b.Authors);
 
         public async Task<List<Book>> GetAllBooksAsync()
         {

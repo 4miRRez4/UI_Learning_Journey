@@ -9,6 +9,7 @@ using BookStore.GraphQL;
 using BookStore.GraphQL.Types;
 using BookStore.GraphQL.Types.Inputs;   
 using BookStore.GraphQL.Queries;
+using BookStore.GraphQL.Mutations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
@@ -19,8 +20,10 @@ using Microsoft.OpenApi.Models;
 using HotChocolate.AspNetCore;
 using HotChocolate.Execution.Configuration;
 using HotChocolate.Data;
+using MediatR;
 using System.Text;
 using System.Reflection;
+using BookStore.GraphQL.Mutations;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,6 +66,8 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddControllers()
     .AddNewtonsoftJson();
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
     .AddEntityFrameworkStores <AppDbContext>()
@@ -144,6 +149,8 @@ builder.Services.AddScoped<IBookQueryService, BookQueryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService,  AuthService>();
 
+//builder.Services.AddSingleton<GeminiService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -185,8 +192,9 @@ builder.Services
     .AddType<AuthorType>()
     .AddType<ReviewType>() //TODO: Implement ReviewType
     .AddQueryType(q => q.Name("Query"))
-        .AddTypeExtension<BookQuery>()
-        .AddTypeExtension<AuthorQuery>()
+        .AddTypeExtension<BookQueries>()
+        .AddTypeExtension<AuthorQueries>()
+    .AddMutationType<BookMutations>()
     .AddProjections()
     .AddFiltering()
     .AddSorting()

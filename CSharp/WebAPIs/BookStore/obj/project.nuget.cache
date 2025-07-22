@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ogv00zgJk14=",
+  "dgSpecHash": "/mLy+3LKt+Y=",
   "success": true,
   "projectFilePath": "C:\\Users\\a.mohammadi\\source\\repos\\UI_Learning_Journey\\CSharp\\WebAPIs\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\chillicream.nitro.app\\20.0.2\\chillicream.nitro.app.20.0.2.nupkg.sha512",
+    "C:\\Users\\a.mohammadi\\.nuget\\packages\\google_generativeai\\2.7.0\\google_generativeai.2.7.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\greendonut\\14.0.0\\greendonut.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate\\14.0.0\\hotchocolate.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.abstractions\\14.0.0\\hotchocolate.abstractions.14.0.0.nupkg.sha512",
@@ -47,6 +48,9 @@
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.utilities.dependencyinjection\\14.0.0\\hotchocolate.utilities.dependencyinjection.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\hotchocolate.validation\\14.0.0\\hotchocolate.validation.14.0.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\a.mohammadi\\.nuget\\packages\\mediatr\\13.0.0\\mediatr.13.0.0.nupkg.sha512",
+    "C:\\Users\\a.mohammadi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\a.mohammadi\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.3.0\\microsoft.aspnetcore.antiforgery.2.3.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.0\\microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\a.mohammadi\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.3.0\\microsoft.aspnetcore.authentication.core.2.3.0.nupkg.sha512",
@@ -244,6 +248,16 @@
       "warningLevel": 1,
       "message": "BookStore depends on HotChocolate.Data.EntityFramework (>= 13.11.1) but HotChocolate.Data.EntityFramework 13.11.1 was not found. HotChocolate.Data.EntityFramework 14.0.0 was resolved instead.",
       "libraryId": "HotChocolate.Data.EntityFramework",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 13.0.0 was resolved.",
+      "libraryId": "MediatR",
       "targetGraphs": [
         "net9.0"
       ]

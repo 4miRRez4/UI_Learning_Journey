@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BookStore.GraphQL.Queries
 {
     [ExtendObjectType(OperationTypeNames.Query)]
-    public class AuthorQuery
+    public class AuthorQueries
     {
         //[UseDbContext(typeof(AppDbContext))]
         [UsePaging]

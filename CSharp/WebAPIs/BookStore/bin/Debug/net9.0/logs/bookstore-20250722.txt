@@ -1,0 +1,733 @@
+2025-07-22T13:20:10.7885916+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T13:20:11.9546725+03:30  [INF] Executed DbCommand ("32"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:20:11.9945511+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:20:11.9964724+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:20:12.0075508+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T13:20:12.3881244+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T13:20:12.3915070+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T13:20:12.3930215+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T13:20:12.3939231+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T13:20:12.6825277+03:30 0HNE90KJJI5TM:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-22T13:20:12.7505019+03:30 0HNE90KJJI5TM:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T13:20:12.7521465+03:30 0HNE90KJJI5TM:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T13:20:13.3343774+03:30 0HNE90KJJI5TM:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T13:20:13.3355083+03:30 0HNE90KJJI5TM:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - 200 21901 "application/graphql; charset=utf-8" 657.9071ms (74253ad3)
+2025-07-22T13:20:31.5534847+03:30 0HNE90KJJI5TM:00000002 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 656 (d509f86a)
+2025-07-22T13:20:31.5555402+03:30 0HNE90KJJI5TM:00000002 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T13:20:31.5557571+03:30 0HNE90KJJI5TM:00000002 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T13:20:31.5570337+03:30 0HNE90KJJI5TM:00000002 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T13:20:31.6616125+03:30 0HNE90KJJI5TM:00000002 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T13:21:14.0345299+03:30 0HNE90KJJI5TN:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T13:21:14.0369189+03:30 0HNE90KJJI5TN:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T13:21:14.1816802+03:30 0HNE90KJJI5TM:00000002 [INF] Executed DbCommand ("14"ms) [Parameters=["@__authorIds_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [a0].[value]
+    FROM OPENJSON(@__authorIds_0) WITH ([value] int '$') AS [a0]
+)" (0723d8ff)
+2025-07-22T13:21:30.4918588+03:30 0HNE90KJJI5TM:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p5='?' (DbType = DateTime2), @p6='?' (Size = 100), @p7='?' (DbType = Int32), @p8='?' (Size = 200), @p9='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([CreatedAt], [Description], [Genre], [Language], [Price], [PublishDate], [Publisher], [StockQuantity], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2025-07-22T13:21:30.5262436+03:30 0HNE90KJJI5TM:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p10, @p11),
+(@p12, @p13);" (0723d8ff)
+2025-07-22T13:23:02.3737106+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T13:23:03.2793504+03:30  [INF] Executed DbCommand ("26"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:23:03.3262242+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:23:03.3279897+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:23:03.3365087+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T13:23:03.5409582+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T13:23:03.5445825+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T13:23:03.5457803+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T13:23:03.5466212+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T13:23:04.1045393+03:30 0HNE90M6M8Q0O:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 656 (d509f86a)
+2025-07-22T13:23:04.1225784+03:30 0HNE90M6M8Q0O:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T13:23:04.1228662+03:30 0HNE90M6M8Q0O:00000001 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T13:23:04.1715929+03:30 0HNE90M6M8Q0O:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T13:23:04.1740887+03:30 0HNE90M6M8Q0O:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T13:23:04.6908912+03:30 0HNE90M6M8Q0O:00000001 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T13:23:08.6955015+03:30 0HNE90M6M8Q0O:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__authorIds_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [a0].[value]
+    FROM OPENJSON(@__authorIds_0) WITH ([value] int '$') AS [a0]
+)" (0723d8ff)
+2025-07-22T13:23:09.3236386+03:30 0HNE90M6M8Q0O:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p5='?' (DbType = DateTime2), @p6='?' (Size = 100), @p7='?' (DbType = Int32), @p8='?' (Size = 200), @p9='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([CreatedAt], [Description], [Genre], [Language], [Price], [PublishDate], [Publisher], [StockQuantity], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2025-07-22T13:23:09.3513548+03:30 0HNE90M6M8Q0O:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p10, @p11),
+(@p12, @p13);" (0723d8ff)
+2025-07-22T13:29:36.6220353+03:30 0HNE90M6M8Q0P:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T13:29:36.6235817+03:30 0HNE90M6M8Q0P:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T13:29:36.7449242+03:30 0HNE90M6M8Q0O:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T13:29:36.7498580+03:30 0HNE90M6M8Q0O:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 392662.4462ms (74253ad3)
+2025-07-22T13:29:37.9040753+03:30 0HNE90M6M8Q0P:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T13:29:37.9047091+03:30 0HNE90M6M8Q0P:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 304 null null 1282.959ms (74253ad3)
+2025-07-22T13:29:51.5174310+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T13:29:52.4708110+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:29:52.5166588+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:29:52.5184987+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:29:52.5271618+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T13:29:52.7894283+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T13:29:52.7925288+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T13:29:52.7938749+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T13:29:52.7952389+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T13:30:36.9163755+03:30 0HNE90QDK6U3V:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 656 (d509f86a)
+2025-07-22T13:30:36.9349431+03:30 0HNE90QDK6U3V:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T13:30:36.9350861+03:30 0HNE90QDK6U3V:00000001 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T13:30:36.9796030+03:30 0HNE90QDK6U3V:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T13:30:37.0075190+03:30 0HNE90QDK6U3V:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T13:30:37.5332887+03:30 0HNE90QDK6U3V:00000001 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T13:30:42.1607822+03:30 0HNE90QDK6U3V:00000001 [INF] Executed DbCommand ("15"ms) [Parameters=["@__authorIds_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [a0].[value]
+    FROM OPENJSON(@__authorIds_0) WITH ([value] int '$') AS [a0]
+)" (0723d8ff)
+2025-07-22T13:30:42.9215886+03:30 0HNE90QDK6U3V:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p5='?' (DbType = DateTime2), @p6='?' (Size = 100), @p7='?' (DbType = Int32), @p8='?' (Size = 200), @p9='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([CreatedAt], [Description], [Genre], [Language], [Price], [PublishDate], [Publisher], [StockQuantity], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2025-07-22T13:30:42.9466386+03:30 0HNE90QDK6U3V:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p10, @p11),
+(@p12, @p13);" (0723d8ff)
+2025-07-22T13:30:49.5128445+03:30 0HNE90QDK6U3V:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T13:30:50.0211439+03:30 0HNE90QDK6U3V:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 13109.5003ms (74253ad3)
+2025-07-22T13:31:07.4126002+03:30 0HNE90QDK6U3V:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T13:31:07.4184731+03:30 0HNE90QDK6U3V:00000002 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T13:31:08.3424257+03:30 0HNE90QDK6U3V:00000002 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T13:31:08.3431547+03:30 0HNE90QDK6U3V:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 304 null null 930.68ms (74253ad3)
+2025-07-22T13:59:41.3870772+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T13:59:42.2756318+03:30  [INF] Executed DbCommand ("27"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:59:42.3175213+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:59:42.3191258+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T13:59:42.3273283+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T13:59:42.5236372+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T13:59:42.5266711+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T13:59:42.5279181+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T13:59:42.5287027+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T14:00:05.6605577+03:30 0HNE91ASOEK2U:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - null null (d509f86a)
+2025-07-22T14:00:05.7430865+03:30 0HNE91ASOEK2U:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T14:00:05.7446379+03:30 0HNE91ASOEK2U:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:00:05.7597183+03:30 0HNE91ASOEK2U:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:00:05.7608882+03:30 0HNE91ASOEK2U:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - 200 47 "application/json; charset=utf-8" 105.595ms (74253ad3)
+2025-07-22T14:00:06.0528210+03:30 0HNE91ASOEK2U:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-22T14:00:06.1098257+03:30 0HNE91ASOEK2U:00000002 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:00:06.5696806+03:30 0HNE91ASOEK2U:00000002 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:00:06.5698601+03:30 0HNE91ASOEK2U:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - 200 21901 "application/graphql; charset=utf-8" 517.5227ms (74253ad3)
+2025-07-22T14:00:07.6520947+03:30 0HNE91ASOEK2U:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:00:07.6544489+03:30 0HNE91ASOEK2U:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:00:08.6304165+03:30 0HNE91ASOEK2U:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:00:08.6309532+03:30 0HNE91ASOEK2U:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 304 null null 978.9517ms (74253ad3)
+2025-07-22T14:00:29.2614424+03:30 0HNE91ASOEK2U:00000004 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 396 (d509f86a)
+2025-07-22T14:00:29.2624793+03:30 0HNE91ASOEK2U:00000004 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T14:00:29.2626363+03:30 0HNE91ASOEK2U:00000004 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T14:00:29.2635373+03:30 0HNE91ASOEK2U:00000004 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:00:29.3548539+03:30 0HNE91ASOEK2U:00000004 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T14:00:29.5300066+03:30 0HNE91ASOEK2U:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:01:09.0933163+03:30 0HNE91ASOEK2V:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:01:09.0934910+03:30 0HNE91ASOEK2V:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:01:49.7197603+03:30 0HNE91ASOEK2V:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:01:49.7199298+03:30 0HNE91ASOEK2V:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 502 0 null 40627.4634ms (74253ad3)
+2025-07-22T14:01:49.7578787+03:30 0HNE91ASOEK2U:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Distinct_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [d].[value]
+    FROM OPENJSON(@__Distinct_0) WITH ([value] int '$') AS [d]
+)" (0723d8ff)
+2025-07-22T14:03:14.4352239+03:30 0HNE91ASOEK2U:00000004 [ERR] Failed executing DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p14='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = DateTime2), @p10='?' (Size = 100), @p11='?' (DbType = Int32), @p12='?' (Size = 200), @p13='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p0, @p1),
+(@p2, @p3);
+UPDATE [Books] SET [CreatedAt] = @p4, [Description] = @p5, [Genre] = @p6, [Language] = @p7, [Price] = @p8, [PublishDate] = @p9, [Publisher] = @p10, [StockQuantity] = @p11, [Title] = @p12, [UpdatedAt] = @p13
+OUTPUT 1
+WHERE [Id] = @p14;" (627a98df)
+2025-07-22T14:03:14.4540287+03:30 0HNE91ASOEK2U:00000004 [ERR] An exception occurred in the database while saving changes for context type '"BookStore.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:4355ac1d-eafc-47be-8e66-7a9480a01ffa
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:4355ac1d-eafc-47be-8e66-7a9480a01ffa
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookStore.Repositories.BookRepository.UpdateBookAsync(Book book) in C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\Repositories\BookRepository.cs:line 53
+2025-07-22T14:03:15.1744261+03:30 0HNE91ASOEK2U:00000004 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:04:03.4195061+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T14:04:04.3871354+03:30  [INF] Executed DbCommand ("29"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:04:04.4305870+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:04:04.4324025+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:04:04.4417023+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T14:04:04.6449665+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T14:04:04.6479913+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T14:04:04.6493076+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T14:04:04.6501209+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T14:04:55.1031212+03:30 0HNE91DJ0RGRT:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:04:55.1620950+03:30 0HNE91DJ0RGRT:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T14:04:55.1639812+03:30 0HNE91DJ0RGRT:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:04:56.4341187+03:30 0HNE91DJ0RGRT:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:04:56.4359139+03:30 0HNE91DJ0RGRT:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 200 null "application/javascript" 1337.2229ms (74253ad3)
+2025-07-22T14:05:24.1905099+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T14:05:25.0886208+03:30  [INF] Executed DbCommand ("27"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:05:25.1343629+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:05:25.1367273+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:05:25.1461599+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T14:05:25.3711478+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T14:05:25.3746904+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T14:05:25.3758807+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T14:05:25.4000342+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T14:05:29.4866447+03:30 0HNE91DT2G7PE:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - null null (d509f86a)
+2025-07-22T14:05:29.5846646+03:30 0HNE91DT2G7PE:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T14:05:29.5863205+03:30 0HNE91DT2G7PE:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:05:29.5993731+03:30 0HNE91DT2G7PE:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:05:29.6005237+03:30 0HNE91DT2G7PE:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - 200 47 "application/json; charset=utf-8" 119.9457ms (74253ad3)
+2025-07-22T14:05:29.8278012+03:30 0HNE91DT2G7PE:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-22T14:05:29.8762599+03:30 0HNE91DT2G7PE:00000002 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:05:30.3660070+03:30 0HNE91DT2G7PE:00000002 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:05:30.3661617+03:30 0HNE91DT2G7PE:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - 200 21901 "application/graphql; charset=utf-8" 538.4605ms (74253ad3)
+2025-07-22T14:05:31.4051529+03:30 0HNE91DT2G7PE:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:05:31.4075467+03:30 0HNE91DT2G7PE:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:05:32.3699475+03:30 0HNE91DT2G7PE:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:05:32.3704520+03:30 0HNE91DT2G7PE:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 304 null null 965.4413ms (74253ad3)
+2025-07-22T14:05:32.4645417+03:30 0HNE91DT2G7PE:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-22T14:05:32.4647446+03:30 0HNE91DT2G7PE:00000004 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:05:32.4650783+03:30 0HNE91DT2G7PE:00000004 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:05:32.4651457+03:30 0HNE91DT2G7PE:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - 200 21901 "application/graphql; charset=utf-8" 0.683ms (74253ad3)
+2025-07-22T14:05:34.1069762+03:30 0HNE91DT2G7PE:00000005 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 409 (d509f86a)
+2025-07-22T14:05:34.1080850+03:30 0HNE91DT2G7PE:00000005 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T14:05:34.1082847+03:30 0HNE91DT2G7PE:00000005 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T14:05:34.1092835+03:30 0HNE91DT2G7PE:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:05:34.2218020+03:30 0HNE91DT2G7PE:00000005 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T14:05:34.3877167+03:30 0HNE91DT2G7PE:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:05:40.0177278+03:30 0HNE91DT2G7PE:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Distinct_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [d].[value]
+    FROM OPENJSON(@__Distinct_0) WITH ([value] int '$') AS [d]
+)" (0723d8ff)
+2025-07-22T14:05:45.8291145+03:30 0HNE91DT2G7PE:00000005 [ERR] Failed executing DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p14='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = DateTime2), @p10='?' (Size = 100), @p11='?' (DbType = Int32), @p12='?' (Size = 200), @p13='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p0, @p1),
+(@p2, @p3);
+UPDATE [Books] SET [CreatedAt] = @p4, [Description] = @p5, [Genre] = @p6, [Language] = @p7, [Price] = @p8, [PublishDate] = @p9, [Publisher] = @p10, [StockQuantity] = @p11, [Title] = @p12, [UpdatedAt] = @p13
+OUTPUT 1
+WHERE [Id] = @p14;" (627a98df)
+2025-07-22T14:05:45.8584404+03:30 0HNE91DT2G7PE:00000005 [ERR] An exception occurred in the database while saving changes for context type '"BookStore.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:55ddd0bb-ebdf-4610-983c-3ff9a94dfc7d
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:55ddd0bb-ebdf-4610-983c-3ff9a94dfc7d
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task, ConfigureAwaitOptions options)
+2025-07-22T14:09:31.7952781+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T14:09:32.7809328+03:30  [INF] Executed DbCommand ("27"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:09:32.8430508+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:09:32.8458736+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:09:32.8604131+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T14:09:33.0754823+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T14:09:33.0803933+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T14:09:33.0816950+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T14:09:33.1026282+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T14:09:33.7314846+03:30 0HNE91G628CQO:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 409 (d509f86a)
+2025-07-22T14:09:33.7519080+03:30 0HNE91G628CQO:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T14:09:33.7520494+03:30 0HNE91G628CQO:00000001 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T14:09:33.7960743+03:30 0HNE91G628CQO:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T14:09:33.7978055+03:30 0HNE91G628CQO:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:09:34.3189754+03:30 0HNE91G628CQO:00000001 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T14:09:34.5122823+03:30 0HNE91G628CQO:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:22:44.3594208+03:30 0HNE91G628CQP:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:22:44.9737346+03:30 0HNE91G628CQP:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:22:45.3447930+03:30 0HNE91G628CQO:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Distinct_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [d].[value]
+    FROM OPENJSON(@__Distinct_0) WITH ([value] int '$') AS [d]
+)" (0723d8ff)
+2025-07-22T14:22:46.6054626+03:30 0HNE91G628CQO:00000001 [ERR] Failed executing DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p14='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = DateTime2), @p10='?' (Size = 100), @p11='?' (DbType = Int32), @p12='?' (Size = 200), @p13='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [BookAuthors] ([AuthorId], [BookId])
+VALUES (@p0, @p1),
+(@p2, @p3);
+UPDATE [Books] SET [CreatedAt] = @p4, [Description] = @p5, [Genre] = @p6, [Language] = @p7, [Price] = @p8, [PublishDate] = @p9, [Publisher] = @p10, [StockQuantity] = @p11, [Title] = @p12, [UpdatedAt] = @p13
+OUTPUT 1
+WHERE [Id] = @p14;" (627a98df)
+2025-07-22T14:22:46.6349889+03:30 0HNE91G628CQO:00000001 [ERR] An exception occurred in the database while saving changes for context type '"BookStore.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:2a97d4d4-8772-434a-884b-5f8f276dffb4
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_BookAuthors'. Cannot insert duplicate key in object 'dbo.BookAuthors'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:2a97d4d4-8772-434a-884b-5f8f276dffb4
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-07-22T14:22:47.2717486+03:30 0HNE91G628CQO:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:25:39.3415553+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T14:25:40.2585967+03:30  [INF] Executed DbCommand ("34"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:25:40.3048023+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:25:40.3067597+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:25:40.3155246+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T14:25:40.5097095+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T14:25:40.5134444+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T14:25:40.5156935+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T14:25:40.5170428+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T14:25:48.7264409+03:30 0HNE91P8DTGGK:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - null null (d509f86a)
+2025-07-22T14:25:48.9194379+03:30 0HNE91P8DTGGK:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T14:25:48.9210538+03:30 0HNE91P8DTGGK:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:25:48.9346604+03:30 0HNE91P8DTGGK:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:25:48.9357158+03:30 0HNE91P8DTGGK:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - 200 47 "application/json; charset=utf-8" 214.0013ms (74253ad3)
+2025-07-22T14:25:49.1619792+03:30 0HNE91P8DTGGK:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-22T14:25:49.1633591+03:30 0HNE91P8DTGGK:00000002 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:25:49.6247102+03:30 0HNE91P8DTGGK:00000002 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:25:49.6248801+03:30 0HNE91P8DTGGK:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - 200 21901 "application/graphql; charset=utf-8" 463.165ms (74253ad3)
+2025-07-22T14:25:50.2019620+03:30 0HNE91P8DTGGK:00000003 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 409 (d509f86a)
+2025-07-22T14:25:50.2030767+03:30 0HNE91P8DTGGK:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T14:25:50.2032087+03:30 0HNE91P8DTGGK:00000003 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T14:25:50.2054521+03:30 0HNE91P8DTGGK:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:25:50.3115695+03:30 0HNE91P8DTGGK:00000003 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T14:25:50.4762195+03:30 0HNE91P8DTGGK:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:25:52.9573868+03:30 0HNE91P8DTGGL:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:25:52.9575730+03:30 0HNE91P8DTGGL:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:25:53.8771043+03:30 0HNE91P8DTGGK:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Distinct_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [d].[value]
+    FROM OPENJSON(@__Distinct_0) WITH ([value] int '$') AS [d]
+)" (0723d8ff)
+2025-07-22T14:26:37.6754347+03:30 0HNE91P8DTGGK:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:26:40.2309987+03:30 0HNE91P8DTGGL:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:26:40.2312709+03:30 0HNE91P8DTGGL:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 502 0 null 47274.2555ms (74253ad3)
+2025-07-22T14:26:40.2333096+03:30 0HNE91P8DTGGK:00000003 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 50031.8123ms (74253ad3)
+2025-07-22T14:30:06.4302707+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T14:30:07.3297757+03:30  [INF] Executed DbCommand ("26"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:30:07.3722893+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:30:07.3740290+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T14:30:07.3824073+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T14:30:07.5848005+03:30  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2025-07-22T14:30:07.5879282+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T14:30:07.5893060+03:30  [INF] Hosting environment: "Production" (bc5a1a4e)
+2025-07-22T14:30:07.5901156+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0" (cc26f24e)
+2025-07-22T14:30:31.3188699+03:30 0HNE91RSRAUDK:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:30:31.3188709+03:30 0HNE91RSRAUDL:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - null null (d509f86a)
+2025-07-22T14:30:31.3872892+03:30 0HNE91RSRAUDK:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-07-22T14:30:31.3892228+03:30 0HNE91RSRAUDL:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:30:31.3892236+03:30 0HNE91RSRAUDK:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:30:31.4130206+03:30 0HNE91RSRAUDL:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:30:31.4148014+03:30 0HNE91RSRAUDL:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/nitro-config.json""" - 200 47 "application/json; charset=utf-8" 100.8047ms (74253ad3)
+2025-07-22T14:30:31.6942257+03:30 0HNE91RSRAUDL:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-22T14:30:31.6964078+03:30 0HNE91RSRAUDL:00000002 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:30:32.1417546+03:30 0HNE91RSRAUDL:00000002 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:30:32.1418959+03:30 0HNE91RSRAUDL:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/schema.graphql""" - 200 21901 "application/graphql; charset=utf-8" 447.7848ms (74253ad3)
+2025-07-22T14:30:32.3844388+03:30 0HNE91RSRAUDK:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:30:32.3848708+03:30 0HNE91RSRAUDK:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 200 null "application/javascript" 1071.3542ms (74253ad3)
+2025-07-22T14:30:33.3212546+03:30 0HNE91RSRAUDK:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:30:33.3215831+03:30 0HNE91RSRAUDK:00000002 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:30:33.4545910+03:30 0HNE91RSRAUDK:00000002 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:30:33.4548741+03:30 0HNE91RSRAUDK:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 304 null null 133.7255ms (74253ad3)
+2025-07-22T14:30:46.9148274+03:30 0HNE91RSRAUDK:00000003 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 407 (d509f86a)
+2025-07-22T14:30:46.9161570+03:30 0HNE91RSRAUDK:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T14:30:46.9163754+03:30 0HNE91RSRAUDK:00000003 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T14:30:46.9175223+03:30 0HNE91RSRAUDK:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:30:47.0182823+03:30 0HNE91RSRAUDK:00000003 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T14:30:47.4100438+03:30 0HNE91RSRAUDK:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:30:50.1749175+03:30 0HNE91RSRAUDK:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__Distinct_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[BirthDate], [a].[Name]
+FROM [Authors] AS [a]
+WHERE [a].[Id] IN (
+    SELECT [d].[value]
+    FROM OPENJSON(@__Distinct_0) WITH ([value] int '$') AS [d]
+)" (0723d8ff)
+2025-07-22T14:31:03.0728379+03:30 0HNE91RSRAUDL:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:31:03.0753238+03:30 0HNE91RSRAUDL:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:31:18.7594292+03:30 0HNE91RSRAUDL:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:31:36.7090078+03:30 0HNE91RSRAUDL:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 304 null null 15691.0734ms (74253ad3)
+2025-07-22T14:32:05.2771422+03:30 0HNE91RSRAUDK:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:32:06.6245796+03:30 0HNE91RSRAUDK:00000003 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 79711.658ms (74253ad3)
+2025-07-22T14:32:21.9016290+03:30 0HNE91RSRAUDK:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T14:32:21.9020615+03:30 0HNE91RSRAUDK:00000004 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:32:22.0337755+03:30 0HNE91RSRAUDK:00000004 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:33:05.7587373+03:30 0HNE91RSRAUDL:00000004 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 405 (d509f86a)
+2025-07-22T14:33:05.7590221+03:30 0HNE91RSRAUDL:00000004 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T14:33:05.7590371+03:30 0HNE91RSRAUDK:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5000""""/service-worker.js""" - 304 null null 43859.1288ms (74253ad3)
+2025-07-22T14:33:05.7596133+03:30 0HNE91RSRAUDL:00000004 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T14:33:05.8003733+03:30 0HNE91RSRAUDL:00000004 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:33:05.8578693+03:30 0HNE91RSRAUDL:00000004 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-22T14:33:05.8734143+03:30 0HNE91RSRAUDL:00000004 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Title], [b1].[Price], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Id], [b].[Title], [b].[Price]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:33:05.8793159+03:30 0HNE91RSRAUDL:00000004 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-22T14:33:05.8888062+03:30 0HNE91RSRAUDL:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name], [a0].[Id], [s].[Title], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [a].[Name], [a].[Id]
+    FROM [Authors] AS [a]
+) AS [a0]
+LEFT JOIN (
+    SELECT [b0].[Title], [b].[BookId], [b].[AuthorId], [b0].[Id]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a0].[Id] = [s].[AuthorId]
+ORDER BY [a0].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:33:05.8916159+03:30 0HNE91RSRAUDL:00000004 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:33:05.8917864+03:30 0HNE91RSRAUDL:00000004 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 133.0911ms (74253ad3)
+2025-07-22T14:34:29.7826113+03:30 0HNE91RSRAUDL:00000005 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - "application/json" 395 (d509f86a)
+2025-07-22T14:34:29.7828577+03:30 0HNE91RSRAUDL:00000005 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T14:34:29.7828759+03:30 0HNE91RSRAUDL:00000005 [INF] Request origin "http://localhost:5000" does not have permission to access the resource. (a03d560b)
+2025-07-22T14:34:29.7829719+03:30 0HNE91RSRAUDL:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T14:34:29.7905184+03:30 0HNE91RSRAUDL:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[Id], [s].[BirthDate], [s].[Name], [s].[BookId], [s].[AuthorId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[BirthDate], [a].[Name], [b0].[BookId], [b0].[AuthorId]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T14:34:58.2620784+03:30 0HNE91RSRAUDL:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T14:34:58.5686165+03:30 0HNE91RSRAUDL:00000005 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5000""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 28811.9283ms (74253ad3)
+2025-07-22T14:35:00.9306359+03:30 0HNE91RSRAUDL:00000006 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5000""""/graphql/service-worker.js""" - null null (d509f86a)

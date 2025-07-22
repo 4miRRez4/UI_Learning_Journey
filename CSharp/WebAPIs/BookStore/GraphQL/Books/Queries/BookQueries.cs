@@ -12,7 +12,7 @@ using HotChocolate.Types;
 namespace BookStore.GraphQL.Queries
 {
     [ExtendObjectType(OperationTypeNames.Query)]
-    public class BookQuery
+    public class BookQueries
     {
         [UsePaging]
         [UseProjection]
