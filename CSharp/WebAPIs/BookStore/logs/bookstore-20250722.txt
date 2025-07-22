@@ -1175,3 +1175,274 @@ ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
 2025-07-22T17:23:18.7601002+03:30 0HNE94QAT40FN:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
 2025-07-22T17:23:18.7605923+03:30 0HNE94QAT40FN:00000007 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 12.7022ms (74253ad3)
 2025-07-22T17:49:38.4172173+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-22T18:06:59.7248188+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-22T18:07:00.3852493+03:30  [INF] Executed DbCommand ("20"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T18:07:00.4195688+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T18:07:00.4205331+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-22T18:07:00.4278158+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-22T18:07:00.5560792+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-22T18:07:00.5561054+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-22T18:07:00.5580614+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-22T18:07:00.5583945+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-22T18:07:00.5584194+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-22T18:07:35.4766023+03:30 0HNE95L6BG0N7:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T18:07:35.5234526+03:30 0HNE95L6BG0N7:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:07:36.6237672+03:30 0HNE95L6BG0N7:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:07:36.6256001+03:30 0HNE95L6BG0N7:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1150.0589ms (74253ad3)
+2025-07-22T18:07:58.1424398+03:30 0HNE95L6BG0N7:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 276 (d509f86a)
+2025-07-22T18:07:58.1458922+03:30 0HNE95L6BG0N7:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:07:58.1460668+03:30 0HNE95L6BG0N7:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:07:58.1473341+03:30 0HNE95L6BG0N7:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:07:58.5252085+03:30 0HNE95L6BG0N7:00000003 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-22T18:07:58.6214019+03:30 0HNE95L6BG0N7:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:07:58.6781299+03:30 0HNE95L6BG0N7:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T18:07:58.7781600+03:30 0HNE95L6BG0N7:00000003 [INF] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p0 AND [BookId] = @p1;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p2 AND [BookId] = @p3;
+DELETE FROM [Books]
+OUTPUT 1
+WHERE [Id] = @p4;" (0723d8ff)
+2025-07-22T18:07:58.8065013+03:30 0HNE95L6BG0N7:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:07:58.8083159+03:30 0HNE95L6BG0N7:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 665.872ms (74253ad3)
+2025-07-22T18:08:02.1815918+03:30 0HNE95L6BG0N7:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T18:08:02.1846719+03:30 0HNE95L6BG0N7:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:08:02.2843915+03:30 0HNE95L6BG0N7:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:08:02.2845340+03:30 0HNE95L6BG0N7:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 102.9359ms (74253ad3)
+2025-07-22T18:08:33.9576340+03:30 0HNE95L6BG0N7:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-22T18:08:33.9578855+03:30 0HNE95L6BG0N7:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:08:34.0613212+03:30 0HNE95L6BG0N7:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:08:34.0614593+03:30 0HNE95L6BG0N7:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 103.8075ms (74253ad3)
+2025-07-22T18:09:35.7521239+03:30 0HNE95L6BG0N7:00000009 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 275 (d509f86a)
+2025-07-22T18:09:35.7523595+03:30 0HNE95L6BG0N7:00000009 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:09:35.7523923+03:30 0HNE95L6BG0N7:00000009 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:09:35.7525422+03:30 0HNE95L6BG0N7:00000009 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:09:35.7674092+03:30 0HNE95L6BG0N7:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:09:35.7681400+03:30 0HNE95L6BG0N7:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T18:09:35.7706205+03:30 0HNE95L6BG0N7:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p0 AND [BookId] = @p1;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p2 AND [BookId] = @p3;
+DELETE FROM [Books]
+OUTPUT 1
+WHERE [Id] = @p4;" (0723d8ff)
+2025-07-22T18:09:35.7740061+03:30 0HNE95L6BG0N7:00000009 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:09:35.7741612+03:30 0HNE95L6BG0N7:00000009 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 22.0578ms (74253ad3)
+2025-07-22T18:09:39.9125268+03:30 0HNE95L6BG0N7:0000000B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 275 (d509f86a)
+2025-07-22T18:09:39.9126488+03:30 0HNE95L6BG0N7:0000000B [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:09:39.9126691+03:30 0HNE95L6BG0N7:0000000B [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:09:39.9128067+03:30 0HNE95L6BG0N7:0000000B [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:09:39.9207888+03:30 0HNE95L6BG0N7:0000000B [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:09:39.9212395+03:30 0HNE95L6BG0N7:0000000B [WRN] There is no book with ID 8 to delete. (0e9b0fa8)
+2025-07-22T18:09:39.9216168+03:30 0HNE95L6BG0N7:0000000B [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:09:39.9217305+03:30 0HNE95L6BG0N7:0000000B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 9.234ms (74253ad3)
+2025-07-22T18:10:10.0675163+03:30 0HNE95L6BG0N7:0000000D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 275 (d509f86a)
+2025-07-22T18:10:10.0676774+03:30 0HNE95L6BG0N7:0000000D [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:10:10.0677251+03:30 0HNE95L6BG0N7:0000000D [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:10:10.0678652+03:30 0HNE95L6BG0N7:0000000D [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:10:10.0702620+03:30 0HNE95L6BG0N7:0000000D [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:10:10.0712319+03:30 0HNE95L6BG0N7:0000000D [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T18:10:10.0736844+03:30 0HNE95L6BG0N7:0000000D [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p0 AND [BookId] = @p1;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p2 AND [BookId] = @p3;
+DELETE FROM [Books]
+OUTPUT 1
+WHERE [Id] = @p4;" (0723d8ff)
+2025-07-22T18:10:10.0747896+03:30 0HNE95L6BG0N7:0000000D [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:10:10.0749591+03:30 0HNE95L6BG0N7:0000000D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 7.4583ms (74253ad3)
+2025-07-22T18:10:14.8967922+03:30 0HNE95L6BG0N7:0000000F [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 276 (d509f86a)
+2025-07-22T18:10:14.8969220+03:30 0HNE95L6BG0N7:0000000F [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:10:14.8969403+03:30 0HNE95L6BG0N7:0000000F [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:10:14.8970501+03:30 0HNE95L6BG0N7:0000000F [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:10:14.8992792+03:30 0HNE95L6BG0N7:0000000F [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:10:14.9003388+03:30 0HNE95L6BG0N7:0000000F [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T18:10:14.9026771+03:30 0HNE95L6BG0N7:0000000F [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p0 AND [BookId] = @p1;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p2 AND [BookId] = @p3;
+DELETE FROM [Books]
+OUTPUT 1
+WHERE [Id] = @p4;" (0723d8ff)
+2025-07-22T18:10:14.9053489+03:30 0HNE95L6BG0N7:0000000F [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:10:14.9054549+03:30 0HNE95L6BG0N7:0000000F [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 8.6781ms (74253ad3)
+2025-07-22T18:10:19.2163278+03:30 0HNE95L6BG0N7:00000011 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 276 (d509f86a)
+2025-07-22T18:10:19.2164680+03:30 0HNE95L6BG0N7:00000011 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:10:19.2164881+03:30 0HNE95L6BG0N7:00000011 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:10:19.2166010+03:30 0HNE95L6BG0N7:00000011 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:10:19.2187489+03:30 0HNE95L6BG0N7:00000011 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:10:19.2196069+03:30 0HNE95L6BG0N7:00000011 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[CreatedAt], [b1].[Description], [b1].[Genre], [b1].[Language], [b1].[Price], [b1].[PublishDate], [b1].[Publisher], [b1].[StockQuantity], [b1].[Title], [b1].[UpdatedAt], [s].[BookId], [s].[AuthorId], [s].[Id], [s].[BirthDate], [s].[Name]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[Genre], [b].[Language], [b].[Price], [b].[PublishDate], [b].[Publisher], [b].[StockQuantity], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b1]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[AuthorId], [a].[Id], [a].[BirthDate], [a].[Name]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-22T18:10:19.2217350+03:30 0HNE95L6BG0N7:00000011 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p0 AND [BookId] = @p1;
+DELETE FROM [BookAuthors]
+OUTPUT 1
+WHERE [AuthorId] = @p2 AND [BookId] = @p3;
+DELETE FROM [Books]
+OUTPUT 1
+WHERE [Id] = @p4;" (0723d8ff)
+2025-07-22T18:10:19.2244889+03:30 0HNE95L6BG0N7:00000011 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:10:19.2246149+03:30 0HNE95L6BG0N7:00000011 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 8.2959ms (74253ad3)
+2025-07-22T18:10:23.2085085+03:30 0HNE95L6BG0N7:00000013 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 276 (d509f86a)
+2025-07-22T18:10:23.2086477+03:30 0HNE95L6BG0N7:00000013 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:10:23.2086711+03:30 0HNE95L6BG0N7:00000013 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:10:23.2087884+03:30 0HNE95L6BG0N7:00000013 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:10:23.2110077+03:30 0HNE95L6BG0N7:00000013 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:10:23.2112092+03:30 0HNE95L6BG0N7:00000013 [WRN] There is no book with ID 13 to delete. (8c35c60c)
+2025-07-22T18:10:23.2116428+03:30 0HNE95L6BG0N7:00000013 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:10:23.2118196+03:30 0HNE95L6BG0N7:00000013 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 3.3179ms (74253ad3)
+2025-07-22T18:10:27.5621370+03:30 0HNE95L6BG0N7:00000015 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 276 (d509f86a)
+2025-07-22T18:10:27.5622608+03:30 0HNE95L6BG0N7:00000015 [INF] CORS policy execution failed. (09b6f179)
+2025-07-22T18:10:27.5622825+03:30 0HNE95L6BG0N7:00000015 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-22T18:10:27.5624028+03:30 0HNE95L6BG0N7:00000015 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-22T18:10:27.5645822+03:30 0HNE95L6BG0N7:00000015 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2025-07-22T18:10:27.5647453+03:30 0HNE95L6BG0N7:00000015 [WRN] There is no book with ID 14 to delete. (58a2aedc)
+2025-07-22T18:10:27.5649736+03:30 0HNE95L6BG0N7:00000015 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-22T18:10:27.5650661+03:30 0HNE95L6BG0N7:00000015 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 2.9471ms (74253ad3)
+2025-07-22T18:11:47.3568928+03:30  [INF] Application is shutting down... (90f52c38)
