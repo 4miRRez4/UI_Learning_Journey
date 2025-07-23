@@ -1,8 +1,10 @@
+using MediatR;
+using BookStore.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace BookStore.Application.Books.Commands
 {
-    public class AddBookCommand
+    public class AddBookCommand : IRequest<Book>
     {
         [Required(ErrorMessage = "Title is required")]
         [MaxLength(200, ErrorMessage = "Title cannot exceed 200 characters")]

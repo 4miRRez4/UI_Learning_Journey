@@ -191,6 +191,8 @@ builder.Services
     .AddType<BookType>()
     .AddType<AuthorType>()
     .AddType<ReviewType>() //TODO: Implement ReviewType
+    .AddType<BookPayload>()
+    .AddType<UserError>()
     .AddQueryType(q => q.Name("Query"))
         .AddTypeExtension<BookQueries>()
         .AddTypeExtension<AuthorQueries>()

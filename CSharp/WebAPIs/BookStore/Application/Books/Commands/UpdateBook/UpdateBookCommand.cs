@@ -1,8 +1,11 @@
+using MediatR;
+using BookStore.Models;
 using System.ComponentModel.DataAnnotations;
+
 
 namespace BookStore.Application.Books.Commands
 {
-    public class UpdateBookCommand
+    public class UpdateBookCommand : IRequest<Book?>
     {
         [Required(ErrorMessage = "Book ID is required")]
         public int Id { get; set; }
