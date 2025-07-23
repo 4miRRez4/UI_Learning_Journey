@@ -15,24 +15,24 @@ namespace BookStore.Repositories
             _context = context;
         }
 
-        public async Task<List<Author>> GetAllAuthorsAsync()
+        public async Task<List<Author>> GetAllAuthorsAsync(CancellationToken ct)
         {
             return await _context.Authors
                                 .Include(b => b.Books)
                                 .AsNoTracking()
-                                .ToListAsync();
+                                .ToListAsync(ct);
         }
 
-        public async Task<Author?> GetAuthorByIdAsync(int id)
+        public async Task<Author?> GetAuthorByIdAsync(int id, CancellationToken ct)
         {
-            return await _context.Authors.FindAsync(id);
+            return await _context.Authors.FindAsync(new object[] { id }, ct);
         }
 
-        public async Task<List<Author>> GetAuthorsByIdsAsync(List<int> authorIds)
+        public async Task<List<Author>> GetAuthorsByIdsAsync(List<int> authorIds, CancellationToken ct)
         {
             return await _context.Authors
                                  .Where(a => authorIds.Distinct().Contains(a.Id))
-                                 .ToListAsync();
+                                 .ToListAsync(ct);
         }
 
     }

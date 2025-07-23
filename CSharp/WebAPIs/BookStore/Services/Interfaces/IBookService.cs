@@ -9,18 +9,18 @@ namespace BookStore.Services.Interfaces
 	public interface IBookService
 	{
 		// REST
-		Task<IEnumerable<BookDto>> GetAllBooksAsync();
+		Task<IEnumerable<BookDto>> GetAllBooksAsync(CancellationToken ct);
 
-		Task<BookDto?> GetBookByIdAsync(int id);
+		Task<BookDto?> GetBookByIdAsync(int id, CancellationToken ct);
 
-        Task<List<BookDto>> SearchBooksByTitleAsync(string title);
+        Task<List<BookDto>> SearchBooksByTitleAsync(string title, CancellationToken ct);
 
-		Task<BookDto> CreateBookAsync(CreateBookDto dto);
+		Task<BookDto> CreateBookAsync(CreateBookDto dto, CancellationToken ct);
 
-		Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto bookDto);
+		Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto bookDto, CancellationToken ct);
 
 		Task<bool> DeleteBookAsync(int id);
 
-		Task<BookDto?> PatchBookAsync(int id, JsonPatchDocument<UpdateBookDto> patchDocument);
+		Task<BookDto?> PatchBookAsync(int id, JsonPatchDocument<UpdateBookDto> patchDocument, CancellationToken ct);
     }
 }

@@ -13,10 +13,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
     <PackageReference Include="Google_GenerativeAI" Version="2.7.0" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.11.1" />
+    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="15.1.7" />
     <PackageReference Include="HotChocolate.Data" Version="13.11.1" />
     <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.11.1" />
+    <PackageReference Include="HotChocolate.Validation" Version="15.1.7" />
     <PackageReference Include="MediatR" Version="13.0.0" />
     <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
@@ -36,6 +39,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.3" />

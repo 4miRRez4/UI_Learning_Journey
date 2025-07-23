@@ -6,12 +6,12 @@ namespace BookStore.Services.Interfaces
     public interface IBookQueryService
     {
         // GraphQL
-        IQueryable<Book> GetAllBooksAsQueryable();
+        Task<IQueryable<Book>> GetAllBooksAsQueryable(CancellationToken ct);
 
-        IQueryable<Book> SearchBooksByTitleAsQueryable(string title);
+        Task<IQueryable<Book>> SearchBooksByTitleAsQueryable(string title, CancellationToken ct);
 
-        IQueryable<Book> GetBooksByGenreAsQueryable(string genre);
+        Task<IQueryable<Book>> GetBooksByGenreAsQueryable(string genre, CancellationToken ct);
 
-        IQueryable<Book> GetFilteredBooks(BookSearchFilter filter);
+        Task<IQueryable<Book>> GetFilteredBooks(BookSearchFilter filter, CancellationToken ct);
     }
 }

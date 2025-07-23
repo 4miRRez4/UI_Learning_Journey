@@ -16,25 +16,27 @@ namespace BookStore.Services
         }
 
 
-        public IQueryable<Book> GetAllBooksAsQueryable()
+        public async Task<IQueryable<Book>> GetAllBooksAsQueryable(CancellationToken ct)
         {
-            return _bookRepository.GetAllBooksAsQueryable()
-                .AsNoTracking();
+            var books = await _bookRepository.GetAllBooksAsQueryable(ct);
+            return books.AsNoTracking();
         }
 
-        public IQueryable<Book> SearchBooksByTitleAsQueryable(string title)
+        public async Task<IQueryable<Book>> SearchBooksByTitleAsQueryable(string title, CancellationToken ct)
         {
-            return GetAllBooksAsQueryable().Where(b => b.Title.Contains(title));
+            var books = await GetAllBooksAsQueryable(ct);
+            return books.Where(b => b.Title.Contains(title));
         }
 
-        public IQueryable<Book> GetBooksByGenreAsQueryable(string genre)
+        public async Task<IQueryable<Book>> GetBooksByGenreAsQueryable(string genre, CancellationToken ct)
         {
-            return GetAllBooksAsQueryable().Where(b => b.Genre == genre);
+            var books = await GetAllBooksAsQueryable(ct);
+            return books.Where(b => b.Genre == genre);
         }
 
-        public IQueryable<Book> GetFilteredBooks(BookSearchFilter filter)
+        public async Task<IQueryable<Book>> GetFilteredBooks(BookSearchFilter filter, CancellationToken ct)
         {
-            var query = _bookRepository.GetAllBooksAsQueryable();
+            var query = _bookRepository.GetAllBooksAsQueryable(ct);
 
             if (!string.IsNullOrEmpty(filter.Title))
             {

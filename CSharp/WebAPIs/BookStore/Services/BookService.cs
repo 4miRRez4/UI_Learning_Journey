@@ -28,41 +28,41 @@ namespace BookStore.Services
             _logger = logger;
         }
 
-        public async Task<IEnumerable<BookDto>> GetAllBooksAsync()
+        public async Task<IEnumerable<BookDto>> GetAllBooksAsync(CancellationToken ct)
         {
-            var books = await _bookRepository.GetAllBooksAsync();
+            var books = await _bookRepository.GetAllBooksAsync(ct);
             return _mapper.Map<IEnumerable<BookDto>>(books);
         }
 
-        public async Task<BookDto?> GetBookByIdAsync(int id)
+        public async Task<BookDto?> GetBookByIdAsync(int id, CancellationToken ct)
         {
-            var bookEntity = await _bookRepository.GetBookByIdAsync(id);
+            var bookEntity = await _bookRepository.GetBookByIdAsync(id, ct);
             return bookEntity == null ? null : _mapper.Map<BookDto>(bookEntity);
         }
 
-        public async Task<List<BookDto>> SearchBooksByTitleAsync(string title)
+        public async Task<List<BookDto>> SearchBooksByTitleAsync(string title, CancellationToken ct)
         {
-            var books = await _bookRepository.SearchBooksByTitleAsync(title);
+            var books = await _bookRepository.SearchBooksByTitleAsync(title, ct);
             return _mapper.Map<List<BookDto>>(books);
         }
 
-        public async Task<BookDto> CreateBookAsync(CreateBookDto bookDto)
+        public async Task<BookDto> CreateBookAsync(CreateBookDto bookDto, CancellationToken ct)
         {
             var bookEntity = _mapper.Map<Book>(bookDto);
 
             if(bookDto.AuthorIds?.Count > 0)
             {
-                var authors = await _authorRepository.GetAuthorsByIdsAsync(bookDto.AuthorIds);
+                var authors = await _authorRepository.GetAuthorsByIdsAsync(bookDto.AuthorIds, ct);
                 bookEntity.Authors = authors ?? new List<Author>();
             }
 
-            var createdBook = await _bookRepository.CreateBookAsync(bookEntity);
+            var createdBook = await _bookRepository.CreateBookAsync(bookEntity, ct);
             return _mapper.Map<BookDto>(createdBook);
         }
             
-        public async Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto updateDto)
+        public async Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto updateDto, CancellationToken ct)
         {
-            var existingBook = await _bookRepository.GetBookByIdAsync(id);
+            var existingBook = await _bookRepository.GetBookByIdAsync(id, ct);
             if (existingBook == null)
             {
                 _logger.LogWarning("There is no book with ID {BookId} to update.", id);
@@ -74,26 +74,26 @@ namespace BookStore.Services
             if (updateDto.AuthorIds?.Count > 0)
             {
                 existingBook.Authors.Clear();
-                var authors = await _authorRepository.GetAuthorsByIdsAsync(updateDto.AuthorIds);
+                var authors = await _authorRepository.GetAuthorsByIdsAsync(updateDto.AuthorIds, ct);
                 existingBook.Authors = authors;
             }
 
-            var updatedBook = await _bookRepository.UpdateBookAsync(existingBook);
+            var updatedBook = await _bookRepository.UpdateBookAsync(existingBook, ct);
             return _mapper.Map<BookDto>(updatedBook);
         }
 
-        public async Task<bool> DeleteBookAsync(int id)
+        public async Task<bool> DeleteBookAsync(int id, CancellationToken ct)
         {
             try
             {
-                var bookExist = await _bookRepository.BookExistAsync(id);
+                var bookExist = await _bookRepository.BookExistAsync(id, ct);
                 if (!bookExist)
                 {
                     _logger.LogWarning($"There is no book with ID {id} to delete.");
                     return false;
                 }
 
-                await _bookRepository.DeleteBookAsync(id);
+                await _bookRepository.DeleteBookAsync(id, ct);
                 return true;
             }
             catch(Exception ex)
@@ -103,11 +103,11 @@ namespace BookStore.Services
             }
         }
 
-        public async Task<BookDto?> PatchBookAsync(int id, JsonPatchDocument<UpdateBookDto> patchDocument)
+        public async Task<BookDto?> PatchBookAsync(int id, JsonPatchDocument<UpdateBookDto> patchDocument, CancellationToken ct)
         {
             try
             {
-                var existingBook = await _bookRepository.GetBookByIdAsync(id);
+                var existingBook = await _bookRepository.GetBookByIdAsync(id, ct);
                 if(existingBook == null)
                 {
                     _logger.LogWarning($"There is no book with ID {id}");
@@ -132,11 +132,11 @@ namespace BookStore.Services
                 if(bookToPatch.AuthorIds?.Count > 0)
                 {
                     existingBook.Authors.Clear();
-                    var authors = await _authorRepository.GetAuthorsByIdsAsync(bookToPatch.AuthorIds);
+                    var authors = await _authorRepository.GetAuthorsByIdsAsync(bookToPatch.AuthorIds, CancellationToken ct);
                     existingBook.Authors = authors;
                 }
 
-                var patchedBook = await _bookRepository.UpdateBookAsync(existingBook);
+                var patchedBook = await _bookRepository.UpdateBookAsync(existingBook, ct);
                 _logger.LogInformation("Book with ID {id} patched successfully. ", id);
 
                 return _mapper.Map<BookDto>(patchedBook);
@@ -179,9 +179,9 @@ namespace BookStore.Services
             return true;
         }
 
-        public IQueryable<Book> GetAllBooksAsQueryable()
+        public IQueryable<Book> GetAllBooksAsQueryable(CancellationToken ct)
         {
-            return _bookRepository.GetAllBooksAsQueryable()
+            return _bookRepository.GetAllBooksAsQueryable(ct)
                 .Include(b => b.Authors)
                 .Include(b => b.Reviews)
                 .AsNoTracking();

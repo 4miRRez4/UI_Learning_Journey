@@ -17,10 +17,10 @@ namespace BookStore.Application.Books.Commands
             _mapper = mapper;
         }
 
-        public async Task<Book?> Handle(UpdateBookCommand request, CancellationToken cancellationToken)
+        public async Task<Book?> Handle(UpdateBookCommand request, CancellationToken ct)
         {
             var updateDto = _mapper.Map<UpdateBookDto>(request);
-            var resBookDto = await _bookService.UpdateBookAsync(request.Id, updateDto);
+            var resBookDto = await _bookService.UpdateBookAsync(request.Id, updateDto, ct);
             return resBookDto == null ? null : _mapper.Map<Book>(resBookDto);
         }
     }

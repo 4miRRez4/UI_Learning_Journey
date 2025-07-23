@@ -17,10 +17,10 @@ namespace BookStore.Application.Books.Commands
             _mapper = mapper;
         }
 
-        public async Task<Book> Handle(AddBookCommand request, CancellationToken cancellationToken)
+        public async Task<Book> Handle(AddBookCommand request, CancellationToken ct)
         {
             var createDto = _mapper.Map<CreateBookDto>(request);
-            var resBookDto = await _bookService.CreateBookAsync(createDto);
+            var resBookDto = await _bookService.CreateBookAsync(createDto, ct);
             return _mapper.Map<Book>(resBookDto);
         }
     }

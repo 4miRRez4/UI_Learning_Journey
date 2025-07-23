@@ -18,56 +18,55 @@ namespace BookStore.Repositories
             => _context.Books
                 .Include(b => b.Authors);
 
-        public async Task<List<Book>> GetAllBooksAsync()
+        public async Task<List<Book>> GetAllBooksAsync(CancellationToken ct)
         {
             return await GetAllBooksAsQueryable()
-                .ToListAsync();
+                .ToListAsync(ct);
         }
 
-        public async Task<Book?> GetBookByIdAsync(int id)
+        public async Task<Book?> GetBookByIdAsync(int id, CancellationToken ct)
         {
             return await GetAllBooksAsQueryable()
-                .FirstOrDefaultAsync(b => b.Id == id);
+                .FirstOrDefaultAsync(b => b.Id == id, ct);
         }
 
-        public async Task<List<Book>> SearchBooksByTitleAsync(string title)
+        public async Task<List<Book>> SearchBooksByTitleAsync(string title, CancellationToken ct)
         {
             return await _context.Books
                 .Include(b => b.Authors)
                 .Where(b => EF.Functions.Like(b.Title, $"%{title}%"))
                 .OrderBy(b => b.Title)
-                .ToListAsync();
+                .ToListAsync(ct);
         }
 
-        public async Task<Book> CreateBookAsync(Book book)
+        public async Task<Book> CreateBookAsync(Book book, CancellationToken ct)
         {
-            await _context.Books.AddAsync(book);
-            await _context.SaveChangesAsync();
+            await _context.Books.AddAsync(book, ct);
+            await _context.SaveChangesAsync(ct);
             return book;
         }
 
-        public async Task<Book?> UpdateBookAsync(Book book)
+        public async Task<Book?> UpdateBookAsync(Book book, CancellationToken ct)
         {
-
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(ct);
             return book;
         }
 
-        public async Task<bool> BookExistAsync(int id)
+        public async Task<bool> BookExistAsync(int id, CancellationToken ct)
         {
-            return await _context.Books.AnyAsync(b => b.Id == id);
+            return await _context.Books.AnyAsync(b => b.Id == id, ct);
         }
 
-        public async Task DeleteBookAsync(int id)
+        public async Task DeleteBookAsync(int id, CancellationToken ct)
         {
             var bookEntity = await _context.Books
                 .Include(b => b.Authors)
-                .FirstOrDefaultAsync(b => b.Id == id);
+                .FirstOrDefaultAsync(b => b.Id == id, ct);
             
             if (bookEntity != null)
             {
                 _context.Books.Remove(bookEntity);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(ct);
             }
         }
 

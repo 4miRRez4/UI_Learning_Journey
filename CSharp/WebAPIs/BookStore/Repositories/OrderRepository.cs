@@ -14,31 +14,31 @@ namespace BookStore.Repositories
             _context = context;
         }
 
-        public async Task<Order> CreateOrderAsync(Order order)
+        public async Task<Order> CreateOrderAsync(Order order, CancellationToken ct)
         {
-            await _context.Orders.AddAsync(order);
-            await _context.SaveChangesAsync();
+            await _context.Orders.AddAsync(order, ct);
+            await _context.SaveChangesAsync(ct);
             return order;
         }
 
-        public async Task<bool> OrderExistsAsync(int id)
+        public async Task<bool> OrderExistsAsync(int id, CancellationToken ct)
         {
-            return await _context.Orders.AnyAsync(o => o.Id == id);
+            return await _context.Orders.AnyAsync(o => o.Id == id, ct);
         }
 
-        public async Task DeleteOrderAsync(int id)
+        public async Task DeleteOrderAsync(int id, CancellationToken ct)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Orders.FindAsync(new object[] { id }, ct);
             if (order != null)
             {
                 _context.Orders.Remove(order);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(ct);
             }
         }
 
 
 
-        public async Task<List<Order>> GetOrdersByCustomerIdAsync(int customerId)
+        public async Task<List<Order>> GetOrdersByCustomerIdAsync(int customerId, CancellationToken ct)
         {
             return await _context.Orders
                 .Where(o => o.CustomerId == customerId)
@@ -46,33 +46,33 @@ namespace BookStore.Repositories
                 .ThenInclude(oi => oi.Book)
                 .Include(o => o.Customer)
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync(ct);
         }
 
-        public async Task<Order?> GetOrderByIdAsync(int id)
+        public async Task<Order?> GetOrderByIdAsync(int id, CancellationToken ct)
         {
             return await _context.Orders
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.Book)
                 .Include(o => o.Customer)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(o => o.Id == id);
+                .FirstOrDefaultAsync(o => o.Id == id, ct);
         }
 
-        public async Task<List<Order>> GetAllOrdersAsync()
+        public async Task<List<Order>> GetAllOrdersAsync(CancellationToken ct)
         {
             return await _context.Orders
                 .Include(o => o.OrderItems)
                 .ThenInclude(oi => oi.Book)
                 .Include(o => o.Customer)
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync(ct);
         }
 
-        public async Task<Order?> UpdateOrderAsync(Order order)
+        public async Task<Order?> UpdateOrderAsync(Order order, CancellationToken ct)
         {
             _context.Orders.Update(order);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(ct);
             return order;
         }
     }

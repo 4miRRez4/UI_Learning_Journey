@@ -7,10 +7,10 @@ namespace BookStore.Services.Interfaces
 {
     public interface IOrderService 
     {
-        Task<IEnumerable<OrderDto>> GetAllOrdersAsync();
-        Task<OrderDto?> GetOrderByIdAsync(int id);
-        Task<OrderDto> CreateOrderAsync(CreateOrderDto createOrderDto);
+        Task<IEnumerable<OrderDto>> GetAllOrdersAsync(CancellationToken ct);
+        Task<OrderDto?> GetOrderByIdAsync(int id, CancellationToken ct);
+        Task<OrderDto> CreateOrderAsync(CreateOrderDto createOrderDto, CancellationToken ct);
 
-        Task<OrderDto> AddItemToOrderUsingIdsAsync(int orderId, int bookId, int quantity);
+        Task<OrderDto> AddItemToOrderUsingIdsAsync(int orderId, int bookId, int quantity, CancellationToken ct);
     }
 }

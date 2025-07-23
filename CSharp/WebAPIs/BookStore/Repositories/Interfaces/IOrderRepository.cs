@@ -5,12 +5,12 @@ namespace BookStore.Repositories.Interfaces
 {
     public interface IOrderRepository
     {
-        Task<Order?> GetOrderByIdAsync(int id);
-        Task<List<Order>> GetAllOrdersAsync();
-        Task<Order> CreateOrderAsync(Order order);
-        Task<Order?> UpdateOrderAsync(Order order);
-        Task<bool> OrderExistsAsync(int id);
-        Task DeleteOrderAsync(int id);
-        Task<List<Order>> GetOrdersByCustomerIdAsync(int customerId);
+        Task<Order?> GetOrderByIdAsync(int id, CancellationToken ct);
+        Task<List<Order>> GetAllOrdersAsync(CancellationToken ct);
+        Task<Order> CreateOrderAsync(Order order, CancellationToken ct);
+        Task<Order?> UpdateOrderAsync(Order order, CancellationToken ct);
+        Task<bool> OrderExistsAsync(int id, CancellationToken ct);
+        Task DeleteOrderAsync(int id, CancellationToken ct);
+        Task<List<Order>> GetOrdersByCustomerIdAsync(int customerId, CancellationToken ct);
     }
 }
