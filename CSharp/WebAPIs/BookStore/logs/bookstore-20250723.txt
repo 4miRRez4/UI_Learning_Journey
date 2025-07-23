@@ -1,0 +1,65 @@
+2025-07-23T16:48:39.0235828+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-23T16:48:39.7730453+03:30  [INF] Executed DbCommand ("30"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-23T16:48:39.8094217+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-23T16:48:39.8103506+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-23T16:48:39.8199980+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-23T16:48:40.1072724+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-23T16:48:40.1073003+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-23T16:48:40.1091684+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-23T16:48:40.1095056+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-23T16:48:40.1095294+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-23T16:48:40.6320542+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-23T16:51:14.1385344+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-23T16:51:14.7819562+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-23T16:51:14.8144769+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-23T16:51:14.8151951+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-23T16:51:14.8224628+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-23T16:51:14.9371259+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-23T16:51:14.9371528+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-23T16:51:14.9390823+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-23T16:51:14.9394146+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-23T16:51:14.9394357+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-23T16:51:20.0172445+03:30 0HNE9TF7UT9Q7:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-23T16:51:20.0744122+03:30 0HNE9TF7UT9Q7:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-23T16:51:20.5560719+03:30 0HNE9TF7UT9Q7:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-23T16:51:20.5578091+03:30 0HNE9TF7UT9Q7:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - 200 22698 "application/graphql; charset=utf-8" 542.2738ms (74253ad3)
+2025-07-23T16:51:22.2182629+03:30 0HNE9TF7UT9Q7:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 302 (d509f86a)
+2025-07-23T16:51:22.2217485+03:30 0HNE9TF7UT9Q7:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-23T16:51:22.2219224+03:30 0HNE9TF7UT9Q7:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-23T16:51:22.2240267+03:30 0HNE9TF7UT9Q7:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-23T16:51:22.2992755+03:30 0HNE9TF7UT9Q7:00000003 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. (8d51718a)
+2025-07-23T16:51:22.3215509+03:30 0HNE9TF7UT9Q7:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-23T16:51:22.3217763+03:30 0HNE9TF7UT9Q7:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 103.5414ms (74253ad3)
+2025-07-23T16:51:29.5691644+03:30 0HNE9TF7UT9Q7:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-23T16:51:29.5725810+03:30 0HNE9TF7UT9Q7:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-23T16:51:30.8132812+03:30 0HNE9TF7UT9Q7:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-23T16:51:30.8134726+03:30 0HNE9TF7UT9Q7:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1244.4054ms (74253ad3)
+2025-07-23T16:51:31.8652620+03:30 0HNE9TF7UT9Q7:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-23T16:51:31.8657641+03:30 0HNE9TF7UT9Q7:00000007 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-23T16:51:31.9670720+03:30 0HNE9TF7UT9Q7:00000007 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-23T16:51:31.9673164+03:30 0HNE9TF7UT9Q7:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 102.0632ms (74253ad3)
+2025-07-23T16:51:40.1033707+03:30  [INF] Application is shutting down... (90f52c38)

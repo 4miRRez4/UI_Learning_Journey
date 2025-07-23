@@ -41,7 +41,6 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\b
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Pagination.Batching.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Pagination.Core.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Pagination.EntityFramework.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Pagination.Mappings.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Pagination.Primitives.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Primitives.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Subscriptions.dll
@@ -51,7 +50,6 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\b
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.CursorPagination.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Errors.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Mutations.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.OffsetPagination.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Queries.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Scalars.Upload.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.Shared.dll
@@ -236,3 +234,14 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\o
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.pdb
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.genruntimeconfig.cache
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\ref\BookStore.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\FluentValidation.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\GreenDonut.Abstractions.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\GreenDonut.Data.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\GreenDonut.Data.Abstractions.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\GreenDonut.Data.Primitives.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.AspNetCore.Authorization.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Execution.Projections.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\bin\Debug\net9.0\HotChocolate.Types.CursorPagination.Extensions.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -22,6 +22,16 @@ namespace BookStore.GraphQL.Mutations
                 var book = await mediator.Send(input, ct);
                 return new BookPayload(book, null);
             }
+            catch (GraphQLException gqlEx)
+            {
+                var validationErrors = gqlEx.Errors[0].Extensions["errors"] as Dictionary<string, string[]>;
+
+                var userErrors = validationErrors?
+                    .SelectMany(error => error.Value.Select(msg => new UserError(error.Key, msg)))
+                    .ToList() ?? new List<UserError>();
+
+                return new BookPayload(null, userErrors);
+            }
             catch (Exception ex)
             {
                 return new BookPayload(
@@ -43,6 +53,15 @@ namespace BookStore.GraphQL.Mutations
                     ? new BookPayload(null, new List<UserError> { new("NOT_FOUND", "Book not found") })
                     : new BookPayload(book, null);
             }
+            catch (GraphQLException gqlEx)
+            {
+                var validationErrors = gqlEx.Errors[0].Extensions["errors"] as Dictionary<string, string[]>;
+                var userErrors = validationErrors?
+                    .SelectMany(error => error.Value.Select(msg => new UserError(error.Key, msg)))
+                    .ToList() ?? new List<UserError>();
+
+                return new BookPayload(null, userErrors);
+            }
             catch (Exception ex)
             {
                 return new BookPayload(
@@ -63,6 +82,15 @@ namespace BookStore.GraphQL.Mutations
                 return success
                     ? new PayloadBase(null)
                     : new PayloadBase(new List<UserError> { new("NOT_FOUND", "Book not found") });
+            }
+            catch (GraphQLException gqlEx)
+            {
+                var validationErrors = gqlEx.Errors[0].Extensions["errors"] as Dictionary<string, string[]>;
+                var userErrors = validationErrors?
+                    .SelectMany(error => error.Value.Select(msg => new UserError(error.Key, msg)))
+                    .ToList() ?? new List<UserError>();
+
+                return new PayloadBase(userErrors);
             }
             catch (Exception ex)
             {
