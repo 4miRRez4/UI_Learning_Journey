@@ -35,7 +35,7 @@ namespace BookStore.Services
 
         public async Task<AuthResult> RegisterAsync(RegisterDto request, CancellationToken ct)
         {
-            var existingUser = await _userManager.FindByEmailAsync(request.Email, ct);
+            var existingUser = await _userManager.FindByEmailAsync(request.Email);
             if (existingUser != null)
             {
                 return new AuthResult { Success = false, Errors = new[] { "Email already in use." } };
@@ -47,7 +47,7 @@ namespace BookStore.Services
                 UserName = request.UserName,
             };
 
-            var createdUser = await _userManager.CreateAsync(newUser, request.Password, ct);
+            var createdUser = await _userManager.CreateAsync(newUser, request.Password);
 
             if (!createdUser.Succeeded)
             {
@@ -59,7 +59,7 @@ namespace BookStore.Services
             }
 
             //Assign custom role by default
-            await _userManager.AddToRoleAsync(newUser, UserRoles.Customer, ct);
+            await _userManager.AddToRoleAsync(newUser, UserRoles.Customer);
 
             var customer = new Customer
             {
@@ -114,14 +114,14 @@ namespace BookStore.Services
 
         public async Task<AuthResult> LoginAsync(LoginDto request, CancellationToken ct)
         {
-            var user = await _userManager.FindByEmailAsync(request.Email, ct);
+            var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
                 return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } };
             }
             ;
 
-            var isPassValid = await _userManager.CheckPasswordAsync(user, request.Password, ct);
+            var isPassValid = await _userManager.CheckPasswordAsync(user, request.Password);
             if (!isPassValid)
             {
                 return new AuthResult { Success = false, Errors = new[] { "invalid credentials." } };

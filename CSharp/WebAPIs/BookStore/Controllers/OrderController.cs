@@ -40,11 +40,11 @@ namespace BookStore.Controllers
         /// <response code="403">If user lacks required role</response>
         [HttpGet] // GET: api/order
         [Authorize(Roles = UserRoles.Admin + "," + UserRoles.Seller)]
-        public async Task<ActionResult<IEnumerable<OrderDto>>> GetAllOrders()
+        public async Task<ActionResult<IEnumerable<OrderDto>>> GetAllOrders(CancellationToken ct)
         {
             try
             {
-                var orders = await _orderService.GetAllOrdersAsync();
+                var orders = await _orderService.GetAllOrdersAsync(ct);
                 if (orders == null || !orders.Any())
                 {
                     return NotFound("No orders found!");
@@ -69,11 +69,11 @@ namespace BookStore.Controllers
         /// <response code="403">If user lacks required role</response>
         [HttpGet("{id}")]
         [Authorize(UserRoles.Admin + "," + UserRoles.Customer)]
-        public async Task<IActionResult> GetOrderById(int id)
+        public async Task<IActionResult> GetOrderById(int id, CancellationToken ct)
         {
             try
             {
-                var order = await _orderService.GetOrderByIdAsync(id);
+                var order = await _orderService.GetOrderByIdAsync(id, ct);
                 if (order == null)
                 {
                     _logger.LogWarning("Order with ID {OrderId} not found", id);
@@ -115,7 +115,7 @@ namespace BookStore.Controllers
         /// <response code="403">If user lacks required role</response>
         [HttpPost]
         [Authorize(Roles = UserRoles.Customer)]
-        public async Task<ActionResult<OrderDto>> CreateOrder([FromBody] CreateOrderDto createOrderDto)
+        public async Task<ActionResult<OrderDto>> CreateOrder([FromBody] CreateOrderDto createOrderDto, CancellationToken ct)
         {
             if (createOrderDto == null)
             {
@@ -129,7 +129,7 @@ namespace BookStore.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var createdOrder = await _orderService.CreateOrderAsync(createOrderDto);
+                var createdOrder = await _orderService.CreateOrderAsync(createOrderDto, ct);
                 return CreatedAtAction(nameof(GetOrderById), new { id = createdOrder.Id }, createdOrder);
             }
             catch (Exception ex)
@@ -162,7 +162,7 @@ namespace BookStore.Controllers
         /// <response code="403">If user lacks required role</response>
         [HttpPost("{orderId}/items")] // POST: api/order/{orderId}/items
         [Authorize(UserRoles.Customer)]
-        public async Task<ActionResult<OrderDto>> AddItemToOrder(int orderId, [FromBody] CreateOrderItemDto createOrderItemDto)
+        public async Task<ActionResult<OrderDto>> AddItemToOrder(int orderId, [FromBody] CreateOrderItemDto createOrderItemDto, CancellationToken ct)
         {
             if (createOrderItemDto == null)
             {
@@ -177,7 +177,7 @@ namespace BookStore.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var updatedOrder = await _orderService.AddItemToOrderUsingIdsAsync(orderId, createOrderItemDto.BookId, createOrderItemDto.Quantity);
+                var updatedOrder = await _orderService.AddItemToOrderUsingIdsAsync(orderId, createOrderItemDto.BookId, createOrderItemDto.Quantity, ct);
 
                 if (updatedOrder == null)
                 {

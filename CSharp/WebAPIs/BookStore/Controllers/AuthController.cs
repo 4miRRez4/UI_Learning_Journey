@@ -16,14 +16,14 @@ namespace BookStore.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto request)
+        public async Task<IActionResult> Register([FromBody] RegisterDto request, CancellationToken ct)
         {
             if (request == null)
             {
                 return BadRequest("Invalid registration request.");
             }
 
-            var result = await _authService.RegisterAsync(request);
+            var result = await _authService.RegisterAsync(request, ct);
             if (!result.Success)
             {
                 return BadRequest(new { Errors = result.Errors });
@@ -33,9 +33,9 @@ namespace BookStore.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto request)
+        public async Task<IActionResult> Login([FromBody] LoginDto request, CancellationToken ct)
         {
-            var result = await _authService.LoginAsync(request);
+            var result = await _authService.LoginAsync(request, ct);
 
             if (!result.Success)
             {

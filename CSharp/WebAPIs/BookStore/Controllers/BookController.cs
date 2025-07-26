@@ -22,11 +22,11 @@ namespace BookStore.Controllers
 
 
         [HttpGet] // GET: api/book
-        public async Task<ActionResult<IEnumerable<BookDto>>> GetAllBooks()
+        public async Task<ActionResult<IEnumerable<BookDto>>> GetAllBooks(CancellationToken ct)
         {
-            var books = await _bookService.GetAllBooksAsync();
+            var books = await _bookService.GetAllBooksAsync(includeAuthor: true, includeReview: true, ct);
 
-            if(books == null || !books.Any())
+            if (books == null || !books.Any())
             {
                 return NotFound("No books found!");
             }
@@ -35,11 +35,11 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("{id}")] // Get: api/book/{id}
-        public async Task<IActionResult> GetBookById(int id)
+        public async Task<IActionResult> GetBookById(int id, CancellationToken ct)
         {
             try
             {
-                var bookDto = await _bookService.GetBookByIdAsync(id);
+                var bookDto = await _bookService.GetBookByIdAsync(id, includeAuthor: true, includeReview: true, ct);
 
                 if (bookDto == null)
                 {
@@ -57,7 +57,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("search")] // GET: api/book/search
-        public async Task<IActionResult> SearchBooksByTitle([FromQuery] string title)
+        public async Task<IActionResult> SearchBooksByTitle([FromQuery] string title, CancellationToken ct)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace BookStore.Controllers
                     return BadRequest("Search title cant be empty.");
                 }
 
-                var books = await _bookService.SearchBooksByTitleAsync(title);
+                var books = await _bookService.SearchBooksByTitleAsync(title, includeAuthor: true, includeReview: true, ct);
                 return Ok(books);
             }
             catch(Exception ex)
@@ -78,7 +78,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost] // POST: api/book
-        public async Task<ActionResult<BookDto>> CreateBook([FromBody] CreateBookDto createBookDto)
+        public async Task<ActionResult<BookDto>> CreateBook([FromBody] CreateBookDto createBookDto, CancellationToken ct)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace BookStore.Controllers
 
             try
             {
-                var createdBook = await _bookService.CreateBookAsync(createBookDto);
+                var createdBook = await _bookService.CreateBookAsync(createBookDto, ct);
 
                 if(createdBook == null)
                 {
@@ -106,11 +106,11 @@ namespace BookStore.Controllers
 
 
         [HttpPut("{id}")] // PUT: api/book/id
-        public async Task<IActionResult> UpdateBook(int id, [FromBody] UpdateBookDto updateDto)
+        public async Task<IActionResult> UpdateBook(int id, [FromBody] UpdateBookDto updateDto, CancellationToken ct)
         {
             try 
             {
-                var updatedBook = await _bookService.UpdateBookAsync(id, updateDto);
+                var updatedBook = await _bookService.UpdateBookAsync(id, updateDto, ct);
 
                 return updatedBook == null ? NotFound() : Ok(updatedBook);
             }
@@ -122,7 +122,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPatch("{id}")] // PATCH: api/book/id
-        public async Task<IActionResult> PatchBook(int id, [FromBody] JsonPatchDocument<UpdateBookDto> patchDocument)
+        public async Task<IActionResult> PatchBook(int id, [FromBody] JsonPatchDocument<UpdateBookDto> patchDocument, CancellationToken ct)
         {
             if (!ModelState.IsValid)
             {
@@ -136,7 +136,7 @@ namespace BookStore.Controllers
 
             try
             {
-                var patchedBook = await _bookService.PatchBookAsync(id, patchDocument);
+                var patchedBook = await _bookService.PatchBookAsync(id, patchDocument, ct);
 
                 if(patchedBook == null)
                 {
@@ -158,12 +158,12 @@ namespace BookStore.Controllers
         }
 
 
-        [HttpDelete("{id}")] // PUT: api/book/id
-        public async Task<IActionResult> DeleteBook(int id)
+        [HttpDelete("{id}")] // DELETE: api/book/id
+        public async Task<IActionResult> DeleteBook(int id, CancellationToken ct)
         {
             try
             {
-                var result = await _bookService.DeleteBookAsync(id);
+                var result = await _bookService.DeleteBookAsync(id, ct);
 
                 return result ? NoContent() : NotFound();
             }

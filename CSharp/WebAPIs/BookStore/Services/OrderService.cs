@@ -74,7 +74,7 @@ namespace BookStore.Services
 
             foreach(var item in order.OrderItems)
             {
-                var book = await _bookRepository.GetBookByIdAsync(item.BookId, ct);
+                var book = await _bookRepository.GetBookByIdAsync(item.BookId, includeAuthor: true, includeReview: true, ct);
 
                 if(book == null || book.StockQuantity < item.Quantity)
                 {
@@ -106,7 +106,7 @@ namespace BookStore.Services
                 throw new System.Collections.Generic.KeyNotFoundException($"Order with ID {orderId} not found.");
             }
 
-            var book = await _bookRepository.GetBookByIdAsync(bookId, ct);
+            var book = await _bookRepository.GetBookByIdAsync(bookId, includeAuthor:false, includeReview: false, ct);
             if (book == null) 
             {
                 _logger.LogError($"Book with ID {bookId} not found.");
