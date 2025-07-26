@@ -14,29 +14,57 @@ namespace BookStore.Repositories
             _context = context;
         }
 
-        public IQueryable<Book> GetAllBooksAsQueryable()
-            => _context.Books
-                .Include(b => b.Authors);
-
-        public async Task<List<Book>> GetAllBooksAsync(CancellationToken ct)
+        private IQueryable<Book> ApplyIncludes(IQueryable<Book> query, bool includeAuthors = false, bool includeReviews = false)
         {
-            return await GetAllBooksAsQueryable()
-                .ToListAsync(ct);
+            if (includeAuthors)
+                query = query.Include(b => b.Authors);
+            
+            if (includeReviews)
+                query = query.Include(b => b.Reviews);
+            
+            return query;   
+        }
+        
+
+        public async Task<List<Book>> GetAllBooksAsync(bool includeAuthors = false, bool includeReviews = false, CancellationToken ct = default)
+        {
+            try
+            {
+                var query = GetAllBooksQueryable(includeAuthors, includeReviews);
+                return await query.ToListAsync(ct);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public async Task<Book?> GetBookByIdAsync(int id, CancellationToken ct)
+        public async Task<Book?> GetBookByIdAsync(int id, bool includeAuthor = false, bool includeReview = false, CancellationToken ct = default)
         {
-            return await GetAllBooksAsQueryable()
-                .FirstOrDefaultAsync(b => b.Id == id, ct);
+            try
+            {
+                var query = GetAllBooksQueryable(includeAuthor, includeReview);
+                return await query.FirstOrDefaultAsync(b => b.Id == id, ct);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public async Task<List<Book>> SearchBooksByTitleAsync(string title, CancellationToken ct)
+        public async Task<List<Book>> SearchBooksByTitleAsync(string title, bool includeAuthor = false, bool includeReview = false, CancellationToken ct = default)
         {
-            return await _context.Books
-                .Include(b => b.Authors)
-                .Where(b => EF.Functions.Like(b.Title, $"%{title}%"))
-                .OrderBy(b => b.Title)
-                .ToListAsync(ct);
+            try
+            {
+                var query = GetAllBooksQueryable(includeAuthor, includeReview)
+                    .Where(b => EF.Functions.Like(b.Title, $"%{title}%"))
+                    .OrderBy(b => b.Title);
+                return await query.ToListAsync(ct);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public async Task<Book> CreateBookAsync(Book book, CancellationToken ct)
@@ -59,9 +87,7 @@ namespace BookStore.Repositories
 
         public async Task DeleteBookAsync(int id, CancellationToken ct)
         {
-            var bookEntity = await _context.Books
-                .Include(b => b.Authors)
-                .FirstOrDefaultAsync(b => b.Id == id, ct);
+            var bookEntity = await GetBookByIdAsync(id, false, false, ct);
             
             if (bookEntity != null)
             {
@@ -70,7 +96,20 @@ namespace BookStore.Repositories
             }
         }
 
+        #region GraphQL Methods (IQueryable)
+        public IQueryable<Book> GetAllBooksQueryable(bool includeAuthors = false, bool includeReviews = false, CancellationToken ct = default) 
+            => ApplyIncludes(_context.Books.AsQueryable(), includeAuthors, includeReviews);
 
+        public IQueryable<Book> SearchBooksByTitleQueryable(string title, bool includeAuthors = false, bool includeReviews = false, CancellationToken ct = default)
+            => GetAllBooksQueryable(includeAuthors, includeReviews)
+                .Where(b => EF.Functions.Like(b.Title, $"%{title}%"))
+                .OrderBy(b => b.Title);
+
+        public IQueryable<Book> GetBooksByGenreQueryable(string genre, bool includeAuthors = false, bool includeReviews = false, CancellationToken ct = default)
+            => GetAllBooksQueryable(includeAuthors, includeReviews)
+                .Where(b => b.Genre == genre)
+                .OrderBy(b => b.Title);
+        #endregion
 
     }
 }
