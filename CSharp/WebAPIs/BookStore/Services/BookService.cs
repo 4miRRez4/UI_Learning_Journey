@@ -28,58 +28,103 @@ namespace BookStore.Services
             _logger = logger;
         }
 
-        public async Task<IEnumerable<BookDto>> GetAllBooksAsync(CancellationToken ct)
+
+
+        public async Task<IEnumerable<BookDto>> GetAllBooksAsync(
+            bool includeAuthors = false, 
+            bool includeReviews = false,
+            CancellationToken ct = default)
         {
-            var books = await _bookRepository.GetAllBooksAsync(ct);
-            return _mapper.Map<IEnumerable<BookDto>>(books);
+            try
+            {
+                var books = await _bookRepository.GetAllBooksAsync(includeAuthors, includeReviews, ct);
+                return _mapper.Map<IEnumerable<BookDto>>(books);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting all books");
+                throw;
+            }
         }
 
-        public async Task<BookDto?> GetBookByIdAsync(int id, CancellationToken ct)
+        public async Task<BookDto?> GetBookByIdAsync(int id, bool includeAuthor = false, bool includeReview = false, CancellationToken ct = default)
         {
-            var bookEntity = await _bookRepository.GetBookByIdAsync(id, ct);
-            return bookEntity == null ? null : _mapper.Map<BookDto>(bookEntity);
+            try
+            {
+                var bookEntity = await _bookRepository.GetBookByIdAsync(id, includeAuthor, includeReview, ct);
+                return bookEntity == null ? null : _mapper.Map<BookDto>(bookEntity);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting book by id {BookId}", id);
+                throw;
+            }
         }
 
-        public async Task<List<BookDto>> SearchBooksByTitleAsync(string title, CancellationToken ct)
+        public async Task<IEnumerable<BookDto>> SearchBooksByTitleAsync(string title, bool includeAuthor = false, bool includeReview = false, CancellationToken ct = default)
         {
-            var books = await _bookRepository.SearchBooksByTitleAsync(title, ct);
-            return _mapper.Map<List<BookDto>>(books);
+            try
+            {
+                var books = await _bookRepository.SearchBooksByTitleAsync(title, includeAuthor, includeReview, ct);
+                return _mapper.Map<List<BookDto>>(books);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching books by title '{Title}'", title);
+                throw;
+            }
         }
 
         public async Task<BookDto> CreateBookAsync(CreateBookDto bookDto, CancellationToken ct)
         {
-            var bookEntity = _mapper.Map<Book>(bookDto);
-
-            if(bookDto.AuthorIds?.Count > 0)
+            try
             {
-                var authors = await _authorRepository.GetAuthorsByIdsAsync(bookDto.AuthorIds, ct);
-                bookEntity.Authors = authors ?? new List<Author>();
-            }
+                var bookEntity = _mapper.Map<Book>(bookDto);
 
-            var createdBook = await _bookRepository.CreateBookAsync(bookEntity, ct);
-            return _mapper.Map<BookDto>(createdBook);
+                if (bookDto.AuthorIds?.Count > 0)
+                {
+                    var authors = await _authorRepository.GetAuthorsByIdsAsync(bookDto.AuthorIds, ct);
+                    bookEntity.Authors = authors ?? new List<Author>();
+                }
+
+                var createdBook = await _bookRepository.CreateBookAsync(bookEntity, ct);
+                return _mapper.Map<BookDto>(createdBook);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating book");
+                throw;
+            }
         }
-            
+
         public async Task<BookDto?> UpdateBookAsync(int id, UpdateBookDto updateDto, CancellationToken ct)
         {
-            var existingBook = await _bookRepository.GetBookByIdAsync(id, ct);
-            if (existingBook == null)
+            try
             {
-                _logger.LogWarning("There is no book with ID {BookId} to update.", id);
-                return null;
-            }
+                var existingBook = await _bookRepository.GetBookByIdAsync(id, includeAuthor: true, includeReview: true, ct);
+                if (existingBook == null)
+                {
+                    _logger.LogWarning("There is no book with ID {BookId} to update.", id);
+                    return null;
+                }
 
             _mapper.Map(updateDto, existingBook);
 
-            if (updateDto.AuthorIds?.Count > 0)
-            {
-                existingBook.Authors.Clear();
-                var authors = await _authorRepository.GetAuthorsByIdsAsync(updateDto.AuthorIds, ct);
-                existingBook.Authors = authors;
-            }
+                if (updateDto.AuthorIds?.Count > 0)
+                {
+                    existingBook.Authors.Clear();
+                    var authors = await _authorRepository.GetAuthorsByIdsAsync(updateDto.AuthorIds, ct);
+                    existingBook.Authors = authors;
+                }
 
-            var updatedBook = await _bookRepository.UpdateBookAsync(existingBook, ct);
-            return _mapper.Map<BookDto>(updatedBook);
+                var updatedBook = await _bookRepository.UpdateBookAsync(existingBook, ct);
+                return _mapper.Map<BookDto>(updatedBook);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating book with ID {BookId}", id);
+                throw;
+            }
         }
 
         public async Task<bool> DeleteBookAsync(int id, CancellationToken ct)
@@ -96,7 +141,7 @@ namespace BookStore.Services
                 await _bookRepository.DeleteBookAsync(id, ct);
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Error deleting book with ID {BookId}", id);
                 throw;
@@ -107,8 +152,8 @@ namespace BookStore.Services
         {
             try
             {
-                var existingBook = await _bookRepository.GetBookByIdAsync(id, ct);
-                if(existingBook == null)
+                var existingBook = await _bookRepository.GetBookByIdAsync(id, includeAuthor: true, includeReview: true, ct);
+                if (existingBook == null)
                 {
                     _logger.LogWarning($"There is no book with ID {id}");
                     return null;
@@ -129,10 +174,10 @@ namespace BookStore.Services
                 existingBook.UpdatedAt = DateTime.UtcNow;
 
                 // Handle authors if they were patched
-                if(bookToPatch.AuthorIds?.Count > 0)
+                if (bookToPatch.AuthorIds?.Count > 0)
                 {
                     existingBook.Authors.Clear();
-                    var authors = await _authorRepository.GetAuthorsByIdsAsync(bookToPatch.AuthorIds, CancellationToken ct);
+                    var authors = await _authorRepository.GetAuthorsByIdsAsync(bookToPatch.AuthorIds, ct);
                     existingBook.Authors = authors;
                 }
 
@@ -179,12 +224,49 @@ namespace BookStore.Services
             return true;
         }
 
-        public IQueryable<Book> GetAllBooksAsQueryable(CancellationToken ct)
+        #region GraphQL Methods (IQueryable)
+        public IQueryable<Book> GetAllBooksQueryable(CancellationToken ct)
         {
-            return _bookRepository.GetAllBooksAsQueryable(ct)
-                .Include(b => b.Authors)
-                .Include(b => b.Reviews)
-                .AsNoTracking();
+            try
+            {
+                return _bookRepository.GetAllBooksQueryable(includeAuthor: false, includeReview: false, ct)
+                    .AsNoTracking();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting all books as queryable");
+                throw;
+            }
         }
+
+        public IQueryable<Book> SearchBooksByTitleQueryable(string title, CancellationToken ct)
+        {
+            try
+            {
+                return _bookRepository.SearchBooksByTitleQueryable(title, includeAuthor: false, includeReview: false, ct)
+                    .AsNoTracking();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching books by title as queryable");
+                throw;
+            }
+        }
+
+        public IQueryable<Book> GetBooksByGenreQueryable(string genre, CancellationToken ct)
+        {
+            try
+            {
+                return _bookRepository.GetBooksByGenreQueryable(genre, includeAuthor: false, includeReview: false, ct)
+                    .AsNoTracking();
+            }   
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting books by genre as queryable");
+                throw;
+            }
+        }
+
+        #endregion
     }
 }
