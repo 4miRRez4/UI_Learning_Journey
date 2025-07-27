@@ -10,5 +10,6 @@
     <Import Project="$(NuGetPackageRoot)hotchocolate.data\14.0.0\build\HotChocolate.Data.targets" Condition="Exists('$(NuGetPackageRoot)hotchocolate.data\14.0.0\build\HotChocolate.Data.targets')" />
     <Import Project="$(NuGetPackageRoot)hotchocolate.data.entityframework\14.0.0\build\HotChocolate.Data.EntityFramework.targets" Condition="Exists('$(NuGetPackageRoot)hotchocolate.data.entityframework\14.0.0\build\HotChocolate.Data.EntityFramework.targets')" />
     <Import Project="$(NuGetPackageRoot)hotchocolate.aspnetcore\14.0.0\build\HotChocolate.AspNetCore.targets" Condition="Exists('$(NuGetPackageRoot)hotchocolate.aspnetcore\14.0.0\build\HotChocolate.AspNetCore.targets')" />
+    <Import Project="$(NuGetPackageRoot)coverlet.collector\6.0.4\build\netstandard2.0\coverlet.collector.targets" Condition="Exists('$(NuGetPackageRoot)coverlet.collector\6.0.4\build\netstandard2.0\coverlet.collector.targets')" />
   </ImportGroup>
 </Project>

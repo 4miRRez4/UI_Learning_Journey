@@ -1,0 +1,401 @@
+2025-07-26T15:41:36.6700821+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-26T15:41:37.4959097+03:30  [INF] Executed DbCommand ("40"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:41:37.5343845+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:41:37.5352469+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:41:37.5466547+03:30  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-26T15:41:37.8729015+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-26T15:41:37.8729361+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-26T15:41:37.8748677+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-26T15:41:37.8752405+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-26T15:41:37.8752719+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-26T15:41:45.6008172+03:30 0HNEC7MBGGPHP:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - null null (d509f86a)
+2025-07-26T15:41:45.6739017+03:30 0HNEC7MBGGPHP:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:41:46.1331784+03:30 0HNEC7MBGGPHP:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:41:46.1348387+03:30 0HNEC7MBGGPHP:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/schema.graphql""" - 200 22698 "application/graphql; charset=utf-8" 535.0892ms (74253ad3)
+2025-07-26T15:42:12.1733100+03:30 0HNEC7MBGGPHQ:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T15:42:12.1753889+03:30 0HNEC7MBGGPHQ:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:42:13.4788323+03:30 0HNEC7MBGGPHQ:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:42:13.4791218+03:30 0HNEC7MBGGPHQ:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1305.8451ms (74253ad3)
+2025-07-26T15:42:16.1134736+03:30 0HNEC7MBGGPHQ:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 414 (d509f86a)
+2025-07-26T15:42:16.1163322+03:30 0HNEC7MBGGPHQ:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T15:42:16.1165080+03:30 0HNEC7MBGGPHQ:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T15:42:16.1196186+03:30 0HNEC7MBGGPHQ:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:42:16.3103752+03:30 0HNEC7MBGGPHQ:00000003 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T15:42:16.3609483+03:30 0HNEC7MBGGPHQ:00000003 [INF] Executed DbCommand ("10"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Title], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Id], [b].[Title]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-26T15:42:16.3681187+03:30 0HNEC7MBGGPHQ:00000003 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T15:42:16.3783092+03:30 0HNEC7MBGGPHQ:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name], [a0].[Id], [s].[Title], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [a].[Name], [a].[Id]
+    FROM [Authors] AS [a]
+) AS [a0]
+LEFT JOIN (
+    SELECT [b0].[Title], [b].[BookId], [b].[AuthorId], [b0].[Id]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a0].[Id] = [s].[AuthorId]
+ORDER BY [a0].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-26T15:42:16.3923262+03:30 0HNEC7MBGGPHQ:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:42:16.3925064+03:30 0HNEC7MBGGPHQ:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 279.0434ms (74253ad3)
+2025-07-26T15:42:16.5522474+03:30 0HNEC7MBGGPHQ:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T15:42:16.5524705+03:30 0HNEC7MBGGPHQ:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:42:16.6620397+03:30 0HNEC7MBGGPHQ:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:42:16.6621562+03:30 0HNEC7MBGGPHQ:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 109.9676ms (74253ad3)
+2025-07-26T15:42:33.1552543+03:30 0HNEC7MBGGPHR:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 414 (d509f86a)
+2025-07-26T15:42:33.1554684+03:30 0HNEC7MBGGPHR:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T15:42:33.1555022+03:30 0HNEC7MBGGPHR:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T15:42:33.1557215+03:30 0HNEC7MBGGPHR:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:42:33.1722313+03:30 0HNEC7MBGGPHR:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Title], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Id], [b].[Title]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-26T15:42:33.1722416+03:30 0HNEC7MBGGPHR:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name], [a0].[Id], [s].[Title], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [a].[Name], [a].[Id]
+    FROM [Authors] AS [a]
+) AS [a0]
+LEFT JOIN (
+    SELECT [b0].[Title], [b].[BookId], [b].[AuthorId], [b0].[Id]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a0].[Id] = [s].[AuthorId]
+ORDER BY [a0].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-26T15:42:33.1735414+03:30 0HNEC7MBGGPHR:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:42:33.1736449+03:30 0HNEC7MBGGPHR:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 18.3928ms (74253ad3)
+2025-07-26T15:43:11.9745694+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-26T15:43:19.5838186+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-26T15:43:20.2603359+03:30  [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:43:20.3000141+03:30  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:43:20.3007751+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:43:20.3096018+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-26T15:43:20.4343638+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-26T15:43:20.4343928+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-26T15:43:20.4371944+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-26T15:43:20.4377009+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-26T15:43:20.4377378+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-26T15:43:22.3699855+03:30 0HNEC7N8BFDVN:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 414 (d509f86a)
+2025-07-26T15:43:22.3877205+03:30 0HNEC7N8BFDVN:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T15:43:22.3878322+03:30 0HNEC7N8BFDVN:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T15:43:22.4113951+03:30 0HNEC7N8BFDVN:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:43:22.9148116+03:30 0HNEC7N8BFDVN:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T15:43:22.9249642+03:30 0HNEC7N8BFDVN:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [b].[Id], [b].[Title]
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-26T15:43:22.9443003+03:30 0HNEC7N8BFDVN:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T15:43:22.9850961+03:30 0HNEC7N8BFDVN:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name], [a0].[Id], [s].[Title], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [a].[Name], [a].[Id]
+    FROM [Authors] AS [a]
+) AS [a0]
+LEFT JOIN (
+    SELECT [b0].[Title], [b].[BookId], [b].[AuthorId], [b0].[Id]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a0].[Id] = [s].[AuthorId]
+ORDER BY [a0].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-26T15:43:22.9997313+03:30 0HNEC7N8BFDVN:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:43:23.0022193+03:30 0HNEC7N8BFDVN:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 633.1926ms (74253ad3)
+2025-07-26T15:44:14.8100184+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-26T15:44:32.0472116+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-26T15:44:32.7344427+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:44:32.7763595+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:44:32.7774616+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:44:32.7857465+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-26T15:44:32.9072148+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-26T15:44:32.9072384+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-26T15:44:32.9091437+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-26T15:44:32.9094907+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-26T15:44:32.9095125+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-26T15:44:34.7862911+03:30 0HNEC7NTU0865:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 414 (d509f86a)
+2025-07-26T15:44:34.8067048+03:30 0HNEC7NTU0865:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T15:44:34.8068852+03:30 0HNEC7NTU0865:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T15:44:34.8361397+03:30 0HNEC7NTU0865:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:44:35.3527516+03:30 0HNEC7NTU0865:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T15:44:35.4032000+03:30 0HNEC7NTU0865:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b1].[Id], [b1].[Title], [s].[Name], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Id], [b].[Title]
+    FROM [Books] AS [b]
+) AS [b1]
+LEFT JOIN (
+    SELECT [a].[Name], [b0].[BookId], [b0].[AuthorId], [a].[Id]
+    FROM [BookAuthors] AS [b0]
+    INNER JOIN [Authors] AS [a] ON [b0].[AuthorId] = [a].[Id]
+) AS [s] ON [b1].[Id] = [s].[BookId]
+ORDER BY [b1].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-26T15:44:35.4098660+03:30 0HNEC7NTU0865:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T15:44:35.4197020+03:30 0HNEC7NTU0865:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name], [a0].[Id], [s].[Title], [s].[BookId], [s].[AuthorId], [s].[Id]
+FROM (
+    SELECT TOP(@__p_0) [a].[Name], [a].[Id]
+    FROM [Authors] AS [a]
+) AS [a0]
+LEFT JOIN (
+    SELECT [b0].[Title], [b].[BookId], [b].[AuthorId], [b0].[Id]
+    FROM [BookAuthors] AS [b]
+    INNER JOIN [Books] AS [b0] ON [b].[BookId] = [b0].[Id]
+) AS [s] ON [a0].[Id] = [s].[AuthorId]
+ORDER BY [a0].[Id], [s].[BookId], [s].[AuthorId]" (0723d8ff)
+2025-07-26T15:44:35.4339342+03:30 0HNEC7NTU0865:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:44:35.4363255+03:30 0HNEC7NTU0865:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 651.8125ms (74253ad3)
+2025-07-26T15:44:53.3681551+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-26T15:57:07.6397289+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-26T15:57:08.3118866+03:30  [INF] Executed DbCommand ("23"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:57:08.3484577+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:57:08.3502917+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T15:57:08.3589930+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-26T15:57:08.4800211+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-26T15:57:08.4800505+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-26T15:57:08.4821241+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-26T15:57:08.4825038+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-26T15:57:08.4825299+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-26T15:57:42.1081308+03:30 0HNEC7V8IKN5P:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T15:57:42.1430234+03:30 0HNEC7V8IKN5P:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:57:43.2551673+03:30 0HNEC7V8IKN5P:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:57:43.2567184+03:30 0HNEC7V8IKN5P:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1149.6607ms (74253ad3)
+2025-07-26T15:57:44.1865928+03:30 0HNEC7V8IKN5P:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T15:57:44.1888971+03:30 0HNEC7V8IKN5P:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:57:44.2886753+03:30 0HNEC7V8IKN5P:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:57:44.2890607+03:30 0HNEC7V8IKN5P:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 102.4571ms (74253ad3)
+2025-07-26T15:58:03.8501224+03:30 0HNEC7V8IKN5P:00000005 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 347 (d509f86a)
+2025-07-26T15:58:03.8531378+03:30 0HNEC7V8IKN5P:00000005 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T15:58:03.8533144+03:30 0HNEC7V8IKN5P:00000005 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T15:58:03.8557626+03:30 0HNEC7V8IKN5P:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:58:04.3604188+03:30 0HNEC7V8IKN5P:00000005 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T15:58:04.4088827+03:30 0HNEC7V8IKN5P:00000005 [INF] Executed DbCommand ("12"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b0].[Title], [b0].[Id], [r].[Rating], [r].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b0]
+LEFT JOIN [Reviews] AS [r] ON [b0].[Id] = [r].[BookId]
+ORDER BY [b0].[Id]" (0723d8ff)
+2025-07-26T15:58:04.4332517+03:30 0HNEC7V8IKN5P:00000005 [INF] Executed DbCommand ("3"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([r].[Rating] AS float))
+FROM [Reviews] AS [r]
+WHERE [r].[BookId] = @__book_Id_0" (0723d8ff)
+2025-07-26T15:58:04.4352840+03:30 0HNEC7V8IKN5P:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([r].[Rating] AS float))
+FROM [Reviews] AS [r]
+WHERE [r].[BookId] = @__book_Id_0" (0723d8ff)
+2025-07-26T15:58:04.4496403+03:30 0HNEC7V8IKN5P:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:58:04.4498014+03:30 0HNEC7V8IKN5P:00000005 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 599.7005ms (74253ad3)
+2025-07-26T15:58:44.1761796+03:30 0HNEC7V8IKN5Q:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T15:58:44.1764630+03:30 0HNEC7V8IKN5Q:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T15:58:44.2772555+03:30 0HNEC7V8IKN5Q:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T15:58:44.2774041+03:30 0HNEC7V8IKN5Q:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 101.1945ms (74253ad3)
+2025-07-26T15:59:23.3003007+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-26T16:00:10.8322359+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-26T16:00:11.5096351+03:30  [INF] Executed DbCommand ("20"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T16:00:11.5440269+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T16:00:11.5447042+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T16:00:11.5528320+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-26T16:00:11.6772411+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-26T16:00:11.6772692+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-26T16:00:11.6791754+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-26T16:00:11.6795213+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-26T16:00:11.6795502+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-26T16:00:16.3474170+03:30 0HNEC80MHII6J:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 347 (d509f86a)
+2025-07-26T16:00:16.3629842+03:30 0HNEC80MHII6J:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T16:00:16.3631644+03:30 0HNEC80MHII6J:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T16:00:16.3917331+03:30 0HNEC80MHII6J:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T16:00:16.9077685+03:30 0HNEC80MHII6J:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T16:00:16.9475729+03:30 0HNEC80MHII6J:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b0].[Title], [b0].[Id], [r].[Rating], [r].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Title], [b].[Id]
+    FROM [Books] AS [b]
+) AS [b0]
+LEFT JOIN [Reviews] AS [r] ON [b0].[Id] = [r].[BookId]
+ORDER BY [b0].[Id]" (0723d8ff)
+2025-07-26T16:00:16.9697718+03:30 0HNEC80MHII6J:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-26T16:00:16.9714149+03:30 0HNEC80MHII6J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-26T16:00:16.9879694+03:30 0HNEC80MHII6J:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T16:00:16.9893756+03:30 0HNEC80MHII6J:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 643.0406ms (74253ad3)
+2025-07-26T16:00:28.3586454+03:30 0HNEC80MHII6K:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 359 (d509f86a)
+2025-07-26T16:00:28.3596378+03:30 0HNEC80MHII6K:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T16:00:28.3596840+03:30 0HNEC80MHII6K:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T16:00:28.3607273+03:30 0HNEC80MHII6K:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T16:00:28.3745538+03:30 0HNEC80MHII6K:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T16:00:28.3874762+03:30 0HNEC80MHII6K:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b0].[Id], [b0].[Title], [r].[Rating], [r].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Id], [b].[Title]
+    FROM [Books] AS [b]
+) AS [b0]
+LEFT JOIN [Reviews] AS [r] ON [b0].[Id] = [r].[BookId]
+ORDER BY [b0].[Id]" (0723d8ff)
+2025-07-26T16:00:28.3902940+03:30 0HNEC80MHII6K:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-26T16:00:28.3909691+03:30 0HNEC80MHII6K:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]" (0723d8ff)
+2025-07-26T16:00:28.3923098+03:30 0HNEC80MHII6K:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T16:00:28.3925006+03:30 0HNEC80MHII6K:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 33.8416ms (74253ad3)
+2025-07-26T16:00:47.4329942+03:30 0HNEC80MHII6L:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T16:00:47.4364351+03:30 0HNEC80MHII6L:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T16:00:48.2691955+03:30 0HNEC80MHII6L:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T16:00:48.2693276+03:30 0HNEC80MHII6L:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 836.3622ms (74253ad3)
+2025-07-26T16:00:52.9500224+03:30 0HNEC80MHII6L:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T16:00:52.9507650+03:30 0HNEC80MHII6L:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T16:00:53.0466037+03:30 0HNEC80MHII6L:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T16:00:53.0467279+03:30 0HNEC80MHII6L:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 96.715ms (74253ad3)
+2025-07-26T16:00:56.2293307+03:30 0HNEC80MHII6L:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-26T16:00:56.2295241+03:30 0HNEC80MHII6L:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T16:00:56.3290698+03:30 0HNEC80MHII6L:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T16:00:56.3292122+03:30 0HNEC80MHII6L:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 99.8578ms (74253ad3)
+2025-07-26T16:01:04.7777747+03:30  [INF] Application is shutting down... (90f52c38)
+2025-07-26T16:01:10.7613380+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-26T16:01:11.4214857+03:30  [INF] Executed DbCommand ("20"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T16:01:11.4565505+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T16:01:11.4572918+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-26T16:01:11.4659370+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-26T16:01:11.5881665+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-26T16:01:11.5881937+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-26T16:01:11.5901056+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-26T16:01:11.5904540+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-26T16:01:11.5904767+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-26T16:01:12.6590382+03:30 0HNEC817AGS26:00000001 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 359 (d509f86a)
+2025-07-26T16:01:12.6791696+03:30 0HNEC817AGS26:00000001 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T16:01:12.6794086+03:30 0HNEC817AGS26:00000001 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T16:01:12.7096671+03:30 0HNEC817AGS26:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T16:01:13.2609523+03:30 0HNEC817AGS26:00000001 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. (5b3e5b60)
+2025-07-26T16:01:13.3153630+03:30 0HNEC817AGS26:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b0].[Id], [b0].[Title], [r].[Rating], [r].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Id], [b].[Title]
+    FROM [Books] AS [b]
+) AS [b0]
+LEFT JOIN [Reviews] AS [r] ON [b0].[Id] = [r].[BookId]
+ORDER BY [b0].[Id]" (0723d8ff)
+2025-07-26T16:01:13.3417634+03:30 0HNEC817AGS26:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-26T16:01:13.3436614+03:30 0HNEC817AGS26:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-26T16:01:13.3583969+03:30 0HNEC817AGS26:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T16:01:13.3598574+03:30 0HNEC817AGS26:00000001 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 702.8723ms (74253ad3)
+2025-07-26T16:01:14.9665328+03:30 0HNEC817AGS26:00000003 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - "application/json" 359 (d509f86a)
+2025-07-26T16:01:14.9676391+03:30 0HNEC817AGS26:00000003 [INF] CORS policy execution failed. (09b6f179)
+2025-07-26T16:01:14.9676815+03:30 0HNEC817AGS26:00000003 [INF] Request origin "https://localhost:7140" does not have permission to access the resource. (a03d560b)
+2025-07-26T16:01:14.9689337+03:30 0HNEC817AGS26:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-26T16:01:14.9904379+03:30 0HNEC817AGS26:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [b0].[Id], [b0].[Title], [r].[Rating], [r].[Id]
+FROM (
+    SELECT TOP(@__p_0) [b].[Id], [b].[Title]
+    FROM [Books] AS [b]
+) AS [b0]
+LEFT JOIN [Reviews] AS [r] ON [b0].[Id] = [r].[BookId]
+ORDER BY [b0].[Id]" (0723d8ff)
+2025-07-26T16:01:14.9938099+03:30 0HNEC817AGS26:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-26T16:01:14.9945729+03:30 0HNEC817AGS26:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@__book_Id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT AVG(CAST([b].[Id] AS float))
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__book_Id_0" (0723d8ff)
+2025-07-26T16:01:14.9959207+03:30 0HNEC817AGS26:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-26T16:01:14.9962551+03:30 0HNEC817AGS26:00000003 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7140""""/graphql""" - 200 null "application/graphql-response+json; charset=utf-8" 29.6828ms (74253ad3)
+2025-07-26T16:03:13.1505952+03:30  [INF] Application is shutting down... (90f52c38)

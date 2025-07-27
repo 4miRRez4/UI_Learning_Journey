@@ -10,6 +10,7 @@ using BookStore.GraphQL.Types;
 using BookStore.GraphQL.Types.Inputs;   
 using BookStore.GraphQL.Queries;
 using BookStore.GraphQL.Mutations;
+using BookStore.GraphQL.Authors.DataLoaders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
@@ -149,7 +150,6 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddScoped<IBookService, BookService>();
-builder.Services.AddScoped<IBookQueryService, BookQueryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService,  AuthService>();
 
@@ -206,6 +206,8 @@ builder.Services
     .AddSorting()
     //.AddGlobalObjectIdentification() //TODO: Configure this, data loader and bookType
     .RegisterDbContextFactory<AppDbContext>();
+
+builder.Services.AddDataLoader<AuthorStatsDataLoader>();
 
 var app = builder.Build();
 
