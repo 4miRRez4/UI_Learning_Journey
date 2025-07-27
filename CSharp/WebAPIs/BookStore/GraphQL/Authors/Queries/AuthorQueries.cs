@@ -16,7 +16,7 @@ namespace BookStore.GraphQL.Queries
         [UseSorting]
         public IQueryable<Author> GetAuthors(
             [Service] AppDbContext context,
-            CancellationToken ct)
+            CancellationToken ct = default)
         {
             //TODO: write Service for Author and use here.
             return context.Authors;

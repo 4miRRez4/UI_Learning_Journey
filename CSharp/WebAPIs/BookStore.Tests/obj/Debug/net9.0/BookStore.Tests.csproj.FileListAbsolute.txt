@@ -9,8 +9,6 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.T
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\BookStore.exe
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\testhost.exe
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\xunit.runner.visualstudio.testadapter.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\xunit.runner.utility.netcoreapp10.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\BookStore.Tests.deps.json
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\BookStore.Tests.runtimeconfig.json
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\BookStore.Tests.dll
@@ -86,9 +84,9 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.T
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
@@ -244,3 +242,4 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.T
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\obj\Debug\net9.0\BookStore.Tests.pdb
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\obj\Debug\net9.0\BookStore.Tests.genruntimeconfig.cache
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\obj\Debug\net9.0\ref\BookStore.Tests.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Microsoft.DotNet.PlatformAbstractions.dll
