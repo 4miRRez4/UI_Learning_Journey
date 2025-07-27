@@ -5079,6 +5079,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.7",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.7",
+          "Microsoft.Extensions.Options": "9.0.7",
           "Moq": "4.20.72",
           "Serilog.Extensions.Logging.File": "3.0.0",
           "Swashbuckle.AspNetCore": "9.0.3",
@@ -13369,7 +13370,6 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "BookStore >= 1.0.0",
-      "Microsoft.Extensions.Logging.Abstractions >= 9.0.7",
       "Microsoft.NET.Test.Sdk >= 17.12.0",
       "coverlet.collector >= 6.0.2",
       "xunit >= 2.9.2",
@@ -13430,10 +13430,6 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": {
-            "target": "Package",
-            "version": "[9.0.7, )"
-          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.12.0, )"
