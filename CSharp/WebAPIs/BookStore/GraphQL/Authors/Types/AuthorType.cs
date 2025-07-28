@@ -17,7 +17,8 @@ namespace BookStore.GraphQL.Types
             descriptor
                 .Field("statistics")
                 .Description("Statistics about the author's books")
-                .ResolveWith<AuthorResolvers>(r => r.GetStatistics(default!, default!, default!));
+                .ResolveWith<AuthorResolvers>(r => r.GetStatistics(default!, default!, default!))
+                .Authorize();
 
         }
     }

@@ -4,11 +4,14 @@ using BookStore.Application.Books.Commands;
 using BookStore.GraphQL.Types;
 using HotChocolate;
 using HotChocolate.Types;
+using HotChocolate.AspNetCore.Authorization;
 using MediatR;
+using HotChocolate.Authorization;
 
 
 namespace BookStore.GraphQL.Mutations
 {
+    [Authorize(Policy = "ManageBooks")]
 	public class BookMutations
 	{
         [GraphQLDescription("Adds a new book.")]

@@ -4,12 +4,14 @@ using HotChocolate;
 using HotChocolate.Data;
 using HotChocolate.Types;
 using Microsoft.EntityFrameworkCore;
+using HotChocolate.Authorization;
 
 namespace BookStore.GraphQL.Queries
 {
     [ExtendObjectType(OperationTypeNames.Query)]
     public class AuthorQueries
     {
+        [Authorize]
         [UsePaging]
         [UseProjection]
         [UseFiltering]

@@ -44,6 +44,5 @@ namespace BookStore.GraphQL.Types
                 .SelectMany(b => b.Reviews)
                 .Average(r => (double?)r.Rating);
         }
-
     }
 }

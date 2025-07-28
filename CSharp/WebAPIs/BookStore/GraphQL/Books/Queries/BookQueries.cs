@@ -8,12 +8,14 @@ using Microsoft.EntityFrameworkCore;
 using HotChocolate;
 using HotChocolate.Data;
 using HotChocolate.Types;
+using HotChocolate.Authorization;
 
 namespace BookStore.GraphQL.Queries
 {
     [ExtendObjectType(OperationTypeNames.Query)]
     public class BookQueries
     {
+        [Authorize]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
@@ -22,12 +24,13 @@ namespace BookStore.GraphQL.Queries
             => bookService.GetAllBooksQueryable(ct);
 
 
-
+        [Authorize]
         public async Task<BookDto?> GetBookById(int id, [Service] IBookService bookService, CancellationToken ct)
         {
             return await bookService.GetBookByIdAsync(id, false, false);
         }
 
+        [Authorize]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
@@ -35,7 +38,7 @@ namespace BookStore.GraphQL.Queries
         public IQueryable<Book> SearchBooksByTitle(string title, [Service] IBookService bookService, CancellationToken ct)
             => bookService.SearchBooksByTitleQueryable(title, ct);
 
-
+        [Authorize]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
@@ -43,6 +46,7 @@ namespace BookStore.GraphQL.Queries
         public IQueryable<Book> GetBooksByGenre(string genre, [Service] IBookService bookService, CancellationToken ct)
             => bookService.GetBooksByGenreQueryable(genre, ct);
 
+        [Authorize]
         [UsePaging]
         [UseFiltering]
         [UseSorting]

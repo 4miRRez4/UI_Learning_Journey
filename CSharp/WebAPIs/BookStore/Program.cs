@@ -197,6 +197,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services
     .AddGraphQLServer()
+    .AddAuthorization()
     .AddType<BookType>()
     .AddType<AuthorType>()
     .AddType<ReviewType>() //TODO: Implement ReviewType
