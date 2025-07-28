@@ -26,7 +26,6 @@ public class AuthorQueriesTests
 
         // Act
         var result = queries.GetAuthors(context);
-    
 
         // Assert
         Assert.Equal(3, result.Count());

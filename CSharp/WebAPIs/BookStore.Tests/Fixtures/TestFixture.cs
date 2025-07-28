@@ -4,26 +4,37 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.Tests.Fixtures;
 
-public class TestFixture
+public class TestDbContextFactory
 {
-    public AppDbContext CreateContext()
+    private readonly DbContextOptions<AppDbContext> _options;
+
+    public TestDbContextFactory()
     {
-        var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+        _options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseInMemoryDatabase(databaseName: "BookStoreTestDB")
             .Options;
 
-        var context = new AppDbContext(options);
+        using var context = CreateContext();
         SeedTestData(context);
+    }
+
+    public AppDbContext CreateContext()
+    {
+        var context = new AppDbContext(_options);
         return context;
     }
 
-    private void SeedTestData(AppDbContext context)
+    private static void SeedTestData(AppDbContext context)
     {
+        context.Database.EnsureDeleted();
+        context.Database.EnsureCreated();
+
         context.Authors.AddRange(
-            new Author { Id = 1, Name = "Author 1", Books = new List<Book> { new Book { Id = 1, Title = "test book" } } },
-            new Author { Id = 2, Name = "Author 2", Books = new List<Book> { new Book { Id = 2, Title = "test book" }, new Book { Id = 3, Title = "test book" } } },
+            new Author { Id = 1, Name = "Author 1", Books = new List<Book> { new() { Id = 1, Title = "Book 1" } } },
+            new Author { Id = 2, Name = "Author 2", Books = new List<Book> { new() { Id = 2, Title = "Book 2" }, new() { Id = 3, Title = "Book 3" } } },
             new Author { Id = 3, Name = "Author 3" }
         );
+
         context.SaveChanges();
     }
 }

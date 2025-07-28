@@ -129,6 +129,11 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole(UserRoles.Customer);
     });
 
+    options.AddPolicy("AdminOrCustomer", policy =>
+    {
+        policy.RequireRole(UserRoles.Admin, UserRoles.Customer);
+    })
+
     options.AddPolicy("ManageBooks", policy =>
     {
         policy.RequireAssertion(context =>
