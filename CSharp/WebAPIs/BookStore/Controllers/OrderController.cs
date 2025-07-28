@@ -39,7 +39,7 @@ namespace BookStore.Controllers
         /// <response code="401">If user is not authenticated</response>
         /// <response code="403">If user lacks required role</response>
         [HttpGet] // GET: api/order
-        [Authorize(Roles = UserRoles.Admin + "," + UserRoles.Seller)]
+        [Authorize(Policy = "ManageBooks")]
         public async Task<ActionResult<IEnumerable<OrderDto>>> GetAllOrders(CancellationToken ct)
         {
             try
@@ -68,7 +68,7 @@ namespace BookStore.Controllers
         /// <response code="401">If user is not authenticated</response>
         /// <response code="403">If user lacks required role</response>
         [HttpGet("{id}")]
-        [Authorize(UserRoles.Admin + "," + UserRoles.Customer)]
+        [Authorize(Policy = "AdminOrCustomer")]
         public async Task<IActionResult> GetOrderById(int id, CancellationToken ct)
         {
             try
@@ -114,7 +114,7 @@ namespace BookStore.Controllers
         /// <response code="401">If user is not authenticated</response>
         /// <response code="403">If user lacks required role</response>
         [HttpPost]
-        [Authorize(Roles = UserRoles.Customer)]
+        [Authorize(Policy = "RequireCustomer")]
         public async Task<ActionResult<OrderDto>> CreateOrder([FromBody] CreateOrderDto createOrderDto, CancellationToken ct)
         {
             if (createOrderDto == null)
@@ -161,7 +161,7 @@ namespace BookStore.Controllers
         /// <response code="401">If user is not authenticated</response>
         /// <response code="403">If user lacks required role</response>
         [HttpPost("{orderId}/items")] // POST: api/order/{orderId}/items
-        [Authorize(UserRoles.Customer)]
+        [Authorize(Policy = "RequireCustomer")]
         public async Task<ActionResult<OrderDto>> AddItemToOrder(int orderId, [FromBody] CreateOrderItemDto createOrderItemDto, CancellationToken ct)
         {
             if (createOrderItemDto == null)
