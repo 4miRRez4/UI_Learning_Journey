@@ -4,6 +4,7 @@ using BookStore.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization; 
 
 namespace BookStore.Controllers
 {
@@ -20,8 +21,8 @@ namespace BookStore.Controllers
             _logger = logger;
         }
 
-
         [HttpGet] // GET: api/book
+        [AllowAnonymous] 
         public async Task<ActionResult<IEnumerable<BookDto>>> GetAllBooks(CancellationToken ct)
         {
             var books = await _bookService.GetAllBooksAsync(includeAuthor: true, includeReview: true, ct);
@@ -35,6 +36,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("{id}")] // Get: api/book/{id}
+        [AllowAnonymous]
         public async Task<IActionResult> GetBookById(int id, CancellationToken ct)
         {
             try
@@ -57,6 +59,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("search")] // GET: api/book/search
+        [AllowAnonymous]
         public async Task<IActionResult> SearchBooksByTitle([FromQuery] string title, CancellationToken ct)
         {
             try
@@ -70,7 +73,7 @@ namespace BookStore.Controllers
                 var books = await _bookService.SearchBooksByTitleAsync(title, includeAuthor: true, includeReview: true, ct);
                 return Ok(books);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, $"Error searching books by title {title}");
                 return StatusCode(500, "An error occurred while searching books");
@@ -78,6 +81,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost] // POST: api/book
+        [Authorize(Policy = "ManageBooks")]
         public async Task<ActionResult<BookDto>> CreateBook([FromBody] CreateBookDto createBookDto, CancellationToken ct)
         {
             if (!ModelState.IsValid)
@@ -89,7 +93,7 @@ namespace BookStore.Controllers
             {
                 var createdBook = await _bookService.CreateBookAsync(createBookDto, ct);
 
-                if(createdBook == null)
+                if (createdBook == null)
                 {
                     _logger.LogError("Failed to create book.");
                     return BadRequest("Book creation failed!");
@@ -97,7 +101,7 @@ namespace BookStore.Controllers
 
                 return CreatedAtAction(nameof(GetAllBooks), new { id = createdBook.Id }, createdBook);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Error creating book.");
                 return StatusCode(500, $"Internal error: {ex.Message}");
@@ -106,9 +110,10 @@ namespace BookStore.Controllers
 
 
         [HttpPut("{id}")] // PUT: api/book/id
+        [Authorize(Policy = "ManageBooks")]
         public async Task<IActionResult> UpdateBook(int id, [FromBody] UpdateBookDto updateDto, CancellationToken ct)
         {
-            try 
+            try
             {
                 var updatedBook = await _bookService.UpdateBookAsync(id, updateDto, ct);
 
@@ -122,6 +127,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPatch("{id}")] // PATCH: api/book/id
+        [Authorize(Policy = "ManageBooks")]
         public async Task<IActionResult> PatchBook(int id, [FromBody] JsonPatchDocument<UpdateBookDto> patchDocument, CancellationToken ct)
         {
             if (!ModelState.IsValid)
@@ -129,7 +135,7 @@ namespace BookStore.Controllers
                 return BadRequest(ModelState);
             }
 
-            if(patchDocument == null)
+            if (patchDocument == null)
             {
                 return BadRequest("Patch document can not be empty.");
             }
@@ -138,7 +144,7 @@ namespace BookStore.Controllers
             {
                 var patchedBook = await _bookService.PatchBookAsync(id, patchDocument, ct);
 
-                if(patchedBook == null)
+                if (patchedBook == null)
                 {
                     return NotFound($"Book with Id {id} didn't found.");
                 }
@@ -159,6 +165,7 @@ namespace BookStore.Controllers
 
 
         [HttpDelete("{id}")] // DELETE: api/book/id
+        [Authorize(Policy = "RequireAdmin")]
         public async Task<IActionResult> DeleteBook(int id, CancellationToken ct)
         {
             try
@@ -167,11 +174,10 @@ namespace BookStore.Controllers
 
                 return result ? NoContent() : NotFound();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(500, "An error occurred while deleting the book");
             }
         }
-
     }
 }
