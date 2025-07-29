@@ -2,6 +2,7 @@ using BookStore.Models;
 using BookStore.Services;
 using BookStore.Application.Books.Commands;
 using BookStore.GraphQL.Types;
+using BookStore.GraphQL.Books.Subscriptions;
 using HotChocolate;
 using HotChocolate.Types;
 using HotChocolate.AspNetCore.Authorization;
@@ -18,11 +19,15 @@ namespace BookStore.GraphQL.Mutations
         public async Task<BookPayload> AddBookAsync(
 			AddBookCommand input,
 			[Service] IMediator mediator,
+            [Service] BookEvents bookEvents,
 			CancellationToken ct)
 		{
             try
             {
                 var book = await mediator.Send(input, ct);
+
+                bookEvents.NotifyBookAdded(book, ct);
+
                 return new BookPayload(book, null);
             }
             catch (GraphQLException gqlEx)
