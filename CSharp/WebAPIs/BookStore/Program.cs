@@ -11,6 +11,7 @@ using BookStore.GraphQL.Types.Inputs;
 using BookStore.GraphQL.Queries;
 using BookStore.GraphQL.Mutations;
 using BookStore.GraphQL.Authors.DataLoaders;
+using BookStore.GraphQL.Books.Subscriptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
@@ -132,7 +133,7 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("AdminOrCustomer", policy =>
     {
         policy.RequireRole(UserRoles.Admin, UserRoles.Customer);
-    })
+    });
 
     options.AddPolicy("ManageBooks", policy =>
     {
@@ -157,6 +158,8 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService,  AuthService>();
+
+builder.Services.AddSingleton<BookEvents>();
 
 //builder.Services.AddSingleton<GeminiService>();
 
@@ -207,6 +210,8 @@ builder.Services
         .AddTypeExtension<BookQueries>()
         .AddTypeExtension<AuthorQueries>()
     .AddMutationType<BookMutations>()
+    .AddSubscriptionType<Subscription>()
+    .AddInMemorySubscriptions() //TODO: change to Redis
     .AddProjections()
     .AddFiltering()
     .AddSorting()
@@ -255,6 +260,8 @@ using (var scope = app.Services.CreateScope())
 app.UseRouting();
 
 app.UseCors("ApolloStudioPolicy");
+
+app.UseWebSockets();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -74,6 +74,10 @@
               "target": "Package",
               "version": "[15.1.7, )"
             },
+            "HotChocolate.AspNetCore.Subscriptions": {
+              "target": "Package",
+              "version": "[10.5.5, )"
+            },
             "HotChocolate.Data": {
               "target": "Package",
               "version": "[13.11.1, )"
@@ -81,6 +85,10 @@
             "HotChocolate.Data.EntityFramework": {
               "target": "Package",
               "version": "[13.11.1, )"
+            },
+            "HotChocolate.Subscriptions": {
+              "target": "Package",
+              "version": "[15.1.8, )"
             },
             "HotChocolate.Validation": {
               "target": "Package",
