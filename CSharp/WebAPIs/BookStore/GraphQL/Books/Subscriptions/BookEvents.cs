@@ -16,5 +16,10 @@ namespace BookStore.GraphQL.Books.Subscriptions
         {
             await _eventSender.SendAsync("OnBookAdded", book, ct);
         }
+
+        public async void NotifyBookUpdated(Book book, CancellationToken ct)
+        {
+            await _eventSender.SendAsync("OnBookUpdated", book, ct);
+        }
     }
 }

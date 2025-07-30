@@ -12,5 +12,12 @@ namespace BookStore.GraphQL
         {
             return book;
         }
+
+        [Subscribe]
+        [Topic("OnBookUpdated")]
+        public Book OnBookUpdated([EventMessage] Book book)
+        {
+            return book;
+        }
     }
 }

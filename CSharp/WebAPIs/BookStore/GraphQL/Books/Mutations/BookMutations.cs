@@ -52,14 +52,19 @@ namespace BookStore.GraphQL.Mutations
         public async Task<BookPayload> UpdateBookAsync(
             UpdateBookCommand input,
             [Service] IMediator mediator,
+            [Service] BookEvents bookEvents,
             CancellationToken ct)
         {
             try
             {
                 var book = await mediator.Send(input, ct);
-                return book is null
-                    ? new BookPayload(null, new List<UserError> { new("NOT_FOUND", "Book not found") })
-                    : new BookPayload(book, null);
+
+                if (book == null)
+                    return new BookPayload(null, new List<UserError> { new("NOT_FOUND", "Book not found") });
+
+                bookEvents.NotifyBookUpdated(book, ct);
+
+                return new BookPayload(book, null);
             }
             catch (GraphQLException gqlEx)
             {
