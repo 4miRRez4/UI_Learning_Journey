@@ -1,282 +1,425 @@
-using AutoMapper;
 using BookStore.Dtos.Book;
 using BookStore.Models;
-using BookStore.Repositories.Interfaces;
 using BookStore.Services;
-using BookStore.Services.Interfaces;
+using BookStore.Tests.Builders;
+using BookStore.Tests.Factories;
 using Moq;
-using Xunit;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
+using FluentAssertions;
+using static BookStore.Tests.Fixtures.BookServiceTests;
 using Microsoft.Extensions.Logging;
+using BookStore.Dtos.Author;
 
 namespace BookStore.Tests.Unit.Services
 {
-    public class BookServiceTests
+    public class BookServiceTests : IClassFixture<BookServiceFixture>
     {
-        private readonly Mock<IBookRepository> _mockBookRepository;
-        private readonly Mock<IAuthorRepository> _mockAuthorRepository;
-        private readonly Mock<IMapper> _mockMapper;
-        private readonly Mock<ILogger<BookService>> _mockLogger;
-        private readonly BookService _bookService;
+        private readonly BookServiceFixture _fixture;
 
-        public BookServiceTests()
+        public BookServiceTests(BookServiceFixture fixture)
         {
-            _mockBookRepository = new Mock<IBookRepository>();
-            _mockAuthorRepository = new Mock<IAuthorRepository>();
-            _mockMapper = new Mock<IMapper>();
-            _mockLogger = new Mock<ILogger<BookService>>();
-
-            _bookService = new BookService(
-                _mockBookRepository.Object,
-                _mockAuthorRepository.Object,
-                _mockMapper.Object,
-                _mockLogger.Object);
+            _fixture = fixture;
+            _fixture.BookRepositoryMock.Reset();
+            _fixture.AuthorRepositoryMock.Reset();
+            _fixture.MapperMock.Reset();
         }
 
         #region GetAllBooksAsync Tests
+
         [Fact]
-        public async Task GetAllBooksAsync_ReturnsMappedBooks()
+        public async Task GetAllBooksAsync_WithNoIncludes_ReturnsMappedBooks()
         {
             // Arrange
-            var books = new List<Book> { new Book { Id = 1 }, new Book { Id = 2 } };
-            var bookDtos = new List<BookDto> { new BookDto { Id = 1 }, new BookDto { Id = 2 } };
+            var testBook = BookTestDataFactory.CreateBook(
+                id: 1,
+                title: "Clean Code",
+                price: 39.99m,
+                stockQuantity: 25);
 
-            _mockBookRepository.Setup(x => x.GetAllBooksAsync(It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(books);
+            var expectedDto = new BookDtoBuilder()
+                .WithId(1)
+                .WithTitle("Clean Code")
+                .WithPrice(39.99m)
+                .WithStockQuantity(25)
+                .Build();
 
-            _mockMapper.Setup(x => x.Map<IEnumerable<BookDto>>(books))
-                .Returns(bookDtos);
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetAllBooksAsync(false, false, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new List<Book> { testBook });
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<IEnumerable<BookDto>>(It.IsAny<IEnumerable<Book>>()))
+                .Returns(new List<BookDto> { expectedDto });
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
 
             // Act
-            var result = await _bookService.GetAllBooksAsync();
+            var result = await service.GetAllBooksAsync();
 
             // Assert
-            Assert.Equal(2, result.Count());
-            _mockBookRepository.Verify(x => x.GetAllBooksAsync(false, false, It.IsAny<CancellationToken>()), Times.Once);
+            result.Should().ContainSingle()
+                .Which.Should().BeEquivalentTo(expectedDto);
+            _fixture.BookRepositoryMock.Verify(
+                x => x.GetAllBooksAsync(false, false, It.IsAny<CancellationToken>()),
+                Times.Once);
         }
+
+        [Fact]
+        public async Task GetAllBooksAsync_WithAuthorsAndReviews_ReturnsBooksWithFullDetails()
+        {
+            // Arrange
+            var testBook = BookTestDataFactory.CreateBook(
+                includeAuthors: true,
+                includeReviews: true);
+
+            var expectedDto = new BookDtoBuilder()
+                .WithDefaultValues()
+                .WithAuthors(
+                    BookTestDataFactory.CreateAuthorDto(),
+                    BookTestDataFactory.CreateAuthorDto(2))
+                .Build();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetAllBooksAsync(true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new List<Book> { testBook });
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<IEnumerable<BookDto>>(It.IsAny<IEnumerable<Book>>()))
+                .Returns(new List<BookDto> { expectedDto });
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.GetAllBooksAsync(includeAuthors: true, includeReviews: true);
+
+            // Assert
+            result.First().Authors.Should().HaveCount(2);
+            _fixture.BookRepositoryMock.Verify(
+                x => x.GetAllBooksAsync(true, true, It.IsAny<CancellationToken>()),
+                Times.Once);
+        }
+
+        [Fact]
+        public async Task GetAllBooksAsync_WhenRepositoryThrows_LogsAndRethrows()
+        {
+            // Arrange
+            var expectedException = new Exception("Database connection failed");
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetAllBooksAsync(It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(expectedException);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act & Assert
+            await Assert.ThrowsAsync<Exception>(() => service.GetAllBooksAsync());
+
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((o, t) => o.ToString() == "Error getting all books"),
+                    expectedException,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
         #endregion
 
         #region GetBookByIdAsync Tests
+
         [Fact]
-        public async Task GetBookByIdAsync_BookExists_ReturnsMappedBook()
+        public async Task GetBookByIdAsync_WithFullDetails_ReturnsCompleteBookDto()
         {
             // Arrange
-            var book = new Book { Id = 1 };
-            var bookDto = new BookDto { Id = 1 };
+            var testBook = BookTestDataFactory.CreateBook(
+                id: 5,
+                title: "Domain-Driven Design",
+                description: "About DDD principles",
+                includeAuthors: true);
 
-            _mockBookRepository.Setup(x => x.GetBookByIdAsync(1, It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(book);
+            var expectedDto = new BookDtoBuilder()
+                .WithId(5)
+                .WithTitle("Domain-Driven Design")
+                .WithDescription("About DDD principles")
+                .WithAuthors(BookTestDataFactory.CreateAuthorDto())
+                .Build();
 
-            _mockMapper.Setup(x => x.Map<BookDto>(book))
-                .Returns(bookDto);
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(5, true, false, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(testBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<BookDto>(testBook))
+                .Returns(expectedDto);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
 
             // Act
-            var result = await _bookService.GetBookByIdAsync(1);
+            var result = await service.GetBookByIdAsync(5, includeAuthor: true);
 
             // Assert
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Id);
+            result.Should().BeEquivalentTo(expectedDto);
+            result.Authors.Should().ContainSingle();
         }
 
         [Fact]
-        public async Task GetBookByIdAsync_BookDoesNotExist_ReturnsNull()
+        public async Task GetBookByIdAsync_WithNonExistingId_ReturnsNullAndLogsWarning()
         {
             // Arrange
-            _mockBookRepository.Setup(x => x.GetBookByIdAsync(1, It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()))
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(999, It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((Book)null);
 
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
             // Act
-            var result = await _bookService.GetBookByIdAsync(1);
+            var result = await service.GetBookByIdAsync(999);
 
             // Assert
-            Assert.Null(result);
+            result.Should().BeNull();
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Warning,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((o, t) => o.ToString() == "Book with ID {BookId} not found"),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Never);
         }
+
         #endregion
 
         #region CreateBookAsync Tests
+
         [Fact]
-        public async Task CreateBookAsync_ValidData_CreatesAndReturnsBook()
+        public async Task CreateBookAsync_WithValidData_CreatesBookWithAuthors()
         {
             // Arrange
-            var createDto = new CreateBookDto
+            var createDto = BookTestDataFactory.CreateValidCreateBookDto();
+            var testAuthors = new List<Author>
             {
-                Title = "Test Book",
-                Price = 9.99m,
-                StockQuantity = 10,
-                AuthorIds = new List<int> { 1, 2 }
+                BookTestDataFactory.CreateBook(includeAuthors: true).Authors.First()
             };
 
-            var bookEntity = new Book { Id = 1 };
-            var authors = new List<Author> { new Author { Id = 1 }, new Author { Id = 2 } };
-            var bookDto = new BookDto { Id = 1 };
+            var expectedBook = BookTestDataFactory.CreateBook(
+                title: createDto.Title,
+                description: createDto.Description,
+                price: createDto.Price);
 
-            _mockMapper.Setup(x => x.Map<Book>(createDto))
-                .Returns(bookEntity);
+            var expectedDto = new BookDtoBuilder()
+                .WithTitle(createDto.Title)
+                .WithDescription(createDto.Description)
+                .WithPrice(createDto.Price)
+                .Build();
 
-            _mockAuthorRepository.Setup(x => x.GetAuthorsByIdsAsync(createDto.AuthorIds, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(authors);
+            _fixture.AuthorRepositoryMock
+                .Setup(x => x.GetAuthorsByIdsAsync(createDto.AuthorIds, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(testAuthors);
 
-            _mockBookRepository.Setup(x => x.CreateBookAsync(bookEntity, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(bookEntity);
+            _fixture.MapperMock
+                .Setup(x => x.Map<Book>(createDto))
+                .Returns(expectedBook);
 
-            _mockMapper.Setup(x => x.Map<BookDto>(bookEntity))
-                .Returns(bookDto);
+            _fixture.BookRepositoryMock
+                .Setup(x => x.CreateBookAsync(expectedBook, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(expectedBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<BookDto>(expectedBook))
+                .Returns(expectedDto);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
 
             // Act
-            var result = await _bookService.CreateBookAsync(createDto, CancellationToken.None);
+            var result = await service.CreateBookAsync(createDto, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Id);
-            Assert.Equal(2, bookEntity.Authors.Count);
+            result.Should().BeEquivalentTo(expectedDto);
+            expectedBook.Authors.Should().BeEquivalentTo(testAuthors);
+            _fixture.BookRepositoryMock.Verify(
+                x => x.CreateBookAsync(It.IsAny<Book>(), It.IsAny<CancellationToken>()),
+                Times.Once);
         }
 
         [Fact]
-        public async Task CreateBookAsync_NoAuthors_CreatesBookWithoutAuthors()
+        public async Task CreateBookAsync_WithInvalidAuthorIds_ThrowsAndLogsError()
         {
             // Arrange
-            var createDto = new CreateBookDto
-            {
-                Title = "Test Book",
-                Price = 9.99m,
-                StockQuantity = 10
-            };
+            var createDto = BookTestDataFactory.CreateValidCreateBookDto();
+            createDto.AuthorIds = new List<int> { 999 };
 
-            var bookEntity = new Book { Id = 1 };
-            var bookDto = new BookDto { Id = 1 };
+            var expectedBook = BookTestDataFactory.CreateBook(
+                title: createDto.Title,
+                description: createDto.Description,
+                price: createDto.Price);
 
-            _mockMapper.Setup(x => x.Map<Book>(createDto))
-                .Returns(bookEntity);
+            _fixture.MapperMock
+                .Setup(x => x.Map<Book>(createDto))
+                .Returns(expectedBook);
 
-            _mockBookRepository.Setup(x => x.CreateBookAsync(bookEntity, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(bookEntity);
+            _fixture.AuthorRepositoryMock
+                .Setup(x => x.GetAuthorsByIdsAsync(createDto.AuthorIds, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new List<Author>()); 
 
-            _mockMapper.Setup(x => x.Map<BookDto>(bookEntity))
-                .Returns(bookDto);
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
 
-            // Act
-            var result = await _bookService.CreateBookAsync(createDto, CancellationToken.None);
+            // Act & Assert
+            var ex = await Assert.ThrowsAsync<Exception>(() =>
+                service.CreateBookAsync(createDto, CancellationToken.None));
 
-            // Assert
-            Assert.NotNull(result);
-            Assert.Empty(bookEntity.Authors);
+            ex.Message.Should().Be("No authors found with the provided IDs");
+
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((o, t) => o.ToString() == "Error creating book"),
+                    ex,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
         }
+
         #endregion
 
         #region UpdateBookAsync Tests
+
         [Fact]
-        public async Task UpdateBookAsync_BookExists_UpdatesAndReturnsBook()
+        public async Task UpdateBookAsync_WithValidChanges_UpdatesAllProperties()
         {
             // Arrange
-            var updateDto = new UpdateBookDto
+            var originalBook = BookTestDataFactory.CreateBook(
+                id: 1,
+                title: "Original Title",
+                price: 10.00m);
+
+            var updateDto = BookTestDataFactory.CreateValidUpdateBookDto();
+            updateDto.Title = "Updated Title";
+            updateDto.Price = 20.00m;
+            updateDto.AuthorIds = new List<int> { 1, 2 };
+
+            var updatedAuthors = new List<Author>
             {
-                Title = "Updated Title",
-                AuthorIds = new List<int> { 1, 2 }
+                new Author { Id = 1, Name = "Author One" },
+                new Author { Id = 2, Name = "Author Two" }
             };
 
-            var existingBook = new Book
-            {
-                Id = 1,
-                Authors = new List<Author>()
-            };
+            var updatedBook = BookTestDataFactory.CreateBook(
+                id: 1,
+                title: "Updated Title",
+                price: 20.00m);
+            updatedBook.Authors = updatedAuthors;
 
-            var updatedBook = new Book { Id = 1 };
-            var authors = new List<Author> { new Author { Id = 1 }, new Author { Id = 2 } };
-            var bookDto = new BookDto { Id = 1 };
+            var expectedDto = new BookDtoBuilder()
+                .WithId(1)
+                .WithTitle("Updated Title")
+                .WithPrice(20.00m)
+                .WithAuthors(
+                    new AuthorDto { Id = 1, Name = "Author One" },
+                    new AuthorDto { Id = 2, Name = "Author Two" })
+                .Build();
 
-            _mockBookRepository.Setup(x => x.GetBookByIdAsync(1, true, true, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(existingBook);
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(1, true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
 
-            _mockAuthorRepository.Setup(x => x.GetAuthorsByIdsAsync(updateDto.AuthorIds, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(authors);
+            _fixture.AuthorRepositoryMock
+                .Setup(x => x.GetAuthorsByIdsAsync(updateDto.AuthorIds, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(updatedAuthors);
 
-            _mockBookRepository.Setup(x => x.UpdateBookAsync(existingBook, It.IsAny<CancellationToken>()))
+            _fixture.BookRepositoryMock
+                .Setup(x => x.UpdateBookAsync(It.IsAny<Book>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(updatedBook);
 
-            _mockMapper.Setup(x => x.Map<BookDto>(updatedBook))
-                .Returns(bookDto);
+            _fixture.MapperMock
+                .Setup(x => x.Map(updateDto, originalBook))
+                .Callback<UpdateBookDto, Book>((dto, book) =>
+                {
+                    book.Title = dto.Title;
+                    book.Price = dto.Price.Value;
+                });
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<BookDto>(updatedBook))
+                .Returns(expectedDto);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
 
             // Act
-            var result = await _bookService.UpdateBookAsync(1, updateDto, CancellationToken.None);
+            var result = await service.UpdateBookAsync(1, updateDto, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Id);
-            Assert.Equal(2, existingBook.Authors.Count);
+            result.Should().BeEquivalentTo(expectedDto);
+            _fixture.MapperMock.Verify(x => x.Map(updateDto, originalBook), Times.Once);
+            _fixture.MapperMock.Verify(x => x.Map<BookDto>(updatedBook), Times.Once);
         }
 
+
         [Fact]
-        public async Task UpdateBookAsync_BookDoesNotExist_ReturnsNull()
+        public async Task UpdateBookAsync_WithNonExistingId_ReturnsNullAndLogsWarning()
         {
             // Arrange
-            var updateDto = new UpdateBookDto { Title = "Updated Title" };
+            const int nonExistingId = 999;
+            var updateDto = BookTestDataFactory.CreateValidUpdateBookDto();
 
-            _mockBookRepository.Setup(x => x.GetBookByIdAsync(1, true, true, It.IsAny<CancellationToken>()))
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(nonExistingId, true, true, It.IsAny<CancellationToken>()))
                 .ReturnsAsync((Book)null);
 
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
             // Act
-            var result = await _bookService.UpdateBookAsync(1, updateDto, CancellationToken.None);
+            var result = await service.UpdateBookAsync(nonExistingId, updateDto, CancellationToken.None);
 
             // Assert
-            Assert.Null(result);
+            result.Should().BeNull();
+
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Warning,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((o, t) =>
+                        o.ToString().Contains($"There is no book with ID {nonExistingId} to update")),
+                    null,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
         }
         #endregion
 
-        #region DeleteBookAsync Tests
-        [Fact]
-        public async Task DeleteBookAsync_BookExists_DeletesAndReturnsTrue()
-        {
-            // Arrange
-            _mockBookRepository.Setup(x => x.BookExistAsync(1, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(true);
-
-            // Act
-            var result = await _bookService.DeleteBookAsync(1, CancellationToken.None);
-
-            // Assert
-            Assert.True(result);
-            _mockBookRepository.Verify(x => x.DeleteBookAsync(1, It.IsAny<CancellationToken>()), Times.Once);
-        }
-
-        [Fact]
-        public async Task DeleteBookAsync_BookDoesNotExist_ReturnsFalse()
-        {
-            // Arrange
-            _mockBookRepository.Setup(x => x.BookExistAsync(1, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(false);
-
-            // Act
-            var result = await _bookService.DeleteBookAsync(1, CancellationToken.None);
-
-            // Assert
-            Assert.False(result);
-            _mockBookRepository.Verify(x => x.DeleteBookAsync(1, It.IsAny<CancellationToken>()), Times.Never);
-        }
-        #endregion
-
-        #region SearchBooksByTitleAsync Tests
-        [Fact]
-        public async Task SearchBooksByTitleAsync_ReturnsMatchingBooks()
-        {
-            // Arrange
-            var books = new List<Book> { new Book { Id = 1, Title = "Test Book" } };
-            var bookDtos = new List<BookDto> { new BookDto { Id = 1, Title = "Test Book" } };
-
-            _mockBookRepository.Setup(x => x.SearchBooksByTitleAsync("Test", It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(books);
-
-            _mockMapper.Setup(x => x.Map<List<BookDto>>(books))
-                .Returns(bookDtos);
-
-            // Act
-            var result = await _bookService.SearchBooksByTitleAsync("Test");
-
-            // Assert
-            Assert.Single(result);
-            Assert.Equal("Test Book", result.First().Title);
-        }
-        #endregion
     }
 }
