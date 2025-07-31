@@ -1,0 +1,68 @@
+2025-07-31T12:01:54.0761527+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-07-31T12:01:54.8590903+03:30  [INF] Executed DbCommand ("23"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-31T12:01:54.8965295+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-31T12:01:54.8972338+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-07-31T12:01:54.9064157+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-07-31T12:01:55.0751280+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-07-31T12:01:55.0751560+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-07-31T12:01:55.0771119+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-07-31T12:01:55.0774688+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-07-31T12:01:55.0774930+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-07-31T12:01:58.8452779+03:30 0HNEG1IRIUDNP:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-31T12:01:58.8452784+03:30 0HNEG1IRIUDNP:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/nitro-config.json""" - null null (d509f86a)
+2025-07-31T12:01:58.8982190+03:30 0HNEG1IRIUDNP:00000003 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-31T12:01:58.8982192+03:30 0HNEG1IRIUDNP:00000001 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-31T12:01:58.9080664+03:30 0HNEG1IRIUDNP:00000003 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-31T12:01:58.9098376+03:30 0HNEG1IRIUDNP:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/nitro-config.json""" - 200 47 "application/json; charset=utf-8" 66.0228ms (74253ad3)
+2025-07-31T12:01:59.9616220+03:30 0HNEG1IRIUDNP:00000001 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-31T12:01:59.9624643+03:30 0HNEG1IRIUDNP:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 1118.8007ms (74253ad3)
+2025-07-31T12:02:00.5152802+03:30 0HNEG1IRIUDNP:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/graphql/service-worker.js""" - null null (d509f86a)
+2025-07-31T12:02:00.5250313+03:30 0HNEG1IRIUDNP:00000005 [INF] Executing endpoint '"Hot Chocolate GraphQL Pipeline"' (500cc934)
+2025-07-31T12:02:00.6254605+03:30 0HNEG1IRIUDNP:00000005 [INF] Executed endpoint '"Hot Chocolate GraphQL Pipeline"' (99874f2b)
+2025-07-31T12:02:00.6256182+03:30 0HNEG1IRIUDNP:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/service-worker.js""" - 304 null null 110.4599ms (74253ad3)
+2025-07-31T12:02:01.5051746+03:30 0HNEG1IRIUDNP:00000007 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - null null (d509f86a)
+2025-07-31T12:02:01.5628157+03:30 0HNEG1IRIUDNP:00000007 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 57.5915ms (74253ad3)
+2025-07-31T12:02:01.5896081+03:30 0HNEG1IRIUDNP:00000009 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2025-07-31T12:02:01.5920808+03:30 0HNEG1IRIUDNP:0000000B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-bundle.js""" - null null (d509f86a)
+2025-07-31T12:02:01.5921647+03:30 0HNEG1IRIUDNP:0000000D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.css""" - null null (d509f86a)
+2025-07-31T12:02:01.5924441+03:30 0HNEG1IRIUDNP:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.js""" - null null (d509f86a)
+2025-07-31T12:02:01.5925585+03:30 0HNEG1IRIUDNP:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-standalone-preset.js""" - null null (d509f86a)
+2025-07-31T12:02:01.5931604+03:30 0HNEG1IRIUDNP:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.js""" - 200 null "application/javascript;charset=utf-8" 0.6853ms (74253ad3)
+2025-07-31T12:02:01.5939771+03:30 0HNEG1IRIUDNP:0000000D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/index.css""" - 304 null null 1.79ms (74253ad3)
+2025-07-31T12:02:01.5939771+03:30 0HNEG1IRIUDNP:00000009 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui.css""" - 304 null null 4.3743ms (74253ad3)
+2025-07-31T12:02:01.5950907+03:30 0HNEG1IRIUDNP:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-standalone-preset.js""" - 304 null null 2.5018ms (74253ad3)
+2025-07-31T12:02:01.6041964+03:30 0HNEG1IRIUDNP:0000000B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger-ui-bundle.js""" - 304 null null 12.0682ms (74253ad3)
+2025-07-31T12:02:02.0681405+03:30 0HNEG1IRIUDNP:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-31T12:02:02.0917024+03:30 0HNEG1IRIUDNP:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2025-07-31T12:02:02.0923012+03:30 0HNEG1IRIUDNP:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/favicon-32x32.png""" - 304 null null 0.609ms (74253ad3)
+2025-07-31T12:02:02.1822177+03:30 0HNEG1IRIUDNP:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 114.0416ms (74253ad3)
+2025-07-31T12:02:12.6903405+03:30 0HNEG1IRIUDNQ:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger""" - null null (d509f86a)
+2025-07-31T12:02:12.6909750+03:30 0HNEG1IRIUDNQ:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger""" - 301 0 null 0.6203ms (74253ad3)
+2025-07-31T12:02:12.8041956+03:30 0HNEG1IRIUDNQ:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-31T12:02:12.8137263+03:30 0HNEG1IRIUDNQ:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 9.5587ms (74253ad3)
+2025-07-31T12:02:17.7098275+03:30 0HNEG1IRIUDNR:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger.json""" - null null (d509f86a)
+2025-07-31T12:02:17.7251621+03:30 0HNEG1IRIUDNR:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger.json""" - 404 null "application/json; charset=utf-8" 15.3226ms (74253ad3)
+2025-07-31T12:02:17.7253663+03:30 0HNEG1IRIUDNR:00000001 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "https"://"localhost:7140""""/swagger.json", Response status code: 404 (e353595a)
+2025-07-31T12:02:17.7861758+03:30 0HNEG1IRIUDNR:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/favicon.ico""" - null null (d509f86a)
+2025-07-31T12:02:17.7867953+03:30 0HNEG1IRIUDNR:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/favicon.ico""" - 404 null "application/json; charset=utf-8" 0.6068ms (74253ad3)
+2025-07-31T12:02:17.7872215+03:30 0HNEG1IRIUDNR:00000003 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "https"://"localhost:7140""""/favicon.ico", Response status code: 404 (e353595a)
+2025-07-31T12:02:29.2296357+03:30 0HNEG1IRIUDNS:00000001 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger.json""" - null null (d509f86a)
+2025-07-31T12:02:29.2299797+03:30 0HNEG1IRIUDNS:00000001 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/swagger.json""" - 404 null "application/json; charset=utf-8" 0.3528ms (74253ad3)
+2025-07-31T12:02:29.2300531+03:30 0HNEG1IRIUDNS:00000001 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "https"://"localhost:7140""""/swagger/swagger.json", Response status code: 404 (e353595a)
+2025-07-31T12:02:50.1458352+03:30 0HNEG1IRIUDNS:00000003 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-31T12:02:50.1567881+03:30 0HNEG1IRIUDNS:00000003 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 10.9174ms (74253ad3)
+2025-07-31T12:02:53.3669261+03:30 0HNEG1IRIUDNS:00000005 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2025-07-31T12:02:53.3816587+03:30 0HNEG1IRIUDNS:00000005 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7140""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 14.685ms (74253ad3)
+2025-07-31T12:15:27.2410143+03:30  [INF] Application is shutting down... (90f52c38)

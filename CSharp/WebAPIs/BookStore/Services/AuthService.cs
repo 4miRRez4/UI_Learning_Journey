@@ -35,6 +35,8 @@ namespace BookStore.Services
 
         public async Task<AuthResult> RegisterAsync(RegisterDto request, CancellationToken ct)
         {
+            ct.ThrowIfCancellationRequested();
+
             var existingUser = await _userManager.FindByEmailAsync(request.Email);
             if (existingUser != null)
             {
@@ -114,6 +116,8 @@ namespace BookStore.Services
 
         public async Task<AuthResult> LoginAsync(LoginDto request, CancellationToken ct)
         {
+            ct.ThrowIfCancellationRequested();
+
             var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
