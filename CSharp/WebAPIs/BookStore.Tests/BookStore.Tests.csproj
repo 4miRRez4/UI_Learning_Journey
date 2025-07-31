@@ -26,4 +26,10 @@
 		<PackageReference Include="xunit.runner.visualstudio" Version="2.9.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Integration\" />
+	  <Folder Include="E2E\" />
+	  <Folder Include="Mocks\" />
+	</ItemGroup>
+
 </Project>
