@@ -1,0 +1,1091 @@
+2025-08-02T14:24:35.3937835+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T14:24:36.1300816+03:30  [INF] Executed DbCommand ("28"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:24:36.1652417+03:30  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:24:36.1661698+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:24:36.1756727+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T14:24:36.4702304+03:30 0HNEHMBSCEM9U [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T14:24:36.5131589+03:30 0HNEHMBSCEM9U [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T14:24:36.5282736+03:30 0HNEHMBSCEM9U [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T14:24:36.5376089+03:30 0HNEHMBSCEM9U [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T14:24:36.5547587+03:30 0HNEHMBSCEM9U [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T14:24:36.5669276+03:30 0HNEHMBSCEM9U [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 27.6153ms (afa2e885)
+2025-08-02T14:24:36.5669674+03:30 0HNEHMBSCEM9U [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T14:24:36.5682936+03:30 0HNEHMBSCEM9U [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 99.0391ms (74253ad3)
+2025-08-02T14:42:29.8443945+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T14:42:30.8223940+03:30  [INF] Executed DbCommand ("46"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:42:30.8780280+03:30  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:42:30.8804088+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:42:30.9013918+03:30  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T14:43:15.4450272+03:30 0HNEHMM9RQKRP [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T14:43:15.5255579+03:30 0HNEHMM9RQKRP [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T14:43:15.5549978+03:30 0HNEHMM9RQKRP [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T14:43:15.5703615+03:30 0HNEHMM9RQKRP [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T14:43:15.6000805+03:30 0HNEHMM9RQKRP [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T14:43:15.6210489+03:30 0HNEHMM9RQKRP [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 44.4515ms (afa2e885)
+2025-08-02T14:43:15.6211690+03:30 0HNEHMM9RQKRP [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T14:43:15.6229410+03:30 0HNEHMM9RQKRP [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 183.0314ms (74253ad3)
+2025-08-02T14:49:13.6884477+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T14:49:14.5510543+03:30  [INF] Executed DbCommand ("32"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:49:14.5881790+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:49:14.5904136+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:49:14.6011278+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T14:49:33.3580436+03:30 0HNEHMPQFSESO [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T14:49:33.5075654+03:30 0HNEHMPQFSESO [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T14:49:33.5374838+03:30 0HNEHMPQFSESO [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T14:49:33.5507376+03:30 0HNEHMPQFSESO [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T14:49:33.5758570+03:30 0HNEHMPQFSESO [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T14:49:33.5965984+03:30 0HNEHMPQFSESO [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 39.7411ms (afa2e885)
+2025-08-02T14:49:33.5967922+03:30 0HNEHMPQFSESO [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T14:49:33.5996786+03:30 0HNEHMPQFSESO [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 257.7784ms (74253ad3)
+2025-08-02T14:52:25.6130940+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T14:52:26.4682667+03:30  [INF] Executed DbCommand ("29"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:52:26.5079609+03:30  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:52:26.5099506+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T14:52:26.5204038+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T14:52:30.0226243+03:30 0HNEHMRF4LPIP [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T14:52:30.1365146+03:30 0HNEHMRF4LPIP [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T14:52:30.1594963+03:30 0HNEHMRF4LPIP [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T14:52:30.1705593+03:30 0HNEHMRF4LPIP [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T14:52:30.1939989+03:30 0HNEHMRF4LPIP [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T14:52:30.2138786+03:30 0HNEHMRF4LPIP [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 37.7644ms (afa2e885)
+2025-08-02T14:52:30.2139872+03:30 0HNEHMRF4LPIP [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T14:52:30.2157888+03:30 0HNEHMRF4LPIP [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 213.4412ms (74253ad3)
+2025-08-02T15:04:58.5939268+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:04:59.4872821+03:30  [INF] Executed DbCommand ("30"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:04:59.5455830+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:04:59.5486734+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:04:59.5611794+03:30  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:05:04.3263102+03:30 0HNEHN2FU962Q [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:05:04.4294037+03:30 0HNEHN2FU962Q [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:05:04.4519051+03:30 0HNEHN2FU962Q [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:05:04.4626976+03:30 0HNEHN2FU962Q [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:05:04.5192125+03:30 0HNEHN2FU962Q [INF] Executing action method "BookStore.Controllers.AuthController.Register (BookStore)" - Validation state: Valid (dad538d7)
+2025-08-02T15:05:13.9569394+03:30 0HNEHN2FU962Q [INF] Executed action method "BookStore.Controllers.AuthController.Register (BookStore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 9435.7136ms. (50a9e262)
+2025-08-02T15:05:13.9631348+03:30 0HNEHN2FU962Q [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-08-02T15:05:14.0359369+03:30 0HNEHN2FU962Q [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 9545.1525ms (afa2e885)
+2025-08-02T15:05:14.0361850+03:30 0HNEHN2FU962Q [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:05:17.1251318+03:30 0HNEHN2FU962Q [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 200 49 "application/json; charset=utf-8" 12818.2393ms (74253ad3)
+2025-08-02T15:06:36.3162656+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:06:36.9632493+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:06:36.9962467+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:06:36.9970236+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:06:37.0055098+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:06:37.1542671+03:30 0HNEHN3BJIIGN [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:06:37.1816670+03:30 0HNEHN3BJIIGN [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:06:37.1931471+03:30 0HNEHN3BJIIGN [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:06:37.2019647+03:30 0HNEHN3BJIIGN [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:06:37.2199317+03:30 0HNEHN3BJIIGN [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-08-02T15:06:37.2270887+03:30 0HNEHN3BJIIGN [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 23.3524ms (afa2e885)
+2025-08-02T15:06:37.2271321+03:30 0HNEHN3BJIIGN [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:06:37.2284657+03:30 0HNEHN3BJIIGN [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 200 49 "application/json; charset=utf-8" 75.0158ms (74253ad3)
+2025-08-02T15:07:41.2706135+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:07:42.1248902+03:30  [INF] Executed DbCommand ("24"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:07:42.2127183+03:30  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:07:42.2160498+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:07:42.2304925+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:07:58.5147693+03:30 0HNEHN43RFJJ8 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:07:58.6044701+03:30 0HNEHN43RFJJ8 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:07:58.6307327+03:30 0HNEHN43RFJJ8 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:07:58.6414044+03:30 0HNEHN43RFJJ8 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:07:58.6915400+03:30 0HNEHN43RFJJ8 [INF] Executing action method "BookStore.Controllers.AuthController.Register (BookStore)" - Validation state: Valid (dad538d7)
+2025-08-02T15:08:00.2262649+03:30 0HNEHN43RFJJ8 [INF] Executed action method "BookStore.Controllers.AuthController.Register (BookStore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1532.2705ms. (50a9e262)
+2025-08-02T15:08:00.2308649+03:30 0HNEHN43RFJJ8 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-08-02T15:08:00.2733504+03:30 0HNEHN43RFJJ8 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1625.0573ms (afa2e885)
+2025-08-02T15:08:00.2734783+03:30 0HNEHN43RFJJ8 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:08:00.9967647+03:30 0HNEHN43RFJJ8 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 200 49 "application/json; charset=utf-8" 2494.9544ms (74253ad3)
+2025-08-02T15:12:05.4383702+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:12:06.1033276+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:12:06.1363351+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:12:06.1370362+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:12:06.1454667+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:12:06.2961700+03:30 0HNEHN6DMGMUM [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:12:06.3271404+03:30 0HNEHN6DMGMUM [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:12:06.3385826+03:30 0HNEHN6DMGMUM [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:12:06.3469642+03:30 0HNEHN6DMGMUM [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:12:06.3635475+03:30 0HNEHN6DMGMUM [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-08-02T15:12:06.3705882+03:30 0HNEHN6DMGMUM [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 21.922ms (afa2e885)
+2025-08-02T15:12:06.3706269+03:30 0HNEHN6DMGMUM [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:12:06.3719759+03:30 0HNEHN6DMGMUM [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 200 49 "application/json; charset=utf-8" 76.6099ms (74253ad3)
+2025-08-02T15:13:04.3737042+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:13:05.0126509+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:13:05.0461234+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:13:05.0468690+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:13:05.0556686+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:13:05.2041519+03:30 0HNEHN6V89VU7 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:13:05.2312825+03:30 0HNEHN6V89VU7 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:13:05.2428577+03:30 0HNEHN6V89VU7 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:13:05.2512681+03:30 0HNEHN6V89VU7 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:13:05.2677033+03:30 0HNEHN6V89VU7 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2025-08-02T15:13:05.2745013+03:30 0HNEHN6V89VU7 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 21.5769ms (afa2e885)
+2025-08-02T15:13:05.2745373+03:30 0HNEHN6V89VU7 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:13:05.2758618+03:30 0HNEHN6V89VU7 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 200 49 "application/json; charset=utf-8" 72.5426ms (74253ad3)
+2025-08-02T15:20:12.8986071+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:20:13.5776519+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:20:13.6133020+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:20:13.6146821+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:20:13.6250316+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:20:13.7646683+03:30 0HNEHNAUVC9KD [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:20:13.7900515+03:30 0HNEHNAUVC9KD [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:20:13.8012322+03:30 0HNEHNAUVC9KD [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:20:13.8096262+03:30 0HNEHNAUVC9KD [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:20:13.8239678+03:30 0HNEHNAUVC9KD [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:20:13.8373753+03:30 0HNEHNAUVC9KD [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 26.0642ms (afa2e885)
+2025-08-02T15:20:13.8374137+03:30 0HNEHNAUVC9KD [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:20:13.8387506+03:30 0HNEHNAUVC9KD [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 293 "application/problem+json; charset=utf-8" 74.8547ms (74253ad3)
+2025-08-02T15:23:58.6611682+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:23:59.6345390+03:30  [INF] Executed DbCommand ("32"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:23:59.6995693+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:23:59.7035817+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:23:59.7142267+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:23:59.9832587+03:30 0HNEHND2CNV8A [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:24:00.0511896+03:30 0HNEHND2CNV8A [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:24:00.0784468+03:30 0HNEHND2CNV8A [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:24:00.0895597+03:30 0HNEHND2CNV8A [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:24:00.1128987+03:30 0HNEHND2CNV8A [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:24:00.1361632+03:30 0HNEHND2CNV8A [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 40.5789ms (afa2e885)
+2025-08-02T15:24:00.1363175+03:30 0HNEHND2CNV8A [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:24:00.1405904+03:30 0HNEHND2CNV8A [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 293 "application/problem+json; charset=utf-8" 163.133ms (74253ad3)
+2025-08-02T15:24:27.2916686+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:24:28.0902640+03:30  [INF] Executed DbCommand ("26"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:24:28.1318468+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:24:28.1347952+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:24:28.1721464+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:26:34.4562171+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:26:35.3126236+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:26:35.3574818+03:30  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:26:35.3602973+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:26:35.3946213+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:26:37.1943833+03:30 0HNEHNEH81GN7 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:26:37.2652521+03:30 0HNEHNEH81GN7 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:26:37.2899290+03:30 0HNEHNEH81GN7 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:26:37.3007568+03:30 0HNEHNEH81GN7 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:26:37.3217271+03:30 0HNEHNEH81GN7 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:26:37.3417230+03:30 0HNEHNEH81GN7 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 35.0999ms (afa2e885)
+2025-08-02T15:26:37.3418818+03:30 0HNEHNEH81GN7 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:26:37.3437581+03:30 0HNEHNEH81GN7 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 293 "application/problem+json; charset=utf-8" 165.4387ms (74253ad3)
+2025-08-02T15:30:06.4977134+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:30:07.3421032+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:30:07.3942827+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:30:07.3965575+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:30:07.4542704+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:30:09.5813281+03:30 0HNEHNGGHGRF8 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - null null (d509f86a)
+2025-08-02T15:30:09.6903906+03:30 0HNEHNGGHGRF8 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:30:09.7137749+03:30 0HNEHNGGHGRF8 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:30:09.7251486+03:30 0HNEHNGGHGRF8 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:30:09.7424047+03:30 0HNEHNGGHGRF8 [INF] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (605b4265)
+2025-08-02T15:30:09.7632754+03:30 0HNEHNGGHGRF8 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 32.3734ms (afa2e885)
+2025-08-02T15:30:09.7634027+03:30 0HNEHNGGHGRF8 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:30:09.7653585+03:30 0HNEHNGGHGRF8 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 415 176 "application/problem+json; charset=utf-8" 198.9854ms (74253ad3)
+2025-08-02T15:34:02.1714643+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:34:03.0302811+03:30  [INF] Executed DbCommand ("27"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:34:03.0941071+03:30  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:34:03.0969141+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:34:03.1375521+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:34:03.3352130+03:30 0HNEHNIM6OMTP [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - null null (d509f86a)
+2025-08-02T15:34:03.3913957+03:30 0HNEHNIM6OMTP [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:34:03.4156028+03:30 0HNEHNIM6OMTP [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:34:03.4262259+03:30 0HNEHNIM6OMTP [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:34:03.4421784+03:30 0HNEHNIM6OMTP [INF] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (605b4265)
+2025-08-02T15:34:03.4614341+03:30 0HNEHNIM6OMTP [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 29.8855ms (afa2e885)
+2025-08-02T15:34:03.4615605+03:30 0HNEHNIM6OMTP [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:34:03.4633652+03:30 0HNEHNIM6OMTP [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 415 176 "application/problem+json; charset=utf-8" 133.1031ms (74253ad3)
+2025-08-02T15:35:32.9139982+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:35:33.7573149+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:35:33.8002391+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:35:33.8024350+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:35:33.8820296+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:35:46.3867204+03:30 0HNEHNJKTHL8A [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" 4 (d509f86a)
+2025-08-02T15:35:46.4653259+03:30 0HNEHNJKTHL8A [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:35:46.4877810+03:30 0HNEHNJKTHL8A [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:35:46.4989510+03:30 0HNEHNJKTHL8A [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:35:46.5194702+03:30 0HNEHNJKTHL8A [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:35:46.5389417+03:30 0HNEHNJKTHL8A [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 34.4382ms (afa2e885)
+2025-08-02T15:35:46.5390925+03:30 0HNEHNJKTHL8A [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:35:46.5408315+03:30 0HNEHNJKTHL8A [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 293 "application/problem+json; charset=utf-8" 167.7885ms (74253ad3)
+2025-08-02T15:39:34.2326289+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:39:35.0971361+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:39:35.1479486+03:30  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:39:35.1498379+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:39:35.1634538+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:39:35.3583595+03:30 0HNEHNLP56408 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" 4 (d509f86a)
+2025-08-02T15:39:35.4149310+03:30 0HNEHNLP56408 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:39:35.4401563+03:30 0HNEHNLP56408 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:39:35.4508043+03:30 0HNEHNLP56408 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:39:35.4728623+03:30 0HNEHNLP56408 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:39:35.4938849+03:30 0HNEHNLP56408 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 37.4348ms (afa2e885)
+2025-08-02T15:39:35.4940098+03:30 0HNEHNLP56408 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:39:35.4957487+03:30 0HNEHNLP56408 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 293 "application/problem+json; charset=utf-8" 142.5445ms (74253ad3)
+2025-08-02T15:47:15.2651038+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:47:16.0946969+03:30  [INF] Executed DbCommand ("27"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:47:16.1527187+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:47:16.1579577+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:47:16.2301027+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:51:29.5435112+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:51:30.3869055+03:30  [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:51:30.4298213+03:30  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:51:30.4317684+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:51:30.4423715+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:52:50.6651940+03:30 0HNEHNT65QMPE [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:52:50.7496037+03:30 0HNEHNT65QMPE [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:52:50.7763764+03:30 0HNEHNT65QMPE [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:52:50.7890886+03:30 0HNEHNT65QMPE [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:52:50.8130088+03:30 0HNEHNT65QMPE [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:52:50.8336836+03:30 0HNEHNT65QMPE [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 38.464ms (afa2e885)
+2025-08-02T15:52:50.8337998+03:30 0HNEHNT65QMPE [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:52:50.8356327+03:30 0HNEHNT65QMPE [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 206.1492ms (74253ad3)
+2025-08-02T15:53:58.2658144+03:30 0HNEHNT65QMPF [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:53:58.3728378+03:30 0HNEHNT65QMPF [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:53:58.4008593+03:30 0HNEHNT65QMPF [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:53:58.4020497+03:30 0HNEHNT65QMPF [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:53:58.4027960+03:30 0HNEHNT65QMPF [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.8132ms (afa2e885)
+2025-08-02T15:53:58.4028438+03:30 0HNEHNT65QMPF [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:53:58.4262232+03:30 0HNEHNT65QMPF [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 236 "application/problem+json; charset=utf-8" 160.4492ms (74253ad3)
+2025-08-02T15:54:10.4270896+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:54:11.0859704+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:11.1187689+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:11.1194728+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:11.1297879+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:54:11.2756175+03:30 0HNEHNTU6J9ML [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.3023688+03:30 0HNEHNTU6J9ML [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:54:11.3137084+03:30 0HNEHNTU6J9ML [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.3219178+03:30 0HNEHNTU6J9ML [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.3353300+03:30 0HNEHNTU6J9ML [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.3483051+03:30 0HNEHNTU6J9ML [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 24.7428ms (afa2e885)
+2025-08-02T15:54:11.3483387+03:30 0HNEHNTU6J9ML [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.3496178+03:30 0HNEHNTU6J9ML [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 74.8091ms (74253ad3)
+2025-08-02T15:54:11.3989316+03:30 0HNEHNTU6J9MM [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4048151+03:30 0HNEHNTU6J9MM [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4049323+03:30 0HNEHNTU6J9MM [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4069882+03:30 0HNEHNTU6J9MM [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4083402+03:30 0HNEHNTU6J9MM [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 3.2974ms (afa2e885)
+2025-08-02T15:54:11.4085018+03:30 0HNEHNTU6J9MM [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4088339+03:30 0HNEHNTU6J9MM [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 236 "application/problem+json; charset=utf-8" 9.9253ms (74253ad3)
+2025-08-02T15:54:11.4511991+03:30 0HNEHNTU6J9MN [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4541275+03:30 0HNEHNTU6J9MN [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4542301+03:30 0HNEHNTU6J9MN [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4546303+03:30 0HNEHNTU6J9MN [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4548659+03:30 0HNEHNTU6J9MN [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.6093ms (afa2e885)
+2025-08-02T15:54:11.4548790+03:30 0HNEHNTU6J9MN [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4549317+03:30 0HNEHNTU6J9MN [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 3.7188ms (74253ad3)
+2025-08-02T15:54:11.4594312+03:30 0HNEHNTU6J9MO [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4596607+03:30 0HNEHNTU6J9MO [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4597014+03:30 0HNEHNTU6J9MO [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4599106+03:30 0HNEHNTU6J9MO [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4601198+03:30 0HNEHNTU6J9MO [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4028ms (afa2e885)
+2025-08-02T15:54:11.4601316+03:30 0HNEHNTU6J9MO [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4601586+03:30 0HNEHNTU6J9MO [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 286 "application/problem+json; charset=utf-8" 0.7588ms (74253ad3)
+2025-08-02T15:54:11.4626921+03:30 0HNEHNTU6J9MP [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4629725+03:30 0HNEHNTU6J9MP [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4630641+03:30 0HNEHNTU6J9MP [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4634447+03:30 0HNEHNTU6J9MP [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4637179+03:30 0HNEHNTU6J9MP [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.613ms (afa2e885)
+2025-08-02T15:54:11.4637284+03:30 0HNEHNTU6J9MP [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4637542+03:30 0HNEHNTU6J9MP [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 1.0831ms (74253ad3)
+2025-08-02T15:54:11.4671477+03:30 0HNEHNTU6J9MQ [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4674064+03:30 0HNEHNTU6J9MQ [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4674851+03:30 0HNEHNTU6J9MQ [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4678451+03:30 0HNEHNTU6J9MQ [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4682511+03:30 0HNEHNTU6J9MQ [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.7313ms (afa2e885)
+2025-08-02T15:54:11.4682759+03:30 0HNEHNTU6J9MQ [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4683343+03:30 0HNEHNTU6J9MQ [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 247 "application/problem+json; charset=utf-8" 1.191ms (74253ad3)
+2025-08-02T15:54:11.4742999+03:30 0HNEHNTU6J9MR [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4745612+03:30 0HNEHNTU6J9MR [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4746419+03:30 0HNEHNTU6J9MR [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4750000+03:30 0HNEHNTU6J9MR [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4753703+03:30 0HNEHNTU6J9MR [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.6963ms (afa2e885)
+2025-08-02T15:54:11.4753934+03:30 0HNEHNTU6J9MR [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4754463+03:30 0HNEHNTU6J9MR [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 257 "application/problem+json; charset=utf-8" 1.1545ms (74253ad3)
+2025-08-02T15:54:11.4784100+03:30 0HNEHNTU6J9MS [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4786303+03:30 0HNEHNTU6J9MS [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4786732+03:30 0HNEHNTU6J9MS [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4788716+03:30 0HNEHNTU6J9MS [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4790660+03:30 0HNEHNTU6J9MS [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.3758ms (afa2e885)
+2025-08-02T15:54:11.4790773+03:30 0HNEHNTU6J9MS [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4791055+03:30 0HNEHNTU6J9MS [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 233 "application/problem+json; charset=utf-8" 0.7126ms (74253ad3)
+2025-08-02T15:54:11.4822317+03:30 0HNEHNTU6J9MT [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:11.4824819+03:30 0HNEHNTU6J9MT [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:11.4825587+03:30 0HNEHNTU6J9MT [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:11.4829193+03:30 0HNEHNTU6J9MT [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:11.4833118+03:30 0HNEHNTU6J9MT [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.7197ms (afa2e885)
+2025-08-02T15:54:11.4833339+03:30 0HNEHNTU6J9MT [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:11.4833851+03:30 0HNEHNTU6J9MT [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 1.16ms (74253ad3)
+2025-08-02T15:54:19.1808332+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:54:19.8002851+03:30  [INF] Executed DbCommand ("18"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:19.8330467+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:19.8337703+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:19.8407524+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:54:19.9861557+03:30 0HNEHNU0PLHEP [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.0129324+03:30 0HNEHNU0PLHEP [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:54:20.0240838+03:30 0HNEHNU0PLHEP [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.0320397+03:30 0HNEHNU0PLHEP [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.0454034+03:30 0HNEHNU0PLHEP [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.0582401+03:30 0HNEHNU0PLHEP [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 24.5416ms (afa2e885)
+2025-08-02T15:54:20.0582742+03:30 0HNEHNU0PLHEP [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.0595753+03:30 0HNEHNU0PLHEP [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 74.2266ms (74253ad3)
+2025-08-02T15:54:20.1003575+03:30 0HNEHNU0PLHEQ [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1056419+03:30 0HNEHNU0PLHEQ [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1057703+03:30 0HNEHNU0PLHEQ [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1066838+03:30 0HNEHNU0PLHEQ [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1075687+03:30 0HNEHNU0PLHEQ [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.7413ms (afa2e885)
+2025-08-02T15:54:20.1076052+03:30 0HNEHNU0PLHEQ [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1077906+03:30 0HNEHNU0PLHEQ [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 236 "application/problem+json; charset=utf-8" 7.4357ms (74253ad3)
+2025-08-02T15:54:20.1303923+03:30 0HNEHNU0PLHER [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1323071+03:30 0HNEHNU0PLHER [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1323645+03:30 0HNEHNU0PLHER [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1326370+03:30 0HNEHNU0PLHER [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1328536+03:30 0HNEHNU0PLHER [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4704ms (afa2e885)
+2025-08-02T15:54:20.1328648+03:30 0HNEHNU0PLHER [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1329148+03:30 0HNEHNU0PLHER [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 2.5143ms (74253ad3)
+2025-08-02T15:54:20.1355175+03:30 0HNEHNU0PLHES [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1356783+03:30 0HNEHNU0PLHES [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1357238+03:30 0HNEHNU0PLHES [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1359685+03:30 0HNEHNU0PLHES [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1361981+03:30 0HNEHNU0PLHES [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4557ms (afa2e885)
+2025-08-02T15:54:20.1362095+03:30 0HNEHNU0PLHES [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1362379+03:30 0HNEHNU0PLHES [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 286 "application/problem+json; charset=utf-8" 0.7461ms (74253ad3)
+2025-08-02T15:54:20.1384364+03:30 0HNEHNU0PLHET [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1385918+03:30 0HNEHNU0PLHET [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1386415+03:30 0HNEHNU0PLHET [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1388700+03:30 0HNEHNU0PLHET [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1390991+03:30 0HNEHNU0PLHET [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4302ms (afa2e885)
+2025-08-02T15:54:20.1391122+03:30 0HNEHNU0PLHET [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1391417+03:30 0HNEHNU0PLHET [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 0.7087ms (74253ad3)
+2025-08-02T15:54:20.1435085+03:30 0HNEHNU0PLHEU [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1437885+03:30 0HNEHNU0PLHEU [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1438500+03:30 0HNEHNU0PLHEU [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1441059+03:30 0HNEHNU0PLHEU [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1443693+03:30 0HNEHNU0PLHEU [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4982ms (afa2e885)
+2025-08-02T15:54:20.1443821+03:30 0HNEHNU0PLHEU [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1444174+03:30 0HNEHNU0PLHEU [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 247 "application/problem+json; charset=utf-8" 0.9143ms (74253ad3)
+2025-08-02T15:54:20.1483498+03:30 0HNEHNU0PLHEV [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1485063+03:30 0HNEHNU0PLHEV [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1485574+03:30 0HNEHNU0PLHEV [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1487929+03:30 0HNEHNU0PLHEV [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1490131+03:30 0HNEHNU0PLHEV [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4372ms (afa2e885)
+2025-08-02T15:54:20.1490248+03:30 0HNEHNU0PLHEV [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1490547+03:30 0HNEHNU0PLHEV [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 257 "application/problem+json; charset=utf-8" 0.7106ms (74253ad3)
+2025-08-02T15:54:20.1512934+03:30 0HNEHNU0PLHF0 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1514432+03:30 0HNEHNU0PLHF0 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1514876+03:30 0HNEHNU0PLHF0 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1517064+03:30 0HNEHNU0PLHF0 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1519285+03:30 0HNEHNU0PLHF0 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.422ms (afa2e885)
+2025-08-02T15:54:20.1519412+03:30 0HNEHNU0PLHF0 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1519734+03:30 0HNEHNU0PLHF0 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 233 "application/problem+json; charset=utf-8" 0.6834ms (74253ad3)
+2025-08-02T15:54:20.1540158+03:30 0HNEHNU0PLHF1 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:20.1541390+03:30 0HNEHNU0PLHF1 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:20.1541782+03:30 0HNEHNU0PLHF1 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:20.1543671+03:30 0HNEHNU0PLHF1 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:20.1545943+03:30 0HNEHNU0PLHF1 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.3986ms (afa2e885)
+2025-08-02T15:54:20.1546068+03:30 0HNEHNU0PLHF1 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:20.1546374+03:30 0HNEHNU0PLHF1 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 0.6229ms (74253ad3)
+2025-08-02T15:54:42.3610600+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:54:42.9918857+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:43.0252117+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:43.0259184+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:54:43.0330318+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:54:43.1818842+03:30 0HNEHNU7MS9B8 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.2089682+03:30 0HNEHNU7MS9B8 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:54:43.2205956+03:30 0HNEHNU7MS9B8 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.2286814+03:30 0HNEHNU7MS9B8 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.2425164+03:30 0HNEHNU7MS9B8 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.2561971+03:30 0HNEHNU7MS9B8 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 25.7354ms (afa2e885)
+2025-08-02T15:54:43.2562360+03:30 0HNEHNU7MS9B8 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.2575663+03:30 0HNEHNU7MS9B8 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 76.5379ms (74253ad3)
+2025-08-02T15:54:43.2973439+03:30 0HNEHNU7MS9B9 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3009555+03:30 0HNEHNU7MS9B9 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3012311+03:30 0HNEHNU7MS9B9 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3025486+03:30 0HNEHNU7MS9B9 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3031333+03:30 0HNEHNU7MS9B9 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.8303ms (afa2e885)
+2025-08-02T15:54:43.3031614+03:30 0HNEHNU7MS9B9 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3032628+03:30 0HNEHNU7MS9B9 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 236 "application/problem+json; charset=utf-8" 5.9197ms (74253ad3)
+2025-08-02T15:54:43.3254717+03:30 0HNEHNU7MS9BA [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3276608+03:30 0HNEHNU7MS9BA [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3277335+03:30 0HNEHNU7MS9BA [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3281242+03:30 0HNEHNU7MS9BA [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3284488+03:30 0HNEHNU7MS9BA [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.6877ms (afa2e885)
+2025-08-02T15:54:43.3284688+03:30 0HNEHNU7MS9BA [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3285383+03:30 0HNEHNU7MS9BA [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 3.0413ms (74253ad3)
+2025-08-02T15:54:43.3322744+03:30 0HNEHNU7MS9BB [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3325879+03:30 0HNEHNU7MS9BB [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3326741+03:30 0HNEHNU7MS9BB [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3330331+03:30 0HNEHNU7MS9BB [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3333717+03:30 0HNEHNU7MS9BB [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.6678ms (afa2e885)
+2025-08-02T15:54:43.3333919+03:30 0HNEHNU7MS9BB [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3334382+03:30 0HNEHNU7MS9BB [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 286 "application/problem+json; charset=utf-8" 1.1905ms (74253ad3)
+2025-08-02T15:54:43.3364332+03:30 0HNEHNU7MS9BC [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3365780+03:30 0HNEHNU7MS9BC [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3366273+03:30 0HNEHNU7MS9BC [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3369050+03:30 0HNEHNU7MS9BC [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3371652+03:30 0HNEHNU7MS9BC [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.5027ms (afa2e885)
+2025-08-02T15:54:43.3371809+03:30 0HNEHNU7MS9BC [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3372211+03:30 0HNEHNU7MS9BC [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 0.7818ms (74253ad3)
+2025-08-02T15:54:43.3403274+03:30 0HNEHNU7MS9BD [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3405064+03:30 0HNEHNU7MS9BD [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3405614+03:30 0HNEHNU7MS9BD [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3408154+03:30 0HNEHNU7MS9BD [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3410839+03:30 0HNEHNU7MS9BD [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4997ms (afa2e885)
+2025-08-02T15:54:43.3410991+03:30 0HNEHNU7MS9BD [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3411364+03:30 0HNEHNU7MS9BD [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 247 "application/problem+json; charset=utf-8" 0.8107ms (74253ad3)
+2025-08-02T15:54:43.3443524+03:30 0HNEHNU7MS9BE [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3445323+03:30 0HNEHNU7MS9BE [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3445902+03:30 0HNEHNU7MS9BE [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3448628+03:30 0HNEHNU7MS9BE [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3451773+03:30 0HNEHNU7MS9BE [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.5544ms (afa2e885)
+2025-08-02T15:54:43.3452070+03:30 0HNEHNU7MS9BE [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3452535+03:30 0HNEHNU7MS9BE [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 257 "application/problem+json; charset=utf-8" 0.8989ms (74253ad3)
+2025-08-02T15:54:43.3481511+03:30 0HNEHNU7MS9BF [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3483389+03:30 0HNEHNU7MS9BF [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3483982+03:30 0HNEHNU7MS9BF [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3486905+03:30 0HNEHNU7MS9BF [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3490372+03:30 0HNEHNU7MS9BF [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.6133ms (afa2e885)
+2025-08-02T15:54:43.3490576+03:30 0HNEHNU7MS9BF [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3491033+03:30 0HNEHNU7MS9BF [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 233 "application/problem+json; charset=utf-8" 0.9505ms (74253ad3)
+2025-08-02T15:54:43.3521015+03:30 0HNEHNU7MS9BG [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:54:43.3522862+03:30 0HNEHNU7MS9BG [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:54:43.3523442+03:30 0HNEHNU7MS9BG [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:54:43.3526022+03:30 0HNEHNU7MS9BG [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:54:43.3528675+03:30 0HNEHNU7MS9BG [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.5002ms (afa2e885)
+2025-08-02T15:54:43.3528830+03:30 0HNEHNU7MS9BG [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:54:43.3529200+03:30 0HNEHNU7MS9BG [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 0.8223ms (74253ad3)
+2025-08-02T15:57:25.1541810+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:57:26.3568238+03:30  [INF] Executed DbCommand ("53"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:57:26.4198435+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:57:26.4340518+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:57:26.4760679+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:57:27.0706761+03:30 0HNEHNVOHQOS1 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:57:27.3473821+03:30 0HNEHNVOHQOS1 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:57:27.4212985+03:30 0HNEHNVOHQOS1 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:57:27.4320941+03:30 0HNEHNVOHQOS1 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:57:27.4750393+03:30 0HNEHNVOHQOS1 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:57:27.5422340+03:30 0HNEHNVOHQOS1 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 71.8243ms (afa2e885)
+2025-08-02T15:57:27.5423471+03:30 0HNEHNVOHQOS1 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:57:27.5442297+03:30 0HNEHNVOHQOS1 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 478.6853ms (74253ad3)
+2025-08-02T15:58:36.2713950+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T15:58:37.5159572+03:30  [INF] Executed DbCommand ("49"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:58:37.5791268+03:30  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:58:37.5929155+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T15:58:37.6106503+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T15:59:06.0793305+03:30 0HNEHO0M21O7G [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T15:59:06.1682380+03:30 0HNEHO0M21O7G [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T15:59:06.1910902+03:30 0HNEHO0M21O7G [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T15:59:06.2016595+03:30 0HNEHO0M21O7G [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T15:59:06.2267984+03:30 0HNEHO0M21O7G [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T15:59:06.2480037+03:30 0HNEHO0M21O7G [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 40.499ms (afa2e885)
+2025-08-02T15:59:06.2481208+03:30 0HNEHO0M21O7G [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T15:59:06.2503178+03:30 0HNEHO0M21O7G [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 187.3547ms (74253ad3)
+2025-08-02T16:01:34.1814948+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T16:01:35.3763441+03:30  [INF] Executed DbCommand ("46"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:01:35.4659255+03:30  [INF] Executed DbCommand ("24"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:01:35.4766879+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:01:35.4990930+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T16:01:43.1374223+03:30 0HNEHO24RRQ40 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:01:43.2501829+03:30 0HNEHO24RRQ40 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T16:01:43.2742321+03:30 0HNEHO24RRQ40 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:01:43.2845384+03:30 0HNEHO24RRQ40 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:01:43.3077155+03:30 0HNEHO24RRQ40 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:01:43.3272887+03:30 0HNEHO24RRQ40 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 37.4232ms (afa2e885)
+2025-08-02T16:01:43.3273918+03:30 0HNEHO24RRQ40 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:01:43.3292488+03:30 0HNEHO24RRQ40 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 209.4102ms (74253ad3)
+2025-08-02T16:10:37.9020649+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T16:10:38.7701804+03:30  [INF] Executed DbCommand ("36"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:10:38.8161262+03:30  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:10:38.8184448+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:10:38.8337342+03:30  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T16:10:59.0686845+03:30 0HNEHO7AHL26J [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:10:59.1572125+03:30 0HNEHO7AHL26J [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T16:10:59.1840958+03:30 0HNEHO7AHL26J [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:10:59.1996621+03:30 0HNEHO7AHL26J [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:10:59.2243436+03:30 0HNEHO7AHL26J [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:10:59.2470160+03:30 0HNEHO7AHL26J [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 39.9415ms (afa2e885)
+2025-08-02T16:10:59.2472474+03:30 0HNEHO7AHL26J [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:10:59.2738847+03:30 0HNEHO7AHL26J [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 197.8162ms (74253ad3)
+2025-08-02T16:11:50.9845504+03:30 0HNEHO7AHL26K [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:11:51.0448759+03:30 0HNEHO7AHL26K [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:11:51.0451502+03:30 0HNEHO7AHL26K [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:11:51.0463092+03:30 0HNEHO7AHL26K [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:11:51.0703310+03:30 0HNEHO7AHL26K [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.8686ms (afa2e885)
+2025-08-02T16:11:51.0703924+03:30 0HNEHO7AHL26K [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:11:51.0705497+03:30 0HNEHO7AHL26K [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 236 "application/problem+json; charset=utf-8" 86.0793ms (74253ad3)
+2025-08-02T16:13:25.3946204+03:30 0HNEHO7AHL26L [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:13:25.4086227+03:30 0HNEHO7AHL26L [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:13:25.4087071+03:30 0HNEHO7AHL26L [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:13:25.4090712+03:30 0HNEHO7AHL26L [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:13:25.4093955+03:30 0HNEHO7AHL26L [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.6634ms (afa2e885)
+2025-08-02T16:13:25.4094166+03:30 0HNEHO7AHL26L [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:13:25.4113706+03:30 0HNEHO7AHL26L [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 14.9422ms (74253ad3)
+2025-08-02T16:23:17.7636913+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T16:23:18.5692361+03:30  [INF] Executed DbCommand ("28"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:23:18.6071847+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:23:18.6091172+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:23:18.6211782+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T16:23:43.9321357+03:30 0HNEHOEEFUTGD [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:23:43.9934451+03:30 0HNEHOEEFUTGD [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T16:23:44.0182782+03:30 0HNEHOEEFUTGD [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:23:44.0289967+03:30 0HNEHOEEFUTGD [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:23:44.0528550+03:30 0HNEHOEEFUTGD [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:23:44.0729306+03:30 0HNEHOEEFUTGD [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 38.0069ms (afa2e885)
+2025-08-02T16:23:44.0730659+03:30 0HNEHOEEFUTGD [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:23:44.0749016+03:30 0HNEHOEEFUTGD [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 157.1034ms (74253ad3)
+2025-08-02T16:24:42.3599419+03:30 0HNEHOEEFUTGE [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:24:42.3943576+03:30 0HNEHOEEFUTGE [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:24:42.3946136+03:30 0HNEHOEEFUTGE [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:24:42.3954300+03:30 0HNEHOEEFUTGE [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:24:42.3959808+03:30 0HNEHOEEFUTGE [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.3162ms (afa2e885)
+2025-08-02T16:24:42.3979074+03:30 0HNEHOEEFUTGE [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:24:42.3980092+03:30 0HNEHOEEFUTGE [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 38.2187ms (74253ad3)
+2025-08-02T16:25:06.1574125+03:30 0HNEHOEEFUTGF [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:25:06.1772891+03:30 0HNEHOEEFUTGF [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:25:06.1774237+03:30 0HNEHOEEFUTGF [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:25:06.1780117+03:30 0HNEHOEEFUTGF [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:25:06.1785210+03:30 0HNEHOEEFUTGF [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.0534ms (afa2e885)
+2025-08-02T16:25:06.1786086+03:30 0HNEHOEEFUTGF [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:25:06.1794910+03:30 0HNEHOEEFUTGF [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 21.334ms (74253ad3)
+2025-08-02T16:25:10.8020092+03:30 0HNEHOEEFUTGG [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:25:10.8023514+03:30 0HNEHOEEFUTGG [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:25:10.8024866+03:30 0HNEHOEEFUTGG [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:25:10.8343323+03:30 0HNEHOEEFUTGG [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:25:10.8576962+03:30 0HNEHOEEFUTGG [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 55.0443ms (afa2e885)
+2025-08-02T16:25:10.8602989+03:30 0HNEHOEEFUTGG [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:25:10.8605657+03:30 0HNEHOEEFUTGG [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 247 "application/problem+json; charset=utf-8" 58.5396ms (74253ad3)
+2025-08-02T16:25:27.3901894+03:30 0HNEHOEEFUTGH [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:25:27.3920526+03:30 0HNEHOEEFUTGH [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:25:27.3926341+03:30 0HNEHOEEFUTGH [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:25:27.4600828+03:30 0HNEHOEEFUTGH [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:25:27.4615833+03:30 0HNEHOEEFUTGH [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 68.2131ms (afa2e885)
+2025-08-02T16:25:27.4647415+03:30 0HNEHOEEFUTGH [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:25:27.4649831+03:30 0HNEHOEEFUTGH [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 252 "application/problem+json; charset=utf-8" 75.1787ms (74253ad3)
+2025-08-02T16:25:37.9421636+03:30 0HNEHOEEFUTGI [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:25:37.9428997+03:30 0HNEHOEEFUTGI [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:25:37.9744739+03:30 0HNEHOEEFUTGI [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:25:37.9984018+03:30 0HNEHOEEFUTGI [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:25:37.9990549+03:30 0HNEHOEEFUTGI [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 24.4151ms (afa2e885)
+2025-08-02T16:25:38.0017638+03:30 0HNEHOEEFUTGI [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:25:38.0023697+03:30 0HNEHOEEFUTGI [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 257 "application/problem+json; charset=utf-8" 59.9507ms (74253ad3)
+2025-08-02T16:25:40.1374428+03:30 0HNEHOEEFUTGJ [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:25:40.1381037+03:30 0HNEHOEEFUTGJ [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:25:40.1383745+03:30 0HNEHOEEFUTGJ [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:25:40.1772436+03:30 0HNEHOEEFUTGJ [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:25:40.1778265+03:30 0HNEHOEEFUTGJ [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 4.1246ms (afa2e885)
+2025-08-02T16:25:40.1778708+03:30 0HNEHOEEFUTGJ [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:25:40.1806451+03:30 0HNEHOEEFUTGJ [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 43.2713ms (74253ad3)
+2025-08-02T16:25:42.7531157+03:30 0HNEHOEEFUTGK [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:25:42.7536470+03:30 0HNEHOEEFUTGK [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:25:42.7637032+03:30 0HNEHOEEFUTGK [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:25:42.7660657+03:30 0HNEHOEEFUTGK [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:25:42.7665218+03:30 0HNEHOEEFUTGK [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 2.7749ms (afa2e885)
+2025-08-02T16:25:42.7665534+03:30 0HNEHOEEFUTGK [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:25:42.7672641+03:30 0HNEHOEEFUTGK [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 232 "application/problem+json; charset=utf-8" 13.6972ms (74253ad3)
+2025-08-02T16:25:46.4037669+03:30 0HNEHOEEFUTGL [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:25:46.4043723+03:30 0HNEHOEEFUTGL [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:25:46.4148039+03:30 0HNEHOEEFUTGL [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:25:46.4376083+03:30 0HNEHOEEFUTGL [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:25:46.4380214+03:30 0HNEHOEEFUTGL [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 23.1398ms (afa2e885)
+2025-08-02T16:25:46.4380890+03:30 0HNEHOEEFUTGL [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:25:46.4604090+03:30 0HNEHOEEFUTGL [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 286 "application/problem+json; charset=utf-8" 56.7186ms (74253ad3)
+2025-08-02T16:26:08.7193569+03:30 0HNEHOEEFUTGM [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:08.7199895+03:30 0HNEHOEEFUTGM [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:08.7202075+03:30 0HNEHOEEFUTGM [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:08.7737967+03:30 0HNEHOEEFUTGM [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:08.7741856+03:30 0HNEHOEEFUTGM [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 53.8559ms (afa2e885)
+2025-08-02T16:26:08.7742519+03:30 0HNEHOEEFUTGM [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:08.7762180+03:30 0HNEHOEEFUTGM [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 233 "application/problem+json; charset=utf-8" 55.5769ms (74253ad3)
+2025-08-02T16:26:29.5584495+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T16:26:30.1936404+03:30  [INF] Executed DbCommand ("20"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:26:30.2280759+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:26:30.2287565+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:26:30.2460303+03:30  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T16:26:30.3786798+03:30 0HNEHOG03AHPA [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.4076629+03:30 0HNEHOG03AHPA [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T16:26:30.4238733+03:30 0HNEHOG03AHPA [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.4348248+03:30 0HNEHOG03AHPA [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.4529475+03:30 0HNEHOG03AHPA [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.4705690+03:30 0HNEHOG03AHPA [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 33.528ms (afa2e885)
+2025-08-02T16:26:30.4706145+03:30 0HNEHOG03AHPA [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.4724009+03:30 0HNEHOG03AHPA [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 94.4381ms (74253ad3)
+2025-08-02T16:26:30.5021363+03:30 0HNEHOG03AHPB [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5040341+03:30 0HNEHOG03AHPB [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5041378+03:30 0HNEHOG03AHPB [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5048224+03:30 0HNEHOG03AHPB [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5052331+03:30 0HNEHOG03AHPB [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.0671ms (afa2e885)
+2025-08-02T16:26:30.5052466+03:30 0HNEHOG03AHPB [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5053140+03:30 0HNEHOG03AHPB [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 3.1815ms (74253ad3)
+2025-08-02T16:26:30.5062130+03:30 0HNEHOG03AHPC [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5077019+03:30 0HNEHOG03AHPC [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5077426+03:30 0HNEHOG03AHPC [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5079425+03:30 0HNEHOG03AHPC [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5080741+03:30 0HNEHOG03AHPC [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.3177ms (afa2e885)
+2025-08-02T16:26:30.5080834+03:30 0HNEHOG03AHPC [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5081131+03:30 0HNEHOG03AHPC [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 1.8912ms (74253ad3)
+2025-08-02T16:26:30.5087582+03:30 0HNEHOG03AHPD [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5088364+03:30 0HNEHOG03AHPD [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5088609+03:30 0HNEHOG03AHPD [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5089778+03:30 0HNEHOG03AHPD [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5091365+03:30 0HNEHOG03AHPD [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.2638ms (afa2e885)
+2025-08-02T16:26:30.5091445+03:30 0HNEHOG03AHPD [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5091628+03:30 0HNEHOG03AHPD [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 247 "application/problem+json; charset=utf-8" 0.4131ms (74253ad3)
+2025-08-02T16:26:30.5097225+03:30 0HNEHOG03AHPE [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5097910+03:30 0HNEHOG03AHPE [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5098149+03:30 0HNEHOG03AHPE [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5099324+03:30 0HNEHOG03AHPE [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5100505+03:30 0HNEHOG03AHPE [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.2205ms (afa2e885)
+2025-08-02T16:26:30.5100582+03:30 0HNEHOG03AHPE [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5100751+03:30 0HNEHOG03AHPE [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 252 "application/problem+json; charset=utf-8" 0.3531ms (74253ad3)
+2025-08-02T16:26:30.5106318+03:30 0HNEHOG03AHPF [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5107057+03:30 0HNEHOG03AHPF [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5107301+03:30 0HNEHOG03AHPF [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5108649+03:30 0HNEHOG03AHPF [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5109817+03:30 0HNEHOG03AHPF [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.2399ms (afa2e885)
+2025-08-02T16:26:30.5109900+03:30 0HNEHOG03AHPF [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5110081+03:30 0HNEHOG03AHPF [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 257 "application/problem+json; charset=utf-8" 0.3775ms (74253ad3)
+2025-08-02T16:26:30.5115755+03:30 0HNEHOG03AHPG [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5116494+03:30 0HNEHOG03AHPG [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5116735+03:30 0HNEHOG03AHPG [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5117868+03:30 0HNEHOG03AHPG [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5119035+03:30 0HNEHOG03AHPG [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.2184ms (afa2e885)
+2025-08-02T16:26:30.5119117+03:30 0HNEHOG03AHPG [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5119298+03:30 0HNEHOG03AHPG [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 0.3566ms (74253ad3)
+2025-08-02T16:26:30.5124927+03:30 0HNEHOG03AHPH [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5125616+03:30 0HNEHOG03AHPH [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5125840+03:30 0HNEHOG03AHPH [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5126912+03:30 0HNEHOG03AHPH [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5127974+03:30 0HNEHOG03AHPH [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.2028ms (afa2e885)
+2025-08-02T16:26:30.5128176+03:30 0HNEHOG03AHPH [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5128352+03:30 0HNEHOG03AHPH [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 232 "application/problem+json; charset=utf-8" 0.3448ms (74253ad3)
+2025-08-02T16:26:30.5133307+03:30 0HNEHOG03AHPI [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5133968+03:30 0HNEHOG03AHPI [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5134197+03:30 0HNEHOG03AHPI [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5135432+03:30 0HNEHOG03AHPI [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5136547+03:30 0HNEHOG03AHPI [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.2247ms (afa2e885)
+2025-08-02T16:26:30.5136626+03:30 0HNEHOG03AHPI [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5136798+03:30 0HNEHOG03AHPI [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 286 "application/problem+json; charset=utf-8" 0.352ms (74253ad3)
+2025-08-02T16:26:30.5142086+03:30 0HNEHOG03AHPJ [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:26:30.5142722+03:30 0HNEHOG03AHPJ [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:26:30.5142924+03:30 0HNEHOG03AHPJ [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:26:30.5144019+03:30 0HNEHOG03AHPJ [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:26:30.5145447+03:30 0HNEHOG03AHPJ [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.2396ms (afa2e885)
+2025-08-02T16:26:30.5145555+03:30 0HNEHOG03AHPJ [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:26:30.5145804+03:30 0HNEHOG03AHPJ [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 233 "application/problem+json; charset=utf-8" 0.3645ms (74253ad3)
+2025-08-02T16:28:25.3843753+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-02T16:28:26.0231459+03:30  [INF] Executed DbCommand ("28"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:28:26.0555312+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:28:26.0562248+03:30  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-02T16:28:26.0787466+03:30  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-02T16:28:26.2075007+03:30 0HNEHOH2JUN7O [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.2337971+03:30 0HNEHOH2JUN7O [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2025-08-02T16:28:26.2459808+03:30 0HNEHOH2JUN7O [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.2543353+03:30 0HNEHOH2JUN7O [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.2677054+03:30 0HNEHOH2JUN7O [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.2806146+03:30 0HNEHOH2JUN7O [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 24.6252ms (afa2e885)
+2025-08-02T16:28:26.2806471+03:30 0HNEHOH2JUN7O [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.2818895+03:30 0HNEHOH2JUN7O [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 75.25ms (74253ad3)
+2025-08-02T16:28:26.3105239+03:30 0HNEHOH2JUN7P [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3137256+03:30 0HNEHOH2JUN7P [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3139428+03:30 0HNEHOH2JUN7P [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3150896+03:30 0HNEHOH2JUN7P [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3157886+03:30 0HNEHOH2JUN7P [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 1.784ms (afa2e885)
+2025-08-02T16:28:26.3158210+03:30 0HNEHOH2JUN7P [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3159408+03:30 0HNEHOH2JUN7P [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 274 "application/problem+json; charset=utf-8" 5.437ms (74253ad3)
+2025-08-02T16:28:26.3174332+03:30 0HNEHOH2JUN7Q [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3192947+03:30 0HNEHOH2JUN7Q [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3193537+03:30 0HNEHOH2JUN7Q [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3196028+03:30 0HNEHOH2JUN7Q [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3198333+03:30 0HNEHOH2JUN7Q [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4617ms (afa2e885)
+2025-08-02T16:28:26.3198447+03:30 0HNEHOH2JUN7Q [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3198839+03:30 0HNEHOH2JUN7Q [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 2.4432ms (74253ad3)
+2025-08-02T16:28:26.3207329+03:30 0HNEHOH2JUN7R [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3209039+03:30 0HNEHOH2JUN7R [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3209608+03:30 0HNEHOH2JUN7R [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3212219+03:30 0HNEHOH2JUN7R [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3214952+03:30 0HNEHOH2JUN7R [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.5095ms (afa2e885)
+2025-08-02T16:28:26.3215124+03:30 0HNEHOH2JUN7R [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3215480+03:30 0HNEHOH2JUN7R [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 247 "application/problem+json; charset=utf-8" 0.8268ms (74253ad3)
+2025-08-02T16:28:26.3227198+03:30 0HNEHOH2JUN7S [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3228838+03:30 0HNEHOH2JUN7S [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3229448+03:30 0HNEHOH2JUN7S [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3232072+03:30 0HNEHOH2JUN7S [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3234431+03:30 0HNEHOH2JUN7S [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4648ms (afa2e885)
+2025-08-02T16:28:26.3234593+03:30 0HNEHOH2JUN7S [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3234947+03:30 0HNEHOH2JUN7S [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 256 "application/problem+json; charset=utf-8" 0.7825ms (74253ad3)
+2025-08-02T16:28:26.3246010+03:30 0HNEHOH2JUN7T [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3247584+03:30 0HNEHOH2JUN7T [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3248092+03:30 0HNEHOH2JUN7T [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3250916+03:30 0HNEHOH2JUN7T [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3253294+03:30 0HNEHOH2JUN7T [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4977ms (afa2e885)
+2025-08-02T16:28:26.3253448+03:30 0HNEHOH2JUN7T [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3253822+03:30 0HNEHOH2JUN7T [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 257 "application/problem+json; charset=utf-8" 0.7846ms (74253ad3)
+2025-08-02T16:28:26.3263979+03:30 0HNEHOH2JUN7U [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3265475+03:30 0HNEHOH2JUN7U [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3265963+03:30 0HNEHOH2JUN7U [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3268072+03:30 0HNEHOH2JUN7U [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3270271+03:30 0HNEHOH2JUN7U [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4089ms (afa2e885)
+2025-08-02T16:28:26.3270432+03:30 0HNEHOH2JUN7U [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3270759+03:30 0HNEHOH2JUN7U [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 240 "application/problem+json; charset=utf-8" 0.6876ms (74253ad3)
+2025-08-02T16:28:26.3280905+03:30 0HNEHOH2JUN7V [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3282171+03:30 0HNEHOH2JUN7V [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3282595+03:30 0HNEHOH2JUN7V [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3284537+03:30 0HNEHOH2JUN7V [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3286558+03:30 0HNEHOH2JUN7V [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.3759ms (afa2e885)
+2025-08-02T16:28:26.3286983+03:30 0HNEHOH2JUN7V [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3287294+03:30 0HNEHOH2JUN7V [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 236 "application/problem+json; charset=utf-8" 0.6436ms (74253ad3)
+2025-08-02T16:28:26.3295618+03:30 0HNEHOH2JUN80 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3296825+03:30 0HNEHOH2JUN80 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3297243+03:30 0HNEHOH2JUN80 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3299433+03:30 0HNEHOH2JUN80 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3301355+03:30 0HNEHOH2JUN80 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.3927ms (afa2e885)
+2025-08-02T16:28:26.3301496+03:30 0HNEHOH2JUN80 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3301802+03:30 0HNEHOH2JUN80 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 286 "application/problem+json; charset=utf-8" 0.6246ms (74253ad3)
+2025-08-02T16:28:26.3312938+03:30 0HNEHOH2JUN81 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - "application/json; charset=utf-8" null (d509f86a)
+2025-08-02T16:28:26.3314655+03:30 0HNEHOH2JUN81 [INF] Executing endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (500cc934)
+2025-08-02T16:28:26.3315161+03:30 0HNEHOH2JUN81 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(BookStore.Dtos.Auth.RegisterDto, System.Threading.CancellationToken)" on controller "BookStore.Controllers.AuthController" ("BookStore"). (122b2fdf)
+2025-08-02T16:28:26.3317347+03:30 0HNEHOH2JUN81 [INF] Executing "BadRequestObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (605b4265)
+2025-08-02T16:28:26.3319744+03:30 0HNEHOH2JUN81 [INF] Executed action "BookStore.Controllers.AuthController.Register (BookStore)" in 0.4372ms (afa2e885)
+2025-08-02T16:28:26.3319894+03:30 0HNEHOH2JUN81 [INF] Executed endpoint '"BookStore.Controllers.AuthController.Register (BookStore)"' (99874f2b)
+2025-08-02T16:28:26.3320302+03:30 0HNEHOH2JUN81 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost""""/api/auth/register""" - 400 233 "application/problem+json; charset=utf-8" 0.7333ms (74253ad3)
