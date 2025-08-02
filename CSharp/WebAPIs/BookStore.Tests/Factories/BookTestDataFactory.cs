@@ -37,28 +37,28 @@ namespace BookStore.Tests.Factories
             if (includeAuthors)
             {
                 book.Authors = new List<Author>
-            {
-                new Author
                 {
-                    Id = 1,
-                    Name = "Test Author",
-                    BirthDate = new DateTime(1980, 1, 1)
-                }
-            };
+                    new Author
+                    {
+                        Id = 1,
+                        Name = "Test Author",
+                        BirthDate = new DateTime(1980, 1, 1)
+                    }
+                };
             }
 
             if (includeReviews)
             {
                 book.Reviews = new List<Review>
-            {
-                new Review
                 {
-                    Id = 1,
-                    Rating = 5,
-                    Comment = "Great book!",
-                    CreatedAt = DateTime.UtcNow
-                }
-            };
+                    new Review
+                    {
+                        Id = 1,
+                        Rating = 5,
+                        Comment = "Great book!",
+                        CreatedAt = DateTime.UtcNow
+                    }
+                };
             }
 
             return book;

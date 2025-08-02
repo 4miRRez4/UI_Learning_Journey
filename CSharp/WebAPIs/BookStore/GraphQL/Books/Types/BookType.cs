@@ -1,5 +1,5 @@
-using BookStore.Models;
 using BookStore.Data;
+using BookStore.Models;
 using HotChocolate;
 using HotChocolate.Types;
 using HotChocolate.Data;

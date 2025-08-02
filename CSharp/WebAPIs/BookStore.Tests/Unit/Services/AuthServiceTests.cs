@@ -10,7 +10,7 @@ using System.Security.Claims;
 using Xunit;
 using FluentAssertions;
 using Moq;
-using BookStore.Tests.Fixtures;
+using static BookStore.Tests.Fixtures.AuthServiceTests;
 using BookStore.Tests.Factories;
 using BookStore.Tests.Builders;
 

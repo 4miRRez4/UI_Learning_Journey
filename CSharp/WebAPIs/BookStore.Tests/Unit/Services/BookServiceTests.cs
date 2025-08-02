@@ -8,6 +8,9 @@ using FluentAssertions;
 using static BookStore.Tests.Fixtures.BookServiceTests;
 using Microsoft.Extensions.Logging;
 using BookStore.Dtos.Author;
+using Microsoft.AspNetCore.JsonPatch.Exceptions;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.JsonPatch.Operations;
 
 namespace BookStore.Tests.Unit.Services
 {
@@ -421,5 +424,61 @@ namespace BookStore.Tests.Unit.Services
         }
         #endregion
 
+        #region DeleteBookAsync Tests
+
+        [Fact]
+        public async Task DeleteBookAsync_WithExistingId_ReturnsTrueAndDeletes()
+        {
+            // Arrange
+            _fixture.BookRepositoryMock
+                .Setup(x => x.BookExistAsync(1, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(true);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.DeleteBookAsync(1, CancellationToken.None);
+
+            // Assert
+            result.Should().BeTrue();
+            _fixture.BookRepositoryMock.Verify(
+                x => x.DeleteBookAsync(1, It.IsAny<CancellationToken>()),
+                Times.Once);
+        }
+
+        [Fact]
+        public async Task DeleteBookAsync_WithNonExistingId_ReturnsFalseAndLogsWarning()
+        {
+            // Arrange
+            _fixture.BookRepositoryMock
+                .Setup(x => x.BookExistAsync(999, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(false);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.DeleteBookAsync(999, CancellationToken.None);
+
+            // Assert
+            result.Should().BeFalse();
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Warning,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((o, t) => o.ToString().Contains("There is no book with ID 999 to delete")),
+                    null,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
+        #endregion
     }
 }
