@@ -60,7 +60,7 @@ namespace BookStore.Services
                 };
             }
 
-            //Assign custom role by default
+            //Assign customer role by default
             await _userManager.AddToRoleAsync(newUser, UserRoles.Customer);
 
             var customer = new Customer

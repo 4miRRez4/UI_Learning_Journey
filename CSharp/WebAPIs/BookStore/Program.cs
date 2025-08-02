@@ -302,3 +302,4 @@ app.Use(async (context, next) =>
 
 app.Run();
 
+public partial class Program { }
