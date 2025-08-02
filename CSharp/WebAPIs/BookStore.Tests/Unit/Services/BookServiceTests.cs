@@ -684,5 +684,321 @@ namespace BookStore.Tests.Unit.Services
         }
 
         #endregion
+
+        #region PatchBookAsync Tests
+
+        [Fact]
+        public async Task PatchBookAsync_WithTitleUpdate_UpdatesOnlyTitleAndTimestamps()
+        {
+            // Arrange
+            const int bookId = 1;
+            var originalBook = BookTestDataFactory.CreateBook(
+                id: bookId,
+                title: "Original Title",
+                price: 19.99m,
+                stockQuantity: 10);
+
+            var patchDoc = new JsonPatchDocument<UpdateBookDto>();
+            patchDoc.Replace(x => x.Title, "Updated Title");
+
+            var expectedDto = new BookDtoBuilder()
+                .WithId(bookId)
+                .WithTitle("Updated Title")
+                .WithPrice(19.99m)
+                .WithStockQuantity(10)
+                .Build();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(bookId, true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<UpdateBookDto>(originalBook))
+                .Returns(new UpdateBookDto
+                {
+                    Title = originalBook.Title,
+                    Price = originalBook.Price,
+                    StockQuantity = originalBook.StockQuantity
+                });
+
+
+            _fixture.MapperMock
+                .Setup(x => x.Map(It.IsAny<UpdateBookDto>(), originalBook))
+                .Callback<UpdateBookDto, Book>((dto, book) =>
+                {
+                    if (dto.Title != null) book.Title = dto.Title;
+                    book.UpdatedAt = DateTime.UtcNow;
+                });
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.UpdateBookAsync(originalBook, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<BookDto>(originalBook))
+                .Returns(expectedDto);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.PatchBookAsync(bookId, patchDoc, CancellationToken.None);
+
+            // Assert
+            result.Should().BeEquivalentTo(expectedDto);
+            originalBook.Title.Should().Be("Updated Title");
+            originalBook.UpdatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
+
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Information,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((state, type) =>
+                        state.ToString().Contains($"Book with ID {bookId} patched successfully")),
+                    null,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
+        [Fact]
+        public async Task PatchBookAsync_WithMultipleUpdates_AppliesAllChanges()
+        {
+            // Arrange
+            const int bookId = 1;
+            var originalBook = BookTestDataFactory.CreateBook(
+                id: bookId,
+                price: 19.99m,
+                stockQuantity: 10);
+
+            var patchDoc = new JsonPatchDocument<UpdateBookDto>();
+            patchDoc.Replace(x => x.Price, 29.99m);
+            patchDoc.Replace(x => x.StockQuantity, 5);
+            patchDoc.Replace(x => x.Genre, "Updated Genre");
+
+            var expectedDto = new BookDtoBuilder()
+                .WithId(bookId)
+                .WithPrice(29.99m)
+                .WithStockQuantity(5)
+                .WithGenre("Updated Genre")
+                .Build();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(bookId, true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<UpdateBookDto>(originalBook))
+                .Returns(new UpdateBookDto
+                {
+                    Price = originalBook.Price,
+                    StockQuantity = originalBook.StockQuantity,
+                    Genre = originalBook.Genre
+                });
+
+            _fixture.MapperMock
+                .Setup(x => x.Map(It.IsAny<UpdateBookDto>(), originalBook))
+                .Callback<UpdateBookDto, Book>((dto, book) =>
+                {
+                    if (dto.Price.HasValue) book.Price = dto.Price.Value;
+                    if (dto.StockQuantity.HasValue) book.StockQuantity = dto.StockQuantity.Value;
+                    if (dto.Genre != null) book.Genre = dto.Genre;
+                    book.UpdatedAt = DateTime.UtcNow;
+                });
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.UpdateBookAsync(originalBook, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<BookDto>(originalBook))
+                .Returns(expectedDto);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.PatchBookAsync(bookId, patchDoc, CancellationToken.None);
+
+            // Assert
+            result.Should().BeEquivalentTo(expectedDto);
+            originalBook.Price.Should().Be(29.99m);
+            originalBook.StockQuantity.Should().Be(5);
+            originalBook.Genre.Should().Be("Updated Genre");
+            originalBook.UpdatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
+        }
+
+        [Fact]
+        public async Task PatchBookAsync_WithAuthorIdsUpdate_ReplacesAuthorsList()
+        {
+            // Arrange
+            const int bookId = 1;
+            var originalBook = BookTestDataFactory.CreateBook(
+                id: bookId,
+                includeAuthors: true);
+
+            var patchDoc = new JsonPatchDocument<UpdateBookDto>();
+            patchDoc.Replace(x => x.AuthorIds, new List<int> { 1, 2 });
+
+            var updatedAuthors = new List<Author>
+            {
+                BookTestDataFactory.CreateAuthorDto(1).ToAuthor(),
+                BookTestDataFactory.CreateAuthorDto(2).ToAuthor()
+            };
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(bookId, true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.AuthorRepositoryMock
+                .Setup(x => x.GetAuthorsByIdsAsync(new List<int> { 1, 2 }, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(updatedAuthors);
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.UpdateBookAsync(originalBook, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<UpdateBookDto>(originalBook))
+                .Returns(new UpdateBookDto { AuthorIds = new List<int> { originalBook.Authors.First().Id } });
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.PatchBookAsync(bookId, patchDoc, CancellationToken.None);
+
+            // Assert
+            originalBook.Authors.Should().HaveCount(2)
+                .And.Contain(a => a.Id == 1)
+                .And.Contain(a => a.Id == 2);
+        }
+
+        [Fact]
+        public async Task PatchBookAsync_WithInvalidData_ThrowsAndLogsWarning()
+        {
+            // Arrange
+            const int bookId = 1;
+            var originalBook = BookTestDataFactory.CreateBook(id: bookId);
+            var patchDoc = new JsonPatchDocument<UpdateBookDto>();
+            patchDoc.Replace(x => x.Title, new string('a', 201)); // Exceeds max length
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(bookId, true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<UpdateBookDto>(originalBook))
+                .Returns(new UpdateBookDto { Title = originalBook.Title });
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act & Assert
+            await Assert.ThrowsAsync<ArgumentException>(() =>
+                service.PatchBookAsync(bookId, patchDoc, CancellationToken.None));
+
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Warning,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((state, type) =>
+                        state.ToString() == $"Invalid patch data for book with ID {bookId}"),
+                    null, 
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
+        [Fact]
+        public async Task PatchBookAsync_WithInvalidProperty_ThrowsJsonPatchException()
+        {
+            // Arrange
+            const int bookId = 1;
+            var originalBook = BookTestDataFactory.CreateBook(id: bookId);
+            var patchDoc = new JsonPatchDocument<UpdateBookDto>();
+
+            // Create an invalid operation directly
+            patchDoc.Operations.Add(new Operation<UpdateBookDto>(
+                "replace",
+                "/nonexistent property", 
+                null,
+                "invalid value"));
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(bookId, true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(originalBook);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<UpdateBookDto>(originalBook))
+                .Returns(new UpdateBookDto());
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act & Assert
+            var ex = await Assert.ThrowsAsync<ArgumentException>(() =>
+                service.PatchBookAsync(bookId, patchDoc, CancellationToken.None));
+
+            ex.Message.Should().Contain("invalid patch operation");
+
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((o, t) => o.ToString().Contains("JSON patch error for book with ID")),
+                    It.IsAny<JsonPatchException>(),
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
+        [Fact]
+        public async Task PatchBookAsync_WithNonExistingBook_ReturnsNull()
+        {
+            // Arrange
+            const int bookId = 999;
+            var patchDoc = new JsonPatchDocument<UpdateBookDto>();
+            patchDoc.Replace(x => x.Title, "New Title");
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBookByIdAsync(bookId, true, true, It.IsAny<CancellationToken>()))
+                .ReturnsAsync((Book)null);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.PatchBookAsync(bookId, patchDoc, CancellationToken.None);
+
+            // Assert
+            result.Should().BeNull();
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Warning,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((state, type) =>
+                        state.ToString() == $"There is no book with ID {bookId}"),
+                    null,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
+        #endregion
     }
 }
