@@ -1000,5 +1000,185 @@ namespace BookStore.Tests.Unit.Services
         }
 
         #endregion
+
+        #region GraphQL Queryable Methods Tests
+
+        [Fact]
+        public void GetAllBooksQueryable_ReturnsTrackableQuery()
+        {
+            // Arrange
+            var testBook = BookTestDataFactory.CreateBook(
+                id: 1,
+                title: "Clean Code",
+                genre: "Programming");
+
+            var testBooks = new List<Book> { testBook }.AsQueryable();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetAllBooksQueryable(false, false, It.IsAny<CancellationToken>()))
+                .Returns(testBooks);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = service.GetAllBooksQueryable(CancellationToken.None);
+
+            // Assert
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<IQueryable<Book>>();
+            result.Should().ContainSingle()
+                .Which.Should().BeEquivalentTo(testBook);
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.IsAny<It.IsAnyType>(),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Never);
+        }
+
+        [Fact]
+        public void SearchBooksByTitleQueryable_WithPartialMatch_ReturnsFilteredResults()
+        {
+            // Arrange
+            const string searchTerm = "design";
+            var testBooks = new List<Book>
+            {
+                BookTestDataFactory.CreateBook(title: "Domain-Driven Design"),
+                BookTestDataFactory.CreateBook(title: "Clean Code")
+            }.AsQueryable();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleQueryable(
+                    searchTerm,
+                    false,
+                    false,
+                    It.IsAny<CancellationToken>()))
+                .Returns(testBooks.Where(b => b.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)));
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = service.SearchBooksByTitleQueryable(searchTerm, CancellationToken.None);
+
+            // Assert
+            result.Should().ContainSingle()
+                .Which.Title.Should().Be("Domain-Driven Design");
+        }
+
+        [Fact]
+        public void GetBooksByGenreQueryable_ReturnsQueryable()
+        {
+            // Arrange
+            const string genre = "Fantasy";
+            var testBook = BookTestDataFactory.CreateBook(genre: genre);
+
+            var testBooks = new List<Book> { testBook }.AsQueryable();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetBooksByGenreQueryable(
+                    genre,
+                    false,
+                    false, 
+                    It.IsAny<CancellationToken>()))
+                .Returns(testBooks.Where(b => b.Genre == genre));
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = service.GetBooksByGenreQueryable(genre, CancellationToken.None);
+
+            // Assert
+            result.Should().ContainSingle()
+                .Which.Genre.Should().Be(genre);
+        }
+
+        [Fact]
+        public void GetAllBooksQueryable_WhenRepositoryThrows_LogsAndRethrows()
+        {
+            // Arrange
+            var expectedException = new Exception("Database connection failed");
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.GetAllBooksQueryable(
+                    It.IsAny<bool>(),
+                    It.IsAny<bool>(),
+                    It.IsAny<CancellationToken>()))
+                .Throws(expectedException);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act & Assert
+            var ex = Assert.Throws<Exception>(() => service.GetAllBooksQueryable(CancellationToken.None));
+
+            ex.Should().BeEquivalentTo(expectedException);
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((o, t) => o.ToString() == "Error getting all books as queryable"),
+                    expectedException,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
+        [Fact]
+        public void SearchBooksByTitleQueryable_WithEmptyResult_ReturnsEmptyQueryable()
+        {
+            // Arrange
+            const string searchTerm = "nonexistent";
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleQueryable(
+                    searchTerm,
+                    It.IsAny<bool>(),
+                    It.IsAny<bool>(),
+                    It.IsAny<CancellationToken>()))
+                .Returns(Enumerable.Empty<Book>().AsQueryable());
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = service.SearchBooksByTitleQueryable(searchTerm, CancellationToken.None);
+
+            // Assert
+            result.Should().NotBeNull();
+            result.Should().BeEmpty();
+        }
+
+        #endregion
+
+
+    }
+
+    public static class AuthorDtoExtensions
+    {
+        public static Author ToAuthor(this AuthorDto dto) => new Author
+        {
+            Id = dto.Id,
+            Name = dto.Name,
+            BirthDate = dto.BirthDate
+        };
     }
 }
