@@ -480,5 +480,209 @@ namespace BookStore.Tests.Unit.Services
         }
 
         #endregion
+
+        #region SearchBooksByTitleAsync Tests
+
+        [Fact]
+        public async Task SearchBooksByTitleAsync_WithPartialMatch_ReturnsMatchingBooks()
+        {
+            // Arrange
+            const string searchTerm = "code";
+            var matchingBooks = new List<Book>
+            {
+                BookTestDataFactory.CreateBook(id: 1, title: "Clean Code", genre: "Programming"),
+                BookTestDataFactory.CreateBook(id: 2, title: "Code Complete", genre: "Programming")
+            };
+
+            var expectedDtos = new List<BookDto>
+            {
+                new BookDtoBuilder().WithId(1).WithTitle("Clean Code").WithGenre("Programming").Build(),
+                new BookDtoBuilder().WithId(2).WithTitle("Code Complete").WithGenre("Programming").Build()
+            };
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleAsync(searchTerm, false, false, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(matchingBooks);
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<List<BookDto>>(matchingBooks))
+                .Returns(expectedDtos);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.SearchBooksByTitleAsync(searchTerm);
+
+            // Assert
+            result.Should().HaveCount(2)
+                .And.Contain(b => b.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .And.OnlyContain(b => b.Genre == "Programming");
+        }
+
+        [Fact]
+        public async Task SearchBooksByTitleAsync_WithCaseInsensitiveMatch_ReturnsBooks()
+        {
+            // Arrange
+            const string searchTerm = "deSiGn";
+            var testBook = BookTestDataFactory.CreateBook(title: "Domain-Driven Design");
+            var expectedDto = new BookDtoBuilder().WithTitle("Domain-Driven Design").Build();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleAsync(searchTerm, false, false, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new List<Book> { testBook });
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<List<BookDto>>(It.IsAny<List<Book>>()))
+                .Returns(new List<BookDto> { expectedDto });
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.SearchBooksByTitleAsync(searchTerm);
+
+            // Assert
+            result.Should().ContainSingle()
+                .Which.Title.Should().Be("Domain-Driven Design");
+        }
+
+        [Fact]
+        public async Task SearchBooksByTitleAsync_WithSpecialCharacters_ReturnsBooks()
+        {
+            // Arrange
+            const string searchTerm = "C#";
+            var testBook = BookTestDataFactory.CreateBook(title: "Mastering C#");
+            var expectedDto = new BookDtoBuilder().WithTitle("Mastering C#").Build();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleAsync(searchTerm, false, false, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new List<Book> { testBook });
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<List<BookDto>>(It.IsAny<List<Book>>()))
+                .Returns(new List<BookDto> { expectedDto });
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.SearchBooksByTitleAsync(searchTerm);
+
+            // Assert
+            result.Should().ContainSingle()
+                .Which.Title.Should().Be("Mastering C#");
+        }
+
+        [Fact]
+        public async Task SearchBooksByTitleAsync_WithNoMatches_ReturnsEmptyList()
+        {
+            // Arrange
+            const string searchTerm = "nonexistent";
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleAsync(searchTerm, false, false, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new List<Book>());
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.SearchBooksByTitleAsync(searchTerm);
+
+            // Assert
+            result.Should().BeNull();
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.IsAny<It.IsAnyType>(),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Never);
+        }
+
+        [Fact]
+        public async Task SearchBooksByTitleAsync_WithAuthors_ReturnsBooksWithAuthorDetails()
+        {
+            // Arrange
+            const string searchTerm = "design";
+            var testBook = BookTestDataFactory.CreateBook(
+                title: "Design Patterns",
+                includeAuthors: true);
+
+            var expectedDto = new BookDtoBuilder()
+                .WithTitle("Design Patterns")
+                .WithAuthors(BookTestDataFactory.CreateAuthorDto())
+                .Build();
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleAsync(searchTerm, true, false, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new List<Book> { testBook });
+
+            _fixture.MapperMock
+                .Setup(x => x.Map<List<BookDto>>(It.IsAny<List<Book>>()))
+                .Returns(new List<BookDto> { expectedDto });
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act
+            var result = await service.SearchBooksByTitleAsync(searchTerm, includeAuthor: true);
+
+            // Assert
+            result.Should().ContainSingle()
+                .Which.Should().BeEquivalentTo(expectedDto);
+            result.First().Authors.Should().ContainSingle();
+        }
+
+        [Fact]
+        public async Task SearchBooksByTitleAsync_WhenRepositoryFails_LogsAndRethrows()
+        {
+            // Arrange
+            const string searchTerm = "error";
+            var expectedException = new Exception("Database error");
+
+            _fixture.BookRepositoryMock
+                .Setup(x => x.SearchBooksByTitleAsync(searchTerm, It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(expectedException);
+
+            var service = new BookService(
+                _fixture.BookRepositoryMock.Object,
+                _fixture.AuthorRepositoryMock.Object,
+                _fixture.MapperMock.Object,
+                _fixture.LoggerMock.Object);
+
+            // Act & Assert
+            await Assert.ThrowsAsync<Exception>(() =>
+                service.SearchBooksByTitleAsync(searchTerm));
+
+            _fixture.LoggerMock.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((state, type) =>
+                        state.ToString() == $"Error searching books by title '{searchTerm}'"),
+                    expectedException,
+                    It.IsAny<Func<It.IsAnyType, Exception, string>>()),
+                Times.Once);
+        }
+
+        #endregion
     }
 }
