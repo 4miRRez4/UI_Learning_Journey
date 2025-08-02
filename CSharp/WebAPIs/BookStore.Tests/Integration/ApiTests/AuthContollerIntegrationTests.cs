@@ -148,6 +148,115 @@ namespace BookStore.Tests.Integration.ApiTests
         #endregion
 
 
+        #region Login Tests
+
+        [Theory]
+        [InlineData("valid@example.com", "Valid123!", HttpStatusCode.OK, true, "test-token", "user123", null)] // Happy path
+        [InlineData("wrong@example.com", "Wrong123!", HttpStatusCode.Unauthorized, false, null, null, "Invalid credentials")] // Wrong credentials
+        [InlineData("nonexistent@example.com", "Valid123!", HttpStatusCode.Unauthorized, false, null, null, "User not found")] // User not found
+        public async Task Login_WithVariousInputs_ReturnsExpectedResponse(
+            string email,
+            string password,
+            HttpStatusCode expectedStatusCode,
+            bool expectedSuccess,
+            string expectedToken,
+            string expectedUserId,
+            string expectedError)
+        {
+            // Arrange
+            var request = new LoginDto { Email = email, Password = password };
+
+            AuthServiceMock
+                .Setup(x => x.LoginAsync(
+                    It.Is<LoginDto>(r => r.Email == email && r.Password == password),
+                    It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new AuthResult
+                {
+                    Success = expectedSuccess,
+                    Token = expectedToken,
+                    UserId = expectedUserId,
+                    Errors = expectedError != null ? new[] { expectedError } : null
+                });
+
+            // Act
+            var response = await Client.PostAsJsonAsync(LoginEndpoint, request);
+
+            // Assert
+            response.StatusCode.Should().Be(expectedStatusCode);
+
+            var responseBody = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+
+            if (expectedSuccess)
+            {
+                responseBody.Should().ContainKeys("token", "userId");
+                responseBody["token"].ToString().Should().Be(expectedToken);
+                responseBody["userId"].ToString().Should().Be(expectedUserId);
+            }
+            else
+            {
+                responseBody.Should().ContainKey("errors");
+                var errors = ((JsonElement)responseBody["errors"]).EnumerateArray()
+                           .Select(e => e.ToString()).ToList();
+                errors.Should().Contain(expectedError);
+            }
+        }
+
+        [Theory]
+        [InlineData(null, "password", "Email is required")]
+        [InlineData("", "password", "Email is required")]
+        [InlineData("invalid-email", "password", "Invalid email format")]
+        [InlineData("test@example.com", null, "Password is required")]
+        [InlineData("test@example.com", "", "Password is required")]
+        public async Task Login_WithInvalidRequest_ReturnsBadRequestWithProperMessage(
+            string email,
+            string password,
+            string expectedErrorMessage)
+        {
+            // Arrange
+            var request = new LoginDto { Email = email, Password = password };
+
+            // Act
+            var response = await Client.PostAsJsonAsync(LoginEndpoint, request);
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+
+            var problemDetails = await response.Content.ReadFromJsonAsync<ValidationProblemDetails>();
+            problemDetails.Should().NotBeNull();
+
+            var errors = problemDetails.Errors
+                .SelectMany(e => e.Value)
+                .ToList();
+
+            errors.Should().Contain(expectedErrorMessage);
+
+            AuthServiceMock.Verify(
+                x => x.LoginAsync(It.IsAny<LoginDto>(), It.IsAny<CancellationToken>()),
+                Times.Never);
+        }
+
+        [Fact]
+        public async Task Login_WhenServiceThrowsException_Returns500()
+        {
+            // Arrange
+            var request = new LoginDto
+            {
+                Email = "test@example.com",
+                Password = "Valid123!"
+            };
+
+            AuthServiceMock
+                .Setup(x => x.LoginAsync(It.IsAny<LoginDto>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new Exception("Database connection failed"));
+
+            // Act
+            var response = await Client.PostAsJsonAsync(LoginEndpoint, request);
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
+        }
+
+        #endregion
 
     }
 }
