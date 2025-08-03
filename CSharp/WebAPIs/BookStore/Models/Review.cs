@@ -20,7 +20,7 @@ namespace BookStore.Models
 
         // Foreign keys
         public int BookId { get; set; }
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
 
         // Navigation properties
         [ForeignKey("BookId")]

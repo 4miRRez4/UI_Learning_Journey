@@ -7,7 +7,7 @@ namespace BookStore.Tests.Factories
     public static class BookTestDataFactory
     {
         public static Book CreateBook(
-            int id = 1,
+            int id = 0,
             string title = "Test Book",
             string? description = "Test Description",
             DateTime? publishDate = null,
@@ -40,7 +40,7 @@ namespace BookStore.Tests.Factories
                 {
                     new Author
                     {
-                        Id = 1,
+                        Id = 0,
                         Name = "Test Author",
                         BirthDate = new DateTime(1980, 1, 1)
                     }
@@ -53,7 +53,7 @@ namespace BookStore.Tests.Factories
                 {
                     new Review
                     {
-                        Id = 1,
+                        Id = 0,
                         Rating = 5,
                         Comment = "Great book!",
                         CreatedAt = DateTime.UtcNow

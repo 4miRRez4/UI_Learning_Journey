@@ -538,3 +538,10 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.T
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\obj\Debug\net9.0\BookStore.Tests.pdb
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\obj\Debug\net9.0\BookStore.Tests.genruntimeconfig.cache
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\obj\Debug\net9.0\ref\BookStore.Tests.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Docker.DotNet.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Docker.DotNet.X509.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\ICSharpCode.SharpZipLib.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Renci.SshNet.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Testcontainers.dll
+C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore.Tests\bin\Debug\net9.0\Testcontainers.MsSql.dll
