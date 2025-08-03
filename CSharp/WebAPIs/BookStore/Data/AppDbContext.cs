@@ -8,7 +8,6 @@ namespace BookStore.Data
 {
     public class AppDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
-        //TODO: move seeding to program.cs
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options) { }
 
@@ -24,6 +23,7 @@ namespace BookStore.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Schema Configuration
             // Configure User-Customer relationship (one-to-one)
             modelBuilder.Entity<ApplicationUser>()
                 .HasOne(u => u.Customer)
@@ -64,6 +64,13 @@ namespace BookStore.Data
                         j.HasKey("BookId", "AuthorId");
                     }
                 );
+
+            SeedData(modelBuilder);
+        }
+
+        //TODO: consider seeding in program.cs
+        public virtual void SeedData(ModelBuilder modelBuilder)
+        {
 
             // Seed Authors
             modelBuilder.Entity<Author>().HasData(
@@ -112,8 +119,8 @@ namespace BookStore.Data
                 StockQuantity = 50,
                 Publisher = "Cheshmeh",
                 Language = "Persian",
-                CreatedAt = new DateTime(2023, 1, 1, 10, 0, 0, DateTimeKind.Utc), 
-                UpdatedAt = new DateTime(2023, 1, 1, 10, 0, 0, DateTimeKind.Utc)  
+                CreatedAt = new DateTime(2023, 1, 1, 10, 0, 0, DateTimeKind.Utc),
+                UpdatedAt = new DateTime(2023, 1, 1, 10, 0, 0, DateTimeKind.Utc)
             },
             new Book
             {
@@ -126,8 +133,8 @@ namespace BookStore.Data
                 StockQuantity = 35,
                 Publisher = "Ava",
                 Language = "Persian",
-                CreatedAt = new DateTime(2023, 3, 1, 10, 0, 0, DateTimeKind.Utc), 
-                UpdatedAt = new DateTime(2023, 3, 1, 10, 0, 0, DateTimeKind.Utc)  
+                CreatedAt = new DateTime(2023, 3, 1, 10, 0, 0, DateTimeKind.Utc),
+                UpdatedAt = new DateTime(2023, 3, 1, 10, 0, 0, DateTimeKind.Utc)
             },
             new Book
             {
@@ -140,8 +147,8 @@ namespace BookStore.Data
                 StockQuantity = 25,
                 Publisher = "Doubleday",
                 Language = "English",
-                CreatedAt = new DateTime(2023, 2, 1, 10, 0, 0, DateTimeKind.Utc), 
-                UpdatedAt = new DateTime(2023, 2, 1, 10, 0, 0, DateTimeKind.Utc)  
+                CreatedAt = new DateTime(2023, 2, 1, 10, 0, 0, DateTimeKind.Utc),
+                UpdatedAt = new DateTime(2023, 2, 1, 10, 0, 0, DateTimeKind.Utc)
             },
 
             new Book
@@ -173,8 +180,6 @@ namespace BookStore.Data
                 UpdatedAt = new DateTime(2023, 5, 1, 10, 0, 0, DateTimeKind.Utc)
             }
             );
-
-
 
 
             //// Seed Customers (business domain)
@@ -241,11 +246,11 @@ namespace BookStore.Data
                     {
                         j.HasKey("BookId", "AuthorId");
                         j.HasData(
-                            new { BookId = 1, AuthorId = 1 }, 
-                            new { BookId = 2, AuthorId = 2 }, 
-                            new { BookId = 3, AuthorId = 3 }, 
-                            new { BookId = 4, AuthorId = 4 }, 
-                            new { BookId = 5, AuthorId = 5 } 
+                            new { BookId = 1, AuthorId = 1 },
+                            new { BookId = 2, AuthorId = 2 },
+                            new { BookId = 3, AuthorId = 3 },
+                            new { BookId = 4, AuthorId = 4 },
+                            new { BookId = 5, AuthorId = 5 }
                         );
                     }
                 );
