@@ -249,6 +249,34 @@ namespace BookStore.Tests.Integration.DatabaseTests
 
         #endregion
 
+        #region Edge Cases
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-1)]
+        public async Task GetBookByIdAsync_WithInvalidId_ShouldReturnNull(int invalidId)
+        {
+            // Act
+            var result = await _repository.GetBookByIdAsync(invalidId);
+
+            // Assert
+            result.Should().BeNull();
+        }
+
+        [Fact]
+        public async Task BookExistAsync_ShouldReturnCorrectResult()
+        {
+            // Arrange
+            var existingBook = BookTestDataFactory.CreateBook();
+            _fixture.DbContext.Books.Add(existingBook);
+            await _fixture.DbContext.SaveChangesAsync();
+
+            // Act & Assert
+            (await _repository.BookExistAsync(existingBook.Id, CancellationToken.None)).Should().BeTrue();
+            (await _repository.BookExistAsync(9999, CancellationToken.None)).Should().BeFalse();
+        }
+
+        #endregion
 
     }
 
