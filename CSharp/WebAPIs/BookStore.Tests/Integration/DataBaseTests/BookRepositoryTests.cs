@@ -149,6 +149,53 @@ namespace BookStore.Tests.Integration.DatabaseTests
 
         #endregion
 
+        #region Relationship Tests
+
+        [Fact]
+        public async Task CreateBookAsync_WithAuthors_ShouldCreateBookAuthorRelationships()
+        {
+            // Arrange
+            var author = new Author { Name = "Existing Author" };
+            _fixture.DbContext.Authors.Add(author);
+            await _fixture.DbContext.SaveChangesAsync();
+
+            var newBook = BookTestDataFactory.CreateBook();
+            newBook.Authors = new List<Author> { author };
+
+            // Act
+            var createdBook = await _repository.CreateBookAsync(newBook, CancellationToken.None);
+
+            // Assert
+            var dbBook = await _fixture.DbContext.Books
+                .Include(b => b.Authors)
+                .FirstOrDefaultAsync(b => b.Id == createdBook.Id);
+
+            dbBook.Authors.Should().HaveCount(1);
+            dbBook.Authors.First().Name.Should().Be("Existing Author");
+        }
+
+        [Fact]
+        public async Task GetAllBooksQueryable_WithIncludes_ShouldReturnProperlyLoadedEntities()
+        {
+            // Arrange
+            var bookWithAuthor = BookTestDataFactory.CreateBook(includeAuthors: true);
+            var bookWithReview = BookTestDataFactory.CreateBook(includeReviews: true);
+            _fixture.DbContext.Books.AddRange(bookWithAuthor, bookWithReview);
+            await _fixture.DbContext.SaveChangesAsync();
+
+            // Act
+            var booksWithAuthors = await _repository.GetAllBooksQueryable(includeAuthors: true).ToListAsync();
+            var booksWithReviews = await _repository.GetAllBooksQueryable(includeReviews: true).ToListAsync();
+
+            // Assert
+            booksWithAuthors.Should().Contain(b => b.Authors != null && b.Authors.Any());
+            booksWithReviews.Should().Contain(b => b.Reviews != null && b.Reviews.Any());
+        }
+
+        #endregion
+
+
+
     }
 
 }
