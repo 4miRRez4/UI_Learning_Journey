@@ -211,7 +211,7 @@ builder.Services
         .AddTypeExtension<AuthorQueries>()
     .AddMutationType<BookMutations>()
     .AddSubscriptionType<Subscription>()
-    .AddInMemorySubscriptions() //TODO: change to Redis
+    .AddInMemorySubscriptions() //TODO: use Redis
     .AddProjections()
     .AddFiltering()
     .AddSorting()

@@ -41,6 +41,7 @@
           "Microsoft.AspNetCore.Mvc.Testing": "9.0.7",
           "Microsoft.Extensions.Logging.Abstractions": "9.0.7",
           "Microsoft.NET.Test.Sdk": "17.14.1",
+          "Testcontainers.MsSql": "4.6.0",
           "coverlet.collector": "6.0.2",
           "xunit": "2.9.3",
           "xunit.runner.visualstudio": "3.0.0",
@@ -389,6 +390,17 @@
           "lib/netstandard2.0/Azure.Identity.dll": {}
         }
       },
+      "BouncyCastle.Cryptography/2.4.0": {
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.4.0.33771"
+          }
+        },
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {}
+        }
+      },
       "Castle.Core/5.1.1": {
         "dependencies": {
           "System.Diagnostics.EventLog": "9.0.7"
@@ -418,6 +430,34 @@
         }
       },
       "coverlet.collector/6.0.2": {},
+      "Docker.DotNet.Enhanced/3.128.3": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.7"
+        },
+        "runtime": {
+          "lib/net9.0/Docker.DotNet.dll": {
+            "assemblyVersion": "3.128.0.0",
+            "fileVersion": "3.128.3.1"
+          }
+        },
+        "compile": {
+          "lib/net9.0/Docker.DotNet.dll": {}
+        }
+      },
+      "Docker.DotNet.Enhanced.X509/3.128.3": {
+        "dependencies": {
+          "Docker.DotNet.Enhanced": "3.128.3"
+        },
+        "runtime": {
+          "lib/net9.0/Docker.DotNet.X509.dll": {
+            "assemblyVersion": "3.128.0.0",
+            "fileVersion": "3.128.3.1"
+          }
+        },
+        "compile": {
+          "lib/net9.0/Docker.DotNet.X509.dll": {}
+        }
+      },
       "FluentAssertions/8.5.0": {
         "runtime": {
           "lib/net6.0/FluentAssertions.dll": {
@@ -3046,6 +3086,31 @@
           "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
         }
       },
+      "SharpZipLib/1.4.2": {
+        "runtime": {
+          "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
+            "assemblyVersion": "1.4.2.13",
+            "fileVersion": "1.4.2.13"
+          }
+        },
+        "compile": {
+          "lib/net6.0/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "SSH.NET/2024.2.0": {
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.4.0"
+        },
+        "runtime": {
+          "lib/net8.0/Renci.SshNet.dll": {
+            "assemblyVersion": "2024.2.0.1",
+            "fileVersion": "2024.2.0.1"
+          }
+        },
+        "compile": {
+          "lib/net8.0/Renci.SshNet.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/9.0.3": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "9.0.0",
@@ -3884,6 +3949,38 @@
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath": "4.3.0"
+        }
+      },
+      "Testcontainers/4.6.0": {
+        "dependencies": {
+          "Docker.DotNet.Enhanced": "3.128.3",
+          "Docker.DotNet.Enhanced.X509": "3.128.3",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.7",
+          "SSH.NET": "2024.2.0",
+          "SharpZipLib": "1.4.2"
+        },
+        "runtime": {
+          "lib/net9.0/Testcontainers.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        },
+        "compile": {
+          "lib/net9.0/Testcontainers.dll": {}
+        }
+      },
+      "Testcontainers.MsSql/4.6.0": {
+        "dependencies": {
+          "Testcontainers": "4.6.0"
+        },
+        "runtime": {
+          "lib/net9.0/Testcontainers.MsSql.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        },
+        "compile": {
+          "lib/net9.0/Testcontainers.MsSql.dll": {}
         }
       },
       "xunit/2.9.3": {
@@ -5646,6 +5743,13 @@
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
     },
+    "BouncyCastle.Cryptography/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ==",
+      "path": "bouncycastle.cryptography/2.4.0",
+      "hashPath": "bouncycastle.cryptography.2.4.0.nupkg.sha512"
+    },
     "Castle.Core/5.1.1": {
       "type": "package",
       "serviceable": true,
@@ -5666,6 +5770,20 @@
       "sha512": "sha512-bJShQ6uWRTQ100ZeyiMqcFlhP7WJ+bCuabUs885dJiBEzMsJMSFr7BOyeCw4rgvQokteGi5rKQTlkhfQPUXg2A==",
       "path": "coverlet.collector/6.0.2",
       "hashPath": "coverlet.collector.6.0.2.nupkg.sha512"
+    },
+    "Docker.DotNet.Enhanced/3.128.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yOiBJfGltxjMTPBRVPt2Yeiqy2rLNQSf5x0U57FgipbsGnCXSm1a04UHi3h2QtABJSpTSHoBw+LPqA6yN9CGFg==",
+      "path": "docker.dotnet.enhanced/3.128.3",
+      "hashPath": "docker.dotnet.enhanced.3.128.3.nupkg.sha512"
+    },
+    "Docker.DotNet.Enhanced.X509/3.128.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U6G7H+vX0Htk86Fd1xS5i7iRGd0C33vx61sLH8gI9uzxqQJRfeYCbuzQOOp3J7m4zVZ2mP6x9gB9onspgP0QCg==",
+      "path": "docker.dotnet.enhanced.x509/3.128.3",
+      "hashPath": "docker.dotnet.enhanced.x509.3.128.3.nupkg.sha512"
     },
     "FluentAssertions/8.5.0": {
       "type": "package",
@@ -7046,6 +7164,20 @@
       "path": "serilog.sinks.rollingfile/3.3.0",
       "hashPath": "serilog.sinks.rollingfile.3.3.0.nupkg.sha512"
     },
+    "SharpZipLib/1.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yjj+3zgz8zgXpiiC3ZdF/iyTBbz2fFvMxZFEBPUcwZjIvXOf37Ylm+K58hqMfIBt5JgU/Z2uoUS67JmTLe973A==",
+      "path": "sharpziplib/1.4.2",
+      "hashPath": "sharpziplib.1.4.2.nupkg.sha512"
+    },
+    "SSH.NET/2024.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9r+4UF2P51lTztpd+H7SJywk7WgmlWB//Cm2o96c6uGVZU5r58ys2/cD9pCgTk0zCdSkfflWL1WtqQ9I4IVO9Q==",
+      "path": "ssh.net/2024.2.0",
+      "hashPath": "ssh.net.2024.2.0.nupkg.sha512"
+    },
     "Swashbuckle.AspNetCore/9.0.3": {
       "type": "package",
       "serviceable": true,
@@ -7654,6 +7786,20 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Testcontainers/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JFGPwuEqVuY3qJiGuxR+2J+E+dGc+1TgbBooB1346zUFKJqH6zWeSCXju5Siwek3ExOVRES4AbECXoaYt9jkXA==",
+      "path": "testcontainers/4.6.0",
+      "hashPath": "testcontainers.4.6.0.nupkg.sha512"
+    },
+    "Testcontainers.MsSql/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iGyc/qKRHchnCCBAL2bDYSQXocVRefvlT/hxKF5B7t9dUyPu50dEY6Qq3SzNzifa+5c5ZtFfd7KNAB2EviIu7g==",
+      "path": "testcontainers.mssql/4.6.0",
+      "hashPath": "testcontainers.mssql.4.6.0.nupkg.sha512"
     },
     "xunit/2.9.3": {
       "type": "package",
