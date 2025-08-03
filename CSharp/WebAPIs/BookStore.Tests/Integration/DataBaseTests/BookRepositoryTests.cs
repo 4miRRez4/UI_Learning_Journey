@@ -194,6 +194,60 @@ namespace BookStore.Tests.Integration.DatabaseTests
 
         #endregion
 
+        #region Query Tests
+
+        [Theory]
+        [InlineData("C#", 2)]
+        [InlineData("Java", 1)]
+        [InlineData("", 3)]
+        public async Task SearchBooksByTitleAsync_ShouldReturnCorrectResults(string searchTerm, int expectedCount)
+        {
+            // Arrange
+            _fixture.DbContext.Books.AddRange(
+                BookTestDataFactory.CreateBook(title: "C# Programming"),
+                BookTestDataFactory.CreateBook(title: "Advanced C#"),
+                BookTestDataFactory.CreateBook(title: "JavaScript Basics")
+            );
+            await _fixture.DbContext.SaveChangesAsync();
+
+            // Act
+            var results = await _repository.SearchBooksByTitleAsync(searchTerm);
+
+            // Assert
+            results.Should().HaveCount(expectedCount);
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                results.Should().OnlyContain(b => b.Title.Contains(searchTerm));
+            }
+        }
+
+        [Theory]
+        [InlineData("Fantasy", 2)]
+        [InlineData("Sci-Fi", 1)]
+        [InlineData("Non-Existing", 0)]
+        public async Task GetBooksByGenreQueryable_ShouldFilterCorrectly(string genre, int expectedCount)
+        {
+            // Arrange
+            _fixture.DbContext.Books.AddRange(
+                BookTestDataFactory.CreateBook(title: "Fantasy Book 1", genre: "Fantasy"),
+                BookTestDataFactory.CreateBook(title: "Fantasy Book 2", genre: "Fantasy"),
+                BookTestDataFactory.CreateBook(title: "Sci-Fi Book", genre: "Sci-Fi")
+            );
+            await _fixture.DbContext.SaveChangesAsync();
+
+            // Act
+            var query = _repository.GetBooksByGenreQueryable(genre);
+            var results = await query.ToListAsync();
+
+            // Assert
+            results.Should().HaveCount(expectedCount);
+            if (expectedCount > 0)
+            {
+                results.Should().OnlyContain(b => b.Genre == genre);
+            }
+        }
+
+        #endregion
 
 
     }
