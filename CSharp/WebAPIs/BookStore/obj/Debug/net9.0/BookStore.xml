@@ -92,5 +92,17 @@
         <member name="M:BookStore.Data.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:BookStore.Data.Migrations.SeperateSeedData">
+            <inheritdoc />
+        </member>
+        <member name="M:BookStore.Data.Migrations.SeperateSeedData.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookStore.Data.Migrations.SeperateSeedData.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookStore.Data.Migrations.SeperateSeedData.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

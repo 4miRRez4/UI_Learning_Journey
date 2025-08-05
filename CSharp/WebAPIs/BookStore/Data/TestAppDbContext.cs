@@ -4,7 +4,7 @@ namespace BookStore.Data
 {
     public class TestAppDbContext : AppDbContext
     {
-        public TestAppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public TestAppDbContext(DbContextOptions<TestAppDbContext> options) : base(options) { }
 
         public override void SeedData(ModelBuilder modelBuilder)
         {
