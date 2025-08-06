@@ -24,6 +24,7 @@ namespace BookStore.Tests.Unit.Services
             _fixture.BookRepositoryMock.Reset();
             _fixture.AuthorRepositoryMock.Reset();
             _fixture.MapperMock.Reset();
+            _fixture.LoggerMock.Reset();
         }
 
         #region GetAllBooksAsync Tests

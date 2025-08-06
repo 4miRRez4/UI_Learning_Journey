@@ -1,6 +1,4 @@
-﻿
-
-using BookStore.Dtos.Auth;
+﻿using BookStore.Dtos.Auth;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Moq;
 using FluentAssertions;
@@ -19,7 +17,7 @@ namespace BookStore.Tests.Integration.ApiTests
     {
         private const string RegisterEndpoint = "api/auth/register";
         private const string LoginEndpoint = "api/auth/login";
-
+        
         public AuthControllerIntegrationTests(
             CustomWebApplicationFactory<Program> factory,
             ITestOutputHelper output)

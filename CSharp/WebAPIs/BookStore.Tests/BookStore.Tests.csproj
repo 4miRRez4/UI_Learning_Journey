@@ -5,11 +5,22 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<IsTestProject>true</IsTestProject>
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Integration\api\**" />
+	  <EmbeddedResource Remove="Integration\api\**" />
+	  <None Remove="Integration\api\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="coverlet.collector" Version="6.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.7" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
+		<PackageReference Include="Testcontainers.MsSql" Version="4.6.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -27,8 +38,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Integration\" />
-	  <Folder Include="E2E\" />
 	  <Folder Include="Mocks\" />
 	</ItemGroup>
 
