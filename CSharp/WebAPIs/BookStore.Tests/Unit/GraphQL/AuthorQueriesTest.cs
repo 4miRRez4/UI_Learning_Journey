@@ -7,25 +7,27 @@ using Xunit;
 
 namespace BookStore.Tests.Unit.GraphQL;
 
-public class AuthorQueriesTests
+public class AuthorQueriesTests : IDisposable
 {
-    private TestFixture _fixture;
+    private readonly TestDbContextFactory _fixture;
+    private readonly TestAppDbContext _context;
+    private readonly AuthorQueries _authorQueries;
 
     public AuthorQueriesTests()
     {
-        _fixture = new TestFixture();
+        _fixture = new TestDbContextFactory();
+        _context = _fixture.CreateContext();
+        _authorQueries = new AuthorQueries();
     }
+
+    public void Dispose() => _context.Dispose();
 
     #region GetAuthors
     [Fact]
     public void GetAuthors_ReturnsAllAuthors()
     {
-        // Arrange
-        using var context = _fixture.CreateContext();
-        var queries = new AuthorQueries();
-
         // Act
-        var result = queries.GetAuthors(context);
+        var result = _authorQueries.GetAuthors(_context);
 
         // Assert
         Assert.Equal(3, result.Count());
@@ -34,12 +36,8 @@ public class AuthorQueriesTests
     [Fact]
     public void GetAuthors_WithPaging_ReturnsCorrectPage()
     {
-        // Arrange
-        using var context = _fixture.CreateContext(); 
-        var queries = new AuthorQueries();
-
         // Act
-        var result = queries.GetAuthors(context).Skip(1).Take(1).ToList();
+        var result = _authorQueries.GetAuthors(_context).Skip(1).Take(1).ToList();
 
         // Assert
         Assert.Single(result);
@@ -49,12 +47,8 @@ public class AuthorQueriesTests
     [Fact]
     public void GetAuthors_WithProjection_ReturnsOnlyRequestedFields()
     {
-        // Arrange
-        using var context = _fixture.CreateContext();
-        var queries = new AuthorQueries();
-
         // Act
-        var result = queries.GetAuthors(context)
+        var result = _authorQueries.GetAuthors(_context)
             .Select(a => new { a.Id, a.Name })
             .First();
 
@@ -66,17 +60,15 @@ public class AuthorQueriesTests
     [Fact]
     public async Task GetAuthors_WithBooks_IncludesBooks()
     {
-        // Arrange
-        using var context = _fixture.CreateContext();
-        var queries = new AuthorQueries();
 
         // Act
-        var authorWithBooks = await queries.GetAuthors(context)
+        var authorWithBooks = await _authorQueries.GetAuthors(_context)
             .Include(a => a.Books)
             .FirstAsync(a => a.Id == 2);
 
         // Assert
         Assert.Equal(2, authorWithBooks.Books.Count);
     }
+
     #endregion
 }
