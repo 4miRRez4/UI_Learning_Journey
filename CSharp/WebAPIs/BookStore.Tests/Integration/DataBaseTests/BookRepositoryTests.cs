@@ -8,27 +8,32 @@ using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Testcontainers.MsSql;
 using Xunit;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace BookStore.Tests.Integration.DatabaseTests
 {
     [Collection("Database")]
     public class BookRepositoryTests : IAsyncLifetime
     {
-        private readonly DatabaseFixture _fixture;
+        private DatabaseFixture _fixture;
         private BookRepository _repository;
 
-        public BookRepositoryTests(DatabaseFixture fixture)
+        public BookRepositoryTests()
         {
-            _fixture = fixture;
         }
 
-        public Task InitializeAsync()
+        public async Task InitializeAsync()
         {
+            _fixture = new DatabaseFixture(); //Todo: use Respown or Transaction instead of creating fresh db 
+            await _fixture.InitializeAsync();
+
             _repository = new BookRepository(_fixture.DbContext);
-            return Task.CompletedTask;
         }
 
-        public Task DisposeAsync() => Task.CompletedTask;
+        public async Task DisposeAsync()
+        {
+            await _fixture.DisposeAsync();
+        }
 
 
         #region CRUD Tests
