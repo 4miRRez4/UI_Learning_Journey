@@ -539,4 +539,3 @@ C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\o
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.pdb
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\BookStore.genruntimeconfig.cache
 C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\ref\BookStore.dll
-C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

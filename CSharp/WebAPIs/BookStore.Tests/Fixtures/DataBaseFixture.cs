@@ -21,9 +21,9 @@ namespace BookStore.Tests.Fixtures
         {
             await DbContainer.StartAsync();
 
-            var options = new DbContextOptionsBuilder<AppDbContext>()
+            var options = new DbContextOptionsBuilder<TestAppDbContext>()
                 .UseSqlServer(DbContainer.GetConnectionString(),
-                 sqlServerOptions => sqlServerOptions.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName))
+                 sqlServerOptions => sqlServerOptions.MigrationsAssembly(typeof(TestAppDbContext).Assembly.FullName))
                 .Options;
 
             DbContext = new TestAppDbContext(options);

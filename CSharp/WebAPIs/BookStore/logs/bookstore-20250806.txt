@@ -1,0 +1,23 @@
+2025-08-06T14:04:41.9905864+03:30  [INF] User profile is available. Using '"C:\Users\a.mohammadi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2025-08-06T14:04:43.0512418+03:30  [INF] Executed DbCommand ("85"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-06T14:04:43.1410888+03:30  [INF] Executed DbCommand ("33"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-06T14:04:43.1435735+03:30  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2025-08-06T14:04:43.1726961+03:30  [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2025-08-06T14:04:43.6356939+03:30  [INF] Now listening on: "https://localhost:7140" (d826f4b8)
+2025-08-06T14:04:43.6357744+03:30  [INF] Now listening on: "http://localhost:5081" (d826f4b8)
+2025-08-06T14:04:43.6383630+03:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-08-06T14:04:43.6388517+03:30  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-08-06T14:04:43.6389028+03:30  [INF] Content root path: "C:\Users\a.mohammadi\source\repos\UI_Learning_Journey\CSharp\WebAPIs\BookStore" (cc26f24e)
+2025-08-06T14:04:53.9305400+03:30  [INF] Application is shutting down... (90f52c38)
